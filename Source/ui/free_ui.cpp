@@ -31,12 +31,21 @@ void Init_48BAD0()
 extern int g_66f630;
 extern int g_66f634;
 extern int g_66f638;
-WIP_FUNC(0x4A6E40)
+void sub_4A6E40();
+
+// 0x4A6E30 — tail-call forwarder to the three-global init.
+MATCH_FUNC(0x4A6E30)
+void sub_4A6E30()
+{
+    sub_4A6E40();
+}
+
+MATCH_FUNC(0x4A6E40)
 void Init_4A6E40()
 {
-    *(volatile int*)&g_66f630 = 0;
-    *(volatile int*)&g_66f634 = 0;
-    *(volatile int*)&g_66f638 = 0;
+    *(volatile float*)&g_66f630 = 0.0f;
+    *(volatile float*)&g_66f634 = 0.0f;
+    *(volatile float*)&g_66f638 = 0.0f;
 }
 
 class S41EB30 {
@@ -3457,4 +3466,27 @@ void S4C8222::Init_4C8222(int unused)
 {
     *(int*)((char*)this + 0x2f64c) = -1;
     *(unsigned char*)((char*)this + 0x2884d) = 1;
+}
+
+// Tail-jump forwarders (address order), unclassed ui-region starts.
+void sub_487300();
+void sub_4A7690();
+void sub_4BD490();
+
+MATCH_FUNC(0x4872F0)
+void sub_4872F0()
+{
+    sub_487300();
+}
+
+MATCH_FUNC(0x4A6ED0)
+void sub_4A6ED0()
+{
+    sub_4A7690();
+}
+
+MATCH_FUNC(0x4BCE80)
+void sub_4BCE80()
+{
+    sub_4BD490();
 }

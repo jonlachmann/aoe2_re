@@ -177,7 +177,7 @@ void sub_5EC1F0();  // size 117, calls 0, lifted, module engine-late
 void sub_5EC270();  // size 269, calls 1, lifted, module engine-late
 void sub_5EC380();  // size 183, calls 4, lifted, module engine-late
 void sub_5EC440();  // size 25, calls 0, matched, module engine-late
-void sub_5EC460();  // size 16, calls 2, lifted, module engine-late
+void sub_5EC460();  // size 16, calls 2, matched, module engine-late
 void sub_5EC470();  // size 62, calls 2, lifted, module engine-late
 void sub_5EC4B0();  // size 278, calls 6, lifted, module engine-late
 void sub_5EC5D0();  // size 260, calls 5, lifted, module engine-late

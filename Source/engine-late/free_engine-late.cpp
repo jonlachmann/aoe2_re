@@ -351,3 +351,12 @@ void Clear_5EE460(int* p)
     *(int*)((char*)p + 0x20) = zero;
     p[2] = zero;
 }
+
+// Tail-jump forwarder (engine-late region).
+void sub_5EC700();
+
+MATCH_FUNC(0x5EC460)
+void sub_5EC460()
+{
+    sub_5EC700();
+}

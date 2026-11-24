@@ -1054,3 +1054,12 @@ int S46CDF0::M_46CDF0()
         return *(int*)p;
     return -1;
 }
+
+// Tail-jump forwarder (gfx region).
+void sub_469AB0();
+
+MATCH_FUNC(0x4695B0)
+void sub_4695B0()
+{
+    sub_469AB0();
+}

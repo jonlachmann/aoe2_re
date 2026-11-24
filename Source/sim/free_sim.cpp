@@ -19,12 +19,21 @@ extern int g_66f638;
 extern int g_7715f0;
 extern int g_7715f4;
 extern int g_7715f8;
-WIP_FUNC(0x5CFAF0)
+void sub_5CFAF0();
+
+// 0x5CFAE0 — tail-call forwarder to the three-global init.
+MATCH_FUNC(0x5CFAE0)
+void sub_5CFAE0()
+{
+    sub_5CFAF0();
+}
+
+MATCH_FUNC(0x5CFAF0)
 void Init_5CFAF0()
 {
-    *(volatile int*)&g_7715f0 = 0;
-    *(volatile int*)&g_7715f4 = 0;
-    *(volatile int*)&g_7715f8 = 0;
+    *(volatile float*)&g_7715f0 = 0.0f;
+    *(volatile float*)&g_7715f4 = 0.0f;
+    *(volatile float*)&g_7715f8 = 0.0f;
 }
 
 class S410530 {
@@ -3574,4 +3583,27 @@ void S5C13A0::M_5C13A0(int v)
     field_5224 = v;
     if (v != 4)
         field_c = 1;
+}
+
+// Tail-jump forwarders (address order), unclassed sim-region starts.
+void sub_520770();
+void sub_58A9A0();
+void sub_5BD510();
+
+MATCH_FUNC(0x520740)
+void sub_520740()
+{
+    sub_520770();
+}
+
+MATCH_FUNC(0x58A7E0)
+void sub_58A7E0()
+{
+    sub_58A9A0();
+}
+
+MATCH_FUNC(0x5BD500)
+void sub_5BD500()
+{
+    sub_5BD510();
 }

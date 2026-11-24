@@ -234,3 +234,26 @@ int M_60700F()
 {
     return 0;
 }
+
+// Tail-jump forwarders (CRT region).
+void sub_5F9200();
+void sub_6005A4();
+void sub_600DEC();
+
+MATCH_FUNC(0x5F9230)
+void sub_5F9230()
+{
+    sub_5F9200();
+}
+
+MATCH_FUNC(0x600E3D)
+void sub_600E3D()
+{
+    sub_6005A4();
+}
+
+MATCH_FUNC(0x600E93)
+void sub_600E93()
+{
+    sub_600DEC();
+}
