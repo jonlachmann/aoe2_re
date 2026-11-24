@@ -5,7 +5,7 @@
  "code_end": 6406144,
  "iat_count": 248,
  "stats": {
-  "functions": 19140,
+  "functions": 19139,
   "thunks": 34,
   "leaves": 6142,
   "instructions": 2603320,
@@ -204447,22 +204447,10 @@
    "address": 5916352,
    "address_hex": "0x005A46C0",
    "name": "sub_005A46C0",
-   "end": 5916358,
-   "size": 6,
-   "num_blocks": 3,
-   "num_instructions": 9,
-   "is_thunk": false,
-   "entry_kind": "start",
-   "calls_to": []
-  },
-  {
-   "address": 5916358,
-   "address_hex": "0x005A46C6",
-   "name": "sub_005A46C6",
    "end": 5916377,
-   "size": 19,
+   "size": 25,
    "num_blocks": 3,
-   "num_instructions": 8,
+   "num_instructions": 17,
    "is_thunk": false,
    "entry_kind": "start",
    "calls_to": []
