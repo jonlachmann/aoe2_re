@@ -86,3 +86,9 @@ float C_vt627428::M_537D90()
         return g_61C584;
     return Sub_48E2D0();
 }
+
+MATCH_FUNC(0x530AC0)
+void C_vt627428::M_530AC0()
+{
+    ((T537150*)this)->M_537150();
+}

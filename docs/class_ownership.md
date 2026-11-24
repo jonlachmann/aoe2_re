@@ -49,7 +49,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_diam_map` | engine-late | 0x62CEE8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_diam_map.cpp | 18/71 |
 | `C_view` | engine-late | 0x62CC3C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/engine-late/C_view.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_edit.cpp | 25/73 |
 | `C_vt62D080` | engine-late | 0x62D080 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/engine-late/C_view.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_edit.cpp | 18/78 |
-| `C_vt62D238` | engine-late | 0x62D238 | Source/engine-late/C_vt62D238.cpp | Source/app/C_vt61DF78.cpp, Source/engine-late/C_view.cpp, Source/sim/C_vt62C9CC.cpp | 4/72 |
+| `C_vt62D238` | engine-late | 0x62D238 | Source/sim/C_vt62C9CC.cpp | Source/app/C_vt61DF78.cpp, Source/engine-late/C_view.cpp, Source/engine-late/C_vt62D238.cpp | 5/72 |
 | `C_vt61E328` | game | 0x61E328 | Source/app/C_vt61CE24.cpp | Source/game/C_vt61E328.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp | 65/214 |
 | `C_TribePopUpHelp` | gfx | 0x620274 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp | 23/62 |
 | `C_TribeTechHelpScreen` | gfx | 0x620090 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp | 24/92 |
@@ -77,7 +77,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_tpnl_per` | sim | 0x62BD70 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_tpnl_per.cpp | 24/62 |
 | `C_tpnl_tim` | sim | 0x62BEF0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp | 22/62 |
 | `C_vt627094` | sim | 0x627094 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/sim/C_vt627094.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp | 136/186 |
-| `C_vt627428` | sim | 0x627428 | Source/app/C_vt61CE24.cpp | Source/game/C_vt61E328.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_vt627428.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp | 52/230 |
+| `C_vt627428` | sim | 0x627428 | Source/app/C_vt61CE24.cpp | Source/game/C_vt61E328.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_vt627428.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp | 53/230 |
 | `C_vt627844` | sim | 0x627844 | Source/app/C_vt61CE24.cpp | Source/game/C_vt61E328.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_vt627428.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp | 55/223 |
 | `C_vt62819C` | sim | 0x62819C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt61C8E4.cpp | 5/24 |
 | `C_vt628280` | sim | 0x628280 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt628280.cpp | 5/25 |
@@ -124,7 +124,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt62C064` | sim | 0x62C064 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp | 23/63 |
 | `C_vt62C1E0` | sim | 0x62C1E0 | Source/sim/C_vt62C1E0.cpp | Source/app/C_vt61D890.cpp, Source/app/C_vt61DF78.cpp, Source/gfx/C_vt61DA40.cpp, Source/ui/C_pnl_edit.cpp | 67/160 |
 | `C_vt62C7CC` | sim | 0x62C7CC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp | 15/79 |
-| `C_vt62C9CC` | sim | 0x62C9CC | Source/sim/C_vt62C9CC.cpp | Source/engine-late/C_view.cpp | 2/72 |
+| `C_vt62C9CC` | sim | 0x62C9CC | Source/sim/C_vt62C9CC.cpp | Source/engine-late/C_view.cpp | 3/72 |
 | `C_pnl_btn` | ui | 0x6224E4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp | 17/63 |
 | `C_pnl_btn` | ui | 0x622838 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp | 17/63 |
 | `C_pnl_edit` | ui | 0x622934 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_edit.cpp | 26/66 |

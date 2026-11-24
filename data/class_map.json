@@ -48790,8 +48790,8 @@
    {
     "address": "0x530AC0",
     "name": "sub_530AC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_vt627428.cpp"
    },
    {
     "address": "0x5362A0",
@@ -68193,8 +68193,8 @@
    {
     "address": "0x5E4380",
     "name": "sub_5E4380",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_vt62C9CC.cpp"
    },
    {
     "address": "0x5C8E70",
@@ -70057,8 +70057,8 @@
    {
     "address": "0x5E4380",
     "name": "sub_5E4380",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_vt62C9CC.cpp"
    },
    {
     "address": "0x5E4390",

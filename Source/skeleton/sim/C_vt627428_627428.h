@@ -225,7 +225,7 @@ public:
     virtual void slot_213();  // slot +0x354: sub_434970 [lifted]
     virtual void slot_214();  // slot +0x358: sub_52F300 [lifted]
     virtual void slot_215();  // slot +0x35C: sub_535020 [lifted]
-    virtual void slot_216();  // slot +0x360: sub_530AC0 [lifted]
+    virtual void slot_216();  // slot +0x360: sub_530AC0 [matched] — Source/sim/C_vt627428.cpp
     virtual void slot_217();  // slot +0x364: sub_5362A0 [lifted]
     virtual void slot_218();  // slot +0x368: sub_536450 [lifted]
     virtual void slot_219();  // slot +0x36C: sub_52F700 [lifted]

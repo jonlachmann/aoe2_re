@@ -2827,14 +2827,14 @@
    "vtable": "0x627428",
    "anchor": "0x52CB70",
    "methods": 230,
-   "owned_methods": 52,
-   "unowned_methods": 178,
+   "owned_methods": 53,
+   "unowned_methods": 177,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 31,
     "Source/game/C_vt61E328.cpp": 7,
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/sim/C_vt627428.cpp": 10,
+    "Source/sim/C_vt627428.cpp": 11,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 1,
     "Source/ui/C_pnl_edit.cpp": 1
    },
@@ -4524,12 +4524,12 @@
    "vtable": "0x62C9CC",
    "anchor": "0x5C8B90",
    "methods": 72,
-   "owned_methods": 2,
-   "unowned_methods": 70,
+   "owned_methods": 3,
+   "unowned_methods": 69,
    "primary_file": "Source/sim/C_vt62C9CC.cpp",
    "owner_files": {
     "Source/engine-late/C_view.cpp": 1,
-    "Source/sim/C_vt62C9CC.cpp": 1
+    "Source/sim/C_vt62C9CC.cpp": 2
    },
    "other_files": [
     "Source/engine-late/C_view.cpp"
@@ -4629,19 +4629,19 @@
    "vtable": "0x62D238",
    "anchor": "0x5E3C00",
    "methods": 72,
-   "owned_methods": 4,
-   "unowned_methods": 68,
-   "primary_file": "Source/engine-late/C_vt62D238.cpp",
+   "owned_methods": 5,
+   "unowned_methods": 67,
+   "primary_file": "Source/sim/C_vt62C9CC.cpp",
    "owner_files": {
     "Source/app/C_vt61DF78.cpp": 1,
     "Source/engine-late/C_view.cpp": 1,
     "Source/engine-late/C_vt62D238.cpp": 1,
-    "Source/sim/C_vt62C9CC.cpp": 1
+    "Source/sim/C_vt62C9CC.cpp": 2
    },
    "other_files": [
     "Source/app/C_vt61DF78.cpp",
     "Source/engine-late/C_view.cpp",
-    "Source/sim/C_vt62C9CC.cpp"
+    "Source/engine-late/C_vt62D238.cpp"
    ],
    "staged_files": [],
    "split": true

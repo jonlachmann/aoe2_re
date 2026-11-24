@@ -18,6 +18,11 @@ public:
     short field_16;
 };
 
+class T537150 {
+public:
+    void M_537150();
+};
+
 class C_vt627428 {
 public:
     char pad_00[8];
@@ -43,6 +48,7 @@ public:
     int Tick_537D50();
     int Pop_537D70();
     float M_537D90();
+    void M_530AC0();
 
     float Sub_48E2D0();
 };
