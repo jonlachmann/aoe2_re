@@ -6,6 +6,6 @@
 
 class C_cluster_41A150 {
 public:
-    void method_000();  // sub_41A150 [lifted]
+    void method_000();  // sub_41A150 [matched] — Source/app/C_cluster_41A150.cpp
     void method_001();  // sub_45D0F0 [lifted]
 };

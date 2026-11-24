@@ -8,4 +8,6 @@
 class C_pnl_edit {
 public:
     static void M_4378C0();
+    void M_5ED9F4();
+    void M_5ED9FA();
 };

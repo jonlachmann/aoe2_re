@@ -7,5 +7,5 @@
 class C_cluster_403DC0 {
 public:
     void method_000();  // sub_403DC0 [lifted]
-    void method_001();  // sub_540780 [lifted]
+    void method_001();  // sub_540780 [matched] — Source/sim/C_cluster_403DC0.cpp
 };

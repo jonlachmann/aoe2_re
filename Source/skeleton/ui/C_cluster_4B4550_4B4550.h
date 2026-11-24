@@ -7,5 +7,5 @@
 class C_cluster_4B4550 {
 public:
     void method_000();  // sub_4B4550 [matched] — Source/ui/C_cluster_4B4550.cpp
-    void method_001();  // sub_5ED9E8 [lifted]
+    void method_001();  // sub_5ED9E8 [matched] — Source/ui/C_cluster_4B4550.cpp
 };

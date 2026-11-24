@@ -10,4 +10,5 @@ public:
     void* handle_164;             // +0x164
 
     int M_4B4550();
+    void M_5ED9E8();
 };

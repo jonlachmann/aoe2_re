@@ -80,5 +80,5 @@ public:
     virtual void slot_067();  // slot +0x10C: sub_5DED30 [lifted]
     virtual void slot_068();  // slot +0x110: sub_5DEDC0 [lifted]
     virtual void slot_069();  // slot +0x114: sub_5DEE60 [lifted]
-    void method_000();  // sub_5C3200 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_5C3200 [matched]: same object, connected by this-edge call sites — Source/sim/C_diam_map.cpp
 };

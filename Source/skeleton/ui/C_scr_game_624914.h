@@ -67,7 +67,7 @@ public:
     virtual void slot_054();  // slot +0x0D8: sub_4A1FF0 [lifted]
     virtual void slot_055();  // slot +0x0DC: sub_4A21D0 [lifted]
     virtual void slot_056();  // slot +0x0E0: sub_4E4570 [lifted]
-    virtual void slot_057();  // slot +0x0E4: sub_4E45B0 [lifted]
+    virtual void slot_057();  // slot +0x0E4: sub_4E45B0 [matched] — Source/ui/C_scr_game.cpp
     virtual void slot_058();  // slot +0x0E8: sub_4237A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_059();  // slot +0x0EC: sub_4A22D0 [lifted]
     virtual void slot_060();  // slot +0x0F0: sub_4A2320 [lifted]

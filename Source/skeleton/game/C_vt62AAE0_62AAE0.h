@@ -16,5 +16,5 @@ public:
     virtual void slot_004();  // slot +0x010: sub_43D9E0 [lifted]
     virtual void slot_005();  // slot +0x014: sub_58BF30 [lifted]
     virtual void slot_006();  // slot +0x018: sub_58E1E0 [lifted]
-    void method_000();  // sub_58AA90 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_58AA90 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62AAE0.cpp
 };

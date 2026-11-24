@@ -10525,8 +10525,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_cluster_41A150.cpp"
  },
  {
   "address": "0x41A160",
@@ -62561,8 +62561,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_scr_game.cpp"
  },
  {
   "address": "0x4E45C0",
@@ -68100,8 +68100,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_vt62694C.cpp"
  },
  {
   "address": "0x51E060",
@@ -76160,8 +76160,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_cluster_403DC0.cpp"
  },
  {
   "address": "0x540790",
@@ -77179,8 +77179,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_vt6289FC.cpp"
  },
  {
   "address": "0x5450A0",
@@ -87477,8 +87477,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_cluster_585FF0.cpp"
  },
  {
   "address": "0x586000",
@@ -88509,8 +88509,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_vt62AAE0.cpp"
  },
  {
   "address": "0x58AAA0",
@@ -91015,8 +91015,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_vt62AF98.cpp"
  },
  {
   "address": "0x595AE0",
@@ -91826,8 +91826,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_vt62B224.cpp"
  },
  {
   "address": "0x598FB0",
@@ -91974,8 +91974,8 @@
   ],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_vt62B308.cpp"
  },
  {
   "address": "0x5995D0",
@@ -95586,8 +95586,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_tpnl_per.cpp"
  },
  {
   "address": "0x5AC1C0",
@@ -100619,8 +100619,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_diam_map.cpp"
  },
  {
   "address": "0x5C3210",
@@ -109340,8 +109340,8 @@
   "slot_classes": [],
   "module": "engine-late",
   "region": "engine-late",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/engine-late/C_cluster_42E3E0.cpp"
  },
  {
   "address": "0x5ECE4A",
@@ -109354,8 +109354,8 @@
   "slot_classes": [],
   "module": "engine-late",
   "region": "engine-late",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/game/C_cluster_42E650.cpp"
  },
  {
   "address": "0x5ECE50",
@@ -109396,8 +109396,8 @@
   "slot_classes": [],
   "module": "engine-late",
   "region": "engine-late",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/C_cluster_45DF20.cpp"
  },
  {
   "address": "0x5ED0C0",
@@ -109676,8 +109676,8 @@
   "slot_classes": [],
   "module": "engine-late",
   "region": "engine-late",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_cluster_49FE60.cpp"
  },
  {
   "address": "0x5ED9DC",
@@ -109718,8 +109718,8 @@
   "slot_classes": [],
   "module": "engine-late",
   "region": "engine-late",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_cluster_4B4550.cpp"
  },
  {
   "address": "0x5ED9EE",
@@ -109746,8 +109746,8 @@
   "slot_classes": [],
   "module": "engine-late",
   "region": "engine-late",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_edit.cpp"
  },
  {
   "address": "0x5ED9FA",
@@ -109760,8 +109760,8 @@
   "slot_classes": [],
   "module": "engine-late",
   "region": "engine-late",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_edit.cpp"
  },
  {
   "address": "0x5EDA00",

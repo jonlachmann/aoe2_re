@@ -74,6 +74,6 @@ public:
     void method_000();  // sub_4B2E30 [lifted]: same object, connected by this-edge call sites
     void method_001();  // sub_4B2F30 [lifted]: same object, connected by this-edge call sites
     void method_002();  // sub_4B3550 [lifted]: same object, connected by this-edge call sites
-    void method_003();  // sub_5ED9F4 [lifted]: same object, connected by this-edge call sites
-    void method_004();  // sub_5ED9FA [lifted]: same object, connected by this-edge call sites
+    void method_003();  // sub_5ED9F4 [matched]: same object, connected by this-edge call sites — Source/ui/C_pnl_edit.cpp
+    void method_004();  // sub_5ED9FA [matched]: same object, connected by this-edge call sites — Source/ui/C_pnl_edit.cpp
 };
