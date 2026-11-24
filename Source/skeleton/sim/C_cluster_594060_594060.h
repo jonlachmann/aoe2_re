@@ -9,6 +9,6 @@ public:
     void method_000();  // sub_594060 [lifted]
     void method_001();  // sub_594790 [lifted]
     void method_002();  // sub_594A60 [lifted]
-    void method_003();  // sub_594E70 [matched] — Source/simple/batch21.cpp
+    void method_003();  // sub_594E70 [matched] — Source/sim/C_cluster_594060.cpp
     void method_004();  // sub_594E90 [lifted]
 };

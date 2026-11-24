@@ -6,7 +6,7 @@
 
 class C_cluster_4BF6B0 {
 public:
-    void method_000();  // sub_4BF6B0 [matched] — Source/simple/batch17.cpp
+    void method_000();  // sub_4BF6B0 [matched] — Source/ui/C_cluster_4BF6B0.cpp
     void method_001();  // sub_4BF890 [lifted]
     void method_002();  // sub_4BF980 [lifted]
     void method_003();  // sub_4C2B50 [lifted]

@@ -9,6 +9,6 @@ public:
     void method_000();  // sub_40E1C0 [lifted]
     void method_001();  // sub_40E400 [lifted]
     void method_002();  // sub_40E530 [lifted]
-    void method_003();  // sub_40E6E0 [matched] — Source/simple/sub_40E6E0.cpp
+    void method_003();  // sub_40E6E0 [matched] — Source/app/C_cluster_40E1C0.cpp
     void method_004();  // sub_40EE00 [lifted]
 };

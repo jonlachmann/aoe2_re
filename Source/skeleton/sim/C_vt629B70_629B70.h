@@ -10,5 +10,5 @@
 class C_vt629B70 {
 public:
     virtual void slot_000();  // slot +0x000: sub_56CB30 [lifted]
-    void method_000();  // sub_56CB50 [matched]: same object, connected by this-edge call sites — Source/simple/class_56_setimm.cpp
+    void method_000();  // sub_56CB50 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt629B70.cpp
 };

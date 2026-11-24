@@ -7,7 +7,7 @@
 class C_cluster_441B40 {
 public:
     void method_000();  // sub_441B40 [lifted]
-    void method_001();  // sub_441C20 [matched] — Source/simple/sub_441C20.cpp
+    void method_001();  // sub_441C20 [matched] — Source/gfx/C_cluster_441B40.cpp
     void method_002();  // sub_441C40 [lifted]
     void method_003();  // sub_442260 [lifted]
 };

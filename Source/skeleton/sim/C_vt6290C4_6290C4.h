@@ -15,23 +15,23 @@ public:
     virtual void slot_003();  // slot +0x00C: sub_409810 [lifted]
     virtual void slot_004();  // slot +0x010: sub_409880 [lifted]
     virtual void slot_005();  // slot +0x014: sub_54AD00 [lifted]
-    virtual void slot_006();  // slot +0x018: sub_409A00 [matched] — Source/simple/batch14.cpp
+    virtual void slot_006();  // slot +0x018: sub_409A00 [matched] — Source/app/C_vt61C524.cpp
     virtual void slot_007();  // slot +0x01C: sub_54AD30 [lifted]
     virtual void slot_008();  // slot +0x020: sub_409A40 [lifted]
     virtual void slot_009();  // slot +0x024: sub_409A40 [lifted]
     virtual void slot_010();  // slot +0x028: sub_54ADE0 [lifted]
     virtual void slot_011();  // slot +0x02C: sub_54AF10 [lifted]
-    virtual void slot_012();  // slot +0x030: sub_5C6880 [matched] — Source/simple/batch12.cpp
-    virtual void slot_013();  // slot +0x034: sub_5C6880 [matched] — Source/simple/batch12.cpp
-    virtual void slot_014();  // slot +0x038: sub_409A20 [matched] — Source/simple/batch12.cpp
-    virtual void slot_015();  // slot +0x03C: sub_409A30 [matched] — Source/simple/batch12.cpp
+    virtual void slot_012();  // slot +0x030: sub_5C6880 [matched] — Source/ui/C_pnl_btn.cpp
+    virtual void slot_013();  // slot +0x034: sub_5C6880 [matched] — Source/ui/C_pnl_btn.cpp
+    virtual void slot_014();  // slot +0x038: sub_409A20 [matched] — Source/app/C_vt61C524.cpp
+    virtual void slot_015();  // slot +0x03C: sub_409A30 [matched] — Source/app/C_vt61C524.cpp
     virtual void slot_016();  // slot +0x040: sub_409BD0 [lifted]
-    virtual void slot_017();  // slot +0x044: sub_409CB0 [matched] — Source/simple/batch14.cpp
+    virtual void slot_017();  // slot +0x044: sub_409CB0 [matched] — Source/app/C_vt61C62C.cpp
     virtual void slot_018();  // slot +0x048: sub_409CC0 [lifted]
     virtual void slot_019();  // slot +0x04C: sub_409E20 [lifted]
     virtual void slot_020();  // slot +0x050: sub_409E40 [lifted]
     virtual void slot_021();  // slot +0x054: sub_409AD0 [lifted]
     virtual void slot_022();  // slot +0x058: sub_409B50 [lifted]
-    virtual void slot_023();  // slot +0x05C: sub_54ADD0 [matched] — Source/simple/class_54_setters.cpp
+    virtual void slot_023();  // slot +0x05C: sub_54ADD0 [matched] — Source/app/C_vt61C9D4.cpp
     void method_000();  // sub_54AC20 [lifted]: same object, connected by this-edge call sites
 };

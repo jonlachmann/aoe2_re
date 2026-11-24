@@ -7,7 +7,7 @@
 class C_cluster_43EB70 {
 public:
     void method_000();  // sub_43EB70 [lifted]
-    void method_001();  // sub_43EB90 [matched] — Source/simple/class_43EB90.cpp
+    void method_001();  // sub_43EB90 [matched] — Source/game/C_cluster_43EB70.cpp
     void method_002();  // sub_43ECC0 [lifted]
     void method_003();  // sub_43F460 [lifted]
 };

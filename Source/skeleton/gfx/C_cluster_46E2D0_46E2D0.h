@@ -7,5 +7,5 @@
 class C_cluster_46E2D0 {
 public:
     void method_000();  // sub_46E2D0 [lifted]
-    void method_001();  // sub_472420 [matched] — Source/simple/sub_472420.cpp
+    void method_001();  // sub_472420 [matched] — Source/gfx/C_cluster_46E2D0.cpp
 };

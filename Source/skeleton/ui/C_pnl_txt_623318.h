@@ -23,7 +23,7 @@ public:
     virtual void slot_012();  // slot +0x030: pnl_txt::draw [lifted]
     virtual void slot_013();  // slot +0x034: sub_4A0AB0 [lifted]
     virtual void slot_014();  // slot +0x038: sub_4A0B10 [lifted]
-    virtual void slot_015();  // slot +0x03C: sub_4A0BB0 [matched] — Source/simple/sub_4A0BB0.cpp
+    virtual void slot_015();  // slot +0x03C: sub_4A0BB0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_016();  // slot +0x040: sub_4A0BE0 [lifted]
     virtual void slot_017();  // slot +0x044: sub_4A0C90 [lifted]
     virtual void slot_018();  // slot +0x048: sub_4A0CD0 [lifted]
@@ -32,10 +32,10 @@ public:
     virtual void slot_021();  // slot +0x054: sub_4A1440 [lifted]
     virtual void slot_022();  // slot +0x058: sub_4A1500 [lifted]
     virtual void slot_023();  // slot +0x05C: sub_4A15B0 [lifted]
-    virtual void slot_024();  // slot +0x060: sub_4364F0 [matched] — Source/simple/batch12.cpp
-    virtual void slot_025();  // slot +0x064: sub_4364F0 [matched] — Source/simple/batch12.cpp
-    virtual void slot_026();  // slot +0x068: sub_4364F0 [matched] — Source/simple/batch12.cpp
-    virtual void slot_027();  // slot +0x06C: sub_4364F0 [matched] — Source/simple/batch12.cpp
+    virtual void slot_024();  // slot +0x060: sub_4364F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_025();  // slot +0x064: sub_4364F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_026();  // slot +0x068: sub_4364F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_027();  // slot +0x06C: sub_4364F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_028();  // slot +0x070: sub_4A16C0 [lifted]
     virtual void slot_029();  // slot +0x074: sub_4A1830 [lifted]
     virtual void slot_030();  // slot +0x078: sub_4A19E0 [lifted]
@@ -43,40 +43,40 @@ public:
     virtual void slot_032();  // slot +0x080: sub_4A1660 [lifted]
     virtual void slot_033();  // slot +0x084: sub_4BD760 [lifted]
     virtual void slot_034();  // slot +0x088: sub_4A1600 [lifted]
-    virtual void slot_035();  // slot +0x08C: sub_407C20 [matched] — Source/simple/batch12.cpp
-    virtual void slot_036();  // slot +0x090: sub_407C10 [matched] — Source/simple/batch12.cpp
+    virtual void slot_035();  // slot +0x08C: sub_407C20 [matched] — Source/gfx/C_TribePopUpHelp.cpp
+    virtual void slot_036();  // slot +0x090: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_037();  // slot +0x094: sub_4BCE20 [lifted]
-    virtual void slot_038();  // slot +0x098: sub_407C10 [matched] — Source/simple/batch12.cpp
-    virtual void slot_039();  // slot +0x09C: sub_407C10 [matched] — Source/simple/batch12.cpp
-    virtual void slot_040();  // slot +0x0A0: sub_407C10 [matched] — Source/simple/batch12.cpp
-    virtual void slot_041();  // slot +0x0A4: sub_407C10 [matched] — Source/simple/batch12.cpp
-    virtual void slot_042();  // slot +0x0A8: sub_407C10 [matched] — Source/simple/batch12.cpp
-    virtual void slot_043();  // slot +0x0AC: sub_407C10 [matched] — Source/simple/batch12.cpp
-    virtual void slot_044();  // slot +0x0B0: sub_407C10 [matched] — Source/simple/batch12.cpp
-    virtual void slot_045();  // slot +0x0B4: sub_407C10 [matched] — Source/simple/batch12.cpp
-    virtual void slot_046();  // slot +0x0B8: sub_407C10 [matched] — Source/simple/batch12.cpp
+    virtual void slot_038();  // slot +0x098: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_039();  // slot +0x09C: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_040();  // slot +0x0A0: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_041();  // slot +0x0A4: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_042();  // slot +0x0A8: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_043();  // slot +0x0AC: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_044();  // slot +0x0B0: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_045();  // slot +0x0B4: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_046();  // slot +0x0B8: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_047();  // slot +0x0BC: sub_4BBFE0 [lifted]
-    virtual void slot_048();  // slot +0x0C0: sub_407C00 [matched] — Source/simple/batch12.cpp
+    virtual void slot_048();  // slot +0x0C0: sub_407C00 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_049();  // slot +0x0C4: sub_4BC0B0 [lifted]
-    virtual void slot_050();  // slot +0x0C8: sub_4A22F0 [matched] — Source/simple/batch10.cpp
+    virtual void slot_050();  // slot +0x0C8: sub_4A22F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_051();  // slot +0x0CC: sub_4A1D10 [lifted]
     virtual void slot_052();  // slot +0x0D0: sub_4A1E20 [lifted]
-    virtual void slot_053();  // slot +0x0D4: sub_4A2040 [matched] — Source/simple/sub_4A2040.cpp
+    virtual void slot_053();  // slot +0x0D4: sub_4A2040 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_054();  // slot +0x0D8: sub_4A1FF0 [lifted]
     virtual void slot_055();  // slot +0x0DC: sub_4A21D0 [lifted]
     virtual void slot_056();  // slot +0x0E0: sub_4A2280 [lifted]
     virtual void slot_057();  // slot +0x0E4: sub_4A22A0 [lifted]
-    virtual void slot_058();  // slot +0x0E8: sub_4237A0 [matched] — Source/simple/batch15.cpp
+    virtual void slot_058();  // slot +0x0E8: sub_4237A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_059();  // slot +0x0EC: sub_4A22D0 [lifted]
     virtual void slot_060();  // slot +0x0F0: sub_4A2320 [lifted]
     virtual void slot_061();  // slot +0x0F4: sub_4BAE20 [lifted]
     virtual void slot_062();  // slot +0x0F8: sub_4BADD0 [lifted]
     virtual void slot_063();  // slot +0x0FC: sub_4BA5C0 [lifted]
-    virtual void slot_064();  // slot +0x100: sub_4BAF60 [matched] — Source/simple/sub_4BAF60.cpp
+    virtual void slot_064();  // slot +0x100: sub_4BAF60 [matched] — Source/ui/C_pnl_inp.cpp
     virtual void slot_065();  // slot +0x104: sub_4BAF10 [lifted]
     virtual void slot_066();  // slot +0x108: sub_4BAE80 [lifted]
     virtual void slot_067();  // slot +0x10C: sub_4BBC20 [lifted]
-    virtual void slot_068();  // slot +0x110: sub_4B4600 [matched] — Source/simple/class_4B_setters.cpp
+    virtual void slot_068();  // slot +0x110: sub_4B4600 [matched] — Source/ui/C_pnl_inp.cpp
     virtual void slot_069();  // slot +0x114: sub_4BC750 [lifted]
     virtual void slot_070();  // slot +0x118: sub_4BD030 [lifted]
     virtual void slot_071();  // slot +0x11C: sub_4BD4B0 [lifted]

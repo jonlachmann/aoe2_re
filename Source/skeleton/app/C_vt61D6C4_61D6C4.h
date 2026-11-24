@@ -10,5 +10,5 @@
 class C_vt61D6C4 {
 public:
     virtual void slot_000();  // slot +0x000: sub_411820 [lifted]
-    void method_000();  // sub_4118B0 [matched]: same object, connected by this-edge call sites — Source/simple/batch2.cpp
+    void method_000();  // sub_4118B0 [matched]: same object, connected by this-edge call sites — Source/app/C_vt61D6C4.cpp
 };

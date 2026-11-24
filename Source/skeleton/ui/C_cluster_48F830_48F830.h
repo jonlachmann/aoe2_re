@@ -7,5 +7,5 @@
 class C_cluster_48F830 {
 public:
     void method_000();  // sub_48F830 [lifted]
-    void method_001();  // sub_52C120 [matched] — Source/simple/class_52_setimm.cpp
+    void method_001();  // sub_52C120 [matched] — Source/ui/C_cluster_48F830.cpp
 };

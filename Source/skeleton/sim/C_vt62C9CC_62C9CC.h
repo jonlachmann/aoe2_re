@@ -63,7 +63,7 @@ public:
     virtual void slot_051();  // slot +0x0CC: sub_5CA1C0 [lifted]
     virtual void slot_052();  // slot +0x0D0: sub_5CE600 [lifted]
     virtual void slot_053();  // slot +0x0D4: sub_5CF5D0 [lifted]
-    virtual void slot_054();  // slot +0x0D8: sub_5E68D0 [matched] — Source/simple/simple_getters2.cpp
+    virtual void slot_054();  // slot +0x0D8: sub_5E68D0 [matched] — Source/sim/C_vt62C9CC.cpp
     virtual void slot_055();  // slot +0x0DC: sub_5CC990 [lifted]
     virtual void slot_056();  // slot +0x0E0: sub_5CA230 [lifted]
     virtual void slot_057();  // slot +0x0E4: sub_5E4E80 [lifted]
@@ -74,7 +74,7 @@ public:
     virtual void slot_062();  // slot +0x0F8: sub_5C9230 [lifted]
     virtual void slot_063();  // slot +0x0FC: sub_5E7290 [lifted]
     virtual void slot_064();  // slot +0x100: sub_5CE750 [lifted]
-    virtual void slot_065();  // slot +0x104: sub_5EA410 [matched] — Source/simple/batch12.cpp
+    virtual void slot_065();  // slot +0x104: sub_5EA410 [matched] — Source/engine-late/C_view.cpp
     virtual void slot_066();  // slot +0x108: sub_5E30D0 [lifted]
     virtual void slot_067();  // slot +0x10C: sub_5C8F30 [lifted]
     virtual void slot_068();  // slot +0x110: sub_5C8ED0 [lifted]

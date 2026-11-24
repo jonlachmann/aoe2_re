@@ -7,5 +7,5 @@
 class C_cluster_4328E0 {
 public:
     void method_000();  // sub_4328E0 [lifted]
-    void method_001();  // sub_432B60 [matched] — Source/simple/class_432Accessors.cpp
+    void method_001();  // sub_432B60 [matched] — Source/game/C_cluster_4328E0.cpp
 };

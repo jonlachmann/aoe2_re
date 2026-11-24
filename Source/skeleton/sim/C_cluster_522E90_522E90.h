@@ -6,7 +6,7 @@
 
 class C_cluster_522E90 {
 public:
-    void method_000();  // sub_522E90 [matched] — Source/simple/sub_522E90.cpp
+    void method_000();  // sub_522E90 [matched] — Source/sim/C_cluster_522E90.cpp
     void method_001();  // sub_523060 [lifted]
     void method_002();  // sub_5239A0 [lifted]
 };

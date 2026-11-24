@@ -14,11 +14,11 @@ public:
     void method_005();  // sub_42F8E0 [lifted]
     void method_006();  // sub_42FA40 [lifted]
     void method_007();  // sub_42FB90 [lifted]
-    void method_008();  // sub_42FBC0 [matched] — Source/simple/class_42_getters.cpp
+    void method_008();  // sub_42FBC0 [matched] — Source/game/C_global_66451C.cpp
     void method_009();  // sub_42FD20 [lifted]
     void method_010();  // sub_42FD60 [lifted]
     void method_011();  // sub_4302F0 [lifted]
-    void method_012();  // sub_4308C0 [matched] — Source/simple/class_4308C0.cpp
+    void method_012();  // sub_4308C0 [matched] — Source/game/C_global_66451C.cpp
     void method_013();  // sub_430A70 [lifted]
     void method_014();  // sub_430AF0 [lifted]
     void method_015();  // sub_430B20 [lifted]
@@ -26,7 +26,7 @@ public:
     void method_017();  // sub_4316A0 [lifted]
     void method_018();  // sub_431710 [lifted]
     void method_019();  // sub_431960 [lifted]
-    void method_020();  // sub_432B30 [matched] — Source/simple/class_430000.cpp
+    void method_020();  // sub_432B30 [matched] — Source/game/C_global_66451C.cpp
     void method_021();  // sub_432C50 [lifted]
     void method_022();  // sub_432CC0 [lifted]
     void method_023();  // sub_432D30 [lifted]

@@ -12,28 +12,28 @@ public:
     virtual void slot_000();  // slot +0x000: sub_4AA5E0 [lifted]
     virtual void slot_001();  // slot +0x004: sub_4AACE0 [lifted]
     virtual void slot_002();  // slot +0x008: sub_4AAE60 [lifted]
-    virtual void slot_003();  // slot +0x00C: sub_4237A0 [matched] — Source/simple/batch15.cpp
-    virtual void slot_004();  // slot +0x010: sub_4237A0 [matched] — Source/simple/batch15.cpp
-    virtual void slot_005();  // slot +0x014: sub_5EA410 [matched] — Source/simple/batch12.cpp
+    virtual void slot_003();  // slot +0x00C: sub_4237A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_004();  // slot +0x010: sub_4237A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
+    virtual void slot_005();  // slot +0x014: sub_5EA410 [matched] — Source/engine-late/C_view.cpp
     virtual void slot_006();  // slot +0x018: sub_4AAEA0 [lifted]
     virtual void slot_007();  // slot +0x01C: sub_4AAEE0 [lifted]
     virtual void slot_008();  // slot +0x020: sub_4AAF30 [lifted]
     virtual void slot_009();  // slot +0x024: sub_4AAF70 [lifted]
-    virtual void slot_010();  // slot +0x028: sub_408050 [matched] — Source/simple/batch14.cpp
-    virtual void slot_011();  // slot +0x02C: sub_4AAFC0 [matched] — Source/simple/batch14.cpp
+    virtual void slot_010();  // slot +0x028: sub_408050 [matched] — Source/ui/C_pnl_inp.cpp
+    virtual void slot_011();  // slot +0x02C: sub_4AAFC0 [matched] — Source/ui/C_vt622368.cpp
     virtual void slot_012();  // slot +0x030: sub_4AAFD0 [lifted]
     virtual void slot_013();  // slot +0x034: sub_4AB020 [lifted]
-    virtual void slot_014();  // slot +0x038: sub_407C50 [matched] — Source/simple/batch14.cpp
-    virtual void slot_015();  // slot +0x03C: sub_407C60 [matched] — Source/simple/batch12.cpp
+    virtual void slot_014();  // slot +0x038: sub_407C50 [matched] — Source/app/C_vt61CE24.cpp
+    virtual void slot_015();  // slot +0x03C: sub_407C60 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_016();  // slot +0x040: sub_4AB0B0 [lifted]
     virtual void slot_017();  // slot +0x044: sub_4AB0E0 [lifted]
     virtual void slot_018();  // slot +0x048: sub_4AB110 [lifted]
-    virtual void slot_019();  // slot +0x04C: sub_407C40 [matched] — Source/simple/batch12.cpp
-    virtual void slot_020();  // slot +0x050: sub_5E2CC0 [matched] — Source/simple/batch14.cpp
-    virtual void slot_021();  // slot +0x054: sub_407C60 [matched] — Source/simple/batch12.cpp
-    virtual void slot_022();  // slot +0x058: sub_4AA5D0 [matched] — Source/simple/batch14.cpp
+    virtual void slot_019();  // slot +0x04C: sub_407C40 [matched] — Source/gfx/C_TribePopUpHelp.cpp
+    virtual void slot_020();  // slot +0x050: sub_5E2CC0 [matched] — Source/app/C_vt61DF78.cpp
+    virtual void slot_021();  // slot +0x054: sub_407C60 [matched] — Source/app/C_vt61CE24.cpp
+    virtual void slot_022();  // slot +0x058: sub_4AA5D0 [matched] — Source/ui/C_vt622368.cpp
     virtual void slot_023();  // slot +0x05C: sub_4AB250 [lifted]
-    virtual void slot_024();  // slot +0x060: sub_408650 [matched] — Source/simple/batch14.cpp
+    virtual void slot_024();  // slot +0x060: sub_408650 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_025();  // slot +0x064: sub_4AB2C0 [lifted]
     virtual void slot_026();  // slot +0x068: sub_4AB560 [lifted]
     virtual void slot_027();  // slot +0x06C: sub_4AB660 [lifted]
@@ -44,16 +44,16 @@ public:
     virtual void slot_032();  // slot +0x080: sub_4AC4B0 [lifted]
     virtual void slot_033();  // slot +0x084: sub_4AC4E0 [lifted]
     virtual void slot_034();  // slot +0x088: sub_4AC890 [lifted]
-    virtual void slot_035();  // slot +0x08C: sub_4AC9F0 [matched] — Source/simple/class_4AC9F0.cpp
-    virtual void slot_036();  // slot +0x090: sub_4378C0 [matched] — Source/simple/batch15.cpp
+    virtual void slot_035();  // slot +0x08C: sub_4AC9F0 [matched] — Source/ui/C_vt622368.cpp
+    virtual void slot_036();  // slot +0x090: sub_4378C0 [matched] — Source/ui/C_pnl_edit.cpp
     virtual void slot_037();  // slot +0x094: sub_4ACE30 [lifted]
     virtual void slot_038();  // slot +0x098: sub_4ACFC0 [lifted]
     virtual void slot_039();  // slot +0x09C: sub_4AD150 [lifted]
     virtual void slot_040();  // slot +0x0A0: sub_4AD2E0 [lifted]
     virtual void slot_041();  // slot +0x0A4: sub_4AD4F0 [lifted]
     virtual void slot_042();  // slot +0x0A8: sub_4ADD70 [lifted]
-    virtual void slot_043();  // slot +0x0AC: sub_4378C0 [matched] — Source/simple/batch15.cpp
-    virtual void slot_044();  // slot +0x0B0: sub_4ADF90 [matched] — Source/simple/sub_4ADF90.cpp
+    virtual void slot_043();  // slot +0x0AC: sub_4378C0 [matched] — Source/ui/C_pnl_edit.cpp
+    virtual void slot_044();  // slot +0x0B0: sub_4ADF90 [matched] — Source/ui/C_vt622368.cpp
     virtual void slot_045();  // slot +0x0B4: sub_4ADFB0 [lifted]
     virtual void slot_046();  // slot +0x0B8: sub_4AE030 [lifted]
     virtual void slot_047();  // slot +0x0BC: sub_4AE130 [lifted]
@@ -62,7 +62,7 @@ public:
     virtual void slot_050();  // slot +0x0C8: sub_4AE260 [lifted]
     virtual void slot_051();  // slot +0x0CC: sub_4AE2B0 [lifted]
     virtual void slot_052();  // slot +0x0D0: sub_4AE2F0 [lifted]
-    virtual void slot_053();  // slot +0x0D4: sub_547EE0 [matched] — Source/simple/batch12.cpp
+    virtual void slot_053();  // slot +0x0D4: sub_547EE0 [matched] — Source/gfx/C_vt61DA40.cpp
     virtual void slot_054();  // slot +0x0D8: sub_4AE350 [lifted]
     virtual void slot_055();  // slot +0x0DC: sub_4AE390 [lifted]
     virtual void slot_056();  // slot +0x0E0: sub_4AE410 [lifted]
@@ -79,19 +79,19 @@ public:
     virtual void slot_067();  // slot +0x10C: sub_4AE7F0 [lifted]
     virtual void slot_068();  // slot +0x110: sub_4AE810 [lifted]
     virtual void slot_069();  // slot +0x114: sub_4AE880 [lifted]
-    virtual void slot_070();  // slot +0x118: sub_4378C0 [matched] — Source/simple/batch15.cpp
-    virtual void slot_071();  // slot +0x11C: sub_4AE900 [matched] — Source/simple/batch14.cpp
-    virtual void slot_072();  // slot +0x120: sub_5E2CC0 [matched] — Source/simple/batch14.cpp
-    virtual void slot_073();  // slot +0x124: sub_407B80 [matched] — Source/simple/batch12.cpp
-    virtual void slot_074();  // slot +0x128: sub_5E2CC0 [matched] — Source/simple/batch14.cpp
+    virtual void slot_070();  // slot +0x118: sub_4378C0 [matched] — Source/ui/C_pnl_edit.cpp
+    virtual void slot_071();  // slot +0x11C: sub_4AE900 [matched] — Source/ui/C_vt622368.cpp
+    virtual void slot_072();  // slot +0x120: sub_5E2CC0 [matched] — Source/app/C_vt61DF78.cpp
+    virtual void slot_073();  // slot +0x124: sub_407B80 [matched] — Source/app/C_vt61CE24.cpp
+    virtual void slot_074();  // slot +0x128: sub_5E2CC0 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_075();  // slot +0x12C: sub_4AE9A0 [lifted]
     virtual void slot_076();  // slot +0x130: sub_4AEA10 [lifted]
-    virtual void slot_077();  // slot +0x134: sub_407C50 [matched] — Source/simple/batch14.cpp
-    virtual void slot_078();  // slot +0x138: sub_407C50 [matched] — Source/simple/batch14.cpp
-    virtual void slot_079();  // slot +0x13C: sub_407B80 [matched] — Source/simple/batch12.cpp
-    virtual void slot_080();  // slot +0x140: sub_5E2CC0 [matched] — Source/simple/batch14.cpp
-    virtual void slot_081();  // slot +0x144: sub_407B80 [matched] — Source/simple/batch12.cpp
-    virtual void slot_082();  // slot +0x148: sub_407B80 [matched] — Source/simple/batch12.cpp
+    virtual void slot_077();  // slot +0x134: sub_407C50 [matched] — Source/app/C_vt61CE24.cpp
+    virtual void slot_078();  // slot +0x138: sub_407C50 [matched] — Source/app/C_vt61CE24.cpp
+    virtual void slot_079();  // slot +0x13C: sub_407B80 [matched] — Source/app/C_vt61CE24.cpp
+    virtual void slot_080();  // slot +0x140: sub_5E2CC0 [matched] — Source/app/C_vt61DF78.cpp
+    virtual void slot_081();  // slot +0x144: sub_407B80 [matched] — Source/app/C_vt61CE24.cpp
+    virtual void slot_082();  // slot +0x148: sub_407B80 [matched] — Source/app/C_vt61CE24.cpp
     void method_000();  // sub_4AAB20 [lifted]: same object, connected by this-edge call sites
     void method_001();  // sub_5A5890 [lifted]: same object, connected by this-edge call sites
 };

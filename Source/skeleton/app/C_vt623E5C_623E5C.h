@@ -9,9 +9,9 @@
 
 class C_vt623E5C {
 public:
-    virtual void slot_000();  // slot +0x000: sub_407B80 [matched] — Source/simple/batch12.cpp
+    virtual void slot_000();  // slot +0x000: sub_407B80 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_001();  // slot +0x004: sub_4CD5A0 [lifted]
-    virtual void slot_002();  // slot +0x008: sub_4237A0 [matched] — Source/simple/batch15.cpp
+    virtual void slot_002();  // slot +0x008: sub_4237A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_003();  // slot +0x00C: sub_4CEDF0 [lifted]
     void method_000();  // sub_4CE010 [lifted]: same object, connected by this-edge call sites
 };

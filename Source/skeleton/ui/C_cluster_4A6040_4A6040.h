@@ -9,5 +9,5 @@ public:
     void method_000();  // sub_4A6040 [lifted]
     void method_001();  // sub_50D6D0 [lifted]
     void method_002();  // sub_513DB0 [lifted]
-    void method_003();  // sub_514400 [matched] — Source/simple/class_51_getters.cpp
+    void method_003();  // sub_514400 [matched] — Source/ui/C_cluster_4A6040.cpp
 };

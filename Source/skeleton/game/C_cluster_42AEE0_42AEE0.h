@@ -7,6 +7,6 @@
 class C_cluster_42AEE0 {
 public:
     void method_000();  // sub_42AEE0 [lifted]
-    void method_001();  // sub_42AF60 [matched] — Source/simple/sub_42AF60.cpp
+    void method_001();  // sub_42AF60 [matched] — Source/game/C_cluster_42AEE0.cpp
     void method_002();  // sub_42AF90 [lifted]
 };

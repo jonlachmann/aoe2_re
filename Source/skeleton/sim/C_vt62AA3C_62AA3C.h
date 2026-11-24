@@ -9,6 +9,6 @@ class C_vt62AA3C {
 public:
     virtual void slot_000();  // slot +0x000: sub_58A350 [lifted]
     virtual void slot_001();  // slot +0x004: sub_58A3C0 [lifted]
-    virtual void slot_002();  // slot +0x008: sub_58A5C0 [matched] — Source/simple/sub_58A5C0.cpp
+    virtual void slot_002();  // slot +0x008: sub_58A5C0 [matched] — Source/sim/C_vt62AA3C.cpp
     virtual void slot_003();  // slot +0x00C: sub_58A5E0 [lifted]
 };

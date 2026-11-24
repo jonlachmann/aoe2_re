@@ -7,5 +7,5 @@
 class C_cluster_456360 {
 public:
     void method_000();  // sub_456360 [lifted]
-    void method_001();  // sub_5532F0 [matched] — Source/simple/batch14.cpp
+    void method_001();  // sub_5532F0 [matched] — Source/gfx/C_cluster_456360.cpp
 };

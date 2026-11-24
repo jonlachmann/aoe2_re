@@ -6,7 +6,7 @@
 
 class C_cluster_4ACB80 {
 public:
-    void method_000();  // sub_4ACB80 [matched] — Source/simple/class_4ACC60.cpp
+    void method_000();  // sub_4ACB80 [matched] — Source/ui/C_cluster_4ACB80.cpp
     void method_001();  // sub_4ACBC0 [lifted]
-    void method_002();  // sub_4AD440 [matched] — Source/simple/sub_4AD440.cpp
+    void method_002();  // sub_4AD440 [matched] — Source/ui/C_cluster_4ACB80.cpp
 };

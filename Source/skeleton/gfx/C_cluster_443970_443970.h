@@ -31,7 +31,7 @@ public:
     void method_022();  // sub_5AD270 [lifted]
     void method_023();  // sub_5C3170 [lifted]
     void method_024();  // sub_5C5330 [lifted]
-    void method_025();  // sub_5C53B0 [matched] — Source/simple/sub_5C53B0.cpp
+    void method_025();  // sub_5C53B0 [matched] — Source/gfx/C_cluster_443970.cpp
     void method_026();  // sub_5D1F50 [lifted]
     void method_027();  // sub_5DE810 [lifted]
     void method_028();  // sub_5DEF00 [lifted]

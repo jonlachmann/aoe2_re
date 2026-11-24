@@ -21,18 +21,18 @@ public:
     virtual void slot_009();  // slot +0x024: sub_47A080 [lifted]
     virtual void slot_010();  // slot +0x028: sub_47A930 [lifted]
     virtual void slot_011();  // slot +0x02C: sub_47ADB0 [lifted]
-    virtual void slot_012();  // slot +0x030: sub_407C50 [matched] — Source/simple/batch14.cpp
-    virtual void slot_013();  // slot +0x034: sub_407C50 [matched] — Source/simple/batch14.cpp
+    virtual void slot_012();  // slot +0x030: sub_407C50 [matched] — Source/app/C_vt61CE24.cpp
+    virtual void slot_013();  // slot +0x034: sub_407C50 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_014();  // slot +0x038: sub_47AC40 [lifted]
-    virtual void slot_015();  // slot +0x03C: sub_477990 [matched] — Source/simple/class_47_getters.cpp
-    virtual void slot_016();  // slot +0x040: sub_4779A0 [matched] — Source/simple/batch14.cpp
-    virtual void slot_017();  // slot +0x044: sub_4779B0 [matched] — Source/simple/batch14.cpp
-    virtual void slot_018();  // slot +0x048: sub_473C70 [matched] — Source/simple/class_47_getters.cpp
-    virtual void slot_019();  // slot +0x04C: sub_473C80 [matched] — Source/simple/class_47_getters.cpp
+    virtual void slot_015();  // slot +0x03C: sub_477990 [matched] — Source/ui/C_vt620C7C.cpp
+    virtual void slot_016();  // slot +0x040: sub_4779A0 [matched] — Source/ui/C_vt620C7C.cpp
+    virtual void slot_017();  // slot +0x044: sub_4779B0 [matched] — Source/ui/C_vt620C7C.cpp
+    virtual void slot_018();  // slot +0x048: sub_473C70 [matched] — Source/ui/C_vt620C7C.cpp
+    virtual void slot_019();  // slot +0x04C: sub_473C80 [matched] — Source/ui/C_vt620C7C.cpp
     virtual void slot_020();  // slot +0x050: sub_4779C0 [lifted]
     virtual void slot_021();  // slot +0x054: sub_477A40 [lifted]
-    virtual void slot_022();  // slot +0x058: sub_473C90 [matched] — Source/simple/class_47_getters.cpp
-    virtual void slot_023();  // slot +0x05C: sub_473CA0 [matched] — Source/simple/class_47_getters.cpp
+    virtual void slot_022();  // slot +0x058: sub_473C90 [matched] — Source/ui/C_vt620C7C.cpp
+    virtual void slot_023();  // slot +0x05C: sub_473CA0 [matched] — Source/ui/C_vt620C7C.cpp
     virtual void slot_024();  // slot +0x060: sub_477AA0 [lifted]
     void method_000();  // sub_4778B0 [lifted]: same object, connected by this-edge call sites
 };

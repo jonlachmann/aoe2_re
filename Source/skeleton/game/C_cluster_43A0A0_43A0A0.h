@@ -6,7 +6,7 @@
 
 class C_cluster_43A0A0 {
 public:
-    void method_000();  // sub_43A0A0 [matched] — Source/simple/class_43_setters.cpp
+    void method_000();  // sub_43A0A0 [matched] — Source/game/C_cluster_43A0A0.cpp
     void method_001();  // sub_494320 [lifted]
     void method_002();  // sub_494390 [lifted]
     void method_003();  // sub_494400 [lifted]

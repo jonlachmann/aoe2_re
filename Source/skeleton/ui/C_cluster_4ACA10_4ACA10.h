@@ -6,6 +6,6 @@
 
 class C_cluster_4ACA10 {
 public:
-    void method_000();  // sub_4ACA10 [matched] — Source/simple/batch2.cpp
+    void method_000();  // sub_4ACA10 [matched] — Source/ui/C_cluster_4ACA10.cpp
     void method_001();  // sub_4AEE80 [lifted]
 };

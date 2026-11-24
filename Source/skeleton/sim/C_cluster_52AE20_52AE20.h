@@ -6,6 +6,6 @@
 
 class C_cluster_52AE20 {
 public:
-    void method_000();  // sub_52AE20 [matched] — Source/simple/sub_52AE20.cpp
+    void method_000();  // sub_52AE20 [matched] — Source/app/C_vt61CE24.cpp
     void method_001();  // sub_5353E0 [lifted]
 };

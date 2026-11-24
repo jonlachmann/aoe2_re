@@ -14,8 +14,8 @@ public:
     virtual void slot_002();  // slot +0x008: sub_545850 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_405E60 [lifted]
     virtual void slot_004();  // slot +0x010: sub_405EB0 [lifted]
-    virtual void slot_005();  // slot +0x014: sub_406220 [matched] — Source/simple/batch2.cpp
-    virtual void slot_006();  // slot +0x018: sub_4061C0 [matched] — Source/simple/sub_4061C0.cpp
+    virtual void slot_005();  // slot +0x014: sub_406220 [matched] — Source/app/C_vt61CAB4.cpp
+    virtual void slot_006();  // slot +0x018: sub_4061C0 [matched] — Source/app/C_vt61CAB4.cpp
     virtual void slot_007();  // slot +0x01C: sub_4061F0 [lifted]
     void method_000();  // sub_545090 [lifted]: same object, connected by this-edge call sites
 };

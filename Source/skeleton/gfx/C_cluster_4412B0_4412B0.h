@@ -7,9 +7,9 @@
 class C_cluster_4412B0 {
 public:
     void method_000();  // sub_4412B0 [lifted]
-    void method_001();  // sub_441300 [matched] — Source/simple/sub_441DE0.cpp
+    void method_001();  // sub_441300 [matched] — Source/gfx/C_cluster_4412B0.cpp
     void method_002();  // sub_441330 [lifted]
-    void method_003();  // sub_441DE0 [matched] — Source/simple/sub_441DE0.cpp
+    void method_003();  // sub_441DE0 [matched] — Source/gfx/C_cluster_4412B0.cpp
     void method_004();  // sub_442600 [lifted]
     void method_005();  // sub_442630 [lifted]
     void method_006();  // sub_442790 [lifted]

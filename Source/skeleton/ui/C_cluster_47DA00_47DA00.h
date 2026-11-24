@@ -6,6 +6,6 @@
 
 class C_cluster_47DA00 {
 public:
-    void method_000();  // sub_47DA00 [matched] — Source/simple/simple_getters2.cpp
+    void method_000();  // sub_47DA00 [matched] — Source/ui/C_cluster_47DA00.cpp
     void method_001();  // sub_5B0C30 [lifted]
 };

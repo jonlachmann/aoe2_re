@@ -6,7 +6,7 @@
 
 class C_cluster_5B4530 {
 public:
-    void method_000();  // sub_5B4530 [matched] — Source/simple/class_5B_setters.cpp
-    void method_001();  // sub_5B4550 [matched] — Source/simple/class_5B_setters.cpp
+    void method_000();  // sub_5B4530 [matched] — Source/sim/C_cluster_5B4530.cpp
+    void method_001();  // sub_5B4550 [matched] — Source/sim/C_cluster_5B4530.cpp
     void method_002();  // sub_5BCA60 [lifted]
 };

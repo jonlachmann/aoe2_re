@@ -12,7 +12,7 @@ public:
     virtual void slot_000();  // slot +0x000: sub_5A4330 [lifted]
     virtual void slot_001();  // slot +0x004: sub_59E1F0 [lifted]
     virtual void slot_002();  // slot +0x008: sub_4AAE60 [lifted]
-    virtual void slot_003();  // slot +0x00C: sub_4237A0 [matched] — Source/simple/batch15.cpp
+    virtual void slot_003();  // slot +0x00C: sub_4237A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_004();  // slot +0x010: sub_5A02F0 [lifted]
     virtual void slot_005();  // slot +0x014: sub_5A0640 [lifted]
     virtual void slot_006();  // slot +0x018: sub_4AAEA0 [lifted]
@@ -23,7 +23,7 @@ public:
     virtual void slot_011();  // slot +0x02C: sub_5A13A0 [lifted]
     virtual void slot_012();  // slot +0x030: sub_4AAFD0 [lifted]
     virtual void slot_013();  // slot +0x034: sub_4AB020 [lifted]
-    virtual void slot_014();  // slot +0x038: sub_407C50 [matched] — Source/simple/batch14.cpp
+    virtual void slot_014();  // slot +0x038: sub_407C50 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_015();  // slot +0x03C: sub_5A0EB0 [lifted]
     virtual void slot_016();  // slot +0x040: sub_4AB0B0 [lifted]
     virtual void slot_017();  // slot +0x044: sub_4AB0E0 [lifted]
@@ -44,8 +44,8 @@ public:
     virtual void slot_032();  // slot +0x080: sub_59D7F0 [lifted]
     virtual void slot_033();  // slot +0x084: sub_5A4530 [lifted]
     virtual void slot_034();  // slot +0x088: sub_4AC890 [lifted]
-    virtual void slot_035();  // slot +0x08C: sub_4AC9F0 [matched] — Source/simple/class_4AC9F0.cpp
-    virtual void slot_036();  // slot +0x090: sub_5A46C0 [matched] — Source/simple/batch21.cpp
+    virtual void slot_035();  // slot +0x08C: sub_4AC9F0 [matched] — Source/ui/C_vt622368.cpp
+    virtual void slot_036();  // slot +0x090: sub_5A46C0 [matched] — Source/sim/C_vt62B750.cpp
     virtual void slot_037();  // slot +0x094: sub_5A3400 [lifted]
     virtual void slot_038();  // slot +0x098: sub_5A3480 [lifted]
     virtual void slot_039();  // slot +0x09C: sub_5A3500 [lifted]
@@ -62,7 +62,7 @@ public:
     virtual void slot_050();  // slot +0x0C8: sub_4AE260 [lifted]
     virtual void slot_051();  // slot +0x0CC: sub_4AE2B0 [lifted]
     virtual void slot_052();  // slot +0x0D0: sub_4AE2F0 [lifted]
-    virtual void slot_053();  // slot +0x0D4: sub_547EE0 [matched] — Source/simple/batch12.cpp
+    virtual void slot_053();  // slot +0x0D4: sub_547EE0 [matched] — Source/gfx/C_vt61DA40.cpp
     virtual void slot_054();  // slot +0x0D8: sub_4AE350 [lifted]
     virtual void slot_055();  // slot +0x0DC: sub_4AE390 [lifted]
     virtual void slot_056();  // slot +0x0E0: sub_4AE410 [lifted]
@@ -88,8 +88,8 @@ public:
     virtual void slot_076();  // slot +0x130: sub_5A23B0 [lifted]
     virtual void slot_077();  // slot +0x134: sub_5A5190 [lifted]
     virtual void slot_078();  // slot +0x138: sub_5A51E0 [lifted]
-    virtual void slot_079();  // slot +0x13C: sub_407B80 [matched] — Source/simple/batch12.cpp
-    virtual void slot_080();  // slot +0x140: sub_5E2CC0 [matched] — Source/simple/batch14.cpp
+    virtual void slot_079();  // slot +0x13C: sub_407B80 [matched] — Source/app/C_vt61CE24.cpp
+    virtual void slot_080();  // slot +0x140: sub_5E2CC0 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_081();  // slot +0x144: sub_5A5230 [lifted]
     virtual void slot_082();  // slot +0x148: sub_5A5270 [lifted]
     virtual void slot_083();  // slot +0x14C: sub_59F250 [lifted]
@@ -100,15 +100,15 @@ public:
     virtual void slot_088();  // slot +0x160: sub_5A11B0 [lifted]
     virtual void slot_089();  // slot +0x164: sub_5A1210 [lifted]
     virtual void slot_090();  // slot +0x168: sub_5A1240 [lifted]
-    virtual void slot_091();  // slot +0x16C: sub_5A12C0 [matched] — Source/simple/batch14.cpp
+    virtual void slot_091();  // slot +0x16C: sub_5A12C0 [matched] — Source/sim/C_vt62B5A0.cpp
     virtual void slot_092();  // slot +0x170: sub_5A1270 [lifted]
     virtual void slot_093();  // slot +0x174: sub_5A1290 [lifted]
-    virtual void slot_094();  // slot +0x178: sub_5A12C0 [matched] — Source/simple/batch14.cpp
+    virtual void slot_094();  // slot +0x178: sub_5A12C0 [matched] — Source/sim/C_vt62B5A0.cpp
     virtual void slot_095();  // slot +0x17C: sub_5A12D0 [lifted]
     virtual void slot_096();  // slot +0x180: sub_5A12F0 [lifted]
     virtual void slot_097();  // slot +0x184: sub_5A1310 [lifted]
     virtual void slot_098();  // slot +0x188: sub_5A1310 [lifted]
     virtual void slot_099();  // slot +0x18C: sub_5A1D30 [lifted]
-    virtual void slot_100();  // slot +0x190: sub_5A4790 [matched] — Source/simple/batch12.cpp
+    virtual void slot_100();  // slot +0x190: sub_5A4790 [matched] — Source/app/C_vt61D890.cpp
     void method_000();  // sub_5A44B0 [lifted]: same object, connected by this-edge call sites
 };

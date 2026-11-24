@@ -12,14 +12,14 @@ public:
     virtual void slot_000();  // slot +0x000: sub_587A00 [lifted]
     virtual void slot_001();  // slot +0x004: sub_412080 [lifted]
     virtual void slot_002();  // slot +0x008: sub_412530 [lifted]
-    virtual void slot_003();  // slot +0x00C: sub_412BC0 [matched] — Source/simple/batch9.cpp
+    virtual void slot_003();  // slot +0x00C: sub_412BC0 [matched] — Source/app/C_vt61D890.cpp
     virtual void slot_004();  // slot +0x010: sub_413350 [lifted]
     virtual void slot_005();  // slot +0x014: sub_413450 [lifted]
     virtual void slot_006();  // slot +0x018: sub_413540 [lifted]
     virtual void slot_007();  // slot +0x01C: sub_413510 [lifted]
     virtual void slot_008();  // slot +0x020: sub_4135D0 [lifted]
     virtual void slot_009();  // slot +0x024: sub_413790 [lifted]
-    virtual void slot_010();  // slot +0x028: sub_5EA410 [matched] — Source/simple/batch12.cpp
+    virtual void slot_010();  // slot +0x028: sub_5EA410 [matched] — Source/engine-late/C_view.cpp
     virtual void slot_011();  // slot +0x02C: sub_4137C0 [lifted]
     virtual void slot_012();  // slot +0x030: sub_414BD0 [lifted]
     virtual void slot_013();  // slot +0x034: sub_414CA0 [lifted]
@@ -56,11 +56,11 @@ public:
     virtual void slot_044();  // slot +0x0B0: sub_416C40 [lifted]
     virtual void slot_045();  // slot +0x0B4: sub_416CB0 [lifted]
     virtual void slot_046();  // slot +0x0B8: sub_416DE0 [lifted]
-    virtual void slot_047();  // slot +0x0BC: sub_5A4790 [matched] — Source/simple/batch12.cpp
-    virtual void slot_048();  // slot +0x0C0: sub_407C00 [matched] — Source/simple/batch12.cpp
+    virtual void slot_047();  // slot +0x0BC: sub_5A4790 [matched] — Source/app/C_vt61D890.cpp
+    virtual void slot_048();  // slot +0x0C0: sub_407C00 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_049();  // slot +0x0C4: sub_417560 [lifted]
     virtual void slot_050();  // slot +0x0C8: sub_4175E0 [lifted]
-    virtual void slot_051();  // slot +0x0CC: sub_407BA0 [matched] — Source/simple/batch12.cpp
+    virtual void slot_051();  // slot +0x0CC: sub_407BA0 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_052();  // slot +0x0D0: sub_417690 [lifted]
     virtual void slot_053();  // slot +0x0D4: sub_584AC0 [lifted]
     virtual void slot_054();  // slot +0x0D8: sub_584B90 [lifted]

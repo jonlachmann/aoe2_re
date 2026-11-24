@@ -19,5 +19,5 @@ public:
     void method_010();  // sub_471BE0 [lifted]
     void method_011();  // sub_472840 [lifted]
     void method_012();  // sub_472970 [lifted]
-    void method_013();  // sub_472A70 [wip] — Source/simple/batch19.cpp
+    void method_013();  // sub_472A70 [wip] — Source/ui/C_cluster_46BF90.cpp
 };

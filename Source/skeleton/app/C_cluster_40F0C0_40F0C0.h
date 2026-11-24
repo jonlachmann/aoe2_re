@@ -10,7 +10,7 @@ public:
     void method_001();  // sub_40F170 [lifted]
     void method_002();  // sub_40F1B0 [lifted]
     void method_003();  // sub_40F1F0 [lifted]
-    void method_004();  // sub_40F4B0 [matched] — Source/simple/batch15.cpp
+    void method_004();  // sub_40F4B0 [matched] — Source/app/C_cluster_40F0C0.cpp
     void method_005();  // sub_40F4D0 [lifted]
     void method_006();  // sub_40F4F0 [lifted]
     void method_007();  // sub_40F690 [lifted]

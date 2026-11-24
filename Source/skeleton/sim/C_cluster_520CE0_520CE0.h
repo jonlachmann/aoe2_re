@@ -19,8 +19,8 @@ public:
     void method_010();  // sub_5217F0 [lifted]
     void method_011();  // sub_521870 [lifted]
     void method_012();  // sub_521970 [lifted]
-    void method_013();  // sub_5219B0 [wip] — Source/simple/batch20.cpp
-    void method_014();  // sub_5219E0 [wip] — Source/simple/batch20.cpp
+    void method_013();  // sub_5219B0 [wip] — Source/sim/C_cluster_520CE0.cpp
+    void method_014();  // sub_5219E0 [wip] — Source/sim/C_cluster_520CE0.cpp
     void method_015();  // sub_521A10 [lifted]
     void method_016();  // sub_521AC0 [lifted]
     void method_017();  // sub_521BE0 [lifted]

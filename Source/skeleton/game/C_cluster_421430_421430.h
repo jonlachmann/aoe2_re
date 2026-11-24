@@ -7,5 +7,5 @@
 class C_cluster_421430 {
 public:
     void method_000();  // sub_421430 [lifted]
-    void method_001();  // sub_421A70 [matched] — Source/simple/class_421Accessors.cpp
+    void method_001();  // sub_421A70 [matched] — Source/game/C_cluster_421430.cpp
 };

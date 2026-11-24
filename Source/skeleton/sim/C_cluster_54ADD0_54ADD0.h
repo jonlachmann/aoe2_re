@@ -6,6 +6,6 @@
 
 class C_cluster_54ADD0 {
 public:
-    void method_000();  // sub_54ADD0 [matched] — Source/simple/class_54_setters.cpp
+    void method_000();  // sub_54ADD0 [matched] — Source/app/C_vt61C9D4.cpp
     void method_001();  // sub_5C1590 [lifted]
 };

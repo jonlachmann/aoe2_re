@@ -7,5 +7,5 @@
 class C_cluster_489C60 {
 public:
     void method_000();  // sub_489C60 [lifted]
-    void method_001();  // sub_489EE0 [matched] — Source/simple/batch19.cpp
+    void method_001();  // sub_489EE0 [matched] — Source/ui/C_cluster_489C60.cpp
 };
