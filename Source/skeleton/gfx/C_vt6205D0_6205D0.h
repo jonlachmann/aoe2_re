@@ -59,7 +59,7 @@ public:
     virtual void slot_049();  // slot +0x0C4: sub_529AB0 [lifted]
     virtual void slot_050();  // slot +0x0C8: sub_41A060 [matched] — Source/simple/class_41_getters.cpp
     virtual void slot_051();  // slot +0x0CC: sub_41A3F0 [lifted]
-    virtual void slot_052();  // slot +0x0D0: sub_41A410 [verified]
+    virtual void slot_052();  // slot +0x0D0: sub_41A410 [matched] — Source/simple/batch19.cpp
     virtual void slot_053();  // slot +0x0D4: sub_547EE0 [matched] — Source/simple/batch12.cpp
     virtual void slot_054();  // slot +0x0D8: sub_407B40 [matched] — Source/simple/batch12.cpp
     virtual void slot_055();  // slot +0x0DC: sub_52AE20 [matched] — Source/simple/sub_52AE20.cpp
@@ -141,7 +141,7 @@ public:
     virtual void slot_131();  // slot +0x20C: sub_409A10 [matched] — Source/simple/batch12.cpp
     virtual void slot_132();  // slot +0x210: sub_409A10 [matched] — Source/simple/batch12.cpp
     virtual void slot_133();  // slot +0x214: sub_407C50 [matched] — Source/simple/batch14.cpp
-    virtual void slot_134();  // slot +0x218: sub_52C6A0 [verified]
+    virtual void slot_134();  // slot +0x218: sub_52C6A0 [matched] — Source/simple/batch20.cpp
     virtual void slot_135();  // slot +0x21C: sub_407B40 [matched] — Source/simple/batch12.cpp
     virtual void slot_136();  // slot +0x220: sub_407B40 [matched] — Source/simple/batch12.cpp
     virtual void slot_137();  // slot +0x224: sub_407B40 [matched] — Source/simple/batch12.cpp
@@ -150,7 +150,7 @@ public:
     virtual void slot_140();  // slot +0x230: sub_526E10 [lifted]
     virtual void slot_141();  // slot +0x234: sub_5274A0 [lifted]
     virtual void slot_142();  // slot +0x238: sub_527500 [lifted]
-    virtual void slot_143();  // slot +0x23C: sub_52C430 [verified]
+    virtual void slot_143();  // slot +0x23C: sub_52C430 [wip] — Source/simple/batch20.cpp
     virtual void slot_144();  // slot +0x240: sub_407B40 [matched] — Source/simple/batch12.cpp
     virtual void slot_145();  // slot +0x244: sub_407BA0 [matched] — Source/simple/batch12.cpp
     virtual void slot_146();  // slot +0x248: sub_407B80 [matched] — Source/simple/batch12.cpp

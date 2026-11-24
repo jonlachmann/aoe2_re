@@ -140,7 +140,7 @@ public:
     void method_040();  // sub_5BAF70 [matched]: same object, connected by this-edge call sites — Source/simple/class_5BAFA0.cpp
     void method_041();  // sub_5BAFA0 [matched]: same object, connected by this-edge call sites — Source/simple/class_5BAFA0.cpp
     void method_042();  // sub_5BAFD0 [matched]: same object, connected by this-edge call sites — Source/simple/class_5BAFA0.cpp
-    void method_043();  // sub_5BB000 [verified]: same object, connected by this-edge call sites
+    void method_043();  // sub_5BB000 [wip]: same object, connected by this-edge call sites — Source/simple/batch21.cpp
     void method_044();  // sub_5BB040 [matched]: same object, connected by this-edge call sites — Source/simple/class_5BAFA0.cpp
     void method_045();  // sub_5BB080 [lifted]: same object, connected by this-edge call sites
     void method_046();  // sub_5BB170 [matched]: same object, connected by this-edge call sites — Source/simple/class_5B_setters.cpp

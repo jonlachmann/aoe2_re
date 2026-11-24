@@ -54,7 +54,7 @@ public:
     virtual void slot_044();  // slot +0x0B0: sub_416C40 [lifted]
     virtual void slot_045();  // slot +0x0B4: sub_416CB0 [lifted]
     virtual void slot_046();  // slot +0x0B8: sub_416DE0 [lifted]
-    virtual void slot_047();  // slot +0x0BC: sub_587440 [verified]
+    virtual void slot_047();  // slot +0x0BC: sub_587440 [matched] — Source/simple/batch21.cpp
     virtual void slot_048();  // slot +0x0C0: sub_407C00 [matched] — Source/simple/batch12.cpp
     virtual void slot_049();  // slot +0x0C4: sub_417560 [lifted]
     virtual void slot_050();  // slot +0x0C8: sub_4175E0 [lifted]

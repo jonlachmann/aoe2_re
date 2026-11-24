@@ -6,7 +6,7 @@
 
 class C_cluster_4AC3E0 {
 public:
-    void method_000();  // sub_4AC3E0 [verified]
+    void method_000();  // sub_4AC3E0 [matched] — Source/simple/batch20.cpp
     void method_001();  // sub_5A4B70 [lifted]
     void method_002();  // sub_5A4C50 [lifted]
 };

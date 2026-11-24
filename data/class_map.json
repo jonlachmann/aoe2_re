@@ -1830,8 +1830,8 @@
    {
     "address": "0x41A410",
     "name": "sub_41A410",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x48CB90",
@@ -1938,8 +1938,8 @@
    {
     "address": "0x48E2D0",
     "name": "sub_48E2D0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x474800",
@@ -2250,8 +2250,8 @@
    {
     "address": "0x48E340",
     "name": "sub_48E340",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x48E370",
@@ -2322,8 +2322,8 @@
    {
     "address": "0x52C6A0",
     "name": "sub_52C6A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -2538,8 +2538,8 @@
    {
     "address": "0x4919A0",
     "name": "sub_4919A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x4919E0",
@@ -5221,8 +5221,8 @@
    {
     "address": "0x41A410",
     "name": "sub_41A410",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x547EE0",
@@ -5713,8 +5713,8 @@
    {
     "address": "0x52C6A0",
     "name": "sub_52C6A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -5767,8 +5767,8 @@
    {
     "address": "0x52C430",
     "name": "sub_52C430",
-    "state": "verified",
-    "file": null
+    "state": "wip",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -7397,8 +7397,8 @@
    {
     "address": "0x48E2D0",
     "name": "sub_48E2D0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x436B40",
@@ -7709,8 +7709,8 @@
    {
     "address": "0x48E340",
     "name": "sub_48E340",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x48E370",
@@ -7781,8 +7781,8 @@
    {
     "address": "0x52C6A0",
     "name": "sub_52C6A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -7997,8 +7997,8 @@
    {
     "address": "0x4919A0",
     "name": "sub_4919A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x4919E0",
@@ -17290,8 +17290,8 @@
    {
     "address": "0x41A410",
     "name": "sub_41A410",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x547EE0",
@@ -17782,8 +17782,8 @@
    {
     "address": "0x52C6A0",
     "name": "sub_52C6A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -17836,8 +17836,8 @@
    {
     "address": "0x52C430",
     "name": "sub_52C430",
-    "state": "verified",
-    "file": null
+    "state": "wip",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -20246,8 +20246,8 @@
    {
     "address": "0x48E2D0",
     "name": "sub_48E2D0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x436B40",
@@ -20558,8 +20558,8 @@
    {
     "address": "0x48E340",
     "name": "sub_48E340",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x48E370",
@@ -20630,8 +20630,8 @@
    {
     "address": "0x52C6A0",
     "name": "sub_52C6A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -20846,8 +20846,8 @@
    {
     "address": "0x4919A0",
     "name": "sub_4919A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x4919E0",
@@ -21708,8 +21708,8 @@
    {
     "address": "0x41A410",
     "name": "sub_41A410",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x48CB90",
@@ -21816,8 +21816,8 @@
    {
     "address": "0x48E2D0",
     "name": "sub_48E2D0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x474800",
@@ -22128,8 +22128,8 @@
    {
     "address": "0x48E340",
     "name": "sub_48E340",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x48E370",
@@ -22200,8 +22200,8 @@
    {
     "address": "0x52C6A0",
     "name": "sub_52C6A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -22416,8 +22416,8 @@
    {
     "address": "0x4919A0",
     "name": "sub_4919A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x4919E0",
@@ -41890,8 +41890,8 @@
    {
     "address": "0x501980",
     "name": "sub_501980",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407C00",
@@ -47169,8 +47169,8 @@
    {
     "address": "0x52C6A0",
     "name": "sub_52C6A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -47223,8 +47223,8 @@
    {
     "address": "0x52C430",
     "name": "sub_52C430",
-    "state": "verified",
-    "file": null
+    "state": "wip",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -48010,8 +48010,8 @@
    {
     "address": "0x535E90",
     "name": "sub_535E90",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x535EC0",
@@ -48226,8 +48226,8 @@
    {
     "address": "0x48E340",
     "name": "sub_48E340",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x48E370",
@@ -48514,8 +48514,8 @@
    {
     "address": "0x4919A0",
     "name": "sub_4919A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x4919E0",
@@ -48604,8 +48604,8 @@
    {
     "address": "0x531F00",
     "name": "sub_531F00",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x41A210",
@@ -49408,8 +49408,8 @@
    {
     "address": "0x535E90",
     "name": "sub_535E90",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x535EC0",
@@ -49624,8 +49624,8 @@
    {
     "address": "0x48E340",
     "name": "sub_48E340",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x48E370",
@@ -49696,8 +49696,8 @@
    {
     "address": "0x52C6A0",
     "name": "sub_52C6A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x537D50",
@@ -49912,8 +49912,8 @@
    {
     "address": "0x4919A0",
     "name": "sub_4919A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x4919E0",
@@ -51074,8 +51074,8 @@
    {
     "address": "0x52C6A0",
     "name": "sub_52C6A0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -51128,8 +51128,8 @@
    {
     "address": "0x52C430",
     "name": "sub_52C430",
-    "state": "verified",
-    "file": null
+    "state": "wip",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x407B40",
@@ -58985,8 +58985,8 @@
    {
     "address": "0x587440",
     "name": "sub_587440",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch21.cpp"
    },
    {
     "address": "0x407C00",
@@ -63193,8 +63193,8 @@
    {
     "address": "0x5A46C0",
     "name": "sub_5A46C0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch21.cpp"
    },
    {
     "address": "0x5A3400",
@@ -66800,8 +66800,8 @@
    {
     "address": "0x5BB000",
     "name": "sub_5BB000",
-    "state": "verified",
-    "file": null,
+    "state": "wip",
+    "file": "Source/simple/batch21.cpp",
     "evidence": "same object, connected by this-edge call sites"
    },
    {
@@ -72367,8 +72367,8 @@
    {
     "address": "0x41A410",
     "name": "sub_41A410",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x435A10",
@@ -73055,8 +73055,8 @@
    {
     "address": "0x437740",
     "name": "sub_437740",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    },
    {
     "address": "0x437760",
@@ -74403,8 +74403,8 @@
    {
     "address": "0x472A70",
     "name": "sub_472A70",
-    "state": "verified",
-    "file": null
+    "state": "wip",
+    "file": "Source/simple/batch19.cpp"
    }
   ],
   "extra_methods": []
@@ -75125,8 +75125,8 @@
    {
     "address": "0x489EE0",
     "name": "sub_489EE0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch19.cpp"
    }
   ],
   "extra_methods": []
@@ -76595,8 +76595,8 @@
    {
     "address": "0x4AC3E0",
     "name": "sub_4AC3E0",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x5A4B70",
@@ -77475,8 +77475,8 @@
    {
     "address": "0x5C1A00",
     "name": "sub_5C1A00",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch21.cpp"
    },
    {
     "address": "0x5C21A0",
@@ -77813,8 +77813,8 @@
    {
     "address": "0x520130",
     "name": "sub_520130",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch20.cpp"
    }
   ],
   "extra_methods": []
@@ -78027,14 +78027,14 @@
    {
     "address": "0x5219B0",
     "name": "sub_5219B0",
-    "state": "verified",
-    "file": null
+    "state": "wip",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x5219E0",
     "name": "sub_5219E0",
-    "state": "verified",
-    "file": null
+    "state": "wip",
+    "file": "Source/simple/batch20.cpp"
    },
    {
     "address": "0x521A10",
@@ -79487,8 +79487,8 @@
    {
     "address": "0x594E70",
     "name": "sub_594E70",
-    "state": "verified",
-    "file": null
+    "state": "matched",
+    "file": "Source/simple/batch21.cpp"
    },
    {
     "address": "0x594E90",

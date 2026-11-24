@@ -1171,8 +1171,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x406180",
@@ -7022,8 +7022,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x410710",
@@ -10685,8 +10685,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x41A420",
@@ -18781,8 +18781,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x433EA0",
@@ -20147,8 +20147,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x437760",
@@ -20295,8 +20295,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x437990",
@@ -20645,8 +20645,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x438620",
@@ -20785,8 +20785,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x438880",
@@ -20813,8 +20813,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x438910",
@@ -21289,8 +21289,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x439D70",
@@ -22690,8 +22690,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x43EBD0",
@@ -22718,8 +22718,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x43EC20",
@@ -22732,8 +22732,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x43EC50",
@@ -24336,8 +24336,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x446090",
@@ -26224,8 +26224,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x456820",
@@ -26685,8 +26685,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x45AB50",
@@ -29547,8 +29547,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x465940",
@@ -29575,8 +29575,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x4659D0",
@@ -30415,8 +30415,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x46A520",
@@ -31359,8 +31359,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x46C750",
@@ -31373,8 +31373,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x46C770",
@@ -32175,8 +32175,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x472AA0",
@@ -32415,8 +32415,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x473200",
@@ -35755,8 +35755,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x47F7A0",
@@ -36995,8 +36995,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x4875B0",
@@ -37708,8 +37708,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x489EF0",
@@ -38236,8 +38236,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x48BF30",
@@ -38866,8 +38866,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x48E300",
@@ -38929,8 +38929,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x48E370",
@@ -39651,8 +39651,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x4919E0",
@@ -40155,8 +40155,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch19.cpp"
  },
  {
   "address": "0x4937C0",
@@ -40505,8 +40505,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x494DE0",
@@ -41402,8 +41402,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x499BC0",
@@ -41994,8 +41994,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x49BCC0",
@@ -49403,8 +49403,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x4A9F30",
@@ -49929,8 +49929,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x4AC420",
@@ -50559,8 +50559,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x4ADF60",
@@ -51175,8 +51175,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x4AED80",
@@ -57245,8 +57245,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x4BF6B0",
@@ -63037,8 +63037,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x4E8270",
@@ -65559,8 +65559,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x5019A0",
@@ -68598,8 +68598,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x520170",
@@ -69270,8 +69270,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x5219E0",
@@ -69284,8 +69284,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x521A10",
@@ -69880,8 +69880,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x524360",
@@ -69992,8 +69992,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x524810",
@@ -71026,8 +71026,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x529B90",
@@ -72255,8 +72255,8 @@
   ],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x52C470",
@@ -72332,8 +72332,8 @@
   ],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x52C6B0",
@@ -73481,8 +73481,8 @@
   ],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x531F30",
@@ -74229,8 +74229,8 @@
   ],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x535EC0",
@@ -75051,8 +75051,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x5398D0",
@@ -75065,8 +75065,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x539910",
@@ -76250,8 +76250,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x540C10",
@@ -78725,8 +78725,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x54BDE0",
@@ -78739,8 +78739,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x54BE10",
@@ -82499,8 +82499,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x55F940",
@@ -82513,8 +82513,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x55F970",
@@ -84929,8 +84929,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x5716C0",
@@ -84943,8 +84943,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch20.cpp"
  },
  {
   "address": "0x5716F0",
@@ -85649,8 +85649,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x579660",
@@ -86533,8 +86533,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x580B20",
@@ -86631,8 +86631,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x580E70",
@@ -86729,8 +86729,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x581310",
@@ -86743,8 +86743,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x581340",
@@ -86995,8 +86995,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5836B0",
@@ -87760,8 +87760,8 @@
   ],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x587470",
@@ -90705,8 +90705,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x594E90",
@@ -90901,8 +90901,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5955E0",
@@ -90915,8 +90915,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x595600",
@@ -92260,8 +92260,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x59AC20",
@@ -94116,7 +94116,7 @@
  },
  {
   "address": "0x5A46C0",
-  "size": 6,
+  "size": 25,
   "calls": 0,
   "name": "sub_5A46C0",
   "names": [],
@@ -94127,22 +94127,8 @@
   ],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
- },
- {
-  "address": "0x5A46C6",
-  "size": 19,
-  "calls": 0,
-  "name": "sub_5A46C6",
-  "names": [],
-  "class": null,
-  "class_evidence": null,
-  "slot_classes": [],
-  "module": "sim",
-  "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5A46E0",
@@ -94592,8 +94578,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5A5B10",
@@ -94875,8 +94861,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5A6810",
@@ -97721,8 +97707,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "wip",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5BB030",
@@ -98627,8 +98613,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5BDC20",
@@ -99925,8 +99911,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5C1510",
@@ -100373,8 +100359,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5C1A20",
@@ -102744,8 +102730,8 @@
   "slot_classes": [],
   "module": "engine-late",
   "region": "engine-late",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5D0C80",
@@ -103321,8 +103307,8 @@
   "slot_classes": [],
   "module": "engine-late",
   "region": "engine-late",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5D1F20",
@@ -107141,8 +107127,8 @@
   "slot_classes": [],
   "module": "engine-late",
   "region": "engine-late",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/simple/batch21.cpp"
  },
  {
   "address": "0x5EA2C0",

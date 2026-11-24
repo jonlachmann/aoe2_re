@@ -95,7 +95,7 @@ public:
     virtual void slot_083();  // slot +0x14C: sub_48E300 [lifted]
     virtual void slot_084();  // slot +0x150: sub_408B90 [lifted]
     virtual void slot_085();  // slot +0x154: sub_535E70 [matched] — Source/simple/sub_535E70.cpp
-    virtual void slot_086();  // slot +0x158: sub_535E90 [verified]
+    virtual void slot_086();  // slot +0x158: sub_535E90 [matched] — Source/simple/batch20.cpp
     virtual void slot_087();  // slot +0x15C: sub_535EC0 [matched] — Source/simple/sub_535EC0.cpp
     virtual void slot_088();  // slot +0x160: sub_408BC0 [matched] — Source/simple/batch9.cpp
     virtual void slot_089();  // slot +0x164: sub_408A00 [lifted]
@@ -131,7 +131,7 @@ public:
     virtual void slot_119();  // slot +0x1DC: sub_48E120 [lifted]
     virtual void slot_120();  // slot +0x1E0: sub_531B20 [lifted]
     virtual void slot_121();  // slot +0x1E4: sub_4089E0 [lifted]
-    virtual void slot_122();  // slot +0x1E8: sub_48E340 [verified]
+    virtual void slot_122();  // slot +0x1E8: sub_48E340 [matched] — Source/simple/batch19.cpp
     virtual void slot_123();  // slot +0x1EC: sub_48E370 [lifted]
     virtual void slot_124();  // slot +0x1F0: sub_407C90 [matched] — Source/simple/class_40_setimm.cpp
     virtual void slot_125();  // slot +0x1F4: sub_48E4C0 [lifted]
@@ -179,7 +179,7 @@ public:
     virtual void slot_167();  // slot +0x29C: sub_48F950 [matched] — Source/simple/sub_48F950.cpp
     virtual void slot_168();  // slot +0x2A0: sub_48F970 [matched] — Source/simple/simple_getters2.cpp
     virtual void slot_169();  // slot +0x2A4: sub_48F980 [lifted]
-    virtual void slot_170();  // slot +0x2A8: sub_4919A0 [verified]
+    virtual void slot_170();  // slot +0x2A8: sub_4919A0 [matched] — Source/simple/batch19.cpp
     virtual void slot_171();  // slot +0x2AC: sub_4919E0 [lifted]
     virtual void slot_172();  // slot +0x2B0: sub_491AA0 [lifted]
     virtual void slot_173();  // slot +0x2B4: sub_491B50 [lifted]
@@ -194,7 +194,7 @@ public:
     virtual void slot_182();  // slot +0x2D8: sub_52CB60 [matched] — Source/simple/class_52_getters.cpp
     virtual void slot_183();  // slot +0x2DC: sub_531BC0 [lifted]
     virtual void slot_184();  // slot +0x2E0: sub_531B50 [lifted]
-    virtual void slot_185();  // slot +0x2E4: sub_531F00 [verified]
+    virtual void slot_185();  // slot +0x2E4: sub_531F00 [matched] — Source/simple/batch20.cpp
     virtual void slot_186();  // slot +0x2E8: sub_41A210 [lifted]
     virtual void slot_187();  // slot +0x2EC: sub_48CBB0 [matched] — Source/simple/class_48_setimm.cpp
     virtual void slot_188();  // slot +0x2F0: sub_48CC70 [lifted]

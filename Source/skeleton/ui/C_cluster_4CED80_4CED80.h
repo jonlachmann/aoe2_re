@@ -11,6 +11,6 @@ public:
     void method_002();  // sub_4CF690 [lifted]
     void method_003();  // sub_4CF6C0 [lifted]
     void method_004();  // sub_5C1410 [wip] — Source/simple/batch17.cpp
-    void method_005();  // sub_5C1A00 [verified]
+    void method_005();  // sub_5C1A00 [matched] — Source/simple/batch21.cpp
     void method_006();  // sub_5C21A0 [lifted]
 };

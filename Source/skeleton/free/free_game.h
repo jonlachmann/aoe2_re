@@ -271,7 +271,7 @@ void sub_433520();  // size 42, calls 1, lifted, module game
 void sub_433550();  // size 511, calls 2, lifted, module game
 void sub_4337C0();  // size 57, calls 1, lifted, module game
 void sub_433E50();  // size 21, calls 0, wip, module game
-void sub_433E70();  // size 47, calls 0, verified, module game
+void sub_433E70();  // size 47, calls 0, matched, module game
 void sub_433EA0();  // size 38, calls 0, lifted, module game
 void sub_433ED0();  // size 1375, calls 3, lifted, module game
 void sub_434449();  // size 23, calls 3, lifted, module game
@@ -299,7 +299,7 @@ void sub_437880();  // size 58, calls 0, lifted, module game
 void sub_4378D0();  // size 113, calls 1, lifted, module game
 void sub_437950();  // size 7, calls 0, matched, module game
 void sub_437960();  // size 14, calls 0, matched, module game
-void sub_437970();  // size 32, calls 0, verified, module game
+void sub_437970();  // size 32, calls 0, matched, module game
 void sub_437990();  // size 74, calls 0, lifted, module game
 void sub_4379E0();  // size 94, calls 0, lifted, module game
 void sub_437A40();  // size 33, calls 0, matched, module game
@@ -323,7 +323,7 @@ void sub_4382B0();  // size 59, calls 2, lifted, module game
 void sub_4382F0();  // size 595, calls 3, lifted, module game
 void sub_438550();  // size 54, calls 0, lifted, module game
 void sub_438590();  // size 82, calls 2, lifted, module game
-void sub_4385F0();  // size 43, calls 0, verified, module game
+void sub_4385F0();  // size 43, calls 0, matched, module game
 void sub_438620();  // size 13, calls 0, matched, module game
 void sub_438630();  // size 7, calls 0, matched, module game
 void sub_438640();  // size 57, calls 1, lifted, module game
@@ -333,9 +333,9 @@ void sub_4386A0();  // size 94, calls 0, lifted, module game
 void sub_438700();  // size 45, calls 2, lifted, module game
 void sub_438730();  // size 240, calls 4, lifted, module game
 void sub_438820();  // size 26, calls 1, lifted, module game
-void sub_438840();  // size 60, calls 0, verified, module game
+void sub_438840();  // size 60, calls 0, wip, module game
 void sub_438880();  // size 101, calls 1, lifted, module game
-void sub_4388F0();  // size 29, calls 0, verified, module game
+void sub_4388F0();  // size 29, calls 0, matched, module game
 void sub_438910();  // size 54, calls 1, lifted, module game
 void sub_438950();  // size 168, calls 2, lifted, module game
 void sub_438A40();  // size 94, calls 2, lifted, module game
@@ -358,7 +358,7 @@ void sub_439980();  // size 231, calls 3, lifted, module game
 void sub_439A70();  // size 111, calls 4, lifted, module game
 void sub_439AE0();  // size 225, calls 7, lifted, module game
 void sub_439BD0();  // size 188, calls 3, lifted, module game
-void sub_439D40();  // size 43, calls 0, verified, module game
+void sub_439D40();  // size 43, calls 0, matched, module game
 void sub_439F40();  // size 290, calls 8, lifted, module game
 void sub_43A070();  // size 10, calls 0, matched, module game
 void sub_43A080();  // size 3, calls 0, matched, module game
@@ -426,10 +426,10 @@ void sub_43EA90();  // size 153, calls 1, lifted, module game
 void sub_43EB50();  // size 12, calls 1, lifted, module game
 void sub_43EB60();  // size 16, calls 0, lifted, module game
 void sub_43EB80();  // size 16, calls 0, lifted, module game
-void sub_43EBB0();  // size 26, calls 0, verified, module game
+void sub_43EBB0();  // size 26, calls 0, matched, module game
 void sub_43EBD0();  // size 36, calls 0, matched, module game
-void sub_43EC00();  // size 31, calls 0, verified, module game
-void sub_43EC20();  // size 37, calls 0, verified, module game
+void sub_43EC00();  // size 31, calls 0, matched, module game
+void sub_43EC20();  // size 37, calls 0, matched, module game
 void sub_43EC50();  // size 105, calls 0, lifted, module game
 void sub_43F8B0();  // size 13, calls 0, matched, module game
 void sub_43F8C0();  // size 41, calls 1, lifted, module game

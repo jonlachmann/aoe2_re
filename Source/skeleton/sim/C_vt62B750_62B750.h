@@ -45,7 +45,7 @@ public:
     virtual void slot_033();  // slot +0x084: sub_5A4530 [lifted]
     virtual void slot_034();  // slot +0x088: sub_4AC890 [lifted]
     virtual void slot_035();  // slot +0x08C: sub_4AC9F0 [matched] — Source/simple/class_4AC9F0.cpp
-    virtual void slot_036();  // slot +0x090: sub_5A46C0 [verified]
+    virtual void slot_036();  // slot +0x090: sub_5A46C0 [matched] — Source/simple/batch21.cpp
     virtual void slot_037();  // slot +0x094: sub_5A3400 [lifted]
     virtual void slot_038();  // slot +0x098: sub_5A3480 [lifted]
     virtual void slot_039();  // slot +0x09C: sub_5A3500 [lifted]

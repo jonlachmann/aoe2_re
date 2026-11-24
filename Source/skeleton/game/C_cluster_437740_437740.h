@@ -6,6 +6,6 @@
 
 class C_cluster_437740 {
 public:
-    void method_000();  // sub_437740 [verified]
+    void method_000();  // sub_437740 [matched] — Source/simple/batch19.cpp
     void method_001();  // sub_437760 [lifted]
 };

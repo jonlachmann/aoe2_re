@@ -7,5 +7,5 @@
 class C_cluster_5200F0 {
 public:
     void method_000();  // sub_5200F0 [lifted]
-    void method_001();  // sub_520130 [verified]
+    void method_001();  // sub_520130 [matched] — Source/simple/batch20.cpp
 };
