@@ -168,7 +168,8 @@ void Build_5F3FB0(int* out, int a, int b)
 WIP_FUNC(0x5F9100)
 int M_5F9100()
 {
-    return (int)0xffffffffu;
+    int result = -1;
+    return result;
 }
 
 class S407BD0 {

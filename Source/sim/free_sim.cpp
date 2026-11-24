@@ -365,14 +365,15 @@ public:
     int field_4ccc;
     int Set_5C1360(int value);
 };
-WIP_FUNC(0x5C1360)
+MATCH_FUNC(0x5C1360)
 int S5C1360::Set_5C1360(int value)
 {
-    if (value < 0)
-        return field_4ccc = 0;
-    if (value > 1)
-        value = 1;
-    return field_4ccc = value;
+    int result = value;
+    if (result < 0)
+        result = 0;
+    else if (result > 1)
+        result = 1;
+    return field_4ccc = result;
 }
 
 class S5C1410 {
@@ -703,7 +704,7 @@ public:
     int Lookup_524320();
 };
 
-WIP_FUNC(0x524320)
+MATCH_FUNC(0x524320)
 int S524320::Lookup_524320()
 {
     int* v1 = this->field_968;
@@ -712,15 +713,16 @@ int S524320::Lookup_524320()
     if (*(unsigned char*)((char*)v1 + 4) != 70)
         return 0;
     __int16 v3 = *(__int16*)((char*)v1 + 290);
+    int count = v3;
     int result = 0;
-    if (v3 > 0) {
+    if (count > 0) {
         __int16* v4 = *(__int16**)((char*)v1 + 292);
         do {
             if (*v4 == 3)
                 result = v4[1];
             v4 += 2;
-            --v3;
-        } while (v3);
+            --count;
+        } while (count);
     }
     return result;
 }
@@ -728,16 +730,16 @@ int S524320::Lookup_524320()
 // 0x5247E0 — set or clear bit 4 of a member's byte flag.
 int __stdcall sub_5247E0(int a1, int a2);
 
-WIP_FUNC(0x5247E0)
+MATCH_FUNC(0x5247E0)
 int __stdcall sub_5247E0(int a1, int a2)
 {
     int result = a1;
     if (a1) {
-        unsigned char v3 = *(unsigned char*)(a1 + 64);
+        unsigned char* p = (unsigned char*)(a1 + 64);
         if (a2)
-            *(unsigned char*)(a1 + 64) = v3 & 0xEF;
+            *p &= 0xEF;
         else
-            *(unsigned char*)(a1 + 64) = v3 | 0x10;
+            *p |= 0x10;
     }
     return result;
 }
@@ -1144,28 +1146,28 @@ char S583670::Contains_583670(int a2)
 // 0x5955C0 — first element of an optional array behind byte flag +32.
 int __stdcall sub_5955C0(char* a1);
 
-WIP_FUNC(0x5955C0)
+MATCH_FUNC(0x5955C0)
 int __stdcall sub_5955C0(char* a1)
 {
     int result = -1;
     if (!a1)
-        return -1;
-    if (*(unsigned char*)(a1 + 32))
-        return **(int**)(a1 + 36);
+        return result;
+    if (*(unsigned char*)(a1 + 32) > 0)
+        result = **(int**)(a1 + 36);
     return result;
 }
 
 // 0x5955E0 — same pattern with byte flag +24 and array +28.
 int __stdcall sub_5955E0(char* a1);
 
-WIP_FUNC(0x5955E0)
+MATCH_FUNC(0x5955E0)
 int __stdcall sub_5955E0(char* a1)
 {
     int result = -1;
     if (!a1)
-        return -1;
-    if (*(unsigned char*)(a1 + 24))
-        return **(int**)(a1 + 28);
+        return result;
+    if (*(unsigned char*)(a1 + 24) > 0)
+        result = **(int**)(a1 + 28);
     return result;
 }
 

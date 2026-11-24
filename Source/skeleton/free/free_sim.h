@@ -52,11 +52,11 @@ void sub_5237A0();  // size 506, calls 3, lifted, module sim
 void sub_523A40();  // size 84, calls 1, lifted, module sim
 void sub_523AD0();  // size 50, calls 0, lifted, module sim
 void sub_523DD5();  // size 818, calls 4, lifted, module sim
-void sub_524320();  // size 58, calls 0, wip, module sim
+void sub_524320();  // size 58, calls 0, matched, module sim
 void sub_524360();  // size 64, calls 0, lifted, module sim
 void sub_5243A0();  // size 34, calls 1, lifted, module sim
 void sub_5246F0();  // size 178, calls 0, lifted, module sim
-void sub_5247E0();  // size 37, calls 0, wip, module sim
+void sub_5247E0();  // size 37, calls 0, matched, module sim
 void sub_524810();  // size 214, calls 2, lifted, module sim
 void sub_5248F0();  // size 175, calls 1, lifted, module sim
 void sub_5249A0();  // size 56, calls 1, lifted, module sim
@@ -871,8 +871,8 @@ void sub_595420();  // size 66, calls 0, lifted, module sim
 void sub_595470();  // size 69, calls 0, lifted, module sim
 void sub_5954C0();  // size 51, calls 0, lifted, module sim
 void sub_595500();  // size 51, calls 0, lifted, module sim
-void sub_5955C0();  // size 32, calls 0, wip, module sim
-void sub_5955E0();  // size 32, calls 0, wip, module sim
+void sub_5955C0();  // size 32, calls 0, matched, module sim
+void sub_5955E0();  // size 32, calls 0, matched, module sim
 void sub_595A20();  // size 111, calls 0, lifted, module sim
 void sub_595A90();  // size 25, calls 1, lifted, module sim
 void sub_595B60();  // size 179, calls 4, lifted, module sim
@@ -1174,7 +1174,7 @@ void sub_5C0BB0();  // size 464, calls 5, lifted, module sim
 void sub_5C0D80();  // size 761, calls 1, lifted, module sim
 void sub_5C1270();  // size 125, calls 0, lifted, module sim
 void sub_5C12F0();  // size 100, calls 0, lifted, module sim
-void sub_5C1360();  // size 38, calls 0, wip, module sim
+void sub_5C1360();  // size 38, calls 0, matched, module sim
 void sub_5C1390();  // size 7, calls 0, matched, module sim
 void sub_5C13A0();  // size 22, calls 0, matched, module sim
 void sub_5C13C0();  // size 7, calls 0, matched, module sim

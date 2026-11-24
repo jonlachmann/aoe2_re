@@ -280,13 +280,13 @@ void M_414300()
 class S4060A0 {
 public:
     char pad_00[8];
-    int field_8;
-    bool Check_4060A0();
+    void* field_8;
+    unsigned char Check_4060A0();
 };
 WIP_FUNC(0x4060A0)
-bool S4060A0::Check_4060A0()
+unsigned char S4060A0::Check_4060A0()
 {
-    return (bool)field_8;
+    return this->field_8 != 0;
 }
 
 class S40F4A0 {
@@ -541,18 +541,14 @@ public:
     int Find_41F880(int value);
 };
 
-WIP_FUNC(0x41F880)
+MATCH_FUNC(0x41F880)
 int S41F880Slots::Find_41F880(int value)
 {
-    int result = 0;
-    int* slot = this->slots;
-    while (value != *slot) {
-        ++result;
-        ++slot;
-        if (result >= 9)
-            return -1;
+    for (int i = 0; i < 9; ++i) {
+        if (value == this->slots[i])
+            return i;
     }
-    return result;
+    return -1;
 }
 // Batch 19: verified leaf helpers written manually as class methods.
 // Each body is a direct translation of Source/autopilot/auto_*.c, keeping the

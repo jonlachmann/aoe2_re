@@ -1093,7 +1093,7 @@ int __stdcall sub_49BCA0(int a1, char a2)
 class S4A9F20 {
 public:
     char pad_00[20];
-    char field_14;                // +20
+    int field_14;                 // +20
 
     char Round_4A9F20();
 };
@@ -1101,9 +1101,9 @@ public:
 WIP_FUNC(0x4A9F20)
 char S4A9F20::Round_4A9F20()
 {
-    char result = this->field_14;
-    result = (char)((result + 3) & 0xFC);
-    return result;
+    int v = this->field_14 + 3;
+    char result = (char)v;
+    return result & 0xFC;
 }
 
 // 0x4ADF40 — reset four trailing short slots to -1.

@@ -22,8 +22,8 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1065 |
-| wip | 30 |
+| matched | 1072 |
+| wip | 23 |
 | verified | 19 |
 | lifted | 6637 |
 
@@ -597,13 +597,13 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Functions with no class evidence
 | Region | Functions | Matched | WIP | Left |
 |---|---|---|---|---|
-| app | 323 | 92 | 2 | 229 |
+| app | 323 | 93 | 1 | 229 |
 | crt | 647 | 19 | 1 | 627 |
-| engine-late | 319 | 22 | 1 | 296 |
+| engine-late | 319 | 23 | 0 | 296 |
 | game | 436 | 133 | 4 | 299 |
 | gfx | 410 | 52 | 3 | 355 |
 | runtime-data | 20 | 0 | 0 | 20 |
-| sim | 1283 | 206 | 9 | 1068 |
+| sim | 1283 | 211 | 4 | 1068 |
 | ui | 1230 | 161 | 5 | 1064 |
 
 ## Skeleton tree

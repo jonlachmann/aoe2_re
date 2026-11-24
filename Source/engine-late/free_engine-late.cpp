@@ -60,13 +60,15 @@ S5D17B0Node* S5D17B0::Index_5D17B0(int index)
 class S5D17D0 {
 public:
     char pad_00[0x10];
-    bool field_10;
+    unsigned char field_10;
     bool Check_5D17D0();
 };
-WIP_FUNC(0x5D17D0)
+MATCH_FUNC(0x5D17D0)
 bool S5D17D0::Check_5D17D0()
 {
-    return field_10 == 2;
+    if (this->field_10 == 2)
+        return true;
+    return false;
 }
 
 // 0x5D1F00 — last matching node value in a link chain.
