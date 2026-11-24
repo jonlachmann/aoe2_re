@@ -31,19 +31,6 @@ public:
                     unsigned char d, unsigned char e, unsigned char f,
                     unsigned char g);
 };
-MATCH_FUNC(0x4AF930)
-void S4AF930::Set_4AF930(int a, unsigned char b, unsigned char c,
-                          unsigned char d, unsigned char e, unsigned char f,
-                          unsigned char g)
-{
-    *(int*)((char*)this + 0x2b8) = a;
-    *(unsigned char*)((char*)this + 0x2bc) = b;
-    *(unsigned char*)((char*)this + 0x2bd) = c;
-    *(unsigned char*)((char*)this + 0x2be) = d;
-    *(unsigned char*)((char*)this + 0x2bf) = e;
-    *(unsigned char*)((char*)this + 0x2c0) = f;
-    *(unsigned char*)((char*)this + 0x2c1) = g;
-}
 
 class S4B8C70 {
 public:
@@ -52,19 +39,6 @@ public:
                     unsigned char d, unsigned char e, unsigned char f,
                     unsigned char g);
 };
-MATCH_FUNC(0x4B8C70)
-void S4B8C70::Set_4B8C70(int a, unsigned char b, unsigned char c,
-                          unsigned char d, unsigned char e, unsigned char f,
-                          unsigned char g)
-{
-    *(int*)((char*)this + 0x1bc) = a;
-    *(unsigned char*)((char*)this + 0x1c0) = b;
-    *(unsigned char*)((char*)this + 0x1c1) = c;
-    *(unsigned char*)((char*)this + 0x1c2) = d;
-    *(unsigned char*)((char*)this + 0x1c3) = e;
-    *(unsigned char*)((char*)this + 0x1c4) = f;
-    *(unsigned char*)((char*)this + 0x1c5) = g;
-}
 
 class S5ADE20 {
 public:

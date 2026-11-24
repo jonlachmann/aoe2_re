@@ -16,46 +16,14 @@ public:
     int Compute_494DA0(float a2);
 };
 
-WIP_FUNC(0x494DA0)
-int S494DA0Body::Compute_494DA0(float a2)
-{
-    this->field_c8 = a2;
-    int result = (int)this->field_00;
-    double v3 = (double)*(int*)(result + 8);
-    this->field_cc = a2;
-    this->field_d0 = (float)(v3 - a2);
-    this->field_d4 = (float)((double)*(int*)(result + 12) - a2);
-    return result;
-}
 
 // 0x499BA0 — replace underscores with spaces in place; returns the terminator.
 char __cdecl sub_499BA0(unsigned char* a1);
 
-MATCH_FUNC(0x499BA0)
-char __cdecl sub_499BA0(unsigned char* a1)
-{
-    unsigned char* v1 = a1;
-    char result;
-    for (result = (char)*a1; result; ++v1) {
-        if (result == 95)
-            *v1 = 32;
-        result = (char)v1[1];
-    }
-    return result;
-}
 
 // 0x49BCA0 — merge a two-bit value into a member's flag byte.
 int __stdcall sub_49BCA0(int a1, char a2);
 
-MATCH_FUNC(0x49BCA0)
-int __stdcall sub_49BCA0(int a1, char a2)
-{
-    int result = *(int*)(a1 + 80);
-    if (result)
-        *(unsigned char*)(result + 6) =
-            (unsigned char)(a2 | (*(unsigned char*)(result + 6) & 0xF));
-    return result;
-}
 
 // 0x4A9F20 — round a byte field up to a multiple of four.
 class S4A9F20 {
@@ -66,13 +34,6 @@ public:
     char Round_4A9F20();
 };
 
-WIP_FUNC(0x4A9F20)
-char S4A9F20::Round_4A9F20()
-{
-    char result = this->field_14;
-    result = (char)((result + 3) & 0xFC);
-    return result;
-}
 
 // 0x4ADF40 — reset four trailing short slots to -1.
 class S4ADF40 {
@@ -86,16 +47,6 @@ public:
     int Reset_4ADF40();
 };
 
-MATCH_FUNC(0x4ADF40)
-int S4ADF40::Reset_4ADF40()
-{
-    int result = -1;
-    this->field_194 = -1;
-    this->field_196 = -1;
-    this->field_198 = -1;
-    this->field_19a = -1;
-    return result;
-}
 
 // 0x4AED50 — clear one of four dword slots by index.
 class S4AED50 {
@@ -106,14 +57,6 @@ public:
     unsigned Clear_4AED50(unsigned a2);
 };
 
-MATCH_FUNC(0x4AED50)
-unsigned S4AED50::Clear_4AED50(unsigned a2)
-{
-    unsigned result = a2;
-    if (a2 == 0 || a2 == 1 || a2 == 2 || a2 == 3)
-        this->slots[a2] = 0;
-    return result;
-}
 
 // 0x4BF670 — copy four consecutive dwords into optional out params.
 class S4BF670 {
@@ -127,20 +70,6 @@ public:
     int* Copy_4BF670(int* a2, int* a3, int* a4, int* a5);
 };
 
-MATCH_FUNC(0x4BF670)
-int* S4BF670::Copy_4BF670(int* a2, int* a3, int* a4, int* a5)
-{
-    if (a2)
-        *a2 = this->field_28;
-    if (a3)
-        *a3 = this->field_2c;
-    if (a4)
-        *a4 = this->field_30;
-    int* result = a5;
-    if (a5)
-        *a5 = this->field_34;
-    return result;
-}
 
 // 0x4E8230 — two-level live-object predicate.
 class S4E8230 {
@@ -151,16 +80,6 @@ public:
     char Check_4E8230(int a2);
 };
 
-WIP_FUNC(0x4E8230)
-char S4E8230::Check_4E8230(int a2)
-{
-    int* v2 = this->field_1200;
-    int* v3 = *(int**)((char*)v2 + 76);
-    int* v4 = *(int**)((char*)v3 + 4 * a2);
-    int* v5 = *(int**)((char*)v4 + 168);
-    return *(unsigned char*)((char*)v2 + 650) &&
-           *(float*)((char*)v5 + 28) > 0.0f;
-}
 
 // 0x501980 — member of vtable class C_vt625DA4: set a flag for two values.
 class S501980 {

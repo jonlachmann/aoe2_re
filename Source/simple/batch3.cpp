@@ -13,24 +13,12 @@ public:
     unsigned char field_24;
     void Set_473AA0(unsigned char value);
 };
-MATCH_FUNC(0x473AA0)
-void S473AA0::Set_473AA0(unsigned char value)
-{
-    if (value > 0)
-        field_24 = value;
-}
 
 class S4AF4B0 {
 public:
     char pad_00[0xf8];
     void Set_4AF4B0(short index, int a, int b);
 };
-MATCH_FUNC(0x4AF4B0)
-void S4AF4B0::Set_4AF4B0(short index, int a, int b)
-{
-    *(int*)((char*)this + 0xf8 + index * 4) = a;
-    *(int*)((char*)this + 0x11c + index * 4) = b;
-}
 
 class S5DCC30 {
 public:
@@ -43,36 +31,18 @@ public:
     char pad_00[0x1930];
     void Set_4CE550(int index, int value);
 };
-MATCH_FUNC(0x4CE550)
-void S4CE550::Set_4CE550(int index, int value)
-{
-    if (index >= 0 && index < 0x10)
-        *(int*)((char*)this + 0x1930 + index * 4) = value;
-}
 
 class S4CE570 {
 public:
     char pad_00[0x1970];
     void Set_4CE570(int index, int value);
 };
-MATCH_FUNC(0x4CE570)
-void S4CE570::Set_4CE570(int index, int value)
-{
-    if (index >= 0 && index < 0x10)
-        *(int*)((char*)this + 0x1970 + index * 4) = value;
-}
 
 class S4CE590 {
 public:
     char pad_00[0x19b0];
     void Set_4CE590(int index, int value);
 };
-MATCH_FUNC(0x4CE590)
-void S4CE590::Set_4CE590(int index, int value)
-{
-    if (index >= 0 && index < 0x10)
-        *(int*)((char*)this + 0x19b0 + index * 4) = value;
-}
 
 class S562F00 {
 public:
@@ -163,10 +133,4 @@ public:
     char pad_00[0x348];
     void Get_4A3CF0(int* a, int* b);
 };
-MATCH_FUNC(0x4A3CF0)
-void S4A3CF0::Get_4A3CF0(int* a, int* b)
-{
-    *a = *(int*)((char*)this + 0x348);
-    *b = *(int*)((char*)this + 0x34c);
-}
 

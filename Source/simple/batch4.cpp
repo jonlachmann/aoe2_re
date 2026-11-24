@@ -3,11 +3,6 @@
 extern unsigned char g_75fdc4;
 
 extern int g_66e3fc;
-MATCH_FUNC(0x48BD10)
-void Clear_48BD10()
-{
-    g_66e3fc = 0;
-}
 
 class S52BC00 {
 public:

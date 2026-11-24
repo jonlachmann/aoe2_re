@@ -16,33 +16,18 @@ public:
     char pad_00[0x102];
     void Set_4BCE90(unsigned short v);
 };
-MATCH_FUNC(0x4BCE90)
-void S4BCE90::Set_4BCE90(unsigned short v)
-{
-    *(unsigned short*)((char*)this + 0x102) = v;
-}
 
 class S4BCEA0 {
 public:
     char pad_00[0x100];
     void Set_4BCEA0(unsigned short v);
 };
-MATCH_FUNC(0x4BCEA0)
-void S4BCEA0::Set_4BCEA0(unsigned short v)
-{
-    *(unsigned short*)((char*)this + 0x100) = v;
-}
 
 class S49F240 {
 public:
     char pad_00[0x68];
     void Zero_49F240(int index);
 };
-MATCH_FUNC(0x49F240)
-void S49F240::Zero_49F240(int index)
-{
-    *(int*)((char*)this + 0x68 + index * 4) = 0;
-}
 
 class S525870 {
 public:
@@ -86,14 +71,6 @@ class S497D80 {
 public:
     S497D80* Reset_497D80();
 };
-MATCH_FUNC(0x497D80)
-S497D80* S497D80::Reset_497D80()
-{
-    *(int*)((char*)this) = 0;
-    *(int*)((char*)this + 4) = 0;
-    *(int*)((char*)this + 8) = 0;
-    return this;
-}
 
 class S4AF0D0 {
 public:
@@ -101,13 +78,6 @@ public:
     int field_8;
     int Take_4AF0D0();
 };
-MATCH_FUNC(0x4AF0D0)
-int S4AF0D0::Take_4AF0D0()
-{
-    int v = *(int*)((char*)this + 8);
-    *(int*)((char*)this + 8) = 0;
-    return v;
-}
 
 class S4ACA10 {
 public:
@@ -144,14 +114,6 @@ public:
     unsigned char field_18;
     bool Set_487740(int a, int b, unsigned char c);
 };
-MATCH_FUNC(0x487740)
-bool S487740::Set_487740(int a, int b, unsigned char c)
-{
-    field_4 = a;
-    field_8 = b;
-    field_18 = c;
-    return true;
-}
 
 class S5A5490 {
 public:

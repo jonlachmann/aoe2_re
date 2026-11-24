@@ -173,11 +173,6 @@ public:
     char pad_00[0x123c];
     int Get_5BB130();
 };
-MATCH_FUNC(0x4CF6F0)
-char S4CF6F0::Get_4CF6F0()
-{
-    return *(char*)((char*)this + 0xc);
-}
 MATCH_FUNC(0x5BFBC0)
 char S5BFBC0::Get_5BFBC0()
 {
@@ -187,21 +182,6 @@ MATCH_FUNC(0x5BFC00)
 char S5BFC00::Get_5BFC00()
 {
     return *(char*)((char*)this + 0x4);
-}
-MATCH_FUNC(0x47D9F0)
-int S47D9F0::Get_47D9F0()
-{
-    return *(int*)((char*)this + 0x8);
-}
-MATCH_FUNC(0x49F620)
-int S49F620::Get_49F620()
-{
-    return *(int*)((char*)this + 0x10);
-}
-MATCH_FUNC(0x4A2060)
-int S4A2060::Get_4A2060()
-{
-    return *(int*)((char*)this + 0x1c);
 }
 MATCH_FUNC(0x52BDA0)
 int S52BDA0::Get_52BDA0()

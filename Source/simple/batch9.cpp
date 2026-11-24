@@ -71,11 +71,6 @@ public:
     char pad_00[0x13dc];
     char Get_4CEAE0(int index);
 };
-MATCH_FUNC(0x4CEAE0)
-char S4CEAE0::Get_4CEAE0(int index)
-{
-    return *(char*)((char*)this + 0x13dc + index);
-}
 
 class S412BC0 {
 public:

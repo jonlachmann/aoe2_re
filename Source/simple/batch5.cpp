@@ -5,13 +5,6 @@ public:
     char pad_00[0xc4];
     void Init_48B530();
 };
-MATCH_FUNC(0x48B530)
-void S48B530::Init_48B530()
-{
-    int zero = 0;
-    *(int*)((char*)this + 0xc4) = zero;
-    *(int*)((char*)this + 0x138) = zero;
-}
 
 class S410410 {
 public:
@@ -29,12 +22,6 @@ public:
     int* array_0c;
     void Reset_493780();
 };
-MATCH_FUNC(0x493780)
-void S493780::Reset_493780()
-{
-    for (int i = 0; i < *(int*)((char*)this); ++i)
-        ((int*)(*(int*)((char*)this + 0x0c)))[i] = -1;
-}
 
 class S522E10Node {
 public:
