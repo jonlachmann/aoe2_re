@@ -1,0 +1,18 @@
+
+typedef unsigned int _DWORD;
+typedef unsigned short _WORD;
+typedef unsigned char _BYTE;
+typedef unsigned long long _QWORD;
+typedef short __int16;
+typedef long long __int64;
+typedef signed char _BYTE_SIGNED;
+
+int __thiscall auto_48f950(_DWORD *self, int a2)
+{
+  int result; // eax
+
+  result = self[66];
+  if ( result )
+    *(_DWORD *)(result + 40) = a2;
+  return result;
+}

@@ -1,0 +1,896 @@
+[
+ {
+  "addr": "0x405790",
+  "size": 25,
+  "nm": "mov mov mov mov mov retn",
+  "pseudocode": "_DWORD *__thiscall sub_405790(_DWORD *this, int a2)\n{\n  _DWORD *result; // eax\n\n  result = this;\n  *this = &off_61CAB4;\n  this[1] = a2;\n  this[2] = 0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x406220",
+  "size": 10,
+  "nm": "mov mov retn",
+  "pseudocode": "_BYTE *__stdcall sub_406220(_BYTE *a1)\n{\n  _BYTE *result; // eax\n\n  result = a1;\n  *a1 = 0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x407b90",
+  "size": 9,
+  "nm": "fld retn",
+  "pseudocode": "double __stdcall sub_407B90(int a1)\n{\n  return 1.0;\n}\n"
+ },
+ {
+  "addr": "0x409e90",
+  "size": 44,
+  "nm": "mov mov mov mov mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "int __thiscall sub_409E90(_DWORD *this, char a2, int a3, char a4, char a5, char a6, char a7)\n{\n  int result; // eax\n\n  *(_BYTE *)this = a2;\n  this[1] = a3;\n  *((_BYTE *)this + 8) = a4;\n  LOBYTE(result) = a6;\n  *((_BYTE *)this + 9) = a5;\n  *((_BYTE *)this + 10) = a6;\n  *((_BYTE *)this + 11) = a7;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x40e270",
+  "size": 33,
+  "nm": "mov test jl movsx cmp jge mov mov retn mov retn",
+  "pseudocode": "void *__thiscall sub_40E270(int this, int a2)\n{\n  if ( a2 < 0 || a2 >= *(__int16 *)(this + 6) )\n    return &unk_662BE4;\n  else\n    return *(void **)(*(_DWORD *)(this + 8) + 4 * a2);\n}\n"
+ },
+ {
+  "addr": "0x4106b0",
+  "size": 59,
+  "nm": "mov mov mov xor mov mov mov mov mov mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "char __thiscall sub_4106B0(_DWORD *this, int a2, char a3, int a4, char a5, char a6, char a7, char a8)\n{\n  char result; // al\n\n  *this = a2;\n  this[1] = 0;\n  this[2] = 0;\n  *((_BYTE *)this + 12) = a3;\n  this[4] = a4;\n  *((_BYTE *)this + 20) = a5;\n  *((_BYTE *)this + 21) = a6;\n  result = a8;\n  *((_BYTE *)this + 22) = a7;\n  *((_BYTE *)this + 23) = a8;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4118b0",
+  "size": 15,
+  "nm": "xor mov mov mov retn",
+  "pseudocode": "int __thiscall sub_4118B0(_DWORD *this)\n{\n  int result; // eax\n\n  result = 0;\n  *this = &off_61D6C4;\n  this[2] = 0;\n  this[1] = 0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x411c20",
+  "size": 8,
+  "nm": "mov retn",
+  "pseudocode": "int __stdcall sub_411C20(int a1)\n{\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x413790",
+  "size": 47,
+  "nm": "mov cmp jz cmp jz cmp jz cmp jz cmp jz cmp jz xor retn mov retn",
+  "pseudocode": "BOOL __stdcall sub_413790(int a1)\n{\n  return a1 == 7 || a1 == 9 || a1 == 10 || a1 == 15 || a1 == 8 || a1 == 32;\n}\n"
+ },
+ {
+  "addr": "0x415750",
+  "size": 8,
+  "nm": "mov retn",
+  "pseudocode": "int __stdcall sub_415750(int a1)\n{\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x416da0",
+  "size": 50,
+  "nm": "mov mov mov mov mov mov mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "int __thiscall sub_416DA0(_DWORD *this, int a2, int a3, int a4, int a5, int a6)\n{\n  int v6; // edx\n  int result; // eax\n\n  v6 = this[14];\n  this[22] = this[13];\n  this[23] = v6;\n  this[13] = a2;\n  this[14] = a3;\n  this[15] = a4;\n  result = a6;\n  this[16] = a5;\n  this[17] = a6;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x416e20",
+  "size": 60,
+  "nm": "mov mov mov mov mov mov test jz mov retn mov and neg sbb and mov retn",
+  "pseudocode": "char __thiscall sub_416E20(_DWORD *this, int a2, int a3, int a4)\n{\n  int v4; // ecx\n  int v5; // eax\n\n  v4 = *(_DWORD *)(this[1] + 12);\n  v5 = *(_DWORD *)(dword_77227C[a4] + 4 * a3);\n  if ( (v5 & *(_DWORD *)(v4 + 292)) != 0 )\n    return 15;\n  else\n    return (v5 & *(_DWORD *)(v4 + 288)) != 0 ? 0x80 : 0;\n}\n"
+ },
+ {
+  "addr": "0x41a040",
+  "size": 16,
+  "nm": "mov mov or retn",
+  "pseudocode": "int __stdcall sub_41A040(int a1, int a2, int a3, int a4, _DWORD *a5)\n{\n  *a5 = 0;\n  return -1;\n}\n"
+ },
+ {
+  "addr": "0x41a090",
+  "size": 9,
+  "nm": "fld retn",
+  "pseudocode": "double __stdcall sub_41A090(int a1, int a2, int a3)\n{\n  return 3.4028235e38;\n}\n"
+ },
+ {
+  "addr": "0x41a0a0",
+  "size": 9,
+  "nm": "fld retn",
+  "pseudocode": "double __stdcall sub_41A0A0(int a1, int a2, int a3, int a4)\n{\n  return 0.0;\n}\n"
+ },
+ {
+  "addr": "0x41a0d0",
+  "size": 59,
+  "nm": "sub mov mov mov mov mov mov mov mov mov mov mov add retn",
+  "pseudocode": "_DWORD *__stdcall sub_41A0D0(_DWORD *a1, int a2, int a3)\n{\n  _DWORD *result; // eax\n\n  result = a1;\n  *a1 = 0;\n  a1[1] = 0;\n  a1[2] = 0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x41a110",
+  "size": 59,
+  "nm": "sub mov mov mov mov mov mov mov mov mov mov mov add retn",
+  "pseudocode": "_DWORD *__stdcall sub_41A110(_DWORD *a1)\n{\n  _DWORD *result; // eax\n\n  result = a1;\n  *a1 = 0;\n  a1[1] = 0;\n  a1[2] = 0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x41a420",
+  "size": 25,
+  "nm": "mov mov mov mov mov retn",
+  "pseudocode": "_DWORD *__thiscall sub_41A420(_DWORD *this, int a2)\n{\n  _DWORD *result; // eax\n\n  result = this;\n  *this = &off_61DDB0;\n  this[1] = 0;\n  this[2] = a2;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x41ada0",
+  "size": 14,
+  "nm": "mov mov retn",
+  "pseudocode": "void __thiscall sub_41ADA0(_DWORD *this)\n{\n  *this = &off_61DE70;\n  this[1] = 0;\n}\n"
+ },
+ {
+  "addr": "0x41bc30",
+  "size": 8,
+  "nm": "mov retn",
+  "pseudocode": "int __stdcall sub_41BC30(int a1, int a2, int a3, int a4, int a5, int a6)\n{\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x41bc40",
+  "size": 8,
+  "nm": "mov retn",
+  "pseudocode": "int __stdcall sub_41BC40(int a1, int a2, int a3, int a4, int a5)\n{\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x41bc50",
+  "size": 8,
+  "nm": "mov retn",
+  "pseudocode": "int __stdcall sub_41BC50(int a1, int a2)\n{\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x421a40",
+  "size": 13,
+  "nm": "mov mov retn",
+  "pseudocode": "char *sub_421A40()\n{\n  byte_6642F0 = 0;\n  return &byte_6642F0;\n}\n"
+ },
+ {
+  "addr": "0x421f90",
+  "size": 22,
+  "nm": "mov mov mov mov retn",
+  "pseudocode": "int __thiscall sub_421F90(_DWORD *this, int a2)\n{\n  int result; // eax\n\n  result = a2;\n  dword_65E3C0 = a2;\n  *(_WORD *)(this[9] + 2296) = a2;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x423900",
+  "size": 42,
+  "nm": "mov mov cmp ja mov lea shl lea test jnz mov retn",
+  "pseudocode": "char *__thiscall sub_423900(_DWORD *this, unsigned int a2)\n{\n  char *result; // eax\n\n  if ( a2 > this[135] )\n    return word_64DB20;\n  result = (char *)(this[136] + 160 * a2 + 32);\n  if ( this[136] + 160 * a2 == -32 )\n    return word_64DB20;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x42f0b0",
+  "size": 36,
+  "nm": "mov mov add mov mov mov mov mov mov retn",
+  "pseudocode": "int __thiscall sub_42F0B0(_DWORD *this, int a2, int a3, int a4, int a5)\n{\n  _DWORD *v5; // ecx\n  int result; // eax\n\n  v5 = this + 1207;\n  *v5 = a2;\n  result = a4;\n  v5[1] = a3;\n  v5[2] = a4;\n  v5[3] = a5;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x434be0",
+  "size": 9,
+  "nm": "fld retn",
+  "pseudocode": "double __stdcall sub_434BE0(int a1)\n{\n  return 1.0;\n}\n"
+ },
+ {
+  "addr": "0x438fa0",
+  "size": 33,
+  "nm": "mov mov mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "int __stdcall sub_438FA0(_DWORD *a1, _DWORD *a2)\n{\n  int result; // eax\n\n  *a1 = *a2;\n  a1[1] = a2[1];\n  a1[2] = a2[2];\n  result = a2[3];\n  a1[3] = result;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x439610",
+  "size": 14,
+  "nm": "mov mov add retn",
+  "pseudocode": "int sub_439610()\n{\n  return *(_DWORD *)(dword_6645C4 + 36) + 3135;\n}\n"
+ },
+ {
+  "addr": "0x440f70",
+  "size": 21,
+  "nm": "mov test mov jnz mov retn",
+  "pseudocode": "char *__stdcall sub_440F70(int a1)\n{\n  char *result; // eax\n\n  result = MEMORY[0x6514FC];\n  if ( !a1 )\n    return MEMORY[0x6514E4];\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4437f0",
+  "size": 20,
+  "nm": "mov mov mov retn",
+  "pseudocode": "int __cdecl sub_4437F0(int a1)\n{\n  int result; // eax\n\n  result = a1;\n  dword_66A478 = a1;\n  *(_DWORD *)(a1 + 229752) = -1412623820;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x446050",
+  "size": 58,
+  "nm": "mov mov mov add and mov mov mov test mov jge neg mov mov mov retn mov mov retn",
+  "pseudocode": "int __cdecl sub_446050(int a1, unsigned int *a2, int *a3, _DWORD *a4)\n{\n  int result; // eax\n\n  *a2 = (*(_DWORD *)(a1 + 4) + 3) & 0xFFFFFFFC;\n  result = *(_DWORD *)(a1 + 8);\n  *a3 = result;\n  if ( result >= 0 )\n  {\n    *a4 = -1;\n  }\n  else\n  {\n    *a3 = -result;\n    result = (int)a4;\n    *a4 = 1;\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x456820",
+  "size": 31,
+  "nm": "mov test jz mov test jl cmp jge mov mov retn",
+  "pseudocode": "void __stdcall sub_456820(int a1, int a2)\n{\n  unsigned int v2; // eax\n\n  if ( a1 )\n  {\n    v2 = *(_DWORD *)(a1 + 12);\n    if ( v2 <= 4 )\n      *(_DWORD *)(a1 + 4 * v2 + 72) = a2;\n  }\n}\n"
+ },
+ {
+  "addr": "0x45ab10",
+  "size": 51,
+  "nm": "mov mov add imul lea mov mov mov mov lea mov mov retn",
+  "pseudocode": "_DWORD *__thiscall sub_45AB10(_DWORD *this, int a2, int a3, int a4, _DWORD *a5, _DWORD *a6)\n{\n  _DWORD *result; // eax\n\n  *a5 = a4 * (a2 + 30) + 2 * this[102] + 30;\n  result = a6;\n  *a6 = a3 + 2 * this[102] + 8;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x45b5dc",
+  "size": 8,
+  "nm": "mov retn",
+  "pseudocode": "int __stdcall sub_45B5DC(int a1, int a2, int a3, int a4)\n{\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x46aad0",
+  "size": 43,
+  "nm": "mov test jl cmp jge mov mov test jbe mov retn xor retn",
+  "pseudocode": "BOOL __thiscall sub_46AAD0(_DWORD *this, unsigned int a2)\n{\n  return a2 < 0x20 && (dword_620958[a2] & this[43]) != 0;\n}\n"
+ },
+ {
+  "addr": "0x472420",
+  "size": 25,
+  "nm": "mov cmp jnz mov test jz mov retn",
+  "pseudocode": "int __stdcall sub_472420(int a1)\n{\n  int result; // eax\n\n  result = a1;\n  if ( *(_BYTE *)(a1 + 78) == 80 )\n  {\n    if ( *(_DWORD *)(a1 + 452) )\n      return *(_DWORD *)(a1 + 452);\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4747f0",
+  "size": 9,
+  "nm": "fld retn",
+  "pseudocode": "double __stdcall sub_4747F0(int a1)\n{\n  return 0.0;\n}\n"
+ },
+ {
+  "addr": "0x4779a0",
+  "size": 9,
+  "nm": "fld retn",
+  "pseudocode": "double __stdcall sub_4779A0(int a1)\n{\n  return 3.4028235e38;\n}\n"
+ },
+ {
+  "addr": "0x4779b0",
+  "size": 9,
+  "nm": "fld retn",
+  "pseudocode": "double __stdcall sub_4779B0(int a1)\n{\n  return -3.4028235e38;\n}\n"
+ },
+ {
+  "addr": "0x4829b0",
+  "size": 22,
+  "nm": "mov mov mov mov mov inc retn",
+  "pseudocode": "int __stdcall sub_4829B0(int a1, _DWORD *a2)\n{\n  int result; // eax\n\n  result = a1;\n  *a2 = *(_DWORD *)(a1 + 24);\n  *(_DWORD *)(a1 + 24) = a2;\n  ++*(_DWORD *)(a1 + 40);\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4829d0",
+  "size": 21,
+  "nm": "mov xor mov mov mov mov retn",
+  "pseudocode": "_DWORD *__stdcall sub_4829D0(_DWORD *a1)\n{\n  _DWORD *result; // eax\n\n  result = a1;\n  a1[13] = 0;\n  a1[14] = 0;\n  a1[15] = 0;\n  a1[16] = 0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x489ee0",
+  "size": 15,
+  "nm": "fld fmul fadd retn",
+  "pseudocode": "double __stdcall sub_489EE0(float a1, float a2, float a3, int a4)\n{\n  return a2 * a3 + a1;\n}\n"
+ },
+ {
+  "addr": "0x48a890",
+  "size": 43,
+  "nm": "mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "int __thiscall sub_48A890(_DWORD *this, int a2, int a3, int a4, int a5)\n{\n  int result; // eax\n\n  this[70] = a2;\n  result = a4;\n  this[71] = a3;\n  this[72] = a4;\n  this[73] = a5;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x48bd10",
+  "size": 11,
+  "nm": "mov retn",
+  "pseudocode": "void sub_48BD10()\n{\n  dword_66E3FC = 0.0;\n}\n"
+ },
+ {
+  "addr": "0x499ca0",
+  "size": 21,
+  "nm": "mov xor mov mov mov mov retn",
+  "pseudocode": "_DWORD *__thiscall sub_499CA0(_DWORD *this)\n{\n  _DWORD *result; // eax\n\n  result = this;\n  *this = off_621EC8;\n  this[1] = 0;\n  *((_WORD *)this + 4) = 0;\n  this[3] = 0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x49bca0",
+  "size": 29,
+  "nm": "mov mov test jz mov mov and or mov retn",
+  "pseudocode": "int __stdcall sub_49BCA0(int a1, char a2)\n{\n  int result; // eax\n\n  result = *(_DWORD *)(a1 + 80);\n  if ( result )\n    *(_BYTE *)(result + 6) = a2 | *(_BYTE *)(result + 6) & 0xF;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4a1d50",
+  "size": 46,
+  "nm": "mov mov cmp jl cmp jg mov mov cmp jl cmp jg mov retn xor retn",
+  "pseudocode": "BOOL __stdcall sub_4A1D50(int a1, int a2, _DWORD *a3)\n{\n  return a1 >= *a3 && a1 <= a3[2] && a2 >= a3[1] && a2 <= a3[3];\n}\n"
+ },
+ {
+  "addr": "0x4a3920",
+  "size": 63,
+  "nm": "mov mov mov mov mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "char __thiscall sub_4A3920(_BYTE *this, char a2, char a3, char a4, char a5, char a6, char a7)\n{\n  char result; // al\n\n  this[808] = a2;\n  this[809] = a3;\n  this[810] = a4;\n  result = a6;\n  this[811] = a5;\n  this[812] = a6;\n  this[813] = a7;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4adf90",
+  "size": 25,
+  "nm": "mov mov mov mov xor retn",
+  "pseudocode": "int __stdcall sub_4ADF90(int a1, int a2, int a3, int a4, int a5, _DWORD *a6, _DWORD *a7)\n{\n  *a6 = 0;\n  *a7 = 0;\n  return 0;\n}\n"
+ },
+ {
+  "addr": "0x4b8c30",
+  "size": 53,
+  "nm": "mov mov mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "int __thiscall sub_4B8C30(_DWORD *this, int a2, int a3, int a4, int a5, int a6)\n{\n  int result; // eax\n\n  this[67] = a2;\n  this[68] = a3;\n  this[69] = a4;\n  result = a6;\n  this[70] = a5;\n  this[71] = a6;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4bd4b0",
+  "size": 48,
+  "nm": "mov xor test jz mov cmp jz mov inc test jnz mov mov retn mov retn",
+  "pseudocode": "char *__thiscall sub_4BD4B0(_DWORD *this, int a2)\n{\n  _DWORD *v2; // eax\n  int v3; // edx\n\n  v2 = (_DWORD *)this[62];\n  v3 = 0;\n  if ( v2 )\n  {\n    while ( v3 != a2 )\n    {\n      v2 = (_DWORD *)v2[9];\n      ++v3;\n      if ( !v2 )\n        goto LABEL_4;\n    }\n    return (char *)*v2;\n  }\n  else\n  {\nLABEL_4:\n    byte_73E355 = 0;\n    return &byte_73E355;\n  }\n}\n"
+ },
+ {
+  "addr": "0x4bd560",
+  "size": 49,
+  "nm": "mov xor test jz mov cmp jz mov inc test jnz mov mov retn mov retn",
+  "pseudocode": "char *__thiscall sub_4BD560(_DWORD *this, int a2)\n{\n  int v2; // eax\n  int v3; // edx\n\n  v2 = this[62];\n  v3 = 0;\n  if ( v2 )\n  {\n    while ( v3 != a2 )\n    {\n      v2 = *(_DWORD *)(v2 + 36);\n      ++v3;\n      if ( !v2 )\n        goto LABEL_4;\n    }\n    return *(char **)(v2 + 4);\n  }\n  else\n  {\nLABEL_4:\n    byte_73E354 = 0;\n    return &byte_73E354;\n  }\n}\n"
+ },
+ {
+  "addr": "0x4bde70",
+  "size": 27,
+  "nm": "mov dec jz or retn mov mov retn",
+  "pseudocode": "__int16 __thiscall sub_4BDE70(_DWORD *this)\n{\n  if ( this[519] == 1 )\n    return *(_WORD *)(dword_6645C4 + 1060);\n  else\n    return -1;\n}\n"
+ },
+ {
+  "addr": "0x4bf670",
+  "size": 55,
+  "nm": "mov test jz mov mov mov test jz mov mov mov test jz mov mov mov test jz mov mov retn",
+  "pseudocode": "_DWORD *__thiscall sub_4BF670(_DWORD *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5)\n{\n  _DWORD *result; // eax\n\n  if ( a2 )\n    *a2 = this[10];\n  if ( a3 )\n    *a3 = this[11];\n  if ( a4 )\n    *a4 = this[12];\n  result = a5;\n  if ( a5 )\n    *a5 = this[13];\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4bf6b0",
+  "size": 34,
+  "nm": "mov xor mov mov mov mov mov mov retn",
+  "pseudocode": "_DWORD *__stdcall sub_4BF6B0(_DWORD *a1)\n{\n  _DWORD *result; // eax\n\n  result = a1;\n  *a1 = -1;\n  a1[1] = -1;\n  a1[4] = 0;\n  a1[5] = 0;\n  a1[2] = 0;\n  a1[3] = 0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4bf6e0",
+  "size": 22,
+  "nm": "mov xor mov cmp jz mov mov retn",
+  "pseudocode": "int __stdcall sub_4BF6E0(int a1)\n{\n  int result; // eax\n\n  result = *(_DWORD *)(a1 + 16);\n  if ( result )\n  {\n    *(_DWORD *)(result + 20) = 0;\n    *(_DWORD *)(a1 + 16) = 0;\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4c2a00",
+  "size": 28,
+  "nm": "mov mov lea lea sub mov fild retn",
+  "pseudocode": "double __stdcall sub_4C2A00(int a1, int a2, int a3)\n{\n  return (double)(250 - 15 * a1);\n}\n"
+ },
+ {
+  "addr": "0x4c9a70",
+  "size": 37,
+  "nm": "mov cmp jnz retn cmp jnz mov retn cmp jnz mov retn cmp setz retn",
+  "pseudocode": "char __stdcall sub_4C9A70(char a1)\n{\n  char result; // al\n\n  result = a1;\n  if ( a1 != 1 )\n    return a1 == 4 || a1 == 22 || a1 == 23;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4cb3a0",
+  "size": 27,
+  "nm": "mov mov imul sub mov fild retn",
+  "pseudocode": "double __stdcall sub_4CB3A0(int a1, int a2, int a3, int a4)\n{\n  return (double)(250 - a4 * a1);\n}\n"
+ },
+ {
+  "addr": "0x4dfc90",
+  "size": 46,
+  "nm": "mov cmp jb cmp ja and dec retn cmp jb cmp ja and sub retn xor retn",
+  "pseudocode": "__int16 __stdcall sub_4DFC90(unsigned __int8 a1)\n{\n  if ( a1 && a1 <= 0xEu )\n    return a1 - 1;\n  if ( a1 < 0xFu || a1 > 0x1Cu )\n    return 0;\n  return a1 - 15;\n}\n"
+ },
+ {
+  "addr": "0x4e00d0",
+  "size": 51,
+  "nm": "or xor mov mov mov mov mov mov mov retn",
+  "pseudocode": "int __thiscall sub_4E00D0(_DWORD *this)\n{\n  int result; // eax\n\n  result = -1;\n  this[1206] = -1;\n  this[1207] = -1;\n  this[1208] = 0;\n  this[1210] = 0;\n  dword_740678 = 1;\n  word_6542C8 = -1;\n  dword_6542CC = -1;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x4fa920",
+  "size": 8,
+  "nm": "mov retn",
+  "pseudocode": "int __stdcall sub_4FA920(int a1, int a2)\n{\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x501980",
+  "size": 29,
+  "nm": "mov cmp jz cmp jnz mov xor retn",
+  "pseudocode": "int __thiscall sub_501980(_DWORD *this, int a2, int a3, int a4, int a5, int a6)\n{\n  if ( a2 == 27 || a2 == 32 )\n    this[703] = 1;\n  return 0;\n}\n"
+ },
+ {
+  "addr": "0x503310",
+  "size": 14,
+  "nm": "mov mov retn",
+  "pseudocode": "int __thiscall sub_503310(_DWORD *this, int a2, int a3, int a4, int a5, int a6)\n{\n  int result; // eax\n\n  result = 1;\n  this[703] = 1;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5247e0",
+  "size": 37,
+  "nm": "mov test jz mov test mov jz and mov retn or mov retn",
+  "pseudocode": "int __stdcall sub_5247E0(int a1, int a2)\n{\n  int result; // eax\n  char v3; // cl\n\n  result = a1;\n  if ( a1 )\n  {\n    v3 = *(_BYTE *)(a1 + 64);\n    if ( a2 )\n      *(_BYTE *)(a1 + 64) = v3 & 0xEF;\n    else\n      *(_BYTE *)(a1 + 64) = v3 | 0x10;\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x52b2c0",
+  "size": 51,
+  "nm": "mov fld test jz mov test jle add movsx mov add fild dec fmul faddp jnz retn",
+  "pseudocode": "double __stdcall sub_52B2C0(int a1, int a2, float a3, int a4, int a5)\n{\n  double result; // st7\n  int v6; // ecx\n  __int16 *v7; // eax\n  int v8; // [esp+8h] [ebp+8h]\n\n  result = 0.0;\n  if ( a2 )\n  {\n    v6 = a1;\n    if ( a1 > 0 )\n    {\n      v7 = (__int16 *)(a2 + 2);\n      do\n      {\n        v8 = *v7;\n        v7 += 2;\n        --v6;\n        result = result + (double)v8 * a3;\n      }\n      while ( v6 );\n    }\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x531bc0",
+  "size": 38,
+  "nm": "mov cmp mov jnz mov mov mov mov retn",
+  "pseudocode": "int __thiscall sub_531BC0(_DWORD *this, int a2)\n{\n  int result; // eax\n\n  result = a2;\n  this[143] = a2;\n  if ( a2 == 1 )\n  {\n    result = *(_DWORD *)(*(_DWORD *)(dword_6645C4 + 1052) + 16);\n    this[69] = result;\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x535e70",
+  "size": 24,
+  "nm": "mov cmp jz cmp jz xor retn mov retn",
+  "pseudocode": "bool __stdcall sub_535E70(int a1)\n{\n  return a1 == 50 || a1 == 45;\n}\n"
+ },
+ {
+  "addr": "0x54dde0",
+  "size": 27,
+  "nm": "mov test jl cmp jge mov retn",
+  "pseudocode": "unsigned int __cdecl sub_54DDE0(int a1, unsigned int a2)\n{\n  unsigned int result; // eax\n\n  result = a2;\n  if ( a2 < 0x100 )\n    dword_741758[a2] = 0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x54f160",
+  "size": 17,
+  "nm": "mov mov mov retn",
+  "pseudocode": "int __cdecl sub_54F160(int a1)\n{\n  int result; // eax\n\n  result = a1;\n  *(_DWORD *)(dword_7409E4 + 260) = a1;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x54f1c0",
+  "size": 28,
+  "nm": "mov cmp jl cmp jg mov mov retn",
+  "pseudocode": "int __cdecl sub_54F1C0(int a1, int a2)\n{\n  int result; // eax\n\n  result = a1;\n  if ( a1 >= 1 && a1 <= 256 )\n    dword_740B54[a1] = a2;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x54f1e0",
+  "size": 27,
+  "nm": "mov test jl cmp jge mov retn",
+  "pseudocode": "unsigned int __cdecl sub_54F1E0(unsigned int a1)\n{\n  unsigned int result; // eax\n\n  result = a1;\n  if ( a1 < 0x100 )\n    dword_741B58[a1] = 1;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5542c0",
+  "size": 28,
+  "nm": "mov xor xor mov mov cmp setz mov retn",
+  "pseudocode": "BOOL __cdecl sub_5542C0(int a1)\n{\n  return *(unsigned __int8 *)(dword_741F68 + 341) == a1;\n}\n"
+ },
+ {
+  "addr": "0x5548b0",
+  "size": 24,
+  "nm": "mov xor mov mov cmp setz retn",
+  "pseudocode": "BOOL __cdecl sub_5548B0(int a1)\n{\n  return *(_DWORD *)(dword_741F60 + 260) == a1;\n}\n"
+ },
+ {
+  "addr": "0x5549a0",
+  "size": 20,
+  "nm": "mov xor mov test setnle retn",
+  "pseudocode": "BOOL sub_5549A0()\n{\n  return *(_DWORD *)(dword_741F60 + 8292) > 0;\n}\n"
+ },
+ {
+  "addr": "0x554ab0",
+  "size": 26,
+  "nm": "mov test jl cmp jg mov retn xor retn",
+  "pseudocode": "int __cdecl sub_554AB0(int a1, unsigned int a2)\n{\n  if ( a2 >= 0x100 )\n    return 0;\n  else\n    return dword_741758[a2];\n}\n"
+ },
+ {
+  "addr": "0x554e50",
+  "size": 18,
+  "nm": "mov mov xor cmp setz retn",
+  "pseudocode": "BOOL __cdecl sub_554E50(int a1)\n{\n  return a1 == dword_741F80;\n}\n"
+ },
+ {
+  "addr": "0x554e70",
+  "size": 18,
+  "nm": "mov mov xor cmp setz retn",
+  "pseudocode": "BOOL __cdecl sub_554E70(int a1)\n{\n  return a1 == dword_741F84;\n}\n"
+ },
+ {
+  "addr": "0x555010",
+  "size": 24,
+  "nm": "mov xor mov mov cmp setz retn",
+  "pseudocode": "BOOL __cdecl sub_555010(int a1)\n{\n  return *(_DWORD *)(dword_741F68 + 156) == a1;\n}\n"
+ },
+ {
+  "addr": "0x5561c0",
+  "size": 50,
+  "nm": "mov test jl mov mov movsx cmp jge mov xor shl cmp setz mov retn xor retn",
+  "pseudocode": "BOOL __cdecl sub_5561C0(int a1)\n{\n  int v1; // ecx\n\n  if ( a1 < 0 )\n    return 0;\n  v1 = *(_DWORD *)(dword_741F68 + 4140);\n  return a1 < *(__int16 *)(v1 + 4) && *(_WORD *)(16 * a1 + *(_DWORD *)v1 + 4) == 1;\n}\n"
+ },
+ {
+  "addr": "0x556200",
+  "size": 50,
+  "nm": "mov test jl mov mov movsx cmp jge mov xor shl cmp setz mov retn xor retn",
+  "pseudocode": "BOOL __cdecl sub_556200(int a1)\n{\n  int v1; // ecx\n\n  if ( a1 < 0 )\n    return 0;\n  v1 = *(_DWORD *)(dword_741F68 + 4140);\n  return a1 < *(__int16 *)(v1 + 4) && *(_WORD *)(16 * a1 + *(_DWORD *)v1 + 4) == 3;\n}\n"
+ },
+ {
+  "addr": "0x5562a0",
+  "size": 40,
+  "nm": "mov cmp jl cmp jg mov mov xor cmp setz mov retn xor retn",
+  "pseudocode": "BOOL __cdecl sub_5562A0(int a1, int a2)\n{\n  return a1 >= 1 && a1 <= 256 && dword_740B54[a1] == a2;\n}\n"
+ },
+ {
+  "addr": "0x5562d0",
+  "size": 12,
+  "nm": "mov mov retn",
+  "pseudocode": "int sub_5562D0()\n{\n  return *(_DWORD *)(dword_741F60 + 4896);\n}\n"
+ },
+ {
+  "addr": "0x5566f0",
+  "size": 12,
+  "nm": "mov mov retn",
+  "pseudocode": "int sub_5566F0()\n{\n  return *(_DWORD *)(dword_741F5C + 4212);\n}\n"
+ },
+ {
+  "addr": "0x55a0c0",
+  "size": 12,
+  "nm": "mov mov retn",
+  "pseudocode": "int __cdecl sub_55A0C0(int a1)\n{\n  return dword_741B58[a1];\n}\n"
+ },
+ {
+  "addr": "0x55a0d0",
+  "size": 16,
+  "nm": "mov mov retn",
+  "pseudocode": "int __cdecl sub_55A0D0(int a1)\n{\n  int result; // eax\n\n  result = a1;\n  dword_741758[a1] = 1;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x560590",
+  "size": 32,
+  "nm": "mov cmp jz cmp jz cmp jz xor retn mov retn",
+  "pseudocode": "BOOL __stdcall sub_560590(int a1)\n{\n  return a1 == 1 || a1 == 42 || a1 == 30;\n}\n"
+ },
+ {
+  "addr": "0x560620",
+  "size": 54,
+  "nm": "mov mov mov cmp jz cmp jz cmp jz cmp jz cmp jz xor retn mov retn",
+  "pseudocode": "BOOL __stdcall sub_560620(int a1)\n{\n  __int16 v1; // ax\n\n  v1 = *(_WORD *)(*(_DWORD *)(a1 + 8) + 22);\n  return v1 == 21 || v1 == 2 || v1 == 20 || v1 == 22 || v1 == 53;\n}\n"
+ },
+ {
+  "addr": "0x560660",
+  "size": 20,
+  "nm": "mov mov xor cmp setz retn",
+  "pseudocode": "BOOL __stdcall sub_560660(int a1)\n{\n  return *(_WORD *)(*(_DWORD *)(a1 + 8) + 22) == 27;\n}\n"
+ },
+ {
+  "addr": "0x560680",
+  "size": 20,
+  "nm": "mov mov xor cmp setz retn",
+  "pseudocode": "BOOL __stdcall sub_560680(int a1)\n{\n  return *(_WORD *)(*(_DWORD *)(a1 + 8) + 22) == 39;\n}\n"
+ },
+ {
+  "addr": "0x5606a0",
+  "size": 20,
+  "nm": "mov mov xor cmp setz retn",
+  "pseudocode": "BOOL __stdcall sub_5606A0(int a1)\n{\n  return *(_WORD *)(*(_DWORD *)(a1 + 8) + 22) == 4;\n}\n"
+ },
+ {
+  "addr": "0x564e80",
+  "size": 23,
+  "nm": "mov cmp jg mov retn imul retn",
+  "pseudocode": "int __stdcall sub_564E80(int a1)\n{\n  if ( a1 > 1 )\n    return a1 * a1;\n  else\n    return 2;\n}\n"
+ },
+ {
+  "addr": "0x56c5f0",
+  "size": 60,
+  "nm": "mov test jnz mov retn cmp jnz mov retn cmp jnz mov retn cmp mov jz mov retn",
+  "pseudocode": "char *__stdcall sub_56C5F0(int a1)\n{\n  char *result; // eax\n\n  switch ( a1 )\n  {\n    case 0:\n      return MEMORY[0x659424];\n    case 1:\n      return MEMORY[0x65941C];\n    case 2:\n      return MEMORY[0x659414];\n  }\n  result = MEMORY[0x65940C];\n  if ( a1 != 3 )\n    return MEMORY[0x64D074];\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x577000",
+  "size": 31,
+  "nm": "mov test jl cmp jge mov mov not and mov retn",
+  "pseudocode": "int __thiscall sub_577000(_DWORD *this, unsigned int a2)\n{\n  int result; // eax\n\n  result = a2;\n  if ( a2 < 0x20 )\n  {\n    result = ~dword_629BB8[a2];\n    *this &= result;\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x578230",
+  "size": 39,
+  "nm": "mov test jl cmp jge mov mov test jbe mov retn xor retn",
+  "pseudocode": "BOOL __thiscall sub_578230(_DWORD *this, unsigned int a2)\n{\n  return a2 < 0x20 && (dword_629BB8[a2] & *this) != 0;\n}\n"
+ },
+ {
+  "addr": "0x584ef0",
+  "size": 47,
+  "nm": "mov cmp jz cmp jz cmp jz cmp jz cmp jz cmp jz xor retn mov retn",
+  "pseudocode": "BOOL __stdcall sub_584EF0(int a1)\n{\n  return a1 == 7 || a1 == 9 || a1 == 10 || a1 == 15 || a1 == 8 || a1 == 32;\n}\n"
+ },
+ {
+  "addr": "0x584f80",
+  "size": 40,
+  "nm": "mov test jz mov mov cmp jz cmp jz mov retn xor retn",
+  "pseudocode": "BOOL __stdcall sub_584F80(int a1)\n{\n  __int16 v1; // ax\n  BOOL result; // eax\n\n  result = 0;\n  if ( a1 )\n  {\n    v1 = *(_WORD *)(*(_DWORD *)(a1 + 8) + 22);\n    if ( v1 != 1 && v1 != 42 )\n      return 1;\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x584fb0",
+  "size": 38,
+  "nm": "mov cmp jz cmp jz cmp jz xor retn mov retn",
+  "pseudocode": "BOOL __stdcall sub_584FB0(int a1)\n{\n  return a1 == 705 || a1 == 709 || a1 == 713;\n}\n"
+ },
+ {
+  "addr": "0x586070",
+  "size": 31,
+  "nm": "mov cmp jz cmp jz xor retn mov retn",
+  "pseudocode": "BOOL __stdcall sub_586070(int a1)\n{\n  return a1 == 704 || a1 == 703;\n}\n"
+ },
+ {
+  "addr": "0x587420",
+  "size": 27,
+  "nm": "mov cmp jz cmp jz xor retn mov retn",
+  "pseudocode": "BOOL __stdcall sub_587420(int a1)\n{\n  return a1 == 31 || a1 == 5;\n}\n"
+ },
+ {
+  "addr": "0x587440",
+  "size": 33,
+  "nm": "mov cmp jz cmp jz cmp jz or retn mov retn",
+  "pseudocode": "int __stdcall sub_587440(int a1)\n{\n  if ( a1 == 31 || a1 == 5 || a1 == 33 )\n    return 2;\n  else\n    return -1;\n}\n"
+ },
+ {
+  "addr": "0x588c00",
+  "size": 62,
+  "nm": "mov cmp jz cmp jz cmp jz cmp jz cmp jz cmp jz cmp jz cmp jz cmp jz mov retn xor retn",
+  "pseudocode": "BOOL __stdcall sub_588C00(int a1)\n{\n  return a1 != 3 && a1 != 27 && a1 != 39 && a1 != 49 && a1 != 4 && a1 != 21 && a1 != 2 && a1 != 19 && a1 != 20;\n}\n"
+ },
+ {
+  "addr": "0x589290",
+  "size": 57,
+  "nm": "mov cmp jz cmp jz cmp jz cmp jz cmp jz cmp jz cmp jz cmp jz mov retn xor retn",
+  "pseudocode": "BOOL __stdcall sub_589290(int a1)\n{\n  return a1 != 3 && a1 != 27 && a1 != 39 && a1 != 49 && a1 != 4 && a1 != 21 && a1 != 2 && a1 != 20;\n}\n"
+ },
+ {
+  "addr": "0x589ae0",
+  "size": 8,
+  "nm": "mov retn",
+  "pseudocode": "int __stdcall sub_589AE0(int a1)\n{\n  return 5;\n}\n"
+ },
+ {
+  "addr": "0x58a130",
+  "size": 18,
+  "nm": "mov xor mov mov mov retn",
+  "pseudocode": "_WORD *__thiscall sub_58A130(_WORD *this)\n{\n  _WORD *result; // eax\n\n  result = this;\n  *(_DWORD *)this = &off_62AA3C;\n  this[4] = 0;\n  *((_DWORD *)this + 1) = 0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x58a5c0",
+  "size": 17,
+  "nm": "mov xor cmp setz retn",
+  "pseudocode": "BOOL __stdcall sub_58A5C0(int a1)\n{\n  return *(_WORD *)(a1 + 6) == 7;\n}\n"
+ },
+ {
+  "addr": "0x58f232",
+  "size": 8,
+  "nm": "mov retn",
+  "pseudocode": "int __stdcall sub_58F232(int a1, int a2, int a3, int a4)\n{\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x594e70",
+  "size": 26,
+  "nm": "mov test jnz retn mov mov retn",
+  "pseudocode": "int __stdcall sub_594E70(int a1)\n{\n  int result; // eax\n\n  result = a1;\n  if ( a1 )\n  {\n    *(_DWORD *)(a1 + 8) = 1;\n    return 1;\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x595540",
+  "size": 20,
+  "nm": "mov test jnz or retn mov retn",
+  "pseudocode": "int __stdcall sub_595540(int a1)\n{\n  if ( a1 )\n    return *(_DWORD *)(a1 + 16);\n  else\n    return -1;\n}\n"
+ },
+ {
+  "addr": "0x595560",
+  "size": 20,
+  "nm": "mov test jnz or retn mov retn",
+  "pseudocode": "int __stdcall sub_595560(int a1)\n{\n  if ( a1 )\n    return *(_DWORD *)(a1 + 12);\n  else\n    return -1;\n}\n"
+ },
+ {
+  "addr": "0x5955c0",
+  "size": 32,
+  "nm": "mov or test jnz or retn mov test jbe mov mov retn",
+  "pseudocode": "int __stdcall sub_5955C0(int a1)\n{\n  int result; // eax\n\n  result = -1;\n  if ( !a1 )\n    return -1;\n  if ( *(_BYTE *)(a1 + 32) )\n    return **(_DWORD **)(a1 + 36);\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5955e0",
+  "size": 32,
+  "nm": "mov or test jnz or retn mov test jbe mov mov retn",
+  "pseudocode": "int __stdcall sub_5955E0(int a1)\n{\n  int result; // eax\n\n  result = -1;\n  if ( !a1 )\n    return -1;\n  if ( *(_BYTE *)(a1 + 24) )\n    return **(_DWORD **)(a1 + 28);\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x595df0",
+  "size": 38,
+  "nm": "mov mov mov xor mov mov mov mov mov retn",
+  "pseudocode": "_DWORD *__thiscall sub_595DF0(_DWORD *this, int a2)\n{\n  _DWORD *result; // eax\n\n  result = this;\n  this[1] = a2;\n  *this = &off_62B024;\n  this[2] = 0;\n  *((_WORD *)this + 6) = 0;\n  *((_WORD *)this + 7) = 0;\n  this[4] = -1082130432;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x59a3b0",
+  "size": 18,
+  "nm": "mov add cmp jl sub retn",
+  "pseudocode": "int __stdcall sub_59A3B0(int a1)\n{\n  int result; // eax\n\n  result = a1 + 2;\n  if ( a1 + 2 >= 4 )\n    return a1 - 2;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x59abf0",
+  "size": 46,
+  "nm": "mov cmp jnz retn cmp jnz mov retn cmp jnz mov retn cmp jnz mov retn cmp setz retn",
+  "pseudocode": "char __stdcall sub_59ABF0(char a1)\n{\n  char result; // al\n\n  result = a1;\n  if ( a1 != 1 )\n  {\n    if ( a1 == 22 )\n      return 1;\n    else\n      return a1 == 4 || a1 == 23 || a1 == 26;\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5a4a60",
+  "size": 8,
+  "nm": "mov retn",
+  "pseudocode": "int __stdcall sub_5A4A60(int a1, int a2, int a3, int a4, int a5)\n{\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x5bb230",
+  "size": 13,
+  "nm": "mov mov retn",
+  "pseudocode": "char *sub_5BB230()\n{\n  byte_75FDC4 = 0;\n  return &byte_75FDC4;\n}\n"
+ },
+ {
+  "addr": "0x5bc4d0",
+  "size": 43,
+  "nm": "mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "int __thiscall sub_5BC4D0(_DWORD *this, int a2, int a3, int a4, int a5)\n{\n  int result; // eax\n\n  this[1136] = a2;\n  result = a4;\n  this[1137] = a3;\n  this[1138] = a4;\n  this[1139] = a5;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5be970",
+  "size": 53,
+  "nm": "mov mov mov mov test jnz xor retn mov mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "char __thiscall sub_5BE970(_DWORD *this, int a2, int a3, int a4, int a5)\n{\n  if ( !*(_BYTE *)(*(_DWORD *)(*this + 4 * this[1]) + 16) )\n    return 0;\n  this[20] = a3;\n  this[19] = a2;\n  this[22] = a5;\n  this[21] = a4;\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x5beb70",
+  "size": 61,
+  "nm": "mov mov mov mov test jnz xor retn mov mov mov mov mov mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "char __thiscall sub_5BEB70(_DWORD *this, _DWORD *a2, _DWORD *a3, _DWORD *a4, _DWORD *a5)\n{\n  char result; // al\n\n  if ( !*(_BYTE *)(*(_DWORD *)(*this + 4 * this[1]) + 16) )\n    return 0;\n  *a2 = this[19];\n  *a3 = this[20];\n  *a4 = this[21];\n  result = 1;\n  *a5 = this[22];\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5d0370",
+  "size": 48,
+  "nm": "mov mov mov xor mov mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "_DWORD *__thiscall sub_5D0370(_DWORD *this, int a2)\n{\n  _DWORD *result; // eax\n\n  result = this;\n  this[3] = a2;\n  *this = &off_62CBAC;\n  this[2] = 0;\n  this[1] = 0;\n  this[5] = 0;\n  *((_BYTE *)this + 16) = 0;\n  this[6] = 0;\n  this[7] = 0;\n  this[8] = 0;\n  this[9] = -1;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5d0c60",
+  "size": 31,
+  "nm": "mov mov test jz cmp jnz mov mov retn",
+  "pseudocode": "int __stdcall sub_5D0C60(int a1)\n{\n  int result; // eax\n\n  result = *(_DWORD *)(a1 + 40);\n  if ( result )\n  {\n    if ( *(_BYTE *)(result + 72) == 7 )\n    {\n      *(_BYTE *)(a1 + 46) = 2;\n      *(_DWORD *)(a1 + 40) = 0;\n    }\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5ddb50",
+  "size": 59,
+  "nm": "mov mov mov mov mov mov test jz mov retn mov and neg sbb and mov retn",
+  "pseudocode": "char __thiscall sub_5DDB50(_DWORD *this, int a2, int a3)\n{\n  int v3; // ecx\n  int v4; // eax\n\n  v3 = this[2];\n  v4 = *(_DWORD *)(dword_77227C[a3] + 4 * a2);\n  if ( (*(_DWORD *)(v3 + 292) & v4) != 0 )\n    return 15;\n  else\n    return (v4 & *(_DWORD *)(v3 + 288)) != 0 ? 0x80 : 0;\n}\n"
+ },
+ {
+  "addr": "0x5de800",
+  "size": 12,
+  "nm": "mov mov retn",
+  "pseudocode": "int __stdcall sub_5DE800(int a1)\n{\n  int result; // eax\n\n  result = a1;\n  dword_77267C = a1;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5eb2f0",
+  "size": 23,
+  "nm": "mov test jnz fld retn fld retn",
+  "pseudocode": "double __thiscall sub_5EB2F0(float *this)\n{\n  if ( dword_664534 )\n    return flt_64D4BC;\n  else\n    return this[42];\n}\n"
+ },
+ {
+  "addr": "0x5ec8ef",
+  "size": 13,
+  "nm": "mov mov mov mov retn",
+  "pseudocode": "__int16 __usercall sub_5EC8EF@<ax>(int a1@<edi>, int a2@<esi>)\n{\n  __int16 result; // ax\n\n  result = *(_WORD *)(a2 - 2);\n  *(_WORD *)(a1 - 2) = result;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5ec8fc",
+  "size": 19,
+  "nm": "mov mov mov mov mov mov retn",
+  "pseudocode": "__int16 __usercall sub_5EC8FC@<ax>(int a1@<edi>, int a2@<esi>)\n{\n  __int16 result; // ax\n  char v3; // bl\n\n  result = *(_WORD *)(a2 - 3);\n  v3 = *(_BYTE *)(a2 - 1);\n  *(_WORD *)(a1 - 3) = result;\n  *(_BYTE *)(a1 - 1) = v3;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5ec996",
+  "size": 12,
+  "nm": "mov mov mov mov",
+  "pseudocode": "int __usercall sub_5EC996@<eax>(int a1@<edi>, int a2@<esi>)\n{\n  int v2; // ebx\n\n  v2 = *(_DWORD *)(a2 - 12);\n  *(_DWORD *)(a1 - 16) = *(_DWORD *)(a2 - 16);\n  *(_DWORD *)(a1 - 12) = v2;\n  return sub_5EC9A2();\n}\n"
+ },
+ {
+  "addr": "0x5ec9a2",
+  "size": 13,
+  "nm": "mov mov mov mov retn",
+  "pseudocode": "int __usercall sub_5EC9A2@<eax>(int a1@<edi>, int a2@<esi>)\n{\n  int result; // eax\n  int v3; // ebx\n\n  result = *(_DWORD *)(a2 - 8);\n  v3 = *(_DWORD *)(a2 - 4);\n  *(_DWORD *)(a1 - 8) = result;\n  *(_DWORD *)(a1 - 4) = v3;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5eca36",
+  "size": 25,
+  "nm": "mov mov mov mov mov mov mov mov retn",
+  "pseudocode": "int __usercall sub_5ECA36@<eax>(int a1@<edi>, int a2@<esi>)\n{\n  int v2; // ebx\n  int result; // eax\n  int v4; // ebx\n\n  v2 = *(_DWORD *)(a2 - 11);\n  *(_DWORD *)(a1 - 15) = *(_DWORD *)(a2 - 15);\n  *(_DWORD *)(a1 - 11) = v2;\n  result = *(_DWORD *)(a2 - 7);\n  v4 = *(_DWORD *)(a2 - 4);\n  *(_DWORD *)(a1 - 7) = result;\n  *(_DWORD *)(a1 - 4) = v4;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5ecd4d",
+  "size": 22,
+  "nm": "mov mov mov mov mov mov mov retn",
+  "pseudocode": "int __usercall sub_5ECD4D@<eax>(int a1@<edi>, int a2@<esi>)\n{\n  int v2; // ebx\n  int result; // eax\n\n  v2 = *(_DWORD *)(a2 - 6);\n  *(_DWORD *)(a1 - 10) = *(_DWORD *)(a2 - 10);\n  *(_DWORD *)(a1 - 6) = v2;\n  result = *(_DWORD *)(a2 - 2);\n  *(_WORD *)(a1 - 2) = result;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5ecdea",
+  "size": 19,
+  "nm": "mov mov mov mov mov mov retn",
+  "pseudocode": "int __usercall sub_5ECDEA@<eax>(int a1@<edi>, int a2@<esi>)\n{\n  int result; // eax\n  int v3; // ebx\n  char v4; // cl\n\n  result = *(_DWORD *)(a2 - 9);\n  v3 = *(_DWORD *)(a2 - 5);\n  v4 = *(_BYTE *)(a2 - 1);\n  *(_DWORD *)(a1 - 9) = result;\n  *(_DWORD *)(a1 - 5) = v3;\n  *(_BYTE *)(a1 - 1) = v4;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5edcb0",
+  "size": 15,
+  "nm": "mov xor cmp setz retn",
+  "pseudocode": "int sub_5EDCB0()\n{\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x5f9780",
+  "size": 10,
+  "nm": "mov mov mov retn",
+  "pseudocode": "int __fastcall sub_5F9780(int a1, int a2)\n{\n  int result; // eax\n\n  result = *(_DWORD *)(a1 + 20);\n  *(_DWORD *)(a2 + 8) = result;\n  *(_DWORD *)(a1 + 20) = a2;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5f9a20",
+  "size": 30,
+  "nm": "xor and mov mov mov mov retn",
+  "pseudocode": "__int16 __fastcall sub_5F9A20(int a1, char a2)\n{\n  __int16 result; // ax\n\n  result = 0;\n  *(_DWORD *)(a1 + 8) = sub_5F9AA0;\n  *(_DWORD *)(a1 + 16) = 0;\n  *(_WORD *)(a1 + 12) = 1;\n  *(_BYTE *)(a1 + 22) = a2 & 2;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5f9d00",
+  "size": 23,
+  "nm": "add lea mov mov mov mov retn",
+  "pseudocode": "__int16 __fastcall sub_5F9D00(_DWORD *a1, int a2)\n{\n  a1[5] = (char *)a1 + a2;\n  a1[4] = a1 + 8;\n  a1[2] = sub_5F9EF0;\n  return 1;\n}\n"
+ },
+ {
+  "addr": "0x5fc8ec",
+  "size": 56,
+  "nm": "mov mov mov mov mov mov mov retn",
+  "pseudocode": "int (__cdecl *MEMORY[0x5FC8EC]())(int, void *Src, int, int Size, int)\n{\n  int (__cdecl *result)(int, void *, int, int, int); // eax\n\n  result = MEMORY[0x6012D6];\n  off_661CAC[0] = (void (__noreturn *)())MEMORY[0x600F6B];\n  off_661CA8[0] = (void (__noreturn *)())MEMORY[0x6012D6];\n  off_661CB0[0] = (void (__noreturn *)())MEMORY[0x600FD1];\n  off_661CB4[0] = (void (__noreturn *)())MEMORY[0x600F11];\n  off_661CB8[0] = (void (__noreturn *)())MEMORY[0x600FB9];\n  off_661CBC = (void (__noreturn *)())MEMORY[0x6012D6];\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5fc944",
+  "size": 34,
+  "nm": "mov test mov jz mov mov mov mov retn",
+  "pseudocode": "int __cdecl MEMORY[0x5FC944](int a1, int a2, int a3, _DWORD *a4)\n{\n  int result; // eax\n\n  result = 1;\n  if ( (*(_DWORD *)(a1 + 4) & 6) != 0 )\n  {\n    *a4 = a2;\n    return 3;\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5fca3b",
+  "size": 10,
+  "nm": "mov mov retn",
+  "pseudocode": "int __cdecl sub_5FCA3B(int a1)\n{\n  int result; // eax\n\n  result = a1;\n  dword_661C14 = a1;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x5fca45",
+  "size": 30,
+  "nm": "mov imul add mov sar and retn",
+  "pseudocode": "int __cdecl MEMORY[0x5FCA45]()\n{\n  dword_661C14 = 214013 * dword_661C14 + 2531011;\n  return (dword_661C14 >> 16) & 0x7FFF;\n}\n"
+ },
+ {
+  "addr": "0x5ff9a0",
+  "size": 31,
+  "nm": "cmp jnb cmp jnb shld shl retn mov xor and shl retn xor xor retn",
+  "pseudocode": "int __usercall MEMORY[0x5FF9A0]@<eax>(__int64 a1@<edx:eax>, unsigned __int8 a2@<cl>)\n{\n  __int64 v2; // rax\n\n  if ( a2 >= 0x40u )\n  {\n    LODWORD(v2) = 0;\n  }\n  else if ( a2 >= 0x20u )\n  {\n    LODWORD(v2) = 0;\n  }\n  else\n  {\n    return a1 << (a2 & 0x1F);\n  }\n  return v2;\n}\n"
+ },
+ {
+  "addr": "0x601989",
+  "size": 38,
+  "nm": "mov cmp jz jle cmp jg mov retn mov retn",
+  "pseudocode": "errno_t __cdecl MEMORY[0x601989](int Value)\n{\n  errno_t result; // eax\n\n  result = Value;\n  if ( Value == 1 )\n  {\n    dword_772740 = 33;\n  }\n  else if ( Value > 1 && Value <= 3 )\n  {\n    dword_772740 = 34;\n  }\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x6019af",
+  "size": 37,
+  "nm": "xor mov mov cmp jz add inc cmp jl xor retn mov retn",
+  "pseudocode": "_UNKNOWN **__cdecl MEMORY[0x6019AF](int a1)\n{\n  int v1; // ecx\n  _DWORD *v2; // eax\n\n  v1 = 0;\n  v2 = &unk_661CC0;\n  while ( *v2 != a1 )\n  {\n    v2 += 2;\n    ++v1;\n    if ( (int)v2 >= (int)&dbl_661D98 )\n      return 0;\n  }\n  return (&off_661CC4)[2 * v1];\n}\n"
+ },
+ {
+  "addr": "0x604560",
+  "size": 61,
+  "nm": "mov cmp jnb mov and sar mov test lea jz mov retn and mov or retn",
+  "pseudocode": "intptr_t __cdecl MEMORY[0x604560](int FileHandle)\n{\n  int v1; // eax\n\n  if ( FileHandle < uNumber )\n  {\n    v1 = dword_772CE0[FileHandle >> 5] + 8 * (FileHandle & 0x1F);\n    if ( (*(_BYTE *)(v1 + 4) & 1) != 0 )\n      return *(_DWORD *)v1;\n  }\n  dword_772744 = 0;\n  dword_772740 = 9;\n  return -1;\n}\n"
+ },
+ {
+  "addr": "0x604e99",
+  "size": 10,
+  "nm": "mov or retn",
+  "pseudocode": "void __usercall MEMORY[0x604E99](int a1@<ebp>)\n{\n  *(_BYTE *)(a1 - 144) = 1;\n}\n"
+ },
+ {
+  "addr": "0x605d45",
+  "size": 23,
+  "nm": "mov and or mov fldcw retn",
+  "pseudocode": "void MEMORY[0x605D45]()\n{\n  ;\n}\n"
+ },
+ {
+  "addr": "0x605d5c",
+  "size": 25,
+  "nm": "test jz mov retn fadd mov retn",
+  "pseudocode": "double __usercall MEMORY[0x605D5C]@<st0>(int a1@<eax>, double result@<st0>)\n{\n  if ( (a1 & 0x80000) == 0 )\n    return result + 1.0;\n  return result;\n}\n"
+ },
+ {
+  "addr": "0x60718c",
+  "size": 38,
+  "nm": "mov cmp jb xor retn mov and sar mov mov and retn",
+  "pseudocode": "int __cdecl MEMORY[0x60718C](int FileHandle)\n{\n  if ( FileHandle < uNumber )\n    return *(_BYTE *)(dword_772CE0[FileHandle >> 5] + 8 * (FileHandle & 0x1F) + 4) & 0x40;\n  else\n    return 0;\n}\n"
+ }
+]

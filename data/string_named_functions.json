@@ -1,0 +1,75 @@
+{
+ "0x41c330": {
+  "name": "sub_41C330",
+  "strings": [
+   "player%d.nfo"
+  ]
+ },
+ "0x42d020": {
+  "name": "sub_42D020",
+  "strings": [
+   "Unlink from level [ %d ] Failed.\\n Stopping "
+  ]
+ },
+ "0x42d6c0": {
+  "name": "sub_42D6C0",
+  "strings": [
+   "LastComm: P1=%-5d  P2=%-5d  P3=%-5d  P4=%-5d P5=%-5d P6=%-5d P7=%-5d P8=%-5d",
+   "SinglePlayer> T#%d ",
+   "Highest commands per sec> %3d | Executed by player> %2d"
+  ]
+ },
+ "0x438a00": {
+  "name": "sub_438A00",
+  "strings": [
+   "MeOptimal: Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms"
+  ]
+ },
+ "0x472b20": {
+  "name": "sub_472B20",
+  "strings": [
+   "player%d",
+   "player%d_%d"
+  ]
+ },
+ "0x56b130": {
+  "name": "sub_56B130",
+  "strings": [
+   "  Player #%d: Dislike=%d, Like=%d, Ambivalence=%d."
+  ]
+ },
+ "0x5a0640": {
+  "name": "sub_5A0640",
+  "strings": [
+   "Target=%d (%s, (%6.2f, %6.2f)), "
+  ]
+ },
+ "0x5a1fc0": {
+  "name": "sub_5A1FC0",
+  "strings": [
+   "Player %d:\\n",
+   "  Computer Player, %s.\\n",
+   "  Human Player, %s.\\n"
+  ]
+ },
+ "0x5c88a0": {
+  "name": "sub_5C88A0",
+  "strings": [
+   "Number Players:          %d\\n"
+  ]
+ },
+ "0x5d15a0": {
+  "name": "sub_5D15A0",
+  "strings": [
+   "Destroy %d %s of player %d",
+   "Destroy all %s of player %d"
+  ]
+ },
+ "0x5e5cf0": {
+  "name": "sub_5E5CF0",
+  "strings": [
+   "  Player #%d Won.\\n",
+   "  Player #%d Lost.\\n"
+  ]
+ }
+}

@@ -1,0 +1,31 @@
+
+typedef unsigned int _DWORD;
+typedef unsigned short _WORD;
+typedef unsigned char _BYTE;
+typedef unsigned long long _QWORD;
+typedef short __int16;
+typedef long long __int64;
+typedef signed char _BYTE_SIGNED;
+
+_DWORD *__thiscall auto_465b10(_DWORD *self)
+{
+  _DWORD *result; // eax
+
+  result = self;
+  *self = 0;
+  self[1] = 0;
+  self[2] = 0;
+  self[3] = 0;
+  self[4] = 0;
+  self[5] = 0;
+  self[6] = 0;
+  self[7] = 0;
+  self[8] = 0;
+  self[9] = 0;
+  self[10] = 0;
+  self[11] = 0;
+  self[12] = 1065353216;
+  self[13] = 0;
+  self[14] = 0;
+  return result;
+}

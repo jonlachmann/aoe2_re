@@ -1,0 +1,4 @@
+pefile
+pyyaml
+capstone
+lief

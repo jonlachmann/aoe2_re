@@ -1,0 +1,10 @@
+# reccmp project configuration (https://github.com/decompals/reccmp)
+# Tracks decompilation progress: compares our re-implementation against the
+# original binary function-by-function.
+
+targets:
+  aoe2:
+    filename: build/aoe2_re.exe
+    source_root: Source
+    hash:
+      sha256: ad85f87e0b4387f7009d602a874094d0508113927c2e81e5e9e83c279f20fed3

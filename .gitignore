@@ -1,0 +1,15 @@
+build/
+venv/
+__pycache__/
+.DS_Store
+*.i64
+*.id0
+*.id1
+*.id2
+*.nam
+*.til
+refs/
+.playwright-mcp/
+corpus/
+reference/
+re/

@@ -1,0 +1,3431 @@
+[
+ {
+  "addr": "0x64bdd8",
+  "string": "mixerGetControlDetailsA",
+  "owners": []
+ },
+ {
+  "addr": "0x64bdd9",
+  "string": "ixerGetControlDetailsA",
+  "owners": []
+ },
+ {
+  "addr": "0x64bdda",
+  "string": "xerGetControlDetailsA",
+  "owners": []
+ },
+ {
+  "addr": "0x64bddb",
+  "string": "erGetControlDetailsA",
+  "owners": []
+ },
+ {
+  "addr": "0x64bddc",
+  "string": "rGetControlDetailsA",
+  "owners": []
+ },
+ {
+  "addr": "0x64bdf2",
+  "string": "mixerGetLineControlsA",
+  "owners": []
+ },
+ {
+  "addr": "0x64bdf3",
+  "string": "ixerGetLineControlsA",
+  "owners": []
+ },
+ {
+  "addr": "0x64bdf4",
+  "string": "xerGetLineControlsA",
+  "owners": []
+ },
+ {
+  "addr": "0x64bdf5",
+  "string": "erGetLineControlsA",
+  "owners": []
+ },
+ {
+  "addr": "0x64bdf6",
+  "string": "rGetLineControlsA",
+  "owners": []
+ },
+ {
+  "addr": "0x64be0a",
+  "string": "mixerGetLineInfoA",
+  "owners": []
+ },
+ {
+  "addr": "0x64be0b",
+  "string": "ixerGetLineInfoA",
+  "owners": []
+ },
+ {
+  "addr": "0x64be0c",
+  "string": "xerGetLineInfoA",
+  "owners": []
+ },
+ {
+  "addr": "0x64be0d",
+  "string": "erGetLineInfoA",
+  "owners": []
+ },
+ {
+  "addr": "0x64be0e",
+  "string": "rGetLineInfoA",
+  "owners": []
+ },
+ {
+  "addr": "0x64be2a",
+  "string": "mixerGetNumDevs",
+  "owners": []
+ },
+ {
+  "addr": "0x64be2b",
+  "string": "ixerGetNumDevs",
+  "owners": []
+ },
+ {
+  "addr": "0x64be2c",
+  "string": "xerGetNumDevs",
+  "owners": []
+ },
+ {
+  "addr": "0x64be2d",
+  "string": "erGetNumDevs",
+  "owners": []
+ },
+ {
+  "addr": "0x64be2e",
+  "string": "rGetNumDevs",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5bc",
+  "string": "Creating new RGE_Game_Info",
+  "owners": [
+   "0x41bc80 sub_41BC80"
+  ]
+ },
+ {
+  "addr": "0x64d5bd",
+  "string": "reating new RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5be",
+  "string": "eating new RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5bf",
+  "string": "ating new RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5c0",
+  "string": "ting new RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5c1",
+  "string": "ing new RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5c2",
+  "string": "ng new RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5c3",
+  "string": "g new RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5c4",
+  "string": " new RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5c5",
+  "string": "new RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5c6",
+  "string": "ew RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5c7",
+  "string": "w RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5c8",
+  "string": " RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d5c9",
+  "string": "RGE_Game_Info",
+  "owners": []
+ },
+ {
+  "addr": "0x64d8c0",
+  "string": "basegame::setup_fonts",
+  "owners": [
+   "0x41e760 sub_41E760"
+  ]
+ },
+ {
+  "addr": "0x64db80",
+  "string": "COMM: Send msg to window WM_USER  Msg=%d  Param=%d ",
+  "owners": [
+   "0x424be0 sub_424BE0",
+   "0x428470 sub_428470"
+  ]
+ },
+ {
+  "addr": "0x64dd38",
+  "string": "!!! Buffer size failure (LARGE)",
+  "owners": [
+   "0x424c20 sub_424C20"
+  ]
+ },
+ {
+  "addr": "0x64dd39",
+  "string": "!! Buffer size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd3a",
+  "string": "! Buffer size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd3b",
+  "string": " Buffer size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd3c",
+  "string": "Buffer size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd3d",
+  "string": "uffer size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd3e",
+  "string": "ffer size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd3f",
+  "string": "fer size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd40",
+  "string": "er size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd41",
+  "string": "r size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd42",
+  "string": " size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd43",
+  "string": "size failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd44",
+  "string": "ize failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd45",
+  "string": "ze failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd46",
+  "string": "e failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd47",
+  "string": " failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd48",
+  "string": "failure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd49",
+  "string": "ailure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd4a",
+  "string": "ilure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd4b",
+  "string": "lure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd4c",
+  "string": "ure (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd4d",
+  "string": "re (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd4e",
+  "string": "e (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd4f",
+  "string": " (LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd50",
+  "string": "(LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64dd51",
+  "string": "LARGE)",
+  "owners": []
+ },
+ {
+  "addr": "0x64e18c",
+  "string": "!!! COMM: CLASS NO AGGREGATION.",
+  "owners": [
+   "0x424c20 sub_424C20"
+  ]
+ },
+ {
+  "addr": "0x64e18d",
+  "string": "!! COMM: CLASS NO AGGREGATION.",
+  "owners": []
+ },
+ {
+  "addr": "0x64e18e",
+  "string": "! COMM: CLASS NO AGGREGATION.",
+  "owners": []
+ },
+ {
+  "addr": "0x64e18f",
+  "string": " COMM: CLASS NO AGGREGATION.",
+  "owners": []
+ },
+ {
+  "addr": "0x64e190",
+  "string": "COMM: CLASS NO AGGREGATION.",
+  "owners": []
+ },
+ {
+  "addr": "0x64e264",
+  "string": "COMM:  %s  Version... %s",
+  "owners": [
+   "0x425750 sub_425750"
+  ]
+ },
+ {
+  "addr": "0x64e29c",
+  "string": "COMM:  RGE COMMUNICTIONS STARTED ---------------%s",
+  "owners": [
+   "0x425750 sub_425750"
+  ]
+ },
+ {
+  "addr": "0x64e29d",
+  "string": "OMM:  RGE COMMUNICTIONS STARTED ---------------%s",
+  "owners": []
+ },
+ {
+  "addr": "0x64e29e",
+  "string": "MM:  RGE COMMUNICTIONS STARTED ---------------%s",
+  "owners": []
+ },
+ {
+  "addr": "0x64e29f",
+  "string": "M:  RGE COMMUNICTIONS STARTED ---------------%s",
+  "owners": []
+ },
+ {
+  "addr": "0x64e2a0",
+  "string": ":  RGE COMMUNICTIONS STARTED ---------------%s",
+  "owners": []
+ },
+ {
+  "addr": "0x64e2a1",
+  "string": "  RGE COMMUNICTIONS STARTED ---------------%s",
+  "owners": []
+ },
+ {
+  "addr": "0x64e2a2",
+  "string": " RGE COMMUNICTIONS STARTED ---------------%s",
+  "owners": []
+ },
+ {
+  "addr": "0x64e2a3",
+  "string": "RGE COMMUNICTIONS STARTED ---------------%s",
+  "owners": []
+ },
+ {
+  "addr": "0x64e328",
+  "string": "DropDeadPlayer() called from KillAnyMissingPlayers()",
+  "owners": [
+   "0x4262e0 sub_4262E0"
+  ]
+ },
+ {
+  "addr": "0x64e329",
+  "string": "ropDeadPlayer() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e32a",
+  "string": "opDeadPlayer() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e32b",
+  "string": "pDeadPlayer() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e32c",
+  "string": "DeadPlayer() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e32d",
+  "string": "eadPlayer() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e32e",
+  "string": "adPlayer() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e32f",
+  "string": "dPlayer() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e330",
+  "string": "Player() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e331",
+  "string": "layer() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e332",
+  "string": "ayer() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e333",
+  "string": "yer() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e334",
+  "string": "er() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e335",
+  "string": "r() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e336",
+  "string": "() called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e337",
+  "string": ") called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e338",
+  "string": " called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e339",
+  "string": "called from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e33a",
+  "string": "alled from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e33b",
+  "string": "lled from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e33c",
+  "string": "led from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e33d",
+  "string": "ed from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e33e",
+  "string": "d from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e33f",
+  "string": " from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e340",
+  "string": "from KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e341",
+  "string": "rom KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e342",
+  "string": "om KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e343",
+  "string": "m KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e344",
+  "string": " KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e345",
+  "string": "KillAnyMissingPlayers()",
+  "owners": []
+ },
+ {
+  "addr": "0x64e458",
+  "string": "GTD: RX Ser#%d From P#%d T#%ld ToExecT#%d Cmd=%d '%c' Seq=%d",
+  "owners": [
+   "0x427080 sub_427080"
+  ]
+ },
+ {
+  "addr": "0x64e5b4",
+  "string": "ShuttingDown == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": [
+   "0x427600 sub_427600"
+  ]
+ },
+ {
+  "addr": "0x64e5b5",
+  "string": "huttingDown == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5b6",
+  "string": "uttingDown == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5b7",
+  "string": "ttingDown == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5b8",
+  "string": "tingDown == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5b9",
+  "string": "ingDown == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5ba",
+  "string": "ngDown == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5bb",
+  "string": "gDown == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5bc",
+  "string": "Down == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5bd",
+  "string": "own == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5be",
+  "string": "wn == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5bf",
+  "string": "n == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5c0",
+  "string": " == TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5c1",
+  "string": "== TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5c2",
+  "string": "= TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5c3",
+  "string": " TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5c4",
+  "string": "TRUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5c5",
+  "string": "RUE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5c6",
+  "string": "UE!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5c7",
+  "string": "E!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5c8",
+  "string": "!! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5c9",
+  "string": "! EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5ca",
+  "string": " EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e5cb",
+  "string": "EvaluatePlayerMessage NOT getting called!",
+  "owners": []
+ },
+ {
+  "addr": "0x64e66c",
+  "string": "Got MSGTYPE_MISSING_PLAYER. Kicking player #%d, and saving.",
+  "owners": [
+   "0x427600 sub_427600"
+  ]
+ },
+ {
+  "addr": "0x64e66d",
+  "string": "ot MSGTYPE_MISSING_PLAYER. Kicking player #%d, and saving.",
+  "owners": []
+ },
+ {
+  "addr": "0x64e66e",
+  "string": "t MSGTYPE_MISSING_PLAYER. Kicking player #%d, and saving.",
+  "owners": []
+ },
+ {
+  "addr": "0x64e66f",
+  "string": " MSGTYPE_MISSING_PLAYER. Kicking player #%d, and saving.",
+  "owners": []
+ },
+ {
+  "addr": "0x64e670",
+  "string": "MSGTYPE_MISSING_PLAYER. Kicking player #%d, and saving.",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9f4",
+  "string": "DropDeadPlayer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": [
+   "0x4284b0 sub_4284B0"
+  ]
+ },
+ {
+  "addr": "0x64e9f5",
+  "string": "ropDeadPlayer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9f6",
+  "string": "opDeadPlayer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9f7",
+  "string": "pDeadPlayer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9f8",
+  "string": "DeadPlayer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9f9",
+  "string": "eadPlayer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9fa",
+  "string": "adPlayer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9fb",
+  "string": "dPlayer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9fc",
+  "string": "Player() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9fd",
+  "string": "layer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9fe",
+  "string": "ayer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64e9ff",
+  "string": "yer() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea00",
+  "string": "er() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea01",
+  "string": "r() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea02",
+  "string": "() called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea03",
+  "string": ") called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea04",
+  "string": " called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea05",
+  "string": "called from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea06",
+  "string": "alled from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea07",
+  "string": "lled from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea08",
+  "string": "led from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea09",
+  "string": "ed from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea0a",
+  "string": "d from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea0b",
+  "string": " from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea0c",
+  "string": "from MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea0d",
+  "string": "rom MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea0e",
+  "string": "om MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea0f",
+  "string": "m MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea10",
+  "string": " MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64ea11",
+  "string": "MSGTYPE_KILL_PLAYER, player %d, on turn %d",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb48",
+  "string": "sizeof(MSGFORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": [
+   "0x428c20 sub_428C20"
+  ]
+ },
+ {
+  "addr": "0x64eb49",
+  "string": "izeof(MSGFORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb4a",
+  "string": "zeof(MSGFORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb4b",
+  "string": "eof(MSGFORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb4c",
+  "string": "of(MSGFORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb4d",
+  "string": "f(MSGFORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb4e",
+  "string": "(MSGFORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb4f",
+  "string": "MSGFORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb50",
+  "string": "SGFORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb51",
+  "string": "GFORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb52",
+  "string": "FORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb53",
+  "string": "ORMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb54",
+  "string": "RMAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb55",
+  "string": "MAT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb56",
+  "string": "AT_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb57",
+  "string": "T_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb58",
+  "string": "_SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb59",
+  "string": "SENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb5a",
+  "string": "ENDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb5b",
+  "string": "NDSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb5c",
+  "string": "DSHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb5d",
+  "string": "SHAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb5e",
+  "string": "HAREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb5f",
+  "string": "AREDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb60",
+  "string": "REDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb61",
+  "string": "EDDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb62",
+  "string": "DDATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb63",
+  "string": "DATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb64",
+  "string": "ATA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb65",
+  "string": "TA)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb66",
+  "string": "A)=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb67",
+  "string": ")=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb68",
+  "string": "=%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb69",
+  "string": "%ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb6a",
+  "string": "ld, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb6b",
+  "string": "d, sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb6c",
+  "string": ", sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb6d",
+  "string": " sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb6e",
+  "string": "sizeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb6f",
+  "string": "izeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb70",
+  "string": "zeof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb71",
+  "string": "eof(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb72",
+  "string": "of(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb73",
+  "string": "f(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb74",
+  "string": "(MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64eb75",
+  "string": "MINICOMMPLAYEROPTIONS)=%ld, PlayerOptions.DataSizeToFollow=%ld, m.Size=%ld",
+  "owners": []
+ },
+ {
+  "addr": "0x64ed10",
+  "string": "COMM:Unknown system message. %d",
+  "owners": [
+   "0x429a50 sub_429A50"
+  ]
+ },
+ {
+  "addr": "0x64edd0",
+  "string": "COMM:Host session lost.",
+  "owners": [
+   "0x429a50 sub_429A50"
+  ]
+ },
+ {
+  "addr": "0x64ee1c",
+  "string": "DropDeadPlayer() called from DPSYS_DESTROYPLAYERORGROUP, player %d, on turn %d",
+  "owners": [
+   "0x429a50 sub_429A50"
+  ]
+ },
+ {
+  "addr": "0x64f148",
+  "string": "+++!RGEGTD Store",
+  "owners": [
+   "0x42b0b0 sub_42B0B0"
+  ]
+ },
+ {
+  "addr": "0x64f149",
+  "string": "++!RGEGTD Store",
+  "owners": []
+ },
+ {
+  "addr": "0x64f14a",
+  "string": "+!RGEGTD Store",
+  "owners": []
+ },
+ {
+  "addr": "0x64f14b",
+  "string": "!RGEGTD Store",
+  "owners": []
+ },
+ {
+  "addr": "0x64f14c",
+  "string": "RGEGTD Store",
+  "owners": []
+ },
+ {
+  "addr": "0x64f14d",
+  "string": "GEGTD Store",
+  "owners": []
+ },
+ {
+  "addr": "0x64f14e",
+  "string": "EGTD Store",
+  "owners": []
+ },
+ {
+  "addr": "0x64f14f",
+  "string": "GTD Store",
+  "owners": []
+ },
+ {
+  "addr": "0x64f15c",
+  "string": "GTD ACK",
+  "owners": []
+ },
+ {
+  "addr": "0x64f164",
+  "string": "!RGEGTD Ack",
+  "owners": [
+   "0x42b1c0 sub_42B1C0"
+  ]
+ },
+ {
+  "addr": "0x64f165",
+  "string": "RGEGTD Ack",
+  "owners": []
+ },
+ {
+  "addr": "0x64f166",
+  "string": "GEGTD Ack",
+  "owners": []
+ },
+ {
+  "addr": "0x64f167",
+  "string": "EGTD Ack",
+  "owners": []
+ },
+ {
+  "addr": "0x64f168",
+  "string": "GTD Ack",
+  "owners": []
+ },
+ {
+  "addr": "0x64f170",
+  "string": "!RGEGTD RxAck",
+  "owners": [
+   "0x42b280 sub_42B280"
+  ]
+ },
+ {
+  "addr": "0x64f171",
+  "string": "RGEGTD RxAck",
+  "owners": []
+ },
+ {
+  "addr": "0x64f172",
+  "string": "GEGTD RxAck",
+  "owners": []
+ },
+ {
+  "addr": "0x64f173",
+  "string": "EGTD RxAck",
+  "owners": []
+ },
+ {
+  "addr": "0x64f174",
+  "string": "GTD RxAck",
+  "owners": []
+ },
+ {
+  "addr": "0x64f220",
+  "string": "!RGEGTD SendStore",
+  "owners": [
+   "0x42b3f0 sub_42B3F0"
+  ]
+ },
+ {
+  "addr": "0x64f221",
+  "string": "RGEGTD SendStore",
+  "owners": []
+ },
+ {
+  "addr": "0x64f222",
+  "string": "GEGTD SendStore",
+  "owners": []
+ },
+ {
+  "addr": "0x64f223",
+  "string": "EGTD SendStore",
+  "owners": []
+ },
+ {
+  "addr": "0x64f224",
+  "string": "GTD SendStore",
+  "owners": []
+ },
+ {
+  "addr": "0x64f2cc",
+  "string": "TX RGTGTD",
+  "owners": [
+   "0x42baf0 sub_42BAF0"
+  ]
+ },
+ {
+  "addr": "0x64f2cd",
+  "string": "X RGTGTD",
+  "owners": []
+ },
+ {
+  "addr": "0x64f2ce",
+  "string": " RGTGTD",
+  "owners": []
+ },
+ {
+  "addr": "0x64f2cf",
+  "string": "RGTGTD",
+  "owners": []
+ },
+ {
+  "addr": "0x64f388",
+  "string": "UNLINK Unknown",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f398",
+  "string": "UNLINK GameIsPaused",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f399",
+  "string": "NLINK GameIsPaused",
+  "owners": []
+ },
+ {
+  "addr": "0x64f39a",
+  "string": "LINK GameIsPaused",
+  "owners": []
+ },
+ {
+  "addr": "0x64f39b",
+  "string": "INK GameIsPaused",
+  "owners": []
+ },
+ {
+  "addr": "0x64f39c",
+  "string": "NK GameIsPaused",
+  "owners": []
+ },
+ {
+  "addr": "0x64f39d",
+  "string": "K GameIsPaused",
+  "owners": []
+ },
+ {
+  "addr": "0x64f39e",
+  "string": " GameIsPaused",
+  "owners": []
+ },
+ {
+  "addr": "0x64f39f",
+  "string": "GameIsPaused",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3ac",
+  "string": "UNLINK GameIsRunning",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f3ad",
+  "string": "NLINK GameIsRunning",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3ae",
+  "string": "LINK GameIsRunning",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3af",
+  "string": "INK GameIsRunning",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3b0",
+  "string": "NK GameIsRunning",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3b1",
+  "string": "K GameIsRunning",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3b2",
+  "string": " GameIsRunning",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3b3",
+  "string": "GameIsRunning",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3c4",
+  "string": "UNLINK GameIsLoading",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f3c5",
+  "string": "NLINK GameIsLoading",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3c6",
+  "string": "LINK GameIsLoading",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3c7",
+  "string": "INK GameIsLoading",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3c8",
+  "string": "NK GameIsLoading",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3c9",
+  "string": "K GameIsLoading",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3ca",
+  "string": " GameIsLoading",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3cb",
+  "string": "GameIsLoading",
+  "owners": []
+ },
+ {
+  "addr": "0x64f3dc",
+  "string": "UNLINK CommSettingsExcahanged",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f3fc",
+  "string": "UNLINK GameOptionsExchanged",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f418",
+  "string": "UNLINK PlayerSet",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f42c",
+  "string": "UNLINK PlayerCreated",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f444",
+  "string": "UNLINK SerssionHosted",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f45c",
+  "string": "UNLINK SessionAvailable",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f474",
+  "string": "UNLINK ServiceAvailable",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f48c",
+  "string": "UNLINK ReleaseComm",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f4a0",
+  "string": "Unlinking current level (%d)",
+  "owners": [
+   "0x42c2a0 sub_42C2A0"
+  ]
+ },
+ {
+  "addr": "0x64f4c0",
+  "string": "Unlink from level [ %d ] Failed.\n Stopping ",
+  "owners": [
+   "0x42d020 sub_42D020"
+  ]
+ },
+ {
+  "addr": "0x64f4ec",
+  "string": "AFTER UNLINKING...Status=%d   Reported=%d",
+  "owners": [
+   "0x42d020 sub_42D020"
+  ]
+ },
+ {
+  "addr": "0x64f4ed",
+  "string": "FTER UNLINKING...Status=%d   Reported=%d",
+  "owners": []
+ },
+ {
+  "addr": "0x64f4ee",
+  "string": "TER UNLINKING...Status=%d   Reported=%d",
+  "owners": []
+ },
+ {
+  "addr": "0x64f4ef",
+  "string": "ER UNLINKING...Status=%d   Reported=%d",
+  "owners": []
+ },
+ {
+  "addr": "0x64f4f0",
+  "string": "R UNLINKING...Status=%d   Reported=%d",
+  "owners": []
+ },
+ {
+  "addr": "0x64f4f1",
+  "string": " UNLINKING...Status=%d   Reported=%d",
+  "owners": []
+ },
+ {
+  "addr": "0x64f4f2",
+  "string": "UNLINKING...Status=%d   Reported=%d",
+  "owners": []
+ },
+ {
+  "addr": "0x64f518",
+  "string": "Unlink to level %d desired, currently at level=%d",
+  "owners": [
+   "0x42d020 sub_42D020"
+  ]
+ },
+ {
+  "addr": "0x64f580",
+  "string": "SRVC-Gt'd",
+  "owners": [
+   "0x42d6c0 sub_42D6C0"
+  ]
+ },
+ {
+  "addr": "0x64f581",
+  "string": "RVC-Gt'd",
+  "owners": []
+ },
+ {
+  "addr": "0x64f582",
+  "string": "VC-Gt'd",
+  "owners": []
+ },
+ {
+  "addr": "0x64f583",
+  "string": "C-Gt'd",
+  "owners": []
+ },
+ {
+  "addr": "0x64f58c",
+  "string": "RGE-Gt'd",
+  "owners": [
+   "0x42d6c0 sub_42D6C0"
+  ]
+ },
+ {
+  "addr": "0x64f58d",
+  "string": "GE-Gt'd",
+  "owners": []
+ },
+ {
+  "addr": "0x64f58e",
+  "string": "E-Gt'd",
+  "owners": []
+ },
+ {
+  "addr": "0x64f598",
+  "string": "LastComm: P1=%-5d  P2=%-5d  P3=%-5d  P4=%-5d P5=%-5d P6=%-5d P7=%-5d P8=%-5d",
+  "owners": [
+   "0x42d6c0 sub_42D6C0"
+  ]
+ },
+ {
+  "addr": "0x64f599",
+  "string": "astComm: P1=%-5d  P2=%-5d  P3=%-5d  P4=%-5d P5=%-5d P6=%-5d P7=%-5d P8=%-5d",
+  "owners": []
+ },
+ {
+  "addr": "0x64f59a",
+  "string": "stComm: P1=%-5d  P2=%-5d  P3=%-5d  P4=%-5d P5=%-5d P6=%-5d P7=%-5d P8=%-5d",
+  "owners": []
+ },
+ {
+  "addr": "0x64f59b",
+  "string": "tComm: P1=%-5d  P2=%-5d  P3=%-5d  P4=%-5d P5=%-5d P6=%-5d P7=%-5d P8=%-5d",
+  "owners": []
+ },
+ {
+  "addr": "0x64f59c",
+  "string": "Comm: P1=%-5d  P2=%-5d  P3=%-5d  P4=%-5d P5=%-5d P6=%-5d P7=%-5d P8=%-5d",
+  "owners": []
+ },
+ {
+  "addr": "0x64fb88",
+  "string": "DropDeadPlayer() called from Kick()",
+  "owners": [
+   "0x42f940 sub_42F940"
+  ]
+ },
+ {
+  "addr": "0x64fe7c",
+  "string": "targetfile %s",
+  "owners": [
+   "0x4302f0 sub_4302F0"
+  ]
+ },
+ {
+  "addr": "0x64fe7d",
+  "string": "argetfile %s",
+  "owners": []
+ },
+ {
+  "addr": "0x64fe7e",
+  "string": "rgetfile %s",
+  "owners": []
+ },
+ {
+  "addr": "0x650ff8",
+  "string": "MeOptimal: Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": [
+   "0x438a00 sub_438A00"
+  ]
+ },
+ {
+  "addr": "0x650ff9",
+  "string": "eOptimal: Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x650ffa",
+  "string": "Optimal: Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x650ffb",
+  "string": "ptimal: Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x650ffc",
+  "string": "timal: Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x650ffd",
+  "string": "imal: Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x650ffe",
+  "string": "mal: Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x650fff",
+  "string": "al: Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651000",
+  "string": "l: Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651001",
+  "string": ": Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651002",
+  "string": " Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651003",
+  "string": "Buf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651004",
+  "string": "uf=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651005",
+  "string": "f=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651006",
+  "string": "=%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651007",
+  "string": "%3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651008",
+  "string": "3d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651009",
+  "string": "d Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x65100a",
+  "string": " Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x65100b",
+  "string": "Gran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x65100c",
+  "string": "ran=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x65100d",
+  "string": "an=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x65100e",
+  "string": "n=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x65100f",
+  "string": "=%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651010",
+  "string": "%3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651011",
+  "string": "3d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651012",
+  "string": "d  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651013",
+  "string": "  Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651014",
+  "string": " Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651015",
+  "string": "Target FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651016",
+  "string": "arget FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x651017",
+  "string": "rget FPS=%3d  My expect turn=%4dms",
+  "owners": []
+ },
+ {
+  "addr": "0x652138",
+  "string": "diam_map::draw",
+  "owners": [
+   "0x444370 sub_444370"
+  ]
+ },
+ {
+  "addr": "0x652148",
+  "string": "diam_map::clear_image",
+  "owners": [
+   "0x444540 sub_444540"
+  ]
+ },
+ {
+  "addr": "0x652160",
+  "string": "diam_map::draw_all_tiles",
+  "owners": [
+   "0x4446d0 sub_4446D0"
+  ]
+ },
+ {
+  "addr": "0x65217c",
+  "string": "diam_map::draw_explored_tiles",
+  "owners": [
+   "0x444740 sub_444740"
+  ]
+ },
+ {
+  "addr": "0x65219c",
+  "string": "diam_map::draw_selected_area",
+  "owners": [
+   "0x444c90 sub_444C90"
+  ]
+ },
+ {
+  "addr": "0x6521bc",
+  "string": "diam_map::draw_objects",
+  "owners": [
+   "0x444d30 sub_444D30"
+  ]
+ },
+ {
+  "addr": "0x652654",
+  "string": "TribeTechHelpScreen::draw_node_text",
+  "owners": [
+   "0x457760 sub_457760"
+  ]
+ },
+ {
+  "addr": "0x652678",
+  "string": "TribeTechHelpScreen::draw_node_pic",
+  "owners": [
+   "0x457760 sub_457760"
+  ]
+ },
+ {
+  "addr": "0x65269c",
+  "string": "TribeTechHelpScreen::draw_background_art",
+  "owners": [
+   "0x457ec0 sub_457EC0"
+  ]
+ },
+ {
+  "addr": "0x6526c8",
+  "string": "TribeTechHelpScreen::draw_lines",
+  "owners": [
+   "0x458120 sub_458120"
+  ]
+ },
+ {
+  "addr": "0x6526e8",
+  "string": "TribeTechHelpScreen::draw_highlight",
+  "owners": [
+   "0x458960 sub_458960"
+  ]
+ },
+ {
+  "addr": "0x652724",
+  "string": "TribePopUpHelp::popup_text",
+  "owners": []
+ },
+ {
+  "addr": "0x652740",
+  "string": "TribePopUpHelp::draw_node",
+  "owners": [
+   "0x45afe0 sub_45AFE0"
+  ]
+ },
+ {
+  "addr": "0x65275c",
+  "string": "TribePopUpHelp::draw",
+  "owners": [
+   "0x45afe0 sub_45AFE0"
+  ]
+ },
+ {
+  "addr": "0x652774",
+  "string": "TribePopUpHelp::draw_border",
+  "owners": [
+   "0x45b330 sub_45B330"
+  ]
+ },
+ {
+  "addr": "0x652aa4",
+  "string": "RGE_GAME_INFO: Read version correctly",
+  "owners": [
+   "0x4647c0 sub_4647C0"
+  ]
+ },
+ {
+  "addr": "0x65320c",
+  "string": "mouseptr::LoadCursors",
+  "owners": [
+   "0x48a8c0 sub_48A8C0"
+  ]
+ },
+ {
+  "addr": "0x653248",
+  "string": "mouseptr::draw",
+  "owners": [
+   "0x48b000 sub_48B000"
+  ]
+ },
+ {
+  "addr": "0x653258",
+  "string": "mouseptr::poll",
+  "owners": [
+   "0x48b5b0 sub_48B5B0"
+  ]
+ },
+ {
+  "addr": "0x6536d8",
+  "string": "pnl_btn::draw2",
+  "owners": [
+   "0x4afac0 sub_4AFAC0"
+  ]
+ },
+ {
+  "addr": "0x6536e8",
+  "string": "pnl_btn::draw",
+  "owners": [
+   "0x4afac0 sub_4AFAC0"
+  ]
+ },
+ {
+  "addr": "0x653704",
+  "string": "pnl_edit::draw",
+  "owners": [
+   "0x4b4030 sub_4B4030"
+  ]
+ },
+ {
+  "addr": "0x653714",
+  "string": "pnl_inp::draw",
+  "owners": [
+   "0x4b5040 sub_4B5040"
+  ]
+ },
+ {
+  "addr": "0x653724",
+  "string": "pnl_lst::draw",
+  "owners": [
+   "0x4b6330 sub_4B6330"
+  ]
+ },
+ {
+  "addr": "0x653734",
+  "string": "pnl_lst::draw_highlight_bar",
+  "owners": [
+   "0x4b6560 sub_4B6560"
+  ]
+ },
+ {
+  "addr": "0x653780",
+  "string": "pnl_msg::draw",
+  "owners": [
+   "0x4b7170 sub_4B7170"
+  ]
+ },
+ {
+  "addr": "0x653790",
+  "string": "pnl_msg::render_to_image_buffer",
+  "owners": [
+   "0x4b7850 sub_4B7850"
+  ]
+ },
+ {
+  "addr": "0x6537c0",
+  "string": "pnl_pic::draw",
+  "owners": [
+   "0x4b8580 sub_4B8580"
+  ]
+ },
+ {
+  "addr": "0x6537d0",
+  "string": "pnl_scbr::draw",
+  "owners": [
+   "0x4b9470 sub_4B9470",
+   "0x4b9600 sub_4B9600"
+  ]
+ },
+ {
+  "addr": "0x6537e0",
+  "string": "pnl_txt::word_wrap_append",
+  "owners": [
+   "0x4ba810 sub_4BA810"
+  ]
+ },
+ {
+  "addr": "0x653860",
+  "string": "pnl_txt::force_draw",
+  "owners": [
+   "0x4bc170 sub_4BC170"
+  ]
+ },
+ {
+  "addr": "0x653874",
+  "string": "pnl_txt::draw",
+  "owners": [
+   "0x4bc260 sub_4BC260"
+  ]
+ },
+ {
+  "addr": "0x653884",
+  "string": "pnl_txt::draw_background2",
+  "owners": [
+   "0x4bc360 sub_4BC360"
+  ]
+ },
+ {
+  "addr": "0x6538a0",
+  "string": "pnl_txt::draw_background",
+  "owners": [
+   "0x4bc360 sub_4BC360"
+  ]
+ },
+ {
+  "addr": "0x6538bc",
+  "string": "pnl_txt::draw_border",
+  "owners": [
+   "0x4bc560 sub_4BC560"
+  ]
+ },
+ {
+  "addr": "0x6538d4",
+  "string": "pnl_txt::get_text_rect",
+  "owners": [
+   "0x4bd6a0 sub_4BD6A0"
+  ]
+ },
+ {
+  "addr": "0x6539f4",
+  "string": "RGE_RANDOM_MAP_MODULE::module completed with random: %d.",
+  "owners": [
+   "0x4bf310 sub_4BF310"
+  ]
+ },
+ {
+  "addr": "0x653a30",
+  "string": "RGE_RANDOM_MAP_MODULE::map startped with random: %d.",
+  "owners": [
+   "0x4bf310 sub_4BF310"
+  ]
+ },
+ {
+  "addr": "0x6541a0",
+  "string": "scr_ach::draw",
+  "owners": [
+   "0x4d2900 sub_4D2900"
+  ]
+ },
+ {
+  "addr": "0x6542a4",
+  "string": "scr_cred",
+  "owners": [
+   "0x4d6120 sub_4D6120"
+  ]
+ },
+ {
+  "addr": "0x6542b0",
+  "string": "scr_cred::draw",
+  "owners": [
+   "0x4d6b20 sub_4D6B20"
+  ]
+ },
+ {
+  "addr": "0x65449c",
+  "string": "scr_game::draw4",
+  "owners": [
+   "0x4e1ac0 sub_4E1AC0"
+  ]
+ },
+ {
+  "addr": "0x6544ac",
+  "string": "scr_game::draw3",
+  "owners": [
+   "0x4e1ac0 sub_4E1AC0"
+  ]
+ },
+ {
+  "addr": "0x6544bc",
+  "string": "scr_game::draw2",
+  "owners": [
+   "0x4e1ac0 sub_4E1AC0"
+  ]
+ },
+ {
+  "addr": "0x6544cc",
+  "string": "scr_game::draw",
+  "owners": [
+   "0x4e1ac0 sub_4E1AC0"
+  ]
+ },
+ {
+  "addr": "0x65453c",
+  "string": "scr_hist",
+  "owners": [
+   "0x4ea260 sub_4EA260"
+  ]
+ },
+ {
+  "addr": "0x654960",
+  "string": "Select Tribe Screen",
+  "owners": [
+   "0x4f6080 "
+  ]
+ },
+ {
+  "addr": "0x654961",
+  "string": "elect Tribe Screen",
+  "owners": []
+ },
+ {
+  "addr": "0x654962",
+  "string": "lect Tribe Screen",
+  "owners": []
+ },
+ {
+  "addr": "0x654963",
+  "string": "ect Tribe Screen",
+  "owners": []
+ },
+ {
+  "addr": "0x654964",
+  "string": "ct Tribe Screen",
+  "owners": []
+ },
+ {
+  "addr": "0x654965",
+  "string": "t Tribe Screen",
+  "owners": []
+ },
+ {
+  "addr": "0x654966",
+  "string": " Tribe Screen",
+  "owners": []
+ },
+ {
+  "addr": "0x654967",
+  "string": "Tribe Screen",
+  "owners": []
+ },
+ {
+  "addr": "0x6550d0",
+  "string": "scr_mm-bln",
+  "owners": [
+   "0x500940 sub_500940"
+  ]
+ },
+ {
+  "addr": "0x6550dc",
+  "string": "scr_mm-pic",
+  "owners": [
+   "0x500940 sub_500940"
+  ]
+ },
+ {
+  "addr": "0x6550e8",
+  "string": "scr_mm-bak",
+  "owners": [
+   "0x500940 sub_500940"
+  ]
+ },
+ {
+  "addr": "0x65521c",
+  "string": "scr_mm-pb",
+  "owners": [
+   "0x501120 sub_501120"
+  ]
+ },
+ {
+  "addr": "0x655228",
+  "string": "scr_mm-bb",
+  "owners": [
+   "0x501120 sub_501120"
+  ]
+ },
+ {
+  "addr": "0x655378",
+  "string": "scr_multim::pe",
+  "owners": [
+   "0x501f70 sub_501F70"
+  ]
+ },
+ {
+  "addr": "0x6553b0",
+  "string": "TRIBE_Screen_Options::draw",
+  "owners": [
+   "0x503fe0 sub_503FE0"
+  ]
+ },
+ {
+  "addr": "0x655464",
+  "string": "scr_sed::draw",
+  "owners": [
+   "0x50d4c0 sub_50D4C0"
+  ]
+ },
+ {
+  "addr": "0x655a90",
+  "string": "scr_stms",
+  "owners": [
+   "0x51cfe0 sub_51CFE0"
+  ]
+ },
+ {
+  "addr": "0x655ab4",
+  "string": "scr_vc::draw",
+  "owners": [
+   "0x51e5d0 sub_51E5D0"
+  ]
+ },
+ {
+  "addr": "0x655c58",
+  "string": "TribeBuildingObj ROO 1.",
+  "owners": [
+   "0x52f480 sub_52F480"
+  ]
+ },
+ {
+  "addr": "0x656700",
+  "string": "LARGE-MAP",
+  "owners": [
+   "0x556d50 sub_556D50"
+  ]
+ },
+ {
+  "addr": "0x656701",
+  "string": "ARGE-MAP",
+  "owners": []
+ },
+ {
+  "addr": "0x656702",
+  "string": "RGE-MAP",
+  "owners": []
+ },
+ {
+  "addr": "0x6573f0",
+  "string": "sn-target-evaluation-in-progress",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x6573f1",
+  "string": "n-target-evaluation-in-progress",
+  "owners": []
+ },
+ {
+  "addr": "0x6573f2",
+  "string": "-target-evaluation-in-progress",
+  "owners": []
+ },
+ {
+  "addr": "0x6573f3",
+  "string": "target-evaluation-in-progress",
+  "owners": []
+ },
+ {
+  "addr": "0x6573f4",
+  "string": "arget-evaluation-in-progress",
+  "owners": []
+ },
+ {
+  "addr": "0x6573f5",
+  "string": "rget-evaluation-in-progress",
+  "owners": []
+ },
+ {
+  "addr": "0x657414",
+  "string": "sn-target-evaluation-time-kill-ratio",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x657415",
+  "string": "n-target-evaluation-time-kill-ratio",
+  "owners": []
+ },
+ {
+  "addr": "0x657416",
+  "string": "-target-evaluation-time-kill-ratio",
+  "owners": []
+ },
+ {
+  "addr": "0x657417",
+  "string": "target-evaluation-time-kill-ratio",
+  "owners": []
+ },
+ {
+  "addr": "0x657418",
+  "string": "arget-evaluation-time-kill-ratio",
+  "owners": []
+ },
+ {
+  "addr": "0x657419",
+  "string": "rget-evaluation-time-kill-ratio",
+  "owners": []
+ },
+ {
+  "addr": "0x6575d8",
+  "string": "sn-target-evaluation-boat",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x6575d9",
+  "string": "n-target-evaluation-boat",
+  "owners": []
+ },
+ {
+  "addr": "0x6575da",
+  "string": "-target-evaluation-boat",
+  "owners": []
+ },
+ {
+  "addr": "0x6575db",
+  "string": "target-evaluation-boat",
+  "owners": []
+ },
+ {
+  "addr": "0x6575dc",
+  "string": "arget-evaluation-boat",
+  "owners": []
+ },
+ {
+  "addr": "0x6575dd",
+  "string": "rget-evaluation-boat",
+  "owners": []
+ },
+ {
+  "addr": "0x657698",
+  "string": "sn-target-evaluation-siege-weapon",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x657699",
+  "string": "n-target-evaluation-siege-weapon",
+  "owners": []
+ },
+ {
+  "addr": "0x65769a",
+  "string": "-target-evaluation-siege-weapon",
+  "owners": []
+ },
+ {
+  "addr": "0x65769b",
+  "string": "target-evaluation-siege-weapon",
+  "owners": []
+ },
+ {
+  "addr": "0x65769c",
+  "string": "arget-evaluation-siege-weapon",
+  "owners": []
+ },
+ {
+  "addr": "0x65769d",
+  "string": "rget-evaluation-siege-weapon",
+  "owners": []
+ },
+ {
+  "addr": "0x6576bc",
+  "string": "sn-target-evaluation-continent",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x6576bd",
+  "string": "n-target-evaluation-continent",
+  "owners": []
+ },
+ {
+  "addr": "0x6576be",
+  "string": "-target-evaluation-continent",
+  "owners": []
+ },
+ {
+  "addr": "0x6576bf",
+  "string": "target-evaluation-continent",
+  "owners": []
+ },
+ {
+  "addr": "0x6576c0",
+  "string": "arget-evaluation-continent",
+  "owners": []
+ },
+ {
+  "addr": "0x6576c1",
+  "string": "rget-evaluation-continent",
+  "owners": []
+ },
+ {
+  "addr": "0x657938",
+  "string": "sn-target-evaluation-range",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x657939",
+  "string": "n-target-evaluation-range",
+  "owners": []
+ },
+ {
+  "addr": "0x65793a",
+  "string": "-target-evaluation-range",
+  "owners": []
+ },
+ {
+  "addr": "0x65793b",
+  "string": "target-evaluation-range",
+  "owners": []
+ },
+ {
+  "addr": "0x65793c",
+  "string": "arget-evaluation-range",
+  "owners": []
+ },
+ {
+  "addr": "0x65793d",
+  "string": "rget-evaluation-range",
+  "owners": []
+ },
+ {
+  "addr": "0x657954",
+  "string": "sn-target-evaluation-attack-attempts",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x657955",
+  "string": "n-target-evaluation-attack-attempts",
+  "owners": []
+ },
+ {
+  "addr": "0x657956",
+  "string": "-target-evaluation-attack-attempts",
+  "owners": []
+ },
+ {
+  "addr": "0x657957",
+  "string": "target-evaluation-attack-attempts",
+  "owners": []
+ },
+ {
+  "addr": "0x657958",
+  "string": "arget-evaluation-attack-attempts",
+  "owners": []
+ },
+ {
+  "addr": "0x657959",
+  "string": "rget-evaluation-attack-attempts",
+  "owners": []
+ },
+ {
+  "addr": "0x6579ac",
+  "string": "sn-target-evaluation-randomness",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x6579ad",
+  "string": "n-target-evaluation-randomness",
+  "owners": []
+ },
+ {
+  "addr": "0x6579ae",
+  "string": "-target-evaluation-randomness",
+  "owners": []
+ },
+ {
+  "addr": "0x6579af",
+  "string": "target-evaluation-randomness",
+  "owners": []
+ },
+ {
+  "addr": "0x6579b0",
+  "string": "arget-evaluation-randomness",
+  "owners": []
+ },
+ {
+  "addr": "0x6579b1",
+  "string": "rget-evaluation-randomness",
+  "owners": []
+ },
+ {
+  "addr": "0x6579cc",
+  "string": "sn-target-evaluation-rof",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x6579cd",
+  "string": "n-target-evaluation-rof",
+  "owners": []
+ },
+ {
+  "addr": "0x6579ce",
+  "string": "-target-evaluation-rof",
+  "owners": []
+ },
+ {
+  "addr": "0x6579cf",
+  "string": "target-evaluation-rof",
+  "owners": []
+ },
+ {
+  "addr": "0x6579d0",
+  "string": "arget-evaluation-rof",
+  "owners": []
+ },
+ {
+  "addr": "0x6579d1",
+  "string": "rget-evaluation-rof",
+  "owners": []
+ },
+ {
+  "addr": "0x6579e8",
+  "string": "sn-target-evaluation-ally-proximity",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x6579e9",
+  "string": "n-target-evaluation-ally-proximity",
+  "owners": []
+ },
+ {
+  "addr": "0x6579ea",
+  "string": "-target-evaluation-ally-proximity",
+  "owners": []
+ },
+ {
+  "addr": "0x6579eb",
+  "string": "target-evaluation-ally-proximity",
+  "owners": []
+ },
+ {
+  "addr": "0x6579ec",
+  "string": "arget-evaluation-ally-proximity",
+  "owners": []
+ },
+ {
+  "addr": "0x6579ed",
+  "string": "rget-evaluation-ally-proximity",
+  "owners": []
+ },
+ {
+  "addr": "0x657a0c",
+  "string": "sn-target-evaluation-kills",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x657a0d",
+  "string": "n-target-evaluation-kills",
+  "owners": []
+ },
+ {
+  "addr": "0x657a0e",
+  "string": "-target-evaluation-kills",
+  "owners": []
+ },
+ {
+  "addr": "0x657a0f",
+  "string": "target-evaluation-kills",
+  "owners": []
+ },
+ {
+  "addr": "0x657a10",
+  "string": "arget-evaluation-kills",
+  "owners": []
+ },
+ {
+  "addr": "0x657a11",
+  "string": "rget-evaluation-kills",
+  "owners": []
+ },
+ {
+  "addr": "0x657a28",
+  "string": "sn-target-evaluation-damage-capability",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x657a29",
+  "string": "n-target-evaluation-damage-capability",
+  "owners": []
+ },
+ {
+  "addr": "0x657a2a",
+  "string": "-target-evaluation-damage-capability",
+  "owners": []
+ },
+ {
+  "addr": "0x657a2b",
+  "string": "target-evaluation-damage-capability",
+  "owners": []
+ },
+ {
+  "addr": "0x657a2c",
+  "string": "arget-evaluation-damage-capability",
+  "owners": []
+ },
+ {
+  "addr": "0x657a2d",
+  "string": "rget-evaluation-damage-capability",
+  "owners": []
+ },
+ {
+  "addr": "0x657a50",
+  "string": "sn-target-evaluation-hitpoints",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x657a51",
+  "string": "n-target-evaluation-hitpoints",
+  "owners": []
+ },
+ {
+  "addr": "0x657a52",
+  "string": "-target-evaluation-hitpoints",
+  "owners": []
+ },
+ {
+  "addr": "0x657a53",
+  "string": "target-evaluation-hitpoints",
+  "owners": []
+ },
+ {
+  "addr": "0x657a54",
+  "string": "arget-evaluation-hitpoints",
+  "owners": []
+ },
+ {
+  "addr": "0x657a55",
+  "string": "rget-evaluation-hitpoints",
+  "owners": []
+ },
+ {
+  "addr": "0x657a70",
+  "string": "sn-target-evaluation-distance",
+  "owners": [
+   "0x5575d0 sub_5575D0"
+  ]
+ },
+ {
+  "addr": "0x657a71",
+  "string": "n-target-evaluation-distance",
+  "owners": []
+ },
+ {
+  "addr": "0x657a72",
+  "string": "-target-evaluation-distance",
+  "owners": []
+ },
+ {
+  "addr": "0x657a73",
+  "string": "target-evaluation-distance",
+  "owners": []
+ },
+ {
+  "addr": "0x657a74",
+  "string": "arget-evaluation-distance",
+  "owners": []
+ },
+ {
+  "addr": "0x657a75",
+  "string": "rget-evaluation-distance",
+  "owners": []
+ },
+ {
+  "addr": "0x659acc",
+  "string": "      Tasking group to attack targetID=%d.",
+  "owners": [
+   "0x570bf0 sub_570BF0"
+  ]
+ },
+ {
+  "addr": "0x659acd",
+  "string": "     Tasking group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ace",
+  "string": "    Tasking group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659acf",
+  "string": "   Tasking group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ad0",
+  "string": "  Tasking group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ad1",
+  "string": " Tasking group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ad2",
+  "string": "Tasking group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ad3",
+  "string": "asking group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ad4",
+  "string": "sking group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ad5",
+  "string": "king group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ad6",
+  "string": "ing group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ad7",
+  "string": "ng group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ad8",
+  "string": "g group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ad9",
+  "string": " group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ada",
+  "string": "group to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659adb",
+  "string": "roup to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659adc",
+  "string": "oup to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659add",
+  "string": "up to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ade",
+  "string": "p to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659adf",
+  "string": " to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ae0",
+  "string": "to attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ae1",
+  "string": "o attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ae2",
+  "string": " attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ae3",
+  "string": "attack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ae4",
+  "string": "ttack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ae5",
+  "string": "tack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ae6",
+  "string": "ack targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ae7",
+  "string": "ck targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ae8",
+  "string": "k targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659ae9",
+  "string": " targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659aea",
+  "string": "targetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659aeb",
+  "string": "argetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659aec",
+  "string": "rgetID=%d.",
+  "owners": []
+ },
+ {
+  "addr": "0x659b20",
+  "string": "  Going to send my units to attack targetID=%d at (%f, %f).",
+  "owners": [
+   "0x570bf0 sub_570BF0"
+  ]
+ },
+ {
+  "addr": "0x659b21",
+  "string": " Going to send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b22",
+  "string": "Going to send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b23",
+  "string": "oing to send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b24",
+  "string": "ing to send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b25",
+  "string": "ng to send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b26",
+  "string": "g to send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b27",
+  "string": " to send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b28",
+  "string": "to send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b29",
+  "string": "o send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b2a",
+  "string": " send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b2b",
+  "string": "send my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b2c",
+  "string": "end my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b2d",
+  "string": "nd my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b2e",
+  "string": "d my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b2f",
+  "string": " my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b30",
+  "string": "my units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b31",
+  "string": "y units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b32",
+  "string": " units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b33",
+  "string": "units to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b34",
+  "string": "nits to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b35",
+  "string": "its to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b36",
+  "string": "ts to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b37",
+  "string": "s to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b38",
+  "string": " to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b39",
+  "string": "to attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b3a",
+  "string": "o attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b3b",
+  "string": " attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b3c",
+  "string": "attack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b3d",
+  "string": "ttack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b3e",
+  "string": "tack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b3f",
+  "string": "ack targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b40",
+  "string": "ck targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b41",
+  "string": "k targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b42",
+  "string": " targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b43",
+  "string": "targetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b44",
+  "string": "argetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659b45",
+  "string": "rgetID=%d at (%f, %f).",
+  "owners": []
+ },
+ {
+  "addr": "0x659c64",
+  "string": "No Target",
+  "owners": [
+   "0x571760 sub_571760",
+   "0x571b70 sub_571B70"
+  ]
+ },
+ {
+  "addr": "0x659c65",
+  "string": "o Target",
+  "owners": []
+ },
+ {
+  "addr": "0x659c66",
+  "string": " Target",
+  "owners": []
+ },
+ {
+  "addr": "0x659c67",
+  "string": "Target",
+  "owners": []
+ },
+ {
+  "addr": "0x659e9c",
+  "string": "tpnl_inv::draw",
+  "owners": [
+   "0x5a6030 sub_5A6030",
+   "0x5a6b60 sub_5A6B60"
+  ]
+ },
+ {
+  "addr": "0x659e9d",
+  "string": "pnl_inv::draw",
+  "owners": []
+ },
+ {
+  "addr": "0x659eac",
+  "string": "tpnl_btn::draw",
+  "owners": [
+   "0x5a6030 sub_5A6030"
+  ]
+ },
+ {
+  "addr": "0x659ead",
+  "string": "pnl_btn::draw",
+  "owners": []
+ },
+ {
+  "addr": "0x65cc08",
+  "string": "No Target, ",
+  "owners": [
+   "0x5a0640 sub_5A0640"
+  ]
+ },
+ {
+  "addr": "0x65cc09",
+  "string": "o Target, ",
+  "owners": []
+ },
+ {
+  "addr": "0x65cc0a",
+  "string": " Target, ",
+  "owners": []
+ },
+ {
+  "addr": "0x65cc0b",
+  "string": "Target, ",
+  "owners": []
+ },
+ {
+  "addr": "0x65cc0c",
+  "string": "arget, ",
+  "owners": []
+ },
+ {
+  "addr": "0x65cc0d",
+  "string": "rget, ",
+  "owners": []
+ },
+ {
+  "addr": "0x65cc14",
+  "string": "Target=%d (%s, (%6.2f, %6.2f)), ",
+  "owners": [
+   "0x5a0640 sub_5A0640"
+  ]
+ },
+ {
+  "addr": "0x65cc15",
+  "string": "arget=%d (%s, (%6.2f, %6.2f)), ",
+  "owners": []
+ },
+ {
+  "addr": "0x65cc16",
+  "string": "rget=%d (%s, (%6.2f, %6.2f)), ",
+  "owners": []
+ },
+ {
+  "addr": "0x65d0ac",
+  "string": "tpnl_inv::draw2",
+  "owners": [
+   "0x5a6030 sub_5A6030",
+   "0x5a6b60 sub_5A6B60"
+  ]
+ },
+ {
+  "addr": "0x65d0ad",
+  "string": "pnl_inv::draw2",
+  "owners": []
+ },
+ {
+  "addr": "0x65d0bc",
+  "string": "tpnl_btn::draw2",
+  "owners": [
+   "0x5a6030 sub_5A6030"
+  ]
+ },
+ {
+  "addr": "0x65d0bd",
+  "string": "pnl_btn::draw2",
+  "owners": []
+ },
+ {
+  "addr": "0x65d0cc",
+  "string": "tpnl_btn::draw3",
+  "owners": [
+   "0x5a6030 sub_5A6030"
+  ]
+ },
+ {
+  "addr": "0x65d0cd",
+  "string": "pnl_btn::draw3",
+  "owners": []
+ },
+ {
+  "addr": "0x65d1b0",
+  "string": "tpnl_obj::draw",
+  "owners": [
+   "0x5a7950 sub_5A7950"
+  ]
+ },
+ {
+  "addr": "0x65d1b1",
+  "string": "pnl_obj::draw",
+  "owners": []
+ },
+ {
+  "addr": "0x65d1c0",
+  "string": "tpnl_obj::draw_score",
+  "owners": [
+   "0x5a9040 sub_5A9040"
+  ]
+ },
+ {
+  "addr": "0x65d1c1",
+  "string": "pnl_obj::draw_score",
+  "owners": []
+ },
+ {
+  "addr": "0x65d1ec",
+  "string": "tpnl_obj::draw_item",
+  "owners": [
+   "0x5a92c0 sub_5A92C0",
+   "0x5a9580 sub_5A9580",
+   "0x5a9690 sub_5A9690"
+  ]
+ },
+ {
+  "addr": "0x65d1ed",
+  "string": "pnl_obj::draw_item",
+  "owners": []
+ },
+ {
+  "addr": "0x65d214",
+  "string": "tpnl_obj::draw_research",
+  "owners": [
+   "0x5a9780 sub_5A9780",
+   "0x5a9c40 sub_5A9C40"
+  ]
+ },
+ {
+  "addr": "0x65d215",
+  "string": "pnl_obj::draw_research",
+  "owners": []
+ },
+ {
+  "addr": "0x65d238",
+  "string": "tpnl_obj::draw_research3",
+  "owners": [
+   "0x5a9c40 sub_5A9C40"
+  ]
+ },
+ {
+  "addr": "0x65d239",
+  "string": "pnl_obj::draw_research3",
+  "owners": []
+ },
+ {
+  "addr": "0x65d254",
+  "string": "tpnl_obj::draw_research2",
+  "owners": [
+   "0x5a9c40 sub_5A9C40"
+  ]
+ },
+ {
+  "addr": "0x65d255",
+  "string": "pnl_obj::draw_research2",
+  "owners": []
+ },
+ {
+  "addr": "0x65d270",
+  "string": "tpnl_obj::draw_group",
+  "owners": [
+   "0x5aa4c0 sub_5AA4C0"
+  ]
+ },
+ {
+  "addr": "0x65d271",
+  "string": "pnl_obj::draw_group",
+  "owners": []
+ },
+ {
+  "addr": "0x65d288",
+  "string": "tpnl_obj::draw_garrison",
+  "owners": [
+   "0x5aa870 sub_5AA870"
+  ]
+ },
+ {
+  "addr": "0x65d289",
+  "string": "pnl_obj::draw_garrison",
+  "owners": []
+ },
+ {
+  "addr": "0x65d2a0",
+  "string": "tpnl_per::draw",
+  "owners": [
+   "0x5ac230 sub_5AC230"
+  ]
+ },
+ {
+  "addr": "0x65d2a1",
+  "string": "pnl_per::draw",
+  "owners": []
+ },
+ {
+  "addr": "0x65d2c4",
+  "string": "tpnl_tim::draw",
+  "owners": [
+   "0x5ac770 sub_5AC770"
+  ]
+ },
+ {
+  "addr": "0x65d2c5",
+  "string": "pnl_tim::draw",
+  "owners": []
+ },
+ {
+  "addr": "0x65d310",
+  "string": "tpnl_tim::render_to_image_buffer",
+  "owners": [
+   "0x5acdd0 sub_5ACDD0"
+  ]
+ },
+ {
+  "addr": "0x65d311",
+  "string": "pnl_tim::render_to_image_buffer",
+  "owners": []
+ },
+ {
+  "addr": "0x65d334",
+  "string": "tpnl_tml::draw_border",
+  "owners": [
+   "0x5ae520 sub_5AE520"
+  ]
+ },
+ {
+  "addr": "0x65d335",
+  "string": "pnl_tml::draw_border",
+  "owners": []
+ },
+ {
+  "addr": "0x65d34c",
+  "string": "tpnl_tml::draw_axis",
+  "owners": [
+   "0x5ae770 sub_5AE770"
+  ]
+ },
+ {
+  "addr": "0x65d34d",
+  "string": "pnl_tml::draw_axis",
+  "owners": []
+ },
+ {
+  "addr": "0x65d360",
+  "string": "tpnl_tml::draw_background2",
+  "owners": [
+   "0x5aeaa0 sub_5AEAA0"
+  ]
+ },
+ {
+  "addr": "0x65d361",
+  "string": "pnl_tml::draw_background2",
+  "owners": []
+ },
+ {
+  "addr": "0x65d37c",
+  "string": "tpnl_tml::draw_background",
+  "owners": [
+   "0x5aeaa0 sub_5AEAA0"
+  ]
+ },
+ {
+  "addr": "0x65d37d",
+  "string": "pnl_tml::draw_background",
+  "owners": []
+ },
+ {
+  "addr": "0x65d3a4",
+  "string": "tpnl_tml::new_draw_timeline",
+  "owners": [
+   "0x5afe40 sub_5AFE40"
+  ]
+ },
+ {
+  "addr": "0x65d3a5",
+  "string": "pnl_tml::new_draw_timeline",
+  "owners": []
+ },
+ {
+  "addr": "0x65d3c0",
+  "string": "tpnl_tml::new_draw_special_event",
+  "owners": [
+   "0x5b0220 sub_5B0220"
+  ]
+ },
+ {
+  "addr": "0x65d3c1",
+  "string": "pnl_tml::new_draw_special_event",
+  "owners": []
+ },
+ {
+  "addr": "0x65e278",
+  "string": "send_zone_score_info",
+  "owners": [
+   "0x5cd6b0 sub_5CD6B0"
+  ]
+ },
+ {
+  "addr": "0x65e279",
+  "string": "end_zone_score_info",
+  "owners": []
+ },
+ {
+  "addr": "0x65e27a",
+  "string": "nd_zone_score_info",
+  "owners": []
+ },
+ {
+  "addr": "0x65e27b",
+  "string": "d_zone_score_info",
+  "owners": []
+ },
+ {
+  "addr": "0x65e27c",
+  "string": "_zone_score_info",
+  "owners": []
+ },
+ {
+  "addr": "0x65e27d",
+  "string": "zone_score_info",
+  "owners": []
+ },
+ {
+  "addr": "0x65e654",
+  "string": "view::draw3",
+  "owners": [
+   "0x5d46c0 sub_5D46C0"
+  ]
+ },
+ {
+  "addr": "0x65e660",
+  "string": "view::draw2",
+  "owners": [
+   "0x5d46c0 sub_5D46C0"
+  ]
+ },
+ {
+  "addr": "0x65e66c",
+  "string": "view::draw",
+  "owners": [
+   "0x5d46c0 sub_5D46C0"
+  ]
+ },
+ {
+  "addr": "0x65e678",
+  "string": "view::draw_view",
+  "owners": [
+   "0x5d5050 sub_5D5050"
+  ]
+ },
+ {
+  "addr": "0x65e688",
+  "string": "view::view_function_terrain",
+  "owners": [
+   "0x5d6b70 sub_5D6B70"
+  ]
+ }
+]

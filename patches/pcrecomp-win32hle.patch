@@ -1,0 +1,432 @@
+diff --git a/runtime/win32hle/ddraw.c b/runtime/win32hle/ddraw.c
+index a5ed04c..6212f8c 100644
+--- a/runtime/win32hle/ddraw.c
++++ b/runtime/win32hle/ddraw.c
+@@ -566,6 +566,9 @@ static void sf_Blt(void) {                               /* (this, dstRect, src,
+     if ((fl & DDBLT_KEYSRCOVERRIDE) && fx) keyed = 1, lo = MEM32(fx + 92), hi = MEM32(fx + 96);
+     else if ((fl & DDBLT_KEYSRC) && s->ck_src) keyed = 1, lo = s->ck_lo, hi = s->ck_hi;
+     if (hi < lo) hi = lo;
++    { static int tr = -1; if (tr < 0) tr = getenv("HLE_BLITTRACE") != NULL;
++      if (tr) fprintf(stderr, "[blt] dst=%08X %d,%d-%d,%d src=%08X %d,%d-%d,%d keyed=%d lo=%X hi=%X\n",
++                     A32(0), dl, dt, dr, db, A32(2), sl, st, sr, sb, keyed, lo, hi); }
+     if (!(hle_dd_blit_hook && hle_dd_blit_hook(d, dl, dt, dr, db, s, sl, st, sr, sb, keyed, lo, hi))) {
+         TOUCH(d); TOUCH(s);
+         blit(d, dl, dt, dr, db, s, sl, st, sr, sb, keyed, lo, hi);
+@@ -581,6 +584,12 @@ static void sf_BltFast(void) {                           /* (this, x, y, src, sr
+     get_rect(A32(4), s, &sl, &st, &sr, &sb);
+     int keyed = (A32(5) & DDBLTFAST_SRCCOLORKEY) && s->ck_src;
+     uint32_t hi = s->ck_hi < s->ck_lo ? s->ck_lo : s->ck_hi;
++    {   /* HLE_BLITTRACE: log small blits (glyph-sized) and their key state */
++        static int trace = -1;
++        if (trace < 0) trace = getenv("HLE_BLITTRACE") != NULL;
++        if (trace) fprintf(stderr, "[blit] dst=%08X %d,%d-%d,%d src=%08X %d,%d-%d,%d keyed=%d lo=%X hi=%X\n",
++                           A32(0), x, y, x + (sr - sl), y + (sb - st), A32(3), sl, st, sr, sb, keyed, s->ck_lo, s->ck_hi);
++    }
+     if (!(hle_dd_blit_hook && hle_dd_blit_hook(d, x, y, x + (sr - sl), y + (sb - st), s, sl, st, sr, sb, keyed, s->ck_lo, hi))) {
+         TOUCH(d); TOUCH(s);
+         blit(d, x, y, x + (sr - sl), y + (sb - st), s, sl, st, sr, sb, keyed, s->ck_lo, hi);
+@@ -648,7 +657,11 @@ static void sf_GetDC(void) {
+     ACCESS();
+     surf_t *s = S(A32(0));
+     TOUCH(s);
+-    if (A32(1)) MEM32(A32(1)) = hle_gdi_surface_dc(s->px, s->w, s->h, s->pitch, s->bpp);
++    { uint32_t dh = hle_gdi_surface_dc(s->px, s->w, s->h, s->pitch, s->bpp);
++      { static int tr = -1; if (tr < 0) tr = getenv("HLE_TRACE_SURF") != NULL;
++        if (tr) fprintf(stderr, "[getdc] surf=%X %dx%d bpp=%d pitch=%d px=%p -> dc=%X arg1=%X\n",
++                        A32(0), s->w, s->h, s->bpp, (int)s->pitch, (void*)s->px, dh, A32(1)); }
++      if (A32(1)) MEM32(A32(1)) = dh; }
+     RET(DD_OK, 2);
+ }
+ static void sf_GetOverlayPosition(void) { RET(DDERR_UNSUPPORTED, 3); }
+@@ -662,6 +675,11 @@ static void sf_GetPixelFormat(void) { put_pf_surf(A32(1), S(A32(0))); RET(DD_OK,
+ static void sf_GetSurfaceDesc(void) { put_desc(A32(1), S(A32(0))); RET(DD_OK, 2); }
+ static void sf_Initialize(void) { RET(DD_OK, 3); }
+ static void sf_Lock(void) {                              /* (this, rect, &desc, flags, event) */
++    { static int tr = -1; if (tr < 0) tr = getenv("HLE_TRACE_SURF") != NULL;
++      if (tr) { surf_t *ls = S(A32(0));
++        fprintf(stderr, "[lock] surf=%X rect=%X desc=%X flags=%X %dx%d bpp=%d pitch=%d px=%p\n",
++                A32(0), A32(1), A32(2), A32(3), ls ? ls->w : 0, ls ? ls->h : 0, ls ? ls->bpp : 0,
++                ls ? (int)ls->pitch : 0, ls ? (void*)ls->px : 0); } }
+     ACCESS();
+     surf_t *s = S(A32(0));
+     TOUCH(s);
+@@ -703,6 +721,19 @@ static void sf_SetPalette(void) {
+ }
+ static void sf_Unlock(void) {
+     surf_t *s = S(A32(0));
++    { static int tr = -1; static uint32_t last;
++      if (tr < 0) tr = getenv("HLE_TRACE_SURF") != NULL;
++      if (tr && s && s->bpp == 8 && s->w == 800 && s->h == 600) {
++          extern uint32_t g_cur_func;
++          int l = 531, t = 514, r = 706, b = 590, nz = 0; uint32_t h = 2166136261u;
++          for (int y = t; y < b; y++) for (int x = l; x < r; x++) {
++              uint8_t v = s->px[(size_t)y * (size_t)s->pitch + (size_t)x];
++              nz += v != 0; h = (h ^ v) * 16777619u;
++          }
++          if (h != last) { last = h;
++              fprintf(stderr, "[mini] ui surf=%X minimap nz=%d hash=%08X at func=%08X\n",
++                      A32(0), nz, h, g_cur_func); }
++      } }
+     if (s->locks) s->locks--;
+     mark(s);
+     RET(DD_OK, 2);
+diff --git a/runtime/win32hle/gdidc.c b/runtime/win32hle/gdidc.c
+index db87df8..c89c625 100644
+--- a/runtime/win32hle/gdidc.c
++++ b/runtime/win32hle/gdidc.c
+@@ -19,6 +19,7 @@
+ #include <string.h>
+ #include <strings.h>
+ #include <unistd.h>
++#include <sys/stat.h>
+ #include <SDL2/SDL.h>
+ #include <SDL2/SDL_ttf.h>
+ #include "win32hle.h"
+@@ -40,7 +41,7 @@ typedef struct {
+ static dc_t g_dc[MAX_DC], g_saved[MAX_DC];
+ #define DC_BASE 0x0DC10000u
+ 
+-typedef struct { int used; int height, width, weight, italic, quality; char face[32]; TTF_Font *ttf; int crisp, synth_bold, underline; } font_t;
++typedef struct { int used; int height, width, weight, italic, quality; char face[32]; TTF_Font *ttf; int crisp, synth_bold, underline, ttf_failed; } font_t;
+ #define MAX_FONTS 1024                    /* Civilization III: 37 sizes in each of 8 styles */
+ static font_t g_font[MAX_FONTS];
+ #define FONT_BASE 0x0DF10000u
+@@ -201,21 +202,34 @@ static void g_AddFontResourceA(void) {
+ }
+ static void g_RemoveFontResourceA(void) { RET(1, 1); }
+ 
++static const char *hle_font_file_uncached(const char *face, int bold, int italic, char *path);
+ const char *hle_font_file(const char *face, int bold, int italic) {
+     static char path[512];
++    /* A fontconfig match (macOS ports ship one) can name a face SDL_ttf
++     * cannot open, and the caller retries on every text call - each retry a
++     * fork+exec. Remember both hits and misses per (face, bold, italic);
++     * font enumeration probes hundreds of faces, so the table is big and
++     * evicts round-robin. */
++    static struct { char face[64]; short bold, italic, known; char path[512]; } memo[128];
++    static int nmemo = 0, next = 0;
++    const int b = bold != 0, it = italic != 0;
++    for (int i = 0; i < nmemo; i++)
++        if (memo[i].bold == b && memo[i].italic == it && !strcasecmp(memo[i].face, face)) {
++            if (!memo[i].known) return NULL;
++            return strcpy(path, memo[i].path);
++        }
++    const char *hit = hle_font_file_uncached(face, bold, italic, path);
++    int i = nmemo < 128 ? nmemo++ : (next++ & 127);
++    snprintf(memo[i].face, sizeof memo[0].face, "%s", face);
++    memo[i].bold = (short)b, memo[i].italic = (short)it, memo[i].known = hit != NULL;
++    if (hit) snprintf(memo[i].path, sizeof memo[0].path, "%s", hit);
++    return hit;
++}
++static const char *hle_font_file_uncached(const char *face, int bold, int italic, char *path) {
+     for (int i = 0; i < g_nadded; i++) if (!strcasecmp(g_added[i].family, face)) return g_added[i].path;   /* ponytail: one file per face, its style whatever bold asks */
+     const char *family = "Liberation Sans", *style = bold && italic ? "Bold Italic" : bold ? "Bold" : italic ? "Italic" : "Regular";
+     if (!strncasecmp(face, "Times", 5) || !strcasecmp(face, "MS Serif") || !strcasecmp(face, "Georgia")) family = "Liberation Serif";
+     else if (!strncasecmp(face, "Courier", 7) || !strcasecmp(face, "Fixedsys") || !strcasecmp(face, "Terminal")) family = "Liberation Mono";
+-    char cmd[256];
+-    snprintf(cmd, sizeof cmd, "fc-match -f '%%{file}' '%s:style=%s' 2>/dev/null", family, style);
+-    FILE *p = popen(cmd, "r");
+-    if (p) {
+-        size_t n = fread(path, 1, sizeof path - 1, p);
+-        pclose(p);
+-        path[n] = 0;
+-        if (n && access(path, R_OK) == 0) return path;
+-    }
+     static const char *const dirs[] = { "/usr/share/fonts/truetype/liberation/", "/usr/share/fonts/truetype/liberation2/",
+                                         "/usr/share/fonts/liberation/", "/usr/share/fonts/liberation-sans/",
+                                         "/usr/share/fonts/TTF/", "/usr/share/fonts/truetype/dejavu/" };
+@@ -223,18 +237,40 @@ const char *hle_font_file(const char *face, int bold, int italic) {
+     snprintf(file, sizeof file, "%s-%s.ttf", strstr(family, "Serif") ? "LiberationSerif" : strstr(family, "Mono") ? "LiberationMono" : "LiberationSans",
+              bold && italic ? "BoldItalic" : bold ? "Bold" : italic ? "Italic" : "Regular");
+     for (size_t i = 0; i < sizeof dirs / sizeof *dirs; i++) {
+-        snprintf(path, sizeof path, "%s%s", dirs[i], file);
++        snprintf(path, 512, "%s%s", dirs[i], file);
+         if (access(path, R_OK) == 0) return path;
+     }
+     for (size_t i = 0; i < sizeof dirs / sizeof *dirs; i++) {
+-        snprintf(path, sizeof path, "%s%s", dirs[i], bold ? "DejaVuSans-Bold.ttf" : "DejaVuSans.ttf");
++        snprintf(path, 512, "%s%s", dirs[i], bold ? "DejaVuSans-Bold.ttf" : "DejaVuSans.ttf");
+         if (access(path, R_OK) == 0) return path;
+     }
+-    /* macOS has the faces Liberation stands in for */
+-    const char *mac = strstr(family, "Serif") ? "Times New Roman" : strstr(family, "Mono") ? "Courier New" : "Arial";
+-    snprintf(path, sizeof path, "/System/Library/Fonts/Supplemental/%s%s.ttf", mac,
+-             bold && italic ? " Bold Italic" : bold ? " Bold" : italic ? " Italic" : "");
+-    if (access(path, R_OK) == 0) return path;
++    /* macOS has the faces Liberation stands in for; consulted before
++     * fc-match, because a MacPorts fontconfig answers with X11 fonts (its
++     * picks are often .ttc collections SDL_ttf cannot use) and each probe
++     * forks a shell - font enumeration asks for hundreds of faces. */
++    {
++        static const char *const macdirs[] = { "/System/Library/Fonts/Supplemental/", "/System/Library/Fonts/",
++                                               "/Library/Fonts/", "/System/Library/Frameworks/ApplicationServices.framework/Frameworks/ATS.framework/Resources/Fonts/" };
++        const char *mac = strstr(family, "Serif") ? "Times New Roman" : strstr(family, "Mono") ? "Courier New" : "Arial";
++        const char *suf = bold && italic ? " Bold Italic" : bold ? " Bold" : italic ? " Italic" : "";
++        for (size_t i = 0; i < sizeof macdirs / sizeof *macdirs; i++) {
++            snprintf(path, 512, "%s%s%s.ttf", macdirs[i], mac, suf);
++            if (access(path, R_OK) == 0) return path;
++        }
++    }
++    /* fc-match, last: only a Linux box without the Liberation packages needs
++     * it. Require a regular file: access(R_OK) also passes for directories. */
++    char cmd[256];
++    snprintf(cmd, sizeof cmd, "fc-match -f '%%{file}' '%s:style=%s' 2>/dev/null", family, style);
++    FILE *p = popen(cmd, "r");
++    if (p) {
++        size_t n = fread(path, 1, 511, p);
++        pclose(p);
++        while (n && (path[n - 1] == '\n' || path[n - 1] == '\r' || path[n - 1] == ' ')) path[--n] = 0;
++        path[n] = 0;
++        struct stat st;
++        if (n && stat(path, &st) == 0 && S_ISREG(st.st_mode)) return path;
++    }
+     return NULL;
+ }
+ static font_t *FONT(uint32_t h) {
+@@ -246,13 +282,15 @@ static font_t *FONT(uint32_t h) {
+ }
+ static TTF_Font *ttf_of(font_t *f) {
+     if (f->ttf) return f->ttf;
++    if (f->ttf_failed) return NULL;                      /* a file SDL_ttf cannot open will not open next time */
+     if (!TTF_WasInit() && TTF_Init() != 0) return NULL;
+     const char *file = hle_font_file(f->face, f->weight >= 600, f->italic);
+-    if (!file) { fprintf(stderr, "[gdi] no TrueType font for \"%s\": text is not drawn\n", f->face); return NULL; }
++    if (!file) { f->ttf_failed = 1; fprintf(stderr, "[gdi] no TrueType font for \"%s\": text is not drawn\n", f->face); return NULL; }
+     /* A negative height is the em in pixels; a positive one the cell (ascent
+      * plus descent), which for these faces is about 1.15 em. */
+     int em = f->height < 0 ? -f->height : f->height > 0 ? f->height * 87 / 100 : 11;
+     f->ttf = open_font(file, em > 0 ? em : 11);
++    if (!f->ttf) { f->ttf_failed = 1; fprintf(stderr, "[gdi] open_font FAILED: \"%s\" (face \"%s\")\n", file, f->face); return NULL; }
+     /* Windows never smooths a raster font, and these three are only ever
+      * raster: a program that reads its label pixels back (eJay 2's sample
+      * blocks, in Small Fonts) expects exactly the text colour or not. */
+@@ -647,9 +685,36 @@ static void g_GetTextMetricsA(void) {                    /* TEXTMETRICA */
+     RET(1, 2);
+ }
+ 
++/* The DC's colour table for 8-bit pixels: the selected GDI palette (GOBJ),
++ * else an 8-bit DIB's colour table. 0 entries when there is neither. */
++static const uint32_t *dc_pal(const dc_t *d, int *n) {
++    *n = 0;
++    if (d->pal) {
++        gobj_t *o = GOBJ(d->pal);
++        if (o && o->pal) { *n = o->paln; return o->pal; }
++    }
++    if (d->ctab) { *n = 256; return d->ctab; }
++    return NULL;
++}
++/* The nearest palette index of a 0x00BBGGRR colour (GetNearestPaletteIndex's
++ * distance), or a grey level when the DC has no table to ask. */
++static uint32_t nearest_index(const dc_t *d, uint32_t r, uint32_t g, uint32_t b) {
++    int n; const uint32_t *pal = dc_pal(d, &n);
++    if (!pal || n <= 0) return (uint32_t)((r * 77 + g * 151 + b * 28) >> 8);
++    int best = 0; long bd = -1;
++    for (int i = 0; i < n; i++) {
++        uint32_t p = pal[i];
++        long dr = (long)r - (p & 0xFF), dg = (long)g - ((p >> 8) & 0xFF), db = (long)b - ((p >> 16) & 0xFF);
++        long dist = dr * dr + dg * dg + db * db;
++        if (bd < 0 || dist < bd) bd = dist, best = i;
++    }
++    return (uint32_t)best;
++}
++
+ static uint32_t pack(const dc_t *d, uint32_t cr) {       /* COLORREF 0x00BBGGRR -> the surface's pixel */
+     uint32_t r = cr & 0xFF, g = (cr >> 8) & 0xFF, b = (cr >> 16) & 0xFF;
+     if (d->bpp == 16) return d->is555 ? (r >> 3) << 10 | (g >> 3) << 5 | (b >> 3) : (r >> 3) << 11 | (g >> 2) << 5 | (b >> 3);
++    if (d->bpp == 8) return nearest_index(d, r, g, b);   /* an indexed surface: a palette index, not a colour */
+     return r << 16 | g << 8 | b;
+ }
+ static void put(dc_t *d, int x, int y, uint32_t v) {
+@@ -686,6 +751,22 @@ static uint32_t mix(const dc_t *d, uint32_t under, uint32_t over, int a) {
+         int b = ((under & 31) * (255 - a) + (over & 31) * a) / 255;
+         return (uint32_t)(r << 11 | g << 5 | b);
+     }
++    if (d->bpp == 8) {
++        /* under and over are palette indexes: blend their colours, then back
++         * to an index (the palette is the only meaningful 8-bit target). */
++        int n; const uint32_t *pal = dc_pal(d, &n);
++        if (!pal || n <= 0) {
++            uint32_t out = 0;
++            for (int s = 0; s < 24; s += 8)
++                out |= (uint32_t)((((under >> s) & 255) * (255 - a) + ((over >> s) & 255) * a) / 255) << s;
++            return out & 0xFF;
++        }
++        uint32_t u = pal[under & 0xFF], o = pal[over & 0xFF];
++        return nearest_index(d,
++                             (uint32_t)(((u & 0xFF) * (255 - a) + (o & 0xFF) * a) / 255),
++                             (uint32_t)((((u >> 8) & 0xFF) * (255 - a) + ((o >> 8) & 0xFF) * a) / 255),
++                             (uint32_t)((((u >> 16) & 0xFF) * (255 - a) + ((o >> 16) & 0xFF) * a) / 255));
++    }
+     uint32_t out = 0;
+     for (int s = 0; s < 24; s += 8)
+         out |= (uint32_t)((((under >> s) & 255) * (255 - a) + ((over >> s) & 255) * a) / 255) << s;
+@@ -754,7 +835,9 @@ static uint8_t *text_ink(const font_t *f, TTF_Font *t, const char *buf, int n, i
+ static void g_TextOutA(void) {                           /* (hdc, x, y, text, n) */
+     dc_t *d = DC(A32(0));
+     int n = (int)A32(4);
+-    if (!d || !d->px || n <= 0 || (d->bpp != 16 && d->bpp != 32)) RET(1, 5);
++    { static int trace = -1; if (trace < 0) trace = getenv("HLE_TEXTTRACE") != NULL;
++      if (trace) fprintf(stderr, "[text] TextOutA dc=%05X bpp=%d n=%d \"%.*s\"\n", A32(0) & 0xFFFFF, d ? d->bpp : 0, n, n > 60 ? 60 : n, n > 0 ? (const char *)APTR(3) : ""); }
++    if (!d || !d->px || n <= 0 || (d->bpp != 8 && d->bpp != 16 && d->bpp != 32)) RET(1, 5);
+     font_t *f = FONT(d->font);
+     TTF_Font *t = ttf_of(f);
+     if (!t) RET(1, 5);
+@@ -872,8 +955,16 @@ static void blt(dc_t *dst, int dx, int dy, int w, int h, dc_t *src, int sx, int
+     }
+     if (dst->win && hle_gdi_window_hook) hle_gdi_window_hook();
+ }
+-static void g_BitBlt(void)     { dc_t *d = DC(A32(0)), *s = DC(A32(5)); blt(d,(int)A32(1),(int)A32(2),(int)A32(3),(int)A32(4),s,(int)A32(6),(int)A32(7),(int)A32(3),(int)A32(4)); RET(1, 9); }
+-static void g_StretchBlt(void) { dc_t *d = DC(A32(0)), *s = DC(A32(5)); blt(d,(int)A32(1),(int)A32(2),(int)A32(3),(int)A32(4),s,(int)A32(6),(int)A32(7),(int)A32(8),(int)A32(9)); RET(1, 11); }
++static void g_BitBlt(void)     { dc_t *d = DC(A32(0)), *s = DC(A32(5));
++    if (getenv("HLE_GBLITTRACE")) fprintf(stderr, "[gblt] BitBlt dst=%X %dx%d bpp=%d at %d,%d %dx%d src=%X %dx%d bpp=%d at %d,%d\n",
++        A32(0), d ? d->w : 0, d ? d->h : 0, d ? d->bpp : 0, (int)A32(1),(int)A32(2),(int)A32(3),(int)A32(4),
++        A32(5), s ? s->w : 0, s ? s->h : 0, s ? s->bpp : 0, (int)A32(6),(int)A32(7));
++    blt(d,(int)A32(1),(int)A32(2),(int)A32(3),(int)A32(4),s,(int)A32(6),(int)A32(7),(int)A32(3),(int)A32(4)); RET(1, 9); }
++static void g_StretchBlt(void) { dc_t *d = DC(A32(0)), *s = DC(A32(5));
++    if (getenv("HLE_GBLITTRACE")) fprintf(stderr, "[gstretch] dst=%X %dx%d bpp=%d at %d,%d %dx%d src=%X %dx%d bpp=%d at %d,%d %dx%d\n",
++        A32(0), d ? d->w : 0, d ? d->h : 0, d ? d->bpp : 0, (int)A32(1),(int)A32(2),(int)A32(3),(int)A32(4),
++        A32(5), s ? s->w : 0, s ? s->h : 0, s ? s->bpp : 0, (int)A32(6),(int)A32(7),(int)A32(8),(int)A32(9));
++    blt(d,(int)A32(1),(int)A32(2),(int)A32(3),(int)A32(4),s,(int)A32(6),(int)A32(7),(int)A32(8),(int)A32(9)); RET(1, 11); }
+ static void g_CreateCompatibleDC(void) { RET(new_dc(), 1); }   /* a memory DC; a bitmap is selected into it */
+ static void g_DeleteDC(void) { hle_gdi_release_dc(A32(0)); RET(1, 1); }
+ 
+diff --git a/runtime/win32hle/kernel32.c b/runtime/win32hle/kernel32.c
+index 6d59508..e9407de 100644
+--- a/runtime/win32hle/kernel32.c
++++ b/runtime/win32hle/kernel32.c
+@@ -96,6 +96,7 @@ static void k_GetCommandLineA(void) {
+     static const char *copied_from;
+     static uint32_t va;
+     if (copied_from != g_cmdline) va = hle_guest_strdup(g_cmdline), copied_from = g_cmdline;
++    fprintf(stderr, "[aoe2_re] GetCommandLineA -> %08X \"%s\"\n", (unsigned)va, g_cmdline);
+     RET(va, 0);
+ }
+ static void k_GetCurrentProcess(void)   { RET(0xFFFFFFFFu, 0); }        /* pseudo-handle */
+diff --git a/runtime/win32hle/kernel32_crt.c b/runtime/win32hle/kernel32_crt.c
+index b4b150c..c9bac6f 100644
+--- a/runtime/win32hle/kernel32_crt.c
++++ b/runtime/win32hle/kernel32_crt.c
+@@ -85,7 +85,12 @@ static void k_GetCurrentThread(void)  { RET(0xFFFFFFFEu, 0); }
+ /* --- standard handles --- */
+ static void k_GetStdHandle(void) {                 /* (nStdHandle) -10..-12 */
+     uint32_t n = A32(0);
+-    RET(n == 0xFFFFFFF6u ? 0x11u : n == 0xFFFFFFF5u ? 0x12u : 0x13u, 1); /* IN/OUT/ERR */
++    /* [aoe2_re] A GUI-subsystem game booted from Explorer has no console:
++     * real Windows returns NULL here, the CRT marks the std streams unopened,
++     * and printf-family calls fail gracefully instead of buffering into a
++     * stream that was never wired. The old pseudo-handles made the lifted CRT
++     * believe stdout exists and crash in its buffer setup. */
++    RET(0, 1);
+ }
+ static void k_SetStdHandle(void) { RET(1, 2); }
+ static void k_SetHandleCount(void){ RET(A32(0), 1); }
+diff --git a/runtime/win32hle/module.c b/runtime/win32hle/module.c
+index 8baf43e..5df668a 100644
+--- a/runtime/win32hle/module.c
++++ b/runtime/win32hle/module.c
+@@ -156,12 +156,15 @@ static void k_FreeLibrary(void) { int i = find_mod(A32(0)); if (i >= 0 && g_mod[
+ static void k_GetProcAddress(void) {                     /* (hModule, name or ordinal) */
+     int i = find_mod(A32(0));
+     uint32_t n = A32(1), va = 0;
+-    if (i >= 0 && g_mod[i].system) {
++    if (i >= 0) {
+         if (n < 0x10000u) {
+             char nm[96];
+             snprintf(nm, sizeof nm, "%s#%u", g_mod[i].base_name, n);
+             va = hle_resolve(nm);
+-        } else {
++        }
++        if (!va && n >= 0x10000u) {
++            /* [aoe2_re] bring-up: also try the shim registry by export name for
++             * guest-mapped DLLs (the game's EBUEula.dll probe). */
+             va = hle_resolve((const char *)hle_ptr(n));
+         }
+     }
+diff --git a/runtime/win32hle/user32.c b/runtime/win32hle/user32.c
+index 3b68a40..cb3eaa3 100644
+--- a/runtime/win32hle/user32.c
++++ b/runtime/win32hle/user32.c
+@@ -239,6 +239,10 @@ static int g_quit; static uint32_t g_quit_code;
+  * thread pumping its own messages (sound.dll's, with PeekMessage(NULL)) must
+  * not take the game window's. */
+ static void q_push_to(uint32_t h, uint32_t m, uint32_t w, uint32_t l, uint32_t thread) {
++    if (m == 0x0012u) {
++        fprintf(stderr, "[aoe2_re] q_push WM_QUIT hwnd=%08X w=%08X\n", (unsigned)h, (unsigned)w);
++        { extern void recomp_dump_trace(const char*); recomp_dump_trace("q_push WM_QUIT"); }
++    }
+     if (g_qn == QN) { memmove(g_q, g_q + 1, sizeof g_q[0] * (QN - 1)); g_qn--; }
+     msg_t x = { h, m, w, l, hle_ticks_ms(), g_cursor_x, g_cursor_y, thread };
+     g_q[g_qn++] = x;
+@@ -248,7 +252,10 @@ static void q_push(uint32_t h, uint32_t m, uint32_t w, uint32_t l) {
+     q_push_to(h, m, w, l, x ? x->thread : 0);
+ }
+ void hle_post_message(uint32_t hwnd, uint32_t message, uint32_t wParam, uint32_t lParam) {
+-    if (message == WM_QUIT) { g_quit = 1, g_quit_code = wParam; return; }
++    if (message == WM_QUIT) {
++        fprintf(stderr, "[aoe2_re] queue: WM_QUIT posted (code=%u)\n", (unsigned)wParam);
++        g_quit = 1, g_quit_code = wParam; return;
++    }
+     q_push(hwnd, message, wParam, lParam);
+ }
+ int hle_msg_pop(uint32_t *message, uint32_t *wParam, uint32_t *lParam) {
+@@ -582,6 +589,8 @@ static int wait_message(msg_t *m, uint32_t hwnd, uint32_t lo, uint32_t hi) {
+ static void u_GetMessageA(void) {                        /* (msg, hwnd, min, max) */
+     msg_t m;
+     wait_message(&m, A32(1), A32(2), A32(3));
++    fprintf(stderr, "[aoe2_re] GetMessageA -> msg=%04X w=%08X l=%08X hwnd=%08X\n",
++            (unsigned)m.message, (unsigned)m.wParam, (unsigned)m.lParam, (unsigned)m.hwnd);
+     put_msg(A32(0), &m);
+     RET(m.message == WM_QUIT ? 0u : 1u, 4);
+ }
+@@ -605,7 +614,10 @@ static void u_WaitMessage(void) {
+     RET(1, 0);
+ }
+ static void u_PostMessageA(void) {
+-    if (A32(1) == WM_QUIT) { g_quit = 1, g_quit_code = A32(2); RET(1, 4); }
++    if (A32(1) == WM_QUIT) {
++        fprintf(stderr, "[aoe2_re] PostMessageA(WM_QUIT)\n");
++        g_quit = 1, g_quit_code = A32(2); RET(1, 4);
++    }
+     if (!A32(0)) { q_push_to(0, A32(1), A32(2), A32(3), hle_thread_id()); RET(1, 4); }   /* NULL: this thread's own queue */
+     q_push(A32(0), A32(1), A32(2), A32(3));
+     RET(1, 4);
+@@ -628,7 +640,11 @@ static void u_MsgWaitForMultipleObjects(void) {
+         hle_block_begin(); usleep(1000); hle_block_end();
+     }
+ }
+-static void u_PostQuitMessage(void) { g_quit = 1, g_quit_code = A32(0); RETV(1); }
++static void u_PostQuitMessage(void) {
++    fprintf(stderr, "[aoe2_re] PostQuitMessage(%u)\n", (unsigned)A32(0));
++    { extern void recomp_dump_trace(const char*); recomp_dump_trace("PostQuitMessage"); }
++    g_quit = 1, g_quit_code = A32(0); RETV(1);
++}
+ static void u_SendMessageA(void) { RET(hle_send(A32(0), A32(1), A32(2), A32(3)), 4); }
+ static void u_CallWindowProcA(void) { RET(call_proc(A32(0), A32(1), A32(2), A32(3), A32(4)), 5); }
+ 
+@@ -2295,6 +2311,18 @@ static void u_DrawTextA(void) {                          /* (hdc, text, n, rect,
+ }
+ 
+ /* wsprintfA is cdecl: the caller pops, so only the return address goes. */
++/* DrawTextExA: DrawTextA plus a DTTOPSTRUCT. The game measures player text
++ * with it; like DrawTextA, this only answers, no glyphs (the game draws its
++ * own text) and reports a fixed-pitch line box. */
++static void u_DrawTextExA(void) {                        /* (hdc, text, n, rect, format, params) */
++    const char *s = ASTR(1);
++    int n = (int)A32(2);
++    uint32_t r = A32(3);
++    if (n < 0) n = s ? (int)strlen(s) : 0;
++    if (r && (A32(4) & 0x400u)) MEM32(r + 8) = MEM32(r) + (uint32_t)(n * 6), MEM32(r + 12) = MEM32(r + 4) + 13;   /* DT_CALCRECT */
++    RET(13, 6);
++}
++
+ static void u_wsprintfA(void) {
+     int n = hle_guest_format(ASTR(0), 1024, ASTR(1), g_esp + 12);   /* the arguments follow the format on the stack */
+     RET((uint32_t)n, 0);
+@@ -2438,6 +2466,6 @@ const win32hle_shim win32hle_user32[] = {
+     { "ImmGetContext", m_ret0_1 }, { "ImmAssociateContext", m_ret0_2 }, { "ImmNotifyIME", m_ret0_4 },
+     { "ImmSetOpenStatus", m_ret1_2 }, { "ImmGetCompositionStringA", m_ret0_4 }, { "ImmGetCandidateListA", m_ret0_4 },
+     { "ImmReleaseContext", m_ret1_2 },
+-    { "DrawTextA", u_DrawTextA }, { "wsprintfA", u_wsprintfA }, { "wvsprintfA", u_wvsprintfA },
++    { "DrawTextA", u_DrawTextA }, { "DrawTextExA", u_DrawTextExA }, { "wsprintfA", u_wsprintfA }, { "wvsprintfA", u_wvsprintfA },
+     { 0, 0 }
+ };
