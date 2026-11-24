@@ -46,11 +46,6 @@ public:
     int field_1e38;
     bool Check_42D210();
 };
-MATCH_FUNC(0x42D210)
-bool S42D210::Check_42D210()
-{
-    return field_1e38 == 4;
-}
 
 class S431740 {
 public:
@@ -58,11 +53,6 @@ public:
     int field_17e4;
     bool Check_431740();
 };
-MATCH_FUNC(0x431740)
-bool S431740::Check_431740()
-{
-    return field_17e4 != -1;
-}
 
 class S431750 {
 public:
@@ -70,11 +60,6 @@ public:
     int field_1a50;
     bool Check_431750();
 };
-MATCH_FUNC(0x431750)
-bool S431750::Check_431750()
-{
-    return field_1a50 != -1;
-}
 
 class S5D17D0 {
 public:

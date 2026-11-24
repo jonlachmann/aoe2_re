@@ -59,21 +59,6 @@ public:
     char pad_00[0xd4];
     int Get_5E68C0(int index);
 };
-MATCH_FUNC(0x428AE0)
-int S428AE0::Get_428AE0(int index)
-{
-    return *(int*)((char*)this + 0x13bc + index * 4);
-}
-MATCH_FUNC(0x431CD0)
-int S431CD0::Get_431CD0(int index)
-{
-    return *(int*)((char*)this + 0x1bf0 + index * 4);
-}
-MATCH_FUNC(0x4334F0)
-int S4334F0::Get_4334F0(int index)
-{
-    return *(int*)((char*)this + 0x46bc + index * 4);
-}
 MATCH_FUNC(0x4CED70)
 int S4CED70::Get_4CED70(int index)
 {

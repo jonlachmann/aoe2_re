@@ -44,15 +44,6 @@ public:
     char Get_433E70(int* a2, int* a3);
 };
 
-MATCH_FUNC(0x433E70)
-char S433E70::Get_433E70(int* a2, int* a3)
-{
-    if (!this->field_18)
-        return 0;
-    *a2 = *(int*)((char*)*(int*)((char*)this->field_14 + 0xc) + 8);
-    *a3 = *(int*)((char*)*(int*)((char*)this->field_14 + 0xc) + 0xc);
-    return 1;
-}
 
 // 0x437970 — record array indexed by dword stride 24.
 class S437970 {
@@ -64,14 +55,6 @@ public:
     int* Get_437970(int a2);
 };
 
-MATCH_FUNC(0x437970)
-int* S437970::Get_437970(int a2)
-{
-    if (a2 < 0 || a2 > this->field_2580)
-        return 0;
-    else
-        return (int*)((char*)this + 4 * 24 * a2);
-}
 
 // 0x4385F0 — lazy three-field initialisation guarded by the fourth.
 class S4385F0 {
@@ -84,18 +67,6 @@ public:
     int Init_4385F0(int a2, int a3, int a4);
 };
 
-MATCH_FUNC(0x4385F0)
-int S4385F0::Init_4385F0(int a2, int a3, int a4)
-{
-    int result = this->field_140;
-    if (!result) {
-        this->field_120 = a2;
-        result = a4;
-        *(int*)((char*)this + 76 * 4) = a3;
-        this->field_140 = a4;
-    }
-    return result;
-}
 
 // 0x438840 — append into a 20-stride ring, wrapping the count at 20.
 class S438840 {
@@ -107,16 +78,6 @@ public:
     unsigned Append_438840(int a2, int a3);
 };
 
-WIP_FUNC(0x438840)
-unsigned S438840::Append_438840(int a2, int a3)
-{
-    this->values[20 * a2 + this->count] = a3;
-    this->count = this->count + 1;
-    unsigned result = this->count;
-    if (result >= 0x14)
-        this->count = 0;
-    return result;
-}
 
 // 0x4388F0 — 1-based table read for indices 1..9.
 class S4388F0 {
@@ -127,14 +88,6 @@ public:
     int Get_4388F0(unsigned a2);
 };
 
-MATCH_FUNC(0x4388F0)
-int S4388F0::Get_4388F0(unsigned a2)
-{
-    if (a2 >= 1 && a2 <= 9)
-        return this->values[a2];
-    else
-        return 0;
-}
 
 // 0x439D40 — clear 55 records of nine dwords, return the end pointer.
 class S439D40 {
@@ -145,26 +98,6 @@ public:
     int* Clear_439D40();
 };
 
-MATCH_FUNC(0x439D40)
-int* S439D40::Clear_439D40()
-{
-    int* result = ((int*)this) + 16;
-    int v2 = 55;
-    do {
-        *(result - 1) = 0;
-        *result = 0;
-        result[1] = 0;
-        result[2] = 0;
-        result[3] = 0;
-        result[4] = 0;
-        result[5] = 0;
-        result[6] = 0;
-        *(result - 2) = 0;
-        result += 9;
-        --v2;
-    } while (v2);
-    return result;
-}
 
 // 0x43EBB0 — bounded 1-based dword table, -1 for invalid.
 class S43EBB0 {
@@ -176,14 +109,6 @@ public:
     int Get_43EBB0(int a2);
 };
 
-MATCH_FUNC(0x43EBB0)
-int S43EBB0::Get_43EBB0(int a2)
-{
-    if (a2 < 0 || a2 >= this->field_04)
-        return -1;
-    else
-        return this->values[a2];
-}
 
 // 0x43EC00 — bounded table returning a dword value.
 class S43EC00 {
@@ -195,14 +120,6 @@ public:
     int Get_43EC00(int a2);
 };
 
-MATCH_FUNC(0x43EC00)
-int S43EC00::Get_43EC00(int a2)
-{
-    if (a2 < 0 || a2 >= this->count)
-        return 0;
-    else
-        return this->values[a2];
-}
 
 // 0x43EC20 — bounded record address, dword stride 40.
 class S43EC20 {
@@ -215,14 +132,6 @@ public:
     int Get_43EC20(int a2);
 };
 
-MATCH_FUNC(0x43EC20)
-int S43EC20::Get_43EC20(int a2)
-{
-    if (a2 < 0 || a2 >= this->count)
-        return 0;
-    else
-        return (int)&this->records[40 * a2];
-}
 
 // 0x446050 — free helper: round a size, report a signed value and direction.
 int __cdecl sub_446050(int a1, unsigned int* a2, int* a3, int* a4);

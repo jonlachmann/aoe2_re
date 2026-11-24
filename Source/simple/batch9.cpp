@@ -57,11 +57,6 @@ int S5A4A60::M_5A4A60(int a, int b, int c, int d, int e)
     return 1;
 }
 
-MATCH_FUNC(0x422E00)
-int M_422E00()
-{
-    return 0x32;
-}
 
 
 
@@ -70,11 +65,6 @@ class S43FAB0 {
 public:
     S43FAB0* Self_43FAB0();
 };
-MATCH_FUNC(0x43FAB0)
-S43FAB0* S43FAB0::Self_43FAB0()
-{
-    return this;
-}
 
 class S4CEAE0 {
 public:
@@ -100,11 +90,6 @@ public:
     int* field_24;
     int Get_421FB0();
 };
-MATCH_FUNC(0x421FB0)
-int S421FB0::Get_421FB0()
-{
-    return *(short*)((char*)field_24 + 0x8f8);
-}
 
 class S53F060 {
 public:
@@ -180,11 +165,6 @@ public:
 };
 
 extern int g_665340;
-MATCH_FUNC(0x42F0A0)
-int Get_42F0A0()
-{
-    return g_665340;
-}
 
 extern int g_741f90;
 MATCH_FUNC(0x5542B0)

@@ -7,13 +7,6 @@ public:
     S424BC0* Init_424BC0(int v);
 };
 
-MATCH_FUNC(0x424BC0)
-S424BC0* S424BC0::Init_424BC0(int v)
-{
-    field_0 = v;
-    field_4 = 0;
-    return this;
-}
 
 class S4260C0 {
 public:
@@ -25,16 +18,6 @@ public:
     S4260C0* Clear_4260C0();
 };
 
-MATCH_FUNC(0x4260C0)
-S4260C0* S4260C0::Clear_4260C0()
-{
-    field_0 = 0;
-    field_4 = 0;
-    field_8 = 0;
-    field_c = 0;
-    field_10 = 0;
-    return this;
-}
 
 class S5B08F0 {
 public:

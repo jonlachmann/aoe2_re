@@ -48,13 +48,6 @@ public:
     char pad_00[0x980];
     void Get_437710(int* a, int* b, int* c);
 };
-MATCH_FUNC(0x437710)
-void S437710::Get_437710(int* a, int* b, int* c)
-{
-    *a = *(int*)((char*)this + 0x980);
-    *b = *(int*)((char*)this + 0x984);
-    *c = *(int*)((char*)this + 0x988);
-}
 
 class S4A22F0 {
 public:

@@ -9,20 +9,6 @@ class S4373F0 {
 public:
     S4373F0* Init_4373F0();
 };
-MATCH_FUNC(0x4373F0)
-S4373F0* S4373F0::Init_4373F0()
-{
-    int zero = 0;
-    *(int*)((char*)this) = zero;
-    *(int*)((char*)this + 4) = zero;
-    *(unsigned char*)((char*)this + 8) = zero;
-    *(int*)((char*)this + 0x10) = zero;
-    *(int*)((char*)this + 0x14) = zero;
-    *(int*)((char*)this + 0x18) = zero;
-    *(int*)((char*)this + 0x1c) = -1;
-    *(int*)((char*)this + 0xc) = zero;
-    return this;
-}
 
 class S465B10 {
 public:
@@ -127,24 +113,6 @@ public:
     int field_548;
     S423A70* Init_423A70();
 };
-MATCH_FUNC(0x423A70)
-S423A70* S423A70::Init_423A70()
-{
-    field_4 = 0;
-    field_0 = 0;
-    field_8 = -1;
-    field_14 = 0;
-    field_1c = -1;
-    field_524 = 0;
-    field_420 = 0;
-    field_540 = 0;
-    field_52c = 1;
-    field_53c = 1;
-    field_528 = 1;
-    field_530 = 0;
-    field_548 = 0;
-    return this;
-}
 
 class S469570 {
 public:

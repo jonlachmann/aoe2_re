@@ -40,10 +40,6 @@ public:
     void M_43A080(int, int, int, int, int, int, int, int, int);
 };
 
-MATCH_FUNC(0x43A080)
-void S43A080::M_43A080(int, int, int, int, int, int, int, int, int)
-{
-}
 class S4AA5D0 {
 public:
     void M_4AA5D0(int, int, int);

@@ -59,14 +59,6 @@ public:
     int field_2580;
     int Inc_437960();
 };
-MATCH_FUNC(0x437960)
-int S437960::Inc_437960()
-{
-    int value = field_2580;
-    ++value;
-    field_2580 = value;
-    return value;
-}
 
 class S438690 {
 public:
@@ -74,14 +66,6 @@ public:
     int field_210;
     int Inc_438690();
 };
-MATCH_FUNC(0x438690)
-int S438690::Inc_438690()
-{
-    int value = field_210;
-    ++value;
-    field_210 = value;
-    return value;
-}
 
 class S4118B0 {
 public:
@@ -97,14 +81,6 @@ class S43F8B0 {
 public:
     S43F8B0* Reset_43F8B0();
 };
-MATCH_FUNC(0x43F8B0)
-S43F8B0* S43F8B0::Reset_43F8B0()
-{
-    *(int*)((char*)this) = 0;
-    *(int*)((char*)this + 4) = 0;
-    *(int*)((char*)this + 8) = 0;
-    return this;
-}
 
 class S497D80 {
 public:
