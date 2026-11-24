@@ -30,15 +30,7 @@ void M_5EC8EE()
 {
 }
 
-MATCH_FUNC(0x5FB460)
-void M_5FB460()
-{
-}
 
-MATCH_FUNC(0x5FC8EB)
-void M_5FC8EB()
-{
-}
 
 class S4060A0 {
 public:
@@ -138,11 +130,6 @@ bool Check_5EDCB0()
     return g_62ebf8 == 0xc;
 }
 
-MATCH_FUNC(0x5F0CB0)
-bool Check_5F0CB0(int* p)
-{
-    return *(int*)((char*)p + 8) == 0;
-}
 
 extern int* g_741f68;
 MATCH_FUNC(0x5542C0)

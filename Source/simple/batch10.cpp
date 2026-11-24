@@ -116,16 +116,6 @@ void S5D6120::Get_5D6120(unsigned short* a, unsigned short* b)
     *b = *(unsigned short*)((char*)this + 0x124);
 }
 
-MATCH_FUNC(0x5FC8EC)
-void Init_5FC8EC()
-{
-    *(int*)0x661cac = 0x600f6b;
-    *(int*)0x661ca8 = 0x6012d6;
-    *(int*)0x661cb0 = 0x600fd1;
-    *(int*)0x661cb4 = 0x600f11;
-    *(int*)0x661cb8 = 0x600fb9;
-    *(int*)0x661cbc = 0x6012d6;
-}
 
 class S409E90 {
 public:

@@ -5,17 +5,7 @@ public:
     bool M_407BD0(int unused);
 };
 
-MATCH_FUNC(0x5FB450)
-int M_5FB450()
-{
-    return 1;
-}
 
-MATCH_FUNC(0x5FBDE7)
-int M_5FBDE7()
-{
-    return 1;
-}
 
 class S411C20 {
 public:
@@ -85,11 +75,6 @@ int M_5ED915()
     return 0xad90;
 }
 
-WIP_FUNC(0x5F9100)
-int M_5F9100()
-{
-    return (int)0xffffffffu;
-}
 
 class S43FAB0 {
 public:
@@ -254,15 +239,5 @@ int Get_55A0C0(int index)
 }
 
 extern int g_77279c;
-MATCH_FUNC(0x6004B7)
-int Get_6004B7()
-{
-    return g_77279c;
-}
 
 extern int g_772a1c;
-MATCH_FUNC(0x6004BD)
-int Get_6004BD()
-{
-    return g_772a1c;
-}

@@ -77,11 +77,3 @@ public:
     void Copy_46AA20(Three46* src);
 };
 
-MATCH_FUNC(0x5F3FB0)
-void Build_5F3FB0(int* out, int a, int b)
-{
-    out[0] = a;
-    out[1] = a + b;
-    out[3] = a;
-    out[2] = a;
-}
