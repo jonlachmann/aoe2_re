@@ -11,12 +11,21 @@ extern int g_66d4b8;
 extern int g_66e3e8;
 extern int g_66e3ec;
 extern int g_66e3f0;
-WIP_FUNC(0x48BAD0)
+void sub_48BAD0();
+
+// 0x48BAC0 — tail-call forwarder to the three-global init.
+MATCH_FUNC(0x48BAC0)
+void sub_48BAC0()
+{
+    sub_48BAD0();
+}
+
+MATCH_FUNC(0x48BAD0)
 void Init_48BAD0()
 {
-    *(volatile int*)&g_66e3e8 = 0;
-    *(volatile int*)&g_66e3ec = 0x3f800000;
-    *(volatile int*)&g_66e3f0 = 0;
+    *(volatile float*)&g_66e3e8 = 0.0f;
+    *(volatile float*)&g_66e3ec = 1.0f;
+    *(volatile float*)&g_66e3f0 = 0.0f;
 }
 
 extern int g_66f630;
@@ -850,6 +859,15 @@ public:
 
     double Get_4919A0(int a2);
 };
+
+void sub_4927D0();
+
+// 0x4927C0 — tail-call forwarder to the global-table init.
+MATCH_FUNC(0x4927C0)
+void sub_4927C0()
+{
+    sub_4927D0();
+}
 
 // 0x4937A0 — bounded pointer-table lookup by count field at +0.
 class S4937A0 {

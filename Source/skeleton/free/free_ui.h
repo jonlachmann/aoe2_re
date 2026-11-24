@@ -227,8 +227,8 @@ void sub_48B530();  // size 15, calls 0, matched, module ui
 void sub_48B540();  // size 110, calls 0, lifted, module ui
 void mouseptr::poll();  // size 786, calls 7, lifted, module win
 void sub_48B8D0();  // size 313, calls 0, lifted, module ui
-void sub_48BAC0();  // size 16, calls 0, lifted, module ui
-void sub_48BAD0();  // size 31, calls 0, wip, module ui
+void sub_48BAC0();  // size 16, calls 0, matched, module ui
+void sub_48BAD0();  // size 31, calls 0, matched, module ui
 void sub_48BD10();  // size 11, calls 0, matched, module ui
 void sub_48BD20();  // size 108, calls 0, lifted, module ui
 void sub_48BD90();  // size 369, calls 8, lifted, module ui
@@ -245,7 +245,7 @@ void sub_492340();  // size 8, calls 1, lifted, module ui
 void sub_492350();  // size 126, calls 1, lifted, module ui
 void sub_4923D0();  // size 689, calls 3, lifted, module ui
 void sub_4926B0();  // size 258, calls 1, lifted, module ui
-void sub_4927C0();  // size 16, calls 0, lifted, module ui
+void sub_4927C0();  // size 16, calls 0, matched, module ui
 void sub_4927D0();  // size 190, calls 0, lifted, module ui
 void sub_492890();  // size 293, calls 0, lifted, module ui
 void sub_492A30();  // size 104, calls 1, lifted, module ui

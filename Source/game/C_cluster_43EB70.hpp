@@ -14,4 +14,7 @@ public:
     int field_1A4C;               // +0x1A4C
 
     void Init_43EB90();
+    void Forward_43EB80();
 };
+
+void sub_43EB60();

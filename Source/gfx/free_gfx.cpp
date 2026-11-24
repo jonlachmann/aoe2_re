@@ -18,6 +18,7 @@ public:
 extern S4654A0 g_66d7e8[0x28];
 
 void sub_4654A0();
+void sub_4654D0();
 
 // 0x465490 — tail-call forwarder to the array clear.
 MATCH_FUNC(0x465490)
@@ -39,12 +40,19 @@ void sub_4654A0()
     } while (--n);
 }
 
-WIP_FUNC(0x4654D0)
+// 0x4654C0 — tail-call forwarder to the three-global init.
+MATCH_FUNC(0x4654C0)
+void sub_4654C0()
+{
+    sub_4654D0();
+}
+
+MATCH_FUNC(0x4654D0)
 void Init_4654D0()
 {
-    *(volatile int*)&g_66d4b0 = 0;
-    *(volatile int*)&g_66d4b4 = 0x3f800000;
-    *(volatile int*)&g_66d4b8 = 0;
+    *(volatile float*)&g_66d4b0 = 0.0f;
+    *(volatile float*)&g_66d4b4 = 1.0f;
+    *(volatile float*)&g_66d4b8 = 0.0f;
 }
 
 class S410530 {
