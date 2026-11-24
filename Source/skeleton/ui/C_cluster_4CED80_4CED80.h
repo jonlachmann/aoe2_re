@@ -10,7 +10,7 @@ public:
     void method_001();  // sub_4CEDC0 [matched] — Source/ui/C_cluster_4CED80.cpp
     void method_002();  // sub_4CF690 [lifted]
     void method_003();  // sub_4CF6C0 [lifted]
-    void method_004();  // sub_5C1410 [wip] — Source/ui/C_cluster_4CED80.cpp
+    void method_004();  // sub_5C1410 [matched] — Source/ui/C_cluster_4CED80.cpp
     void method_005();  // sub_5C1A00 [matched] — Source/ui/C_cluster_4CED80.cpp
     void method_006();  // sub_5C21A0 [lifted]
 };

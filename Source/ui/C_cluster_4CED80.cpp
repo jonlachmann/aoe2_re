@@ -16,14 +16,15 @@ int C_cluster_4CED80::Get_4CEDC0(int index)
     return *(int*)((char*)this + 0x19b0 + index * 4);
 }
 
-WIP_FUNC(0x5C1410)
+MATCH_FUNC(0x5C1410)
 int C_cluster_4CED80::Set_5C1410(int value)
 {
-    if (value < 0)
-        return field_4CD4 = 0;
-    if (value > 0x10)
-        value = 0xf;
-    return field_4CD4 = value;
+    int result = value;
+    if (result < 0)
+        result = 0;
+    else if (result > 0x10)
+        result = 0xf;
+    return this->field_4CD4 = result;
 }
 
 MATCH_FUNC(0x5C1A00)

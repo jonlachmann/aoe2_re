@@ -160,17 +160,15 @@ int C_vt62C1E0::Set_5BB000(int a2, int a3)
 {
     int result = a2;
     char v4;
-    int idx = a2 + 4636;
     if (a2 == 1) {
-        v4 = (char)a3;
-        if (a3 == a2) {
-            ((char*)this)[idx] = (char)a2;
-            return result;
-        }
+        if (a3 == a2)
+            v4 = result;
+        else
+            v4 = a3;
     } else {
-        v4 = (char)a3;
+        v4 = a3;
     }
-    ((char*)this)[idx] = v4;
+    ((char*)this)[a2 + 4636] = v4;
     return result;
 }
 

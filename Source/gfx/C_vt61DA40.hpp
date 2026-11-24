@@ -32,8 +32,8 @@ public:
     float Get_41A090(int a, int b, int c);
     int M_41A0B0();
     int M_41A0C0(int a, int b, int c);
-    static S41A0D0Triple* __stdcall M_41A0D0(S41A0D0Triple* out, int a2, int a3);
-    static S41A0D0Triple* __stdcall M_41A110(S41A0D0Triple* out);
+    static S41A0D0Triple __stdcall M_41A0D0(int a2, int a3);
+    static S41A0D0Triple __stdcall M_41A110();
     float Get_474810();
     float* Copy_52C430(float* out);
     float Get_52C610();
