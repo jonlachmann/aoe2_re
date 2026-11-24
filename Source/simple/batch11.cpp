@@ -6,18 +6,6 @@ public:
     int* field_3fc;
     void Init_410530();
 };
-MATCH_FUNC(0x410530)
-void S410530::Init_410530()
-{
-    int* p1 = *(int**)((char*)this + 0x3fc);
-    *(unsigned char*)p1 = 0;
-    int* p2 = *(int**)((char*)this + 0x3fc);
-    *(int*)((char*)p2 + 0x104) = -1;
-    int* p3 = *(int**)((char*)this + 0x3fc);
-    *(unsigned char*)((char*)p3 + 0x108) = 0;
-    int* p4 = *(int**)((char*)this + 0x3fc);
-    *(int*)((char*)p4 + 0x188) = 0x19;
-}
 
 class S416DA0 {
 public:
@@ -29,19 +17,6 @@ public:
     int field_5c;
     void Set_416DA0(int a, int b, int c, int d, int e);
 };
-MATCH_FUNC(0x416DA0)
-void S416DA0::Set_416DA0(int a, int b, int c, int d, int e)
-{
-    int old34 = field_34;
-    int old38 = field_38;
-    *(int*)((char*)this + 0x58) = old34;
-    *(int*)((char*)this + 0x5c) = old38;
-    *(int*)((char*)this + 0x34) = a;
-    *(int*)((char*)this + 0x38) = b;
-    *(int*)((char*)this + 0x3c) = c;
-    *(int*)((char*)this + 0x40) = d;
-    *(int*)((char*)this + 0x44) = e;
-}
 
 class S45AE80 {
 public:

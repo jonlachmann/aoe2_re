@@ -4,11 +4,6 @@ class S40A0D0 {
 public:
     S40A0D0* Ref_40A0D0();
 };
-MATCH_FUNC(0x40A0D0)
-S40A0D0* S40A0D0::Ref_40A0D0()
-{
-    return (S40A0D0*)((char*)this + 0x10);
-}
 
 class S4228E0 {
 public:

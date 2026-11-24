@@ -14,15 +14,6 @@ public:
     int Set_40CFB0(int index, unsigned char value);
 };
 
-MATCH_FUNC(0x40CFB0)
-int S40CFB0Indexed::Set_40CFB0(int index, unsigned char value)
-{
-    int result = index;
-    if (index > 0 &&
-        index < *(short*)(*(int*)(*(int*)(this->field_f0 + 0xf0) + 0x8c) + 0x48))
-        this->entries[index] = value;
-    return result;
-}
 
 // 0x411940 — clears a 16-entry, 24-byte record table and returns its end.
 struct S411940Entry {
@@ -48,29 +39,6 @@ public:
     char* Init_411940();
 };
 
-MATCH_FUNC(0x411940)
-char* S411940Table::Init_411940()
-{
-    this->field_08 = -1;
-    this->field_00 = 0;
-    this->field_04 = 0;
-    this->field_0a = -1;
-    this->field_0c = 0;
-    this->field_0d = 0;
-    char* result = (char*)this + 0x14;
-    int count = 16;
-    do {
-        *(int*)(result - 4) = 0;
-        *(short*)result = -1;
-        *(int*)(result + 4) = 0;
-        *(int*)(result + 8) = 0;
-        *(int*)(result + 0xc) = 0;
-        *(int*)(result + 0x10) = 0;
-        result += 0x18;
-        --count;
-    } while (count);
-    return result;
-}
 
 // 0x4175B0 — single-state predicate over three fields.
 class S4175B0 {
@@ -85,13 +53,6 @@ public:
     int Check_4175B0();
 };
 
-MATCH_FUNC(0x4175B0)
-int S4175B0::Check_4175B0()
-{
-    if (this->field_178 != 1 || this->field_a0 != 0 || this->field_30 != -1)
-        return 0;
-    return 1;
-}
 
 // 0x41A0D0 / 0x41A110 — stack-built zero triples, returned through an out
 // parameter. WIP: the original keeps an explicit 12-byte stack temporary
@@ -120,19 +81,6 @@ public:
     S41AC00Node* Set_41AC00(int key, unsigned char value);
 };
 
-MATCH_FUNC(0x41AC00)
-S41AC00Node* S41AC00List::Set_41AC00(int key, unsigned char value)
-{
-    S41AC00Node* result = this->head;
-    while (result) {
-        if (*(int*)(*(int*)result + 4) == key) {
-            *(unsigned char*)((char*)result + 5) = value;
-            break;
-        }
-        result = *(S41AC00Node**)((char*)result + 8);
-    }
-    return result;
-}
 
 // 0x41B610 — list head present, local flag set, and head->field70 bit 0.
 class S41B610 {
@@ -159,16 +107,6 @@ public:
     S41C800Stats* Add_41C800(int index, unsigned value);
 };
 
-MATCH_FUNC(0x41C800)
-S41C800Stats* S41C800Table::Add_41C800(int index, unsigned value)
-{
-    S41C800Stats* result = (S41C800Stats*)((char*)this + 32 * index);
-    result->accumulated += value;
-    *(volatile unsigned*)&result->last = value;
-    if (value > result->high_water)
-        result->high_water = value;
-    return result;
-}
 
 // 0x41F6A0 — 12-byte record table lookup.
 class S41F6A0Table {
@@ -179,14 +117,6 @@ public:
     void* Entry_41F6A0(int index);
 };
 
-MATCH_FUNC(0x41F6A0)
-void* S41F6A0Table::Entry_41F6A0(int index)
-{
-    int v2 = *(int*)((char*)this + 0x20c);
-    if (!v2)
-        return 0;
-    return (void*)(v2 + 12 * index);
-}
 
 // 0x41F840 — validated short index into a record's pointer array.
 class S41F840Lookup {
@@ -197,20 +127,6 @@ public:
     int Entry_41F840();
 };
 
-MATCH_FUNC(0x41F840)
-int S41F840Lookup::Entry_41F840()
-{
-    int v1 = *(int*)((char*)this + 0x41c);
-    if (v1) {
-        short count = *(short*)(v1 + 0x48);
-        if (count >= 1) {
-            short index = *(short*)(v1 + 0x94);
-            if (index < count && index >= 0)
-                return *(int*)(*(int*)(v1 + 0x4c) + 4 * index);
-        }
-    }
-    return 0;
-}
 
 // 0x41F880 — search a fixed nine-entry integer slot set.
 class S41F880Slots {
@@ -221,19 +137,6 @@ public:
     int Find_41F880(int value);
 };
 
-WIP_FUNC(0x41F880)
-int S41F880Slots::Find_41F880(int value)
-{
-    int result = 0;
-    int* slot = this->slots;
-    while (value != *slot) {
-        ++result;
-        ++slot;
-        if (result >= 9)
-            return -1;
-    }
-    return result;
-}
 
 // 0x42AF40 — count occupied 56-byte records under a base pointer.
 class S42AF40 {

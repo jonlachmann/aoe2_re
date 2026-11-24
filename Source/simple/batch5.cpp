@@ -21,13 +21,6 @@ public:
     int field_1e0;
     void Pop_410410();
 };
-MATCH_FUNC(0x410410)
-void S410410::Pop_410410()
-{
-    int i = field_ea4 - 1;
-    field_ea4 = i;
-    *(int*)((char*)this + 0x1e0) = array_ea8[i];
-}
 
 class S493780 {
 public:

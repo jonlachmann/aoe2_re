@@ -116,17 +116,6 @@ public:
     void Set_409E90(unsigned char a, int b, unsigned char c,
                     unsigned char d, unsigned char e, unsigned char f);
 };
-MATCH_FUNC(0x409E90)
-void S409E90::Set_409E90(unsigned char a, int b, unsigned char c,
-                         unsigned char d, unsigned char e, unsigned char f)
-{
-    *(unsigned char*)((char*)this) = a;
-    *(int*)((char*)this + 4) = b;
-    *(unsigned char*)((char*)this + 8) = c;
-    *(unsigned char*)((char*)this + 9) = d;
-    *(unsigned char*)((char*)this + 0xa) = e;
-    *(unsigned char*)((char*)this + 0xb) = f;
-}
 
 class S4A3920 {
 public:

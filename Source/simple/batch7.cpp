@@ -36,25 +36,6 @@ public:
     S411900Entry entries_10[16];
     S411900* Init_411900();
 };
-MATCH_FUNC(0x411900)
-S411900* S411900::Init_411900()
-{
-    field_0 = 0;
-    field_4 = 0;
-    field_8 = 0xffff;
-    field_a = 0xffff;
-    field_c = 0;
-    field_d = 0;
-    for (int i = 0; i < 16; i++) {
-        entries_10[i].field_0 = 0;
-        entries_10[i].field_4 = 0xffff;
-        entries_10[i].field_8 = 0;
-        entries_10[i].field_c = 0;
-        entries_10[i].field_10 = 0;
-        entries_10[i].field_14 = 0;
-    }
-    return this;
-}
 
 extern int g_66f63c;
 // Both +0x30 stores survive in the original and the counter bump is

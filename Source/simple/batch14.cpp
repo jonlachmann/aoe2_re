@@ -75,99 +75,54 @@ public:
     float Get_409DE0();
 };
 
-MATCH_FUNC(0x409DE0)
-float S409DE0::Get_409DE0()
-{
-    return *(float*)((char*)this + 0x20);
-}
 class S409DF0 {
 public:
     char pad_00[0x24];
     float Get_409DF0();
 };
 
-MATCH_FUNC(0x409DF0)
-float S409DF0::Get_409DF0()
-{
-    return *(float*)((char*)this + 0x24);
-}
 class S409E00 {
 public:
     char pad_00[0x28];
     float Get_409E00();
 };
 
-MATCH_FUNC(0x409E00)
-float S409E00::Get_409E00()
-{
-    return *(float*)((char*)this + 0x28);
-}
 class S40A0E0 {
 public:
     char pad_00[0x50];
     float Get_40A0E0();
 };
 
-MATCH_FUNC(0x40A0E0)
-float S40A0E0::Get_40A0E0()
-{
-    return *(float*)((char*)this + 0x50);
-}
 class S40A0F0 {
 public:
     char pad_00[0x54];
     float Get_40A0F0();
 };
 
-MATCH_FUNC(0x40A0F0)
-float S40A0F0::Get_40A0F0()
-{
-    return *(float*)((char*)this + 0x54);
-}
 class S40A100 {
 public:
     char pad_00[0x58];
     float Get_40A100();
 };
 
-MATCH_FUNC(0x40A100)
-float S40A100::Get_40A100()
-{
-    return *(float*)((char*)this + 0x58);
-}
 class S40A110 {
 public:
     char pad_00[0x5c];
     float Get_40A110();
 };
 
-MATCH_FUNC(0x40A110)
-float S40A110::Get_40A110()
-{
-    return *(float*)((char*)this + 0x5c);
-}
 class S40A120 {
 public:
     char pad_00[0x60];
     float Get_40A120();
 };
 
-MATCH_FUNC(0x40A120)
-float S40A120::Get_40A120()
-{
-    return *(float*)((char*)this + 0x60);
-}
 class S40A130 {
 public:
     char pad_00[0x64];
     float Get_40A130();
 };
 
-MATCH_FUNC(0x40A130)
-float S40A130::Get_40A130()
-{
-    return *(float*)((char*)this + 0x64);
-}
 class S46A9A0 {
 public:
     char pad_00[0x6c];
@@ -343,10 +298,4 @@ public:
     char pad_00[0xea4];
     int Get_40F4C0();
 };
-MATCH_FUNC(0x40F4C0)
-int S40F4C0::Get_40F4C0()
-{
-    int index = *(int*)((char*)this + 0xea4);
-    return *(int*)((char*)this + 0xea4 + index * 4);
-}
 

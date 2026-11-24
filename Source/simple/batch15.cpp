@@ -1,9 +1,5 @@
 #include "Function.hpp"
 
-MATCH_FUNC(0x414300)
-void M_414300()
-{
-}
 
 MATCH_FUNC(0x440740)
 void M_440740()
@@ -34,11 +30,6 @@ public:
     int field_8;
     bool Check_4060A0();
 };
-WIP_FUNC(0x4060A0)
-bool S4060A0::Check_4060A0()
-{
-    return (bool)field_8;
-}
 
 class S40F4A0 {
 public:
@@ -46,11 +37,6 @@ public:
     int field_ea4;
     bool Check_40F4A0();
 };
-MATCH_FUNC(0x40F4A0)
-bool S40F4A0::Check_40F4A0()
-{
-    return field_ea4 == 0;
-}
 
 class S40F4B0 {
 public:
@@ -65,11 +51,6 @@ public:
     int field_180;
     bool Check_419810();
 };
-MATCH_FUNC(0x419810)
-bool S419810::Check_419810()
-{
-    return field_180 != 0;
-}
 
 class S42D210 {
 public:

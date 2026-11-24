@@ -13,15 +13,6 @@ public:
     int Get_406170();
 };
 
-MATCH_FUNC(0x406170)
-int S406170::Get_406170()
-{
-    int* v1 = this->field_08;
-    if (v1)
-        return *v1;
-    else
-        return 0;
-}
 
 // 0x410700 — when the first field is 2, clear the second.
 class S410700 {
@@ -32,12 +23,6 @@ public:
     void Clear_410700();
 };
 
-MATCH_FUNC(0x410700)
-void S410700::Clear_410700()
-{
-    if (this->field_00 == 2)
-        this->field_04 = 0;
-}
 
 // 0x41A410 — decrementing byte counter at +79. A member of the vtable class
 // C_vt61CE24 (slot); the class itself remains address-labelled.

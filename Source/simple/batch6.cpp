@@ -4,21 +4,6 @@ class S410680 {
 public:
     S410680* Init_410680();
 };
-MATCH_FUNC(0x410680)
-S410680* S410680::Init_410680()
-{
-    int zero = 0;
-    *(int*)((char*)this) = zero;
-    *(int*)((char*)this + 4) = zero;
-    *(int*)((char*)this + 8) = zero;
-    *(unsigned char*)((char*)this + 0xc) = zero;
-    *(int*)((char*)this + 0x10) = zero;
-    *(unsigned char*)((char*)this + 0x14) = zero;
-    *(unsigned char*)((char*)this + 0x15) = zero;
-    *(unsigned char*)((char*)this + 0x16) = zero;
-    *(unsigned char*)((char*)this + 0x17) = zero;
-    return this;
-}
 
 class S4373F0 {
 public:
