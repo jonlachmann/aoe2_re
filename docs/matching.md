@@ -8,6 +8,10 @@ clip-return, so the interesting path never runs. The first "verified"
 `sub_461370` wrote to the wrong row and still went 281/281 green. A byte
 match leaves no room for that.
 
+The long-running class-first procedure, state layers, layout-refinement rules,
+and legacy-staging exit path are in **`docs/reconstruction_loop.md`**. Read it
+before starting a loop session; this doc covers compiler and matching mechanics.
+
 ## Toolchain
 
 - VC6 `cl.exe` 12.00.8804 (SP5) under wine (`/opt/homebrew/bin/wine`, 9.0), taken from
