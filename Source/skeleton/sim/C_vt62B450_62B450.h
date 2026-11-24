@@ -15,5 +15,5 @@ public:
     virtual void slot_003();  // slot +0x00C: sub_498320 [lifted]
     virtual void slot_004();  // slot +0x010: sub_59BA00 [lifted]
     virtual void slot_005();  // slot +0x014: sub_498630 [lifted]
-    void method_000();  // sub_59B890 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_59B890 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62B450.cpp
 };

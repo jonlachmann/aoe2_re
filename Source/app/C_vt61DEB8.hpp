@@ -1,6 +1,6 @@
 // C_vt61DEB8 — vtable class 0x61DEB8 (skeleton: Source/skeleton/app/
 // C_vt61DEB8_61DEB8.h holds all slots and lifted methods).
-// This TU carries the 4 byte-verified methods; all offsets they touch are
+// This TU carries the 5 byte-verified methods; all offsets they touch are
 // reconstructed below.
 #pragma once
 
@@ -18,6 +18,7 @@ public:
     char field_23;                // +0x23
     unsigned char field_24;       // +0x24
 
+    void Init_41B240();
     void M_41B600(short v);
     bool Check_41B610();
     char Get_41B660();

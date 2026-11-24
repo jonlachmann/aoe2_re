@@ -8,11 +8,11 @@
    "vtable": "0x61C524",
    "anchor": "0x401150",
    "methods": 25,
-   "owned_methods": 4,
-   "unowned_methods": 21,
+   "owned_methods": 5,
+   "unowned_methods": 20,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
-    "Source/app/C_vt61C524.cpp": 3,
+    "Source/app/C_vt61C524.cpp": 4,
     "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
@@ -94,15 +94,17 @@
    "vtable": "0x61C8E4",
    "anchor": "0x403DC0",
    "methods": 24,
-   "owned_methods": 4,
-   "unowned_methods": 20,
+   "owned_methods": 5,
+   "unowned_methods": 19,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
-    "Source/app/C_vt61C62C.cpp": 1
+    "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1
    },
    "other_files": [
-    "Source/app/C_vt61C62C.cpp"
+    "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt61C8E4.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -247,15 +249,17 @@
    "vtable": "0x61D1D8",
    "anchor": "0x403DC0",
    "methods": 25,
-   "owned_methods": 4,
-   "unowned_methods": 21,
+   "owned_methods": 5,
+   "unowned_methods": 20,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
-    "Source/app/C_vt61C62C.cpp": 1
+    "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1
    },
    "other_files": [
-    "Source/app/C_vt61C62C.cpp"
+    "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt61C8E4.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -760,12 +764,12 @@
    "vtable": "0x61DEB8",
    "anchor": "0x41B170",
    "methods": 17,
-   "owned_methods": 7,
-   "unowned_methods": 10,
+   "owned_methods": 8,
+   "unowned_methods": 9,
    "primary_file": "Source/app/C_vt61DEB8.cpp",
    "owner_files": {
     "Source/app/C_vt61DE70.cpp": 2,
-    "Source/app/C_vt61DEB8.cpp": 4,
+    "Source/app/C_vt61DEB8.cpp": 5,
     "Source/ui/C_pnl_inp.cpp": 1
    },
    "other_files": [
@@ -2946,15 +2950,17 @@
    "vtable": "0x62819C",
    "anchor": "0x53D8E0",
    "methods": 24,
-   "owned_methods": 4,
-   "unowned_methods": 20,
+   "owned_methods": 5,
+   "unowned_methods": 19,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
-    "Source/app/C_vt61C62C.cpp": 1
+    "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1
    },
    "other_files": [
-    "Source/app/C_vt61C62C.cpp"
+    "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt61C8E4.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -2966,15 +2972,17 @@
    "vtable": "0x628280",
    "anchor": "0x53E850",
    "methods": 25,
-   "owned_methods": 4,
-   "unowned_methods": 21,
+   "owned_methods": 5,
+   "unowned_methods": 20,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
-    "Source/app/C_vt61C62C.cpp": 1
+    "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt628280.cpp": 1
    },
    "other_files": [
-    "Source/app/C_vt61C62C.cpp"
+    "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt628280.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -3080,15 +3088,17 @@
    "vtable": "0x6286E8",
    "anchor": "0x5412C0",
    "methods": 26,
-   "owned_methods": 4,
-   "unowned_methods": 22,
+   "owned_methods": 5,
+   "unowned_methods": 21,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
-    "Source/app/C_vt61C62C.cpp": 1
+    "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1
    },
    "other_files": [
-    "Source/app/C_vt61C62C.cpp"
+    "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt61C8E4.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -3186,15 +3196,19 @@
    "vtable": "0x628A9C",
    "anchor": "0x546280",
    "methods": 25,
-   "owned_methods": 4,
-   "unowned_methods": 21,
+   "owned_methods": 6,
+   "unowned_methods": 19,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
-    "Source/app/C_vt61C62C.cpp": 1
+    "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1,
+    "Source/sim/C_vt628A9C.cpp": 1
    },
    "other_files": [
-    "Source/app/C_vt61C62C.cpp"
+    "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt61C8E4.cpp",
+    "Source/sim/C_vt628A9C.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -3228,15 +3242,19 @@
    "vtable": "0x628C60",
    "anchor": "0x547220",
    "methods": 25,
-   "owned_methods": 4,
-   "unowned_methods": 21,
+   "owned_methods": 6,
+   "unowned_methods": 19,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
-    "Source/app/C_vt61C62C.cpp": 1
+    "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1,
+    "Source/sim/C_vt628A9C.cpp": 1
    },
    "other_files": [
-    "Source/app/C_vt61C62C.cpp"
+    "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt61C8E4.cpp",
+    "Source/sim/C_vt628A9C.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -3248,17 +3266,19 @@
    "vtable": "0x628D40",
    "anchor": "0x403DC0",
    "methods": 24,
-   "owned_methods": 5,
-   "unowned_methods": 19,
+   "owned_methods": 6,
+   "unowned_methods": 18,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
     "Source/app/C_vt61C62C.cpp": 1,
-    "Source/gfx/C_vt61DA40.cpp": 1
+    "Source/gfx/C_vt61DA40.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1
    },
    "other_files": [
     "Source/app/C_vt61C62C.cpp",
-    "Source/gfx/C_vt61DA40.cpp"
+    "Source/gfx/C_vt61DA40.cpp",
+    "Source/sim/C_vt61C8E4.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -3270,11 +3290,11 @@
    "vtable": "0x628E24",
    "anchor": "0x548200",
    "methods": 25,
-   "owned_methods": 7,
-   "unowned_methods": 18,
+   "owned_methods": 8,
+   "unowned_methods": 17,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
-    "Source/app/C_vt61C524.cpp": 3,
+    "Source/app/C_vt61C524.cpp": 4,
     "Source/app/C_vt61C62C.cpp": 1,
     "Source/app/C_vt628528.cpp": 1,
     "Source/ui/C_pnl_btn.cpp": 2
@@ -3294,16 +3314,18 @@
    "vtable": "0x628F04",
    "anchor": "0x548620",
    "methods": 24,
-   "owned_methods": 5,
-   "unowned_methods": 19,
+   "owned_methods": 6,
+   "unowned_methods": 18,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
     "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1,
     "Source/sim/C_vt628F04.cpp": 1
    },
    "other_files": [
     "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt61C8E4.cpp",
     "Source/sim/C_vt628F04.cpp"
    ],
    "staged_files": [],
@@ -3316,15 +3338,17 @@
    "vtable": "0x628FE4",
    "anchor": "0x549330",
    "methods": 26,
-   "owned_methods": 4,
-   "unowned_methods": 22,
+   "owned_methods": 5,
+   "unowned_methods": 21,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
-    "Source/app/C_vt61C62C.cpp": 1
+    "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1
    },
    "other_files": [
-    "Source/app/C_vt61C62C.cpp"
+    "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt61C8E4.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -3360,15 +3384,17 @@
    "vtable": "0x6291AC",
    "anchor": "0x54B0D0",
    "methods": 25,
-   "owned_methods": 4,
-   "unowned_methods": 21,
+   "owned_methods": 5,
+   "unowned_methods": 20,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
-    "Source/app/C_vt61C62C.cpp": 1
+    "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1
    },
    "other_files": [
-    "Source/app/C_vt61C62C.cpp"
+    "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt61C8E4.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -3380,11 +3406,11 @@
    "vtable": "0x629294",
    "anchor": "0x54C040",
    "methods": 25,
-   "owned_methods": 7,
-   "unowned_methods": 18,
+   "owned_methods": 8,
+   "unowned_methods": 17,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
-    "Source/app/C_vt61C524.cpp": 3,
+    "Source/app/C_vt61C524.cpp": 4,
     "Source/app/C_vt61C62C.cpp": 1,
     "Source/sim/C_vt629294.cpp": 1,
     "Source/ui/C_pnl_btn.cpp": 2
@@ -3404,16 +3430,18 @@
    "vtable": "0x629374",
    "anchor": "0x54C720",
    "methods": 25,
-   "owned_methods": 6,
-   "unowned_methods": 19,
+   "owned_methods": 7,
+   "unowned_methods": 18,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
     "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/C_vt61C8E4.cpp": 1,
     "Source/ui/C_pnl_btn.cpp": 2
    },
    "other_files": [
     "Source/app/C_vt61C62C.cpp",
+    "Source/sim/C_vt61C8E4.cpp",
     "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
@@ -3450,18 +3478,20 @@
    "vtable": "0x6295D8",
    "anchor": "0x54FD90",
    "methods": 19,
-   "owned_methods": 13,
-   "unowned_methods": 6,
+   "owned_methods": 14,
+   "unowned_methods": 5,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 6,
     "Source/app/C_vt61D328.cpp": 2,
     "Source/engine-late/C_view.cpp": 3,
+    "Source/sim/C_vt6295D8.cpp": 1,
     "Source/ui/C_pnl_edit.cpp": 2
    },
    "other_files": [
     "Source/app/C_vt61D328.cpp",
     "Source/engine-late/C_view.cpp",
+    "Source/sim/C_vt6295D8.cpp",
     "Source/ui/C_pnl_edit.cpp"
    ],
    "staged_files": [],
@@ -3474,18 +3504,20 @@
    "vtable": "0x6296A0",
    "anchor": "0x550930",
    "methods": 24,
-   "owned_methods": 14,
-   "unowned_methods": 10,
+   "owned_methods": 15,
+   "unowned_methods": 9,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 6,
     "Source/app/C_vt61D328.cpp": 2,
     "Source/engine-late/C_view.cpp": 4,
+    "Source/sim/C_vt6296A0.cpp": 1,
     "Source/ui/C_pnl_edit.cpp": 2
    },
    "other_files": [
     "Source/app/C_vt61D328.cpp",
     "Source/engine-late/C_view.cpp",
+    "Source/sim/C_vt6296A0.cpp",
     "Source/ui/C_pnl_edit.cpp"
    ],
    "staged_files": [],
@@ -3548,18 +3580,20 @@
    "vtable": "0x629AB0",
    "anchor": "0x56C450",
    "methods": 17,
-   "owned_methods": 13,
-   "unowned_methods": 4,
+   "owned_methods": 14,
+   "unowned_methods": 3,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 6,
     "Source/app/C_vt61D328.cpp": 2,
     "Source/engine-late/C_view.cpp": 3,
+    "Source/sim/C_vt629AB0.cpp": 1,
     "Source/ui/C_pnl_edit.cpp": 2
    },
    "other_files": [
     "Source/app/C_vt61D328.cpp",
     "Source/engine-late/C_view.cpp",
+    "Source/sim/C_vt629AB0.cpp",
     "Source/ui/C_pnl_edit.cpp"
    ],
    "staged_files": [],
@@ -4081,15 +4115,18 @@
    "vtable": "0x62B198",
    "anchor": "0x597A20",
    "methods": 27,
-   "owned_methods": 7,
-   "unowned_methods": 20,
+   "owned_methods": 8,
+   "unowned_methods": 19,
    "primary_file": "Source/ui/C_vt620C7C.cpp",
    "owner_files": {
+    "Source/sim/C_vt62B198.cpp": 1,
     "Source/ui/C_vt620C7C.cpp": 7
    },
-   "other_files": [],
+   "other_files": [
+    "Source/sim/C_vt62B198.cpp"
+   ],
    "staged_files": [],
-   "split": false
+   "split": true
   },
   {
    "class": "C_vt62B214",
@@ -4137,11 +4174,11 @@
    "vtable": "0x62B308",
    "anchor": "0x599550",
    "methods": 19,
-   "owned_methods": 1,
-   "unowned_methods": 18,
+   "owned_methods": 2,
+   "unowned_methods": 17,
    "primary_file": "Source/sim/C_vt62B308.cpp",
    "owner_files": {
-    "Source/sim/C_vt62B308.cpp": 1
+    "Source/sim/C_vt62B308.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -4154,10 +4191,12 @@
    "vtable": "0x62B450",
    "anchor": "0x59B850",
    "methods": 7,
-   "owned_methods": 0,
-   "unowned_methods": 7,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 6,
+   "primary_file": "Source/sim/C_vt62B450.cpp",
+   "owner_files": {
+    "Source/sim/C_vt62B450.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false

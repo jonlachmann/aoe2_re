@@ -19,3 +19,10 @@ bool C_vt61C524::M_409A30(int a, int b)
     (void)a; (void)b;
     return false;
 }
+
+MATCH_FUNC(0x4015E0)
+int C_vt61C524::M_4015E0()
+{
+    Vat_5C(1);
+    return 1;
+}

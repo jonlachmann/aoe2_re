@@ -1,4 +1,12 @@
 #include "C_vt61DEB8.hpp"
+#include "C_vt61DE70.hpp"
+
+MATCH_FUNC(0x41B240)
+void C_vt61DEB8::Init_41B240()
+{
+    *(int*)((char*)this) = 0x61deb8;
+    ((C_vt61DE70*)this)->Init_41ADA0();
+}
 
 MATCH_FUNC(0x41B600)
 void C_vt61DEB8::M_41B600(short v)

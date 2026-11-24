@@ -20,7 +20,7 @@ public:
     virtual void slot_008();  // slot +0x020: sub_409A40 [lifted]
     virtual void slot_009();  // slot +0x024: sub_409A40 [lifted]
     virtual void slot_010();  // slot +0x028: sub_548490 [lifted]
-    virtual void slot_011();  // slot +0x02C: sub_4015E0 [lifted]
+    virtual void slot_011();  // slot +0x02C: sub_4015E0 [matched] — Source/app/C_vt61C524.cpp
     virtual void slot_012();  // slot +0x030: sub_5C6880 [matched] — Source/ui/C_pnl_btn.cpp
     virtual void slot_013();  // slot +0x034: sub_5C6880 [matched] — Source/ui/C_pnl_btn.cpp
     virtual void slot_014();  // slot +0x038: sub_409A20 [matched] — Source/app/C_vt61C524.cpp
