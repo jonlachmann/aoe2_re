@@ -99,7 +99,9 @@ static void dump_on_exit(int code) { (void)code; recomp_dump_trace("hle_exit"); 
 /* ---- [aoe2_re] headless driver: run without a window (nothing on the
  * desktop, no mouse grab), drive input from a FIFO, dump frames as BMPs.
  * Commands, one per line:  move x y | down x y | up x y | click x y |
- * rdown/rclick x y | key VK | kdown/kup VK | shot PATH | quit  (guest/game coordinates, e.g. 800x600). ---- */
+ * rdown/rclick x y | key VK [SCAN] | kdown/kup VK [SCAN] | shot PATH | quit
+ * (guest/game coordinates, e.g. 800x600; SCAN is the PC scancode, for games
+ * that read DirectInput or lParam rather than the virtual key). ---- */
 #define WM_LBUTTONDOWN_ 0x0201u
 #define WM_LBUTTONUP_   0x0202u
 #define WM_RBUTTONDOWN_ 0x0204u
@@ -154,7 +156,7 @@ static void drv_command(char *line) {
     size_t n = strlen(line);
     while (n && (line[n - 1] == '\n' || line[n - 1] == '\r' || line[n - 1] == ' ')) line[--n] = 0;
     if (!n || *line == '#') return;
-    unsigned x, y, vk;
+    unsigned x, y, vk, scan = 0;
     char arg[400];
     if (sscanf(line, "move %u %u", &x, &y) == 2) hle_input_mouse(WM_MOUSEMOVE_, (int)x, (int)y);
     else if (sscanf(line, "down %u %u", &x, &y) == 2) hle_input_mouse(WM_LBUTTONDOWN_, (int)x, (int)y);
@@ -168,12 +170,28 @@ static void drv_command(char *line) {
     else if (sscanf(line, "click %u %u", &x, &y) == 2) {
         hle_input_mouse(WM_LBUTTONDOWN_, (int)x, (int)y);
         hle_input_mouse(WM_LBUTTONUP_, (int)x, (int)y);
-    } else if (sscanf(line, "key %u", &vk) == 1) {
-        hle_input_key(1, vk, 0); hle_input_key(0, vk, 0);
-    } else if (sscanf(line, "kdown %u", &vk) == 1) hle_input_key(1, vk, 0);
-    else if (sscanf(line, "kup %u", &vk) == 1) hle_input_key(0, vk, 0);
+    } else if (sscanf(line, "key %u %u", &vk, &scan) >= 1) {
+        hle_input_key(1, vk, scan); hle_input_key(0, vk, scan);
+    } else if (sscanf(line, "kdown %u %u", &vk, &scan) >= 1) hle_input_key(1, vk, scan);
+    else if (sscanf(line, "kup %u %u", &vk, &scan) >= 1) hle_input_key(0, vk, scan);
     else if (sscanf(line, "shot %400s", arg) == 1) drv_dump_frame(arg);
-    else if (!strcmp(line, "quit")) drv_exit = 1;
+    else if (sscanf(line, "at %u %u", &x, &y) == 2) {
+        extern uint32_t hle_window_at(int, int, int *, int *);
+        extern int hle_window_screen_rect(uint32_t, int *, int *, int *, int *);
+        extern const char *hle_window_class(uint32_t);
+        extern uint32_t hle_window_style(uint32_t), hle_window_parent(uint32_t);
+        int cx, cy, l, t, r, b;
+        uint32_t h = hle_window_at((int)x, (int)y, &cx, &cy);
+        if (!h) fprintf(stderr, "[driver] at %u,%u: no window\n", x, y);
+        else {
+            hle_window_screen_rect(h, &l, &t, &r, &b);
+            fprintf(stderr, "[driver] at %u,%u: %05X %s style %08X parent %05X rect %d,%d-%d,%d child %d,%d\n",
+                    x, y, h, hle_window_class(h), hle_window_style(h), hle_window_parent(h), l, t, r, b, cx, cy);
+        }
+    } else if (!strcmp(line, "dump")) {
+        extern void hle_queue_dump(void);
+        hle_queue_dump();
+    } else if (!strcmp(line, "quit")) drv_exit = 1;
     else fprintf(stderr, "[driver] ? %s\n", line);
 }
 
@@ -208,6 +226,22 @@ int main(int argc, char** argv) {
      * so these override win32hle's built-ins (VERSION.dll, for one) */
     win32hle_register(win32hle_aoe);
     recomp_host_init();
+    {   /* win32hle maps Z: by default but no C:, so the game's
+         * GetTempPathA -> "C:\WINDOWS\TEMP" cannot resolve. The DRS resource
+         * loader writes its decompressed entry to a temp file there and
+         * silently falls back (minimap map800.bmp). Give C: the game's own
+         * install root and make the temp directory it expects. */
+        char cwd[1024];
+        extern void hle_set_drive(char letter, const char* host_root);
+        if (getcwd(cwd, sizeof cwd)) {
+            char dir[1024];
+            hle_set_drive('C', cwd);
+            snprintf(dir, sizeof dir, "%s/WINDOWS", cwd);
+            mkdir(dir, 0755);
+            snprintf(dir, sizeof dir, "%s/WINDOWS/TEMP", cwd);
+            mkdir(dir, 0755);
+        }
+    }
     {   /* [aoe2_re] give the guest a real Windows-style command line: the
      * CRT parses it for the exe path; the default "game.exe" leaves the
      * startup's module-name register NULL. */

@@ -484,6 +484,26 @@ compositing gap: the minimap tile buffer is never populated. `HLE_GBLITTRACE`
 also records no `BitBlt`/`StretchBlt` calls anywhere in the live match, so
 DDraw/GDI blit plumbing is not the cause.
 
+### Root cause: no C: drive for the DRS decompression temp file (2026-11-24)
+
+The minimap failure is a host mapping gap, not the minimap object. The DRS
+resource loader `0x4BE550` finds the `anib` entry in `interfac.drs` through
+`0x4BE490`/`0x4BE3B0`, then decompresses it through a Windows temporary file:
+`GetTempPathA` returns `C:\\WINDOWS\\TEMP\\`, `GetTempFileNameA` makes
+`tem0001.TMP`, and `0x5FCE01`/`0x5FFC19` write the inflated entry there before
+`0x4A9D80` builds the bitmap. win32hle maps `Z:` by default but no `C:` drive,
+so `hle_host_path` returned no path and every temp write failed
+(`CreateFileA "C:\\WINDOWS\\TEMP\\tem0001.TMP" -> ... No such file`). The
+loader returned zero and `0x4A9D80` fell back to `OpenFile "map800.bmp"`, which
+is not a loose CD file and not a PE resource either. That fallback is the only
+reason `map800.bmp` appeared in the file trace.
+
+Fix in `aoe_host.c`: after registration, map `C:` to the current install root
+and create its `WINDOWS/TEMP` directory. Re-run: temp files `tem0001` through
+`tem0004` open, no `map800.bmp` probe remains, and the minimap crop now contains
+terrain palette colors (2389 non-black pixels, reds/browns) instead of only the
+frame/button palette. The map interior renders.
+
 
 Readable track: byte-exact `sub_560660`/`sub_560680`/`sub_5606A0` (word-type
 checks), `sub_5E68A0` (index compare), `sub_52A440` (forwarder), plus a WIP

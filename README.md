@@ -37,7 +37,10 @@ export AOE2_GAME_DIR=/absolute/path/to/your/local/game-install
 
 The build uses native host architecture (`arm64` on Apple Silicon), Homebrew
 `sdl2-compat`/`sdl2_ttf`, and runtime sources fetched into git-ignored `refs/`.
-No proprietary game files are added to this repository.
+No proprietary game files are tracked by this repository. The game's
+`Data/` assets are kept inside the local installation named by
+`AOE2_GAME_DIR`, copied from the mounted disc or that lawful installation;
+they are outside the repository's tracked tree.
 
 ## Project layout
 
