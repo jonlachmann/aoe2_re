@@ -136,13 +136,14 @@ argc does not crash at the call - it corrupts esp silently and faults later.
 Also removed: the temporary `[DIAG startup]` block in `recomp_0039.c` and the
 `RECOMP_MOVS_CHECK` in `recomp_types.h` (both served this hunt).
 
-### Build / run (now in the repo)
+### Build / run on macOS
 
-- `Scripts/build_boot.sh` -> `build/boot/aoe_boot` (incremental, ~2 min
-  CPU / ~16 s wall from scratch on 10 cores). Host main is
-  `Source/host/aoe_host.c` (was only in /tmp).
-- `Scripts/run_boot.sh` runs it from `$AOE2_GAME_DIR` (default: the
-  aoe2-highball wine install, the only tree with `EBUEula.dll`), log in
+- `Scripts/bootstrap_mac.sh` installs SDL dependencies and fetches the
+  git-ignored pcrecomp runtime at the pinned host-patch commit.
+- `Scripts/build_mac.sh` -> `build/boot/aoe_boot` (incremental, ~2 min CPU /
+  ~16 s wall from scratch on 10 cores). Host main is
+  `Source/host/aoe_host.c`.
+- `Scripts/run_mac.sh` runs it from `$AOE2_GAME_DIR` with `AOE_BIN`, logs to
   `build/boot/run.log`, killed after `$SECS` (40) s.
 
 ## Resolved 2026-11-23: DirectX 6.1a check (DirectPlay)

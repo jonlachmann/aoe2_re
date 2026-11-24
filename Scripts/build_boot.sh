@@ -1,11 +1,22 @@
 #!/bin/sh
-# Build build/boot/aoe_boot: the lifted game (Source/lifted) + win32hle
-# (refs/pcrecomp/runtime/win32hle) + our host glue (Source/host).
+# Build build/boot/aoe_boot on macOS: the lifted game (Source/lifted) +
+# win32hle runtime (a local pcrecomp checkout) + our host glue (Source/host).
 # Incremental: an object is rebuilt when its source or recomp_types.h is newer.
 set -e
+[ "$(uname -s)" = Darwin ] || { echo "build_boot.sh: macOS host required" >&2; exit 1; }
 R=$(cd "$(dirname "$0")/.." && pwd)
-W=$R/refs/pcrecomp/runtime/win32hle
+P=${PCRE_TREE:-$R/refs/pcrecomp}
+W=$P/runtime/win32hle
 B=$R/build/boot
+[ -f "$W/win32hle.h" ] || {
+  echo "win32hle runtime missing; run Scripts/bootstrap_mac.sh (or set PCRE_TREE)" >&2
+  exit 1
+}
+BREW_PREFIX=${HOMEBREW_PREFIX:-$(command -v brew >/dev/null 2>&1 && brew --prefix || true)}
+[ -n "$BREW_PREFIX" ] || {
+  echo "Homebrew not found; install SDL2 deps or set HOMEBREW_PREFIX/SDL_CFLAGS/SDL_LIBS" >&2
+  exit 1
+}
 mkdir -p "$B" "$B/lifted_w"
 cd "$B"
 
@@ -21,7 +32,9 @@ done
 [ -f lifted_w/recomp_funcs.h ] || cp "$R"/Source/lifted/recomp_funcs.h lifted_w/
 [ lifted_w/recomp_funcs.h -nt "$R"/Source/lifted/recomp_funcs.h ] || cp "$R"/Source/lifted/recomp_funcs.h lifted_w/
 
-SDL="-I/opt/homebrew/include -I/opt/homebrew/include/SDL2 -I/opt/homebrew/opt/sdl2_ttf/include/SDL2"
+SDL=${SDL_CFLAGS:-"-I$BREW_PREFIX/include -I$BREW_PREFIX/include/SDL2 -I$BREW_PREFIX/opt/sdl2_ttf/include/SDL2"}
+SDLLIBS=${SDL_LIBS:-"-L$BREW_PREFIX/opt/sdl2-compat/lib -L$BREW_PREFIX/opt/sdl2_ttf/lib"}
+CC=${CC:-cc}
 CF="-O1 -g -w -DRECOMP_MEM_BASE=0x100000000000ull -DRECOMP_TRACE $SDL"
 {
   for f in $(ls "$W"/*.c | grep -v _selftest.c); do echo "-I$W -I$W/../recomp32 -I$W $f"; done
@@ -33,8 +46,8 @@ CF="-O1 -g -w -DRECOMP_MEM_BASE=0x100000000000ull -DRECOMP_TRACE $SDL"
 } | while read -r i1 i2 i3 src; do
   o=$(basename "$src" .c).o
   [ -f "$o" ] && [ "$o" -nt "$src" ] && [ "$o" -nt "$R/Source/lifted/recomp_types.h" ] && [ "$o" -nt "lifted_w/$(basename "$src")" ] && continue
-  echo "cc $CF $i1 $i2 $i3 -c $src -o $o"
+  echo "$CC $CF $i1 $i2 $i3 -c $src -o $o"
 done | tr '\n' '\0' | xargs -0 -P "${JOBS:-10}" -n 1 sh -c
-cc -o aoe_boot *.o -L/opt/homebrew/opt/sdl2-compat/lib -L/opt/homebrew/opt/sdl2_ttf/lib \
+"$CC" -o aoe_boot *.o $SDLLIBS \
    -lSDL2 -lSDL2_ttf -framework Cocoa -lpthread -lm -lz
 echo "built $B/aoe_boot"

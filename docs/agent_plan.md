@@ -8,7 +8,8 @@ Status of the boot lives in `docs/bringup_log.md` (newest section last).
 - The lifted game (`Source/lifted/`, 1.39M lines) runs on win32hle through
   CRT init, language init and the DirectX check, sets 800x600x8, creates the
   primary surface and opens dsound. Next stop: `mciSendCommandA` (0x4988E0).
-- `Scripts/build_boot.sh` / `Scripts/run_boot.sh` build and run it.
+- `Scripts/bootstrap_mac.sh` prepares SDL runtime dependencies;
+  `Scripts/build_mac.sh` / `Scripts/run_mac.sh` build and run the native macOS binary.
 - `docs/platform_imports.md` maps every Win32 import to its caller functions.
 - win32hle (`refs/pcrecomp/runtime/win32hle`, git-ignored) already sits on
   SDL: it links `sdl2-compat`, which runs on SDL3. Local edits to it are saved
@@ -27,7 +28,7 @@ the lifted function it replaces before the original is retired.
 
 ## Step 1 - keep the oracle booting (until the main menu renders)
 
-Loop: `build_boot.sh` -> `run_boot.sh` -> read the FATAL / fault -> fix -> log it.
+Loop: `build_mac.sh` -> `run_mac.sh` -> read the FATAL / fault -> fix -> log it.
 
 - A missing import: add a shim to `Source/host/aoe_shims.c`. **Check the
   caller's stack cleanup first** (`add esp,4n` after the call = cdecl =

@@ -14,6 +14,31 @@ export AOE_BIN=/absolute/path/to/your/local/reference-executable
 
 Alternatively, place the executable under the git-ignored `reference/` directory. The path is never tracked or distributed by this repository.
 
+## Build on macOS
+
+Requirements: macOS, Homebrew, and a local lawful game installation/reference executable.
+
+```bash
+# Install SDL dependencies and fetch the MIT-licensed pcrecomp runtime
+# into the git-ignored refs/ tree at the pinned commit.
+./Scripts/bootstrap_mac.sh
+
+# Build the native Mach-O boot binary at build/boot/aoe_boot.
+./Scripts/build_mac.sh
+```
+
+To run it against the actual local game installation:
+
+```bash
+export AOE_BIN=/absolute/path/to/your/local/reference-executable
+export AOE2_GAME_DIR=/absolute/path/to/your/local/game-install
+./Scripts/run_mac.sh
+```
+
+The build uses native host architecture (`arm64` on Apple Silicon), Homebrew
+`sdl2-compat`/`sdl2_ttf`, and runtime sources fetched into git-ignored `refs/`.
+No proprietary game files are added to this repository.
+
 ## Project layout
 
 ```
