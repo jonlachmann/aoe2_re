@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1011 |
+| matched | 1022 |
 | wip | 38 |
 | verified | 19 |
-| lifted | 6683 |
+| lifted | 6672 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -40,13 +40,13 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x61CB58` | `C_vt61CB58` | 24 | 0 | — | 7 | 17 |
 | `0x61CC40` | `C_vt61CC40` | 24 | 1 | — | 7 | 18 |
 | `0x61CD2C` | `C_vt61CD2C` | 24 | 1 | — | 6 | 19 |
-| `0x61CE24` | `C_vt61CE24` | 204 | 1 | — | 82 | 123 |
+| `0x61CE24` | `C_vt61CE24` | 204 | 1 | — | 84 | 121 |
 | `0x61D1D8` | `C_vt61D1D8` | 25 | 0 | — | 5 | 20 |
 | `0x61D2C0` | `C_vt61D2C0` | 24 | 0 | — | 9 | 15 |
 | `0x61D320` | `C_vt61D320` | 1 | 1 | — | 1 | 1 |
-| `0x61D324` | `C_vt61D324` | 1 | 1 | — | 0 | 2 |
+| `0x61D324` | `C_vt61D324` | 1 | 1 | — | 1 | 1 |
 | `0x61D328` | `C_vt61D328` | 18 | 2 | — | 13 | 7 |
-| `0x61D380` | `C_vt61D380` | 1 | 1 | — | 0 | 2 |
+| `0x61D380` | `C_vt61D380` | 1 | 1 | — | 1 | 1 |
 | `0x61D384` | `C_vt61D384` | 23 | 3 | — | 14 | 12 |
 | `0x61D460` | `C_vt61D460` | 16 | 1 | — | 12 | 5 |
 | `0x61D4A0` | `C_vt61D4A0` | 16 | 1 | — | 13 | 4 |
@@ -62,33 +62,33 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x61D704` | `C_vt61D704` | 15 | 1 | — | 13 | 3 |
 | `0x61D7C0` | `C_vt61D7C0` | 16 | 1 | — | 14 | 3 |
 | `0x61D890` | `C_vt61D890` | 57 | 1 | — | 7 | 51 |
-| `0x61DA40` | `C_vt61DA40` | 187 | 0 | — | 131 | 56 |
+| `0x61DA40` | `C_vt61DA40` | 187 | 0 | — | 132 | 55 |
 | `0x61DDB0` | `C_vt61DDB0` | 13 | 3 | — | 1 | 15 |
 | `0x61DE70` | `C_vt61DE70` | 16 | 1 | — | 9 | 8 |
 | `0x61DEB8` | `C_vt61DEB8` | 16 | 1 | — | 8 | 9 |
-| `0x61DF78` | `C_vt61DF78` | 87 | 3 | basegame | 34 | 56 |
+| `0x61DF78` | `C_vt61DF78` | 87 | 3 | basegame | 35 | 55 |
 | `0x61E15C` | `C_vt61E15C` | 1 | 1 | — | 0 | 2 |
-| `0x61E328` | `C_vt61E328` | 214 | 0 | — | 65 | 149 |
+| `0x61E328` | `C_vt61E328` | 214 | 0 | — | 68 | 146 |
 | `0x61E8A0` | `C_vt61E8A0` | 5 | 1 | — | 0 | 6 |
 | `0x61E8C0` | `C_vt61E8C0` | 1 | 1 | — | 0 | 2 |
 | `0x61E948` | `C_vt61E948` | 1 | 1 | — | 0 | 2 |
-| `0x61E9CC` | `C_diam_map` | 67 | 0 | diam_map | 23 | 44 |
-| `0x61EAD8` | `C_vt61EAD8` | 89 | 0 | panel_ez | 26 | 63 |
-| `0x61ECBC` | `C_vt61ECBC` | 89 | 1 | panel_ez | 27 | 63 |
-| `0x61EEA0` | `C_vt61EEA0` | 89 | 0 | panel_ez | 26 | 63 |
-| `0x61F084` | `C_vt61F084` | 89 | 1 | panel_ez | 26 | 64 |
-| `0x61F268` | `C_vt61F268` | 89 | 1 | panel_ez | 26 | 64 |
-| `0x61F3CC` | `C_vt61F3CC` | 91 | 1 | panel_ez | 28 | 64 |
-| `0x61F5B8` | `C_vt61F5B8` | 89 | 0 | panel_ez | 26 | 63 |
-| `0x61F71C` | `C_vt61F71C` | 89 | 1 | panel_ez | 26 | 64 |
-| `0x61F900` | `C_vt61F900` | 89 | 1 | panel_ez | 26 | 64 |
-| `0x61FB64` | `C_vt61FB64` | 89 | 1 | panel_ez | 26 | 64 |
-| `0x61FD48` | `C_vt61FD48` | 89 | 0 | panel_ez | 26 | 63 |
-| `0x61FEAC` | `C_vt61FEAC` | 89 | 1 | panel_ez | 26 | 64 |
-| `0x620090` | `C_TribeTechHelpScreen` | 87 | 5 | TribeTechHelpScreen, panel_ez | 24 | 68 |
-| `0x620274` | `C_TribePopUpHelp` | 62 | 0 | TribePopUpHelp | 23 | 39 |
-| `0x6203EC` | `C_vt6203EC` | 89 | 1 | panel_ez | 25 | 65 |
-| `0x6205D0` | `C_vt6205D0` | 190 | 0 | — | 131 | 59 |
+| `0x61E9CC` | `C_diam_map` | 67 | 0 | diam_map | 26 | 41 |
+| `0x61EAD8` | `C_vt61EAD8` | 89 | 0 | panel_ez | 29 | 60 |
+| `0x61ECBC` | `C_vt61ECBC` | 89 | 1 | panel_ez | 30 | 60 |
+| `0x61EEA0` | `C_vt61EEA0` | 89 | 0 | panel_ez | 29 | 60 |
+| `0x61F084` | `C_vt61F084` | 89 | 1 | panel_ez | 29 | 61 |
+| `0x61F268` | `C_vt61F268` | 89 | 1 | panel_ez | 29 | 61 |
+| `0x61F3CC` | `C_vt61F3CC` | 91 | 1 | panel_ez | 31 | 61 |
+| `0x61F5B8` | `C_vt61F5B8` | 89 | 0 | panel_ez | 29 | 60 |
+| `0x61F71C` | `C_vt61F71C` | 89 | 1 | panel_ez | 29 | 61 |
+| `0x61F900` | `C_vt61F900` | 89 | 1 | panel_ez | 29 | 61 |
+| `0x61FB64` | `C_vt61FB64` | 89 | 1 | panel_ez | 29 | 61 |
+| `0x61FD48` | `C_vt61FD48` | 89 | 0 | panel_ez | 29 | 60 |
+| `0x61FEAC` | `C_vt61FEAC` | 89 | 1 | panel_ez | 29 | 61 |
+| `0x620090` | `C_TribeTechHelpScreen` | 87 | 5 | TribeTechHelpScreen, panel_ez | 27 | 65 |
+| `0x620274` | `C_TribePopUpHelp` | 62 | 0 | TribePopUpHelp | 26 | 36 |
+| `0x6203EC` | `C_vt6203EC` | 89 | 1 | panel_ez | 28 | 62 |
+| `0x6205D0` | `C_vt6205D0` | 190 | 0 | — | 132 | 58 |
 | `0x62094C` | `C_vt62094C` | 3 | 1 | — | 0 | 4 |
 | `0x620A64` | `C_vt620A64` | 43 | 1 | — | 29 | 15 |
 | `0x620B74` | `C_vt620B74` | 1 | 1 | — | 0 | 2 |
@@ -101,32 +101,32 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x621110` | `C_vt621110` | 25 | 1 | — | 9 | 17 |
 | `0x621200` | `C_vt621200` | 25 | 1 | — | 12 | 14 |
 | `0x6213C0` | `C_vt6213C0` | 15 | 2 | — | 1 | 16 |
-| `0x621518` | `C_vt621518` | 214 | 0 | — | 65 | 149 |
+| `0x621518` | `C_vt621518` | 214 | 0 | — | 68 | 146 |
 | `0x6218FC` | `C_vt6218FC` | 42 | 1 | — | 29 | 14 |
-| `0x621A28` | `C_vt621A28` | 194 | 0 | — | 96 | 98 |
+| `0x621A28` | `C_vt621A28` | 194 | 0 | — | 98 | 96 |
 | `0x621E20` | `C_vt621E20` | 6 | 1 | — | 0 | 7 |
 | `0x621EC8` | `C_vt621EC8` | 1 | 0 | — | 0 | 1 |
 | `0x621ECC` | `C_vt621ECC` | 1 | 0 | — | 0 | 1 |
 | `0x621F64` | `C_vt621F64` | 2 | 0 | — | 0 | 2 |
-| `0x621F6C` | `C_vt621F6C` | 61 | 0 | — | 23 | 38 |
-| `0x622060` | `C_vt622060` | 87 | 2 | panel_ez | 26 | 63 |
+| `0x621F6C` | `C_vt621F6C` | 61 | 0 | — | 26 | 35 |
+| `0x622060` | `C_vt622060` | 87 | 2 | panel_ez | 29 | 60 |
 | `0x6222D4` | `C_vt6222D4` | 1 | 1 | — | 1 | 1 |
 | `0x622368` | `C_vt622368` | 83 | 2 | — | 28 | 57 |
-| `0x6224E4` | `C_pnl_btn` | 63 | 0 | pnl_btn | 17 | 46 |
-| `0x6225E0` | `C_vt6225E0` | 89 | 0 | panel_ez | 26 | 63 |
-| `0x622744` | `C_vt622744` | 61 | 2 | — | 22 | 41 |
-| `0x622838` | `C_pnl_btn` | 63 | 0 | pnl_btn | 17 | 46 |
-| `0x622934` | `C_pnl_edit` | 61 | 5 | pnl_edit | 26 | 40 |
-| `0x622A28` | `C_pnl_inp` | 74 | 0 | pnl_inp | 22 | 52 |
-| `0x622B50` | `C_pnl_lst` | 73 | 14 | pnl_lst | 19 | 68 |
-| `0x622C74` | `C_pnl_msg` | 62 | 1 | pnl_msg | 25 | 38 |
-| `0x622D6C` | `C_pnl_pic` | 61 | 0 | pnl_pic | 23 | 38 |
-| `0x622E60` | `C_pnl_scbr` | 61 | 1 | pnl_scbr | 20 | 42 |
-| `0x622F54` | `C_vt622F54` | 87 | 0 | panel_ez | 26 | 61 |
-| `0x6230B0` | `C_vt6230B0` | 61 | 1 | — | 20 | 42 |
-| `0x6231A4` | `C_vt6231A4` | 61 | 1 | — | 20 | 42 |
-| `0x623318` | `C_pnl_txt` | 73 | 0 | pnl_txt | 22 | 51 |
-| `0x6234C8` | `C_vt6234C8` | 93 | 1 | panel_ez | 27 | 67 |
+| `0x6224E4` | `C_pnl_btn` | 63 | 0 | pnl_btn | 19 | 44 |
+| `0x6225E0` | `C_vt6225E0` | 89 | 0 | panel_ez | 29 | 60 |
+| `0x622744` | `C_vt622744` | 61 | 2 | — | 25 | 38 |
+| `0x622838` | `C_pnl_btn` | 63 | 0 | pnl_btn | 19 | 44 |
+| `0x622934` | `C_pnl_edit` | 61 | 5 | pnl_edit | 28 | 38 |
+| `0x622A28` | `C_pnl_inp` | 74 | 0 | pnl_inp | 25 | 49 |
+| `0x622B50` | `C_pnl_lst` | 73 | 14 | pnl_lst | 22 | 65 |
+| `0x622C74` | `C_pnl_msg` | 62 | 1 | pnl_msg | 28 | 35 |
+| `0x622D6C` | `C_pnl_pic` | 61 | 0 | pnl_pic | 26 | 35 |
+| `0x622E60` | `C_pnl_scbr` | 61 | 1 | pnl_scbr | 23 | 39 |
+| `0x622F54` | `C_vt622F54` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x6230B0` | `C_vt6230B0` | 61 | 1 | — | 23 | 39 |
+| `0x6231A4` | `C_vt6231A4` | 61 | 1 | — | 23 | 39 |
+| `0x623318` | `C_pnl_txt` | 73 | 0 | pnl_txt | 25 | 48 |
+| `0x6234C8` | `C_vt6234C8` | 93 | 1 | panel_ez | 31 | 63 |
 | `0x62363C` | `C_vt62363C` | 2 | 1 | — | 0 | 3 |
 | `0x6236D0` | `C_vt6236D0` | 2 | 1 | — | 0 | 3 |
 | `0x6237E0` | `C_vt6237E0` | 8 | 1 | — | 0 | 9 |
@@ -138,41 +138,41 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x623AE4` | `C_vt623AE4` | 8 | 1 | — | 0 | 9 |
 | `0x623B20` | `C_vt623B20` | 2 | 1 | — | 0 | 3 |
 | `0x623BA8` | `C_vt623BA8` | 13 | 1 | — | 0 | 14 |
-| `0x623C5C` | `C_vt623C5C` | 61 | 1 | — | 22 | 40 |
+| `0x623C5C` | `C_vt623C5C` | 61 | 1 | — | 25 | 37 |
 | `0x623E50` | `C_vt623E50` | 3 | 1 | — | 0 | 4 |
 | `0x623E5C` | `C_vt623E5C` | 4 | 1 | — | 2 | 3 |
-| `0x623F24` | `C_scr_ach` | 87 | 2 | panel_ez, scr_ach | 26 | 63 |
-| `0x624100` | `C_vt624100` | 87 | 1 | panel_ez | 26 | 62 |
-| `0x6242DC` | `C_vt6242DC` | 87 | 1 | panel_ez | 26 | 62 |
-| `0x6244B8` | `C_vt6244B8` | 87 | 0 | panel_ez | 26 | 61 |
-| `0x624614` | `C_vt624614` | 87 | 2 | panel_ez | 25 | 64 |
-| `0x624770` | `C_scr_cred` | 73 | 1 | scr_cred | 22 | 52 |
-| `0x624914` | `C_scr_game` | 87 | 1 | panel_ez, scr_game | 25 | 63 |
-| `0x624AF4` | `C_vt624AF4` | 87 | 0 | panel_ez | 26 | 61 |
-| `0x624CD0` | `C_vt624CD0` | 87 | 0 | panel_ez | 26 | 61 |
-| `0x624E2C` | `C_vt624E2C` | 87 | 0 | panel_ez | 26 | 61 |
-| `0x625008` | `C_vt625008` | 87 | 0 | panel_ez | 25 | 62 |
-| `0x6251E4` | `C_vt6251E4` | 87 | 3 | panel_ez | 24 | 66 |
-| `0x625340` | `C_vt625340` | 87 | 0 | panel_ez | 26 | 61 |
-| `0x62551C` | `C_vt62551C` | 87 | 0 | panel_ez | 25 | 62 |
-| `0x6256F8` | `C_vt6256F8` | 93 | 0 | panel_ez | 25 | 68 |
-| `0x6258F8` | `C_vt6258F8` | 93 | 0 | panel_ez | 25 | 68 |
-| `0x625A6C` | `C_vt625A6C` | 87 | 0 | panel_ez | 26 | 61 |
-| `0x625C48` | `C_vt625C48` | 87 | 1 | panel_ez | 26 | 62 |
-| `0x625DA4` | `C_vt625DA4` | 87 | 1 | panel_ez | 27 | 61 |
-| `0x625F80` | `C_TRIBE_Screen_Options` | 87 | 3 | TRIBE_Screen_Options, panel_ez | 24 | 66 |
-| `0x62615C` | `C_vt62615C` | 87 | 1 | panel_ez | 26 | 62 |
-| `0x626338` | `C_scr_sed` | 87 | 2 | panel_ez, scr_sed | 25 | 64 |
-| `0x626614` | `C_vt626614` | 87 | 0 | panel_ez | 26 | 61 |
-| `0x6267F0` | `C_vt6267F0` | 87 | 0 | panel_ez | 25 | 62 |
-| `0x62694C` | `C_vt62694C` | 87 | 0 | panel_ez | 26 | 61 |
-| `0x626B28` | `C_scr_vc` | 87 | 1 | panel_ez, scr_vc | 26 | 62 |
-| `0x626E04` | `C_tpnl_obj` | 64 | 0 | tpnl_obj | 20 | 44 |
-| `0x627094` | `C_vt627094` | 186 | 0 | — | 131 | 55 |
-| `0x627428` | `C_vt627428` | 226 | 4 | — | 53 | 177 |
-| `0x627844` | `C_vt627844` | 223 | 0 | — | 55 | 168 |
+| `0x623F24` | `C_scr_ach` | 87 | 2 | panel_ez, scr_ach | 28 | 61 |
+| `0x624100` | `C_vt624100` | 87 | 1 | panel_ez | 29 | 59 |
+| `0x6242DC` | `C_vt6242DC` | 87 | 1 | panel_ez | 29 | 59 |
+| `0x6244B8` | `C_vt6244B8` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x624614` | `C_vt624614` | 87 | 2 | panel_ez | 28 | 61 |
+| `0x624770` | `C_scr_cred` | 73 | 1 | scr_cred | 25 | 49 |
+| `0x624914` | `C_scr_game` | 87 | 1 | panel_ez, scr_game | 27 | 61 |
+| `0x624AF4` | `C_vt624AF4` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x624CD0` | `C_vt624CD0` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x624E2C` | `C_vt624E2C` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x625008` | `C_vt625008` | 87 | 0 | panel_ez | 28 | 59 |
+| `0x6251E4` | `C_vt6251E4` | 87 | 3 | panel_ez | 26 | 64 |
+| `0x625340` | `C_vt625340` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x62551C` | `C_vt62551C` | 87 | 0 | panel_ez | 28 | 59 |
+| `0x6256F8` | `C_vt6256F8` | 93 | 0 | panel_ez | 28 | 65 |
+| `0x6258F8` | `C_vt6258F8` | 93 | 0 | panel_ez | 28 | 65 |
+| `0x625A6C` | `C_vt625A6C` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x625C48` | `C_vt625C48` | 87 | 1 | panel_ez | 29 | 59 |
+| `0x625DA4` | `C_vt625DA4` | 87 | 1 | panel_ez | 30 | 58 |
+| `0x625F80` | `C_TRIBE_Screen_Options` | 87 | 3 | TRIBE_Screen_Options, panel_ez | 27 | 63 |
+| `0x62615C` | `C_vt62615C` | 87 | 1 | panel_ez | 29 | 59 |
+| `0x626338` | `C_scr_sed` | 87 | 2 | panel_ez, scr_sed | 28 | 61 |
+| `0x626614` | `C_vt626614` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x6267F0` | `C_vt6267F0` | 87 | 0 | panel_ez | 28 | 59 |
+| `0x62694C` | `C_vt62694C` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x626B28` | `C_scr_vc` | 87 | 1 | panel_ez, scr_vc | 29 | 59 |
+| `0x626E04` | `C_tpnl_obj` | 64 | 0 | tpnl_obj | 23 | 41 |
+| `0x627094` | `C_vt627094` | 186 | 0 | — | 132 | 54 |
+| `0x627428` | `C_vt627428` | 226 | 4 | — | 54 | 176 |
+| `0x627844` | `C_vt627844` | 223 | 0 | — | 56 | 167 |
 | `0x627D48` | `C_vt627D48` | 1 | 1 | — | 0 | 2 |
-| `0x627D4C` | `C_vt627D4C` | 186 | 0 | — | 131 | 55 |
+| `0x627D4C` | `C_vt627D4C` | 186 | 0 | — | 132 | 54 |
 | `0x6280B4` | `C_vt6280B4` | 24 | 0 | — | 4 | 20 |
 | `0x62819C` | `C_vt62819C` | 24 | 0 | — | 5 | 19 |
 | `0x628280` | `C_vt628280` | 24 | 1 | — | 5 | 20 |
@@ -221,10 +221,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x62A8D8` | `C_vt62A8D8` | 57 | 0 | — | 8 | 49 |
 | `0x62AA3C` | `C_vt62AA3C` | 4 | 0 | — | 1 | 3 |
 | `0x62AAE0` | `C_vt62AAE0` | 7 | 1 | — | 1 | 7 |
-| `0x62AC80` | `C_vt62AC80` | 89 | 1 | panel_ez | 26 | 64 |
+| `0x62AC80` | `C_vt62AC80` | 89 | 1 | panel_ez | 29 | 61 |
 | `0x62AF98` | `C_vt62AF98` | 3 | 1 | — | 1 | 3 |
 | `0x62B024` | `C_vt62B024` | 1 | 1 | — | 0 | 2 |
-| `0x62B0A8` | `C_vt62B0A8` | 27 | 1 | — | 7 | 21 |
+| `0x62B0A8` | `C_vt62B0A8` | 27 | 1 | — | 8 | 20 |
 | `0x62B198` | `C_vt62B198` | 26 | 1 | — | 8 | 19 |
 | `0x62B214` | `C_vt62B214` | 4 | 0 | — | 0 | 4 |
 | `0x62B224` | `C_vt62B224` | 25 | 1 | — | 13 | 13 |
@@ -233,23 +233,23 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x62B4E8` | `C_vt62B4E8` | 1 | 0 | — | 0 | 1 |
 | `0x62B5A0` | `C_vt62B5A0` | 101 | 1 | — | 9 | 93 |
 | `0x62B750` | `C_vt62B750` | 101 | 1 | — | 10 | 92 |
-| `0x62B970` | `C_tpnl_btn` | 63 | 0 | tpnl_btn, tpnl_inv | 17 | 46 |
-| `0x62BAEC` | `C_tpnl_inv` | 61 | 1 | tpnl_inv | 23 | 39 |
-| `0x62BC64` | `C_tpnl_obj` | 63 | 3 | tpnl_obj | 20 | 46 |
-| `0x62BD70` | `C_tpnl_per` | 61 | 1 | tpnl_per | 24 | 38 |
-| `0x62BEF0` | `C_tpnl_tim` | 61 | 1 | tpnl_tim | 22 | 40 |
-| `0x62C064` | `C_vt62C064` | 62 | 1 | — | 23 | 40 |
-| `0x62C1E0` | `C_vt62C1E0` | 87 | 73 | basegame | 66 | 94 |
+| `0x62B970` | `C_tpnl_btn` | 63 | 0 | tpnl_btn, tpnl_inv | 19 | 44 |
+| `0x62BAEC` | `C_tpnl_inv` | 61 | 1 | tpnl_inv | 26 | 36 |
+| `0x62BC64` | `C_tpnl_obj` | 63 | 3 | tpnl_obj | 23 | 43 |
+| `0x62BD70` | `C_tpnl_per` | 61 | 1 | tpnl_per | 27 | 35 |
+| `0x62BEF0` | `C_tpnl_tim` | 61 | 1 | tpnl_tim | 25 | 37 |
+| `0x62C064` | `C_vt62C064` | 62 | 1 | — | 26 | 37 |
+| `0x62C1E0` | `C_vt62C1E0` | 87 | 73 | basegame | 67 | 93 |
 | `0x62C470` | `C_vt62C470` | 3 | 1 | — | 0 | 4 |
 | `0x62C47C` | `C_vt62C47C` | 4 | 1 | — | 1 | 4 |
 | `0x62C5A4` | `C_vt62C5A4` | 4 | 0 | — | 0 | 4 |
-| `0x62C634` | `C_diam_map` | 70 | 0 | diam_map | 17 | 53 |
-| `0x62C7CC` | `C_vt62C7CC` | 78 | 1 | — | 15 | 64 |
+| `0x62C634` | `C_diam_map` | 70 | 0 | diam_map | 20 | 50 |
+| `0x62C7CC` | `C_vt62C7CC` | 78 | 1 | — | 18 | 61 |
 | `0x62C9CC` | `C_vt62C9CC` | 71 | 1 | — | 3 | 69 |
 | `0x62CBAC` | `C_vt62CBAC` | 4 | 0 | — | 0 | 4 |
-| `0x62CC3C` | `C_view` | 71 | 2 | view | 25 | 48 |
-| `0x62CEE8` | `C_diam_map` | 70 | 1 | diam_map | 18 | 53 |
-| `0x62D080` | `C_vt62D080` | 78 | 0 | — | 18 | 60 |
+| `0x62CC3C` | `C_view` | 71 | 2 | view | 28 | 45 |
+| `0x62CEE8` | `C_diam_map` | 70 | 1 | diam_map | 21 | 50 |
+| `0x62D080` | `C_vt62D080` | 78 | 0 | — | 21 | 57 |
 | `0x62D238` | `C_vt62D238` | 71 | 1 | — | 5 | 67 |
 
 ## Non-virtual classes (call-site object identity)

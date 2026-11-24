@@ -76,3 +76,33 @@ int C_TRIBE_Screen_Options::M_5C6890(int a, int b, int c, int d, int e)
     (void)a; (void)b; (void)c; (void)d; (void)e;
     return 0;
 }
+
+MATCH_FUNC(0x4A0780)
+void C_TRIBE_Screen_Options::M_4A0780(unsigned char v)
+{
+    field_F3 = v;
+    if (field_6C)
+        slot_08(2);
+}
+
+MATCH_FUNC(0x4A2280)
+void C_TRIBE_Screen_Options::M_4A2280()
+{
+    T4A2280Node* n = field_58;
+    while (n)
+    {
+        n->field_0->Vt_56();
+        n = n->field_8;
+    }
+}
+
+MATCH_FUNC(0x4A22D0)
+void C_TRIBE_Screen_Options::M_4A22D0()
+{
+    T4A2280Node* n = field_58;
+    while (n)
+    {
+        n->field_0->Vt_59();
+        n = n->field_8;
+    }
+}

@@ -57,3 +57,9 @@ float C_vt61E328::Get_436C60()
 {
     return *(float*)((char*)field_08 + 0x158);
 }
+
+MATCH_FUNC(0x436220)
+void C_vt61E328::M_436220(int a, int b)
+{
+    Vat_180(a, 1.0f, b);
+}

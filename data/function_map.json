@@ -4785,8 +4785,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61D324.cpp"
  },
  {
   "address": "0x40A310",
@@ -5361,8 +5361,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61D380.cpp"
  },
  {
   "address": "0x40B600",
@@ -13096,8 +13096,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61DF78.cpp"
  },
  {
   "address": "0x4208D0",
@@ -19410,8 +19410,8 @@
   ],
   "module": "game",
   "region": "game",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/game/C_vt61E328.cpp"
  },
  {
   "address": "0x436240",
@@ -38586,8 +38586,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CE24.cpp"
  },
  {
   "address": "0x48D490",
@@ -43398,8 +43398,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
  },
  {
   "address": "0x4A07A0",
@@ -45874,8 +45874,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
  },
  {
   "address": "0x4A22A0",
@@ -46036,8 +46036,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
  },
  {
   "address": "0x4A22F0",
@@ -56541,8 +56541,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_vt6234C8.cpp"
  },
  {
   "address": "0x4BDE90",
@@ -71538,8 +71538,8 @@
   ],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CE24.cpp"
  },
  {
   "address": "0x52AF50",
@@ -91273,8 +91273,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_vt62B0A8.cpp"
  },
  {
   "address": "0x596A70",

@@ -10,5 +10,5 @@
 class C_vt61D324 {
 public:
     virtual void slot_000();  // slot +0x000: sub_40A200 [lifted]
-    void method_000();  // sub_40A2F0 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_40A2F0 [matched]: same object, connected by this-edge call sites — Source/app/C_vt61D324.cpp
 };

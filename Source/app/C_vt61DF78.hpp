@@ -87,7 +87,7 @@ public:
     virtual void slot_069();
     virtual void slot_070();
     virtual void slot_071();
-    virtual void slot_072();
+    virtual int slot_072(int a, int b);
     virtual int Vat_124();
     virtual void slot_074();
     virtual void slot_075();
@@ -109,6 +109,7 @@ public:
     char pad_530[0x924 - 0x530];
     char buf_924[0xB0];           // +0x924
 
+    bool M_4208B0(int a, int b, int c, int d);
     void SetInt_41BC00(int v);
     void M_41BC10(int a, int b, int c, int d, int e);
     int M_41BC20();

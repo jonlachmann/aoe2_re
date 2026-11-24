@@ -7,6 +7,81 @@
 
 #include "Function.hpp"
 
+// Object reached through the node chain walked by 0x4A2280/0x4A22D0. Slot
+// +0xE0 (index 56) and +0xEC (index 59) are the ones those loops dispatch.
+class T4A2280Obj {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08();
+    virtual void Vt_09();
+    virtual void Vt_10();
+    virtual void Vt_11();
+    virtual void Vt_12();
+    virtual void Vt_13();
+    virtual void Vt_14();
+    virtual void Vt_15();
+    virtual void Vt_16();
+    virtual void Vt_17();
+    virtual void Vt_18();
+    virtual void Vt_19();
+    virtual void Vt_20();
+    virtual void Vt_21();
+    virtual void Vt_22();
+    virtual void Vt_23();
+    virtual void Vt_24();
+    virtual void Vt_25();
+    virtual void Vt_26();
+    virtual void Vt_27();
+    virtual void Vt_28();
+    virtual void Vt_29();
+    virtual void Vt_30();
+    virtual void Vt_31();
+    virtual void Vt_32();
+    virtual void Vt_33();
+    virtual void Vt_34();
+    virtual void Vt_35();
+    virtual void Vt_36();
+    virtual void Vt_37();
+    virtual void Vt_38();
+    virtual void Vt_39();
+    virtual void Vt_40();
+    virtual void Vt_41();
+    virtual void Vt_42();
+    virtual void Vt_43();
+    virtual void Vt_44();
+    virtual void Vt_45();
+    virtual void Vt_46();
+    virtual void Vt_47();
+    virtual void Vt_48();
+    virtual void Vt_49();
+    virtual void Vt_50();
+    virtual void Vt_51();
+    virtual void Vt_52();
+    virtual void Vt_53();
+    virtual void Vt_54();
+    virtual void Vt_55();
+    virtual void Vt_56();
+    virtual void Vt_57();
+    virtual void Vt_58();
+    virtual void Vt_59();
+};
+
+// Chain node at [this+0x58]: it holds the object pointer at +0x00 and the next
+// node at +0x08.
+class T4A2280Node {
+public:
+    T4A2280Obj* field_0;
+    char pad_4[4];
+    T4A2280Node* field_8;
+};
+
 class C_TRIBE_Screen_Options {
 public:
     virtual void slot_00();
@@ -17,17 +92,21 @@ public:
     virtual void slot_05();
     virtual void slot_06();
     virtual void slot_07();
-    virtual void slot_08();
+    virtual void slot_08(int v);
     virtual void slot_09();
     virtual void slot_10();
     virtual void slot_11();
     virtual void slot_12();
     virtual void Vat_34(int v);
 
-    char pad_04[0x60 - 4];
+    char pad_04[0x58 - 4];
+    T4A2280Node* field_58;        // +0x58, chain head
+    char pad_5C[0x60 - 0x5C];
     int field_60;                 // +0x60
     int field_64;                 // +0x64
-    char pad_68[0x74 - 0x68];
+    char pad_68[0x6C - 0x68];
+    int field_6C;                 // +0x6C
+    char pad_70[0x74 - 0x70];
     int field_74;                 // +0x74
     char pad_78[0x90 - 0x78];
     int field_90;                 // +0x90
@@ -37,7 +116,9 @@ public:
     char pad_A0[0xE8 - 0xA0];
     int field_E8;                 // +0xE8
     int field_EC;                 // +0xEC
-    char pad_F0[0xF6 - 0xF0];
+    char pad_F0[0xF3 - 0xF0];
+    unsigned char field_F3;       // +0xF3
+    char pad_F4[0xF6 - 0xF4];
     unsigned char field_F6;       // +0xF6
     char pad_F7[0xF8 - 0xF7];
     int field_F8;                 // +0xF8
@@ -49,6 +130,9 @@ public:
     int M_4364F0(int a, int b);
     int Get_4474F0();
     int Get_447500();
+    void M_4A0780(unsigned char v);
+    void M_4A2280();
+    void M_4A22D0();
     void M_4A0BB0(int v);
     void M_4A2040(int a, int b);
     void Get_4A22F0(int* out);

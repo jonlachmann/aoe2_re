@@ -114,3 +114,10 @@ void C_vt61DF78::M_5E2CC0(int a, int b)
 {
     (void)a; (void)b;
 }
+
+MATCH_FUNC(0x4208B0)
+bool C_vt61DF78::M_4208B0(int a, int b, int c, int d)
+{
+    (void)a; (void)b;
+    return slot_072(c, d) != 0;
+}

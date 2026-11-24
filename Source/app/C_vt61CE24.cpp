@@ -348,3 +348,18 @@ int C_vt61CE24::Get_52C6A0()
         return (int)result;
     return *(int*)((char*)result + 4);
 }
+
+MATCH_FUNC(0x52AF30)
+void C_vt61CE24::M_52AF30()
+{
+    T52AF30Sub* sub = field_20;
+    if (sub)
+        sub->Vat_EC(this);
+}
+
+MATCH_FUNC(0x48D470)
+void C_vt61CE24::M_48D470(void* p)
+{
+    *(void**)((char*)this + 0xb8) = p;
+    Vat_2F4();
+}

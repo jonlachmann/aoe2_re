@@ -55,7 +55,7 @@ public:
     virtual void slot_045();  // slot +0x0B4: sub_408650 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_046();  // slot +0x0B8: sub_408660 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_047();  // slot +0x0BC: sub_408670 [matched] — Source/app/C_vt61CE24.cpp
-    virtual void slot_048();  // slot +0x0C0: sub_48D470 [lifted]
+    virtual void slot_048();  // slot +0x0C0: sub_48D470 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_049();  // slot +0x0C4: sub_48CB20 [lifted]
     virtual void slot_050();  // slot +0x0C8: sub_408680 [lifted]
     virtual void slot_051();  // slot +0x0CC: sub_41A3F0 [lifted]
@@ -64,7 +64,7 @@ public:
     virtual void slot_054();  // slot +0x0D8: sub_408A90 [lifted]
     virtual void slot_055();  // slot +0x0DC: sub_52AE20 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_056();  // slot +0x0E0: sub_435A50 [lifted]
-    virtual void slot_057();  // slot +0x0E4: sub_52AF30 [lifted]
+    virtual void slot_057();  // slot +0x0E4: sub_52AF30 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_058();  // slot +0x0E8: sub_52AF50 [lifted]
     virtual void slot_059();  // slot +0x0EC: sub_52AF90 [lifted]
     virtual void slot_060();  // slot +0x0F0: sub_52AFE0 [lifted]
@@ -104,7 +104,7 @@ public:
     virtual void slot_094();  // slot +0x178: sub_435EB0 [lifted]
     virtual void slot_095();  // slot +0x17C: sub_436370 [lifted]
     virtual void slot_096();  // slot +0x180: sub_436240 [lifted]
-    virtual void slot_097();  // slot +0x184: sub_436220 [lifted]
+    virtual void slot_097();  // slot +0x184: sub_436220 [matched] — Source/game/C_vt61E328.cpp
     virtual void slot_098();  // slot +0x188: sub_4364F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_099();  // slot +0x18C: sub_407C00 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_100();  // slot +0x190: sub_436500 [lifted]

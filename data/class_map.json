@@ -1806,8 +1806,8 @@
    {
     "address": "0x48D470",
     "name": "sub_48D470",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x48CB20",
@@ -1860,8 +1860,8 @@
    {
     "address": "0x52AF30",
     "name": "sub_52AF30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52AF50",
@@ -3118,8 +3118,8 @@
    {
     "address": "0x40A2F0",
     "name": "sub_40A2F0",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/app/C_vt61D324.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -3281,8 +3281,8 @@
    {
     "address": "0x40B5E0",
     "name": "sub_40B5E0",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/app/C_vt61D380.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -5251,8 +5251,8 @@
    {
     "address": "0x52AF30",
     "name": "sub_52AF30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52AF50",
@@ -6735,8 +6735,8 @@
    {
     "address": "0x4208B0",
     "name": "sub_4208B0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x4208D0",
@@ -7265,8 +7265,8 @@
    {
     "address": "0x48D470",
     "name": "sub_48D470",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x48CB20",
@@ -7319,8 +7319,8 @@
    {
     "address": "0x52AF30",
     "name": "sub_52AF30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52AF50",
@@ -7559,8 +7559,8 @@
    {
     "address": "0x436220",
     "name": "sub_436220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/C_vt61E328.cpp"
    },
    {
     "address": "0x4364F0",
@@ -8405,8 +8405,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -8717,8 +8717,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -8735,8 +8735,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -8822,8 +8822,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -9134,8 +9134,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -9152,8 +9152,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -9371,8 +9371,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -9683,8 +9683,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -9701,8 +9701,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -9928,8 +9928,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -10240,8 +10240,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -10258,8 +10258,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -10477,8 +10477,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -10789,8 +10789,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -10807,8 +10807,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -11034,8 +11034,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -11346,8 +11346,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -11364,8 +11364,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -11591,8 +11591,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -11903,8 +11903,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -11921,8 +11921,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -12160,8 +12160,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -12472,8 +12472,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -12490,8 +12490,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -12709,8 +12709,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -13021,8 +13021,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -13039,8 +13039,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -13266,8 +13266,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -13578,8 +13578,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -13596,8 +13596,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -13823,8 +13823,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -14135,8 +14135,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -14153,8 +14153,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -14380,8 +14380,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -14692,8 +14692,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -14710,8 +14710,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -14929,8 +14929,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -15241,8 +15241,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -15259,8 +15259,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -15487,8 +15487,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -15799,8 +15799,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -15817,8 +15817,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -16060,8 +16060,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -16372,8 +16372,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -16390,8 +16390,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -16447,8 +16447,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -16759,8 +16759,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -16777,8 +16777,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -17320,8 +17320,8 @@
    {
     "address": "0x52AF30",
     "name": "sub_52AF30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52AF50",
@@ -20114,8 +20114,8 @@
    {
     "address": "0x48D470",
     "name": "sub_48D470",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x48CB20",
@@ -20168,8 +20168,8 @@
    {
     "address": "0x52AF30",
     "name": "sub_52AF30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52AF50",
@@ -20408,8 +20408,8 @@
    {
     "address": "0x436220",
     "name": "sub_436220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/C_vt61E328.cpp"
    },
    {
     "address": "0x4364F0",
@@ -21684,8 +21684,8 @@
    {
     "address": "0x48D470",
     "name": "sub_48D470",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x48CB20",
@@ -21738,8 +21738,8 @@
    {
     "address": "0x52AF30",
     "name": "sub_52AF30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52AF50",
@@ -22717,8 +22717,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -23029,8 +23029,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -23047,8 +23047,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -23098,8 +23098,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -23410,8 +23410,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -23428,8 +23428,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -24203,8 +24203,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -24533,8 +24533,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -24596,8 +24596,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -24908,8 +24908,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -24926,8 +24926,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -25143,8 +25143,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -25455,8 +25455,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -25473,8 +25473,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -25539,8 +25539,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -25869,8 +25869,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -25932,8 +25932,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4B32F0",
@@ -26244,8 +26244,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -26349,8 +26349,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4BBCE0",
@@ -26661,8 +26661,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -26679,8 +26679,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -26808,8 +26808,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4BBCE0",
@@ -27120,8 +27120,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -27138,8 +27138,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -27360,8 +27360,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -27672,8 +27672,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -27690,8 +27690,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -27755,8 +27755,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -28067,8 +28067,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -28085,8 +28085,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -28136,8 +28136,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -28448,8 +28448,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -28466,8 +28466,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -28525,8 +28525,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -28837,8 +28837,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -28855,8 +28855,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -29060,8 +29060,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -29372,8 +29372,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -29390,8 +29390,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -29447,8 +29447,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -29759,8 +29759,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -29777,8 +29777,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -29836,8 +29836,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4BBCE0",
@@ -30148,8 +30148,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -30166,8 +30166,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -30289,8 +30289,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -30601,8 +30601,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -30619,8 +30619,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -30817,8 +30817,8 @@
    {
     "address": "0x4BDE70",
     "name": "sub_4BDE70",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_vt6234C8.cpp"
    }
   ],
   "extra_methods": [
@@ -31411,8 +31411,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -31723,8 +31723,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -31741,8 +31741,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -31885,8 +31885,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -32215,8 +32215,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -32437,8 +32437,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -32749,8 +32749,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -32767,8 +32767,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -32982,8 +32982,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -33294,8 +33294,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -33312,8 +33312,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -33527,8 +33527,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -33839,8 +33839,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -33857,8 +33857,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -34064,8 +34064,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -34376,8 +34376,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -34394,8 +34394,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -34616,8 +34616,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4BBCE0",
@@ -34928,8 +34928,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -34946,8 +34946,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -35078,8 +35078,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -35408,8 +35408,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -35623,8 +35623,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -35935,8 +35935,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -35953,8 +35953,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -36160,8 +36160,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -36472,8 +36472,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -36490,8 +36490,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -36697,8 +36697,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -37009,8 +37009,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -37027,8 +37027,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -37234,8 +37234,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -37546,8 +37546,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -37564,8 +37564,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -37771,8 +37771,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -38101,8 +38101,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -38330,8 +38330,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -38642,8 +38642,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -38660,8 +38660,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -38867,8 +38867,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -39179,8 +39179,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -39197,8 +39197,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -39404,8 +39404,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -39716,8 +39716,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -39734,8 +39734,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -39977,8 +39977,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -40289,8 +40289,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -40307,8 +40307,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -40550,8 +40550,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -40862,8 +40862,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -40880,8 +40880,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -41087,8 +41087,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -41399,8 +41399,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -41417,8 +41417,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -41632,8 +41632,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -41944,8 +41944,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -41962,8 +41962,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -42178,8 +42178,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -42490,8 +42490,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -42508,8 +42508,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -42737,8 +42737,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -43049,8 +43049,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -43067,8 +43067,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -43283,8 +43283,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -43595,8 +43595,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -43613,8 +43613,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -43835,8 +43835,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -44147,8 +44147,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -44165,8 +44165,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -44372,8 +44372,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -44684,8 +44684,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -44702,8 +44702,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -44909,8 +44909,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -45221,8 +45221,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -45239,8 +45239,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -45447,8 +45447,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -45759,8 +45759,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -45777,8 +45777,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -45992,8 +45992,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -46304,8 +46304,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -46322,8 +46322,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -46707,8 +46707,8 @@
    {
     "address": "0x52AF30",
     "name": "sub_52AF30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52AF50",
@@ -47782,8 +47782,8 @@
    {
     "address": "0x48D470",
     "name": "sub_48D470",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x530770",
@@ -49180,8 +49180,8 @@
    {
     "address": "0x48D470",
     "name": "sub_48D470",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x538140",
@@ -50612,8 +50612,8 @@
    {
     "address": "0x52AF30",
     "name": "sub_52AF30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52AF50",
@@ -60980,8 +60980,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -61292,8 +61292,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -61310,8 +61310,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -61741,8 +61741,8 @@
    {
     "address": "0x596A60",
     "name": "sub_596A60",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/sim/C_vt62B0A8.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -63631,8 +63631,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -63961,8 +63961,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -64024,8 +64024,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -64336,8 +64336,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -64354,8 +64354,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x5A7340",
@@ -64413,8 +64413,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -64725,8 +64725,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -64743,8 +64743,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -64828,8 +64828,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -65140,8 +65140,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -65158,8 +65158,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -65217,8 +65217,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -65529,8 +65529,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -65547,8 +65547,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -65604,8 +65604,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -65916,8 +65916,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -65934,8 +65934,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -66317,8 +66317,8 @@
    {
     "address": "0x4208B0",
     "name": "sub_4208B0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x4208D0",
@@ -67169,8 +67169,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -67481,8 +67481,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -67499,8 +67499,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -67602,8 +67602,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -67914,8 +67914,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -67932,8 +67932,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x5DB170",
@@ -68577,8 +68577,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -68889,8 +68889,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -68907,8 +68907,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x5DB170",
@@ -69033,8 +69033,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -69345,8 +69345,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -69363,8 +69363,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A2320",
@@ -69474,8 +69474,8 @@
    {
     "address": "0x4A0780",
     "name": "sub_4A0780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A07A0",
@@ -69786,8 +69786,8 @@
    {
     "address": "0x4A2280",
     "name": "sub_4A2280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x4A22A0",
@@ -69804,8 +69804,8 @@
    {
     "address": "0x4A22D0",
     "name": "sub_4A22D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
    },
    {
     "address": "0x5DB170",
