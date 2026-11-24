@@ -188,11 +188,6 @@ char S5BFC00::Get_5BFC00()
 {
     return *(char*)((char*)this + 0x4);
 }
-MATCH_FUNC(0x440720)
-int S440720::Get_440720()
-{
-    return *(int*)((char*)this + 0x1c);
-}
 MATCH_FUNC(0x47D9F0)
 int S47D9F0::Get_47D9F0()
 {

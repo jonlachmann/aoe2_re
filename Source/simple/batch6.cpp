@@ -28,27 +28,6 @@ class S465B10 {
 public:
     S465B10* Init_465B10();
 };
-MATCH_FUNC(0x465B10)
-S465B10* S465B10::Init_465B10()
-{
-    int zero = 0;
-    *(int*)((char*)this) = zero;
-    *(int*)((char*)this + 4) = zero;
-    *(int*)((char*)this + 8) = zero;
-    *(int*)((char*)this + 0xc) = zero;
-    *(int*)((char*)this + 0x10) = zero;
-    *(int*)((char*)this + 0x14) = zero;
-    *(int*)((char*)this + 0x18) = zero;
-    *(int*)((char*)this + 0x1c) = zero;
-    *(int*)((char*)this + 0x20) = zero;
-    *(int*)((char*)this + 0x24) = zero;
-    *(int*)((char*)this + 0x28) = zero;
-    *(int*)((char*)this + 0x2c) = zero;
-    *(int*)((char*)this + 0x30) = 0x3f800000;
-    *(int*)((char*)this + 0x34) = zero;
-    *(int*)((char*)this + 0x38) = zero;
-    return this;
-}
 
 class S5B0800 {
 public:
@@ -171,32 +150,6 @@ class S469570 {
 public:
     S469570* Init_469570();
 };
-MATCH_FUNC(0x469570)
-S469570* S469570::Init_469570()
-{
-    int zero = 0;
-    *(int*)((char*)this) = zero;
-    char* p = (char*)this + 4;
-    *(int*)p = zero;
-    *(int*)(p + 4) = zero;
-    *(int*)(p + 8) = zero;
-    *(int*)(p + 0xc) = zero;
-    *(int*)(p + 0x10) = zero;
-    *(int*)(p + 0x14) = zero;
-    *(int*)(p + 0x18) = zero;
-    *(int*)(p + 0x1c) = zero;
-    *(int*)(p + 0x20) = zero;
-    *(int*)(p + 0x24) = zero;
-    *(int*)(p + 0x28) = zero;
-    *(int*)(p + 0x2c) = zero;
-    *(void**)(p + 0x30) = p;
-    *(void**)(p + 0x34) = p;
-    *(int*)((char*)this + 0x3c) = zero;
-    *(int*)((char*)this + 0x40) = zero;
-    *(void**)((char*)this + 0x34) = p;
-    *(void**)((char*)this + 0x38) = p;
-    return this;
-}
 
 // Inlined-constructor shape: returns this.
 class S595DF0 {

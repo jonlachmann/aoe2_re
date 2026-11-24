@@ -63,11 +63,6 @@ int M_422E00()
     return 0x32;
 }
 
-MATCH_FUNC(0x443960)
-int M_443960()
-{
-    return 0x3817c;
-}
 
 
 

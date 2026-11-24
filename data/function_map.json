@@ -22915,7 +22915,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/simple_getters2.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440730",
@@ -22929,7 +22929,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_44_getters.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440740",
@@ -22943,7 +22943,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch15.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440750",
@@ -22957,7 +22957,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch15.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440760",
@@ -23155,7 +23155,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/sub_440F70.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440F90",
@@ -23771,7 +23771,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/sub_4437F0.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x443810",
@@ -23813,7 +23813,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch9.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x443970",
@@ -23913,7 +23913,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/sub_4441C0.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x4441E0",
@@ -24337,7 +24337,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch19.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x446090",
@@ -24463,7 +24463,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch15.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x446D20",
@@ -25423,7 +25423,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_44_setters.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x44CFD0",
@@ -26197,7 +26197,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_456790.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x4567C0",
@@ -26211,7 +26211,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_456790.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x4567F0",
@@ -26225,7 +26225,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "wip",
-  "file": "Source/simple/batch19.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x456820",
@@ -26686,7 +26686,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch19.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x45AB50",
@@ -26746,7 +26746,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch11.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x45AEF0",
@@ -26760,7 +26760,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/sub_45AEF0.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x45AF20",
@@ -26802,7 +26802,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_45_setters.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x45AF70",
@@ -27553,7 +27553,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/sub_45EA60.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x45EA80",
@@ -28652,7 +28652,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_46_getters.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x463270",
@@ -28778,7 +28778,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_46_getters.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x4642A0",
@@ -28834,7 +28834,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_46_setters.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x464490",
@@ -28848,7 +28848,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/sub_464490.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x4644C0",
@@ -29072,7 +29072,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch3.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x464DB0",
@@ -29226,7 +29226,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_464FD0.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x464FF0",
@@ -29240,7 +29240,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_464FD0.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x465010",
@@ -29422,7 +29422,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "wip",
-  "file": "Source/simple/batch10.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x4654F0",
@@ -29520,7 +29520,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/sub_465900.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x465910",
@@ -29548,7 +29548,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch19.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x465940",
@@ -29576,7 +29576,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch19.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x4659D0",
@@ -29632,7 +29632,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch6.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x465B50",
@@ -29660,7 +29660,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/sub_465BB0.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x465BE0",
@@ -30066,7 +30066,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch6.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x4695B0",
@@ -30416,7 +30416,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch19.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x46A520",
@@ -31034,7 +31034,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/class_46_setters.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x46AE50",
@@ -31360,7 +31360,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch19.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x46C750",
@@ -31374,7 +31374,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/batch19.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x46C770",
@@ -31444,7 +31444,7 @@
   "module": "gfx",
   "region": "gfx",
   "state": "matched",
-  "file": "Source/simple/sub_46CDF0.cpp"
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x46CE10",

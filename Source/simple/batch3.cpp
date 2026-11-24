@@ -6,16 +6,6 @@ public:
     int field_4;
     bool Set_464D90(int value);
 };
-MATCH_FUNC(0x464D90)
-bool S464D90::Set_464D90(int value)
-{
-    if (value < field_4) {
-        field_0 = value;
-        return true;
-    }
-    field_0 = -1;
-    return false;
-}
 
 class S473AA0 {
 public:

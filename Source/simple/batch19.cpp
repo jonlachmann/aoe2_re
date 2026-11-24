@@ -227,22 +227,6 @@ int S43EC20::Get_43EC20(int a2)
 // 0x446050 — free helper: round a size, report a signed value and direction.
 int __cdecl sub_446050(int a1, unsigned int* a2, int* a3, int* a4);
 
-MATCH_FUNC(0x446050)
-int __cdecl sub_446050(int a1, unsigned int* a2, int* a3, int* a4)
-{
-    int result;
-    *a2 = (*(int*)(a1 + 4) + 3) & 0xFFFFFFFC;
-    result = *(int*)(a1 + 8);
-    *a3 = result;
-    if (result < 0) {
-        *a3 = -result;
-        result = (int)a4;
-        *a4 = 1;
-    } else {
-        *a4 = -1;
-    }
-    return result;
-}
 
 // 0x4567F0 — scan a positive-dword array, append at the first non-positive.
 class S4567F0 {
@@ -253,22 +237,6 @@ public:
     int Add_4567F0(int a2);
 };
 
-WIP_FUNC(0x4567F0)
-int S4567F0::Add_4567F0(int a2)
-{
-    int result = 0;
-    int* i = (int*)this + 528;
-    while (*i > 0) {
-        ++result;
-        ++i;
-        if (result >= 50)
-            break;
-    }
-    if (result >= 50)
-        return result;
-    this->values[result] = a2;
-    return result;
-}
 
 // 0x45AB10 — two derived dimensions computed from the same base field.
 class S45AB10 {
@@ -279,14 +247,6 @@ public:
     int* Compute_45AB10(int a2, int a3, int a4, int* a5, int* a6);
 };
 
-MATCH_FUNC(0x45AB10)
-int* S45AB10::Compute_45AB10(int a2, int a3, int a4, int* a5, int* a6)
-{
-    *a5 = a4 * (a2 + 30) + 2 * this->field_198 + 30;
-    int* result = a6;
-    *a6 = a3 + 2 * this->field_198 + 8;
-    return result;
-}
 
 // 0x465920 — bounded pointer-table lookup, -1 for invalid/missing.
 class S465920 {
@@ -298,15 +258,6 @@ public:
     int Get_465920(int a2);
 };
 
-MATCH_FUNC(0x465920)
-int S465920::Get_465920(int a2)
-{
-    int v2;
-    if (a2 >= 0 && a2 < this->count && (v2 = (int)this->table) != 0)
-        return *(int*)(v2 + 4 * a2);
-    else
-        return -1;
-}
 
 // 0x4659A0 — bounded pointer-table store.
 class S4659A0 {
@@ -318,18 +269,6 @@ public:
     int Set_4659A0(int a2, int a3);
 };
 
-MATCH_FUNC(0x4659A0)
-int S4659A0::Set_4659A0(int a2, int a3)
-{
-    if (a2 >= 0 && this->count > a2) {
-        int v3 = (int)this->table;
-        if (v3) {
-            *(int*)(v3 + 4 * a2) = a3;
-            return 1;
-        }
-    }
-    return 0;
-}
 
 // 0x46A500 — search a circular sentinel list for the node at key offset 8.
 class S46A500 {
@@ -341,17 +280,6 @@ public:
     int* Find_46A500(int a2);
 };
 
-MATCH_FUNC(0x46A500)
-int* S46A500::Find_46A500(int a2)
-{
-    int* result = this->head;
-    int* v3 = (int*)this + 1;
-    for (; result != v3; result = (int*)*result) {
-        if (result[2] == a2)
-            return result;
-    }
-    return 0;
-}
 
 // 0x46C730 — clear the record flag at index 0..n, stride 48.
 class S46C730 {
@@ -362,16 +290,6 @@ public:
     int Clear_46C730(int a2);
 };
 
-MATCH_FUNC(0x46C730)
-int S46C730::Clear_46C730(int a2)
-{
-    int result = a2;
-    if (a2 != -1) {
-        result = 48 * a2;
-        *(int*)((char*)this->records + 48 * a2 + 28) = 0;
-    }
-    return result;
-}
 
 // 0x46C750 — increment the record counter at index, stride 48.
 class S46C750 {
@@ -382,16 +300,6 @@ public:
     int* Count_46C750(int a2);
 };
 
-MATCH_FUNC(0x46C750)
-int* S46C750::Count_46C750(int a2)
-{
-    int* result = (int*)a2;
-    if (a2 != -1) {
-        result = (int*)((char*)this->records + 48 * a2 + 28);
-        ++*result;
-    }
-    return result;
-}
 
 // 0x4731E0 — bounded pointer-table lookup, 0 for invalid/missing.
 class S4731E0 {

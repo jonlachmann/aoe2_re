@@ -1,20 +1,8 @@
 #include "Function.hpp"
 
 
-MATCH_FUNC(0x440740)
-void M_440740()
-{
-}
 
-MATCH_FUNC(0x440750)
-void M_440750()
-{
-}
 
-MATCH_FUNC(0x446D10)
-void M_446D10()
-{
-}
 
 MATCH_FUNC(0x569C70)
 void M_569C70()

@@ -23,20 +23,6 @@ public:
     char pad_00[0x150];
     void Set_45AE80(int a, int b, int c, int d, int unused1, int unused2);
 };
-MATCH_FUNC(0x45AE80)
-void S45AE80::Set_45AE80(int a, int b, int c, int d, int unused1, int unused2)
-{
-    *(int*)((char*)this + 0x150) = a;
-    *(int*)((char*)this + 0x154) = c;
-    *(int*)((char*)this + 0x158) = b;
-    *(int*)((char*)this + 0x160) = 0x40;
-    *(int*)((char*)this + 0x164) = 0x40;
-    *(int*)((char*)this + 0x15c) = d;
-    *(int*)((char*)this + 0x168) = 0x24;
-    *(int*)((char*)this + 0x16c) = 0x24;
-    *(int*)((char*)this + 0x170) = 0xe;
-    *(int*)((char*)this + 0x174) = 3;
-}
 
 class S4AF930 {
 public:

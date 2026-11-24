@@ -3,13 +3,6 @@
 extern int g_66d4b0;
 extern int g_66d4b4;
 extern int g_66d4b8;
-WIP_FUNC(0x4654D0)
-void Init_4654D0()
-{
-    *(volatile int*)&g_66d4b0 = 0;
-    *(volatile int*)&g_66d4b4 = 0x3f800000;
-    *(volatile int*)&g_66d4b8 = 0;
-}
 
 extern int g_66e3e8;
 extern int g_66e3ec;
