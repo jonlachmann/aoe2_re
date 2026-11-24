@@ -9,4 +9,6 @@ class C_cluster_520CE0 {
 public:
     int Find_5219B0(int a2);
     int Find_5219E0(int a2);
+    void M_522C30();
+    void M_522C50();
 };

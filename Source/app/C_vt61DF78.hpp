@@ -24,8 +24,8 @@ public:
     virtual void slot_006();
     virtual void slot_007();
     virtual void slot_008();
-    virtual void slot_009();
-    virtual void slot_010();
+    virtual void slot_009(char* a, char* buf, int size);
+    virtual void slot_010(int a, int b, int e, int c, int d);
     virtual void slot_011();
     virtual void slot_012();
     virtual void slot_013();
@@ -110,6 +110,8 @@ public:
     char buf_924[0xB0];           // +0x924
 
     bool M_4208B0(int a, int b, int c, int d);
+    char* M_41C900(char* a);
+    void M_41C950(int a, int b, int c, int d);
     void SetInt_41BC00(int v);
     void M_41BC10(int a, int b, int c, int d, int e);
     int M_41BC20();

@@ -121,3 +121,16 @@ bool C_vt61DF78::M_4208B0(int a, int b, int c, int d)
     (void)a; (void)b;
     return slot_072(c, d) != 0;
 }
+
+MATCH_FUNC(0x41C900)
+char* C_vt61DF78::M_41C900(char* a)
+{
+    slot_009(a, (char*)0x664308, 0x200);
+    return (char*)0x664308;
+}
+
+MATCH_FUNC(0x41C950)
+void C_vt61DF78::M_41C950(int a, int b, int c, int d)
+{
+    slot_010(a, b, 0, c, d);
+}

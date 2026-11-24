@@ -18,3 +18,13 @@ void C_pnl_inp::M_4BAF60(int a, int b, int c, int d)
     (void)c; (void)d;
     Vat_f4(a, b);
 }
+
+MATCH_FUNC(0x4BCE20)
+int C_pnl_inp::M_4BCE20(int a, int b, int c, int d)
+{
+    (void)a; (void)b; (void)c; (void)d;
+    T4BCE20Sub* s = field_40;
+    if (s)
+        s->Vat_C4(this, 1, 0, 0);
+    return 0;
+}

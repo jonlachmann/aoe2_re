@@ -24,6 +24,6 @@ public:
     void method_015();  // sub_521A10 [lifted]
     void method_016();  // sub_521AC0 [lifted]
     void method_017();  // sub_521BE0 [lifted]
-    void method_018();  // sub_522C30 [lifted]
-    void method_019();  // sub_522C50 [lifted]
+    void method_018();  // sub_522C30 [matched] — Source/sim/C_cluster_520CE0.cpp
+    void method_019();  // sub_522C50 [matched] — Source/sim/C_cluster_520CE0.cpp
 };

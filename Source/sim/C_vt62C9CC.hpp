@@ -7,6 +7,15 @@
 
 #include "Function.hpp"
 
+// Subobject at [this+0x34] used by 0x5E3BE0. It dispatches slot +0x08 (index 2)
+// with the four outer arguments.
+class T5E3BE0Sub {
+public:
+    virtual void Vt_0();
+    virtual void Vt_1();
+    virtual void Vt_2(int a, int b, int c, int d);
+};
+
 class C_vt62C9CC {
 public:
     virtual void Vt_0();
@@ -26,7 +35,10 @@ public:
 
     char pad_04[0x29 - 0x04];
     char field_29;                // +0x29
+    char pad_2A[0x34 - 0x2A];
+    T5E3BE0Sub* field_34;         // +0x34, subobject dispatched by 0x5E3BE0
 
     char Get_5E68D0();
     void M_5E4380(int arg);
+    void M_5E3BE0(int a, int b, int c, int d);
 };

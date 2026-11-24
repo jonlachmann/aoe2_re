@@ -18,3 +18,12 @@ int C_vt62A0C0::M_589AE0(int unused)
     (void)unused;
     return 5;
 }
+
+MATCH_FUNC(0x585DC0)
+int C_vt62A0C0::M_585DC0()
+{
+    if (*(int*)((char*)this + 0x28) == 0x2bc &&
+        *(int*)((char*)this + 0x34) == -1)
+        slot_21(0);
+    return 9;
+}

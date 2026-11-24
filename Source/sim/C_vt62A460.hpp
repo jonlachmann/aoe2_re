@@ -8,4 +8,5 @@
 class C_vt62A460 {
 public:
     int MapTag_587440(int a1);
+    int M_587420(int v);
 };

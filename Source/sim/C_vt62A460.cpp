@@ -9,3 +9,9 @@ int C_vt62A460::MapTag_587440(int a1)
     else
         return -1;
 }
+
+MATCH_FUNC(0x587420)
+int C_vt62A460::M_587420(int v)
+{
+    return v == 0x1f || v == 5;
+}

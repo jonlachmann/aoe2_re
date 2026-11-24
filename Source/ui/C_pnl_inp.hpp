@@ -5,6 +5,64 @@
 
 #include "Function.hpp"
 
+class C_pnl_inp;
+
+// Subobject at [this+0x40] used by 0x4BCE20. It dispatches slot +0xC4 (index
+// 49) and receives the outer object plus three literal flags.
+class T4BCE20Sub {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08();
+    virtual void Vt_09();
+    virtual void Vt_10();
+    virtual void Vt_11();
+    virtual void Vt_12();
+    virtual void Vt_13();
+    virtual void Vt_14();
+    virtual void Vt_15();
+    virtual void Vt_16();
+    virtual void Vt_17();
+    virtual void Vt_18();
+    virtual void Vt_19();
+    virtual void Vt_20();
+    virtual void Vt_21();
+    virtual void Vt_22();
+    virtual void Vt_23();
+    virtual void Vt_24();
+    virtual void Vt_25();
+    virtual void Vt_26();
+    virtual void Vt_27();
+    virtual void Vt_28();
+    virtual void Vt_29();
+    virtual void Vt_30();
+    virtual void Vt_31();
+    virtual void Vt_32();
+    virtual void Vt_33();
+    virtual void Vt_34();
+    virtual void Vt_35();
+    virtual void Vt_36();
+    virtual void Vt_37();
+    virtual void Vt_38();
+    virtual void Vt_39();
+    virtual void Vt_40();
+    virtual void Vt_41();
+    virtual void Vt_42();
+    virtual void Vt_43();
+    virtual void Vt_44();
+    virtual void Vt_45();
+    virtual void Vt_46();
+    virtual void Vt_47();
+    virtual void Vt_48();
+    virtual void Vat_C4(C_pnl_inp* owner, int a, int b, int c);
+};
+
 class C_pnl_inp {
 public:
     virtual void slot_000();
@@ -70,10 +128,13 @@ public:
     virtual void slot_060();
     virtual void Vat_f4(int a, int b);
 
-    char pad_04[0x188 - 4];
+    char pad_04[0x40 - 4];
+    T4BCE20Sub* field_40;         // +0x40, subobject dispatched by 0x4BCE20
+    char pad_44[0x188 - 0x44];
     int field_188;                // +0x188
 
     void M_408050(int a, int b);
     void SetInt_4B4600(int v);
     void M_4BAF60(int a, int b, int c, int d);
+    int M_4BCE20(int a, int b, int c, int d);
 };

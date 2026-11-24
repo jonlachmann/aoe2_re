@@ -17,8 +17,8 @@ public:
     virtual void slot_004();  // slot +0x010: sub_41F610 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_005();  // slot +0x014: sub_41F630 [lifted]
     virtual void slot_006();  // slot +0x018: sub_41C8F0 [matched] — Source/app/C_vt61DF78.cpp
-    virtual void slot_007();  // slot +0x01C: sub_41C950 [lifted]
-    virtual void slot_008();  // slot +0x020: sub_41C900 [lifted]
+    virtual void slot_007();  // slot +0x01C: sub_41C950 [matched] — Source/app/C_vt61DF78.cpp
+    virtual void slot_008();  // slot +0x020: sub_41C900 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_009();  // slot +0x024: sub_41C920 [lifted]
     virtual void slot_010();  // slot +0x028: sub_41C970 [lifted]
     virtual void slot_011();  // slot +0x02C: sub_407B40 [matched] — Source/app/C_vt61CE24.cpp

@@ -541,8 +541,8 @@
    {
     "address": "0x403A20",
     "name": "sub_403A20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61C800.cpp"
    },
    {
     "address": "0x409A40",
@@ -6435,14 +6435,14 @@
    {
     "address": "0x41C950",
     "name": "sub_41C950",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41C900",
     "name": "sub_41C900",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41C920",
@@ -26547,8 +26547,8 @@
    {
     "address": "0x4BCE20",
     "name": "sub_4BCE20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_inp.cpp"
    },
    {
     "address": "0x407C10",
@@ -30034,8 +30034,8 @@
    {
     "address": "0x4BCE20",
     "name": "sub_4BCE20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_inp.cpp"
    },
    {
     "address": "0x407C10",
@@ -31780,8 +31780,8 @@
    {
     "address": "0x4CD410",
     "name": "sub_4CD410",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_vt623E50.cpp"
    },
    {
     "address": "0x4CD430",
@@ -34814,8 +34814,8 @@
    {
     "address": "0x4BCE20",
     "name": "sub_4BCE20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_inp.cpp"
    },
    {
     "address": "0x407C10",
@@ -54675,8 +54675,8 @@
    {
     "address": "0x54B1F0",
     "name": "sub_54B1F0",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/sim/C_vt6291AC.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -57589,8 +57589,8 @@
    {
     "address": "0x585DC0",
     "name": "sub_585DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_vt62A0C0.cpp"
    },
    {
     "address": "0x419120",
@@ -57686,8 +57686,8 @@
    {
     "address": "0x586070",
     "name": "sub_586070",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_vt62A1AC.cpp"
    },
    {
     "address": "0x4137C0",
@@ -58757,8 +58757,8 @@
    {
     "address": "0x587420",
     "name": "sub_587420",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_vt62A460.cpp"
    },
    {
     "address": "0x5EA410",
@@ -66017,14 +66017,14 @@
    {
     "address": "0x41C950",
     "name": "sub_41C950",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41C900",
     "name": "sub_41C900",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41C920",
@@ -68133,8 +68133,8 @@
    {
     "address": "0x5E3BE0",
     "name": "sub_5E3BE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_vt62C9CC.cpp"
    },
    {
     "address": "0x5C8D40",
@@ -69997,8 +69997,8 @@
    {
     "address": "0x5E3BE0",
     "name": "sub_5E3BE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_vt62C9CC.cpp"
    },
    {
     "address": "0x5E3DE0",
@@ -78057,14 +78057,14 @@
    {
     "address": "0x522C30",
     "name": "sub_522C30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_cluster_520CE0.cpp"
    },
    {
     "address": "0x522C50",
     "name": "sub_522C50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_cluster_520CE0.cpp"
    }
   ],
   "extra_methods": []
@@ -79049,8 +79049,8 @@
    {
     "address": "0x560590",
     "name": "sub_560590",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_cluster_55FF90.cpp"
    }
   ],
   "extra_methods": []
