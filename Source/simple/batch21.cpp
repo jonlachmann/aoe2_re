@@ -305,18 +305,6 @@ public:
 // 0x5D0C60 — clear a member when its tag is 7.
 int __stdcall sub_5D0C60(int a1);
 
-MATCH_FUNC(0x5D0C60)
-int __stdcall sub_5D0C60(int a1)
-{
-    int result = *(int*)(a1 + 40);
-    if (result) {
-        if (*(unsigned char*)(result + 72) == 7) {
-            *(unsigned char*)(a1 + 46) = 2;
-            *(int*)(a1 + 40) = 0;
-        }
-    }
-    return result;
-}
 
 // 0x5D1F00 — last matching node value in a link chain.
 class S5D1F00 {
@@ -327,17 +315,6 @@ public:
     int Find_5D1F00(char a2);
 };
 
-MATCH_FUNC(0x5D1F00)
-int S5D1F00::Find_5D1F00(char a2)
-{
-    int* v2 = this->head;
-    int result;
-    for (result = 0; v2; v2 = *(int**)((char*)v2 + 36)) {
-        if (*(unsigned char*)((char*)v2 + 2) == (unsigned char)a2)
-            result = *(int*)((char*)v2 + 24);
-    }
-    return result;
-}
 
 // 0x5EA290 — saturating subtraction against the count at self[70].
 class S5EA290 {
@@ -348,18 +325,6 @@ public:
     unsigned Sub_5EA290(unsigned a2);
 };
 
-MATCH_FUNC(0x5EA290)
-unsigned S5EA290::Sub_5EA290(unsigned a2)
-{
-    unsigned result = this->count;
-    if (result < a2) {
-        this->count = 0;
-        return result;
-    }
-    result -= a2;
-    this->count = result;
-    return result;
-}
 
 // ---------------------------------------------------------------------------
 // WIP group notes (byte-exact matching against VC6 /O2):

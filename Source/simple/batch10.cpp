@@ -109,12 +109,6 @@ public:
     char pad_00[0x122];
     void Get_5D6120(unsigned short* a, unsigned short* b);
 };
-MATCH_FUNC(0x5D6120)
-void S5D6120::Get_5D6120(unsigned short* a, unsigned short* b)
-{
-    *a = *(unsigned short*)((char*)this + 0x122);
-    *b = *(unsigned short*)((char*)this + 0x124);
-}
 
 
 class S409E90 {

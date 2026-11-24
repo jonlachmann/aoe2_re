@@ -47,15 +47,6 @@ public:
     char pad_00[0x2c];
     void Init_5DCC30();
 };
-MATCH_FUNC(0x5DCC30)
-void S5DCC30::Init_5DCC30()
-{
-    int zero = 0;
-    *(int*)((char*)this + 0x2c) = zero;
-    *(int*)((char*)this + 0x30) = zero;
-    *(int*)((char*)this + 0x34) = zero;
-    *(int*)((char*)this + 0x38) = zero;
-}
 
 class S4CE550 {
 public:
@@ -189,15 +180,3 @@ void S4A3CF0::Get_4A3CF0(int* a, int* b)
     *b = *(int*)((char*)this + 0x34c);
 }
 
-MATCH_FUNC(0x5EE460)
-void Clear_5EE460(int* p)
-{
-    int zero = 0;
-    p[0] = zero;
-    p[1] = zero;
-    *(int*)((char*)p + 0x2c) = zero;
-    *(int*)((char*)p + 0x28) = zero;
-    *(int*)((char*)p + 0x24) = zero;
-    *(int*)((char*)p + 0x20) = zero;
-    p[2] = zero;
-}

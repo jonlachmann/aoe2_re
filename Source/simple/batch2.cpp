@@ -156,11 +156,6 @@ class S5DE800 {
 public:
     void Set_5DE800(int v);
 };
-MATCH_FUNC(0x5DE800)
-void S5DE800::Set_5DE800(int v)
-{
-    g_77267c = v;
-}
 
 extern int g_661c14;
 

@@ -25,10 +25,6 @@ void M_569C70()
 {
 }
 
-MATCH_FUNC(0x5EC8EE)
-void M_5EC8EE()
-{
-}
 
 
 
@@ -117,18 +113,8 @@ public:
     bool field_10;
     bool Check_5D17D0();
 };
-WIP_FUNC(0x5D17D0)
-bool S5D17D0::Check_5D17D0()
-{
-    return field_10 == 2;
-}
 
 extern unsigned char g_62ebf8;
-MATCH_FUNC(0x5EDCB0)
-bool Check_5EDCB0()
-{
-    return g_62ebf8 == 0xc;
-}
 
 
 extern int* g_741f68;

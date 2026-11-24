@@ -59,11 +59,3 @@ public:
     S5EC440* Init_5EC440(int v);
 };
 
-MATCH_FUNC(0x5EC440)
-S5EC440* S5EC440::Init_5EC440(int v)
-{
-    field_8 = v;
-    field_0 = 0;
-    field_4 = 0;
-    return this;
-}

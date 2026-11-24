@@ -69,11 +69,6 @@ int M_443960()
     return 0x3817c;
 }
 
-MATCH_FUNC(0x5ED915)
-int M_5ED915()
-{
-    return 0xad90;
-}
 
 
 class S43FAB0 {

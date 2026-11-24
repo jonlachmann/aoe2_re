@@ -114,8 +114,3 @@ int S5C1A40::Get_5C1A40(int index)
 {
     return *(int*)((char*)this + 0x51e4 + index * 4);
 }
-MATCH_FUNC(0x5E68C0)
-int S5E68C0::Get_5E68C0(int index)
-{
-    return *(int*)((char*)this + 0xd4 + index * 4);
-}
