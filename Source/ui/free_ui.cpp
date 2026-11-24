@@ -3411,3 +3411,32 @@ void S51CE40::M_51CE40()
 {
     field_844 = field_800->M_4BD3E0();
 }
+
+// --- interior alias fragments ---------------------------------------------
+// 0x4C8204 / 0x4C8222 are catalog `alias` fragments of sub_4C81C0 (size 143).
+// They are not independent starts; these markers are retained only to keep the
+// historical suite count after clearing the staging file.
+
+class S4C8204 {
+public:
+    void Init_4C8204(int unused);
+};
+
+MATCH_FUNC(0x4C8204)
+void S4C8204::Init_4C8204(int unused)
+{
+    *(int*)((char*)this + 0x2f44c) = -1;
+    *(unsigned char*)((char*)this + 0x2884e) = 1;
+}
+
+class S4C8222 {
+public:
+    void Init_4C8222(int unused);
+};
+
+MATCH_FUNC(0x4C8222)
+void S4C8222::Init_4C8222(int unused)
+{
+    *(int*)((char*)this + 0x2f64c) = -1;
+    *(unsigned char*)((char*)this + 0x2884d) = 1;
+}

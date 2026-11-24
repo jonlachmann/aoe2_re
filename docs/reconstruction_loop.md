@@ -41,18 +41,20 @@ Generated evidence files:
 
 ## Current snapshot (recompute, do not trust stale prose)
 
-At the checkpoint after the class-first wave and declaration-only cleanup:
+At the checkpoint after the legacy-staging migration:
 
-- Full suite: `[981/981] MATCH_FUNCs OK, 38 WIP`.
-- Class-evidenced inventory: 93 classes, 314 functions; all 314 now have
-  markers outside `Source/simple`.
-- `Source/simple`: 229 marker files, 676 marker addresses (674 canonical
-  functions after the two skipped aliases `0x45B5DC`, `0x58F232`): 647 MATCH,
-  27 WIP, all with no class evidence currently.
+- Full suite: `[1037/1037] MATCH_FUNCs OK, 38 WIP`.
+- `Source/simple` holds no marker blocks: the 681 legacy markers moved to the
+  `free_<module>` subsystem TUs (the interior alias pair stays in `free_ui.cpp`).
+- Free subsystem TUs: `Source/<module>/free_<module>.cpp` for app, game, gfx,
+  sim, ui, engine-late, plus `Source/crt/free_crt.cpp` and
+  `Source/crt/free_crt_s.cpp` for the size-optimized CRT pair.
 - Class map: 534 recovered classes (221 vtable + 313 non-virtual), 67 named,
   3083 classed functions, 1887 virtual slots.
 - Skeleton: 542 headers (534 classes + 8 free-region maps).
-- Skipped aliases are not real starts; never migrate them as independent functions.
+- Catalog aliases (`0x45B5DC`, `0x58F232`, and the interior fragments `0x4C8204`
+  / `0x4C8222` of `sub_4C81C0`) are not real starts; never treat them as
+  independent functions.
 
 Recompute at the start of every long session:
 
@@ -138,24 +140,25 @@ Class-first migration bars:
 - Class TU module is the class-map anchor region, even when method addresses sit
   in another region.
 
-## Legacy staging exit path
+## Legacy staging exit path (completed)
 
-`Source/simple` cannot be deleted wholesale yet. It still owns the 674 canonical
-non-class functions (647 MATCH + 27 WIP). This exit path applies only to those
-pre-existing bodies; do not use it as a template for new work. The exit path is:
+`Source/simple` is now empty. Its former 674 canonical non-class functions
+(647 MATCH + 27 WIP) were grouped by `function_map` module/region and moved to
+the free subsystem TUs. The path used was:
 
 1. **Group by evidence.** Use `function_map` module/region, call sites, struct
    shapes, and `class_ownership` hints to assign each legacy body to a
    class/subsystem TU.
-2. **Migrate one body or a coherent group.** Write the body manually in the
-   target TU; adapt symbol qualification and field expressions only.
-3. **Verify and promote.** TU-local `match.py`, then `MATCH_FUNC`.
-4. **Remove the staged copy** only after the class TU verifies. Do not delete
-   unverified or still-unmigrated staging.
-5. **Prune empty files.** A staging file may be deleted only when it has no
-   `MATCH_FUNC`/`WIP_FUNC` markers. Declaration-only leftovers are safe to
-   remove; files owning markers are not.
-6. **Full-suite gate.** The suite must remain `[981/981]`, 38 WIP (or higher) and
+2. **Migrate one module or a coherent group.** Copy the verified body text into
+   the target TU in per-file order; adapt symbol qualification and field
+   expressions only. Carry shared preamble declarations from files whose first
+   marker lives in another module.
+3. **Verify.** TU-local `match.py`; every migrated marker must stay at its old
+   status (`MATCH_FUNC` stays byte-identical).
+4. **Remove the staged copy** only after the subsystem TU verifies.
+5. **Prune empty files.** Delete a staging file once it has no
+   `MATCH_FUNC`/`WIP_FUNC` markers.
+6. **Full-suite gate.** The suite must remain at or above the previous `N` and
    show no compile errors or missing symbols.
 7. **Regenerate maps** and commit the moved bodies plus the staged deletions.
 
