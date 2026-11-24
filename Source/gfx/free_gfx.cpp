@@ -7,6 +7,38 @@
 extern int g_66d4b0;
 extern int g_66d4b4;
 extern int g_66d4b8;
+
+// 0x4654A0 — clear 0x28 records of three dwords (stride 12) at 0x66d7e8.
+struct S4654A0 {
+public:
+    int field_00;                 // +0
+    int field_04;                 // +4
+    int field_08;                 // +8
+};
+extern S4654A0 g_66d7e8[0x28];
+
+void sub_4654A0();
+
+// 0x465490 — tail-call forwarder to the array clear.
+MATCH_FUNC(0x465490)
+void sub_465490()
+{
+    sub_4654A0();
+}
+
+MATCH_FUNC(0x4654A0)
+void sub_4654A0()
+{
+    int n = 0x28;
+    S4654A0* p = &g_66d7e8[0];
+    do {
+        p->field_00 = 0;
+        p->field_04 = 0;
+        p->field_08 = 0;
+        ++p;
+    } while (--n);
+}
+
 WIP_FUNC(0x4654D0)
 void Init_4654D0()
 {

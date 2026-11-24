@@ -22536,8 +22536,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/game/free_game.cpp"
  },
  {
   "address": "0x43E7D0",
@@ -22550,8 +22550,8 @@
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/game/free_game.cpp"
  },
  {
   "address": "0x43E7F0",
@@ -29379,8 +29379,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x4654A0",
@@ -29393,8 +29393,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x4654C0",

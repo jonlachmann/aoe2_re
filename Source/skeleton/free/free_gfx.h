@@ -310,8 +310,8 @@ void sub_465110();  // size 13, calls 9, lifted, module gfx
 void sub_465120();  // size 19, calls 4, lifted, module gfx
 void sub_465140();  // size 297, calls 9, lifted, module gfx
 void sub_465270();  // size 544, calls 5, lifted, module gfx
-void sub_465490();  // size 16, calls 0, lifted, module gfx
-void sub_4654A0();  // size 27, calls 0, lifted, module gfx
+void sub_465490();  // size 16, calls 0, matched, module gfx
+void sub_4654A0();  // size 27, calls 0, matched, module gfx
 void sub_4654C0();  // size 16, calls 0, lifted, module gfx
 void sub_4654D0();  // size 31, calls 0, wip, module gfx
 void sub_4654F0();  // size 185, calls 1, lifted, module gfx

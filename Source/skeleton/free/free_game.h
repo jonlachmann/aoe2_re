@@ -419,8 +419,8 @@ void sub_43E440();  // size 64, calls 2, lifted, module game
 void sub_43E480();  // size 654, calls 8, lifted, module game
 void sub_43E710();  // size 38, calls 1, lifted, module game
 void sub_43E740();  // size 74, calls 1, lifted, module game
-void sub_43E7C0();  // size 16, calls 0, lifted, module game
-void sub_43E7D0();  // size 27, calls 0, lifted, module game
+void sub_43E7C0();  // size 16, calls 0, matched, module game
+void sub_43E7D0();  // size 27, calls 0, matched, module game
 void sub_43E7F0();  // size 659, calls 1, lifted, module game
 void sub_43EA90();  // size 153, calls 1, lifted, module game
 void sub_43EB50();  // size 12, calls 1, lifted, module game

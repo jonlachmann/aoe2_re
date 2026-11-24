@@ -553,6 +553,37 @@ int* S439D40::Clear_439D40()
     return result;
 }
 
+// 0x43E7D0 — clear 0x200 records of three dwords (stride 12) at 0x667958.
+struct S43E7D0 {
+public:
+    int field_00;                 // +0
+    int field_04;                 // +4
+    int field_08;                 // +8
+};
+extern S43E7D0 g_667958[0x200];
+
+void sub_43E7D0();
+
+// 0x43E7C0 — tail-call forwarder to the array clear.
+MATCH_FUNC(0x43E7C0)
+void sub_43E7C0()
+{
+    sub_43E7D0();
+}
+
+MATCH_FUNC(0x43E7D0)
+void sub_43E7D0()
+{
+    int n = 0x200;
+    S43E7D0* p = &g_667958[0];
+    do {
+        p->field_00 = 0;
+        p->field_04 = 0;
+        p->field_08 = 0;
+        ++p;
+    } while (--n);
+}
+
 // 0x43EBB0 — bounded 1-based dword table, -1 for invalid.
 class S43EBB0 {
 public:
