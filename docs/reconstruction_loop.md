@@ -21,6 +21,17 @@ commit message.
 `Source/skeleton` is refreshed by `Scripts/class_map.py`; it is not a staging
 copy and must not be deleted as "old code".
 
+**`Source/simple` is not a required intermediate step.** It is historical
+holding area, read-only for migration purposes. When the owning module or class
+is known — which it normally is from `function_map`, the vtable map, call sites,
+or the catalog — write the body directly in `Source/<module>/<class>.cpp` under
+`WIP_FUNC`. Never add a new function to `Source/simple`.
+
+If ownership is genuinely unclear, choose the best known owner TU from the
+module/region/subsystem evidence and park it there as WIP. Do not create a new
+simple file "for now"; moving it later costs a second migration and obscures
+ownership. `Source/simple` should only shrink, never grow.
+
 Generated evidence files:
 
 - `data/function_map.json` — every real function start, class/module/region, state, owner file.
@@ -67,9 +78,10 @@ Every iteration follows these steps. Do not skip the full-suite gate.
 2. **Read the evidence.** Left column of the diff is the original; right is ours.
    Check `ret N`, field offsets, struct-passing shape, inlining, and callee names
    before chasing codegen.
-3. **Place the body in its class TU.** A class/subsystem TU is the ownership
-   anchor (`data/class_map.json` region + class label). Methods may live at
-   addresses outside that region and still belong to the class TU.
+3. **Place the body directly in its owner TU.** A class/subsystem TU is the
+   ownership anchor (`data/class_map.json` region + class label). Methods may
+   live at addresses outside that region and still belong to the class TU.
+   There is no staging step: do not route the body through `Source/simple`.
 4. **Write the body manually.** No automatic body generator. Use `WIP_FUNC(0x...)`
    while iterating. Preserve the tcall/ABI shape exactly.
 5. **Verify the TU.** `Scripts/match.py Source/<module>/<class>.cpp`. Iterate the
@@ -129,7 +141,8 @@ Class-first migration bars:
 ## Legacy staging exit path
 
 `Source/simple` cannot be deleted wholesale yet. It still owns the 674 canonical
-non-class functions (647 MATCH + 27 WIP). The exit path is:
+non-class functions (647 MATCH + 27 WIP). This exit path applies only to those
+pre-existing bodies; do not use it as a template for new work. The exit path is:
 
 1. **Group by evidence.** Use `function_map` module/region, call sites, struct
    shapes, and `class_ownership` hints to assign each legacy body to a
@@ -158,6 +171,7 @@ Removal check for staged duplicates (never remove unmatched blocks):
 ## Safety checklist for every long session
 
 - [ ] Suite is green and recorded before edits.
+- [ ] New bodies written directly in a module/class TU; `Source/simple` only shrinks.
 - [ ] No unverified staged copy removed.
 - [ ] No `MATCH_FUNC` broken without a documented net-gain regression.
 - [ ] Aliases `0x45B5DC`, `0x58F232` skipped as starts.

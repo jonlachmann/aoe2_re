@@ -39,6 +39,9 @@ WIP_FUNC(0x4613F8)                   // written, not matching yet; diffed, never
 - One TU per class/subsystem (`Source/gfx/draw_area.cpp` holds `TDrawArea`),
   functions in address order. Put a struct's fields where the asm says they are, with
   the offset in a comment, and use real names once a class is identified.
+- Write new bodies **directly in the owning module TU**. `Source/simple/` is
+  legacy staging only and must not grow; an unknown owner is parked as WIP in
+  the best class/subsystem TU, not in simple.
 - Promote `WIP_FUNC` to `MATCH_FUNC` only when match.py says OK. match.py lists the WIPs
   that started matching.
 
