@@ -137,31 +137,6 @@ char S583670::Contains_583670(int a2)
     return 0;
 }
 
-// 0x587440 — small tag-to-slot mapping; -1 when unknown.
-int __stdcall sub_587440(int a1);
-
-MATCH_FUNC(0x587440)
-int __stdcall sub_587440(int a1)
-{
-    if (a1 == 31 || a1 == 5 || a1 == 33)
-        return 2;
-    else
-        return -1;
-}
-
-// 0x594E70 — cluster C_cluster_594060. Set a member flag and report success.
-int __stdcall sub_594E70(int a1);
-
-MATCH_FUNC(0x594E70)
-int __stdcall sub_594E70(int a1)
-{
-    int result = a1;
-    if (!a1)
-        return result;
-    *(int*)(a1 + 8) = 1;
-    return 1;
-}
-
 // 0x5955C0 — first element of an optional array behind byte flag +32.
 int __stdcall sub_5955C0(char* a1);
 
@@ -205,30 +180,6 @@ char __stdcall sub_59ABF0(char a1)
     if (a1 == 23)
         return 1;
     char result = (a1 == 26);
-    return result;
-}
-
-// 0x5A46C0 — member of vtable class C_vt62B750. The catalog split this
-// function at 0x5A46C6; the binary continues through the 5-iteration clear
-// loop and returns self + 1830, so the whole body is reconstructed here.
-class S5A46C0 {
-public:
-    char pad_00[0x1c48];
-
-    int* End_5A46C0();
-};
-
-MATCH_FUNC(0x5A46C0)
-int* S5A46C0::End_5A46C0()
-{
-    int* result = (int*)this + 1810;
-    int v2 = 5;
-    do {
-        *(result - 2) = 0;
-        *result = 0;
-        result += 4;
-        --v2;
-    } while (v2);
     return result;
 }
 

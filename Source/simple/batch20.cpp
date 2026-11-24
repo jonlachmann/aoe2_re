@@ -74,25 +74,6 @@ char S4A9F20::Round_4A9F20()
     return result;
 }
 
-// 0x4AC3E0 — cluster C_cluster_4AC3E0. Bounded record lookup through a table.
-class S4AC3E0 {
-public:
-    char pad_00[41*4];
-    int count;                    // self[41]
-    int* records;                 // self[42]
-
-    int Get_4AC3E0(__int16 a2, int* a3);
-};
-
-MATCH_FUNC(0x4AC3E0)
-int S4AC3E0::Get_4AC3E0(__int16 a2, int* a3)
-{
-    if (a2 < 0 || a2 >= this->count)
-        return 0;
-    *a3 = *(int*)((char*)this->records + 4 * a2);
-    return 1;
-}
-
 // 0x4ADF40 — reset four trailing short slots to -1.
 class S4ADF40 {
 public:
@@ -197,48 +178,6 @@ int S501980::Set_501980(int a2, int a3, int a4, int a5, int a6)
     if (a2 == 27 || a2 == 32)
         this->field_afc = 1;
     return 0;
-}
-
-// 0x520130 — cluster C_cluster_5200F0. Reset scattered counters and flags.
-class S520130 {
-public:
-    char pad_00[4];
-    unsigned char flag_04;        // +4
-    unsigned char flag_05;        // +5
-    char pad_06[8 - 6];
-    int field_08;                 // +8
-    int field_0c;                 // +12
-    int field_10;                 // +16
-    int field_14;                 // +20
-    int field_18;                 // +24
-    int field_1c;                 // +28
-    unsigned char flag_20;        // +32
-    char pad_21[292 - 33];
-    int field_124;                // +292
-    int field_128;                // +296
-    char pad_12c[1948 - 300];
-    int field_79c;                // +1948
-
-    int Reset_520130();
-};
-
-MATCH_FUNC(0x520130)
-int S520130::Reset_520130()
-{
-    int result = 0;
-    this->field_18 = 1;
-    this->flag_04 = 0;
-    this->field_08 = 0;
-    this->field_0c = 0;
-    this->field_10 = 0;
-    this->field_14 = 0;
-    this->flag_05 = 0;
-    this->field_79c = 0;
-    this->field_1c = 0;
-    this->field_124 = 0;
-    this->field_128 = 0;
-    this->flag_20 = 0;
-    return result;
 }
 
 // 0x5219B0 — cluster C_cluster_520CE0. Search a singly linked node list.

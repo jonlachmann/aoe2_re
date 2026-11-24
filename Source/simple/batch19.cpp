@@ -81,29 +81,6 @@ char S433E70::Get_433E70(int* a2, int* a3)
     return 1;
 }
 
-// 0x437740 — cluster C_cluster_437740. Mark one record slot when the index
-// is within the count.
-class S437740 {
-public:
-    char pad_00[8];
-    unsigned field_08;            // 0x08
-    char pad_0c[0x114 - 0x0c];
-    int* field_114;               // 0x114
-
-    int Set_437740(unsigned a2);
-};
-
-MATCH_FUNC(0x437740)
-int S437740::Set_437740(unsigned a2)
-{
-    int result = a2;
-    if (a2 < this->field_08) {
-        result = 9 * a2;
-        *(int*)((char*)this->field_114 + 4 * result + 28) = 1;
-    }
-    return result;
-}
-
 // 0x437970 — record array indexed by dword stride 24.
 class S437970 {
 public:
@@ -443,27 +420,6 @@ int* S46C750::Count_46C750(int a2)
     return result;
 }
 
-// 0x472A70 — cluster C_cluster_46BF90. Fill a small float array with +inf.
-class S472A70 {
-public:
-    char pad_00[52*4];
-    int count;                    // self[52]
-    char pad_d4[232*4 - 52*4 - 4];
-    int* values;                  // self[232]
-
-    int Fill_472A70();
-};
-
-WIP_FUNC(0x472A70)
-int S472A70::Fill_472A70()
-{
-    int result;
-    for (result = 0; result < this->count;
-         *(int*)((char*)this->values + 4 * result - 4) = 2139095039)
-        ++result;
-    return result;
-}
-
 // 0x4731E0 — bounded pointer-table lookup, 0 for invalid/missing.
 class S4731E0 {
 public:
@@ -542,16 +498,6 @@ int S487580::Reset_487580()
     this->field_28 = 1065353216;
     this->field_2c = 0;
     return result;
-}
-
-// 0x489EE0 — float multiply-add; the fourth argument is unused.
-double __stdcall sub_489EE0(float a1, float a2, float a3, int a4);
-
-MATCH_FUNC(0x489EE0)
-double __stdcall sub_489EE0(float a1, float a2, float a3, int a4)
-{
-    (void)a4;
-    return a2 * a3 + a1;
 }
 
 // 0x48BF10 — return an object's cached value when it matches the tag.
