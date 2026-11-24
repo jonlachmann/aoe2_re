@@ -33,8 +33,5 @@ void S432Accessors::Set1C68_4329B0(int v) { field_1c68 = v; }
 MATCH_FUNC(0x432B50)
 int S432Accessors::Get26A4_432B50() { return field_26a4; }
 
-MATCH_FUNC(0x432B60)
-void S432Accessors::Set26A4_432B60(int v) { field_26a4 = v; }
-
 MATCH_FUNC(0x432CB0)
 int S432Accessors::Get352C_432CB0() { return field_352c; }

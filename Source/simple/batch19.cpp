@@ -49,18 +49,6 @@ public:
     char Dec_41A410(int a2);
 };
 
-MATCH_FUNC(0x41A410)
-char S41A410::Dec_41A410(int a2)
-{
-    (void)a2;
-    unsigned char result = this->field_4f;
-    if (result > 0) {
-        result = --result;
-        this->field_4f = result;
-    }
-    return (char)result;
-}
-
 // 0x433E70 — report an object's two fields through out params when live.
 class S433E70 {
 public:
@@ -527,16 +515,6 @@ public:
     double Get_48E2D0();
 };
 
-MATCH_FUNC(0x48E2D0)
-double S48E2D0::Get_48E2D0()
-{
-    int* v1 = this->field_10;
-    if (v1 && *(float*)((char*)v1 + 100) > 0.0)
-        return *(float*)((char*)this->field_08 + 196) * *(float*)((char*)v1 + 100);
-    else
-        return *(float*)((char*)this->field_08 + 196);
-}
-
 // 0x48E340 — member of vtable class C_vt61CE24: bounded record address,
 // dword stride 12.
 class S48E340 {
@@ -547,15 +525,6 @@ public:
 
     int Get_48E340(int a2);
 };
-
-MATCH_FUNC(0x48E340)
-int S48E340::Get_48E340(int a2)
-{
-    if (a2 < 0 || a2 >= this->count)
-        return 0;
-    else
-        return (int)this->records + 12 * a2;
-}
 
 // 0x4919A0 — member of vtable class C_vt61CE24; same shape as 48E2D0 with
 // an unused index argument.
@@ -568,17 +537,6 @@ public:
 
     double Get_4919A0(int a2);
 };
-
-MATCH_FUNC(0x4919A0)
-double S4919A0::Get_4919A0(int a2)
-{
-    (void)a2;
-    int* v2 = this->field_10;
-    if (v2 && *(float*)((char*)v2 + 100) > 0.0)
-        return *(float*)((char*)this->field_08 + 196) * *(float*)((char*)v2 + 100);
-    else
-        return *(float*)((char*)this->field_08 + 196);
-}
 
 // 0x4937A0 — bounded pointer-table lookup by count field at +0.
 class S4937A0 {

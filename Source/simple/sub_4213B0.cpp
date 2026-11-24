@@ -11,8 +11,3 @@ public:
     void SetText_4213B0();
 };
 
-MATCH_FUNC(0x4213B0)
-void S4213B0::SetText_4213B0()
-{
-    SetWindowTextA(field_28, text_430);
-}

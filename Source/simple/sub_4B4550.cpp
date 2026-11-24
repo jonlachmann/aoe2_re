@@ -11,11 +11,3 @@ public:
     int M_4B4550();
 };
 
-MATCH_FUNC(0x4B4550)
-int S4B4550::M_4B4550()
-{
-    void* h = handle_164;
-    if (h != 0)
-        return ImmGetOpenStatus(h);
-    return 0;
-}

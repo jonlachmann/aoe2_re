@@ -15,10 +15,3 @@ public:
     int Diff_531B00();
 };
 
-MATCH_FUNC(0x531B00)
-int S531B00::Diff_531B00()
-{
-    if (field_24 == 0)
-        return 0;
-    return field_24->field_4 - field_1f8;
-}

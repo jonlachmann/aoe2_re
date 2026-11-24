@@ -19,8 +19,3 @@ int S42GetBulk::Get_422E10()
     return *(int*)((char*)this + 0x120);
 }
 
-MATCH_FUNC(0x42FBC0)
-int S42GetBulk::Get_42FBC0()
-{
-    return *(int*)((char*)this + 0x2008);
-}

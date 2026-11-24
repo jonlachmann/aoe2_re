@@ -120,8 +120,19 @@ def markers(cpp):
 
 
 def find_symbol(funcs, va):
+    """Match the address suffix in the function-name part only.
+
+    The full mangled name includes the class, and many recovered class names
+    embed the address of their anchor function (C_cluster_4CED80). Searching
+    the whole symbol then finds every member of that class, not one function.
+    """
     tag = f"_{va:X}"
-    hits = [n for n in funcs if re.search(tag + r"(?![0-9A-F])", n, re.I)]
+    hits = []
+    for n in funcs:
+        bare = n[1:] if n[:1] in ("?", "_") else n
+        name = bare.split("@", 1)[0]
+        if re.search(tag + r"(?![0-9A-F])", name, re.I):
+            hits.append(n)
     return hits[0] if len(hits) == 1 else (None if not hits else hits)
 
 

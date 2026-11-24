@@ -11,10 +11,3 @@ public:
     float Sub_48E2D0();
 };
 
-MATCH_FUNC(0x537D90)
-float S537D90::M_537D90()
-{
-    if (field_1a0 > 0)
-        return g_61C584;
-    return Sub_48E2D0();
-}

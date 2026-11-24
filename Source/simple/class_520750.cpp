@@ -15,15 +15,3 @@ public:
     void Init_520750();
 };
 
-MATCH_FUNC(0x520750)
-void S520750::Init_520750()
-{
-    field_0 = 0;
-    field_4 = 0;
-    field_5 = 0;
-    field_1c = 0;
-    field_c = 0;
-    field_10 = 0;
-    field_14 = 0;
-    field_18 = 0;
-}

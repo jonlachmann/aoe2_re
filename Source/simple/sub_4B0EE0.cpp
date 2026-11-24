@@ -8,9 +8,3 @@ public:
     void M_4B0EE0();
 };
 
-MATCH_FUNC(0x4B0EE0)
-void S4B0EE0::M_4B0EE0()
-{
-    if (field_154 != 0)
-        field_154 = 0;
-}

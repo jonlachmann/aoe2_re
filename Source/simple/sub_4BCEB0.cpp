@@ -10,9 +10,3 @@ public:
     void M_4BCEB0(short v);
 };
 
-MATCH_FUNC(0x4BCEB0)
-void S4BCEB0::M_4BCEB0(short v)
-{
-    field_104 = v;
-    Other_4BBD30(1);
-}

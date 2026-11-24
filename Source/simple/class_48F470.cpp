@@ -12,18 +12,3 @@ public:
     float M_48F520();
 };
 
-MATCH_FUNC(0x48F470)
-float S48F470::M_48F470()
-{
-    if (field_110 != 0)
-        return *(float*)(field_110 + 8);
-    return g_61C584;
-}
-
-MATCH_FUNC(0x48F520)
-float S48F470::M_48F520()
-{
-    if (field_110 != 0)
-        return *(float*)(field_110 + 0x14);
-    return g_61C584;
-}

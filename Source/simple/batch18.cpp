@@ -98,31 +98,11 @@ int S4175B0::Check_4175B0()
 // (zero stores interleaved with the copy); VC6 /O2 folds every equivalent.
 // 41F880 likewise differs: the original is a 31-byte loop with the next
 // compare repeated at the top; VC6 emits a duplicated bottom compare.
-WIP_FUNC(0x41A0D0)
-WIP_FUNC(0x41A110)
 struct S41A0D0Triple {
     int field_00;
     int field_04;
     int field_08;
 };
-
-S41A0D0Triple* __stdcall sub_41A0D0(S41A0D0Triple* out, int a2, int a3)
-{
-    (void)a2;
-    (void)a3;
-    out->field_00 = 0;
-    out->field_04 = 0;
-    out->field_08 = 0;
-    return out;
-}
-
-S41A0D0Triple* __stdcall sub_41A110(S41A0D0Triple* out)
-{
-    out->field_00 = 0;
-    out->field_04 = 0;
-    out->field_08 = 0;
-    return out;
-}
 
 // 0x41AC00 — find a node by key in a singly linked list and set its byte flag.
 struct S41AC00Node {
@@ -164,15 +144,6 @@ public:
 
     bool Check_41B610();
 };
-
-MATCH_FUNC(0x41B610)
-bool S41B610::Check_41B610()
-{
-    int v1 = this->field_04;
-    if (!v1)
-        return false;
-    return this->field_24 != 0 && (*(unsigned char*)(v1 + 0x70) & 1) != 0;
-}
 
 // 0x41C800 — per-slot 32-byte stats block, accumulate and update high-water.
 struct S41C800Stats {
@@ -322,12 +293,3 @@ public:
     int Set_433500(int index, int value);
 };
 
-MATCH_FUNC(0x433500)
-int S433500Slots::Set_433500(int index, int value)
-{
-    int result = index;
-    int* slot = (int*)((char*)this + 0x46bc + index * 4);
-    if (*slot == 5)
-        *slot = value;
-    return result;
-}

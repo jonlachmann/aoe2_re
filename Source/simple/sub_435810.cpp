@@ -8,10 +8,3 @@ public:
     unsigned char M_435810();
 };
 
-MATCH_FUNC(0x435810)
-unsigned char S435810::M_435810()
-{    if (field_168 > g_61C584)
-        return 0;
-    else
-        return 1;
-}

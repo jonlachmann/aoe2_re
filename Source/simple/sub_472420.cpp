@@ -8,13 +8,3 @@ struct S472420 {
     char pad_4f[0x1c4 - 0x4f];
     char* field_1c4;
 };
-MATCH_FUNC(0x472420)
-extern "C" S472420* __stdcall sub_472420(S472420* p)
-{
-    if (p->field_4e == 0x50) {
-        char* q = p->field_1c4;
-        if (q != 0)
-            p = (S472420*)q;
-    }
-    return p;
-}

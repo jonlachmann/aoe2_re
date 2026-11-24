@@ -72,11 +72,3 @@ public:
     int field_1a0;
     int Pop_537D70();
 };
-MATCH_FUNC(0x537D70)
-int S537D70::Pop_537D70()
-{
-    if (field_1a0 < 1)
-        return 0;
-    --field_1a0;
-    return 1;
-}

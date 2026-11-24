@@ -14,9 +14,3 @@ public:
     void M_42AF60(int arg);
 };
 
-MATCH_FUNC(0x42AF60)
-void S42AF60::M_42AF60(int arg)
-{
-    for (int k = 0; k < 0x1f6; k++)
-        rows_1dd8[k].slot_10[arg] = 0;
-}

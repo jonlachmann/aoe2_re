@@ -11,10 +11,3 @@ public:
     void M_421B10(unsigned char a, unsigned char b, unsigned char c);
 };
 
-MATCH_FUNC(0x421B10)
-void S421B10::M_421B10(unsigned char a, unsigned char b, unsigned char c)
-{
-    field_9ab = a;
-    field_9ac = b;
-    field_9ad = c;
-}

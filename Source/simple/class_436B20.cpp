@@ -30,9 +30,3 @@ public:
     int M_436B20();
 };
 
-MATCH_FUNC(0x436B20)
-int S436B20::M_436B20()
-{
-    Vat_40(field_8->field_18);
-    return 1;
-}

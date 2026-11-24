@@ -1,12 +1,6 @@
 #include "Function.hpp"
 
 extern unsigned char g_75fdc4;
-MATCH_FUNC(0x5BB230)
-unsigned char* Clear_5BB230()
-{
-    g_75fdc4 = 0;
-    return &g_75fdc4;
-}
 
 extern int g_66e3fc;
 MATCH_FUNC(0x48BD10)

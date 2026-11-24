@@ -5,16 +5,6 @@ void M_414300()
 {
 }
 
-MATCH_FUNC(0x4237A0)
-void M_4237A0()
-{
-}
-
-MATCH_FUNC(0x4378C0)
-void M_4378C0()
-{
-}
-
 MATCH_FUNC(0x440740)
 void M_440740()
 {
@@ -80,11 +70,6 @@ public:
     int field_ea4;
     bool Check_40F4B0();
 };
-MATCH_FUNC(0x40F4B0)
-bool S40F4B0::Check_40F4B0()
-{
-    return field_ea4 == 0x32;
-}
 
 class S419810 {
 public:

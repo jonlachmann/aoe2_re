@@ -252,25 +252,6 @@ public:
     int Set_5BB000(int a2, int a3);
 };
 
-WIP_FUNC(0x5BB000)
-int S5BB000::Set_5BB000(int a2, int a3)
-{
-    int result = a2;
-    char v4;
-    int idx = a2 + 4636;
-    if (a2 == 1) {
-        v4 = (char)a3;
-        if (a3 == a2) {
-            ((char*)this)[idx] = (char)a2;
-            return result;
-        }
-    } else {
-        v4 = (char)a3;
-    }
-    ((char*)this)[idx] = v4;
-    return result;
-}
-
 // 0x5BDBF0 — store a dword indexed through a byte-row pointer table.
 class S5BDBF0 {
 public:
@@ -320,12 +301,6 @@ public:
 
     int Get_5C1A00(int a2);
 };
-
-MATCH_FUNC(0x5C1A00)
-int S5C1A00::Get_5C1A00(int a2)
-{
-    return this->records[180 * this->count + 15 * a2];
-}
 
 // 0x5D0C60 — clear a member when its tag is 7.
 int __stdcall sub_5D0C60(int a1);

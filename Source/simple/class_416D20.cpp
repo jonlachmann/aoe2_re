@@ -16,16 +16,3 @@ public:
     void M_416D20();
 };
 
-MATCH_FUNC(0x416D20)
-void S416D20::M_416D20()
-{
-    if (field_34 == -1)
-        return;
-    field_58 = field_34;
-    field_5c = field_38;
-    field_34 = -1;
-    field_38 = -1;
-    field_3c = -1.0f;
-    field_40 = -1.0f;
-    field_44 = -1.0f;
-}

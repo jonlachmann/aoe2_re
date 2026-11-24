@@ -15,8 +15,3 @@ public:
     void Call_4AC9F0(int v);
 };
 
-MATCH_FUNC(0x4AC9F0)
-void S4AC9F0::Call_4AC9F0(int v)
-{
-    field_84->V3(v);
-}

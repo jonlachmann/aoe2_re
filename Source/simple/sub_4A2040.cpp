@@ -12,10 +12,3 @@ public:
     void M_4A2040(int a, int b);
 };
 
-MATCH_FUNC(0x4A2040)
-void S4A2040::M_4A2040(int a, int b)
-{
-    field_60 = a;
-    field_64 = b;
-    field_74 = 1;
-}

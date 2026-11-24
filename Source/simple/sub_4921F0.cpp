@@ -31,13 +31,3 @@ public:
     int M_4921F0();
 };
 
-MATCH_FUNC(0x4921F0)
-int S4921F0::M_4921F0()
-{
-    char* q = ((T4921F0*)field_8)->field_18;
-    if (q != 0) {
-        Vat_40(q);
-        return 1;
-    }
-    return 0;
-}

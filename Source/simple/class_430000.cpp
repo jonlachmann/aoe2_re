@@ -29,8 +29,3 @@ int S430000::Get_42FB70(int* out)
     return field_4;
 }
 
-MATCH_FUNC(0x432B30)
-void S430000::Set_432B30(int index, int v)
-{
-    array_267c[index] = v;
-}

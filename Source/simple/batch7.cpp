@@ -15,21 +15,6 @@ public:
     int field_24;
     S5D0370* Init_5D0370(S5D0370* owner);
 };
-MATCH_FUNC(0x5D0370)
-S5D0370* S5D0370::Init_5D0370(S5D0370* owner)
-{
-    owner_c = owner;
-    vtbl_0 = 0x62cbac;
-    field_8 = 0;
-    field_4 = 0;
-    field_14 = 0;
-    field_10 = 0;
-    field_18 = 0;
-    field_1c = 0;
-    field_20 = 0;
-    field_24 = -1;
-    return this;
-}
 
 struct S411900Entry {
     int field_0;

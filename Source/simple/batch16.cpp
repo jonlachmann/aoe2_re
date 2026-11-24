@@ -5,13 +5,6 @@ public:
     char pad_00[0x1930];
     int Get_4CED80(int index);
 };
-MATCH_FUNC(0x4CED80)
-int S4CED80::Get_4CED80(int index)
-{
-    if (index < 0 || index >= 0x10)
-        return 0;
-    return *(int*)((char*)this + 0x1930 + index * 4);
-}
 
 class S4CEDA0 {
 public:
@@ -31,13 +24,6 @@ public:
     char pad_00[0x19b0];
     int Get_4CEDC0(int index);
 };
-MATCH_FUNC(0x4CEDC0)
-int S4CEDC0::Get_4CEDC0(int index)
-{
-    if (index < 0 || index >= 0x10)
-        return 0;
-    return *(int*)((char*)this + 0x19b0 + index * 4);
-}
 
 class S562EE0 {
 public:

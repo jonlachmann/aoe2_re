@@ -86,8 +86,3 @@ public:
     bool M_420CF0(int a, int b, int c, int d);
 };
 
-MATCH_FUNC(0x420CF0)
-bool S420CF0::M_420CF0(int a, int b, int c, int d)
-{
-    return Vat_134();
-}

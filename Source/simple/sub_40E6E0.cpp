@@ -11,11 +11,3 @@ public:
     int M_40E6E0(int i);
 };
 
-MATCH_FUNC(0x40E6E0)
-int S40E6E0::M_40E6E0(int i)
-{
-    if (i < 0 || i >= count_1c)
-        return 0;
-    int* e = (int*)((char*)arr_20 + (i << 4));
-    return *e != 0;
-}

@@ -8,10 +8,3 @@ public:
     unsigned char M_48CB90();
 };
 
-MATCH_FUNC(0x48CB90)
-unsigned char S48CB90::M_48CB90()
-{
-    if (field_a4 > g_61C584)
-        return 1;
-    return 0;
-}

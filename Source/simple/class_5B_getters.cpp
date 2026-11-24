@@ -29,12 +29,6 @@ char* S5BGetBulk::Get_5B42E0()
     return (char*)this + 0x17b0;
 }
 
-MATCH_FUNC(0x5B4540)
-int S5BGetBulk::Get_5B4540()
-{
-    return *(int*)((char*)this + 0x1458);
-}
-
 MATCH_FUNC(0x5B4560)
 unsigned char S5BGetBulk::Get_5B4560()
 {
@@ -45,30 +39,6 @@ MATCH_FUNC(0x5B4580)
 unsigned char S5BGetBulk::Get_5B4580()
 {
     return *(unsigned char*)((char*)this + 0x145d);
-}
-
-MATCH_FUNC(0x5BAD50)
-int S5BGetBulk::Get_5BAD50()
-{
-    return *(int*)((char*)this + 0x11d8);
-}
-
-MATCH_FUNC(0x5BAD70)
-int S5BGetBulk::Get_5BAD70()
-{
-    return *(int*)((char*)this + 0x11d0);
-}
-
-MATCH_FUNC(0x5BAEA0)
-int S5BGetBulk::Get_5BAEA0()
-{
-    return *(int*)((char*)this + 0x11d4);
-}
-
-MATCH_FUNC(0x5BAEB0)
-char* S5BGetBulk::Get_5BAEB0()
-{
-    return (char*)this + 0x1240;
 }
 
 MATCH_FUNC(0x5BAF10)

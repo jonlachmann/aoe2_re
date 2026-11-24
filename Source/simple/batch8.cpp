@@ -25,11 +25,6 @@ public:
     int field_c;
     void Wrap_408660();
 };
-MATCH_FUNC(0x408660)
-void S408660::Wrap_408660()
-{
-    field_8->Vat_30(field_c);
-}
 
 class S408670 {
 public:
@@ -38,11 +33,6 @@ public:
     int field_c;
     void Wrap_408670();
 };
-MATCH_FUNC(0x408670)
-void S408670::Wrap_408670()
-{
-    field_8->Vat_34(field_c);
-}
 
 // Not a free function: a thiscall on the object stored at +0x1b0 (the field
 // is loaded into ecx, so `this` moves to eax).
@@ -58,12 +48,6 @@ public:
     char buf_924[0xb0];
     void Wrap_4213D0();
 };
-MATCH_FUNC(0x4213D0)
-void S4213D0::Wrap_4213D0()
-{
-    if (field_1b0)
-        field_1b0->M_42FAE0(buf_924, 0xb0);
-}
 
 // Thiscall on the object at +0x149c, like Wrap_4213D0.
 class T4DF8F0 {
@@ -79,9 +63,3 @@ public:
     char buf_19b8[4];
     void Wrap_5B5C50();
 };
-MATCH_FUNC(0x5B5C50)
-void S5B5C50::Wrap_5B5C50()
-{
-    if (field_149c)
-        field_149c->M_4DF8F0(buf_430, buf_19b8);
-}

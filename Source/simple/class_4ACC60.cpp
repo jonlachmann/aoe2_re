@@ -18,13 +18,6 @@ public:
     bool Check_4ACC60();
 };
 
-MATCH_FUNC(0x4ACB80)
-void S4ACC60::SetOne_4ACB80()
-{
-    if (field_a2 == 0)
-        V1(1);
-}
-
 MATCH_FUNC(0x4ACBA0)
 void S4ACC60::SetTwo_4ACBA0()
 {

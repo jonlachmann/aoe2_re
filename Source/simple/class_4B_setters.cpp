@@ -9,12 +9,6 @@ public:
     void SetInt_4B7840(int v);
 };
 
-MATCH_FUNC(0x4B4600)
-void S4BSetBulk::SetInt_4B4600(int v)
-{
-    *(int*)((char*)this + 0x188) = v;
-}
-
 MATCH_FUNC(0x4B5A00)
 void S4BSetBulk::SetInt_4B5A00(int v)
 {

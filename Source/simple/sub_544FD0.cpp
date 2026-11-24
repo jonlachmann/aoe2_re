@@ -47,13 +47,3 @@ public:
 };
 
 // The float goes through a local: fld [obj+4]; fadd [g] (a plain `+=` loads g first).
-MATCH_FUNC(0x544FD0)
-int S544FD0::M_544FD0()
-{
-    Vat_5c(1);
-    C544FD0* c = field_8->field_c->field_a8;
-    float t = c->field_4;
-    t += g_6289F8;
-    c->field_4 = t;
-    return 1;
-}

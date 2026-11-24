@@ -13,12 +13,6 @@ void S54SetBulk::SetInt_548110(int v)
     *(int*)((char*)this + 0x40) = v;
 }
 
-MATCH_FUNC(0x54ADD0)
-void S54SetBulk::SetByte_54ADD0(unsigned char v)
-{
-    *(unsigned char*)((char*)this + 0xc) = v;
-}
-
 MATCH_FUNC(0x54FE60)
 void S54SetBulk::SetInt_54FE60(int v)
 {

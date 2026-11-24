@@ -7,9 +7,3 @@ public:
     char M_4AD440(int index);
 };
 
-MATCH_FUNC(0x4AD440)
-char S4AD440::M_4AD440(int index)
-{
-    char* base = *(char**)((char*)this + 0xd4);
-    return base[index];
-}

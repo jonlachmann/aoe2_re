@@ -14,26 +14,3 @@ public:
     void M_544E70(unsigned char v);
 };
 
-MATCH_FUNC(0x5410B0)
-void S5410B0::M_5410B0(unsigned char v)
-{
-    field_c = v;
-    if (v == 0x64) {
-        char* a = field_8;
-        char* b = *(char**)(a + 0xc);
-        char* c = *(char**)(b + 0xa8);
-        field_2c = *(int*)(c + 0x90);
-    }
-}
-
-MATCH_FUNC(0x544E70)
-void S5410B0::M_544E70(unsigned char v)
-{
-    field_c = v;
-    if (v == 6) {
-        char* a = field_8;
-        char* b = *(char**)(a + 0xc);
-        char* c = *(char**)(b + 0xa8);
-        field_2c = *(int*)(c + 0xf8);
-    }
-}

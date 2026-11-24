@@ -19,8 +19,3 @@ void S48SetBulk::SetInt_48A850(int v)
     *(int*)((char*)this + 0x148) = v;
 }
 
-MATCH_FUNC(0x48E330)
-void S48SetBulk::SetByte_48E330(unsigned char v)
-{
-    *(unsigned char*)((char*)this + 0xd4) = v;
-}

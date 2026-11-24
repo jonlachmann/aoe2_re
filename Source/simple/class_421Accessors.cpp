@@ -86,29 +86,11 @@ int S421Accessors::GetB44_421730() { return field_b44; }
 MATCH_FUNC(0x421740)
 unsigned char S421Accessors::Get9BF_421740() { return field_9bf; }
 
-MATCH_FUNC(0x421750)
-float S421Accessors::Get924_421750() { return field_924; }
-
-MATCH_FUNC(0x421760)
-int S421Accessors::Get928_421760() { return field_928; }
-
 MATCH_FUNC(0x421770)
 bool S421Accessors::IsZero928_421770() { return field_928 == 0; }
 
-MATCH_FUNC(0x421780)
-int S421Accessors::Get9D4_421780() { return field_9d4; }
-
 MATCH_FUNC(0x421790)
 int S421Accessors::Get9D8_421790() { return field_9d8; }
-
-MATCH_FUNC(0x4217A0)
-char* S421Accessors::Ptr9A9_4217A0() { return (char*)this + 0x929; }
-
-MATCH_FUNC(0x4217B0)
-int S421Accessors::Get9A9_4217B0() { return field_9a9; }
-
-MATCH_FUNC(0x4217C0)
-int S421Accessors::Get9AA_4217C0() { return field_9aa; }
 
 MATCH_FUNC(0x4217D0)
 int S421Accessors::Get9AB_4217D0() { return field_9ab; }
@@ -124,9 +106,6 @@ int S421Accessors::Get9AE_421800() { return field_9ae; }
 
 MATCH_FUNC(0x421810)
 int S421Accessors::Get9B0_421810() { return field_9b0; }
-
-MATCH_FUNC(0x421820)
-int S421Accessors::Get9D0_421820() { return field_9d0; }
 
 MATCH_FUNC(0x421830)
 int S421Accessors::Get9B1_421830() { return field_9b1; }
@@ -160,38 +139,13 @@ unsigned char S421Accessors::Get1094_421A20() { return field_1094; }
 MATCH_FUNC(0x421A30)
 unsigned char S421Accessors::Get9AF_421A30() { return field_9af; }
 
-MATCH_FUNC(0x421A60)
-void S421Accessors::Set928_421A60(unsigned char v) { field_928 = v; }
-
-MATCH_FUNC(0x421A70)
-void S421Accessors::Set924Raw_421A70(int v) { *(int*)((char*)this + 0x924) = v; }
-
-MATCH_FUNC(0x421AB0)
-void S421Accessors::Set9D4_421AB0(int v) { field_9d4 = v; }
-
-MATCH_FUNC(0x421AC0)
-void S421Accessors::Set9D8_421AC0(int v) { field_9d8 = v; }
-
 extern unsigned char g_6642f0;
-
-MATCH_FUNC(0x421A40)
-char* ClearGlobal_421A40()
-{
-    g_6642f0 = 0;
-    return (char*)&g_6642f0;
-}
-
-MATCH_FUNC(0x421B40)
-void S421Accessors::Set9AE_421B40(unsigned char v) { field_9ae = v; }
 
 MATCH_FUNC(0x421B50)
 void S421Accessors::Set9B0_421B50(unsigned char v) { field_9b0 = v; }
 
 MATCH_FUNC(0x421B60)
 void S421Accessors::Set9D0_421B60(unsigned char v) { field_9d0 = v; }
-
-MATCH_FUNC(0x421B70)
-void S421Accessors::Set9B1_421B70(unsigned char v) { field_9b1 = v; }
 
 MATCH_FUNC(0x421B80)
 void S421Accessors::Set9B2_421B80(unsigned char v) { field_9b2 = v; }
@@ -208,9 +162,6 @@ void S421Accessors::SetBit_421BB0(int index, unsigned char v)
     unsigned char* p = (unsigned char*)this + 0x9b5 + index;
     *p = (*p & 0xfe) | v;
 }
-
-MATCH_FUNC(0x421C20)
-void S421Accessors::Set9BE_421C20(unsigned char v) { field_9be = v; }
 
 MATCH_FUNC(0x421C50)
 void S421Accessors::Set1094_421C50(unsigned char v) { field_1094 = v; }

@@ -16,14 +16,3 @@ public:
     S407CB0Vec3 CopyF0_407D00();
 };
 
-MATCH_FUNC(0x407CB0)
-S407CB0Vec3 S407CB0::CopyE4_407CB0()
-{
-    return vec_e4;
-}
-
-MATCH_FUNC(0x407D00)
-S407CB0Vec3 S407CB0::CopyF0_407D00()
-{
-    return vec_f0;
-}

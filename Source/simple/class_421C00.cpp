@@ -20,12 +20,6 @@ public:
     void GetBounds_422290(int index, int* out);
 };
 
-MATCH_FUNC(0x421880)
-int S421C00::Get_421880(int index)
-{
-    return array_9b5[index] >> 1;
-}
-
 MATCH_FUNC(0x421C00)
 void S421C00::Set_421C00(int index, unsigned char v)
 {

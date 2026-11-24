@@ -10,10 +10,3 @@ public:
     void M_52B400(int a, int b, int c);
 };
 
-MATCH_FUNC(0x52B400)
-void S52B400::M_52B400(int a, int b, int c)
-{
-    if (field_4f < 0xfa)
-        field_4f++;
-    Other_52C190(0);
-}

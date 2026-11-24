@@ -7,9 +7,3 @@ public:
     void M_41B600(short v);
 };
 
-MATCH_FUNC(0x41B600)
-void S41B600::M_41B600(short v)
-{
-    *(short*)((char*)this + 0x14) = v;
-    *(short*)((char*)this + 0x20) = v;
-}

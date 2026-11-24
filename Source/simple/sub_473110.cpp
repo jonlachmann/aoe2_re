@@ -11,12 +11,3 @@ public:
     bool M_473110(int i, int v);
 };
 
-MATCH_FUNC(0x473110)
-bool S473110::M_473110(int i, int v)
-{
-    if (i >= 0 && i < field_4) {
-        arr_18[i] = v;
-        return true;
-    }
-    return false;
-}

@@ -36,31 +36,11 @@ public:
     int field_4cd4;
     int Set_5C1410(int value);
 };
-WIP_FUNC(0x5C1410)
-int S5C1410::Set_5C1410(int value)
-{
-    if (value < 0)
-        return field_4cd4 = 0;
-    if (value > 0x10)
-        value = 0xf;
-    return field_4cd4 = value;
-}
 
 class S4BF6B0 {
 public:
     void Set_4BF6B0(int* out);
 };
-MATCH_FUNC(0x4BF6B0)
-void S4BF6B0::Set_4BF6B0(int* out)
-{
-    *(int*)out = -1;
-    *(int*)((char*)out + 4) = -1;
-    int zero = 0;
-    *(int*)((char*)out + 0x10) = zero;
-    *(int*)((char*)out + 0x14) = zero;
-    *(int*)((char*)out + 8) = zero;
-    *(int*)((char*)out + 0xc) = zero;
-}
 
 class S5A3810 {
 public:
@@ -99,11 +79,6 @@ public:
     char pad_00[0x1658];
     void Wrap_56ABD0(int arg);
 };
-MATCH_FUNC(0x56ABD0)
-void S56ABD0::Wrap_56ABD0(int arg)
-{
-    ((T567BC0*)((char*)this + 0x1658))->Get_567BC0(arg);
-}
 
 class T567BD0 {
 public:
@@ -114,11 +89,6 @@ public:
     char pad_00[0x1658];
     void Wrap_56ABF0(int arg);
 };
-MATCH_FUNC(0x56ABF0)
-void S56ABF0::Wrap_56ABF0(int arg)
-{
-    ((T567BD0*)((char*)this + 0x1658))->Get_567BD0(arg);
-}
 
 class T579640 {
 public:
@@ -129,11 +99,6 @@ public:
     char pad_00[0x40e4];
     void Wrap_56ABB0(int arg);
 };
-MATCH_FUNC(0x56ABB0)
-void S56ABB0::Wrap_56ABB0(int arg)
-{
-    ((T579640*)((char*)this + 0x40e4))->Get_579640(arg);
-}
 
 class T579600 {
 public:

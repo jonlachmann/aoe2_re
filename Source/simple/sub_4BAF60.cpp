@@ -69,8 +69,3 @@ public:
     void M_4BAF60(int a, int b, int c, int d);
 };
 
-MATCH_FUNC(0x4BAF60)
-void S4BAF60::M_4BAF60(int a, int b, int c, int d)
-{
-    Vat_f4(a, b);
-}

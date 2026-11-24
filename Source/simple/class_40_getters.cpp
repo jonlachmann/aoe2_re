@@ -19,36 +19,6 @@ public:
     char* Get_40C520();
 };
 
-MATCH_FUNC(0x407C70)
-float S40GetBulk::Get_407C70()
-{
-    return *(float*)((char*)this + 0xa4);
-}
-
-MATCH_FUNC(0x407C80)
-float S40GetBulk::Get_407C80()
-{
-    return *(float*)((char*)this + 0xb8);
-}
-
-MATCH_FUNC(0x407CA0)
-int S40GetBulk::Get_407CA0()
-{
-    return *(int*)((char*)this + 0xdc);
-}
-
-MATCH_FUNC(0x407CE0)
-int S40GetBulk::Get_407CE0()
-{
-    return *(int*)((char*)this + 0x108);
-}
-
-MATCH_FUNC(0x407CF0)
-int S40GetBulk::Get_407CF0()
-{
-    return *(int*)((char*)this + 0x114);
-}
-
 MATCH_FUNC(0x40A320)
 int S40GetBulk::Get_40A320()
 {
@@ -77,12 +47,6 @@ MATCH_FUNC(0x40A360)
 int S40GetBulk::Get_40A360()
 {
     return *(int*)((char*)this + 0x90);
-}
-
-MATCH_FUNC(0x40A390)
-int S40GetBulk::Get_40A390()
-{
-    return *(int*)((char*)this + 0x9c);
 }
 
 MATCH_FUNC(0x40A400)

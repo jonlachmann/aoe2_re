@@ -4,22 +4,12 @@ class S406220 {
 public:
     void Clear_406220(char* p);
 };
-MATCH_FUNC(0x406220)
-void S406220::Clear_406220(char* p)
-{
-    *p = 0;
-}
 
 class S41AF50 {
 public:
     char pad_00[0x14];
     void Set_41AF50(unsigned short v);
 };
-MATCH_FUNC(0x41AF50)
-void S41AF50::Set_41AF50(unsigned short v)
-{
-    *(unsigned short*)((char*)this + 0x14) = v;
-}
 
 class S4BCE90 {
 public:
@@ -62,12 +52,6 @@ public:
     int field_1c;
     void Set_525870(int unused);
 };
-MATCH_FUNC(0x525870)
-void S525870::Set_525870(int unused)
-{
-    *(int*)((char*)this + 0x1c) = 0;
-    *(unsigned char*)((char*)this + 0x14) = 1;
-}
 
 class S437960 {
 public:
@@ -103,24 +87,11 @@ class S4118B0 {
 public:
     void Init_4118B0();
 };
-MATCH_FUNC(0x4118B0)
-void S4118B0::Init_4118B0()
-{
-    *(int*)((char*)this) = 0x61d6c4;
-    *(int*)((char*)this + 8) = 0;
-    *(int*)((char*)this + 4) = 0;
-}
 
 class S41ADA0 {
 public:
     void Init_41ADA0();
 };
-MATCH_FUNC(0x41ADA0)
-void S41ADA0::Init_41ADA0()
-{
-    *(int*)((char*)this) = 0x61de70;
-    *(int*)((char*)this + 4) = 0;
-}
 
 class S43F8B0 {
 public:
@@ -167,12 +138,6 @@ public:
     char pad_00[0x170];
     void Set_4ACA10(unsigned short a, unsigned short b);
 };
-MATCH_FUNC(0x4ACA10)
-void S4ACA10::Set_4ACA10(unsigned short a, unsigned short b)
-{
-    *(unsigned short*)((char*)this + 0x170) = a;
-    *(unsigned short*)((char*)this + 0x172) = b;
-}
 
 class S5BFBB0 {
 public:

@@ -8,9 +8,3 @@ public:
     void Set_41F610(int a, int b);
 };
 
-MATCH_FUNC(0x41F610)
-void S41F610::Set_41F610(int a, int b)
-{
-    field_1dc = a;
-    field_1e0 = b;
-}

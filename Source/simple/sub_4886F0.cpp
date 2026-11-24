@@ -27,9 +27,3 @@ public:
     void M_4886F0();
 };
 
-MATCH_FUNC(0x4886F0)
-void S4886F0::M_4886F0()
-{
-    Vat_28(0);
-    Vat_4c(0);
-}

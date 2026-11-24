@@ -28,12 +28,6 @@ void S43SetBulk::SetInt_43A090(int v)
     *(int*)((char*)this + 0xc) = v;
 }
 
-MATCH_FUNC(0x43A0A0)
-void S43SetBulk::SetInt_43A0A0(int v)
-{
-    *(int*)((char*)this + 0x10) = v;
-}
-
 MATCH_FUNC(0x43A0B0)
 void S43SetBulk::SetInt_43A0B0(int v)
 {

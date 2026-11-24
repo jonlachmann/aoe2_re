@@ -28,10 +28,3 @@ public:
     bool Less_52AE20();
 };
 
-MATCH_FUNC(0x52AE20)
-bool S52AE20::Less_52AE20()
-{
-    if (Value() < field_8->field_30)
-        return true;
-    return false;
-}

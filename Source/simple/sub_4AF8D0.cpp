@@ -18,9 +18,3 @@ public:
     void M_4AF8D0(short v);
 };
 
-MATCH_FUNC(0x4AF8D0)
-void S4AF8D0::M_4AF8D0(short v)
-{
-    field_202 = v;
-    Vat_20(1);
-}

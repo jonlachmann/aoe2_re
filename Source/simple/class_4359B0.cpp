@@ -10,16 +10,3 @@ public:
     void M_4359E0(int* a, int* b);
 };
 
-MATCH_FUNC(0x4359B0)
-void S4359B0::M_4359B0(int* a, int* b)
-{
-    *a = *(int*)(field_8 + 0x134);
-    *b = *(int*)(field_8 + 0x160);
-}
-
-MATCH_FUNC(0x4359E0)
-void S4359B0::M_4359E0(int* a, int* b)
-{
-    *a = *(int*)(field_8 + 0x140);
-    *b = *(int*)(field_8 + 0x164);
-}

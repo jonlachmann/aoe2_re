@@ -13,13 +13,3 @@ public:
     void M_472B00();
 };
 
-MATCH_FUNC(0x472B00)
-void S472B00::M_472B00()
-{
-    field_8 = 0;
-    field_c = 0;
-    field_10 = 0;
-    field_14 = 0;
-    field_18 = 0;
-    field_4 = 0;
-}

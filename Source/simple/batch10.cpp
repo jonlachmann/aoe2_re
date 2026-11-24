@@ -49,18 +49,6 @@ public:
     char pad_00[0x564];
     void Init_41EB30();
 };
-MATCH_FUNC(0x41EB30)
-void S41EB30::Init_41EB30()
-{
-    int one = 1;
-    *(int*)((char*)this + 0x580) = one;
-    *(int*)((char*)this + 0x5a0) = one;
-    *(int*)((char*)this + 0x5c0) = one;
-    *(int*)((char*)this + 0x6a0) = one;
-    *(int*)((char*)this + 0x700) = one;
-    *(int*)((char*)this + 0x564) = one;
-    *(int*)((char*)this + 0x5e4) = one;
-}
 
 class S437710 {
 public:
@@ -80,14 +68,6 @@ public:
     char pad_00[0x90];
     void Get_4A22F0(int* out);
 };
-MATCH_FUNC(0x4A22F0)
-void S4A22F0::Get_4A22F0(int* out)
-{
-    out[0] = *(int*)((char*)this + 0x90);
-    out[1] = *(int*)((char*)this + 0x94);
-    out[2] = *(int*)((char*)this + 0x98);
-    out[3] = *(int*)((char*)this + 0x9c);
-}
 
 class S48A890 {
 public:
@@ -123,14 +103,6 @@ public:
     char pad_00[0x11c0];
     void Set_5BC4D0(int a, int b, int c, int d);
 };
-MATCH_FUNC(0x5BC4D0)
-void S5BC4D0::Set_5BC4D0(int a, int b, int c, int d)
-{
-    *(int*)((char*)this + 0x11c0) = a;
-    *(int*)((char*)this + 0x11c4) = b;
-    *(int*)((char*)this + 0x11c8) = c;
-    *(int*)((char*)this + 0x11cc) = d;
-}
 
 class S5D6120 {
 public:

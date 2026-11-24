@@ -11,10 +11,3 @@ public:
     void M_540DF0(unsigned char v);
 };
 
-MATCH_FUNC(0x540DF0)
-void S540DF0::M_540DF0(unsigned char v)
-{
-    field_c = v;
-    if (v == 10)
-        field_2c = 3.0f;
-}

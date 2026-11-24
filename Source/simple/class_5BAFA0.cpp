@@ -26,31 +26,6 @@ public:
     void SetInt4_5C1830(int index, int v);
 };
 
-MATCH_FUNC(0x5BAF70)
-void S5BAFA0::Set_5BAF70(int a, int b)
-{
-    field_11e4 = a;
-    field_11e8 = b;
-}
-
-MATCH_FUNC(0x5BAFA0)
-void S5BAFA0::SetByte_5BAFA0(int index, unsigned char v)
-{
-    array_11ec[index] = v;
-}
-
-MATCH_FUNC(0x5BAFD0)
-void S5BAFA0::SetInt_5BAFD0(int index, int v)
-{
-    array_11f8[index] = v;
-}
-
-MATCH_FUNC(0x5BB040)
-void S5BAFA0::SetByte2_5BB040(int index, unsigned char v)
-{
-    array_1225[index] = v;
-}
-
 MATCH_FUNC(0x5C1610)
 void S5BAFA0::SetInt2_5C1610(int index, int v)
 {

@@ -9,9 +9,3 @@ public:
     void Set_52B330(unsigned short a, int b);
 };
 
-MATCH_FUNC(0x52B330)
-void S52B330::Set_52B330(unsigned short a, int b)
-{
-    field_4c = a;
-    field_44 = b;
-}

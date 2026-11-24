@@ -78,8 +78,3 @@ public:
     void M_4BD000(int a, int b, int c, int d);
 };
 
-MATCH_FUNC(0x4BD000)
-void S4BD000::M_4BD000(int a, int b, int c, int d)
-{
-    Vat_118(a, b, 0, c, d);
-}

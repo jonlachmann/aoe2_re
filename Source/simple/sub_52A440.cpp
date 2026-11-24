@@ -14,9 +14,3 @@ public:
     void M_52A440(int v);
 };
 
-MATCH_FUNC(0x52A440)
-void S52A440::M_52A440(int v)
-{
-    if (field_18 != 0)
-        ((T41A820*)field_18)->Other_41A820(v);
-}

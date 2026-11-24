@@ -11,15 +11,3 @@ public:
     int M_469DE0(int v);
 };
 
-MATCH_FUNC(0x469DE0)
-int S469DE0::M_469DE0(int v)
-{
-    int n = count_c;
-    int i = 0;
-    while (i < n) {
-        if (arr_14[i] == v)
-            return i;
-        i++;
-    }
-    return -1;
-}

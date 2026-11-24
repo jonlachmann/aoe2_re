@@ -171,15 +171,6 @@ public:
     int Set_501980(int a2, int a3, int a4, int a5, int a6);
 };
 
-MATCH_FUNC(0x501980)
-int S501980::Set_501980(int a2, int a3, int a4, int a5, int a6)
-{
-    (void)a3; (void)a4; (void)a5; (void)a6;
-    if (a2 == 27 || a2 == 32)
-        this->field_afc = 1;
-    return 0;
-}
-
 // 0x5219B0 — cluster C_cluster_520CE0. Search a singly linked node list.
 class S5219B0 {
 public:
@@ -189,20 +180,6 @@ public:
     int Find_5219B0(int a2);
 };
 
-WIP_FUNC(0x5219B0)
-int S5219B0::Find_5219B0(int a2)
-{
-    int* v2 = this->head;
-    if (!v2)
-        return 0;
-    while (*(int*)(*(int*)((char*)v2 + 8)) != a2) {
-        v2 = *(int**)((char*)v2 + 4);
-        if (!v2)
-            return 0;
-    }
-    return *(int*)((char*)v2 + 8);
-}
-
 // 0x5219E0 — same node search on the previous list head field.
 class S5219E0 {
 public:
@@ -211,20 +188,6 @@ public:
 
     int Find_5219E0(int a2);
 };
-
-WIP_FUNC(0x5219E0)
-int S5219E0::Find_5219E0(int a2)
-{
-    int* v2 = this->head;
-    if (!v2)
-        return 0;
-    while (*(int*)(*(int*)((char*)v2 + 8)) != a2) {
-        v2 = *(int**)((char*)v2 + 4);
-        if (!v2)
-            return 0;
-    }
-    return *(int*)((char*)v2 + 8);
-}
 
 // 0x524320 — first matching word pair in a small tag list.
 class S524320 {
@@ -305,18 +268,6 @@ public:
     float* Copy_52C430(float* a2);
 };
 
-WIP_FUNC(0x52C430)
-float* S52C430::Copy_52C430(float* a2)
-{
-    float* result = a2;
-    float v3 = this->field_40;
-    float v4 = this->field_3c;
-    *a2 = this->field_38;
-    a2[1] = v3;
-    a2[2] = v4;
-    return result;
-}
-
 // 0x52C6A0 — member of vtable class C_vt61CE24: dereference a member pointer.
 class S52C6A0 {
 public:
@@ -325,15 +276,6 @@ public:
 
     int Get_52C6A0();
 };
-
-MATCH_FUNC(0x52C6A0)
-int S52C6A0::Get_52C6A0()
-{
-    int* result = this->field_24;
-    if (!result)
-        return (int)result;
-    return *(int*)((char*)result + 4);
-}
 
 // 0x531F00 — member of vtable class C_vt627428: bounded table read.
 class S531F00 {
@@ -344,16 +286,6 @@ public:
     int Get_531F00(int a2);
 };
 
-MATCH_FUNC(0x531F00)
-int S531F00::Get_531F00(int a2)
-{
-    int* v2;
-    if (a2 >= 0 && a2 < 4 && (v2 = this->table[a2]) != 0)
-        return *(int*)((char*)v2 + 4);
-    else
-        return -1;
-}
-
 // 0x535E90 — member of vtable class C_vt627428: type predicate.
 class S535E90 {
 public:
@@ -362,20 +294,6 @@ public:
 
     char Check_535E90(int a2);
 };
-
-MATCH_FUNC(0x535E90)
-char S535E90::Check_535E90(int a2)
-{
-    int* v2 = this->field_08;
-    int v3 = *(__int16*)((char*)v2 + 22);
-    char result;
-    if (v3 != 9 && v3 != 10 && v3 != 58 || a2 == 4 ||
-        *(unsigned char*)((char*)v2 + 4) == 60)
-        result = 1;
-    else
-        result = 0;
-    return result;
-}
 
 // 0x539890 — find the Nth node at a fixed link offset, report through out.
 class S539890 {

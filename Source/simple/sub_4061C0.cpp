@@ -33,12 +33,3 @@ public:
     void M_4061C0(int v);
 };
 
-MATCH_FUNC(0x4061C0)
-void S4061C0::M_4061C0(int v)
-{
-    N4061C0* n = field_8;
-    while (n != 0) {
-        ((T4061C0*)n->obj_0)->Vat_40(v);
-        n = n->next_4;
-    }
-}

@@ -13,13 +13,6 @@ public:
     void M_421AF0(int v);
 };
 
-MATCH_FUNC(0x421AD0)
-void S421AD0::M_421AD0(int v)
-{
-    field_9a9 = (unsigned char)v;
-    field_9aa = (v == 0);
-}
-
 MATCH_FUNC(0x421AF0)
 void S421AD0::M_421AF0(int v)
 {

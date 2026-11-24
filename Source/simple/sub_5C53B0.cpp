@@ -11,12 +11,3 @@ public:
     void M_5C53B0();
 };
 
-MATCH_FUNC(0x5C53B0)
-void S5C53B0::M_5C53B0()
-{
-    for (int i = 0; i < 10; i++) {
-        arr_924[i] = 0;
-        arr_94c[i] = 0;
-    }
-    field_974 = 0;
-}

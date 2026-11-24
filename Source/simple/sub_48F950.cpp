@@ -7,10 +7,3 @@ public:
     void M_48F950(int v);
 };
 
-MATCH_FUNC(0x48F950)
-void S48F950::M_48F950(int v)
-{
-    char* p = *(char**)((char*)this + 0x108);
-    if (p != 0)
-        *(int*)(p + 0x28) = v;
-}

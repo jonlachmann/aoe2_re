@@ -10,10 +10,3 @@ public:
     void Sub_4A2280();
 };
 
-MATCH_FUNC(0x4D3C10)
-void S4D3C10::M_4D3C10()
-{
-    if (field_c7c != 0)
-        field_c7c = 0;
-    Sub_4A2280();
-}

@@ -10,11 +10,3 @@ public:
     void Move_41B6E0();
 };
 
-MATCH_FUNC(0x41B6E0)
-void S41B6E0::Move_41B6E0()
-{
-    unsigned short v = field_14;
-    field_22 = 1;
-    field_20 = v;
-    field_14 = 0;
-}

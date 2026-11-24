@@ -32,24 +32,3 @@ public:
     int UseC8_4921D0();
 };
 
-MATCH_FUNC(0x4921B0)
-int S492100::UseCC_4921B0()
-{
-    int* p = field_8->field_cc;
-    if (p != 0) {
-        Vat_40(p);
-        return 1;
-    }
-    return 0;
-}
-
-MATCH_FUNC(0x4921D0)
-int S492100::UseC8_4921D0()
-{
-    int* p = field_8->field_c8;
-    if (p != 0) {
-        Vat_40(p);
-        return 1;
-    }
-    return 0;
-}

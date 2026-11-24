@@ -15,12 +15,3 @@ public:
     void M_522E90();
 };
 
-MATCH_FUNC(0x522E90)
-void S522E90::M_522E90()
-{
-    field_10 = 0;
-    field_14 = 0;
-    field_18 = 0;
-    field_20 = field_1c;
-    field_38++;
-}

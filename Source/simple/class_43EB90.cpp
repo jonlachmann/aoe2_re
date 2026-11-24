@@ -11,11 +11,3 @@ public:
     void Init_43EB90();
 };
 
-MATCH_FUNC(0x43EB90)
-void S43EB90::Init_43EB90()
-{
-    field_0 = -1;
-    field_4 = 0;
-    field_a8 = 0;
-    field_1a4c = 0;
-}

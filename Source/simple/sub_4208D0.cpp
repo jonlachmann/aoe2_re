@@ -82,8 +82,3 @@ public:
     bool M_4208D0(int a, int b, int c, int d);
 };
 
-MATCH_FUNC(0x4208D0)
-bool S4208D0::M_4208D0(int a, int b, int c, int d)
-{
-    return Vat_124();
-}

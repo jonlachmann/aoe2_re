@@ -19,9 +19,3 @@ void S4A2100::SetE8_4A21B0(int a, int b)
     field_ec = b;
 }
 
-MATCH_FUNC(0x4A3410)
-void S4A2100::SetF8_4A3410(int a, int b)
-{
-    field_f8 = a;
-    field_fc = b;
-}

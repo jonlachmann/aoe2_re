@@ -4,23 +4,6 @@ class S407BD0 {
 public:
     bool M_407BD0(int unused);
 };
-MATCH_FUNC(0x407BD0)
-bool S407BD0::M_407BD0(int unused)
-{
-    return true;
-}
-
-MATCH_FUNC(0x407BE0)
-bool M_407BE0()
-{
-    return true;
-}
-
-MATCH_FUNC(0x5E51F0)
-bool M_5E51F0()
-{
-    return true;
-}
 
 MATCH_FUNC(0x5FB450)
 int M_5FB450()
@@ -38,87 +21,41 @@ class S411C20 {
 public:
     int M_411C20(int unused);
 };
-MATCH_FUNC(0x411C20)
-int S411C20::M_411C20(int unused)
-{
-    return 1;
-}
 
 class S415750 {
 public:
     int M_415750(int unused);
 };
-MATCH_FUNC(0x415750)
-int S415750::M_415750(int unused)
-{
-    return 1;
-}
 
 class S41AF90 {
 public:
     bool M_41AF90(int unused);
 };
-MATCH_FUNC(0x41AF90)
-bool S41AF90::M_41AF90(int unused)
-{
-    return true;
-}
-
-MATCH_FUNC(0x41BC20)
-int M_41BC20()
-{
-    return 1;
-}
 
 class S41BC30 {
 public:
     int M_41BC30(int a, int b, int c, int d, int e, int f);
 };
-MATCH_FUNC(0x41BC30)
-int S41BC30::M_41BC30(int a, int b, int c, int d, int e, int f)
-{
-    return 1;
-}
 
 class S41BC40 {
 public:
     int M_41BC40(int a, int b, int c, int d, int e);
 };
-MATCH_FUNC(0x41BC40)
-int S41BC40::M_41BC40(int a, int b, int c, int d, int e)
-{
-    return 1;
-}
 
 class S41BC50 {
 public:
     int M_41BC50(int a, int b);
 };
-MATCH_FUNC(0x41BC50)
-int S41BC50::M_41BC50(int a, int b)
-{
-    return 1;
-}
 
 class S4FA920 {
 public:
     int M_4FA920(int a, int b);
 };
-MATCH_FUNC(0x4FA920)
-int S4FA920::M_4FA920(int a, int b)
-{
-    return 1;
-}
 
 class S589AE0 {
 public:
     int M_589AE0(int unused);
 };
-MATCH_FUNC(0x589AE0)
-int S589AE0::M_589AE0(int unused)
-{
-    return 5;
-}
 
 class S5A4A60 {
 public:
@@ -128,12 +65,6 @@ MATCH_FUNC(0x5A4A60)
 int S5A4A60::M_5A4A60(int a, int b, int c, int d, int e)
 {
     return 1;
-}
-
-MATCH_FUNC(0x41A0B0)
-int M_41A0B0()
-{
-    return 0x7fffffff;
 }
 
 MATCH_FUNC(0x422E00)
@@ -187,11 +118,6 @@ public:
     int* field_4;
     int Get_412BC0();
 };
-MATCH_FUNC(0x412BC0)
-int S412BC0::Get_412BC0()
-{
-    return *(int*)((char*)field_4 + 0xc);
-}
 
 class S421FB0 {
 public:
@@ -249,11 +175,6 @@ public:
     float* field_8;
     float Get_408BC0();
 };
-MATCH_FUNC(0x408BC0)
-float S408BC0::Get_408BC0()
-{
-    return *(float*)((char*)field_8 + 0x100);
-}
 
 class S436B40 {
 public:
@@ -261,11 +182,6 @@ public:
     float* field_8;
     float Get_436B40();
 };
-MATCH_FUNC(0x436B40)
-float S436B40::Get_436B40()
-{
-    return *(float*)((char*)field_8 + 0x140);
-}
 
 class S436C50 {
 public:
@@ -273,11 +189,6 @@ public:
     float* field_8;
     float Get_436C50();
 };
-MATCH_FUNC(0x436C50)
-float S436C50::Get_436C50()
-{
-    return *(float*)((char*)field_8 + 0x134);
-}
 
 class S436C60 {
 public:
@@ -285,11 +196,6 @@ public:
     float* field_8;
     float Get_436C60();
 };
-MATCH_FUNC(0x436C60)
-float S436C60::Get_436C60()
-{
-    return *(float*)((char*)field_8 + 0x158);
-}
 
 class S52C610 {
 public:
@@ -297,11 +203,6 @@ public:
     float* field_8;
     float Get_52C610();
 };
-MATCH_FUNC(0x52C610)
-float S52C610::Get_52C610()
-{
-    return *(float*)((char*)field_8 + 0x2c);
-}
 
 extern int g_665340;
 MATCH_FUNC(0x42F0A0)

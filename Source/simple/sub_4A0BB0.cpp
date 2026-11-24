@@ -23,10 +23,3 @@ public:
     void M_4A0BB0(int v);
 };
 
-MATCH_FUNC(0x4A0BB0)
-void S4A0BB0::M_4A0BB0(int v)
-{
-    field_f6 = 1;
-    Vat_34(v);
-    field_f6 = 0;
-}

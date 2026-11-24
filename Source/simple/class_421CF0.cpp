@@ -30,23 +30,11 @@ void S421CF0::Set9CC_421CD0(int v) { field_9cc = v; }
 MATCH_FUNC(0x421CE0)
 void S421CF0::Set108C_421CE0(int v) { field_108c = v; }
 
-MATCH_FUNC(0x421CF0)
-void S421CF0::SetC9_421CF0() { field_9c9 = 1; }
-
-MATCH_FUNC(0x421D00)
-void S421CF0::SetCA_421D00() { field_9ca = 1; }
-
 MATCH_FUNC(0x421D10)
 float S421CF0::Get108C_421D10() { return *(float*)&field_108c; }
 
 MATCH_FUNC(0x421D20)
 float S421CF0::Get9CC_421D20() { return *(float*)&field_9cc; }
-
-MATCH_FUNC(0x421D30)
-void S421CF0::ClearC9_421D30() { field_9c9 = 0; }
-
-MATCH_FUNC(0x421D40)
-void S421CF0::ClearCA_421D40() { field_9ca = 0; }
 
 MATCH_FUNC(0x421D50)
 unsigned char S421CF0::GetC9_421D50() { return field_9c9; }
@@ -54,20 +42,3 @@ unsigned char S421CF0::GetC9_421D50() { return field_9c9; }
 MATCH_FUNC(0x421D60)
 unsigned char S421CF0::GetCA_421D60() { return field_9ca; }
 
-MATCH_FUNC(0x421D70)
-void S421CF0::ConditionC9_421D70(unsigned char v)
-{
-    if (v != 0)
-        SetC9_421CF0();
-    else
-        ClearC9_421D30();
-}
-
-MATCH_FUNC(0x421D90)
-void S421CF0::ConditionCA_421D90(unsigned char v)
-{
-    if (v != 0)
-        SetCA_421D00();
-    else
-        ClearCA_421D40();
-}
