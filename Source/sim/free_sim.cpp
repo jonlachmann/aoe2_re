@@ -5533,6 +5533,49 @@ Sc54ABE0* Sc54ABE0::Init_54ABE0(int a1, int a2, int a3)
     return this;
 }
 
+// 0x5433C0 — five-argument constructor wrapper with constant defaults +0x40..+0x54.
+extern char g_vt_6288B8f;
+class Sc5433C0 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x1a];
+    int field_20;                 // +0x20
+    int field_24;                 // +0x24
+    int field_28;                 // +0x28
+    char pad_2c[4];
+    int field_30;                 // +0x30
+    char pad_34[0xc];
+    int field_40;                 // +0x40
+    int field_44;                 // +0x44
+    int field_48;                 // +0x48
+    short word_4c;               // +0x4c
+    char pad_4e[2];
+    float field_50;               // +0x50
+    float field_54;               // +0x54
+    Sc5433C0* Init_5433C0(int a1, int a2, int a3, int a4, int a5);
+};
+WIP_FUNC(0x5433C0)
+Sc5433C0* Sc5433C0::Init_5433C0(int a1, int a2, int a3, int a4, int a5)
+{
+    // Original loads a4 into ecx right after the +0x30 store and a5 into edx
+    // after the +0x20 store, then defers both stores past vtable/type.
+    sub_409600(a1, 1);
+    this->field_30 = a2;
+    this->field_44 = 0;
+    this->word_4c = 0;
+    this->field_50 = -1.0f;
+    this->field_54 = -1.0f;
+    this->field_48 = -1;
+    this->field_40 = -1;
+    this->field_20 = a3;
+    this->field_24 = a4;
+    this->field_28 = a5;
+    *(void**)this = &g_vt_6288B8f;
+    this->type_04 = 0x6e;
+    return this;
+}
+
 // 0x53F520 — five-argument constructor wrapper with default fields at +0x40..+0x5c.
 extern char g_vt_628368f;
 class Sc53F520 {

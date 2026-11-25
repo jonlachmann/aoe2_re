@@ -23,9 +23,9 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | State | Functions |
 |---|---|
 | matched | 1524 |
-| wip | 20 |
+| wip | 21 |
 | verified | 19 |
-| lifted | 6188 |
+| lifted | 6187 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -603,7 +603,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | game | 436 | 143 | 4 | 289 |
 | gfx | 410 | 60 | 2 | 348 |
 | runtime-data | 20 | 3 | 0 | 17 |
-| sim | 1283 | 247 | 1 | 1035 |
+| sim | 1283 | 247 | 2 | 1034 |
 | ui | 1230 | 194 | 3 | 1033 |
 
 ## Skeleton tree
