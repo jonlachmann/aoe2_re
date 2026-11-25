@@ -12,7 +12,10 @@
 // Subobject reached through [C_TRIBE_Screen_Options+0x20] by 0x4A0C60.
 class TField20Obj {
 public:
-    char pad_00[0x38];
+    char pad_00[0x18];
+    int field_18;                 // +0x18
+    int field_1c;                 // +0x1C
+    char pad_20[0x38 - 0x20];
     void* field_38;               // +0x38
     void Hook_460660(int a1);     // unresolved callee at 0x460660
 };
@@ -112,7 +115,7 @@ public:
     virtual void slot_17();
     virtual void slot_18();
     virtual void slot_19();
-    virtual void slot_20();
+    virtual void slot_20(int a1, int a2);
     virtual void slot_21();
     virtual void slot_22();
     virtual void slot_23();
@@ -169,11 +172,15 @@ public:
     char pad_04[0x20 - 4];
     TField20Obj* field_20;        // +0x20, subobject cleared by 0x4A0C60
     int field_24[4];              // +0x24 swapped by 0x4A0AB0
-    char pad_34[0x38 - 0x34];     // +0x34..+0x38
+    int field_34;                 // +0x34
     void* field_38;               // +0x38
     char pad_3c[0x40 - 0x3c];
     T4A2280Obj* field_40;         // +0x40, subobject toggled by 0x4A07A0
-    char pad_44[0x58 - 0x44];
+    int field_44;                 // +0x44
+    int field_48;                 // +0x48
+    int field_4c;                 // +0x4C
+    int field_50;                 // +0x50
+    char pad_54[0x58 - 0x54];
     T4A2280Node* field_58;        // +0x58, chain head
     char pad_5C[0x60 - 0x5C];
     int field_60;                 // +0x60
@@ -187,7 +194,15 @@ public:
     int field_94;                 // +0x94
     int field_98;                 // +0x98
     int field_9C;                 // +0x9C
-    char pad_A0[0xE8 - 0xA0];
+    int field_A0;                 // +0xA0
+    int field_A4;                 // +0xA4
+    int field_A8;                 // +0xA8
+    int field_AC;                 // +0xAC
+    int field_B0;                 // +0xB0
+    int field_B4;                 // +0xB4
+    int field_B8;                 // +0xB8
+    int field_BC;                 // +0xBC
+    char pad_C0[0xE8 - 0xC0];
     int field_E8;                 // +0xE8
     int field_EC;                 // +0xEC
     char pad_F0[0xF3 - 0xF0];
@@ -206,6 +221,8 @@ public:
     int Get_447500();
     void Hook_4A1CD0();           // unresolved callee at 0x4A1CD0
     void M_4A0780(unsigned char v);
+    void M_4A07E0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
+                  int a8, int a9, int a10, int a11, int a12, int a13);
     void M_4A0890(int a1, int a2, int a3, int a4);
     void M_4A07A0(int v);
     void M_4A0C60();

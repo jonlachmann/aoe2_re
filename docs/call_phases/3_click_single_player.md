@@ -1,6 +1,6 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 89 matched, 164 left to match (2 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 89 matched, 164 left to match (3 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (164)
 
@@ -151,7 +151,7 @@
 | 234 | `sub_4B0590` | 1 |  | 3_click_single_player |  |
 | 235 | `sub_4B0C30` | 1 |  | 3_click_single_player |  |
 | 236 | `sub_4EFD70` | 1 |  | 1_boot_to_menu |  |
-| 239 | `sub_4A07E0` | 8 |  | 1_boot_to_menu |  |
+| 239 | `sub_4A07E0` | 8 | WIP | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A07E0 |
 | 240 | `sub_4A11F0` | 8 |  | 1_boot_to_menu |  |
 | 242 | `sub_4BA410` | 1 |  | 1_boot_to_menu |  |
 | 243 | `sub_4A0630` | 8 |  | 1_boot_to_menu |  |

@@ -169,3 +169,33 @@ void C_TRIBE_Screen_Options::M_4A4830(int a1, int a2, int a3, int a4, int a5,
     block.d = a8;
     slot_71(a1, a2, a3, a4, a5, a6, a7, (int*)&block, a9, a10, a11, -1, 0);
 }
+
+// 0x4A07E0 — thirteen-argument display configuration: store the +0x34,
+// +0x44..+0x50 and +0xA0..+0xBC fields in the original emission order, then
+// dispatch slot +0x50 with the +0x20 subobject's +0x18/+0x1C pair (or two
+// zeros), and notify slot +0x20 with 2 when +0x6C is set.
+WIP_FUNC(0x4A07E0)
+void C_TRIBE_Screen_Options::M_4A07E0(int a1, int a2, int a3, int a4, int a5,
+                                     int a6, int a7, int a8, int a9, int a10,
+                                     int a11, int a12, int a13)
+{
+    field_34 = a1;
+    field_A8 = a4;
+    field_A4 = a3;
+    field_B4 = a7;
+    field_A0 = a2;
+    field_B0 = a6;
+    field_44 = a10;
+    field_AC = a5;
+    field_BC = a9;
+    field_50 = a13;
+    field_B8 = a8;
+    field_4c = a12;
+    field_48 = a11;
+    if (field_20 != 0)
+        slot_20(field_20->field_18, field_20->field_1c);
+    else
+        slot_20(0, 0);
+    if (field_6C != 0)
+        slot_08(2);
+}

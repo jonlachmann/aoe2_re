@@ -10,12 +10,12 @@ public:
     virtual void slot_000();  // slot +0x000
     virtual void slot_001();  // slot +0x004
     virtual void slot_002();  // slot +0x008
-    virtual void slot_003();  // slot +0x00C
+    virtual void slot_003(int a1, int a2, int a3, int a4);  // slot +0x00C
     virtual void slot_004();  // slot +0x010
     virtual void slot_005();  // slot +0x014
     virtual void slot_006();  // slot +0x018
     virtual void slot_007();  // slot +0x01C
-    virtual void slot_008();  // slot +0x020
+    virtual void slot_008(int a1);  // slot +0x020
     virtual void slot_009();  // slot +0x024
     virtual void slot_010();  // slot +0x028
     virtual void slot_011();  // slot +0x02C
@@ -81,11 +81,26 @@ public:
     virtual void slot_071();  // slot +0x11C
     virtual void slot_072();  // slot +0x120
 
-    char pad_04[0x100];           // +0x04..+0x104
+    char pad_04[0x0c - 0x04];     // +0x04..+0x0C
+    int field_c;                  // +0x0C
+    int field_10;                 // +0x10
+    int field_14;                 // +0x14
+    int field_18;                 // +0x18
+    char pad_1c[0x104 - 0x1c];    // +0x1C..+0x104
     short field_104;              // +0x104
     char pad_106[0x150 - 0x106];  // +0x106..+0x150
     short field_150;              // +0x150
-    char pad_152[0x188 - 0x152];  // +0x152..+0x188
+    char pad_152[0x154 - 0x152];  // +0x152..+0x154
+    int field_154;                // +0x154
+    unsigned char field_158;      // +0x158
+    unsigned char field_159;      // +0x159
+    unsigned char field_15a;      // +0x15A
+    unsigned char field_15b;      // +0x15B
+    unsigned char field_15c;      // +0x15C
+    unsigned char field_15d;      // +0x15D
+    char pad_15e[0x160 - 0x15e];  // +0x15E..+0x160
+    int field_160;                // +0x160 display mode
+    char pad_164[0x188 - 0x164];  // +0x164..+0x188
     int field_188;                // +0x188
     unsigned char field_18c;      // +0x18C
     unsigned char field_18d;      // +0x18D
@@ -105,4 +120,5 @@ public:
     void M_4BCEB0(short v);
     void M_4BAE20(int* a1, short a2);
     void M_4B5A10(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+    void M_4B3760(int a1, unsigned char a2, unsigned char a3, unsigned char a4, unsigned char a5, unsigned char a6, unsigned char a7);
 };
