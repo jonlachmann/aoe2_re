@@ -2493,6 +2493,76 @@ Sc4029C0* Sc4029C0::Init_4029C0(int a1, int a2, int a3, int a4, int a5)
     return this;
 }
 
+// 0x403EF0 — five-argument constructor wrapper with fields at +0x20..+0x30.
+extern char g_vt_61C8E4f;
+class Sc403EF0 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x1a];
+    int field_20;                 // +0x20
+    int field_24;                 // +0x24
+    int field_28;                 // +0x28
+    char pad_2c[4];
+    int field_30;                 // +0x30
+    char pad_34[0xc];
+    int field_40;                 // +0x40
+    char byte_44;                 // +0x44
+    char byte_45;                 // +0x45
+    char pad_46[2];
+    int field_48;                 // +0x48
+    int field_4c;                 // +0x4c
+    char byte_50;                 // +0x50
+    char byte_51;                 // +0x51
+    Sc403EF0* Init_403EF0(int a1, int a2, int a3, int a4, int a5);
+};
+MATCH_FUNC(0x403EF0)
+Sc403EF0* Sc403EF0::Init_403EF0(int a1, int a2, int a3, int a4, int a5)
+{
+    sub_409600(a1, 1);
+    this->field_30 = a2;
+    *(void**)this = &g_vt_61C8E4f;
+    this->type_04 = 5;
+    this->field_20 = a3;
+    this->field_24 = a4;
+    this->byte_45 = 0;
+    this->field_48 = 0;
+    this->field_4c = 0;
+    this->byte_50 = 0;
+    this->byte_51 = 0;
+    this->field_28 = a5;
+    this->field_40 = -1;
+    this->byte_44 = 1;
+    return this;
+}
+
+// 0x4039E0 — five-argument constructor wrapper with fields at +0x20..+0x30.
+extern char g_vt_61C800f;
+class Sc4039E0 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x1a];
+    int field_20;                 // +0x20
+    int field_24;                 // +0x24
+    int field_28;                 // +0x28
+    char pad_2c[4];
+    int field_30;                 // +0x30
+    Sc4039E0* Init_4039E0(int a1, int a2, int a3, int a4, int a5);
+};
+MATCH_FUNC(0x4039E0)
+Sc4039E0* Sc4039E0::Init_4039E0(int a1, int a2, int a3, int a4, int a5)
+{
+    sub_409600(a1, 1);
+    this->field_30 = a2;
+    *(void**)this = &g_vt_61C800f;
+    this->type_04 = 4;
+    this->field_20 = a3;
+    this->field_24 = a4;
+    this->field_28 = a5;
+    return this;
+}
+
 // 0x408F00 — five-argument constructor wrapper with fields at +0x20..+0x30.
 extern char g_vt_61D1D8f;
 class Sc408F00 {
