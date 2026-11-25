@@ -3013,8 +3013,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x408850",
@@ -3053,8 +3053,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x4088A0",
@@ -3518,8 +3518,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x409630",
@@ -4883,8 +4883,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "verified",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x40A390",

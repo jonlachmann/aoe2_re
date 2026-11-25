@@ -204,9 +204,9 @@ public:
     virtual void slot_194();  // slot +0x308: sub_537880 [lifted]
     virtual void slot_195();  // slot +0x30C: sub_408770 [lifted]
     virtual void slot_196();  // slot +0x310: sub_4087D0 [lifted]
-    virtual void slot_197();  // slot +0x314: sub_408830 [lifted]
+    virtual void slot_197();  // slot +0x314: sub_408830 [matched] — Source/app/free_app.cpp
     virtual void slot_198();  // slot +0x318: sub_408850 [lifted]
-    virtual void slot_199();  // slot +0x31C: sub_408880 [lifted]
+    virtual void slot_199();  // slot +0x31C: sub_408880 [matched] — Source/app/free_app.cpp
     virtual void slot_200();  // slot +0x320: sub_408AB0 [lifted]
     virtual void slot_201();  // slot +0x324: sub_537F70 [lifted]
     virtual void slot_202();  // slot +0x328: sub_407E80 [lifted]

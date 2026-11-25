@@ -2465,6 +2465,83 @@ Sc408ED0* Sc408ED0::Init_408ED0(int a1, int a2)
     return this;
 }
 
+// 0x409600 — base constructor: default fields, vtable, optional hook.
+extern char g_vt_61D2C0f;
+class S409600 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x12];
+    int field_18;                 // +0x18
+    int field_1c;                 // +0x1c
+    char pad_20[0x1d];
+    char byte_3d;                 // +0x3d
+    void Hook_4097C0(int a1);     // unresolved callee at 0x4097C0
+    S409600* Init_409600(int a1, int a2);
+};
+MATCH_FUNC(0x409600)
+S409600* S409600::Init_409600(int a1, int a2)
+{
+    this->field_18 = -1;
+    this->field_1c = -1;
+    this->byte_3d = 0;
+    *(void**)this = &g_vt_61D2C0f;
+    if (a2 != 0)
+        this->Hook_4097C0(a1);
+    return this;
+}
+
+// 0x40A370 — bounded index lookup into the +0x90 slot array.
+class Sc40A370 {
+public:
+    char pad_00[0x90];
+    int field_90[2];              // +0x90, indices 1..2 used
+    int Get_40A370(int a1);
+};
+MATCH_FUNC(0x40A370)
+int Sc40A370::Get_40A370(int a1)
+{
+    if (a1 < 1 || a1 > 2)
+        return -1;
+    return this->field_90[a1];
+}
+
+// 0x408830 — conditional call on the object referenced at +0x130.
+class T405F00 {
+public:
+    void Hook_405F00(int a1);     // unresolved callee at 0x405F00
+};
+class Sc408830 {
+public:
+    char pad_00[0x130];
+    void* field_130;              // +0x130
+    void M_408830(int a1);
+};
+MATCH_FUNC(0x408830)
+void Sc408830::M_408830(int a1)
+{
+    if (a1 != 0)
+        ((T405F00*)this->field_130)->Hook_405F00(a1);
+}
+
+// 0x408880 — conditional call on the object referenced at +0x130.
+class T405F50 {
+public:
+    void Hook_405F50(int a1);     // unresolved callee at 0x405F50
+};
+class Sc408880 {
+public:
+    char pad_00[0x130];
+    void* field_130;              // +0x130
+    void M_408880(int a1);
+};
+MATCH_FUNC(0x408880)
+void Sc408880::M_408880(int a1)
+{
+    if (a1 != 0)
+        ((T405F50*)this->field_130)->Hook_405F50(a1);
+}
+
 // 0x4029C0 — five-argument constructor wrapper with fields at +0x20..+0x30.
 extern char g_vt_61C62Cf;
 extern void __stdcall sub_409600(int a1, int a2);
