@@ -6,6 +6,6 @@
 
 class C_cluster_462B50 {
 public:
-    void method_000();  // sub_462B50 [lifted]
+    void method_000();  // sub_462B50 [matched] — Source/gfx/free_gfx.cpp
     void method_001();  // sub_462BA0 [lifted]
 };

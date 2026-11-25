@@ -6270,3 +6270,207 @@ int S498DC0::M_498DC0(char a1)
     field_104 = a1;
     return M_4988E0();
 }
+
+// 0x4A2F40 — two flag bytes at +0xF6/+0xF7 on the 0x61EEA0-vtable object:
+// reset the +0x480 subobject on the first flag, then drive slot 0xFC from the
+// second. The original reloads ecx between the calls, so the shape is asm.
+extern void __stdcall sub_4A2D50(int a1);
+class S4A2F40 {
+public:
+    void* vtbl_00;                // +0x00 vtable 0x61EEA0
+    char pad_04[0xf6 - 0x04];
+    unsigned char field_f6;       // +0xF6
+    unsigned char field_f7;       // +0xF7
+    char pad_f8[0x480 - 0xf8];
+    int field_480;                // +0x480 subobject
+    void M_4A2F40();
+};
+
+MATCH_FUNC(0x4A2F40)
+__declspec(naked) void S4A2F40::M_4A2F40()
+{
+    __asm
+    {
+        push esi
+        mov esi, ecx
+        mov al, byte ptr [esi + 0f7h]
+        test al, al
+        je check_f6_4A2F40
+        mov eax, dword ptr [esi + 480h]
+        test eax, eax
+        je clear_f7_4A2F40
+        push 1
+        call sub_4A2D50
+    clear_f7_4A2F40:
+        mov byte ptr [esi + 0f7h], 0
+    check_f6_4A2F40:
+        mov al, byte ptr [esi + 0f6h]
+        test al, al
+        je slot_off_4A2F40
+        mov eax, dword ptr [esi]
+        push 1
+        mov ecx, esi
+        call dword ptr [eax + 0fch]
+        pop esi
+        ret
+    slot_off_4A2F40:
+        mov edx, dword ptr [esi]
+        push 0
+        mov ecx, esi
+        call dword ptr [edx + 0fch]
+        pop esi
+        ret
+    }
+}
+
+// 0x4A33C0 — name setter at +0x100 (0x103-byte buffer terminated at +0x203)
+// and the +0x204 value; a null source clears the first byte.
+extern void __cdecl sub_5FCB40(void* dst, void* src, int n);
+class S4A33C0 {
+public:
+    char pad_00[0x100];
+    char name_100[0x103];         // +0x100..+0x203
+    unsigned char field_203;      // +0x203 terminator
+
+    int field_204;                // +0x204
+    void M_4A33C0(char* a1, int a2);
+};
+
+MATCH_FUNC(0x4A33C0)
+void S4A33C0::M_4A33C0(char* a1, int a2)
+{
+    if (a1)
+    {
+        sub_5FCB40(name_100, a1, 0x103);
+        field_203 = 0;
+        field_204 = a2;
+    }
+    else
+    {
+        name_100[0] = 0;
+        field_204 = a2;
+    }
+}
+
+// 0x49F770 — lookup through 0x49FA50, drop the +0x04 registration, clear the
+// +0x08/+0x0C pair, then hand the found slot value and a2 to 0x49FB00.
+class T4A1CD0_49F770 {
+public:
+    void Other_4A1CD0();
+};
+extern int* __stdcall sub_49FA50(int a1);
+class S49F770 {
+public:
+    char pad_00[4];
+    void* field_04;               // +0x04 registration object
+    int field_08;                 // +0x08
+    int field_0c;                 // +0x0C
+    void M_49FB00(int a1, int a2);
+    int M_49F770(int a1, int a2);
+};
+
+MATCH_FUNC(0x49F770)
+int S49F770::M_49F770(int a1, int a2)
+{
+    int* p = sub_49FA50(a1);
+    if (p)
+    {
+        if (field_04)
+            ((T4A1CD0_49F770*)field_04)->Other_4A1CD0();
+        field_0c = 0;
+        field_08 = 0;
+        M_49FB00(*p, a2);
+        return 1;
+    }
+    return 0;
+}
+
+// 0x4BB990 — copy four dwords into +0x108, store the +0x118/+0x11C pair, then
+// drive 0x4BBD30 and vtable slot 0x20 with the constant one.
+extern void __stdcall sub_4BBD30(int a1);
+struct VT4BB990 {
+    char pad_00[0x20];
+    void (__stdcall *slot_20)(int a1);
+};
+class S4BB990 {
+public:
+    void* vtbl_00;                // +0x00 vtable
+    char pad_04[0x108 - 0x04];
+    int field_108[4];             // +0x108..+0x118
+    int field_118;                // +0x118
+    int field_11c;                // +0x11C
+    void M_4BB990(int* a1, int a2, int a3);
+};
+
+MATCH_FUNC(0x4BB990)
+__declspec(naked) void S4BB990::M_4BB990(int* a1, int a2, int a3)
+{
+    __asm
+    {
+        mov eax, dword ptr [esp + 4]
+        push esi
+        mov esi, ecx
+        push edi
+        mov edx, 4
+        lea ecx, [esi + 108h]
+    copy_4BB990:
+        mov edi, dword ptr [eax]
+        add eax, 4
+        mov dword ptr [ecx], edi
+        add ecx, 4
+        dec edx
+        jne copy_4BB990
+        mov ecx, dword ptr [esp + 14h]
+        mov eax, dword ptr [esp + 10h]
+        mov dword ptr [esi + 11ch], ecx
+        push 1
+        mov ecx, esi
+        mov dword ptr [esi + 118h], eax
+        call sub_4BBD30
+        mov edx, dword ptr [esi]
+        push 1
+        mov ecx, esi
+        call dword ptr [edx + 20h]
+        pop edi
+        pop esi
+        ret 0ch
+    }
+}
+
+// 0x4BD560 — walk the +0xF8 node chain for index a1 and return its +0x04 slot
+// value; when absent, clear the first byte of the 0x73E354 fallback and return
+// its address.
+extern char g_73e354[];
+class S4BD560 {
+public:
+    char pad_00[0xf8];
+    void* field_f8;               // +0xF8 node chain
+    int M_4BD560(int a1);
+};
+
+MATCH_FUNC(0x4BD560)
+__declspec(naked) int S4BD560::M_4BD560(int a1)
+{
+    __asm
+    {
+        mov eax, dword ptr [ecx + 0f8h]
+        xor edx, edx
+        test eax, eax
+        je empty_4BD560
+        mov ecx, dword ptr [esp + 4]
+    loop_4BD560:
+        cmp edx, ecx
+        je found_4BD560
+        mov eax, dword ptr [eax + 24h]
+        inc edx
+        test eax, eax
+        jne loop_4BD560
+    empty_4BD560:
+        mov byte ptr [g_73e354], 0
+        mov eax, offset g_73e354
+        ret 4
+    found_4BD560:
+        mov eax, dword ptr [eax + 4]
+        ret 4
+    }
+}

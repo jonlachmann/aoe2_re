@@ -20,7 +20,7 @@ public:
     virtual void slot_009();  // slot +0x024: sub_4A0920 [lifted]
     virtual void slot_010();  // slot +0x028: sub_4A2F30 [matched] — Source/ui/free_ui.cpp
     virtual void slot_011();  // slot +0x02C: sub_4A0C60 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
-    virtual void slot_012();  // slot +0x030: sub_4A2F40 [lifted]
+    virtual void slot_012();  // slot +0x030: sub_4A2F40 [matched] — Source/ui/free_ui.cpp
     virtual void slot_013();  // slot +0x034: sub_4A0AB0 [lifted]
     virtual void slot_014();  // slot +0x038: sub_4A0B10 [lifted]
     virtual void slot_015();  // slot +0x03C: sub_4A0BB0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
