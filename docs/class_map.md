@@ -23,9 +23,9 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | State | Functions |
 |---|---|
 | matched | 1753 |
-| wip | 17 |
+| wip | 18 |
 | verified | 17 |
-| lifted | 5963 |
+| lifted | 5962 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |

@@ -93,6 +93,17 @@ public:
     T4A2280Node* field_8;
 };
 
+struct R4A0630Target {
+    char pad_00[0x18];
+    int field_18;                 // +0x18
+    int field_1c;                 // +0x1C
+    char pad_20[0x24 - 0x20];
+    int field_24;                 // +0x24
+    int field_28;                 // +0x28
+    int field_2c;                 // +0x2C
+    int field_30;                 // +0x30
+};
+
 class C_TRIBE_Screen_Options {
 public:
     virtual void slot_00();
@@ -169,7 +180,12 @@ public:
     virtual void slot_71(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                          int* a8, int a9, int a10, int a11, int c1, int c2);
 
-    char pad_04[0x20 - 4];
+    char pad_04[0x0c - 4];
+    int field_c;                  // +0x0C
+    int field_10;                 // +0x10
+    int field_14;                 // +0x14
+    int field_18;                 // +0x18
+    char pad_1c[0x20 - 0x1c];
     TField20Obj* field_20;        // +0x20, subobject cleared by 0x4A0C60
     int field_24[4];              // +0x24 swapped by 0x4A0AB0
     int field_34;                 // +0x34
@@ -187,9 +203,10 @@ public:
     int field_64;                 // +0x64
     char pad_68[0x6C - 0x68];
     int field_6C;                 // +0x6C
-    char pad_70[0x74 - 0x70];
+    int field_70;                 // +0x70
     int field_74;                 // +0x74
-    char pad_78[0x90 - 0x78];
+    char pad_78[0x8c - 0x78];
+    int field_8c;                 // +0x8C
     int field_90;                 // +0x90
     int field_94;                 // +0x94
     int field_98;                 // +0x98
@@ -207,7 +224,8 @@ public:
     int field_EC;                 // +0xEC
     char pad_F0[0xF3 - 0xF0];
     unsigned char field_F3;       // +0xF3
-    char pad_F4[0xF6 - 0xF4];
+    char pad_F4[1];               // +0xF4
+    unsigned char field_F5;       // +0xF5
     unsigned char field_F6;       // +0xF6
     unsigned char field_F7;       // +0xF7, cleared by 0x4A0C60
     int field_F8;                 // +0xF8
@@ -223,6 +241,7 @@ public:
     void M_4A0780(unsigned char v);
     void M_4A07E0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                   int a8, int a9, int a10, int a11, int a12, int a13);
+    void M_4A0630(int a1, int a2, int a3, int a4);
     void M_4A0890(int a1, int a2, int a3, int a4);
     void M_4A07A0(int v);
     void M_4A0C60();

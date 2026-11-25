@@ -1,6 +1,8 @@
 #include "C_TRIBE_Screen_Options.hpp"
 
 extern void (__stdcall *g_61C06C)(void* a1, int a2);
+extern int (__stdcall *g_61C098)(void* a1);
+extern int (__stdcall *g_61C088)(int a1, int a2, int a3, int a4);
 
 MATCH_FUNC(0x4A0890)
 void C_TRIBE_Screen_Options::M_4A0890(int a1, int a2, int a3, int a4)
@@ -196,6 +198,67 @@ void C_TRIBE_Screen_Options::M_4A07E0(int a1, int a2, int a3, int a4, int a5,
         slot_20(field_20->field_18, field_20->field_1c);
     else
         slot_20(0, 0);
+    if (field_6C != 0)
+        slot_08(2);
+}
+
+// 0x4A0630 — rectangle configuration: store the +0x0C/+0x10/+0x14/+0x18
+// corners and the +0x90..+0x9C/+0x24..+0x30 copy, clamp against the +0x40
+// object's +0x24..+0x30 edges when its +0xF5 byte is set, clamp to the +0x20
+// subobject's +0x18/+0x1C bounds and to zero, release the +0x8C handle, then
+// allocate it through 0x61C088 while setting +0x70, and notify slot +0x20.
+WIP_FUNC(0x4A0630)
+void C_TRIBE_Screen_Options::M_4A0630(int a1, int a2, int a3, int a4)
+{
+    int right = a1 + a3 - 1;
+    int bottom = a2 + a4 - 1;
+    field_14 = a3;
+    field_18 = a4;
+    field_c = a1;
+    field_10 = a2;
+    field_90 = a1;
+    field_94 = a2;
+    field_98 = right;
+    field_9C = bottom;
+    field_24[0] = a1;
+    field_24[1] = a2;
+    field_24[2] = right;
+    field_24[3] = bottom;
+    R4A0630Target* t = (R4A0630Target*)field_40;
+    if (t != 0 && field_F5 != 0)
+    {
+        if (a1 < t->field_24)
+            field_24[0] = t->field_24;
+        if (a2 < t->field_28)
+            field_24[1] = t->field_28;
+        if (right > t->field_2c)
+            field_24[2] = t->field_2c;
+        if (bottom > t->field_30)
+            field_24[3] = t->field_30;
+    }
+    if (field_24[0] < 0)
+        field_24[0] = 0;
+    if (field_24[1] < 0)
+        field_24[1] = 0;
+    if (field_20 != 0 && field_24[2] >= field_20->field_18)
+        field_24[2] = field_20->field_18 - 1;
+    if (field_20 != 0 && field_24[3] >= field_20->field_1c)
+        field_24[3] = field_20->field_1c - 1;
+    if (field_8c != 0)
+    {
+        g_61C098((void*)field_8c);
+        field_8c = 0;
+    }
+    if (field_24[2] >= field_24[0] && field_24[3] >= field_24[1])
+    {
+        field_70 = 1;
+        field_8c = g_61C088(field_24[0], field_24[1], field_24[2],
+                            field_24[3]);
+    }
+    else
+    {
+        field_70 = 0;
+    }
     if (field_6C != 0)
         slot_08(2);
 }

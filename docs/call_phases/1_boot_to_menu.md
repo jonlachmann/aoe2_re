@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 398 matched, 307 left to match (13 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 398 matched, 307 left to match (14 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (307)
 
@@ -182,7 +182,7 @@
 | 493 | `sub_4A23E0` | 2 |  | 1_boot_to_menu |  |
 | 495 | `sub_4A0460` | 105 |  | 1_boot_to_menu |  |
 | 496 | `sub_4A11F0` | 129 |  | 1_boot_to_menu |  |
-| 498 | `sub_4A0630` | 136 |  | 1_boot_to_menu |  |
+| 498 | `sub_4A0630` | 136 | WIP | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0630 |
 | 502 | `sub_4A07E0` | 23 | WIP | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A07E0 |
 | 505 | `sub_4B9BB0` | 5 |  | 1_boot_to_menu |  |
 | 507 | `sub_422FF0` | 8 |  | 1_boot_to_menu |  |
