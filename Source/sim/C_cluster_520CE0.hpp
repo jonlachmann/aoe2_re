@@ -25,6 +25,7 @@ public:
     int Find_5219B0(int a2);
     int Find_5219E0(int a2);
     int M_5217F0(int a1);
+    int M_521780(int a1, int a2);
     void M_521BE0(int a1);
     void M_521470(int a1);
     void M_5214E0();

@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 393 matched, 312 left to match (6 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 394 matched, 311 left to match (8 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (312)
+## Left to match (311)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -230,7 +230,6 @@
 | 606 | `sub_4BA810` | 18 |  | 1_boot_to_menu | pnl_txt::word_wrap_append |
 | 611 | `sub_4BA6E0` | 46 |  | 1_boot_to_menu |  |
 | 614 | `sub_4BD030` | 89 |  | 1_boot_to_menu |  |
-| 622 | `sub_4ECF00` | 1 |  | 1_boot_to_menu |  |
 | 623 | `sub_4A4010` | 3 |  | 1_boot_to_menu |  |
 | 624 | `sub_4AF0E0` | 42 |  | 1_boot_to_menu |  |
 | 634 | `sub_4AF510` | 32 |  | 1_boot_to_menu |  |
@@ -275,7 +274,7 @@
 | 738 | `sub_4EE210` | 1 |  | 1_boot_to_menu |  |
 | 740 | `sub_5210D0` | 2 |  | 1_boot_to_menu |  |
 | 741 | `sub_522920` | 2 |  | 1_boot_to_menu |  |
-| 742 | `sub_521780` | 1 |  | 1_boot_to_menu |  |
+| 742 | `sub_521780` | 1 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_521780 |
 | 745 | `sub_5215F0` | 2144833 |  | 1_boot_to_menu |  |
 | 748 | `sub_51EB90` | 22 |  | 1_boot_to_menu |  |
 | 749 | `sub_4A0920` | 40 |  | 1_boot_to_menu |  |
@@ -314,12 +313,12 @@
 | 801 | `sub_420450` | 2144832 |  | 1_boot_to_menu |  |
 | 802 | `sub_45F8A0` | 125 |  | 1_boot_to_menu |  |
 | 807 | `sub_4EDC70` | 2144832 |  | 1_boot_to_menu |  |
-| 808 | `sub_5217F0` | 2144832 |  | 1_boot_to_menu |  |
+| 808 | `sub_5217F0` | 2144832 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 | 812 | `sub_4B5AB0` | 6434496 |  | 1_boot_to_menu |  |
 | 813 | `sub_5A6680` | 19303488 |  | 1_boot_to_menu |  |
 
-## Matched (393)
+## Matched (394)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -614,6 +613,7 @@
 | 619 | `sub_4BBAA0` | 53 | MATCH | 1_boot_to_menu | S4BBAA0::M_4BBAA0 |
 | 620 | `sub_4A66F0` | 13 | MATCH | 1_boot_to_menu | Sc4A66F0::M_4A66F0 |
 | 621 | `sub_4BBA60` | 13 | MATCH | 1_boot_to_menu | S4BBA00::M_4BBA60 |
+| 622 | `sub_4ECF00` | 1 | MATCH | 1_boot_to_menu | S4ECF80::M_4ECF00 |
 | 625 | `sub_41F6E0` | 74 | MATCH | 1_boot_to_menu | S41F6E0::M_41F6E0 |
 | 626 | `sub_4AF2E0` | 42 | MATCH | 1_boot_to_menu | S4AF2E0::M_4AF2E0 |
 | 627 | `sub_4AF9D0` | 52 | MATCH | 1_boot_to_menu | C_pnl_btn::slot03_4AF9D0 |

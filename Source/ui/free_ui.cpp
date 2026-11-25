@@ -7536,9 +7536,16 @@ public:
     virtual void slot_060();
     virtual void slot_061(int a1);
 };
+class T4ECF80Deep {
+public:
+    char pad_00[0x8e0];
+    short field_8e0;                // +0x8E0
+};
 class T4ECF80G {
 public:
-    char pad_00[0x1c90];
+    char pad_00[0x24];
+    void* field_24;                 // +0x24 deep object
+    char pad_28[0x1c90 - 0x28];
     void* field_1c90;               // +0x1C90
 };
 class S4ECF80 {
@@ -7617,9 +7624,13 @@ public:
     virtual void slot_071();
     virtual int slot_072(void* a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
 
-    char pad_04[0x970 - 0x04];
+    char pad_04[0x930 - 0x04];
+    void* field_930;                // +0x930
+    void* field_934;                // +0x934
+    char pad_938[0x970 - 0x938];
     void* field_970;                // +0x970
     void* field_974;                // +0x974
+    void M_4ECF00();
     void M_4ECF80();
 };
 extern T4ECF80G* g_6645c4;
@@ -7635,6 +7646,25 @@ void S4ECF80::M_4ECF80()
             if (g_6645c4->field_1c90 != 0)
             {
                 ((T4ECF80Sub*)field_974)->slot_061(1);
+            }
+        }
+    }
+}
+
+// 0x4ECF00 — the +0x934 sibling of 0x4ECF80: two slot guards on this object
+// (+0x10C then +0x120), then the +0xF4 subobject call only when the deep
+// +0x6645C4+0x24 object reports the word +0x8E0 equal to 2.
+MATCH_FUNC(0x4ECF00)
+void S4ECF80::M_4ECF00()
+{
+    if (slot_067(this, &field_934, 0x24e, 0x1cd, 0x1c, 0x1c, 0, 0) != 0)
+    {
+        if (slot_072(this, &field_930, 0x2538, 0x272, 0x1ca, 0x9e, 0x26,
+                    0xb, 0, 1, 1) != 0)
+        {
+            if (((T4ECF80Deep*)g_6645c4->field_24)->field_8e0 == 2)
+            {
+                ((T4ECF80Sub*)field_934)->slot_061(1);
             }
         }
     }

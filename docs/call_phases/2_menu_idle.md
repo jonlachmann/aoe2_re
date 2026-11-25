@@ -1,6 +1,6 @@
 # 2_menu_idle
 
-31 functions called (0 first seen in this phase): 16 matched, 15 left to match (0 of them WIP), 0 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+31 functions called (0 first seen in this phase): 16 matched, 15 left to match (1 of them WIP), 0 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (15)
 
@@ -9,7 +9,7 @@
 | 0 | `sub_5BB2D0` | 966102 |  | 1_boot_to_menu |  |
 | 1 | `sub_420450` | 966102 |  | 1_boot_to_menu |  |
 | 9 | `sub_4EDC70` | 966102 |  | 1_boot_to_menu |  |
-| 10 | `sub_5217F0` | 966102 |  | 1_boot_to_menu |  |
+| 10 | `sub_5217F0` | 966102 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 13 | `sub_5215F0` | 966102 |  | 1_boot_to_menu |  |
 | 16 | `sub_4B8CC0` | 5796612 |  | 1_boot_to_menu |  |
 | 17 | `sub_4B5AB0` | 2898306 |  | 1_boot_to_menu |  |

@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1748 |
-| wip | 10 |
+| matched | 1749 |
+| wip | 12 |
 | verified | 17 |
-| lifted | 5975 |
+| lifted | 5972 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -604,7 +604,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | gfx | 410 | 70 | 1 | 339 |
 | runtime-data | 20 | 5 | 0 | 15 |
 | sim | 1283 | 258 | 2 | 1023 |
-| ui | 1229 | 244 | 2 | 983 |
+| ui | 1229 | 245 | 2 | 982 |
 
 ## Skeleton tree
 `Source/skeleton/` holds declarations only, generated from this map and

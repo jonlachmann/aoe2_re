@@ -1,6 +1,6 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 88 matched, 165 left to match (1 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 88 matched, 165 left to match (2 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (165)
 
@@ -40,7 +40,7 @@
 | 71 | `sub_5BB2D0` | 2170745 |  | 1_boot_to_menu |  |
 | 72 | `sub_420450` | 2170745 |  | 1_boot_to_menu |  |
 | 78 | `sub_4EDC70` | 2170745 |  | 1_boot_to_menu |  |
-| 79 | `sub_5217F0` | 2170745 |  | 1_boot_to_menu |  |
+| 79 | `sub_5217F0` | 2170745 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 82 | `sub_5215F0` | 2170745 |  | 1_boot_to_menu |  |
 | 86 | `sub_4B8CC0` | 13024470 |  | 1_boot_to_menu |  |
 | 87 | `sub_4B5AB0` | 6512235 |  | 1_boot_to_menu |  |

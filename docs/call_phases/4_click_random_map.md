@@ -1,6 +1,6 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 267 matched, 287 left to match (4 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 267 matched, 287 left to match (5 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (287)
 
@@ -31,7 +31,7 @@
 | 59 | `sub_5BB2D0` | 1117934 |  | 1_boot_to_menu |  |
 | 60 | `sub_420450` | 1117934 |  | 1_boot_to_menu |  |
 | 66 | `sub_4EDC70` | 78816 |  | 1_boot_to_menu |  |
-| 67 | `sub_5217F0` | 78820 |  | 1_boot_to_menu |  |
+| 67 | `sub_5217F0` | 78820 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 70 | `sub_5215F0` | 78816 |  | 1_boot_to_menu |  |
 | 75 | `sub_4B8CC0` | 36842026 |  | 1_boot_to_menu |  |
 | 76 | `sub_4B5AB0` | 36605578 |  | 1_boot_to_menu |  |
