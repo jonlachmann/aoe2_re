@@ -2373,3 +2373,39 @@ Sd41BC60* Sd41BC60::D_41BC60(int flags)
         sub_5F90B0((int)this);
     return this;
 }
+
+// 0x408C20 — one-argument call on the field at +0x130, zero when null.
+class Tc4060B0 {
+public:
+    int Other_4060B0(int a1);
+};
+class Sc408C20 {
+public:
+    char pad_00[0x130];
+    Tc4060B0* field_130;          // +0x130
+    int M_408C20(int a1);
+};
+MATCH_FUNC(0x408C20)
+int Sc408C20::M_408C20(int a1)
+{
+    if (this->field_130)
+        return this->field_130->Other_4060B0(a1);
+    return 0;
+}
+
+// 0x41A3B0 — helper call then three-argument call on the subobject at +0xa4.
+class Ta529B90 {
+public:
+    void Other_529B90(int a1);
+};
+class Sb41A3B0 {
+public:
+    void M_41A3B0(int a1);
+};
+extern void __cdecl sub_4BEBD0(int a1, void* a2, int a3);
+MATCH_FUNC(0x41A3B0)
+void Sb41A3B0::M_41A3B0(int a1)
+{
+    ((Ta529B90*)this)->Other_529B90(a1);
+    sub_4BEBD0(a1, (char*)this + 0xa4, 4);
+}

@@ -7,7 +7,7 @@
 class C_cluster_42E3E0 {
 public:
     void method_000();  // sub_42E3E0 [lifted]
-    void method_001();  // sub_433750 [lifted]
+    void method_001();  // sub_433750 [matched] — Source/game/free_game.cpp
     void method_002();  // sub_433780 [lifted]
     void method_003();  // sub_433890 [lifted]
     void method_004();  // sub_5ECE44 [matched] — Source/engine-late/C_cluster_42E3E0.cpp

@@ -484,3 +484,35 @@ Sd5E2CD0* Sd5E2CD0::D_5E2CD0(int flags)
         sub_5F90B0((int)this);
     return this;
 }
+
+// 0x5ECE26.. — function-pointer global thunks.
+extern void (__cdecl *g_61C3B0)();
+extern void (__cdecl *g_61C3A8)();
+extern void (__cdecl *g_61C3AC)();
+extern void (__cdecl *g_61C268)();
+extern void (__cdecl *g_61C26C)();
+extern void (__cdecl *g_61C020)();
+extern void (__cdecl *g_61C02C)();
+extern void (__cdecl *g_61C0B4)();
+extern void (__cdecl *g_61C0AC)();
+extern void (__cdecl *g_61C0C0)();
+MATCH_FUNC(0x5ECE26)
+void __cdecl sub_5ECE26() { g_61C3B0(); }
+MATCH_FUNC(0x5ECE2C)
+void __cdecl sub_5ECE2C() { g_61C3A8(); }
+MATCH_FUNC(0x5ECE32)
+void __cdecl sub_5ECE32() { g_61C3AC(); }
+MATCH_FUNC(0x5ECE38)
+void __cdecl sub_5ECE38() { g_61C268(); }
+MATCH_FUNC(0x5ECE3E)
+void __cdecl sub_5ECE3E() { g_61C26C(); }
+MATCH_FUNC(0x5ECE50)
+void __cdecl sub_5ECE50() { g_61C020(); }
+MATCH_FUNC(0x5ECE56)
+void __cdecl sub_5ECE56() { g_61C02C(); }
+MATCH_FUNC(0x5ED9DC)
+void __cdecl sub_5ED9DC() { g_61C0B4(); }
+MATCH_FUNC(0x5ED9E2)
+void __cdecl sub_5ED9E2() { g_61C0AC(); }
+MATCH_FUNC(0x5ED9EE)
+void __cdecl sub_5ED9EE() { g_61C0C0(); }

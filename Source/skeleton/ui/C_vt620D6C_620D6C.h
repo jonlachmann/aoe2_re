@@ -14,8 +14,8 @@ public:
     virtual void slot_002();  // slot +0x008: sub_474C20 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_474C50 [lifted]
     virtual void slot_004();  // slot +0x010: sub_474C80 [lifted]
-    virtual void slot_005();  // slot +0x014: sub_474CB0 [lifted]
-    virtual void slot_006();  // slot +0x018: sub_474CE0 [lifted]
+    virtual void slot_005();  // slot +0x014: sub_474CB0 [matched] — Source/ui/free_ui.cpp
+    virtual void slot_006();  // slot +0x018: sub_474CE0 [matched] — Source/ui/free_ui.cpp
     virtual void slot_007();  // slot +0x01C: sub_474AC0 [lifted]
     virtual void slot_008();  // slot +0x020: sub_474B90 [lifted]
     virtual void slot_009();  // slot +0x024: sub_47A080 [lifted]

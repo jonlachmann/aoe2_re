@@ -155,7 +155,7 @@ public:
     virtual void slot_143();  // slot +0x23C: sub_407CB0 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_144();  // slot +0x240: sub_407CE0 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_145();  // slot +0x244: sub_408C00 [lifted]
-    virtual void slot_146();  // slot +0x248: sub_408C20 [lifted]
+    virtual void slot_146();  // slot +0x248: sub_408C20 [matched] — Source/app/free_app.cpp
     virtual void slot_147();  // slot +0x24C: sub_407C40 [matched] — Source/gfx/C_TribePopUpHelp.cpp
     virtual void slot_148();  // slot +0x250: sub_48EEB0 [lifted]
     virtual void slot_149();  // slot +0x254: sub_48EFC0 [lifted]

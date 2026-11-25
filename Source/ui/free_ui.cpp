@@ -5574,3 +5574,195 @@ Sd51E500* Sd51E500::D_51E500(int flags)
         sub_5F90B0((int)this);
     return this;
 }
+
+// 0x4B29D0 — one-argument call on the field at +0x100, zero when null.
+class Tc4BD310 {
+public:
+    int Other_4BD310(int a1);
+};
+class Sc4B29D0 {
+public:
+    char pad_00[0x100];
+    Tc4BD310* field_100;          // +0x100
+    int M_4B29D0(int a1);
+};
+MATCH_FUNC(0x4B29D0)
+int Sc4B29D0::M_4B29D0(int a1)
+{
+    if (this->field_100)
+        return this->field_100->Other_4BD310(a1);
+    return 0;
+}
+
+class Tc4BD400 {
+public:
+    int Other_4BD400(int a1);
+};
+class Sc4B2A10 {
+public:
+    char pad_00[0x100];
+    Tc4BD400* field_100;          // +0x100
+    int M_4B2A10(int a1);
+};
+MATCH_FUNC(0x4B2A10)
+int Sc4B2A10::M_4B2A10(int a1)
+{
+    if (this->field_100)
+        return this->field_100->Other_4BD400(a1);
+    return 0;
+}
+
+class Tc4BD430 {
+public:
+    int Other_4BD430(int a1);
+};
+class Sc4B2A30 {
+public:
+    char pad_00[0x100];
+    Tc4BD430* field_100;          // +0x100
+    int M_4B2A30(int a1);
+};
+MATCH_FUNC(0x4B2A30)
+int Sc4B2A30::M_4B2A30(int a1)
+{
+    if (this->field_100)
+        return this->field_100->Other_4BD430(a1);
+    return 0;
+}
+
+class Tc4BD5B0 {
+public:
+    int Other_4BD5B0(int a1);
+};
+class Sc4B2AB0 {
+public:
+    char pad_00[0x100];
+    Tc4BD5B0* field_100;          // +0x100
+    int M_4B2AB0(int a1);
+};
+MATCH_FUNC(0x4B2AB0)
+int Sc4B2AB0::M_4B2AB0(int a1)
+{
+    if (this->field_100)
+        return this->field_100->Other_4BD5B0(a1);
+    return 0;
+}
+
+// 0x4B9B30 — construct via helper then install vtable 0x622F54.
+extern char g_vt_622F54;
+class Tc4A2370 {
+public:
+    void Other_4A2370(int a1);
+};
+class Sc4B9B30 {
+public:
+    Sc4B9B30* Init_4B9B30(int a1);
+};
+MATCH_FUNC(0x4B9B30)
+Sc4B9B30* Sc4B9B30::Init_4B9B30(int a1)
+{
+    ((Tc4A2370*)this)->Other_4A2370(a1);
+    *(void**)this = &g_vt_622F54;
+    return this;
+}
+
+// 0x4BD970 — construct via helper then install vtable 0x6234C8.
+extern char g_vt_6234C8;
+class Tc44B980 {
+public:
+    void Other_44B980(int a1);
+};
+class Sc4BD970 {
+public:
+    Sc4BD970* Init_4BD970(int a1);
+};
+MATCH_FUNC(0x4BD970)
+Sc4BD970* Sc4BD970::Init_4BD970(int a1)
+{
+    ((Tc44B980*)this)->Other_44B980(a1);
+    *(void**)this = &g_vt_6234C8;
+    return this;
+}
+
+// 0x4CA000 — construct via helper then install vtable 0x623AE4.
+extern char g_vt_623AE4;
+class Tc4C0F90 {
+public:
+    void Other_4C0F90(int a1);
+};
+class Sc4CA000 {
+public:
+    Sc4CA000* Init_4CA000(int a1);
+};
+MATCH_FUNC(0x4CA000)
+Sc4CA000* Sc4CA000::Init_4CA000(int a1)
+{
+    ((Tc4C0F90*)this)->Other_4C0F90(a1);
+    *(void**)this = &g_vt_623AE4;
+    return this;
+}
+
+// 0x474CB0 — helper call then three-argument call on the subobject at +0xc4.
+class Ta479A30 {
+public:
+    void Other_479A30(int a1);
+};
+class Sb474CB0 {
+public:
+    void M_474CB0(int a1);
+};
+extern void __cdecl sub_4BEBD0(int a1, void* a2, int a3);
+MATCH_FUNC(0x474CB0)
+void Sb474CB0::M_474CB0(int a1)
+{
+    ((Ta479A30*)this)->Other_479A30(a1);
+    sub_4BEBD0(a1, (char*)this + 0xc4, 4);
+}
+
+// 0x474CE0 — helper call then three-argument call on the subobject at +0xc4.
+class Ta479B10 {
+public:
+    void Other_479B10(int a1);
+};
+class Sb474CE0 {
+public:
+    void M_474CE0(int a1);
+};
+MATCH_FUNC(0x474CE0)
+void Sb474CE0::M_474CE0(int a1)
+{
+    ((Ta479B10*)this)->Other_479B10(a1);
+    sub_4BEBD0(a1, (char*)this + 0xc4, 4);
+}
+
+// 0x4771A0 — helper call then three-argument call on the subobject at +0x16d.
+class Ta476350 {
+public:
+    void Other_476350(int a1);
+};
+class Sb4771A0 {
+public:
+    void M_4771A0(int a1);
+};
+MATCH_FUNC(0x4771A0)
+void Sb4771A0::M_4771A0(int a1)
+{
+    ((Ta476350*)this)->Other_476350(a1);
+    sub_4BEBD0(a1, (char*)this + 0x16d, 1);
+}
+
+// 0x477C60 — helper call then three-argument call on the subobject at +0xd0.
+class Ta474CB0 {
+public:
+    void Other_474CB0(int a1);
+};
+class Sb477C60 {
+public:
+    void M_477C60(int a1);
+};
+MATCH_FUNC(0x477C60)
+void Sb477C60::M_477C60(int a1)
+{
+    ((Ta474CB0*)this)->Other_474CB0(a1);
+    sub_4BEBD0(a1, (char*)this + 0xd0, 4);
+}

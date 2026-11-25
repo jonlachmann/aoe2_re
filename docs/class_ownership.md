@@ -5,25 +5,26 @@ class's bodies span more than one file; `Staged` means some bodies still
 sit under `Source/simple/` instead of a class-first TU. Owned counts are
 the methods with a known file; unowned slots are still lifted evidence.
 ## Summary
-- 534 classes in the map; 195 have split owner files.
+- 534 classes in the map; 198 have split owner files.
 - 0 classes still have staged simple-file bodies.
 
 ## Split owner files
 | Class | Region | Vtable | Primary TU | Other TUs | Owned/Methods |
 |---|---|---|---|---|---|
 | `C_cluster_403DC0` | app | — | Source/app/free_app.cpp | Source/sim/C_cluster_403DC0.cpp | 2/2 |
+| `C_cluster_405790` | app | — | Source/app/C_cluster_405790.cpp | Source/sim/free_sim.cpp | 2/2 |
 | `C_cluster_41A150` | app | — | Source/app/C_cluster_41A150.cpp | Source/gfx/free_gfx.cpp | 2/2 |
 | `C_vt61C524` | app | 0x61C524 | Source/app/C_vt61C524.cpp | Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 7/25 |
 | `C_vt61C62C` | app | 0x61C62C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 8/24 |
-| `C_vt61C71C` | app | 0x61C71C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 9/25 |
+| `C_vt61C71C` | app | 0x61C71C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 10/25 |
 | `C_vt61C800` | app | 0x61C800 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/C_vt61C800.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 8/24 |
 | `C_vt61C8E4` | app | 0x61C8E4 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/sim/C_vt61C8E4.cpp | 6/24 |
 | `C_vt61C9D4` | app | 0x61C9D4 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/C_vt61C9D4.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 9/24 |
 | `C_vt61CAB4` | app | 0x61CAB4 | Source/app/C_vt61CAB4.cpp | Source/app/free_app.cpp | 3/8 |
-| `C_vt61CB58` | app | 0x61CB58 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 8/24 |
+| `C_vt61CB58` | app | 0x61CB58 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 9/24 |
 | `C_vt61CC40` | app | 0x61CC40 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 8/25 |
-| `C_vt61CD2C` | app | 0x61CD2C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 7/25 |
-| `C_vt61CE24` | app | 0x61CE24 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 87/205 |
+| `C_vt61CD2C` | app | 0x61CD2C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 8/25 |
+| `C_vt61CE24` | app | 0x61CE24 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 88/205 |
 | `C_vt61D1D8` | app | 0x61D1D8 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/sim/C_vt61C8E4.cpp | 6/25 |
 | `C_vt61D2C0` | app | 0x61D2C0 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/C_vt61C9D4.cpp, Source/app/C_vt61CE24.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 10/24 |
 | `C_vt61D320` | app | 0x61D320 | Source/app/free_app.cpp | Source/app/C_vt61D320.cpp | 2/2 |
@@ -59,15 +60,16 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_view` | engine-late | 0x62CC3C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/engine-late/C_view.cpp, Source/engine-late/free_engine-late.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_edit.cpp | 29/73 |
 | `C_vt62D080` | engine-late | 0x62D080 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/engine-late/C_view.cpp, Source/engine-late/free_engine-late.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_edit.cpp | 22/78 |
 | `C_vt62D238` | engine-late | 0x62D238 | Source/sim/C_vt62C9CC.cpp | Source/app/C_vt61DF78.cpp, Source/engine-late/C_view.cpp, Source/engine-late/C_vt62D238.cpp, Source/engine-late/free_engine-late.cpp | 8/72 |
+| `C_cluster_42E3E0` | game | — | Source/game/free_game.cpp | Source/engine-late/C_cluster_42E3E0.cpp | 2/5 |
 | `C_cluster_43EB70` | game | — | Source/game/free_game.cpp | Source/game/C_cluster_43EB70.cpp | 2/4 |
 | `C_global_66451C` | game | — | Source/game/C_global_66451C.cpp | Source/game/free_game.cpp | 4/26 |
-| `C_vt61E328` | game | 0x61E328 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/game/C_vt61E328.cpp, Source/game/free_game.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 71/214 |
+| `C_vt61E328` | game | 0x61E328 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/game/C_vt61E328.cpp, Source/game/free_game.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 72/214 |
 | `C_vt62AAE0` | game | 0x62AAE0 | Source/sim/free_sim.cpp | Source/sim/C_vt62AAE0.cpp | 2/8 |
 | `C_TribePopUpHelp` | gfx | 0x620274 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp | 27/62 |
 | `C_TribeTechHelpScreen` | gfx | 0x620090 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/free_ui.cpp | 30/92 |
 | `C_cluster_443970` | gfx | — | Source/ui/free_ui.cpp | Source/gfx/C_cluster_443970.cpp | 2/29 |
 | `C_diam_map` | gfx | 0x61E9CC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp | 27/67 |
-| `C_vt61DA40` | gfx | 0x61DA40 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp | 139/187 |
+| `C_vt61DA40` | gfx | 0x61DA40 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp | 140/187 |
 | `C_vt61EAD8` | gfx | 0x61EAD8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/free_ui.cpp | 33/89 |
 | `C_vt61ECBC` | gfx | 0x61ECBC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61ECBC.cpp, Source/gfx/free_gfx.cpp, Source/ui/free_ui.cpp | 34/90 |
 | `C_vt61EEA0` | gfx | 0x61EEA0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/free_ui.cpp | 32/89 |
@@ -86,19 +88,20 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt627D4C` | gfx | 0x627D4C | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/gfx/free_gfx.cpp, Source/sim/C_vt627094.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp | 139/186 |
 | `C_cluster_55A0D0` | sim | — | Source/sim/C_cluster_55A0D0.cpp | Source/sim/free_sim.cpp | 2/2 |
 | `C_cluster_585FF0` | sim | — | Source/sim/C_cluster_585FF0.cpp | Source/sim/free_sim.cpp | 2/2 |
+| `C_cluster_5C30C0` | sim | — | Source/sim/free_sim.cpp | Source/sim/C_cluster_5C30C0.cpp | 2/2 |
 | `C_tpnl_inv` | sim | 0x62BAEC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp | 27/62 |
 | `C_tpnl_obj` | sim | 0x626E04 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp | 24/64 |
 | `C_tpnl_obj` | sim | 0x62BC64 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp | 25/66 |
 | `C_tpnl_per` | sim | 0x62BD70 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_tpnl_per.cpp, Source/sim/free_sim.cpp | 28/62 |
 | `C_tpnl_tim` | sim | 0x62BEF0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp | 26/62 |
 | `C_vt627094` | sim | 0x627094 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/sim/C_vt627094.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp | 138/186 |
-| `C_vt627428` | sim | 0x627428 | Source/app/C_vt61CE24.cpp | Source/game/C_vt61E328.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_vt627428.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/free_ui.cpp | 58/230 |
-| `C_vt627844` | sim | 0x627844 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/game/C_vt61E328.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_vt627428.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/free_ui.cpp | 60/223 |
-| `C_vt62819C` | sim | 0x62819C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt61C8E4.cpp, Source/sim/free_sim.cpp | 6/24 |
+| `C_vt627428` | sim | 0x627428 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/game/C_vt61E328.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_vt627428.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/free_ui.cpp | 59/230 |
+| `C_vt627844` | sim | 0x627844 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/game/C_vt61E328.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_vt627428.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/free_ui.cpp | 61/223 |
+| `C_vt62819C` | sim | 0x62819C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt61C8E4.cpp, Source/sim/free_sim.cpp | 7/24 |
 | `C_vt628280` | sim | 0x628280 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt628280.cpp, Source/sim/free_sim.cpp | 7/25 |
 | `C_vt628368` | sim | 0x628368 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 7/24 |
-| `C_vt6286E8` | sim | 0x6286E8 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt61C8E4.cpp, Source/sim/free_sim.cpp | 6/26 |
-| `C_vt628998` | sim | 0x628998 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt628998.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 9/24 |
+| `C_vt6286E8` | sim | 0x6286E8 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt61C8E4.cpp, Source/sim/free_sim.cpp | 7/26 |
+| `C_vt628998` | sim | 0x628998 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt628998.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 10/24 |
 | `C_vt6289FC` | sim | 0x6289FC | Source/app/C_vt61CAB4.cpp | Source/sim/C_vt6289FC.cpp, Source/sim/free_sim.cpp | 4/9 |
 | `C_vt628A9C` | sim | 0x628A9C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt61C8E4.cpp, Source/sim/C_vt628A9C.cpp, Source/sim/free_sim.cpp | 8/25 |
 | `C_vt628B7C` | sim | 0x628B7C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 7/25 |
@@ -109,8 +112,8 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt6290C4` | sim | 0x6290C4 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/C_vt61C9D4.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 8/25 |
 | `C_vt6291AC` | sim | 0x6291AC | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt61C8E4.cpp, Source/sim/C_vt6291AC.cpp, Source/sim/free_sim.cpp | 7/25 |
 | `C_vt629294` | sim | 0x629294 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt629294.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 9/25 |
-| `C_vt629374` | sim | 0x629374 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt61C8E4.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 8/25 |
-| `C_vt629458` | sim | 0x629458 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt629458.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 9/25 |
+| `C_vt629374` | sim | 0x629374 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt61C8E4.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 9/25 |
+| `C_vt629458` | sim | 0x629458 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/sim/C_vt629458.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 10/25 |
 | `C_vt6295D8` | sim | 0x6295D8 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61D328.cpp, Source/engine-late/C_view.cpp, Source/sim/C_vt6295D8.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_edit.cpp | 15/19 |
 | `C_vt6296A0` | sim | 0x6296A0 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61D328.cpp, Source/engine-late/C_view.cpp, Source/sim/C_vt6296A0.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_edit.cpp | 16/24 |
 | `C_vt62983C` | sim | 0x62983C | Source/app/C_vt61CE24.cpp | Source/app/C_vt61D328.cpp, Source/engine-late/C_view.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_edit.cpp | 13/16 |
@@ -134,7 +137,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt62A8D8` | sim | 0x62A8D8 | Source/app/C_vt61D890.cpp | Source/app/C_vt61CE24.cpp, Source/engine-late/C_view.cpp, Source/sim/C_vt62A0C0.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp | 9/57 |
 | `C_vt62AC80` | sim | 0x62AC80 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp, Source/ui/free_ui.cpp | 32/90 |
 | `C_vt62AF98` | sim | 0x62AF98 | Source/sim/free_sim.cpp | Source/sim/C_vt62AF98.cpp | 2/4 |
-| `C_vt62B0A8` | sim | 0x62B0A8 | Source/ui/C_vt620C7C.cpp | Source/sim/C_vt62B0A8.cpp, Source/sim/free_sim.cpp | 10/28 |
+| `C_vt62B0A8` | sim | 0x62B0A8 | Source/ui/C_vt620C7C.cpp | Source/sim/C_vt62B0A8.cpp, Source/sim/free_sim.cpp | 11/28 |
 | `C_vt62B198` | sim | 0x62B198 | Source/ui/C_vt620C7C.cpp | Source/sim/C_vt62B198.cpp, Source/sim/free_sim.cpp | 9/27 |
 | `C_vt62B224` | sim | 0x62B224 | Source/app/C_vt61CE24.cpp | Source/gfx/C_vt61DA40.cpp, Source/sim/C_vt62B224.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp | 14/26 |
 | `C_vt62B308` | sim | 0x62B308 | Source/sim/C_vt62B308.cpp | Source/sim/free_sim.cpp | 3/19 |
@@ -164,14 +167,14 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_scr_vc` | ui | 0x626B28 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/free_ui.cpp | 32/88 |
 | `C_tpnl_btn` | ui | 0x62B970 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 20/63 |
 | `C_vt620C7C` | ui | 0x620C7C | Source/ui/C_vt620C7C.cpp | Source/ui/free_ui.cpp | 8/26 |
-| `C_vt620D6C` | ui | 0x620D6C | Source/app/C_vt61CE24.cpp | Source/gfx/C_vt61DA40.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/free_ui.cpp | 14/26 |
+| `C_vt620D6C` | ui | 0x620D6C | Source/app/C_vt61CE24.cpp | Source/gfx/C_vt61DA40.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/free_ui.cpp | 16/26 |
 | `C_vt620E50` | ui | 0x620E50 | Source/ui/C_vt620C7C.cpp | Source/ui/free_ui.cpp | 8/26 |
 | `C_vt620F40` | ui | 0x620F40 | Source/app/C_vt61CE24.cpp | Source/gfx/C_vt61DA40.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/free_ui.cpp | 17/27 |
-| `C_vt621028` | ui | 0x621028 | Source/ui/C_vt620C7C.cpp | Source/ui/free_ui.cpp | 9/27 |
-| `C_vt621110` | ui | 0x621110 | Source/ui/C_vt620C7C.cpp | Source/app/C_vt61CE24.cpp, Source/ui/free_ui.cpp | 11/26 |
+| `C_vt621028` | ui | 0x621028 | Source/ui/C_vt620C7C.cpp | Source/ui/free_ui.cpp | 10/27 |
+| `C_vt621110` | ui | 0x621110 | Source/ui/C_vt620C7C.cpp | Source/app/C_vt61CE24.cpp, Source/ui/free_ui.cpp | 12/26 |
 | `C_vt621200` | ui | 0x621200 | Source/app/C_vt61CE24.cpp | Source/gfx/C_vt61DA40.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/free_ui.cpp | 13/26 |
 | `C_vt6213C0` | ui | 0x6213C0 | Source/ui/free_ui.cpp | Source/ui/C_vt6213C0.cpp | 2/17 |
-| `C_vt621518` | ui | 0x621518 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/game/C_vt61E328.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 74/214 |
+| `C_vt621518` | ui | 0x621518 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/game/C_vt61E328.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 75/214 |
 | `C_vt6218FC` | ui | 0x6218FC | Source/gfx/C_vt620A64.cpp | Source/app/C_vt61CE24.cpp, Source/app/C_vt61DF78.cpp, Source/ui/free_ui.cpp | 30/43 |
 | `C_vt621A28` | ui | 0x621A28 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 100/194 |
 | `C_vt621F6C` | ui | 0x621F6C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/free_ui.cpp | 27/61 |

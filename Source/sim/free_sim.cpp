@@ -4944,3 +4944,90 @@ Sd5C8770* Sd5C8770::D_5C8770(int flags)
         sub_5F90B0((int)this);
     return this;
 }
+
+// 0x545050 — construct via helper then install vtable 0x6289FC.
+extern char g_vt_6289FC;
+class Tc405790 {
+public:
+    void Other_405790(int a1);
+};
+class Sc545050 {
+public:
+    Sc545050* Init_545050(int a1);
+};
+MATCH_FUNC(0x545050)
+Sc545050* Sc545050::Init_545050(int a1)
+{
+    ((Tc405790*)this)->Other_405790(a1);
+    *(void**)this = &g_vt_6289FC;
+    return this;
+}
+
+// 0x595A90 — construct via helper then install vtable 0x62AF98.
+extern char g_vt_62AF98;
+class Tc462500 {
+public:
+    void Other_462500(int a1);
+};
+class Sc595A90 {
+public:
+    Sc595A90* Init_595A90(int a1);
+};
+MATCH_FUNC(0x595A90)
+Sc595A90* Sc595A90::Init_595A90(int a1)
+{
+    ((Tc462500*)this)->Other_462500(a1);
+    *(void**)this = &g_vt_62AF98;
+    return this;
+}
+
+// 0x5C30C0 — construct via helper then install vtable 0x62C5A4.
+extern char g_vt_62C5A4;
+class Tc5D0370 {
+public:
+    void Other_5D0370(int a1);
+};
+class Sc5C30C0 {
+public:
+    Sc5C30C0* Init_5C30C0(int a1);
+};
+MATCH_FUNC(0x5C30C0)
+Sc5C30C0* Sc5C30C0::Init_5C30C0(int a1)
+{
+    ((Tc5D0370*)this)->Other_5D0370(a1);
+    *(void**)this = &g_vt_62C5A4;
+    return this;
+}
+
+// 0x53DA60 — helper call then three-argument call on the subobject at +0x40.
+extern void __cdecl sub_4BEBD0(int a1, void* a2, int a3);
+class Ta4098D0 {
+public:
+    void Other_4098D0(int a1);
+};
+class Sb53DA60 {
+public:
+    void M_53DA60(int a1);
+};
+MATCH_FUNC(0x53DA60)
+void Sb53DA60::M_53DA60(int a1)
+{
+    ((Ta4098D0*)this)->Other_4098D0(a1);
+    sub_4BEBD0(a1, (char*)this + 0x40, 4);
+}
+
+// 0x596C50 — helper call then three-argument call on the subobject at +0x1c2.
+class Ta598850 {
+public:
+    void Other_598850(int a1);
+};
+class Sb596C50 {
+public:
+    void M_596C50(int a1);
+};
+MATCH_FUNC(0x596C50)
+void Sb596C50::M_596C50(int a1)
+{
+    ((Ta598850*)this)->Other_598850(a1);
+    sub_4BEBD0(a1, (char*)this + 0x1c2, 2);
+}

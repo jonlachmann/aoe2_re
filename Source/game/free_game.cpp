@@ -2438,3 +2438,56 @@ Sd43E790* Sd43E790::D_43E790(int flags)
         sub_5F90B0((int)this);
     return this;
 }
+
+// 0x422A40 — helper call then release the pointer field at +0x128.
+class Tr422D00 {
+public:
+    void Other_422D00();
+};
+class Tr58A7E0 {
+public:
+    void Other_58A7E0();
+};
+class Sr422A40 {
+public:
+    char pad_00[0x128];
+    Tr58A7E0* field_128;          // +0x128
+    void M_422A40();
+};
+extern int __cdecl sub_5F90B0(int a1);
+MATCH_FUNC(0x422A40)
+void Sr422A40::M_422A40()
+{
+    ((Tr422D00*)this)->Other_422D00();
+    Tr58A7E0* p = this->field_128;
+    if (p) {
+        p->Other_58A7E0();
+        sub_5F90B0((int)p);
+    }
+}
+
+// 0x433750 — helper call then release the pointer field at +0x1c.
+class Tr433780 {
+public:
+    void Other_433780();
+};
+class Tr4378C0 {
+public:
+    void Other_4378C0();
+};
+class Sr433750 {
+public:
+    char pad_00[0x1c];
+    Tr4378C0* field_1c;           // +0x1c
+    void M_433750();
+};
+MATCH_FUNC(0x433750)
+void Sr433750::M_433750()
+{
+    ((Tr433780*)this)->Other_433780();
+    Tr4378C0* p = this->field_1c;
+    if (p) {
+        p->Other_4378C0();
+        sub_5F90B0((int)p);
+    }
+}
