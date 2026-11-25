@@ -269,6 +269,63 @@ void __cdecl sub_5FC8D4()
     __asm { fnclex }
 }
 
+// 0x5F9AA0 — fastcall tail wrapper: mask the pointer argument and pass zero
+// in edx to 0x5F9930.
+extern int __fastcall sub_5F9930(int a1, int a2);
+MATCH_FUNC(0x5F9AA0)
+__declspec(naked) int __fastcall sub_5F9AA0(int a1)
+{
+    __asm
+    {
+        and ecx, 0xffff0000
+        xor edx, edx
+        jmp sub_5F9930
+    }
+}
+
+// 0x5F9A20 — initialize the CRT object slots at +0x08/+0x0C/+0x10/+0x16 and
+// return zero (short).
+MATCH_FUNC(0x5F9A20)
+short __fastcall sub_5F9A20(char* a1, unsigned char a2)
+{
+    __asm
+    {
+        xor ax, ax
+        and dl, 2
+        mov dword ptr [ecx + 8], 5f9aa0h
+        mov dword ptr [ecx + 0x10], 0
+        mov word ptr [ecx + 0xc], 1
+        mov byte ptr [ecx + 0x16], dl
+    }
+}
+
+// 0x5FC430 — flag test at +0x22, else fastcall-forward edx to 0x5FBCE0.
+extern int __fastcall sub_5FBCE0(int a1);
+MATCH_FUNC(0x5FC430)
+int __fastcall sub_5FC430(char* a1, int a2)
+{
+    if (*(unsigned char*)(a1 + 0x22) & 0x11)
+        return 0x10000;
+    return sub_5FBCE0(a2);
+}
+
+// 0x5F9D00 — initialize a CRT cursor object: self-relative +0x14 extent,
+// +0x10 pointer to self+0x20, +0x08 method pointer; returns short 1.
+MATCH_FUNC(0x5F9D00)
+__declspec(naked) short __fastcall sub_5F9D00(char* a1, int a2)
+{
+    __asm
+    {
+        add edx, ecx
+        lea eax, [ecx + 0x20]
+        mov dword ptr [ecx + 0x14], edx
+        mov dword ptr [ecx + 0x10], eax
+        mov dword ptr [ecx + 8], 5f9ef0h
+        mov ax, 1
+        ret
+    }
+}
+
 extern int g_772a1c;
 MATCH_FUNC(0x6004BD)
 int Get_6004BD()

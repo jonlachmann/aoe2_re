@@ -149,6 +149,30 @@ int __cdecl sub_6032E5(int* p)
     return *(int*)(*p - 4);
 }
 
+// 0x5FD62D — -1 when 0x5FD5C0 returns zero, else 0.
+extern int __cdecl sub_5FD5C0(int a1);
+MATCH_FUNC(0x5FD62D)
+int __cdecl sub_5FD62D(int a1)
+{
+    if (sub_5FD5C0(a1) == 0)
+        return -1;
+    return 0;
+}
+
+// 0x6033C4 — one-time lazy initializer: run 0x6033D9 on first use and bump
+// the global gate.
+extern int g_772878;
+extern void __cdecl sub_6033D9();
+MATCH_FUNC(0x6033C4)
+void __cdecl sub_6033C4()
+{
+    if (g_772878 == 0)
+    {
+        sub_6033D9();
+        g_772878++;
+    }
+}
+
 // 0x600E98 — two-argument cdecl wrapper with constant arguments.
 extern void __cdecl sub_606958(int a1, int a2);
 MATCH_FUNC(0x600E98)
