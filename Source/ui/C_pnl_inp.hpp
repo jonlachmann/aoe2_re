@@ -9,10 +9,17 @@ class C_pnl_inp;
 
 // Indexed node chain reached from C_pnl_inp::field_f8 (0x4BD4B0). Each node
 // holds the result at +0x00 and the successor at +0x24.
+class T4BD5F0Chain {
+public:
+    char pad_00[8];
+    T4BD5F0Chain* next_8;         // +0x08
+};
+
 class T4BD4B0Node {
 public:
     void* field_0;                // +0x00 output A
-    char pad_04[0xc - 4];
+    void* field_4;                // +0x04 output A2
+    char pad_08[0xc - 8];
     void* field_c;                // +0x0C output B
     unsigned char field_10;       // +0x10 optional geometry flag
     char pad_11[0x14 - 0x11];
@@ -100,7 +107,7 @@ public:
     virtual void slot_005();
     virtual void slot_006();
     virtual void slot_007();
-    virtual void slot_008();
+    virtual void slot_008(int a1);
     virtual void slot_009();
     virtual void slot_010();
     virtual void slot_011();
@@ -163,7 +170,8 @@ public:
     int field_6c;                 // +0x6C
     char pad_70[0xf8 - 0x70];
     T4BD4B0Node* field_f8;        // +0xF8 head of the indexed node chain
-    char pad_fc[0x148 - 0xfc];
+    short field_fc;               // +0xFC
+    char pad_fe[0x148 - 0xfe];
     T4BBCE0Sub* field_148;        // +0x148 subobject dispatched by 0x4BBCE0
     int field_14c;                // +0x14C gate
     char pad_150[0x184 - 0x150];
@@ -178,6 +186,8 @@ public:
     char* M_4BD4B0(int index);
     void M_4BD4E0(int index, void* a2, void* a3, int* a4, int* a5, unsigned char flag);
     void SetInt_4B4600(int v);
+    void Hook_4BBD30(int a1);
+    void M_4BD5F0();
     void M_4BAF60(int a, int b, int c, int d);
     int M_4BCE20(int a, int b, int c, int d);
 };

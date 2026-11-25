@@ -1,6 +1,6 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 619 matched, 1825 left to match (8 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 619 matched, 1825 left to match (10 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (1825)
 
@@ -18,7 +18,7 @@
 | 19 | `sub_4BAE80` | 1 |  | 3_click_single_player |  |
 | 20 | `sub_4BAFB0` | 1 |  | 3_click_single_player |  |
 | 32 | `sub_4BA5C0` | 23 |  | 1_boot_to_menu |  |
-| 34 | `sub_4BD5F0` | 205 |  | 1_boot_to_menu |  |
+| 34 | `sub_4BD5F0` | 205 | WIP | 1_boot_to_menu | C_pnl_inp::M_4BD5F0 |
 | 35 | `sub_4BBD30` | 307 |  | 1_boot_to_menu |  |
 | 36 | `sub_4BA810` | 6 |  | 1_boot_to_menu | pnl_txt::word_wrap_append |
 | 40 | `sub_4BA6E0` | 6 |  | 1_boot_to_menu |  |
@@ -1086,7 +1086,7 @@
 | 1579 | `sub_53AE30` | 13 |  | 5_start_game_to_match |  |
 | 1580 | `sub_472E50` | 9436826 |  | 5_start_game_to_match |  |
 | 1581 | `sub_5BCAD0` | 13 |  | 5_start_game_to_match |  |
-| 1583 | `sub_4AF400` | 13 |  | 1_boot_to_menu |  |
+| 1583 | `sub_4AF400` | 13 | WIP | 1_boot_to_menu | S4AF400::M_4AF400 |
 | 1587 | `sub_4B6890` | 33 |  | 5_start_game_to_match |  |
 | 1588 | `sub_4B6AA0` | 264 |  | 5_start_game_to_match |  |
 | 1589 | `sub_45F8E0` | 89 |  | 1_boot_to_menu |  |

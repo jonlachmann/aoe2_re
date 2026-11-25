@@ -7777,3 +7777,104 @@ bool S51EB90::M_51EB90(int* a1, int* a2, int* a3, int* a4, int index)
     *a4 = 0;
     return false;
 }
+
+// 0x4AF400 — reset the +0x148/+0x204 fields, dispatch slot +0xF4 with 0,
+// release and clear +0x208, then when the short argument is non-zero allocate
+// a +0x208 array through 0x5F8FF0(count, 4), record the +0x20C length and copy
+// the argument words into it.
+class S4AF400 {
+public:
+    virtual void slot_000();
+    virtual void slot_001();
+    virtual void slot_002();
+    virtual void slot_003();
+    virtual void slot_004();
+    virtual void slot_005();
+    virtual void slot_006();
+    virtual void slot_007();
+    virtual void slot_008();
+    virtual void slot_009();
+    virtual void slot_010();
+    virtual void slot_011();
+    virtual void slot_012();
+    virtual void slot_013();
+    virtual void slot_014();
+    virtual void slot_015();
+    virtual void slot_016();
+    virtual void slot_017();
+    virtual void slot_018();
+    virtual void slot_019();
+    virtual void slot_020();
+    virtual void slot_021();
+    virtual void slot_022();
+    virtual void slot_023();
+    virtual void slot_024();
+    virtual void slot_025();
+    virtual void slot_026();
+    virtual void slot_027();
+    virtual void slot_028();
+    virtual void slot_029();
+    virtual void slot_030();
+    virtual void slot_031();
+    virtual void slot_032();
+    virtual void slot_033();
+    virtual void slot_034();
+    virtual void slot_035();
+    virtual void slot_036();
+    virtual void slot_037();
+    virtual void slot_038();
+    virtual void slot_039();
+    virtual void slot_040();
+    virtual void slot_041();
+    virtual void slot_042();
+    virtual void slot_043();
+    virtual void slot_044();
+    virtual void slot_045();
+    virtual void slot_046();
+    virtual void slot_047();
+    virtual void slot_048();
+    virtual void slot_049();
+    virtual void slot_050();
+    virtual void slot_051();
+    virtual void slot_052();
+    virtual void slot_053();
+    virtual void slot_054();
+    virtual void slot_055();
+    virtual void slot_056();
+    virtual void slot_057();
+    virtual void slot_058();
+    virtual void slot_059();
+    virtual void slot_060();
+    virtual void slot_061(int a1);
+
+    char pad_04[0x148 - 0x04];
+    int field_148;                // +0x148
+    char pad_14c[0x204 - 0x14c];
+    int field_204;                // +0x204
+    int* field_208;                // +0x208
+    short field_20c;              // +0x20C
+
+    void M_4AF400(int* a1, short a2);
+};
+
+extern void __cdecl Free_5F90B0(void* p);
+
+WIP_FUNC(0x4AF400)
+void S4AF400::M_4AF400(int* a1, short a2)
+{
+    field_148 = 2;
+    field_204 = 0;
+    slot_061(0);
+    if (field_208 != 0)
+    {
+        Free_5F90B0(field_208);
+        field_208 = 0;
+    }
+    if (a2 != 0)
+    {
+        field_20c = a2;
+        field_208 = (int*)sub_5F8FF0((unsigned int)a2, 4);
+        for (int i = 0, n = a2; n > 0; i += 4, n--)
+            *(int*)((char*)field_208 + i) = *(int*)((char*)a1 + i);
+    }
+}

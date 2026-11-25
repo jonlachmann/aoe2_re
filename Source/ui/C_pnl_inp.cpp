@@ -1,5 +1,7 @@
 #include "C_pnl_inp.hpp"
 
+extern void __cdecl Free_5F90B0(void* p);
+
 extern unsigned char g_73e355;
 
 MATCH_FUNC(0x4BBCE0)
@@ -100,4 +102,39 @@ void C_pnl_inp::M_4BD4E0(int index, void* a2, void* a3, int* a4, int* a5,
         }
         i++;
     }
+}
+
+// 0x4BD5F0 — tear down the +0xF8 indexed node chain: free each node's +0x00
+// and +0x04 pointers, unlink and free the +0x0C chain through +0x08, then
+// release the node itself and continue through +0x24; finally clear +0xF8 and
+// the +0xFC word, reset the +0x00 list through 0x4BBD30 and notify slot +0x20.
+WIP_FUNC(0x4BD5F0)
+void C_pnl_inp::M_4BD5F0()
+{
+    C_pnl_inp* self = this;
+    T4BD4B0Node* n = self->field_f8;
+    if (n != 0)
+    {
+        while (n != 0)
+        {
+            if (n->field_0 != 0)
+                Free_5F90B0(n->field_0);
+            if (n->field_4 != 0)
+                Free_5F90B0(n->field_4);
+            while (n->field_c != 0)
+            {
+                T4BD5F0Chain* c = (T4BD5F0Chain*)n->field_c;
+                void* next = c->next_8;
+                Free_5F90B0(n->field_c);
+                n->field_c = next;
+            }
+            T4BD4B0Node* old = n;
+            n = n->next_24;
+            Free_5F90B0(old);
+        }
+        self->field_f8 = n;
+    }
+    self->field_fc = 0;
+    self->Hook_4BBD30(1);
+    slot_008(1);
 }

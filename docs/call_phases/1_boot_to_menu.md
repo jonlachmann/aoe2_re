@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 397 matched, 308 left to match (11 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 398 matched, 307 left to match (13 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (308)
+## Left to match (307)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -166,7 +166,6 @@
 | 443 | `sub_42AE00` | 1 | WIP | 1_boot_to_menu | S42D1D0::M_42AE00 |
 | 444 | `sub_42AE50` | 1 |  | 1_boot_to_menu |  |
 | 455 | `sub_439030` | 1 |  | 1_boot_to_menu |  |
-| 456 | `sub_438F10` | 1 |  | 1_boot_to_menu |  |
 | 467 | `sub_41E760` | 1 |  | 1_boot_to_menu | basegame::setup_fonts |
 | 469 | `sub_41EEE0` | 35 |  | 1_boot_to_menu |  |
 | 470 | `sub_41EFE0` | 35 |  | 1_boot_to_menu |  |
@@ -223,7 +222,7 @@
 | 597 | `sub_4BA410` | 67 |  | 1_boot_to_menu |  |
 | 598 | `sub_4BBD30` | 328 |  | 1_boot_to_menu |  |
 | 600 | `sub_4BA5C0` | 108 |  | 1_boot_to_menu |  |
-| 601 | `sub_4BD5F0` | 112 |  | 1_boot_to_menu |  |
+| 601 | `sub_4BD5F0` | 112 | WIP | 1_boot_to_menu | C_pnl_inp::M_4BD5F0 |
 | 604 | `sub_4BBAE0` | 53 |  | 1_boot_to_menu |  |
 | 606 | `sub_4BA810` | 18 |  | 1_boot_to_menu | pnl_txt::word_wrap_append |
 | 611 | `sub_4BA6E0` | 46 |  | 1_boot_to_menu |  |
@@ -234,7 +233,7 @@
 | 641 | `sub_4A4570` | 25 |  | 1_boot_to_menu |  |
 | 645 | `sub_4ED000` | 1 |  | 1_boot_to_menu |  |
 | 647 | `sub_4A4270` | 6 |  | 1_boot_to_menu |  |
-| 648 | `sub_4AF400` | 6 |  | 1_boot_to_menu |  |
+| 648 | `sub_4AF400` | 6 | WIP | 1_boot_to_menu | S4AF400::M_4AF400 |
 | 650 | `sub_4ED180` | 1 |  | 1_boot_to_menu |  |
 | 653 | `sub_4ED280` | 1 |  | 1_boot_to_menu |  |
 | 656 | `sub_4BBC20` | 7 |  | 1_boot_to_menu |  |
@@ -315,7 +314,7 @@
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 | 812 | `sub_4B5AB0` | 6434496 |  | 1_boot_to_menu |  |
 
-## Matched (397)
+## Matched (398)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -524,6 +523,7 @@
 | 452 | `sub_408650` | 3 | MATCH | 1_boot_to_menu | C_vt61CE24::M_408650 |
 | 453 | `sub_438ED0` | 1 | MATCH | 1_boot_to_menu | C_cluster_438ED0::M_438ED0 |
 | 454 | `sub_439950` | 1 | MATCH | 1_boot_to_menu | C_cluster_438ED0::M_439950 |
+| 456 | `sub_438F10` | 1 | MATCH | 1_boot_to_menu | C_cluster_438F10::M_438F10 |
 | 457 | `sub_421730` | 1 | MATCH | 1_boot_to_menu | S421Accessors::GetB44_421730 |
 | 458 | `sub_439610` | 1 | MATCH | 1_boot_to_menu | Ref_439610 |
 | 459 | `sub_439410` | 1 | MATCH | 1_boot_to_menu | sub_439410 |
