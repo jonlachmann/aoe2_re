@@ -195,6 +195,12 @@ void C_vt62C1E0::SetInt_5BAFD0(int index, int v)
     array_11F8[index] = v;
 }
 
+// 0x5BB000: one-instruction diff left. Original copies the a2 path as a full
+// register (`mov edx, eax`); a char temp gives `mov dl, al`, and an int temp
+// (or ternary / early-return / constant-1 forms) lets VC6 fold a3==a2 and
+// collapse the whole branch to one store. Tried char/uchar/short/int temps,
+// casts on each arm, nested vs && vs ternary, a3==1 vs a3==a2. Possibly a
+// VC6 SP3 (8447) vs SP5 (8804) byte-copy difference.
 WIP_FUNC(0x5BB000)
 int C_vt62C1E0::Set_5BB000(int a2, int a3)
 {

@@ -510,23 +510,18 @@ int S4385F0::Init_4385F0(int a2, int a3, int a4)
 class S438840 {
 public:
     char pad_00[144*4];
-    int count;                    // self[144]
-    int values[0x100];            // self[145...]
+    unsigned count;               // self[144]
+    int values[20][20];           // self[145...]
 
-    unsigned Append_438840(int a2, int a3);
+    void Append_438840(int a2, int a3);
 };
 
-WIP_FUNC(0x438840)
-unsigned S438840::Append_438840(int a2, int a3)
+MATCH_FUNC(0x438840)
+void S438840::Append_438840(int a2, int a3)
 {
-    int* self = (int*)this;
-    self[20 * a2 + 145 + self[144]] = a3;
-    unsigned result;
-    result = self[144] + 1;
-    self[144] = result;
-    if (result >= 0x14)
-        self[144] = 0;
-    return result;
+    values[a2][count] = a3;
+    if (++count >= 20)
+        count = 0;
 }
 
 // 0x4388F0 — 1-based table read for indices 1..9.
@@ -1612,20 +1607,18 @@ public:
     int Init_43A420();
 };
 
-#pragma optimize("s", on)
-WIP_FUNC(0x43A420)
+// The tail clear is an inlined memset intrinsic (own zero register, not CSE'd
+// with the field_28/2c zero); the TU otherwise forces the memset call.
+#pragma intrinsic(memset)
+MATCH_FUNC(0x43A420)
 int S43A420::Init_43A420()
 {
-    int zero = 0;
-    field_28 = zero;
-    field_2c = zero;
-    char* result = (char*)this + 0xd0;
-    *((int*)result) = 0;
-    *((int*)(result + 4)) = 0;
-    *(result + 8) = 0;
-    return (int)result;
+    field_28 = 0;
+    field_2c = 0;
+    S43A420Tail* t = &tail_d0;
+    return (int)memset(t, 0, 9);
 }
-#pragma optimize("", on)
+#pragma function(memset)
 
 class S43GetBulk {
 public:
@@ -1945,17 +1938,19 @@ public:
     char pad_00[0x218];
     unsigned int count_218;
     char pad_21c[0x220 - 0x21c];
-    int base_220;
+    char* base_220;               // 160-byte entries
+    char* Entry(unsigned i) { return base_220 + 160 * i; }
     char* M_4238D0(unsigned a2);
 };
 
-WIP_FUNC(0x4238D0)
+// The original recomputes the entry address for the return (inline getter
+// called twice); a single local folds the null test into the add's flags.
+MATCH_FUNC(0x4238D0)
 char* S4238D0::M_4238D0(unsigned a2)
 {
-    char* result = (char*)(base_220 + 160 * a2);
-    if (!result || a2 > count_218)
-        return (char*)&g_64DB20;
-    return result;
+    if (Entry(a2) == 0 || a2 > count_218)
+        return &g_64DB20;
+    return Entry(a2);
 }
 
 // sub_4254D0 (VA 0x4254D0, 0x15 bytes) - member: field_1528 defaults to 1.
@@ -2368,13 +2363,60 @@ void S431680::M_431680()
 }
 
 // 0x421CB0 — tail-call through the vtable slot at +0xc8 of the field at +0x41c.
-struct VT421CB0 {
-    char pad_00[0xc8];
-    void (__stdcall *slot_c8)();
-};
+// Slot 0xc8/4 = 50 is the method tail-called by 0x421CB0.
 class T421CB0 {
 public:
-    VT421CB0* vtable_00;
+    virtual void Slot_00();
+    virtual void Slot_04();
+    virtual void Slot_08();
+    virtual void Slot_0c();
+    virtual void Slot_10();
+    virtual void Slot_14();
+    virtual void Slot_18();
+    virtual void Slot_1c();
+    virtual void Slot_20();
+    virtual void Slot_24();
+    virtual void Slot_28();
+    virtual void Slot_2c();
+    virtual void Slot_30();
+    virtual void Slot_34();
+    virtual void Slot_38();
+    virtual void Slot_3c();
+    virtual void Slot_40();
+    virtual void Slot_44();
+    virtual void Slot_48();
+    virtual void Slot_4c();
+    virtual void Slot_50();
+    virtual void Slot_54();
+    virtual void Slot_58();
+    virtual void Slot_5c();
+    virtual void Slot_60();
+    virtual void Slot_64();
+    virtual void Slot_68();
+    virtual void Slot_6c();
+    virtual void Slot_70();
+    virtual void Slot_74();
+    virtual void Slot_78();
+    virtual void Slot_7c();
+    virtual void Slot_80();
+    virtual void Slot_84();
+    virtual void Slot_88();
+    virtual void Slot_8c();
+    virtual void Slot_90();
+    virtual void Slot_94();
+    virtual void Slot_98();
+    virtual void Slot_9c();
+    virtual void Slot_a0();
+    virtual void Slot_a4();
+    virtual void Slot_a8();
+    virtual void Slot_ac();
+    virtual void Slot_b0();
+    virtual void Slot_b4();
+    virtual void Slot_b8();
+    virtual void Slot_bc();
+    virtual void Slot_c0();
+    virtual void Slot_c4();
+    virtual void Slot_c8();
 };
 class S421CB0 {
 public:
@@ -2382,12 +2424,10 @@ public:
     T421CB0* field_41c;           // +0x41c
     void M_421CB0();
 };
-WIP_FUNC(0x421CB0)
+MATCH_FUNC(0x421CB0)
 void S421CB0::M_421CB0()
 {
-    T421CB0* p = this->field_41c;
-    VT421CB0* vt = p->vtable_00;
-    vt->slot_c8();
+    field_41c->Slot_c8();
 }
 
 // Scalar deleting destructor wrappers.
@@ -2613,9 +2653,13 @@ bool Sc422180::M_422180(int a1)
 }
 
 // 0x439410 — clear the ten 0xA0-stride records and the four head fields.
-// WIP: VC6 keeps the zero constant in callee-saved edi across the 0x5FCE14 call
-// (original uses edx before the call and a fresh ecx after it).
+// The four head fields are cleared by an inlined memset intrinsic: its own
+// zero register (ecx after the call) instead of a zero kept in edi across it.
 extern void __cdecl Hook_5FCE14_439410(void* a1, int a2);
+struct R439410 {
+    int field_0;
+    char pad_04[0xa0 - 4];
+};
 class T439410 {
 public:
     int field_0;                  // +0x00
@@ -2625,26 +2669,22 @@ public:
     int field_10;                 // +0x10
     int field_14;                 // +0x14
     int field_18;                 // +0x18
+    char name_1c[0x5c4 - 0x1c];   // +0x1C
+    R439410 recs[10];             // +0x5C4
 };
-WIP_FUNC(0x439410)
+#pragma intrinsic(memset)
+MATCH_FUNC(0x439410)
 void __stdcall sub_439410(T439410* a1)
 {
     a1->field_10 = 0x11;
-    int z = 0;
-    a1->field_14 = z;
-    a1->field_18 = z;
-    int* rec = (int*)((char*)a1 + 0x5c4);
-    for (int i = 0; i < 10; i++) {
-        *rec = z;
-        rec += 0xa0 / 4;
-    }
-    Hook_5FCE14_439410((char*)a1 + 0x1c, 0x662be0);
-    int z2 = 0;
-    a1->field_0 = z2;
-    a1->field_4 = z2;
-    a1->field_8 = z2;
-    a1->field_c = z2;
+    a1->field_14 = 0;
+    a1->field_18 = 0;
+    for (int i = 0; i < 10; i++)
+        a1->recs[i].field_0 = 0;
+    Hook_5FCE14_439410(a1->name_1c, 0x662be0);
+    memset(a1, 0, 16);
 }
+#pragma function(memset)
 
 // 0x439CB0 — constructor seeding the 0x37 0x24-stride records.
 extern void __cdecl Hook_439CB0_log(int a1, int a2, int a3);
@@ -2711,6 +2751,7 @@ public:
     int arr_1348[20];             // +0x1348..0x1398
     int arr_1398[20];             // +0x1398..0x13E8
     void M_42D1D0();
+    void M_42AE00();
 };
 
 MATCH_FUNC(0x42D1D0)
@@ -2721,6 +2762,24 @@ void S42D1D0::M_42D1D0()
     {
         ((int*)((char*)this + 0x1348))[i - 1] = v;
         ((int*)((char*)this + 0x1398))[i - 1] = v;
+    }
+}
+
+// 0x42AE00 — reset the five +0x13E4 record fields for every count slot, after
+// the two-argument 0x4378C0 screen helper.
+WIP_FUNC(0x42AE00)
+void S42D1D0::M_42AE00()
+{
+    sub_4378C0(g_669558, 0x64f114);
+    int* p = (int*)((char*)this + 0x13e4);
+    for (int i = 0; i <= count_12d8; i++)
+    {
+        *(int*)((char*)p + 0x9fc) = 0;
+        *p = 0;
+        *(int*)((char*)p + 0x28) = 0;
+        *(int*)((char*)p + 0x50) = 0;
+        *(int*)((char*)p + 0xcc) = 0;
+        p++;
     }
 }
 

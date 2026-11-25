@@ -11,14 +11,11 @@ public:
     int Hook_49FB60(void* a1, int a2, int a3);   // unresolved callee at 0x49FB60
 };
 
-WIP_FUNC(0x41C920)
+MATCH_FUNC(0x41C920)
 char* C_vt61DF78::slot09_41C920(char* a1, char* buf, int len)
 {
-    unsigned int r = Hook_473AE0(g_664510, (int)a1, buf, len);
-    if (r != 0) {
-    } else {
-        buf[0] = (char)r;
-    }
+    if (!Hook_473AE0(g_664510, (int)a1, buf, len))
+        buf[0] = 0;
     buf[len - 1] = 0;
     return buf;
 }

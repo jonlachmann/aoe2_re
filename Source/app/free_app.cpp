@@ -283,13 +283,13 @@ public:
     int field_8;
     bool Check_4060A0();
 };
-#pragma optimize("s", on)
-WIP_FUNC(0x4060A0)
+// `? true : false` keeps the value in eax (mov/test/setne, no xor eax);
+// `!= 0` gives the xor-first form of 0x419810.
+MATCH_FUNC(0x4060A0)
 bool S4060A0::Check_4060A0()
 {
-    return this->field_8;
+    return this->field_8 ? true : false;
 }
-#pragma optimize("", on)
 
 class S40F4A0 {
 public:
@@ -2644,25 +2644,19 @@ public:
     int field_40;                 // +0x40
     void M_406330(char a1);
 };
-WIP_FUNC(0x406330)
+MATCH_FUNC(0x406330)
 void Sc406330::M_406330(char a1)
 {
     this->field_0c = a1;
     if (a1 == 6)
     {
-        T406330Node* node = this->field_30;
-        T406330Data* data = this->field_08;
-        unsigned short id = node->field_14;
-        void* p = *(void**)((char*)data + 0xc);
-        void* q = *(void**)((char*)p + 0xa8);
-        int v;
-        if (id == 0x10)
-            v = *(int*)((char*)q + 0x90);
+        // Both branches store field_2c directly; field_40 then copies it
+        // (VC6 forwards the store through edx).
+        if (this->field_30->field_14 == 0x10)
+            this->field_2c = *(int*)(*(char**)((char*)this->field_08->field_0c + 0xa8) + 0x90);
         else
-            v = *(int*)((char*)q + 0x160);
-        int v2 = v;
-        this->field_2c = v;
-        this->field_40 = v2;
+            this->field_2c = *(int*)(*(char**)((char*)this->field_08->field_0c + 0xa8) + 0x160);
+        this->field_40 = this->field_2c;
     }
 }
 

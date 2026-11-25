@@ -118,6 +118,15 @@ public:
 // do/while(0)+break, while/for, nested or || guards, an inline helper, a real
 // COM virtual. Not the compiler: SP3 (c2.dll 12.00.8447, the rich header's
 // version) gives the same 3 bytes for every variant.
+// More tries, same 3 bytes: split `if (mode) FC = flag; else {FC = 0xff; return;}`
+// then the checks (and early-return form), explicit `return` at the end of the
+// then-block, `int r = call; if (r) return;`, `(field_EC = mode) != 0`,
+// bool temp, nested ifs via local DDObj* copies, function-scope entries,
+// unsigned long[2] from field_FC, `FC = (uchar)mode - 1`, #pragma optimize
+// a/w/p. Worse: ctor-initialised CK struct (+1 byte; with a dtor +51 for the EH
+// frame), per-branch field_EC stores, goto-to-tail / zero-first (put the 0xff
+// block first), optimize g/y/s off/on. Note: the fail jumps target the
+// epilogue copy right after the call; ours targets the copy after the 0xff block.
 WIP_FUNC(0x460EC0)
 void TDrawArea::SetMode_460EC0(int mode, unsigned char flag)
 {
@@ -383,6 +392,14 @@ void TDrawArea::SetClipRect_460660(const int* rect)
 // (worse), moving definitions into address order (no effect), the full SP3
 // VC98 tree (c2.dll 12.00.8447 - identical output to SP5). Struct/layout and
 // callees verified against the asm; only allocation differs.
+// More tries, all keep the phase (25 diff lines): callee return types int /
+// uchar / TClipSpan* for Begin/SetRect/ClipSpan, a dead `int dummy = Width`,
+// `TClipSpan* s = new ...; field_CC = s;`, function-scope y + while,
+// `register int y`, a 4-int CRect member set field-by-field from a by-value
+// CRect param (whole-struct `Clip = r` is +5 bytes, worse), #pragma optimize
+// w (same), a/g/y/t/s (all worse). Reversed param-store order and an `old`
+// local are worse. The arg-preload registers are offset by one in the
+// eax/ecx/edx rotation from the first ctor-arg load onward.
 WIP_FUNC(0x460740)
 void TDrawArea::SetClipBounds_460740(int left, int top, int right, int bottom)
 {    ClipLeft = left;
@@ -535,7 +552,10 @@ void TDrawArea::VLine_461400(int x, int y, int len, int color)
 // for with a separate counter, function-scope `int t`. /GX on or off gives the
 // identical body here (no EH in this function). Callees (memset 0x5FE3A0)
 // verified; only allocation/layout differs.
-WIP_FUNC(0x461490)
+// MATCHED: compute p before step in each orientation arm (as VLine_461400
+// does). Then VC6 doesn't tail-merge `+ Bits + x0`, which frees the register
+// phase and the width reload.
+MATCH_FUNC(0x461490)
 void TDrawArea::FillRect_461490(int x0, int y0, int x1, int y1, int color)
 {    if (!Bits)
         return;
@@ -568,11 +588,11 @@ void TDrawArea::FillRect_461490(int x0, int y0, int x1, int y1, int color)
     int step;
     unsigned char* p;
     if (Orientation == 1) {
-        step = Pitch;
         p = Bits + Pitch * y0 + x0;
+        step = Pitch;
     } else {
-        step = -Pitch;
         p = Bits + (Height - y0 - 1) * Pitch + x0;
+        step = -Pitch;
     }
     for (; h > 0; h--) {
         memset(p, (unsigned char)color, w);

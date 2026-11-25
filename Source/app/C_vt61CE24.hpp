@@ -413,7 +413,7 @@ public:
     void Hook_48C330(int a1, int a2, int a3, int a4, int a5);  // unresolved callee at 0x48C330
 
     void M_408060(void* a1, int a2, int a3, int a4);
-    bool M_4079B0();
+    int M_4079B0();
     void M_52AF30();
     void M_48D470(void* p);
     bool M_407B30();

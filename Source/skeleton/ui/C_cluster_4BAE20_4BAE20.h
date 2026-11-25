@@ -6,7 +6,7 @@
 
 class C_cluster_4BAE20 {
 public:
-    void method_000();  // sub_4BAE20 [lifted]
+    void method_000();  // sub_4BAE20 [matched] — Source/ui/C_pnl_lst.cpp
     void method_001();  // sub_4BCF90 [matched] — Source/ui/C_cluster_4BAE20.cpp
     void method_002();  // sub_4BD000 [matched] — Source/ui/C_cluster_4BAE20.cpp
 };

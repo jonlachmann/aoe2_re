@@ -71,7 +71,7 @@ public:
     virtual void slot_058();  // slot +0x0E8: sub_4237A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_059();  // slot +0x0EC: sub_4A22D0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_060();  // slot +0x0F0: sub_4A2320 [lifted]
-    virtual void slot_061();  // slot +0x0F4: sub_4BAE20 [lifted]
+    virtual void slot_061();  // slot +0x0F4: sub_4BAE20 [matched] — Source/ui/C_pnl_lst.cpp
     virtual void slot_062();  // slot +0x0F8: sub_4BADD0 [lifted]
     virtual void slot_063();  // slot +0x0FC: sub_4BA5C0 [lifted]
     virtual void slot_064();  // slot +0x100: sub_4BAF60 [matched] — Source/ui/C_pnl_inp.cpp
@@ -81,7 +81,7 @@ public:
     virtual void slot_068();  // slot +0x110: sub_4B4600 [matched] — Source/ui/C_pnl_inp.cpp
     virtual void slot_069();  // slot +0x114: sub_4BC750 [lifted]
     virtual void slot_070();  // slot +0x118: sub_4BD030 [lifted]
-    virtual void slot_071();  // slot +0x11C: sub_4BD4B0 [wip] — Source/ui/C_pnl_inp.cpp
+    virtual void slot_071();  // slot +0x11C: sub_4BD4B0 [matched] — Source/ui/C_pnl_inp.cpp
     virtual void slot_072();  // slot +0x120: sub_4BD5F0 [lifted]
     void method_000();  // sub_4D6A40 [matched]: same object, connected by this-edge call sites — Source/ui/free_ui.cpp
 };

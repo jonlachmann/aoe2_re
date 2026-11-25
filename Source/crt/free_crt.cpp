@@ -165,11 +165,16 @@ void Build_5F3FB0(int* out, int a, int b)
     out[2] = a;
 }
 
-WIP_FUNC(0x5F9100)
+// 0x5F9100 — returns -1 (_HEAPEMPTY; sits next to the HeapWalk-based
+// _heapwalk at 0x5F9110). WIP: original is `mov eax,-1` (6 bytes); VC6 SP5
+// emits `or eax,-1` (4) under every flag/pragma tried (/O1 /O2 /Ox, /G3-/G6,
+// pragma s/t/p/a/w/g, C and C++; /Og off just adds a push ebp frame).
+// Only 13 `b8 ffffffff` exist in .text, all in 0x5E0000-0x5FFFFF (CRT), so
+// this lib came from a different code generator.
+LIBRARY_FUNC(0x5F9100)
 int M_5F9100()
 {
-    int result = -1;
-    return result;
+    return -1;
 }
 
 class S407BD0 {
@@ -428,8 +433,13 @@ int __cdecl sub_5F38C0(int a1)
 }
 
 // 0x5F91F0 — mask the helper result to a multiple of four.
+// WIP: matches byte-exact when compiled with /G6 (original `and eax,-4`, P6
+// tuning avoids the partial-register `and al,0FCh` the default /GB emits).
+// match.py has one global flag set; /G6 on this whole TU breaks 3 MATCHes
+// (5F0CB0, 5F3FB0, 5FC8EC scheduling). Needs a per-TU flag hook + its own
+// /G6 TU. No source variant (~3u, unsigned, shifts, pragma s) avoids `and al`.
 extern int __stdcall sub_5FA940(int a1);
-WIP_FUNC(0x5F91F0)
+LIBRARY_FUNC(0x5F91F0)
 int __cdecl sub_5F91F0(int a1)
 {
     return sub_5FA940(a1) & 0xFFFFFFFC;
@@ -512,11 +522,15 @@ void __cdecl sub_619820(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 #pragma optimize("", on)
 
 // 0x5FB470 — heap-init wrapper: forwards one stack argument plus fixed
-// constants to the __fastcall heap initializer at 0x5FB490. WIP: the original
-// hand-tuned CRT interleaves edx/ecx setup between the arg pushes.
+// constants to the __fastcall heap initializer at 0x5FB490 (callee stores cx
+// as a word, so a1 is really 16-bit; ret 0x1c = 7 stack args). WIP: original
+// loads `xor edx,edx; mov ecx,18h` after all 7 pushes, VC6 interleaves them
+// after push 2/3. Tried short/ushort/char first arg, void* second, local temp,
+// pragma w/a/p, /G5 /G6 /O1 /Ox, C vs C++: scheduling never moves. Same
+// foreign-codegen region as 0x5F9100; probably not reachable with VC6 SP5.
 extern int __fastcall Hook_5FB490(int a1, int a2, int a3, int a4, int a5,
                                    int a6, int a7, int a8, int a9);
-WIP_FUNC(0x5FB470)
+LIBRARY_FUNC(0x5FB470)
 int __stdcall sub_5FB470(int a1)
 {
     return Hook_5FB490(0x18, 0, 0, a1, 0, 0, 0, 0, 0);

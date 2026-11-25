@@ -150,7 +150,7 @@ public:
     virtual void slot_140();  // slot +0x230: sub_526E10 [lifted]
     virtual void slot_141();  // slot +0x234: sub_5274A0 [lifted]
     virtual void slot_142();  // slot +0x238: sub_527500 [lifted]
-    virtual void slot_143();  // slot +0x23C: sub_52C430 [wip] — Source/gfx/C_vt61DA40.cpp
+    virtual void slot_143();  // slot +0x23C: sub_52C430 [matched] — Source/gfx/C_vt61DA40.cpp
     virtual void slot_144();  // slot +0x240: sub_407B40 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_145();  // slot +0x244: sub_407BA0 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_146();  // slot +0x248: sub_407B80 [matched] — Source/app/C_vt61CE24.cpp
@@ -159,9 +159,9 @@ public:
     virtual void slot_149();  // slot +0x254: sub_407C10 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_150();  // slot +0x258: sub_4237A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_151();  // slot +0x25C: sub_52C470 [lifted]
-    virtual void slot_152();  // slot +0x260: sub_41A110 [wip] — Source/gfx/C_vt61DA40.cpp
+    virtual void slot_152();  // slot +0x260: sub_41A110 [matched] — Source/gfx/C_vt61DA40.cpp
     virtual void slot_153();  // slot +0x264: sub_407C50 [matched] — Source/app/C_vt61CE24.cpp
-    virtual void slot_154();  // slot +0x268: sub_41A110 [wip] — Source/gfx/C_vt61DA40.cpp
+    virtual void slot_154();  // slot +0x268: sub_41A110 [matched] — Source/gfx/C_vt61DA40.cpp
     virtual void slot_155();  // slot +0x26C: sub_407C50 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_156();  // slot +0x270: sub_474800 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_157();  // slot +0x274: sub_407C50 [matched] — Source/app/C_vt61CE24.cpp
@@ -183,9 +183,9 @@ public:
     virtual void slot_173();  // slot +0x2B4: sub_41A0C0 [matched] — Source/gfx/C_vt61DA40.cpp
     virtual void slot_174();  // slot +0x2B8: sub_474800 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_175();  // slot +0x2BC: sub_407C20 [matched] — Source/gfx/C_TribePopUpHelp.cpp
-    virtual void slot_176();  // slot +0x2C0: sub_41A0D0 [wip] — Source/gfx/C_vt61DA40.cpp
+    virtual void slot_176();  // slot +0x2C0: sub_41A0D0 [matched] — Source/gfx/C_vt61DA40.cpp
     virtual void slot_177();  // slot +0x2C4: sub_407B40 [matched] — Source/app/C_vt61CE24.cpp
-    virtual void slot_178();  // slot +0x2C8: sub_41A110 [wip] — Source/gfx/C_vt61DA40.cpp
+    virtual void slot_178();  // slot +0x2C8: sub_41A110 [matched] — Source/gfx/C_vt61DA40.cpp
     virtual void slot_179();  // slot +0x2CC: sub_407B40 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_180();  // slot +0x2D0: sub_407B40 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_181();  // slot +0x2D4: sub_407B40 [matched] — Source/app/C_vt61CE24.cpp

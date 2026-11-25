@@ -68,26 +68,20 @@ int C_vt61DA40::M_41A0C0(int a, int b, int c)
     return -1;
 }
 
-WIP_FUNC(0x41A0D0)
-S41A0D0Triple __stdcall C_vt61DA40::M_41A0D0(int a2, int a3)
+MATCH_FUNC(0x41A0D0)
+S41A0D0Triple C_vt61DA40::M_41A0D0(int a2, int a3)
 {
     (void)a2;
     (void)a3;
-    int tmp[3];
-    tmp[0] = 0;
-    tmp[1] = 0;
-    tmp[2] = 0;
-    return *(S41A0D0Triple*)tmp;
+    S41A0D0Triple t(0.0f, 0.0f, 0.0f);
+    return t;
 }
 
-WIP_FUNC(0x41A110)
-S41A0D0Triple __stdcall C_vt61DA40::M_41A110()
+MATCH_FUNC(0x41A110)
+S41A0D0Triple C_vt61DA40::M_41A110()
 {
-    int tmp[3];
-    tmp[0] = 0;
-    tmp[1] = 0;
-    tmp[2] = 0;
-    return *(S41A0D0Triple*)tmp;
+    S41A0D0Triple t(0.0f, 0.0f, 0.0f);
+    return t;
 }
 
 MATCH_FUNC(0x474810)
@@ -96,21 +90,11 @@ float C_vt61DA40::Get_474810()
     return g_61dd2c;
 }
 
-struct SFloatTriple52C430 {
-    float field_00;
-    float field_04;
-    float field_08;
-};
-
-WIP_FUNC(0x52C430)
-float* C_vt61DA40::Copy_52C430(float* out)
+MATCH_FUNC(0x52C430)
+S41A0D0Triple C_vt61DA40::Copy_52C430()
 {
-    SFloatTriple52C430 tmp;
-    tmp.field_00 = this->field_38;
-    tmp.field_04 = this->field_40;
-    tmp.field_08 = this->field_3C;
-    *(SFloatTriple52C430*)out = tmp;
-    return out;
+    S41A0D0Triple t(field_38, field_40, field_3C);
+    return t;
 }
 
 MATCH_FUNC(0x52C610)

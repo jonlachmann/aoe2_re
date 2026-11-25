@@ -1,16 +1,23 @@
 // C_vt61DA40 — vtable class 0x61DA40 (skeleton: Source/skeleton/gfx/
 // C_vt61DA40_61DA40.h holds all 187 slots and lifted methods).
-// This TU carries the 15 byte-verified methods. The two 0x41A0D0/0x41A110
-// out-parameter helpers are original __stdcall entry points, so they remain
-// static __stdcall members rather than thiscall methods.
+// This TU carries the 15 byte-verified methods. 0x41A0D0/0x41A110/0x52C430
+// are thiscall methods returning a 12-byte float triple by value (hidden
+// return pointer); the named local + return copy gives the original temp.
 #pragma once
 
 #include "Function.hpp"
 
 struct S41A0D0Triple {
-    int field_00;
-    int field_04;
-    int field_08;
+    float field_00;
+    float field_04;
+    float field_08;
+    S41A0D0Triple() {}
+    S41A0D0Triple(float a, float b, float c)
+    {
+        field_00 = a;
+        field_04 = b;
+        field_08 = c;
+    }
 };
 
 class C_vt61DA40 {
@@ -32,10 +39,10 @@ public:
     float Get_41A090(int a, int b, int c);
     int M_41A0B0();
     int M_41A0C0(int a, int b, int c);
-    static S41A0D0Triple __stdcall M_41A0D0(int a2, int a3);
-    static S41A0D0Triple __stdcall M_41A110();
+    S41A0D0Triple M_41A0D0(int a2, int a3);
+    S41A0D0Triple M_41A110();
     float Get_474810();
-    float* Copy_52C430(float* out);
+    S41A0D0Triple Copy_52C430();
     float Get_52C610();
     bool M_547EE0();
 };

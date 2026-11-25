@@ -8,19 +8,17 @@ extern void __stdcall sub_48CB50(int a1);
 extern void __stdcall sub_48C860(void* a1);
 extern void __cdecl sub_4BEBD0(void* a1, void* a2, int a3);
 
-WIP_FUNC(0x4079B0)
-bool C_vt61CE24::M_4079B0()
+MATCH_FUNC(0x4079B0)
+int C_vt61CE24::M_4079B0()
 {
     if (this->field_10 != 0)
     {
         if (((T52B460Target*)this->field_08)->Method_52B460((int)this->field_10) <= this->field_40)
             return 1;
+        return 0;
     }
-    else
-    {
-        if (((T52B460Target*)this->field_08)->Method_52B510((int)this->field_20, (int)this->field_24, this->field_28) <= this->field_40)
-            return 1;
-    }
+    if (((T52B460Target*)this->field_08)->Method_52B510((int)this->field_20, (int)this->field_24, this->field_28) <= this->field_40)
+        return 1;
     return 0;
 }
 

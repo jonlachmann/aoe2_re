@@ -45,6 +45,23 @@ WIP_FUNC(0x4613F8)                   // written, not matching yet; diffed, never
 - Promote `WIP_FUNC` to `MATCH_FUNC` only when match.py says OK. match.py lists the WIPs
   that started matching.
 
+## CRT / library code (the gta2_re policy)
+
+The runtime band `0x5F0000–0x610000` (539 functions, MSVC 6 libc) is library
+code: don't spend matching effort on it. gta2_re does the same: its
+`reccmp/library.csv` lists the CRT and the build links VC6's real `LIBC.LIB`
+(`/ML`) instead of reconstructing it. Parts of this CRT come from a different
+code generator (`mov eax,-1` where VC6 SP5 always emits `or eax,-1`;
+`/G6`-only `and eax,-4`; foreign push scheduling), so some of it can't match.
+
+- `match.py --next` skips the band.
+- Mark a CRT function you wrote but can't match `LIBRARY_FUNC(0xADDR)`. match.py
+  doesn't check it and doesn't count it as WIP.
+- The CRT `MATCH_FUNC`s that already exist stay checked.
+- Building needs no CRT. The boot build lifts the original's own CRT, and
+  match.py never links. A future linked readable exe would link
+  `refs/gta2_re_compile_tools/VC98/Lib/LIBC.LIB`.
+
 ## The loop (one function at a time)
 
 ```bash

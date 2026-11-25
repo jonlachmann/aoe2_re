@@ -4059,12 +4059,12 @@ public:
     char pad_00[8];
     int field_08;                 // +8
     int M_53D4A0(int a1);
+    int M_53D4C0(int a1, int a2, int a3);   // thiscall callee (0x53D4C0 keeps ecx)
 };
-extern int __stdcall sub_53D4C0(int a1, int a2, int a3);
-WIP_FUNC(0x53D4A0)
+MATCH_FUNC(0x53D4A0)
 int S53D4A0::M_53D4A0(int a1)
 {
-    return sub_53D4C0(((int*)this)[2], a1, 1);
+    return M_53D4C0(this->field_08, a1, 1);
 }
 
 // 0x580180 — nonzero test on the helper result.
@@ -5635,21 +5635,26 @@ public:
 WIP_FUNC(0x5433C0)
 Sc5433C0* Sc5433C0::Init_5433C0(int a1, int a2, int a3, int a4, int a5)
 {
-    // Original loads a4 into ecx right after the +0x30 store and a5 into edx
-    // after the +0x20 store, then defers both stores past vtable/type.
+    // Original never hoists an arg store: a2/a3 -> ecx/edx right after the
+    // call, a4 -> ecx after the +0x30 store, a5 -> edx after the +0x20 store,
+    // +0x24/+0x28 stored last (after vtable/type). VC6 here always loads one
+    // of a4/a5 into eax before the xor and stores it first. Searched all 120
+    // orders of {+20, vt+type, +24, +28, defaults} after +30 (best 6 '!' lines,
+    // this order: 30,20,vt,type,28,24), 30 random orders with the defaults
+    // split, float a4/a5, and dead intermediate vtable/type stores: no change.
     sub_409600(a1, 1);
     this->field_30 = a2;
+    this->field_20 = a3;
+    *(void**)this = &g_vt_6288B8f;
+    this->type_04 = 0x6e;
+    this->field_28 = a5;
+    this->field_24 = a4;
     this->field_44 = 0;
     this->word_4c = 0;
     this->field_50 = -1.0f;
     this->field_54 = -1.0f;
     this->field_48 = -1;
     this->field_40 = -1;
-    this->field_20 = a3;
-    this->field_24 = a4;
-    this->field_28 = a5;
-    *(void**)this = &g_vt_6288B8f;
-    this->type_04 = 0x6e;
     return this;
 }
 
@@ -5685,7 +5690,8 @@ Sc53F520* Sc53F520::Init_53F520(int a1, int a2, int a3, int a4, int a5)
     sub_409600(a1, 1);
     // Original loads a4 into ecx at 0x1c and a5 into edx at 0x23, then defers
     // the +0x24/+0x28 stores past vtable/type. All tried source orders keep the
-    // late-argument loads after the zero block.
+    // late-argument loads after the zero block. Same scheduling problem as
+    // 0x5433C0 (see there); not re-searched separately.
     this->field_30 = a2;
     this->field_20 = a3;
     this->byte_4c = 0;

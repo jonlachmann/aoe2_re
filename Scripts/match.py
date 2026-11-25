@@ -50,6 +50,8 @@ VC6 = os.environ.get("VC6_ROOT", os.path.join(ROOT, "refs", "gta2_re_compile_too
 # without it VC6 drops the frame and the new/delete dance loses its unwind
 # bookkeeping. The plain-C leaves in obj_misc.cpp are unaffected.
 CFLAGS = ["/nologo", "/c", "/O2", "/Gy", "/GX", "/W3", "/I", "Source"]
+# CRT/runtime band (docs/matching_plan.md): library code, not picked by --next (docs/matching.md).
+CRT_LO, CRT_HI = 0x5F0000, 0x610000
 MARKER = re.compile(r"\b(MATCH|WIP)_FUNC\(\s*0x([0-9A-Fa-f]+)\s*\)")
 
 md = Cs(CS_ARCH_X86, CS_MODE_32)
@@ -218,7 +220,8 @@ def all_marked():
 def next_targets(n, catalog):
     done = {va for c in all_marked() for _, va in markers(c)}
     cand = [f for f in catalog.values()
-            if not f["is_thunk"] and f["address"] not in done and 16 <= f["size"] <= 400]
+            if not f["is_thunk"] and f["address"] not in done
+            and not CRT_LO <= f["address"] < CRT_HI and 16 <= f["size"] <= 400]
     for f in sorted(cand, key=lambda f: (len(f["calls_to"]), f["size"]))[:n]:
         print(f"0x{f['address']:06X}  {f['size']:4d} bytes  {len(f['calls_to'])} calls")
 

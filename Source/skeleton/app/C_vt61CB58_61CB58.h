@@ -30,5 +30,5 @@ public:
     virtual void slot_020();  // slot +0x050: sub_409E40 [lifted]
     virtual void slot_021();  // slot +0x054: sub_409AD0 [lifted]
     virtual void slot_022();  // slot +0x058: sub_409B50 [lifted]
-    virtual void slot_023();  // slot +0x05C: sub_406330 [wip] — Source/app/free_app.cpp
+    virtual void slot_023();  // slot +0x05C: sub_406330 [matched] — Source/app/free_app.cpp
 };

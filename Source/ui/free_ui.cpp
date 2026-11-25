@@ -864,16 +864,17 @@ int S487580::Reset_487580()
 // 0x48BF10 — return an object's cached value when it matches the tag.
 int __cdecl sub_48BF10(int a1);
 
-WIP_FUNC(0x48BF10)
+MATCH_FUNC(0x48BF10)
 int __cdecl sub_48BF10(int a1)
 {
-    int result = a1;
-    if (result && *(unsigned char*)(result + 78) == 80) {
-        int cached = *(int*)(result + 452);
+    if (!a1)
+        return 0;
+    if (*(unsigned char*)(a1 + 78) == 80) {
+        int cached = *(int*)(a1 + 452);
         if (cached)
-            return cached;
+            a1 = cached;
     }
-    return result;
+    return a1;
 }
 
 // 0x48E2D0 — member of vtable class C_vt61CE24: scaled speed value.
@@ -1140,13 +1141,11 @@ public:
     char Round_4A9F20();
 };
 
-#pragma optimize("s", on)
-WIP_FUNC(0x4A9F20)
+MATCH_FUNC(0x4A9F20)
 char S4A9F20::Round_4A9F20()
 {
-    return (this->field_14 + 3) & 0xFC;
+    return (this->field_14 + 3) & ~3;
 }
-#pragma optimize("", on)
 
 // 0x4ADF40 — reset four trailing short slots to -1.
 class S4ADF40 {
@@ -4352,12 +4351,12 @@ public:
     int field_08;                 // +8
     int field_0c;                 // +0xc
     void M_47C850();
+    void M_47C870(int a1, int a2, int a3, int a4);   // thiscall on the same object
 };
-extern void __stdcall sub_47C870(int a1, int a2, int a3, int a4);
-WIP_FUNC(0x47C850)
+MATCH_FUNC(0x47C850)
 void S47C850::M_47C850()
 {
-    sub_47C870(0, 0, this->field_08 - 1, this->field_0c - 1);
+    M_47C870(0, 0, this->field_08 - 1, this->field_0c - 1);
 }
 
 // 0x5047D0 — two-argument thiscall on the pointer field at +0x83c.
@@ -4471,20 +4470,74 @@ void S4F2370::M_4F2370()
     ((T4A22A0*)this)->Other_4A22A0();
 }
 
-// 0x4B27DF — two-argument vtable call through slot +0xd4.
-struct VT4B27DF {
-    char pad_00[0xd4];
-    void (__stdcall *slot_d4)(int, int);
-};
+// 0x4B27DF — two-argument vtable call through slot +0xd4 on this.
+// WIP, probably not matchable standalone: 0x4B27DF is not a real function
+// start but the tail of 0x4B27C0 (jump target after `test ecx,ecx; je` on
+// [esi+0xf8]); the original loads the vtable into edx because eax still holds
+// sub_4A2040's return value there. Standalone VC6 always picks eax. Only
+// diff: mov edx/eax,[ecx] + call [edx/eax+0xd4].
 class S4B27DF {
 public:
+    virtual void V00();
+    virtual void V01();
+    virtual void V02();
+    virtual void V03();
+    virtual void V04();
+    virtual void V05();
+    virtual void V06();
+    virtual void V07();
+    virtual void V08();
+    virtual void V09();
+    virtual void V10();
+    virtual void V11();
+    virtual void V12();
+    virtual void V13();
+    virtual void V14();
+    virtual void V15();
+    virtual void V16();
+    virtual void V17();
+    virtual void V18();
+    virtual void V19();
+    virtual void V20();
+    virtual void V21();
+    virtual void V22();
+    virtual void V23();
+    virtual void V24();
+    virtual void V25();
+    virtual void V26();
+    virtual void V27();
+    virtual void V28();
+    virtual void V29();
+    virtual void V30();
+    virtual void V31();
+    virtual void V32();
+    virtual void V33();
+    virtual void V34();
+    virtual void V35();
+    virtual void V36();
+    virtual void V37();
+    virtual void V38();
+    virtual void V39();
+    virtual void V40();
+    virtual void V41();
+    virtual void V42();
+    virtual void V43();
+    virtual void V44();
+    virtual void V45();
+    virtual void V46();
+    virtual void V47();
+    virtual void V48();
+    virtual void V49();
+    virtual void V50();
+    virtual void V51();
+    virtual void V52();
+    virtual void V53(int, int);
     void M_4B27DF(int a1, int a2);
 };
 WIP_FUNC(0x4B27DF)
 void S4B27DF::M_4B27DF(int a1, int a2)
 {
-    VT4B27DF* vt = *(VT4B27DF**)this;
-    vt->slot_d4(0, 0);
+    V53(0, 0);
 }
 
 // Scalar deleting destructor wrappers.
@@ -6034,14 +6087,18 @@ int __cdecl sub_4BE6D0(int a1, int a2)
     return 0;
 }
 
-// 0x4B9B60 — ten-argument forwarder to 0x4A23E0, returns the nonzero flag.
-// WIP: VC6 preloads a2 into edx before push a4; original loads it after push into eax.
-int __stdcall sub_4A23E0(int a1, int a2, int a3, int a4, int a5,
-                         int a6, int a7, int a8, int a9, int a10);
-WIP_FUNC(0x4B9B60)
-int __stdcall sub_4B9B60(int a1, int a2, int a3, int a4)
+// 0x4B9B60 — ten-argument thiscall forwarder to 0x4A23E0 on the same object
+// (ecx is never touched), returns the nonzero flag.
+class S4B9B60 {
+public:
+    int M_4A23E0(int a1, int a2, int a3, int a4, int a5,
+                 int a6, int a7, int a8, int a9, int a10);
+    int M_4B9B60(int a1, int a2, int a3, int a4);
+};
+MATCH_FUNC(0x4B9B60)
+int S4B9B60::M_4B9B60(int a1, int a2, int a3, int a4)
 {
-    return sub_4A23E0(a1, 0, a2, a3, 1, 0, 0, 0, 0, a4) != 0;
+    return M_4A23E0(a1, 0, a2, a3, 1, 0, 0, 0, 0, a4) != 0;
 }
 
 // 0x4A6520 — append one triple into the three +0x498/+0x5B0/+0x6C8 tables.
@@ -6729,4 +6786,62 @@ void S4A1E50::M_4A1E50(int a1, short a2)
         field_e0 = 0;
         break;
     }
+}
+
+// 0x4A05D0 — detach a doubly-linked node: fix the +0x58/+0x5C head/tail when
+// it is either end, relink its neighbours, clear the +0x3C owner slot when it
+// matches, then zero the node's own links.
+class T4A05D0Node {
+public:
+    int owner_00;                 // +0x00 owning registration
+    T4A05D0Node* prev_04;         // +0x04
+    T4A05D0Node* next_08;         // +0x08
+};
+class S4A05D0 {
+public:
+    char pad_00[0x3c];
+    int field_3c;                 // +0x3C active registration
+    char pad_40[0x58 - 0x40];
+    T4A05D0Node* field_58;        // +0x58 head
+    T4A05D0Node* field_5c;        // +0x5C tail
+    void M_4A05D0(T4A05D0Node* node);
+};
+
+MATCH_FUNC(0x4A05D0)
+void S4A05D0::M_4A05D0(T4A05D0Node* node)
+{
+    if (node == field_58)
+        field_58 = node->next_08;
+    if (node == field_5c)
+        field_5c = node->prev_04;
+    if (node->prev_04)
+        node->prev_04->next_08 = node->next_08;
+    if (node->next_08)
+        node->next_08->prev_04 = node->prev_04;
+    node->prev_04 = 0;
+    node->next_08 = 0;
+    if (field_3c == node->owner_00)
+        field_3c = 0;
+}
+
+// 0x4BDF50 — overwrite through the 0x61C000 six-argument helper: field +0x04
+// for a non-zero mode, field +0x00 otherwise, and report whether it returned 0.
+extern int (__stdcall *g_61C000)(void* a1, int a2, int a3, int a4, int* a5,
+                                 int a6);
+class S4BDF50 {
+public:
+    void* field_00;               // +0x00 buffer for the zero mode
+    void* field_04;               // +0x04 buffer for the non-zero mode
+    int M_4BDF50(int a1, int a2, int a3);
+};
+
+MATCH_FUNC(0x4BDF50)
+int S4BDF50::M_4BDF50(int a1, int a2, int a3)
+{
+    int result;
+    if (a1 != 0)
+        result = g_61C000(field_04, a2, 0, 4, &a3, 4);
+    else
+        result = g_61C000(field_00, a2, 0, 4, &a3, 4);
+    return result == 0;
 }
