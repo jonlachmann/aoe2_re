@@ -7676,3 +7676,31 @@ void S49FF20::M_49FF20()
     }
     g_61C2F8(0x6f, field_ad0, 0, 0);
 }
+
+// 0x4AF2E0 — ten-argument initialiser: dispatch the seven-argument base setup
+// 0x4A0460, store the +0x150/+0x14C pair from a9/a7, run 0x4AF860 with a8, and
+// fill nine entries through 0x4AF4B0 with a10 and zero.
+class S4AF2E0 {
+public:
+    char pad_00[0x14c];
+    int field_14c;                  // +0x14C
+    int field_150;                  // +0x150
+    void M_4A0460(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+    void M_4AF860(int a1);
+    void M_4AF4B0(short a1, int a2, int a3);
+    int M_4AF2E0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
+                 int a8, int a9, int a10);
+};
+
+MATCH_FUNC(0x4AF2E0)
+int S4AF2E0::M_4AF2E0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
+                      int a8, int a9, int a10)
+{
+    M_4A0460(a1, a2, a3, a4, a5, a6, 0);
+    field_14c = a7;
+    field_150 = a9;
+    M_4AF860(a8);
+    for (int i = 0; i < 9; i++)
+        M_4AF4B0(i, a10, 0);
+    return 1;
+}
