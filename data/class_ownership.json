@@ -8928,11 +8928,11 @@
    "vtable": null,
    "anchor": "0x520120",
    "methods": 4,
-   "owned_methods": 1,
-   "unowned_methods": 3,
+   "owned_methods": 2,
+   "unowned_methods": 2,
    "primary_file": "Source/sim/free_sim.cpp",
    "owner_files": {
-    "Source/sim/free_sim.cpp": 1
+    "Source/sim/free_sim.cpp": 2
    },
    "other_files": [],
    "staged_files": [],

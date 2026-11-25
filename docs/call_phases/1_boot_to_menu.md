@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 382 matched, 323 left to match (6 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 383 matched, 322 left to match (6 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (323)
+## Left to match (322)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -148,7 +148,6 @@
 | 388 | `sub_41E070` | 1 |  | 1_boot_to_menu |  |
 | 391 | `sub_520170` | 1 |  | 1_boot_to_menu |  |
 | 394 | `sub_520510` | 1 |  | 1_boot_to_menu |  |
-| 396 | `sub_520410` | 1 |  | 1_boot_to_menu |  |
 | 397 | `sub_41E2D0` | 1 |  | 1_boot_to_menu |  |
 | 398 | `sub_498700` | 1 |  | 1_boot_to_menu |  |
 | 400 | `sub_4988E0` | 2 |  | 1_boot_to_menu |  |
@@ -330,7 +329,7 @@
 | 812 | `sub_4B5AB0` | 6434496 |  | 1_boot_to_menu |  |
 | 813 | `sub_5A6680` | 19303488 |  | 1_boot_to_menu |  |
 
-## Matched (382)
+## Matched (383)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -501,6 +500,7 @@
 | 392 | `sub_5203C0` | 1 | MATCH | 1_boot_to_menu | C_cluster_520170::M_5203C0 |
 | 393 | `sub_5ECE56` | 1 | MATCH | 1_boot_to_menu | sub_5ECE56 |
 | 395 | `sub_520400` | 1 | MATCH | 1_boot_to_menu | S520400::Get_520400 |
+| 396 | `sub_520410` | 1 | MATCH | 1_boot_to_menu | S520410::M_520410 |
 | 399 | `sub_4BE010` | 6 | MATCH | 1_boot_to_menu | S4BE010::M_4BE010 |
 | 401 | `sub_498DC0` | 1 | MATCH | 1_boot_to_menu | S498DC0::M_498DC0 |
 | 404 | `sub_5FCE01` | 1 | MATCH | 1_boot_to_menu | sub_5FCE01 |

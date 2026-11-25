@@ -6087,3 +6087,39 @@ S522C70* S522C70::M_522C70(int a1, int a2, int a3)
     }
     return this;
 }
+
+
+// 0x520410 — optional +0x1C replace, then when the +0x124 gate is set compute
+// the scaled +0x298 value from the +0x250/+0x254 span and a1, and publish the
+// +0x128 slot with the +0x280 buffer through the 0x61C3D4 callback.
+class S520410 {
+public:
+    char pad_00[0x14];
+    int field_14;                   // +0x14 callback result
+    char pad_18[0x1c - 0x18];
+    int field_1c;                   // +0x1C optional replace
+    char pad_20[0x124 - 0x20];
+    void* field_124;                // +0x124 gate
+    int field_128;                  // +0x128 source slot
+    char pad_12c[0x250 - 0x12c];
+    int field_250;                  // +0x250 span start
+    int field_254;                  // +0x254 span end
+    char pad_258[0x280 - 0x258];
+    int field_280;                  // +0x280 buffer
+    char pad_284[0x298 - 0x284];
+    int field_298;                  // +0x298 scaled value
+    void M_520410(int a1, int a2);
+};
+extern int (__stdcall *g_61C3D4)(int a1, int* a2, int a3);
+
+MATCH_FUNC(0x520410)
+void S520410::M_520410(int a1, int a2)
+{
+    if (a2 != 0)
+        field_1c = a1;
+    if (field_124 == 0)
+        return;
+    unsigned int scaled = (unsigned int)(field_254 - field_250) * (unsigned int)(a1 + 0x2710) / 0x2710u;
+    field_298 = scaled;
+    field_14 = g_61C3D4(field_128, (int*)((char*)this + 0x280), 0);
+}
