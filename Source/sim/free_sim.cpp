@@ -3906,6 +3906,25 @@ void __cdecl sub_55A5F0()
     ((T473410*)&g_7519C8)->Other_473410(0x32, 0x32, 0);
 }
 
+// 0x520CC0 — two-field constructor of the 0x520D20 cluster, returns this.
+class S520CC0 {
+public:
+    int field_0;                  // +0x00
+    int field_4;                  // +0x04
+    char pad_08[0x0c - 0x08];
+    int field_c;                  // +0x0C
+    void Hook_520D20();           // unresolved callee at 0x520D20
+    S520CC0* Init_520CC0(int a1, int a2);
+};
+MATCH_FUNC(0x520CC0)
+S520CC0* S520CC0::Init_520CC0(int a1, int a2)
+{
+    field_c = a1;
+    field_4 = a2;
+    this->Hook_520D20();
+    return this;
+}
+
 // 0x55A5A0 — three-argument global-object forwarder.
 MATCH_FUNC(0x55A5A0)
 void __cdecl sub_55A5A0()

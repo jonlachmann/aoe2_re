@@ -113,12 +113,12 @@ void sub_4254D0();  // size 21, calls 0, matched, module game
 void sub_4254F0();  // size 57, calls 2, lifted, module game
 void sub_425530();  // size 54, calls 3, lifted, module game
 void sub_425570();  // size 211, calls 2, lifted, module game
-void sub_425650();  // size 37, calls 2, lifted, module game
+void sub_425650();  // size 37, calls 2, matched, module game
 void sub_425680();  // size 19, calls 1, matched, module game
 void sub_4256A0();  // size 19, calls 1, matched, module game
 void sub_4256C0();  // size 130, calls 2, lifted, module game
 void sub_425750();  // size 2322, calls 21, lifted, module game
-void sub_426070();  // size 30, calls 0, lifted, module game
+void sub_426070();  // size 30, calls 0, matched, module game
 void sub_426090();  // size 48, calls 1, lifted, module game
 void sub_4260C0();  // size 19, calls 0, matched, module game
 void sub_4260E0();  // size 38, calls 1, lifted, module game

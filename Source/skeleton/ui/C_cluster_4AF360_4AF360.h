@@ -7,5 +7,5 @@
 class C_cluster_4AF360 {
 public:
     void method_000();  // sub_4AF360 [lifted]
-    void method_001();  // sub_4AF4D0 [lifted]
+    void method_001();  // sub_4AF4D0 [matched] — Source/ui/C_cluster_4AF360.cpp
 };

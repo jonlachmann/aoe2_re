@@ -1,6 +1,32 @@
 #include "C_vt62C1E0.hpp"
 
 extern unsigned char g_75fdc4;
+extern "C" void sub_5FCB40(char* dst, char* src, int size);   // unresolved callee at 0x5FCB40
+
+extern int g_66459C;
+extern void (__stdcall *g_61C284)(int a1);
+extern void (__stdcall *g_61C288)(void* a1, int a2, int a3);
+
+MATCH_FUNC(0x41FA40)
+void C_vt62C1E0::M_41FA40(int a1)
+{
+    field_1fc = a1;
+    if (a1 != 0)
+        g_66459C = a1;
+    if (field_1f4 != 0) {
+        if (field_74 == 0 || field_1f8 != 0) {
+            g_61C284(field_1fc);
+            g_61C288(field_28, -0xc, field_1fc);
+        }
+    }
+}
+
+MATCH_FUNC(0x421A80)
+void C_vt62C1E0::M_421A80(char* src)
+{
+    sub_5FCB40((char*)this + 0x929, src, 0x80);
+    ((unsigned char*)this)[0x9a8] = 0;
+}
 
 MATCH_FUNC(0x5BAEC0)
 void C_vt62C1E0::M_5BAEC0(int a1)

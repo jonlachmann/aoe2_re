@@ -12,7 +12,7 @@ public:
     void method_003();  // sub_4646D0 [lifted]
     void method_004();  // sub_464720 [lifted]
     void method_005();  // sub_472EF0 [lifted]
-    void method_006();  // sub_4730D0 [lifted]
+    void method_006();  // sub_4730D0 [matched] — Source/game/C_global_6645C4.cpp
     void method_007();  // sub_473110 [matched] — Source/game/C_global_6645C4.cpp
     void method_008();  // sub_473200 [lifted]
     void method_009();  // sub_4732B0 [matched] — Source/game/C_global_6645C4.cpp

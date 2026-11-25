@@ -6,5 +6,5 @@
 
 class C_cluster_48B300_member_1E8 {
 public:
-    void method_000();  // sub_41F920 [lifted]
+    void method_000();  // sub_41F920 [matched] — Source/app/C_cluster_48B300_member_1E8.cpp
 };

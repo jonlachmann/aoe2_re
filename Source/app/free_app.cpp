@@ -2993,3 +2993,24 @@ Sc408F00* Sc408F00::Init_408F00(int a1, int a2, int a3, int a4, int a5)
     this->field_28 = a5;
     return this;
 }
+
+// 0x41D670 — dispatch four args plus the global object through the +0x8 slot.
+extern void* g_6645c4;
+typedef int (__stdcall* T41D670Fn)(void* obj, int a1, int a2, int a3, int a4);
+class T41D670Target {
+public:
+    char pad_00[8];
+    T41D670Fn slot_08;            // +0x08 dispatch slot
+};
+class T41D670Obj {
+public:
+    T41D670Target* field_0;       // +0x00 slot table
+};
+MATCH_FUNC(0x41D670)
+int __stdcall sub_41D670(int a1, int a2, int a3, int a4)
+{
+    T41D670Obj* p = (T41D670Obj*)g_6645c4;
+    if (p != 0)
+        return p->field_0->slot_08(p, a1, a2, a3, a4);
+    return 0;
+}

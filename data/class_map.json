@@ -26355,8 +26355,8 @@
    {
     "address": "0x4BBCE0",
     "name": "sub_4BBCE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_inp.cpp"
    },
    {
     "address": "0x4A07E0",
@@ -26814,8 +26814,8 @@
    {
     "address": "0x4BBCE0",
     "name": "sub_4BBCE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_inp.cpp"
    },
    {
     "address": "0x4A07E0",
@@ -29842,8 +29842,8 @@
    {
     "address": "0x4BBCE0",
     "name": "sub_4BBCE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_inp.cpp"
    },
    {
     "address": "0x4A07E0",
@@ -34622,8 +34622,8 @@
    {
     "address": "0x4BBCE0",
     "name": "sub_4BBCE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_inp.cpp"
    },
    {
     "address": "0x4A07E0",
@@ -66506,8 +66506,8 @@
    {
     "address": "0x41FA40",
     "name": "sub_41FA40",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/sim/C_vt62C1E0.cpp",
     "evidence": "same object, connected by this-edge call sites"
    },
    {
@@ -66541,8 +66541,8 @@
    {
     "address": "0x421A80",
     "name": "sub_421A80",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/sim/C_vt62C1E0.cpp",
     "evidence": "same object, connected by this-edge call sites"
    },
    {
@@ -70829,8 +70829,8 @@
    {
     "address": "0x4730D0",
     "name": "sub_4730D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/C_global_6645C4.cpp"
    },
    {
     "address": "0x473110",
@@ -76183,8 +76183,8 @@
    {
     "address": "0x4A2140",
     "name": "sub_4A2140",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2180",
@@ -76743,8 +76743,8 @@
    {
     "address": "0x4AF4D0",
     "name": "sub_4AF4D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_cluster_4AF360.cpp"
    }
   ],
   "extra_methods": []
@@ -77877,8 +77877,8 @@
    {
     "address": "0x5203C0",
     "name": "sub_5203C0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_cluster_520170.cpp"
    }
   ],
   "extra_methods": []
@@ -80663,8 +80663,8 @@
    {
     "address": "0x41F920",
     "name": "sub_41F920",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_cluster_48B300_member_1E8.cpp"
    }
   ],
   "extra_methods": []

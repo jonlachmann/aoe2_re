@@ -36,6 +36,28 @@ public:
     S40A0D0* Ref_40A0D0();
 };
 
+// 0x426070 — ten-dword clear constructor, returns this.
+class S426070 {
+public:
+    int field_0;                  // +0x00
+    int field_4;                  // +0x04
+    int field_8;                  // +0x08
+    int field_c;                  // +0x0C
+    int array_10[10];             // +0x10
+    S426070* Init_426070();
+};
+MATCH_FUNC(0x426070)
+S426070* S426070::Init_426070()
+{
+    field_0 = 0;
+    field_8 = 0;
+    field_4 = 0;
+    field_c = 0;
+    for (int i = 0; i < 10; ++i)
+        array_10[i] = 0;
+    return this;
+}
+
 class S4228E0 {
 public:
     S4228E0* Ref_4228E0();
@@ -2547,4 +2569,23 @@ void* Sc423900::Get_423900(unsigned int a1)
     if (p != 0)
         return p;
     return (void*)&g_64db20;
+}
+
+// 0x425650 — two one-argument stores through the +0x15fc subobject.
+class T425650Sub {
+public:
+    void Hook_43A0A0(int a1);
+    void Hook_43A090(int a1);
+};
+class Sc425650 {
+public:
+    char pad_00[0x15fc];
+    T425650Sub* field_15fc;       // +0x15FC
+    void M_425650(int a1);
+};
+MATCH_FUNC(0x425650)
+void Sc425650::M_425650(int a1)
+{
+    this->field_15fc->Hook_43A0A0(a1);
+    this->field_15fc->Hook_43A090(a1);
 }

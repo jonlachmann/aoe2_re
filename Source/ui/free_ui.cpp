@@ -423,6 +423,48 @@ public:
     int Get_4AF9F0();
 };
 
+// 0x4AF800/0x4AF830 — bounded two-table setters on the +0x20 refresh slot.
+class S4AF830 {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_20(int v);
+
+    char pad_04[0x214 - 4];
+    int array_214[9];             // +0x214
+    int array_238[9];             // +0x238
+    int array_25c[9];             // +0x25C
+    int array_280[9];             // +0x280
+
+    void Set_4AF800(int index, int a, int b);
+    void Set_4AF830(int index, int a, int b);
+};
+MATCH_FUNC(0x4AF800)
+void S4AF830::Set_4AF800(int index, int a, int b)
+{
+    if (index < 0 || index > 8)
+        return;
+    array_214[index] = a;
+    array_238[index] = b;
+    Vt_20(1);
+}
+
+MATCH_FUNC(0x4AF830)
+void S4AF830::Set_4AF830(int index, int a, int b)
+{
+    if (index < 0 || index > 8)
+        return;
+    array_25c[index] = a;
+    array_280[index] = b;
+    Vt_20(1);
+}
+
 MATCH_FUNC(0x4AF9F0)
 int S4AF9F0::Get_4AF9F0()
 {
@@ -1720,6 +1762,20 @@ public:
 };
 
 extern "C" int __stdcall Hook_4A2140(int a1, void* a2, int a3);   // unresolved callee at 0x4A2140
+extern int g_664510;
+extern "C" int __stdcall Hook_473AE0(int a1, int a2, char* a3, int a4);   // unresolved callee at 0x473AE0
+
+MATCH_FUNC(0x4A2140)
+int __stdcall sub_4A2140(int a1, char* buf, int a3)
+{
+    if (a1 != 0) {
+        int r = Hook_473AE0(g_664510, a1, buf, a3);
+        if (r != 0)
+            return 1;
+    }
+    buf[0] = 0;
+    return 0;
+}
 
 MATCH_FUNC(0x4A2180)
 int __stdcall sub_4A2180(int a1)
@@ -5951,4 +6007,24 @@ int Sc4736C0::Set_4736C0(int a1, int a2, char a3)
         return 0;
     *(char*)(this->field_18[y] + x) = a3;
     return 1;
+}
+
+// 0x4BE6D0 — guarded indirect call through the global 0x61C11C function pointer.
+extern int (__stdcall* g_61C11C)(int a1, int a2, int a3);
+MATCH_FUNC(0x4BE6D0)
+int __cdecl sub_4BE6D0(int a1, int a2)
+{
+    if (a1 && a2 > 0)
+        return g_61C11C(a1, a2, 0x4000);
+    return 0;
+}
+
+// 0x4B9B60 — ten-argument forwarder to 0x4A23E0, returns the nonzero flag.
+// WIP: VC6 preloads a2 into edx before push a4; original loads it after push into eax.
+int __stdcall sub_4A23E0(int a1, int a2, int a3, int a4, int a5,
+                         int a6, int a7, int a8, int a9, int a10);
+WIP_FUNC(0x4B9B60)
+int __stdcall sub_4B9B60(int a1, int a2, int a3, int a4)
+{
+    return sub_4A23E0(a1, 0, a2, a3, 1, 0, 0, 0, 0, a4) != 0;
 }

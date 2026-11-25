@@ -8,7 +8,10 @@ class C_global_6645C4 {
 public:
     char pad_00[4];
     int field_4;                  // +0x04 count
-    char pad_08[0x18 - 0x08];
+    int field_8;                  // +0x08 row count
+    int** field_c;                // +0x0C block pointer table
+    int* field_10;                // +0x10 row capacity table
+    char pad_14[0x18 - 0x14];
     int* arr_18;                  // +0x18 table base
     char pad_1c[0x154 - 0x1c];
     int field_154;                // +0x154
@@ -19,4 +22,5 @@ public:
     bool M_473110(int i, int v);
     void M_4732B0(int a1);
     void M_4B0EA0(int a1);
+    bool M_4730D0(int x, int y, int v);
 };

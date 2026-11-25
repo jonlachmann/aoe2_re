@@ -98,12 +98,12 @@ public:
     virtual void slot_085();  // slot +0x154: sub_422340 [lifted]
     virtual void slot_086();  // slot +0x158: sub_5BC500 [lifted]
     void method_000();  // sub_41B760 [lifted]: same object, connected by this-edge call sites
-    void method_001();  // sub_41FA40 [lifted]: same object, connected by this-edge call sites
+    void method_001();  // sub_41FA40 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_002();  // sub_421780 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_003();  // sub_4217B0 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_004();  // sub_4217C0 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_005();  // sub_421A60 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
-    void method_006();  // sub_421A80 [lifted]: same object, connected by this-edge call sites
+    void method_006();  // sub_421A80 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_007();  // sub_421AB0 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_008();  // sub_421AC0 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_009();  // sub_421AD0 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp

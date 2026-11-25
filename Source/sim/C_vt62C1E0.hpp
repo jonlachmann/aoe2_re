@@ -15,7 +15,15 @@ public:
 
 class C_vt62C1E0 {
 public:
-    char pad_00[0x924];
+    char pad_00[0x28];
+    void* field_28;               // +0x28 window handle
+    char pad_2c[0x74 - 0x2c];
+    int field_74;                 // +0x74
+    char pad_78[0x1f4 - 0x78];
+    int field_1f4;                // +0x1F4
+    int field_1f8;                // +0x1F8
+    int field_1fc;                // +0x1FC
+    char pad_200[0x924 - 0x200];
     float field_924;              // +0x924
     unsigned char field_928;      // +0x928
     char pad_929[0x9A9 - 0x929];
@@ -87,6 +95,8 @@ public:
     char* Get_5BAEB0();
     void SetInt_5BAF20(int v);
     void SetInt_5BAF40(int v);
+    void M_421A80(char* src);     // 0x80-byte copy into +0x929, terminator +0x9A8
+    void M_41FA40(int a1);
     void M_5BAEC0(int a1);
     void Set_5BAF70(int a, int b);
     void SetByte_5BAFA0(int index, unsigned char v);

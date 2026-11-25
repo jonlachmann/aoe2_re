@@ -16,6 +16,17 @@ public:
     T4BD4B0Node* next_24;         // +0x24
 };
 
+// Subobject at [C_pnl_inp+0x148] used by 0x4BBCE0; it dispatches +0x14 (slot 5).
+class T4BBCE0Sub {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vat_14(int v);
+};
+
 // Subobject at [this+0x40] used by 0x4BCE20. It dispatches slot +0xC4 (index
 // 49) and receives the outer object plus three literal flags.
 class T4BCE20Sub {
@@ -139,12 +150,20 @@ public:
 
     char pad_04[0x40 - 4];
     T4BCE20Sub* field_40;         // +0x40, subobject dispatched by 0x4BCE20
-    char pad_44[0xf8 - 0x44];
+    char pad_44[0x6c - 0x44];
+    int field_6c;                 // +0x6C
+    char pad_70[0xf8 - 0x70];
     T4BD4B0Node* field_f8;        // +0xF8 head of the indexed node chain
-    char pad_fc[0x188 - 0xfc];
+    char pad_fc[0x148 - 0xfc];
+    T4BBCE0Sub* field_148;        // +0x148 subobject dispatched by 0x4BBCE0
+    int field_14c;                // +0x14C gate
+    char pad_150[0x184 - 0x150];
+    int field_184;                // +0x184
     int field_188;                // +0x188
 
+    void Hook_4A07A0(int a1);     // unresolved shared slot body at 0x4A07A0
     void M_408050(int a, int b);
+    void M_4BBCE0(int a1);
     char* M_4BD4B0(int index);
     void SetInt_4B4600(int v);
     void M_4BAF60(int a, int b, int c, int d);

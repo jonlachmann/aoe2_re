@@ -12,6 +12,19 @@ void C_global_6645C4::M_4732B0(int a1)
     }
 }
 
+MATCH_FUNC(0x4730D0)
+bool C_global_6645C4::M_4730D0(int x, int y, int v)
+{
+    if (x < 0 || x >= field_8)
+        return false;
+    if (y < 0)
+        return false;
+    if (y >= field_10[x])
+        return false;
+    ((int*)field_c[x])[y * 3 + 1] = v;
+    return true;
+}
+
 MATCH_FUNC(0x4B0EA0)
 void C_global_6645C4::M_4B0EA0(int a1)
 {

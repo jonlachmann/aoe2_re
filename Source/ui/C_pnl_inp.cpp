@@ -2,6 +2,19 @@
 
 extern unsigned char g_73e355;
 
+MATCH_FUNC(0x4BBCE0)
+void C_pnl_inp::M_4BBCE0(int a1)
+{
+    this->Hook_4A07A0(a1);
+    if (field_14c != 0 && field_148 != 0) {
+        T4BBCE0Sub* sub = field_148;
+        if (field_6c != 0)
+            sub->Vat_14(field_184);
+        else
+            sub->Vat_14(0);
+    }
+}
+
 WIP_FUNC(0x4BD4B0)
 char* C_pnl_inp::M_4BD4B0(int index)
 {

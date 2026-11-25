@@ -2100,14 +2100,14 @@
    "vtable": "0x622A28",
    "anchor": "0x4B4610",
    "methods": 74,
-   "owned_methods": 31,
-   "unowned_methods": 43,
+   "owned_methods": 32,
+   "unowned_methods": 42,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 1,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
     "Source/ui/C_pnl_btn.cpp": 1,
-    "Source/ui/C_pnl_inp.cpp": 5,
+    "Source/ui/C_pnl_inp.cpp": 6,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
@@ -2126,14 +2126,14 @@
    "vtable": "0x622B50",
    "anchor": "0x4B59D0",
    "methods": 87,
-   "owned_methods": 29,
-   "unowned_methods": 58,
+   "owned_methods": 30,
+   "unowned_methods": 57,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 1,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 19,
     "Source/ui/C_pnl_btn.cpp": 1,
-    "Source/ui/C_pnl_inp.cpp": 3,
+    "Source/ui/C_pnl_inp.cpp": 4,
     "Source/ui/C_pnl_lst.cpp": 2,
     "Source/ui/free_ui.cpp": 3
    },
@@ -2310,15 +2310,15 @@
    "vtable": "0x623318",
    "anchor": "0x4BA0E0",
    "methods": 73,
-   "owned_methods": 32,
-   "unowned_methods": 41,
+   "owned_methods": 33,
+   "unowned_methods": 40,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 1,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 24,
     "Source/ui/C_TribePopUpHelp.cpp": 1,
     "Source/ui/C_pnl_btn.cpp": 1,
-    "Source/ui/C_pnl_inp.cpp": 4,
+    "Source/ui/C_pnl_inp.cpp": 5,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
@@ -2743,15 +2743,15 @@
    "vtable": "0x624770",
    "anchor": "0x4D6A20",
    "methods": 74,
-   "owned_methods": 33,
-   "unowned_methods": 41,
+   "owned_methods": 34,
+   "unowned_methods": 40,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 1,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 24,
     "Source/ui/C_TribePopUpHelp.cpp": 1,
     "Source/ui/C_pnl_btn.cpp": 1,
-    "Source/ui/C_pnl_inp.cpp": 4,
+    "Source/ui/C_pnl_inp.cpp": 5,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
@@ -5087,15 +5087,15 @@
    "vtable": "0x62C1E0",
    "anchor": "0x5B1170",
    "methods": 160,
-   "owned_methods": 77,
-   "unowned_methods": 83,
+   "owned_methods": 79,
+   "unowned_methods": 81,
    "primary_file": "Source/sim/C_vt62C1E0.cpp",
    "owner_files": {
     "Source/app/C_vt61D890.cpp": 1,
     "Source/app/C_vt61DF78.cpp": 19,
     "Source/game/free_game.cpp": 2,
     "Source/gfx/C_vt61DA40.cpp": 1,
-    "Source/sim/C_vt62C1E0.cpp": 50,
+    "Source/sim/C_vt62C1E0.cpp": 52,
     "Source/sim/free_sim.cpp": 2,
     "Source/ui/C_pnl_edit.cpp": 2
    },
@@ -5512,11 +5512,11 @@
    "vtable": null,
    "anchor": "0x43C050",
    "methods": 39,
-   "owned_methods": 3,
-   "unowned_methods": 36,
+   "owned_methods": 4,
+   "unowned_methods": 35,
    "primary_file": "Source/game/C_global_6645C4.cpp",
    "owner_files": {
-    "Source/game/C_global_6645C4.cpp": 3
+    "Source/game/C_global_6645C4.cpp": 4
    },
    "other_files": [],
    "staged_files": [],
@@ -7951,11 +7951,11 @@
    "vtable": null,
    "anchor": "0x4A2140",
    "methods": 5,
-   "owned_methods": 1,
-   "unowned_methods": 4,
+   "owned_methods": 2,
+   "unowned_methods": 3,
    "primary_file": "Source/ui/free_ui.cpp",
    "owner_files": {
-    "Source/ui/free_ui.cpp": 1
+    "Source/ui/free_ui.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -8253,10 +8253,12 @@
    "vtable": null,
    "anchor": "0x4AF360",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/ui/C_cluster_4AF360.cpp",
+   "owner_files": {
+    "Source/ui/C_cluster_4AF360.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -8828,10 +8830,12 @@
    "vtable": null,
    "anchor": "0x520170",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/sim/C_cluster_520170.cpp",
+   "owner_files": {
+    "Source/sim/C_cluster_520170.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -10211,10 +10215,12 @@
    "vtable": null,
    "anchor": "0x41F920",
    "methods": 1,
-   "owned_methods": 0,
-   "unowned_methods": 1,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 0,
+   "primary_file": "Source/app/C_cluster_48B300_member_1E8.cpp",
+   "owner_files": {
+    "Source/app/C_cluster_48B300_member_1E8.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
