@@ -73,7 +73,7 @@ public:
     virtual void slot_060();  // slot +0x0F0: sub_4A2320 [lifted]
     virtual void slot_061();  // slot +0x0F4: sub_5ABE20 [lifted]
     virtual void slot_062();  // slot +0x0F8: tpnl_obj::draw_item [lifted]
-    void method_000();  // sub_523AC0 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_523AC0 [matched]: same object, connected by this-edge call sites — Source/sim/free_sim.cpp
     void method_001();  // tpnl_obj::draw_score [lifted]: same object, connected by this-edge call sites
     void method_002();  // sub_5A77A0 [lifted]: same object, connected by this-edge call sites
 };

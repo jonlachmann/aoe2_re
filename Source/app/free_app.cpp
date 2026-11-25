@@ -1710,3 +1710,78 @@ int S41B010::M_41B010()
         return field_4->Other_5267D0();
     return 0;
 }
+
+// 0x4013E0 — install the vtable at 0x61C524 and forward to 0x409630.
+extern void sub_409630();
+class S4013E0 {
+public:
+    void M_4013E0();
+};
+MATCH_FUNC(0x4013E0)
+void S4013E0::M_4013E0()
+{
+    *(void**)this = (void*)0x61C524;
+    sub_409630();
+}
+
+// 0x402EB0 — install the vtable at 0x61C71C and forward to 0x409630.
+class S402EB0 {
+public:
+    void M_402EB0();
+};
+MATCH_FUNC(0x402EB0)
+void S402EB0::M_402EB0()
+{
+    *(void**)this = (void*)0x61C71C;
+    sub_409630();
+}
+
+// 0x410840 — install the vtable at 0x61D4E8 and forward to 0x4114F0.
+extern void sub_4114F0();
+class S410840 {
+public:
+    void M_410840();
+};
+MATCH_FUNC(0x410840)
+void S410840::M_410840()
+{
+    *(void**)this = (void*)0x61D4E8;
+    sub_4114F0();
+}
+
+// 0x410890 — install the vtable at 0x61D524 and forward to 0x440B30.
+extern void sub_440B30();
+class S410890 {
+public:
+    void M_410890();
+};
+MATCH_FUNC(0x410890)
+void S410890::M_410890()
+{
+    *(void**)this = (void*)0x61D524;
+    sub_440B30();
+}
+
+// 0x4119D0 — install the vtable at 0x61D6C8 and forward to 0x4114F0.
+class S4119D0 {
+public:
+    void M_4119D0();
+};
+MATCH_FUNC(0x4119D0)
+void S4119D0::M_4119D0()
+{
+    *(void**)this = (void*)0x61D6C8;
+    sub_4114F0();
+}
+
+// 0x411A30 — install the vtable at 0x61D704 and forward to 0x4114F0.
+class S411A30 {
+public:
+    void M_411A30();
+};
+MATCH_FUNC(0x411A30)
+void S411A30::M_411A30()
+{
+    *(void**)this = (void*)0x61D704;
+    sub_4114F0();
+}

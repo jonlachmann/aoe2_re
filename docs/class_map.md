@@ -22,17 +22,17 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1144 |
+| matched | 1158 |
 | wip | 15 |
 | verified | 19 |
-| lifted | 6573 |
+| lifted | 6559 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
 |---|---|---|---|---|---|---|
-| `0x61C524` | `C_vt61C524` | 24 | 1 | — | 5 | 20 |
+| `0x61C524` | `C_vt61C524` | 24 | 1 | — | 6 | 19 |
 | `0x61C62C` | `C_vt61C62C` | 24 | 0 | — | 7 | 17 |
-| `0x61C71C` | `C_vt61C71C` | 24 | 1 | — | 7 | 18 |
+| `0x61C71C` | `C_vt61C71C` | 24 | 1 | — | 8 | 17 |
 | `0x61C800` | `C_vt61C800` | 24 | 0 | — | 7 | 17 |
 | `0x61C8E4` | `C_vt61C8E4` | 24 | 0 | — | 5 | 19 |
 | `0x61C9D4` | `C_vt61C9D4` | 24 | 0 | — | 8 | 16 |
@@ -52,14 +52,14 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x61D4A0` | `C_vt61D4A0` | 16 | 1 | — | 13 | 4 |
 | `0x61D4E0` | `C_vt61D4E0` | 1 | 1 | — | 0 | 2 |
 | `0x61D4E4` | `C_vt61D4E4` | 1 | 1 | — | 0 | 2 |
-| `0x61D4E8` | `C_vt61D4E8` | 15 | 1 | — | 13 | 3 |
-| `0x61D524` | `C_vt61D524` | 1 | 1 | — | 0 | 2 |
+| `0x61D4E8` | `C_vt61D4E8` | 15 | 1 | — | 14 | 2 |
+| `0x61D524` | `C_vt61D524` | 1 | 1 | — | 1 | 1 |
 | `0x61D5A8` | `C_vt61D5A8` | 23 | 0 | — | 17 | 6 |
 | `0x61D604` | `C_vt61D604` | 1 | 1 | — | 1 | 1 |
 | `0x61D608` | `C_vt61D608` | 15 | 0 | — | 13 | 2 |
 | `0x61D6C4` | `C_vt61D6C4` | 1 | 1 | — | 1 | 1 |
-| `0x61D6C8` | `C_vt61D6C8` | 15 | 1 | — | 13 | 3 |
-| `0x61D704` | `C_vt61D704` | 15 | 1 | — | 13 | 3 |
+| `0x61D6C8` | `C_vt61D6C8` | 15 | 1 | — | 14 | 2 |
+| `0x61D704` | `C_vt61D704` | 15 | 1 | — | 14 | 2 |
 | `0x61D7C0` | `C_vt61D7C0` | 16 | 1 | — | 14 | 3 |
 | `0x61D890` | `C_vt61D890` | 57 | 1 | — | 7 | 51 |
 | `0x61DA40` | `C_vt61DA40` | 187 | 0 | — | 132 | 55 |
@@ -71,7 +71,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x61E328` | `C_vt61E328` | 214 | 0 | — | 68 | 146 |
 | `0x61E8A0` | `C_vt61E8A0` | 5 | 1 | — | 0 | 6 |
 | `0x61E8C0` | `C_vt61E8C0` | 1 | 1 | — | 1 | 1 |
-| `0x61E948` | `C_vt61E948` | 1 | 1 | — | 0 | 2 |
+| `0x61E948` | `C_vt61E948` | 1 | 1 | — | 1 | 1 |
 | `0x61E9CC` | `C_diam_map` | 67 | 0 | diam_map | 26 | 41 |
 | `0x61EAD8` | `C_vt61EAD8` | 89 | 0 | panel_ez | 31 | 58 |
 | `0x61ECBC` | `C_vt61ECBC` | 89 | 1 | panel_ez | 32 | 58 |
@@ -91,14 +91,14 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x6205D0` | `C_vt6205D0` | 190 | 0 | — | 132 | 58 |
 | `0x62094C` | `C_vt62094C` | 3 | 1 | — | 0 | 4 |
 | `0x620A64` | `C_vt620A64` | 43 | 1 | — | 29 | 15 |
-| `0x620B74` | `C_vt620B74` | 1 | 1 | — | 0 | 2 |
+| `0x620B74` | `C_vt620B74` | 1 | 1 | — | 1 | 1 |
 | `0x620BF8` | `C_vt620BF8` | 1 | 1 | — | 0 | 2 |
 | `0x620C7C` | `C_vt620C7C` | 26 | 0 | — | 7 | 19 |
-| `0x620D6C` | `C_vt620D6C` | 25 | 1 | — | 12 | 14 |
+| `0x620D6C` | `C_vt620D6C` | 25 | 1 | — | 13 | 13 |
 | `0x620E50` | `C_vt620E50` | 26 | 0 | — | 7 | 19 |
-| `0x620F40` | `C_vt620F40` | 26 | 1 | — | 12 | 15 |
+| `0x620F40` | `C_vt620F40` | 26 | 1 | — | 13 | 14 |
 | `0x621028` | `C_vt621028` | 26 | 1 | — | 7 | 20 |
-| `0x621110` | `C_vt621110` | 25 | 1 | — | 9 | 17 |
+| `0x621110` | `C_vt621110` | 25 | 1 | — | 10 | 16 |
 | `0x621200` | `C_vt621200` | 25 | 1 | — | 12 | 14 |
 | `0x6213C0` | `C_vt6213C0` | 15 | 2 | — | 1 | 16 |
 | `0x621518` | `C_vt621518` | 214 | 0 | — | 70 | 144 |
@@ -235,7 +235,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x62B750` | `C_vt62B750` | 101 | 1 | — | 11 | 91 |
 | `0x62B970` | `C_tpnl_btn` | 63 | 0 | tpnl_btn, tpnl_inv | 19 | 44 |
 | `0x62BAEC` | `C_tpnl_inv` | 61 | 1 | tpnl_inv | 26 | 36 |
-| `0x62BC64` | `C_tpnl_obj` | 63 | 3 | tpnl_obj | 23 | 43 |
+| `0x62BC64` | `C_tpnl_obj` | 63 | 3 | tpnl_obj | 24 | 42 |
 | `0x62BD70` | `C_tpnl_per` | 61 | 1 | tpnl_per | 27 | 35 |
 | `0x62BEF0` | `C_tpnl_tim` | 61 | 1 | tpnl_tim | 25 | 37 |
 | `0x62C064` | `C_vt62C064` | 62 | 1 | — | 26 | 37 |
@@ -603,8 +603,8 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | game | 436 | 142 | 3 | 291 |
 | gfx | 410 | 52 | 3 | 355 |
 | runtime-data | 20 | 0 | 0 | 20 |
-| sim | 1283 | 215 | 0 | 1068 |
-| ui | 1230 | 172 | 2 | 1056 |
+| sim | 1283 | 216 | 0 | 1067 |
+| ui | 1230 | 173 | 2 | 1055 |
 
 ## Skeleton tree
 `Source/skeleton/` holds declarations only, generated from this map and

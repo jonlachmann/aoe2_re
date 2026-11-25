@@ -68,8 +68,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x4013F0",
@@ -388,8 +388,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x402EC0",
@@ -7094,8 +7094,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x410850",
@@ -7138,8 +7138,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x4108A0",
@@ -7696,8 +7696,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x4119E0",
@@ -7740,8 +7740,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x411A40",
@@ -23028,8 +23028,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440B40",
@@ -32219,8 +32219,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x472B00",
@@ -32937,8 +32937,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x474260",
@@ -33366,8 +33366,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x474AC0",
@@ -33929,8 +33929,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4769B0",
@@ -34421,8 +34421,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4778C0",
@@ -69790,8 +69790,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x523AD0",
@@ -88217,8 +88217,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x58A160",

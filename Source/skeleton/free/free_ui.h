@@ -52,7 +52,7 @@ void sub_473CD0();  // size 109, calls 2, lifted, module ui
 void sub_473EE0();  // size 363, calls 5, lifted, module ui
 void sub_474050();  // size 270, calls 2, lifted, module ui
 void sub_474160();  // size 236, calls 2, lifted, module ui
-void sub_474250();  // size 16, calls 1, lifted, module ui
+void sub_474250();  // size 16, calls 1, matched, module ui
 void sub_474400();  // size 40, calls 0, matched, module ui
 void sub_474430();  // size 68, calls 0, lifted, module ui
 void sub_474840();  // size 109, calls 2, lifted, module ui

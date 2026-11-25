@@ -34,5 +34,5 @@ public:
     virtual void slot_022();  // slot +0x058: sub_473C90 [matched] — Source/ui/C_vt620C7C.cpp
     virtual void slot_023();  // slot +0x05C: sub_473CA0 [matched] — Source/ui/C_vt620C7C.cpp
     virtual void slot_024();  // slot +0x060: sub_477AA0 [lifted]
-    void method_000();  // sub_4778B0 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_4778B0 [matched]: same object, connected by this-edge call sites — Source/ui/free_ui.cpp
 };

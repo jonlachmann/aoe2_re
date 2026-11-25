@@ -1063,3 +1063,16 @@ void sub_4695B0()
 {
     sub_469AB0();
 }
+
+// 0x440B30 — install the vtable at 0x61E948 and forward to 0x440F00.
+extern void sub_440F00();
+class S440B30 {
+public:
+    void M_440B30();
+};
+MATCH_FUNC(0x440B30)
+void S440B30::M_440B30()
+{
+    *(void**)this = (void*)0x61E948;
+    sub_440F00();
+}

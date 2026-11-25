@@ -3944,3 +3944,67 @@ void __cdecl sub_494560()
 {
     sub_4A6E60(-1);
 }
+
+// 0x472AF0 — install the vtable at 0x620B74 and forward to 0x472DE0.
+extern void sub_472DE0();
+class S472AF0 {
+public:
+    void M_472AF0();
+};
+MATCH_FUNC(0x472AF0)
+void S472AF0::M_472AF0()
+{
+    *(void**)this = (void*)0x620B74;
+    sub_472DE0();
+}
+
+// 0x474250 — install the vtable at 0x620C7C and forward to 0x4778B0.
+extern void sub_4778B0();
+class S474250 {
+public:
+    void M_474250();
+};
+MATCH_FUNC(0x474250)
+void S474250::M_474250()
+{
+    *(void**)this = (void*)0x620C7C;
+    sub_4778B0();
+}
+
+// 0x474AB0 — install the vtable at 0x620D6C and forward to 0x4791D0.
+extern void sub_4791D0();
+class S474AB0 {
+public:
+    void M_474AB0();
+};
+MATCH_FUNC(0x474AB0)
+void S474AB0::M_474AB0()
+{
+    *(void**)this = (void*)0x620D6C;
+    sub_4791D0();
+}
+
+// 0x4769A0 — install the vtable at 0x620F40 and forward to 0x474AB0.
+extern void sub_474AB0();
+class S4769A0 {
+public:
+    void M_4769A0();
+};
+MATCH_FUNC(0x4769A0)
+void S4769A0::M_4769A0()
+{
+    *(void**)this = (void*)0x620F40;
+    sub_474AB0();
+}
+
+// 0x4778B0 — install the vtable at 0x621110 and forward to 0x474AB0.
+class S4778B0 {
+public:
+    void M_4778B0();
+};
+MATCH_FUNC(0x4778B0)
+void S4778B0::M_4778B0()
+{
+    *(void**)this = (void*)0x621110;
+    sub_474AB0();
+}

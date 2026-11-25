@@ -33,5 +33,5 @@ public:
     virtual void slot_021();  // slot +0x054: sub_402960 [lifted]
     virtual void slot_022();  // slot +0x058: sub_409B50 [lifted]
     virtual void slot_023();  // slot +0x05C: sub_4015F0 [lifted]
-    void method_000();  // sub_4013E0 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_4013E0 [matched]: same object, connected by this-edge call sites — Source/app/free_app.cpp
 };

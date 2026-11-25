@@ -709,7 +709,7 @@ void sub_589B70();  // size 543, calls 1, lifted, module sim
 void sub_589D90();  // size 389, calls 1, lifted, module sim
 void sub_589F20();  // size 525, calls 1, lifted, module sim
 void sub_58A130();  // size 18, calls 0, matched, module sim
-void sub_58A150();  // size 16, calls 2, lifted, module sim
+void sub_58A150();  // size 16, calls 2, matched, module sim
 void sub_58A160();  // size 157, calls 4, lifted, module sim
 void sub_58A200();  // size 163, calls 4, lifted, module sim
 void sub_58A2B0();  // size 60, calls 2, lifted, module sim

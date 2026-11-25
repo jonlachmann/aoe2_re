@@ -3638,3 +3638,29 @@ void __cdecl sub_5C0BA0()
 {
     sub_4CE010();
 }
+
+// 0x523AC0 — install the vtable at 0x626E04 and forward to 0x5A77A0.
+extern void sub_5A77A0();
+class S523AC0 {
+public:
+    void M_523AC0();
+};
+MATCH_FUNC(0x523AC0)
+void S523AC0::M_523AC0()
+{
+    *(void**)this = (void*)0x626E04;
+    sub_5A77A0();
+}
+
+// 0x58A150 — install the vtable at 0x62AA3C and forward to 0x58A2F0.
+extern void sub_58A2F0();
+class S58A150 {
+public:
+    void M_58A150();
+};
+MATCH_FUNC(0x58A150)
+void S58A150::M_58A150()
+{
+    *(void**)this = (void*)0x62AA3C;
+    sub_58A2F0();
+}
