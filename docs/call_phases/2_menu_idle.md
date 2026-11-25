@@ -1,8 +1,8 @@
 # 2_menu_idle
 
-31 functions called (0 first seen in this phase): 12 matched, 19 left to match (0 of them WIP), 0 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+31 functions called (0 first seen in this phase): 14 matched, 17 left to match (0 of them WIP), 0 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (19)
+## Left to match (17)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -13,8 +13,6 @@
 | 9 | `sub_4EDC70` | 966102 |  | 1_boot_to_menu |  |
 | 10 | `sub_5217F0` | 966102 |  | 1_boot_to_menu |  |
 | 13 | `sub_5215F0` | 966102 |  | 1_boot_to_menu |  |
-| 14 | `sub_4A1160` | 85983078 |  | 1_boot_to_menu |  |
-| 15 | `sub_4B8510` | 966102 |  | 1_boot_to_menu |  |
 | 16 | `sub_4B8CC0` | 5796612 |  | 1_boot_to_menu |  |
 | 17 | `sub_4B5AB0` | 2898306 |  | 1_boot_to_menu |  |
 | 18 | `sub_5A6680` | 8694918 |  | 1_boot_to_menu |  |
@@ -26,7 +24,7 @@
 | 29 | `sub_4B3860` | 120 |  | 1_boot_to_menu |  |
 | 30 | `sub_45F8A0` | 24 |  | 1_boot_to_menu |  |
 
-## Matched (12)
+## Matched (14)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -37,6 +35,8 @@
 | 8 | `sub_49F620` | 966342 | MATCH | 1_boot_to_menu | S49F620::Get_49F620 |
 | 11 | `sub_5219B0` | 1932204 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Find_5219B0 |
 | 12 | `sub_5219E0` | 1932204 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Find_5219E0 |
+| 14 | `sub_4A1160` | 85983078 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4A1160 |
+| 15 | `sub_4B8510` | 966102 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4B8510 |
 | 19 | `sub_4217C0` | 966102 | MATCH | 1_boot_to_menu | C_vt62C1E0::Get9AA_4217C0 |
 | 20 | `sub_42D210` | 966102 | MATCH | 1_boot_to_menu | S42D210::Check_42D210 |
 | 21 | `sub_415750` | 120 | MATCH | 1_boot_to_menu | C_vt61D890::M_415750 |

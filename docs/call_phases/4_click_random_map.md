@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 258 matched, 296 left to match (2 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 260 matched, 294 left to match (2 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (296)
+## Left to match (294)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -35,8 +35,6 @@
 | 66 | `sub_4EDC70` | 78816 |  | 1_boot_to_menu |  |
 | 67 | `sub_5217F0` | 78820 |  | 1_boot_to_menu |  |
 | 70 | `sub_5215F0` | 78816 |  | 1_boot_to_menu |  |
-| 73 | `sub_4A1160` | 302124136 |  | 1_boot_to_menu |  |
-| 74 | `sub_4B8510` | 78816 |  | 1_boot_to_menu |  |
 | 75 | `sub_4B8CC0` | 36842026 |  | 1_boot_to_menu |  |
 | 76 | `sub_4B5AB0` | 36605578 |  | 1_boot_to_menu |  |
 | 77 | `sub_5A6680` | 709344 |  | 1_boot_to_menu |  |
@@ -303,7 +301,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (258)
+## Matched (260)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -336,6 +334,8 @@
 | 69 | `sub_5219E0` | 157640 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Find_5219E0 |
 | 71 | `sub_4BBCE0` | 79105 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BBCE0 |
 | 72 | `sub_4A07A0` | 79316 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A07A0 |
+| 73 | `sub_4A1160` | 302124136 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4A1160 |
+| 74 | `sub_4B8510` | 78816 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4B8510 |
 | 78 | `sub_4217C0` | 2157151 | MATCH | 1_boot_to_menu | C_vt62C1E0::Get9AA_4217C0 |
 | 79 | `sub_42D210` | 1117953 | MATCH | 1_boot_to_menu | S42D210::Check_42D210 |
 | 86 | `sub_5204C0` | 4 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5204C0 |
