@@ -16,7 +16,7 @@ public:
     void method_007();  // sub_4B4570 [lifted]
     void method_008();  // sub_4B5950 [lifted]
     void method_009();  // sub_4B6890 [lifted]
-    void method_010();  // sub_4B7F20 [lifted]
+    void method_010();  // sub_4B7F20 [matched] — Source/ui/C_pnl_pic.cpp
     void method_011();  // sub_4B8730 [lifted]
     void method_012();  // sub_4B9D20 [matched] — Source/ui/C_vt6230B0.cpp
     void method_013();  // sub_4B9E20 [matched] — Source/ui/free_ui.cpp

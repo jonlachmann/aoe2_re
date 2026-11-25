@@ -68,7 +68,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt62AAE0` | game | 0x62AAE0 | Source/sim/free_sim.cpp | Source/sim/C_vt62AAE0.cpp | 2/8 |
 | `C_TribePopUpHelp` | gfx | 0x620274 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 37/62 |
 | `C_TribeTechHelpScreen` | gfx | 0x620090 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 40/92 |
-| `C_cluster_443970` | gfx | — | Source/ui/C_vt6230B0.cpp | Source/gfx/C_cluster_443970.cpp, Source/ui/free_ui.cpp | 3/29 |
+| `C_cluster_443970` | gfx | — | Source/ui/C_pnl_pic.cpp | Source/gfx/C_cluster_443970.cpp, Source/ui/C_vt6230B0.cpp, Source/ui/free_ui.cpp | 4/29 |
 | `C_diam_map` | gfx | 0x61E9CC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 37/67 |
 | `C_vt61DA40` | gfx | 0x61DA40 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp | 141/187 |
 | `C_vt61EAD8` | gfx | 0x61EAD8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/89 |

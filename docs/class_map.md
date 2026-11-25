@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1753 |
+| matched | 1754 |
 | wip | 18 |
 | verified | 17 |
-| lifted | 5962 |
+| lifted | 5961 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -318,7 +318,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_441120` | this-edge component with no rooted object identity | 3 | 0 | 3 |
 | `C_cluster_4412B0` | this-edge component with no rooted object identity | 7 | 2 | 5 |
 | `C_cluster_441B40` | this-edge component with no rooted object identity | 4 | 1 | 3 |
-| `C_cluster_443970` | this-edge component with no rooted object identity | 29 | 3 | 26 |
+| `C_cluster_443970` | this-edge component with no rooted object identity | 29 | 4 | 25 |
 | `C_cluster_443B00` | this-edge component with no rooted object identity | 3 | 1 | 2 |
 | `C_cluster_4464E0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_455930` | this-edge component with no rooted object identity | 2 | 0 | 2 |

@@ -160,3 +160,36 @@ void C_pnl_pic::M_4B83D0()
     }
     field_208 = 0;
 }
+
+// 0x4B7F20 — panel-picture reset constructor: run the base 0x4A0270 init and
+// clear the +0x200/+0x208..+0x240 block (keeping +0x204 = 1), write the
+// 0x622D6C vtable pointer, set the +0xF2 mode byte to 2 and +0x1FC to -1.
+MATCH_FUNC(0x4B7F20)
+C_pnl_pic* C_pnl_pic::M_4B7F20()
+{
+    this->Hook_4A0270();
+    field_204 = 1;
+    field_200 = 0;
+    field_208 = 0;
+    field_20c = 0;
+    field_210 = 0;
+    field_214 = 0;
+    field_80 = 0;
+    ((unsigned char*)this)[0xf8] = 0;
+    field_218 = 0;
+    field_21c = 0;
+    field_220 = 0;
+    field_224 = 0;
+    field_228 = 0;
+    field_22c = 0;
+    field_230 = 0;
+    field_234 = 0;
+    field_238 = 0;
+    field_23c = 0;
+    field_23d = 0;
+    field_240 = 0;
+    *(int*)this = 0x622D6C;
+    field_f2 = 2;
+    field_1fc = -1;
+    return this;
+}

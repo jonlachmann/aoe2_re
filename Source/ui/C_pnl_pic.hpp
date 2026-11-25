@@ -76,7 +76,9 @@ public:
     void* field_5c;                // +0x5C node chain head
     char pad_60[0x6c - 0x60];      // +0x60..+0x6C
     void* field_6c;                // +0x6C active subobject
-    char pad_70[0xc0 - 0x70];      // +0x70..+0xC0
+    char pad_70[0x80 - 0x70];      // +0x70..+0x80
+    int field_80;                  // +0x80
+    char pad_84[0xc0 - 0x84];      // +0x84..+0xC0
     int field_c0;                  // +0xC0 threshold
     char pad_c4[0xc8 - 0xc4];      // +0xC4..+0xC8
     int field_c8;                  // +0xC8
@@ -87,7 +89,8 @@ public:
     char pad_dc[0xf0 - 0xdc];      // +0xDC..+0xF0
     unsigned char field_f0;        // +0xF0 state
     unsigned char field_f1;        // +0xF1 mode
-    char pad_f2[0xf8 - 0xf2];      // +0xF2..+0xF8
+    unsigned char field_f2;        // +0xF2
+    char pad_f3[0xf8 - 0xf3];      // +0xF3..+0xF8
     int field_f8;                  // +0xF8
     int field_fc;                  // +0xFC
     char pad_100[0x120 - 0x100];   // +0x100..+0x120
@@ -115,18 +118,33 @@ public:
     int field_1b0;                 // +0x1B0
     int field_1b4;                 // +0x1B4
     int field_1b8;                 // +0x1B8 mode
-    char pad_1bc[0x208 - 0x1bc];   // +0x1BC..+0x208
+    char pad_1bc[0x1c8 - 0x1bc];   // +0x1BC..+0x1C8
+    int field_1c8;                 // +0x1C8
+    int field_1cc;                 // +0x1CC
+    char pad_1d0[0x1fc - 0x1d0];   // +0x1D0..+0x1FC
+    int field_1fc;                 // +0x1FC
+    int field_200;                 // +0x200
+    int field_204;                 // +0x204
     int field_208;                 // +0x208 teardown gate
-    char pad_20c[0x210 - 0x20c];   // +0x20C..+0x210
+    int field_20c;                 // +0x20C
     void* field_210;               // +0x210 owned object A
     void* field_214;               // +0x214 owned object B
     int field_218;                // +0x218
     int field_21c;                // +0x21C
-    char pad_220[0x224 - 0x220];  // +0x220..+0x224
+    int field_220;                // +0x220
     int field_224;                // +0x224
     int field_228;                // +0x228
     int field_22c;                // +0x22C
+    int field_230;                // +0x230
+    int field_234;                // +0x234
+    int field_238;                // +0x238
+    unsigned char field_23c;      // +0x23C
+    unsigned char field_23d;      // +0x23D
+    char pad_23e[0x240 - 0x23e];  // +0x23E..+0x240
+    int field_240;                // +0x240
 
+    void Hook_4A0270();
+    C_pnl_pic* M_4B7F20();
     void M_4B8510();
     int M_4A1160();
     int M_4B88B0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
