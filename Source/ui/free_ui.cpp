@@ -4175,3 +4175,34 @@ void S4EDC60::M_4EDC60(int a1)
 {
     ((T4B9BB0*)this)->Other_4B9BB0(a1);
 }
+
+// 0x4DC7B0 — thiscall forwarder to 0x4364F0 with two stacked arguments.
+class T4364F0 {
+public:
+    void Other_4364F0(int a1, int a2);
+};
+class S4DC7B0 {
+public:
+    void M_4DC7B0(int a1, int a2);
+};
+MATCH_FUNC(0x4DC7B0)
+void S4DC7B0::M_4DC7B0(int a1, int a2)
+{
+    ((T4364F0*)this)->Other_4364F0(a1, a2);
+}
+
+// 0x4D64A0 — call cleanup helper and report success; five stacked arguments.
+class T4D6810 {
+public:
+    void Other_4D6810();
+};
+class S4D64A0 {
+public:
+    int M_4D64A0(int a1, int a2, int a3, int a4, int a5);
+};
+MATCH_FUNC(0x4D64A0)
+int S4D64A0::M_4D64A0(int a1, int a2, int a3, int a4, int a5)
+{
+    ((T4D6810*)this)->Other_4D6810();
+    return 1;
+}

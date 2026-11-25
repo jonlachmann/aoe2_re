@@ -6,6 +6,6 @@
 
 class C_cluster_416ED0 {
 public:
-    void method_000();  // sub_416ED0 [lifted]
+    void method_000();  // sub_416ED0 [matched] — Source/app/free_app.cpp
     void method_001();  // sub_419700 [lifted]
 };

@@ -1800,3 +1800,11 @@ void S41A3E0::M_41A3E0(int a1)
 {
     ((T52A7A0*)this)->Other_52A7A0(a1);
 }
+
+// 0x416ED0 — stdcall call with a constant zero argument.
+extern void __stdcall sub_419700(int a1);
+MATCH_FUNC(0x416ED0)
+void __cdecl sub_416ED0()
+{
+    sub_419700(0);
+}

@@ -1047,7 +1047,7 @@ void sub_5B2EA0();  // size 61, calls 0, lifted, module sim
 void sub_5B2EE0();  // size 61, calls 0, lifted, module sim
 void sub_5B3748();  // size 18, calls 0, lifted, module sim
 void sub_5B42E0();  // size 7, calls 0, matched, module sim
-void sub_5B4520();  // size 13, calls 1, lifted, module sim
+void sub_5B4520();  // size 13, calls 1, matched, module sim
 void sub_5B4560();  // size 7, calls 0, matched, module sim
 void sub_5B4570();  // size 13, calls 0, matched, module sim
 void sub_5B4580();  // size 7, calls 0, matched, module sim

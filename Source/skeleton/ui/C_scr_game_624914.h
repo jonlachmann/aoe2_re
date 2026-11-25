@@ -35,7 +35,7 @@ public:
     virtual void slot_022();  // slot +0x058: sub_4A1500 [lifted]
     virtual void slot_023();  // slot +0x05C: sub_4A15B0 [lifted]
     virtual void slot_024();  // slot +0x060: sub_4364F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
-    virtual void slot_025();  // slot +0x064: sub_4DC7B0 [lifted]
+    virtual void slot_025();  // slot +0x064: sub_4DC7B0 [matched] — Source/ui/free_ui.cpp
     virtual void slot_026();  // slot +0x068: sub_4364F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_027();  // slot +0x06C: sub_4364F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_028();  // slot +0x070: sub_4DC330 [lifted]

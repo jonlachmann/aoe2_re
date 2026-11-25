@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1191 |
-| wip | 15 |
+| matched | 1204 |
+| wip | 16 |
 | verified | 19 |
-| lifted | 6526 |
+| lifted | 6512 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -145,9 +145,9 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x624100` | `C_vt624100` | 87 | 1 | panel_ez | 32 | 56 |
 | `0x6242DC` | `C_vt6242DC` | 87 | 1 | panel_ez | 32 | 56 |
 | `0x6244B8` | `C_vt6244B8` | 87 | 0 | panel_ez | 32 | 55 |
-| `0x624614` | `C_vt624614` | 87 | 2 | panel_ez | 30 | 59 |
+| `0x624614` | `C_vt624614` | 87 | 2 | panel_ez | 31 | 58 |
 | `0x624770` | `C_scr_cred` | 73 | 1 | scr_cred | 26 | 48 |
-| `0x624914` | `C_scr_game` | 87 | 1 | panel_ez, scr_game | 29 | 59 |
+| `0x624914` | `C_scr_game` | 87 | 1 | panel_ez, scr_game | 30 | 58 |
 | `0x624AF4` | `C_vt624AF4` | 87 | 0 | panel_ez | 32 | 55 |
 | `0x624CD0` | `C_vt624CD0` | 87 | 0 | panel_ez | 32 | 55 |
 | `0x624E2C` | `C_vt624E2C` | 87 | 0 | panel_ez | 32 | 55 |
@@ -224,15 +224,15 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x62AC80` | `C_vt62AC80` | 89 | 1 | panel_ez | 31 | 59 |
 | `0x62AF98` | `C_vt62AF98` | 3 | 1 | — | 1 | 3 |
 | `0x62B024` | `C_vt62B024` | 1 | 1 | — | 0 | 2 |
-| `0x62B0A8` | `C_vt62B0A8` | 27 | 1 | — | 8 | 20 |
+| `0x62B0A8` | `C_vt62B0A8` | 27 | 1 | — | 9 | 19 |
 | `0x62B198` | `C_vt62B198` | 26 | 1 | — | 8 | 19 |
 | `0x62B214` | `C_vt62B214` | 4 | 0 | — | 0 | 4 |
 | `0x62B224` | `C_vt62B224` | 25 | 1 | — | 13 | 13 |
 | `0x62B308` | `C_vt62B308` | 18 | 1 | — | 2 | 17 |
 | `0x62B450` | `C_vt62B450` | 6 | 1 | — | 1 | 6 |
 | `0x62B4E8` | `C_vt62B4E8` | 1 | 0 | — | 0 | 1 |
-| `0x62B5A0` | `C_vt62B5A0` | 101 | 1 | — | 10 | 92 |
-| `0x62B750` | `C_vt62B750` | 101 | 1 | — | 11 | 91 |
+| `0x62B5A0` | `C_vt62B5A0` | 101 | 1 | — | 11 | 91 |
+| `0x62B750` | `C_vt62B750` | 101 | 1 | — | 12 | 90 |
 | `0x62B970` | `C_tpnl_btn` | 63 | 0 | tpnl_btn, tpnl_inv | 19 | 44 |
 | `0x62BAEC` | `C_tpnl_inv` | 61 | 1 | tpnl_inv | 26 | 36 |
 | `0x62BC64` | `C_tpnl_obj` | 63 | 3 | tpnl_obj | 24 | 42 |
@@ -240,7 +240,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x62BEF0` | `C_tpnl_tim` | 61 | 1 | tpnl_tim | 25 | 37 |
 | `0x62C064` | `C_vt62C064` | 62 | 1 | — | 26 | 37 |
 | `0x62C1E0` | `C_vt62C1E0` | 87 | 73 | basegame | 69 | 91 |
-| `0x62C470` | `C_vt62C470` | 3 | 1 | — | 1 | 3 |
+| `0x62C470` | `C_vt62C470` | 3 | 1 | — | 2 | 2 |
 | `0x62C47C` | `C_vt62C47C` | 4 | 1 | — | 2 | 3 |
 | `0x62C5A4` | `C_vt62C5A4` | 4 | 0 | — | 0 | 4 |
 | `0x62C634` | `C_diam_map` | 70 | 0 | diam_map | 20 | 50 |
@@ -275,7 +275,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_4119E0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_411D20` | this-edge component with no rooted object identity | 6 | 0 | 6 |
 | `C_cluster_413450` | this-edge component with no rooted object identity | 3 | 0 | 3 |
-| `C_cluster_416ED0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
+| `C_cluster_416ED0` | this-edge component with no rooted object identity | 2 | 1 | 1 |
 | `C_cluster_417250` | this-edge component with no rooted object identity | 3 | 0 | 3 |
 | `C_cluster_419310` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_41A150` | this-edge component with no rooted object identity | 2 | 1 | 1 |
@@ -484,21 +484,21 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_54E580` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_54E750` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_551480` | this-edge component with no rooted object identity | 6 | 0 | 6 |
-| `C_cluster_55A0D0` | this-edge component with no rooted object identity | 2 | 1 | 1 |
+| `C_cluster_55A0D0` | this-edge component with no rooted object identity | 2 | 2 | 0 |
 | `C_cluster_55A590` | this-edge component with no rooted object identity | 2 | 1 | 1 |
-| `C_cluster_55A5E0` | this-edge component with no rooted object identity | 2 | 1 | 1 |
-| `C_cluster_55A630` | this-edge component with no rooted object identity | 2 | 1 | 1 |
+| `C_cluster_55A5E0` | this-edge component with no rooted object identity | 2 | 2 | 0 |
+| `C_cluster_55A630` | this-edge component with no rooted object identity | 2 | 2 | 0 |
 | `C_cluster_55A680` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_55F970` | this-edge component with no rooted object identity | 3 | 0 | 3 |
 | `C_cluster_55FA40` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_55FF90` | this-edge component with no rooted object identity | 5 | 1 | 4 |
 | `C_cluster_560BE0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_565470` | this-edge component with no rooted object identity | 2 | 0 | 2 |
-| `C_cluster_566E60` | this-edge component with no rooted object identity | 2 | 0 | 2 |
+| `C_cluster_566E60` | this-edge component with no rooted object identity | 2 | 1 | 1 |
 | `C_cluster_5754B0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_575C20` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_577200` | this-edge component with no rooted object identity | 3 | 0 | 3 |
-| `C_cluster_5795E0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
+| `C_cluster_5795E0` | this-edge component with no rooted object identity | 2 | 1 | 1 |
 | `C_cluster_57CCA0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_57E250` | this-edge component with no rooted object identity | 6 | 0 | 6 |
 | `C_cluster_580060` | this-edge component with no rooted object identity | 3 | 0 | 3 |
@@ -598,12 +598,12 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | Region | Functions | Matched | WIP | Left |
 |---|---|---|---|---|
 | app | 323 | 104 | 1 | 218 |
-| crt | 647 | 19 | 1 | 627 |
+| crt | 647 | 21 | 2 | 624 |
 | engine-late | 319 | 23 | 0 | 296 |
 | game | 436 | 143 | 3 | 290 |
 | gfx | 410 | 53 | 3 | 354 |
 | runtime-data | 20 | 0 | 0 | 20 |
-| sim | 1283 | 223 | 0 | 1060 |
+| sim | 1283 | 224 | 0 | 1059 |
 | ui | 1230 | 177 | 2 | 1051 |
 
 ## Skeleton tree

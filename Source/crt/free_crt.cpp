@@ -258,3 +258,27 @@ void sub_600E93()
 {
     sub_600DEC();
 }
+
+// 0x5F38C0 — cdecl forwarder to 0x5F46A0 with one argument.
+extern int __cdecl sub_5F46A0(int a1);
+MATCH_FUNC(0x5F38C0)
+int __cdecl sub_5F38C0(int a1)
+{
+    return sub_5F46A0(a1);
+}
+
+// 0x5F91F0 — mask the helper result to a multiple of four.
+extern int __stdcall sub_5FA940(int a1);
+WIP_FUNC(0x5F91F0)
+int __cdecl sub_5F91F0(int a1)
+{
+    return sub_5FA940(a1) & 0xFFFFFFFC;
+}
+
+// 0x5FD518 — cdecl helper call with constant one.
+extern void __cdecl sub_5FD521(int a1);
+MATCH_FUNC(0x5FD518)
+void __cdecl sub_5FD518()
+{
+    sub_5FD521(1);
+}

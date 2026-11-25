@@ -3824,3 +3824,91 @@ void S53CD40::M_53CD40(int a1)
 {
     ((T4098D0*)this)->Other_4098D0(a1);
 }
+
+// 0x596C30 — thiscall forwarder to 0x598700 with two stacked arguments.
+class T598700 {
+public:
+    void Other_598700(int a1, int a2);
+};
+class S596C30 {
+public:
+    void M_596C30(int a1, int a2);
+};
+MATCH_FUNC(0x596C30)
+void S596C30::M_596C30(int a1, int a2)
+{
+    ((T598700*)this)->Other_598700(a1, a2);
+}
+
+// 0x567C80 — stdcall call with a constant zero argument.
+extern void __stdcall sub_566E60(int a1);
+MATCH_FUNC(0x567C80)
+void __cdecl sub_567C80()
+{
+    sub_566E60(0);
+}
+
+// 0x5795E0 — stdcall call with a constant 0x65 argument.
+extern void __stdcall sub_580140(int a1);
+MATCH_FUNC(0x5795E0)
+void __cdecl sub_5795E0()
+{
+    sub_580140(0x65);
+}
+
+// 0x5A10E0 — thiscall wrapper around the cdecl helper at 0x55A0D0.
+extern void __cdecl sub_55A0D0(int a1);
+class S5A10E0 {
+public:
+    void M_5A10E0(int a1);
+};
+MATCH_FUNC(0x5A10E0)
+void S5A10E0::M_5A10E0(int a1)
+{
+    sub_55A0D0(a1);
+}
+
+// 0x5B4520 — call the global object method with argument 1.
+extern char g_66EA48;
+class T49F7C0 {
+public:
+    void Other_49F7C0(int a1);
+};
+MATCH_FUNC(0x5B4520)
+void __cdecl sub_5B4520()
+{
+    ((T49F7C0*)&g_66EA48)->Other_49F7C0(1);
+}
+
+// 0x5C0A60 — return the helper's value plus eight.
+class T4CD410 {
+public:
+    int Other_4CD410();
+};
+class S5C0A60 {
+public:
+    int M_5C0A60();
+};
+MATCH_FUNC(0x5C0A60)
+int S5C0A60::M_5C0A60()
+{
+    return ((T4CD410*)this)->Other_4CD410() + 8;
+}
+
+// 0x55A5F0 — three-argument global-object forwarder.
+class T473410 {
+public:
+    void Other_473410(int a1, int a2, int a3);
+};
+MATCH_FUNC(0x55A5F0)
+void __cdecl sub_55A5F0()
+{
+    ((T473410*)&g_7519C8)->Other_473410(0x32, 0x32, 0);
+}
+
+// 0x55A640 — three-argument global-object forwarder.
+MATCH_FUNC(0x55A640)
+void __cdecl sub_55A640()
+{
+    ((T473410*)&g_7519A0)->Other_473410(0x32, 0x32, 0);
+}
