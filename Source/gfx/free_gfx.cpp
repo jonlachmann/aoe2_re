@@ -1691,3 +1691,46 @@ void S461CA0::M_461CA0(char* a1)
     a1[0x3ff] = 0;
     ((T45F6F0_461CA0*)field_00)->Other_45F6F0(0, 0x100, a1);
 }
+
+
+// 0x45EDE0 — read the +0x04 pair into +0x2C/+0x30 when the +0x3C/+0x3D mode is
+// one, then send that pair to the +0x10 object (when present) and the +0x0C
+// object.
+class T45EDE0Sub {
+public:
+    char pad_00[0x04];
+    void M_45FED0(int a1, int a2, int a3);
+};
+class S45EDE0 {
+public:
+    char pad_00[4];
+    void* field_04;                 // +0x04 pair source
+    char pad_08[0x0c - 0x08];
+    T45EDE0Sub* field_0c;           // +0x0C receiver
+    T45EDE0Sub* field_10;           // +0x10 optional receiver
+    char pad_14[0x2c - 0x14];
+    int field_2c;                   // +0x2C pair A
+    int field_30;                   // +0x30 pair B
+    char pad_34[0x3c - 0x34];       // +0x34..+0x3C
+    unsigned char field_3c;         // +0x3C mode
+    unsigned char field_3d;         // +0x3D mode
+    void M_45EDE0(int a1, int a2, int a3, int a4);
+};
+extern void (__stdcall *g_61C2C4)(void* a1, int* a2);
+
+MATCH_FUNC(0x45EDE0)
+void S45EDE0::M_45EDE0(int a1, int a2, int a3, int a4)
+{
+    if (field_0c == 0)
+        return;
+    if (field_3c == 1 || field_3d == 1)
+    {
+        int data[4];
+        g_61C2C4(field_04, data);
+        field_2c = data[2];
+        field_30 = data[3];
+    }
+    if (field_10 != 0)
+        field_10->M_45FED0(field_2c, field_30, 0);
+    field_0c->M_45FED0(field_2c, field_30, 0);
+}

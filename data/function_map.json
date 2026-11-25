@@ -12895,8 +12895,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x41F920",
@@ -27594,8 +27594,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x45EE50",
@@ -54497,8 +54497,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_pic.cpp"
  },
  {
   "address": "0x4B8910",
@@ -56277,8 +56277,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4BD710",
@@ -56597,8 +56597,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4BE080",

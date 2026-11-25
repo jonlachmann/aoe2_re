@@ -82,3 +82,20 @@ void C_pnl_pic::M_4B8510()
     }
     M_4A1160();
 }
+
+// 0x4B88B0 — configure the display geometry: the +0x1B8 mode, the +0x120/
+// +0x124 slot pair, the +0xF8/+0xFC range pair, then dispatch the seven
+// plus-zero arguments to the +0x00 base initialiser 0x4A0460.
+MATCH_FUNC(0x4B88B0)
+int C_pnl_pic::M_4B88B0(int a1, int a2, int a3, int a4, int a5, int a6,
+                        int a7, int a8, int a9, int a10, int a11, int a12,
+                        int a13, int a14, int a15)
+{
+    field_1b8 = a15;
+    field_120 = a11;
+    field_124 = a12;
+    field_f8 = a13;
+    field_fc = a14;
+    M_4A0460(a1, a2, a3, a4, a5, a6, 0);
+    return 1;
+}

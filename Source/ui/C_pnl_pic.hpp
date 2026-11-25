@@ -84,7 +84,15 @@ public:
     char pad_dc[0xf0 - 0xdc];      // +0xDC..+0xF0
     unsigned char field_f0;        // +0xF0 state
     unsigned char field_f1;        // +0xF1 mode
-    char pad_f2[0x218 - 0xf2];     // +0xF2..+0x218
+    char pad_f2[0xf8 - 0xf2];      // +0xF2..+0xF8
+    int field_f8;                  // +0xF8
+    int field_fc;                  // +0xFC
+    char pad_100[0x120 - 0x100];   // +0x100..+0x120
+    int field_120;                 // +0x120
+    int field_124;                 // +0x124
+    char pad_128[0x1b8 - 0x128];   // +0x128..+0x1B8
+    int field_1b8;                 // +0x1B8 mode
+    char pad_1bc[0x218 - 0x1bc];   // +0x1BC..+0x218
     int field_218;                // +0x218
     int field_21c;                // +0x21C
     char pad_220[0x224 - 0x220];  // +0x220..+0x224
@@ -94,4 +102,8 @@ public:
 
     void M_4B8510();
     int M_4A1160();
+    int M_4B88B0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
+                 int a8, int a9, int a10, int a11, int a12, int a13,
+                 int a14, int a15);
+    int M_4A0460(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
 };

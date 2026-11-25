@@ -8,5 +8,5 @@ class C_cluster_443B00 {
 public:
     void method_000();  // sub_443B00 [lifted]
     void method_001();  // sub_4A0460 [lifted]
-    void method_002();  // sub_4B88B0 [lifted]
+    void method_002();  // sub_4B88B0 [matched] — Source/ui/C_pnl_pic.cpp
 };

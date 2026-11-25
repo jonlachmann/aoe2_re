@@ -3035,3 +3035,43 @@ int __cdecl sub_41B700(char* a1, char* a2, int a3)
     *dp = 0;
     return (int)dp;
 }
+
+
+// 0x41F8B0 — one-shot latch: if +0x1F4 is unset, either run 0x48B4F0 on the
+// +0x1E8 object or publish +0x28/-0xC/+0x1FC through the two global calls,
+// then mark +0x1F4.
+class T41F8B0Obj48B4F0 {
+public:
+    void M_48B4F0();
+};
+class S41F8B0 {
+public:
+    char pad_00[0x28];
+    int field_28;                   // +0x28
+    char pad_2c[0x74 - 0x2c];
+    void* field_74;                 // +0x74
+    char pad_78[0x1e8 - 0x78];
+    T41F8B0Obj48B4F0* field_1e8;    // +0x1E8
+    char pad_1ec[0x1f4 - 0x1ec];    // +0x1EC..+0x1F4
+    int field_1f4;                  // +0x1F4 latch
+    int field_1f8;                  // +0x1F8
+    int field_1fc;                  // +0x1FC
+    void M_41F8B0();
+};
+extern void (__stdcall *g_61C284)(int a1);
+extern void (__stdcall *g_61C288)(int a1, int a2, int a3);
+
+MATCH_FUNC(0x41F8B0)
+void S41F8B0::M_41F8B0()
+{
+    if (field_1f4 != 0)
+        return;
+    if (field_74 != 0 && field_1f8 == 0)
+        field_1e8->M_48B4F0();
+    else
+    {
+        g_61C284(field_1fc);
+        g_61C288(field_28, -0xc, field_1fc);
+    }
+    field_1f4 = 1;
+}

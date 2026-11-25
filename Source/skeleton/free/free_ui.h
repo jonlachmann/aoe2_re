@@ -701,7 +701,7 @@ void sub_4BD4E0();  // size 119, calls 0, matched, module ui
 void sub_4BD560();  // size 49, calls 0, matched, module ui
 void sub_4BD5E0();  // size 8, calls 0, matched, module ui
 void sub_4BD680();  // size 20, calls 0, matched, module ui
-void pnl_txt::get_text_rect();  // size 100, calls 3, lifted, module ui
+void pnl_txt::get_text_rect();  // size 100, calls 3, matched, module ui
 void sub_4BD710();  // size 80, calls 0, lifted, module ui
 void sub_4BD7A0();  // size 20, calls 0, matched, module ui
 void sub_4BD7C0();  // size 25, calls 0, matched, module ui
@@ -715,7 +715,7 @@ void sub_4BDE90();  // size 124, calls 0, lifted, module ui
 void sub_4BDF10();  // size 62, calls 0, lifted, module ui
 void sub_4BDF50();  // size 81, calls 0, matched, module ui
 void sub_4BDFB0();  // size 89, calls 0, lifted, module ui
-void sub_4BE010();  // size 98, calls 0, lifted, module ui
+void sub_4BE010();  // size 98, calls 0, matched, module ui
 void sub_4BE080();  // size 107, calls 0, lifted, module ui
 void sub_4BE300();  // size 170, calls 2, lifted, module ui
 void sub_4BE3B0();  // size 220, calls 0, lifted, module ui

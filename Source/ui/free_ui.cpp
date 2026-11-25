@@ -7371,3 +7371,67 @@ void S4B8A80::M_4B8A80()
     field_1ac = field_194 + 1;
     field_1b4 = field_17c - 1;
 }
+
+
+// 0x4BE010 — build a six-argument request through the field_04 or field_08
+// object depending on a1, using the two one/-one locals and the +0x10 object,
+// then report the +0x10 object on success (a zero result).
+class S4BE010 {
+public:
+    char pad_00[4];
+    void* field_04;                 // +0x04 object
+    void* field_08;                 // +0x08 object
+    void* field_10;                 // +0x10 object
+    void* M_4BE010(int a1, int a2);
+};
+extern int (__stdcall *g_61C004)(void*, int, int, int*, void*, int*);
+
+MATCH_FUNC(0x4BE010)
+void* S4BE010::M_4BE010(int a1, int a2)
+{
+    int b = 1;
+    int a = 0xff;
+    void* self = (void*)((char*)this + 0x10);
+    int rc;
+    if (a1)
+        rc = g_61C004(field_04, a2, 0, &b, self, &a);
+    else
+        rc = g_61C004(field_08, a2, 0, &b, self, &a);
+    return rc == 0 ? self : 0;
+}
+
+
+// 0x4BD6A0 — look up the 0x6538D4 entry on the +0x20 registry, report through
+// the global +0x108 translation pair, run the same-object 0x4BCBC0 update with
+// six arguments, then drop the entry.
+class T4BD6A0Registry {
+public:
+    void* M_45FE50(int a1);
+    void M_45FEA0(int a1);
+};
+class S4BD6A0 {
+public:
+    char pad_00[0x20];
+    T4BD6A0Registry* field_20;      // +0x20 registry
+    char pad_24[0x108 - 0x24];
+    int field_108;                  // +0x108
+    void M_4BCBC0(void* a1, int a2, int a3, int a4, int a5, int a6);
+    int M_4BD6A0(int a1);
+};
+extern int (__stdcall *g_61C038)(void* a1, int a2);
+
+MATCH_FUNC(0x4BD6A0)
+int S4BD6A0::M_4BD6A0(int a1)
+{
+    void* found = field_20->M_45FE50(0x6538d4);
+    if (found != 0)
+    {
+        int (__stdcall *fn)(void*, int) = g_61C038;
+        int saved = fn(found, field_108);
+        M_4BCBC0(found, 0, 0, a1, 0, 0);
+        fn(found, saved);
+        field_20->M_45FEA0(0x6538d4);
+        return 1;
+    }
+    return 0;
+}

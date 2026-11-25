@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1730 |
+| matched | 1735 |
 | wip | 8 |
 | verified | 17 |
-| lifted | 5995 |
+| lifted | 5990 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -319,7 +319,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_4412B0` | this-edge component with no rooted object identity | 7 | 2 | 5 |
 | `C_cluster_441B40` | this-edge component with no rooted object identity | 4 | 1 | 3 |
 | `C_cluster_443970` | this-edge component with no rooted object identity | 29 | 3 | 26 |
-| `C_cluster_443B00` | this-edge component with no rooted object identity | 3 | 0 | 3 |
+| `C_cluster_443B00` | this-edge component with no rooted object identity | 3 | 1 | 2 |
 | `C_cluster_4464E0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_455930` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_456360` | this-edge component with no rooted object identity | 2 | 1 | 1 |
@@ -597,14 +597,14 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Functions with no class evidence
 | Region | Functions | Matched | WIP | Left |
 |---|---|---|---|---|
-| app | 323 | 132 | 0 | 191 |
+| app | 323 | 133 | 0 | 190 |
 | crt | 647 | 70 | 0 | 577 |
 | engine-late | 319 | 35 | 0 | 284 |
 | game | 436 | 155 | 1 | 280 |
-| gfx | 410 | 69 | 1 | 340 |
+| gfx | 410 | 70 | 1 | 339 |
 | runtime-data | 20 | 5 | 0 | 15 |
 | sim | 1283 | 258 | 2 | 1023 |
-| ui | 1229 | 235 | 2 | 992 |
+| ui | 1229 | 237 | 2 | 990 |
 
 ## Skeleton tree
 `Source/skeleton/` holds declarations only, generated from this map and
