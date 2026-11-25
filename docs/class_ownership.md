@@ -23,7 +23,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt61C9D4` | app | 0x61C9D4 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/C_vt61C9D4.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 9/24 |
 | `C_vt61CAB4` | app | 0x61CAB4 | Source/app/C_vt61CAB4.cpp | Source/app/free_app.cpp | 6/8 |
 | `C_vt61CB58` | app | 0x61CB58 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 10/24 |
-| `C_vt61CC40` | app | 0x61CC40 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 9/25 |
+| `C_vt61CC40` | app | 0x61CC40 | Source/app/free_app.cpp | Source/app/C_vt61C524.cpp, Source/app/C_vt61C62C.cpp, Source/ui/C_pnl_btn.cpp | 10/25 |
 | `C_vt61CD2C` | app | 0x61CD2C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 8/25 |
 | `C_vt61CE24` | app | 0x61CE24 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 99/205 |
 | `C_vt61D1D8` | app | 0x61D1D8 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/sim/C_vt61C8E4.cpp | 6/25 |

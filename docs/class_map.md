@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1557 |
+| matched | 1562 |
 | wip | 23 |
 | verified | 18 |
-| lifted | 6153 |
+| lifted | 6148 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -38,7 +38,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x61C9D4` | `C_vt61C9D4` | 24 | 0 | — | 9 | 15 |
 | `0x61CAB4` | `C_vt61CAB4` | 8 | 0 | — | 6 | 2 |
 | `0x61CB58` | `C_vt61CB58` | 24 | 0 | — | 9 | 15 |
-| `0x61CC40` | `C_vt61CC40` | 24 | 1 | — | 9 | 16 |
+| `0x61CC40` | `C_vt61CC40` | 24 | 1 | — | 10 | 15 |
 | `0x61CD2C` | `C_vt61CD2C` | 24 | 1 | — | 8 | 17 |
 | `0x61CE24` | `C_vt61CE24` | 204 | 1 | — | 99 | 106 |
 | `0x61D1D8` | `C_vt61D1D8` | 25 | 0 | — | 6 | 19 |
@@ -600,11 +600,11 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | app | 323 | 128 | 2 | 193 |
 | crt | 647 | 46 | 2 | 599 |
 | engine-late | 319 | 35 | 0 | 284 |
-| game | 436 | 143 | 4 | 289 |
-| gfx | 410 | 60 | 2 | 348 |
+| game | 436 | 144 | 4 | 288 |
+| gfx | 410 | 61 | 2 | 347 |
 | runtime-data | 20 | 3 | 0 | 17 |
 | sim | 1283 | 247 | 2 | 1034 |
-| ui | 1230 | 194 | 3 | 1033 |
+| ui | 1230 | 196 | 3 | 1031 |
 
 ## Skeleton tree
 `Source/skeleton/` holds declarations only, generated from this map and

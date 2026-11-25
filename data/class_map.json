@@ -1218,8 +1218,8 @@
    {
     "address": "0x407300",
     "name": "sub_407300",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x409A00",

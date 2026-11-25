@@ -2527,3 +2527,24 @@ void Sc421C90::M_421C90(int a1)
     if (this->field_41c)
         this->field_41c->Other_5E3120(a1);
 }
+
+// 0x423900 — 160-byte record index with a fallback object.
+extern char g_64db20;
+class Sc423900 {
+public:
+    char pad_00[0x21c];
+    unsigned int field_21c;       // +0x21C
+    int field_220;                // +0x220
+    void* Get_423900(unsigned int a1);
+};
+MATCH_FUNC(0x423900)
+void* Sc423900::Get_423900(unsigned int a1)
+{
+    if (a1 > this->field_21c)
+        return (void*)&g_64db20;
+    int base = this->field_220;
+    void* p = (void*)(base + (int)(a1 * 160 + 0x20));
+    if (p != 0)
+        return p;
+    return (void*)&g_64db20;
+}

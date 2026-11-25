@@ -1513,6 +1513,17 @@ Sd46AB70* Sd46AB70::D_46AB70(int flags)
     return this;
 }
 
+// 0x4424D0 — four-byte element copy loop.
+MATCH_FUNC(0x4424D0)
+void sub_4424D0(int* dest, int* src, int count)
+{
+    while (count != 0)
+    {
+        *dest++ = *src++;
+        count--;
+    }
+}
+
 // 0x45B520 — conditional one-argument thiscall on the field at +0x188.
 class Tc4BD7A0 {
 public:

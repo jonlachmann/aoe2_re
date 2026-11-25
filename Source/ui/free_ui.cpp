@@ -5902,3 +5902,44 @@ Sc4CBD40* Sc4CBD40::Init_4CBD40(int a1, int a2)
     *(void**)this = &g_vt_623BA8;
     return this;
 }
+
+// 0x473690 — index/row lookup on the +0x0c/+0x10/+0x18 fields.
+class Sc473690 {
+public:
+    char pad_00[0xc];
+    int field_0c;                 // +0x0C
+    int field_10;                 // +0x10
+    char pad_14[4];
+    int* field_18;                // +0x18
+    int Get_473690(int a1, int a2);
+};
+MATCH_FUNC(0x473690)
+int Sc473690::Get_473690(int a1, int a2)
+{
+    int row = *(int*)((char*)this->field_18 + 4 * (a2 - this->field_10));
+    int base = row - this->field_0c;
+    return *(unsigned char*)((char*)base + a1);
+}
+
+// 0x4736C0 — bounds-checked byte store into the +0x18 row pointer array.
+class Sc4736C0 {
+public:
+    char pad_00[4];
+    int field_04;                 // +0x04
+    int field_08;                 // +0x08
+    int field_0c;                 // +0x0C
+    int field_10;                 // +0x10
+    char pad_14[4];
+    int* field_18;                // +0x18
+    int Set_4736C0(int a1, int a2, char a3);
+};
+MATCH_FUNC(0x4736C0)
+int Sc4736C0::Set_4736C0(int a1, int a2, char a3)
+{
+    int x = a1 - this->field_0c;
+    int y = a2 - this->field_10;
+    if (x < 0 || y < 0 || x >= this->field_04 || y >= this->field_08)
+        return 0;
+    *(char*)(this->field_18[y] + x) = a3;
+    return 1;
+}

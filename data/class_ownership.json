@@ -202,18 +202,18 @@
    "vtable": "0x61CC40",
    "anchor": "0x406530",
    "methods": 25,
-   "owned_methods": 9,
-   "unowned_methods": 16,
-   "primary_file": "Source/app/C_vt61C524.cpp",
+   "owned_methods": 10,
+   "unowned_methods": 15,
+   "primary_file": "Source/app/free_app.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
     "Source/app/C_vt61C62C.cpp": 2,
-    "Source/app/free_app.cpp": 2,
+    "Source/app/free_app.cpp": 3,
     "Source/ui/C_pnl_btn.cpp": 2
    },
    "other_files": [
+    "Source/app/C_vt61C524.cpp",
     "Source/app/C_vt61C62C.cpp",
-    "Source/app/free_app.cpp",
     "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],

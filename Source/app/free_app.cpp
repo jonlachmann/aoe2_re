@@ -2563,6 +2563,30 @@ void Sc406670::M_406670(bool a1)
 }
 
 extern void __stdcall sub_4098D0(void* a1);
+// 0x407300 — clear six 4-byte sub-fields through sub_4BEBD0.
+class Sc407300 {
+public:
+    char pad_00[0x40];
+    int field_40;                 // +0x40
+    int field_44;                 // +0x44
+    int field_48;                 // +0x48
+    int field_4c;                 // +0x4C
+    int field_50;                 // +0x50
+    int field_54;                 // +0x54
+    void M_407300(void* a1);
+};
+MATCH_FUNC(0x407300)
+void Sc407300::M_407300(void* a1)
+{
+    sub_4098D0(a1);
+    sub_4BEBD0((int)a1, &this->field_40, 4);
+    sub_4BEBD0((int)a1, &this->field_44, 4);
+    sub_4BEBD0((int)a1, &this->field_48, 4);
+    sub_4BEBD0((int)a1, &this->field_4c, 4);
+    sub_4BEBD0((int)a1, &this->field_50, 4);
+    sub_4BEBD0((int)a1, &this->field_54, 4);
+}
+
 // 0x403F50 — clear six sub-fields then the +0x51 byte.
 class Sc403F50 {
 public:
