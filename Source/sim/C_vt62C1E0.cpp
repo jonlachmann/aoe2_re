@@ -8,6 +8,7 @@ extern void (__stdcall *g_61C284)(int a1);
 extern void (__stdcall *g_61C288)(void* a1, int a2, int a3);
 extern void __stdcall Hook_421FC0(int a1, int a2);
 extern void (__stdcall *g_61C2F4)(void* a1, int a2, int a3, int a4);
+extern int __stdcall sub_41FAC0(C_vt62C1E0* a1, int a2, int a3, int a4, int a5);
 
 MATCH_FUNC(0x41FA40)
 void C_vt62C1E0::M_41FA40(int a1)
@@ -419,4 +420,36 @@ int C_vt62C1E0::M_5BB8A0(int a1, int a2, int a3, int a4)
         field_146c = 1;
     }
     return 1;
+}
+
+// 0x5BB240 — message-id dispatch on the object passed as the first argument:
+// ids 0x201/0x204 call 0x5B4B10(1) and return 0 when the +0x1D8 state is 1;
+// id 7 runs one of 0x421E60/0x421EC0 based on the +0x200 flag; id 0x200
+// prints code 0 through 0x61C284 when the state is 1; every other path falls
+// through to 0x41FAC0 with the same five arguments and returns its result.
+MATCH_FUNC(0x5BB240)
+int __stdcall sub_5BB240(C_vt62C1E0* a1, int a2, unsigned int a3, int a4, int a5)
+{
+    switch (a3)
+    {
+    case 0x201:
+    case 0x204:
+        if (a1->field_1d8 == 1)
+        {
+            a1->Hook_5B4B10(1);
+            return 0;
+        }
+        break;
+    case 7:
+        if (a1->field_200 == 0)
+            a1->Hook_421E60();
+        else
+            a1->Hook_421EC0();
+        break;
+    case 0x200:
+        if (a1->field_1d8 == 1)
+            g_61C284(0);
+        break;
+    }
+    return sub_41FAC0(a1, a2, a3, a4, a5);
 }

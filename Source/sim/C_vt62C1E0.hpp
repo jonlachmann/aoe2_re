@@ -28,7 +28,8 @@ public:
     int field_1f4;                // +0x1F4
     int field_1f8;                // +0x1F8
     int field_1fc;                // +0x1FC
-    char pad_200[0x924 - 0x200];
+    int field_200;                // +0x200
+    char pad_204[0x924 - 0x204];
     float field_924;              // +0x924
     unsigned char field_928;      // +0x928
     char pad_929[0x9A9 - 0x929];
@@ -88,6 +89,9 @@ public:
     void M_421B10(unsigned char a, unsigned char b, unsigned char c);
     void Set9AE_421B40(unsigned char v);
     void Hook_420BE0(int a1, int a2, int a3, int a4);
+    void Hook_421E60();
+    void Hook_421EC0();
+    void Hook_5B4B10(int a1);
     int M_5BB8A0(int a1, int a2, int a3, int a4);
     void M_5BCA10(int a1, int a2);
     void Set9B1_421B70(unsigned char v);

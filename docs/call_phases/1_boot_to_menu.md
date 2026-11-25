@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 403 matched, 302 left to match (17 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 404 matched, 301 left to match (17 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (302)
+## Left to match (301)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -32,7 +32,6 @@
 | 219 | `sub_41F3A0` | 1 |  | 1_boot_to_menu |  |
 | 221 | `sub_41D5D0` | 1 |  | 1_boot_to_menu |  |
 | 222 | `sub_41D6A0` | 1 |  | 1_boot_to_menu |  |
-| 224 | `sub_5BB240` | 645 |  | 1_boot_to_menu |  |
 | 225 | `sub_41FAC0` | 645 |  | 1_boot_to_menu |  |
 | 227 | `sub_420D10` | 3 |  | 1_boot_to_menu |  |
 | 230 | `sub_420BE0` | 1 |  | 1_boot_to_menu |  |
@@ -309,7 +308,7 @@
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 | 812 | `sub_4B5AB0` | 6434496 |  | 1_boot_to_menu |  |
 
-## Matched (403)
+## Matched (404)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -436,6 +435,7 @@
 | 218 | `sub_5BC4D0` | 2 | MATCH | 1_boot_to_menu | C_vt62C1E0::Set_5BC4D0 |
 | 220 | `sub_422180` | 2 | MATCH | 1_boot_to_menu | Sc422180::M_422180 |
 | 223 | `sub_41D670` | 645 | MATCH | 1_boot_to_menu | sub_41D670 |
+| 224 | `sub_5BB240` | 645 | MATCH | 1_boot_to_menu | sub_5BB240 |
 | 226 | `sub_49F620` | 2146118 | MATCH | 1_boot_to_menu | S49F620::Get_49F620 |
 | 228 | `sub_41BC20` | 4 | MATCH | 1_boot_to_menu | C_vt61DF78::M_41BC20 |
 | 229 | `sub_5BB8A0` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_5BB8A0 |

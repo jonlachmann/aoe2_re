@@ -1,12 +1,11 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 621 matched, 1823 left to match (12 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 622 matched, 1822 left to match (12 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1823)
+## Left to match (1822)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
-| 2 | `sub_5BB240` | 12278 |  | 1_boot_to_menu |  |
 | 3 | `sub_41FAC0` | 12278 |  | 1_boot_to_menu |  |
 | 5 | `sub_4998B0` | 12278 |  | 1_boot_to_menu |  |
 | 7 | `sub_4A0CD0` | 1179351 |  | 1_boot_to_menu |  |
@@ -1830,12 +1829,13 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (621)
+## Matched (622)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
 | 0 | `sub_415750` | 266 | MATCH | 1_boot_to_menu | C_vt61D890::M_415750 |
 | 1 | `sub_41D670` | 12278 | MATCH | 1_boot_to_menu | sub_41D670 |
+| 2 | `sub_5BB240` | 12278 | MATCH | 1_boot_to_menu | sub_5BB240 |
 | 4 | `sub_5C6880` | 1228376 | MATCH | 1_boot_to_menu | C_pnl_btn::M_5C6880 |
 | 6 | `sub_49F620` | 1264716 | MATCH | 1_boot_to_menu | S49F620::Get_49F620 |
 | 8 | `sub_49FFA0` | 3 | MATCH | 3_click_single_player | S49GetBulk::Get_49FFA0 |

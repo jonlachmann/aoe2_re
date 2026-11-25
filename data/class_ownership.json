@@ -5173,15 +5173,15 @@
    "vtable": "0x62C1E0",
    "anchor": "0x5B1170",
    "methods": 160,
-   "owned_methods": 83,
-   "unowned_methods": 77,
+   "owned_methods": 84,
+   "unowned_methods": 76,
    "primary_file": "Source/sim/C_vt62C1E0.cpp",
    "owner_files": {
     "Source/app/C_vt61D890.cpp": 1,
     "Source/app/C_vt61DF78.cpp": 19,
     "Source/game/free_game.cpp": 2,
     "Source/gfx/C_vt61DA40.cpp": 1,
-    "Source/sim/C_vt62C1E0.cpp": 56,
+    "Source/sim/C_vt62C1E0.cpp": 57,
     "Source/sim/free_sim.cpp": 2,
     "Source/ui/C_pnl_edit.cpp": 2
    },
