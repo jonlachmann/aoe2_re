@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 620 matched, 1824 left to match (12 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 621 matched, 1823 left to match (12 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1824)
+## Left to match (1823)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -1119,7 +1119,6 @@
 | 1639 | `sub_4B2AD0` | 1 |  | 4_click_random_map |  |
 | 1641 | `sub_4B2810` | 1 |  | 4_click_random_map |  |
 | 1642 | `sub_4E45C0` | 2 |  | 5_start_game_to_match |  |
-| 1646 | `sub_5DC590` | 96 |  | 1_boot_to_menu |  |
 | 1649 | `sub_5DC3F0` | 2 |  | 5_start_game_to_match |  |
 | 1650 | `sub_5DC550` | 16552139 |  | 5_start_game_to_match |  |
 | 1651 | `sub_5DC6A0` | 2 |  | 5_start_game_to_match |  |
@@ -1831,7 +1830,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (620)
+## Matched (621)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -2272,6 +2271,7 @@
 | 1643 | `sub_522F90` | 100 | MATCH | 1_boot_to_menu | C_cluster_522CD0::M_522F90 |
 | 1644 | `sub_522CD0` | 100 | MATCH | 1_boot_to_menu | C_cluster_522CD0::M_522CD0 |
 | 1645 | `sub_460490` | 47 | MATCH | 1_boot_to_menu | TDrawArea::BuildRowPtrs_460490 |
+| 1646 | `sub_5DC590` | 96 | MATCH | 1_boot_to_menu | C_cluster_522D20::M_5DC590 |
 | 1647 | `sub_522D20` | 96 | MATCH | 1_boot_to_menu | C_cluster_522D20::M_522D20 |
 | 1648 | `sub_460570` | 4 | MATCH | 5_start_game_to_match | TDrawArea::RotateRowPtrs_460570 |
 | 1652 | `sub_48A890` | 1 | MATCH | 5_start_game_to_match | S48A890::Set_48A890 |
