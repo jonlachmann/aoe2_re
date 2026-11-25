@@ -7,6 +7,7 @@ extern int g_66459C;
 extern void (__stdcall *g_61C284)(int a1);
 extern void (__stdcall *g_61C288)(void* a1, int a2, int a3);
 extern void __stdcall Hook_421FC0(int a1, int a2);
+extern void (__stdcall *g_61C2F4)(void* a1, int a2, int a3, int a4);
 
 MATCH_FUNC(0x41FA40)
 void C_vt62C1E0::M_41FA40(int a1)
@@ -388,4 +389,34 @@ void C_vt62C1E0::M_5BCA10(int a1, int a2)
         if (o != 0)
             ((T5BCA10Sub*)o)->slot_020(a1, a2);
     }
+}
+
+// 0x5BB8A0 — 4-argument reset handler: forward the arguments to the base
+// 0x420BE0 init, then when the +0x1D8 state is 1 and the +0x1460 handle is
+// present, toggle the +0x146C flag through the 0x61C2F4 printer with code
+// 0x855 when the third argument is 1 (clearing the flag) or 0x809 otherwise
+// (setting it); every path returns 1.
+MATCH_FUNC(0x5BB8A0)
+int C_vt62C1E0::M_5BB8A0(int a1, int a2, int a3, int a4)
+{
+    this->Hook_420BE0(a1, a2, a3, a4);
+    if (field_1d8 != 1)
+        return 1;
+    if (field_1460 == 0)
+        return 1;
+    if (a3 == 1)
+    {
+        if (field_146c == 0)
+            return 1;
+        g_61C2F4(field_1460, 0x855, 0, 0);
+        field_146c = 0;
+    }
+    else
+    {
+        if (field_146c != 0)
+            return 1;
+        g_61C2F4(field_1460, 0x809, 0, 0);
+        field_146c = 1;
+    }
+    return 1;
 }

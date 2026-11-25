@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1757 |
+| matched | 1758 |
 | wip | 21 |
 | verified | 17 |
-| lifted | 5955 |
+| lifted | 5954 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -239,7 +239,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x62BD70` | `C_tpnl_per` | 61 | 1 | tpnl_per | 37 | 25 |
 | `0x62BEF0` | `C_tpnl_tim` | 61 | 1 | tpnl_tim | 34 | 28 |
 | `0x62C064` | `C_vt62C064` | 62 | 1 | — | 36 | 27 |
-| `0x62C1E0` | `C_vt62C1E0` | 87 | 73 | basegame | 81 | 79 |
+| `0x62C1E0` | `C_vt62C1E0` | 87 | 73 | basegame | 82 | 78 |
 | `0x62C470` | `C_vt62C470` | 3 | 1 | — | 3 | 1 |
 | `0x62C47C` | `C_vt62C47C` | 4 | 1 | — | 3 | 2 |
 | `0x62C5A4` | `C_vt62C5A4` | 4 | 0 | — | 0 | 4 |

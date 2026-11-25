@@ -70,7 +70,7 @@ public:
     virtual void slot_057();  // slot +0x0E4: sub_4208B0 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_058();  // slot +0x0E8: sub_4208D0 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_059();  // slot +0x0EC: sub_4208F0 [lifted]
-    virtual void slot_060();  // slot +0x0F0: sub_5BB8A0 [lifted]
+    virtual void slot_060();  // slot +0x0F0: sub_5BB8A0 [matched] — Source/sim/C_vt62C1E0.cpp
     virtual void slot_061();  // slot +0x0F4: sub_420CD0 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_062();  // slot +0x0F8: sub_420CF0 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_063();  // slot +0x0FC: sub_420D10 [lifted]

@@ -22,7 +22,9 @@ public:
     int field_6c;                 // +0x6C
     char pad_70[0x74 - 0x70];
     int field_74;                 // +0x74
-    char pad_78[0x1f4 - 0x78];
+    char pad_78[0x1d8 - 0x78];    // +0x78..+0x1D8
+    int field_1d8;                // +0x1D8
+    char pad_1dc[0x1f4 - 0x1dc];  // +0x1DC..+0x1F4
     int field_1f4;                // +0x1F4
     int field_1f8;                // +0x1F8
     int field_1fc;                // +0x1FC
@@ -62,9 +64,13 @@ public:
     int field_11E8;               // +0x11E8
     unsigned char array_11EC[0xC]; // +0x11EC
     int array_11F8[0xB];          // +0x11F8
-    char pad_1224[0x149C - 0x1224];
+    char pad_1224[0x1460 - 0x1224]; // +0x1224..+0x1460
+    void* field_1460;             // +0x1460
+    char pad_1464[8];             // +0x1464..+0x146C
+    int field_146c;               // +0x146C
+    char pad_1470[0x149C - 0x1470]; // +0x1470..+0x149C
     void* field_149c;             // +0x149C
-    char pad_14a0[0x1ADC - 0x14a0];
+    char pad_14a0[0x1ADC - 0x14a0]; // +0x14A0..+0x1ADC
     unsigned char field_1ADC;     // +0x1ADC
     char pad_1ADD[0x1AE0 - 0x1ADD];
     int field_1AE0;               // +0x1AE0
@@ -81,6 +87,8 @@ public:
     void M_421AD0(int v);
     void M_421B10(unsigned char a, unsigned char b, unsigned char c);
     void Set9AE_421B40(unsigned char v);
+    void Hook_420BE0(int a1, int a2, int a3, int a4);
+    int M_5BB8A0(int a1, int a2, int a3, int a4);
     void M_5BCA10(int a1, int a2);
     void Set9B1_421B70(unsigned char v);
     void Set9BE_421C20(unsigned char v);
