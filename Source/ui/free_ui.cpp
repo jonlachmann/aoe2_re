@@ -2010,6 +2010,8 @@ void S4ASetImmBulk::Set_4A64F0()
     *(int*)((char*)this + 0x494) = 0x0;
 }
 
+// The UI bulk object: a 0x104-byte name buffer at +0x214 followed by the
+// +0x318 extent and +0x31C/+0x320/+0x324 scalar fields.
 class S4ASetBulk {
 public:
     void SetInt_4A38F0(int v);
@@ -2021,7 +2023,24 @@ public:
     void SetByte_4AD420(unsigned char v);
     void SetInt_4AF350(int v);
     void SetInt_4AF860(int v);
+    int M_4A38A0(char* a1, int a2);
+
+    char pad_00[0x214];           // 0x00..0x214
+    char name_214[0x104];         // 0x214..0x318
+    int field_318;                // +0x318
+    int field_31c;                // +0x31C
+    int field_320;                // +0x320
+    int field_324;                // +0x324
 };
+
+// 0x4A38A0 — copy the name into +0x214, store the value at +0x318, return 1.
+MATCH_FUNC(0x4A38A0)
+int S4ASetBulk::M_4A38A0(char* a1, int a2)
+{
+    strcpy(name_214, a1);
+    field_318 = a2;
+    return 1;
+}
 
 MATCH_FUNC(0x4A38F0)
 void S4ASetBulk::SetInt_4A38F0(int v)
@@ -6091,4 +6110,68 @@ char* Sc4CFAC0::M_4CFAC0(char* a1)
     field_104 = 0;
     field_108 = 0;
     return (char*)this;
+}
+
+// 0x4A1CD0 — if the +0x68 registration is set, detach it from the manager at
+// 0x66EA48 only when that manager reports this exact object, then clear it.
+extern void (*g_pfn_61c320)();
+class C_global_66EA48 {
+public:
+    int Hook_48F970();
+    void Hook_5BE8D0(int a1);
+};
+class S4A1CD0 {
+public:
+    char pad_00[0x68];
+    int field_68;                 // +0x68
+    void M_4A1CD0();
+};
+
+MATCH_FUNC(0x4A1CD0)
+void S4A1CD0::M_4A1CD0()
+{
+    if (field_68 != 0)
+    {
+        if (((C_global_66EA48*)0x66ea48)->Hook_48F970() == (int)this)
+        {
+            ((C_global_66EA48*)0x66ea48)->Hook_5BE8D0(0);
+            g_pfn_61c320();
+        }
+        field_68 = 0;
+    }
+}
+
+// 0x4BA530 — bind an optional source at +0x148 and its value at +0x14C; when
+// the source exists, cache its result at +0x180 and notify slot +0x0C.
+class S4BA530 {
+public:
+    virtual void slot_000();
+    virtual void slot_004();
+    virtual void slot_008();
+    virtual void Vat_0c(int a1, int a2, int a3, int a4);
+
+    char pad_04[0x0c - 4];        // 0x04..0x0C
+    int field_0c;                 // +0x0C
+    int field_10;                 // +0x10
+    int field_14;                 // +0x14
+    int field_18;                 // +0x18
+    char pad_1c[0x148 - 0x1c];    // 0x1C..0x148
+    void* field_148;              // +0x148
+    int field_14c;                // +0x14C
+    char pad_150[0x180 - 0x150];  // 0x150..0x180
+    int field_180;                // +0x180
+
+    void M_4BA530(S5C07A0* a1, int a2);
+};
+
+MATCH_FUNC(0x4BA530)
+void S4BA530::M_4BA530(S5C07A0* a1, int a2)
+{
+    field_148 = a1;
+    field_14c = a2;
+    if (a1)
+    {
+        field_180 = a1->Get_5C07A0();
+        this->Vat_0c(field_0c, field_10, field_14, field_18);
+    }
 }

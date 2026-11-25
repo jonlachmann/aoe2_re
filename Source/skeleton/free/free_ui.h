@@ -392,7 +392,7 @@ void sub_4A03B0();  // size 165, calls 7, lifted, module ui
 void sub_4A0530();  // size 145, calls 0, lifted, module ui
 void sub_4A05D0();  // size 89, calls 0, lifted, module ui
 void sub_4A1C10();  // size 81, calls 0, lifted, module ui
-void sub_4A1CD0();  // size 51, calls 2, lifted, module ui
+void sub_4A1CD0();  // size 51, calls 2, matched, module ui
 void sub_4A1D80();  // size 79, calls 0, lifted, module ui
 void sub_4A1DD0();  // size 67, calls 0, lifted, module ui
 void sub_4A1E50();  // size 72, calls 1, lifted, module ui
@@ -411,7 +411,7 @@ void sub_4A3430();  // size 358, calls 7, lifted, module ui
 void sub_4A35A0();  // size 358, calls 7, lifted, module ui
 void sub_4A3710();  // size 69, calls 0, lifted, module ui
 void sub_4A3760();  // size 312, calls 5, lifted, module ui
-void sub_4A38A0();  // size 65, calls 0, lifted, module ui
+void sub_4A38A0();  // size 65, calls 0, matched, module ui
 void sub_4A38F0();  // size 13, calls 0, matched, module ui
 void sub_4A3900();  // size 13, calls 0, matched, module ui
 void sub_4A3910();  // size 13, calls 0, matched, module ui
@@ -660,7 +660,7 @@ void sub_4B9B60();  // size 46, calls 1, wip, module ui
 void sub_4B9D80();  // size 127, calls 1, lifted, module ui
 void sub_4B9E70();  // size 127, calls 1, lifted, module ui
 void sub_4BA100();  // size 144, calls 4, lifted, module ui
-void sub_4BA530();  // size 65, calls 1, lifted, module ui
+void sub_4BA530();  // size 65, calls 1, matched, module ui
 void sub_4BA580();  // size 60, calls 0, lifted, module ui
 void sub_4BA6E0();  // size 223, calls 2, lifted, module ui
 void sub_4BA7C0();  // size 76, calls 3, lifted, module ui

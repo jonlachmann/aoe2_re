@@ -178,7 +178,7 @@ void sub_42C2A0();  // size 1376, calls 28, lifted, module game
 void sub_42C800();  // size 2004, calls 10, lifted, module game
 void sub_42D020();  // size 176, calls 5, lifted, module game
 void sub_42D0D0();  // size 255, calls 1, lifted, module game
-void sub_42D1D0();  // size 55, calls 0, lifted, module game
+void sub_42D1D0();  // size 55, calls 0, matched, module game
 void sub_42D210();  // size 15, calls 0, matched, module game
 void sub_42D220();  // size 59, calls 1, lifted, module game
 void sub_42D2A0();  // size 55, calls 1, lifted, module game

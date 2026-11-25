@@ -979,7 +979,7 @@ void sub_5A6790();  // size 8, calls 0, matched, module sim
 void sub_5A67A0();  // size 11, calls 0, matched, module sim
 void sub_5A67B0();  // size 23, calls 0, matched, module sim
 void sub_5A67D0();  // size 58, calls 0, matched, module sim
-void sub_5A6830();  // size 51, calls 0, lifted, module sim
+void sub_5A6830();  // size 51, calls 0, matched, module sim
 void sub_5A6870();  // size 37, calls 0, lifted, module sim
 void sub_5A6AA0();  // size 30, calls 0, matched, module sim
 void sub_5A6E80();  // size 270, calls 1, lifted, module sim

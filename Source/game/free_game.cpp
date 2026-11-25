@@ -2699,3 +2699,27 @@ Sc439CB0* Sc439CB0::Init_439CB0(int a1)
     field_34 = 0x28;
     return this;
 }
+
+// 0x42D1D0 — broadcast one clock value into two 0x50-byte parallel arrays at
+// +0x1348/+0x1398 for indices 1..the word count at +0x12D8.
+extern int (__cdecl *g_61C3C8)();
+class S42D1D0 {
+public:
+    char pad_00[0x12d8];          // 0x00..0x12D8
+    unsigned short count_12d8;    // +0x12D8
+    char pad_12da[0x1348 - 0x12da]; // 0x12DA..0x1348
+    int arr_1348[20];             // +0x1348..0x1398
+    int arr_1398[20];             // +0x1398..0x13E8
+    void M_42D1D0();
+};
+
+MATCH_FUNC(0x42D1D0)
+void S42D1D0::M_42D1D0()
+{
+    int v = g_61C3C8();
+    for (int i = 1; i <= count_12d8; i++)
+    {
+        ((int*)((char*)this + 0x1348))[i - 1] = v;
+        ((int*)((char*)this + 0x1398))[i - 1] = v;
+    }
+}

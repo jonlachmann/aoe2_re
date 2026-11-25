@@ -5921,3 +5921,39 @@ void Sc522FF0::M_522FF0(int a1, int a2, int a3, int a4)
     field_58 = a1;
     field_5c = a3;
 }
+
+// 0x5A6830 — state setter on the object with a vtable at +0: update the two
+// +0x600/+0x2F0 targets together, reset +0x38, then notify slot +0x20.
+class S5A6830 {
+public:
+    virtual void slot_000();
+    virtual void slot_004();
+    virtual void slot_008();
+    virtual void slot_00c();
+    virtual void slot_010();
+    virtual void slot_014();
+    virtual void slot_018();
+    virtual void slot_01c();
+    virtual void Vat_20(int v);
+
+    char pad_04[0x38 - 4];        // 0x04..0x38
+    int field_38;                 // +0x38
+    char pad_3c[0x2f0 - 0x3c];    // 0x3C..0x2F0
+    int field_2f0;                // +0x2F0
+    char pad_2f4[0x600 - 0x2f4];  // 0x2F4..0x600
+    int field_600;                // +0x600
+
+    void M_5A6830(int a1);
+};
+
+MATCH_FUNC(0x5A6830)
+void S5A6830::M_5A6830(int a1)
+{
+    if (field_600 != a1 || field_2f0 != a1)
+    {
+        field_600 = a1;
+        field_2f0 = a1;
+        field_38 = 0;
+        this->Vat_20(1);
+    }
+}
