@@ -2491,3 +2491,39 @@ void Sr433750::M_433750()
         sub_5F90B0((int)p);
     }
 }
+
+// 0x421C70 — conditional one-argument thiscall on the field at +0x41c.
+class Tc5E3100 {
+public:
+    void Other_5E3100(int a1);
+};
+class Sc421C70 {
+public:
+    char pad_00[0x41c];
+    Tc5E3100* field_41c;          // +0x41c
+    void M_421C70(int a1);
+};
+MATCH_FUNC(0x421C70)
+void Sc421C70::M_421C70(int a1)
+{
+    if (this->field_41c)
+        this->field_41c->Other_5E3100(a1);
+}
+
+// 0x421C90 — conditional one-argument thiscall on the field at +0x41c.
+class Tc5E3120 {
+public:
+    void Other_5E3120(int a1);
+};
+class Sc421C90 {
+public:
+    char pad_00[0x41c];
+    Tc5E3120* field_41c;          // +0x41c
+    void M_421C90(int a1);
+};
+MATCH_FUNC(0x421C90)
+void Sc421C90::M_421C90(int a1)
+{
+    if (this->field_41c)
+        this->field_41c->Other_5E3120(a1);
+}

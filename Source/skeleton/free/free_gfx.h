@@ -173,7 +173,7 @@ void sub_45AF40();  // size 28, calls 1, lifted, module gfx
 void sub_45AF60();  // size 13, calls 0, matched, module gfx
 void sub_45AF70();  // size 75, calls 0, lifted, module gfx
 void TribePopUpHelp::draw_border();  // size 453, calls 6, lifted, module ui
-void sub_45B520();  // size 23, calls 1, lifted, module gfx
+void sub_45B520();  // size 23, calls 1, matched, module gfx
 void sub_45B600();  // size 1947, calls 34, lifted, module gfx
 void sub_45BE60();  // size 114, calls 4, lifted, module gfx
 void sub_45BEE0();  // size 146, calls 2, lifted, module gfx

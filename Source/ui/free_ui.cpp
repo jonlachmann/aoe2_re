@@ -5866,3 +5866,39 @@ void S4BBAA0::M_4BBAA0(int a1, int a2)
     this->field_144 = a2;
     ((VT4BBAA0*)*(void**)this)->slot_20(1);
 }
+
+// 0x4745D0 — helper then two subobject appends at +0x100 and +0x104.
+class Ta477C60 {
+public:
+    void Other_477C60(int a1);
+};
+class Sc4745D0 {
+public:
+    void M_4745D0(int a1);
+};
+MATCH_FUNC(0x4745D0)
+void Sc4745D0::M_4745D0(int a1)
+{
+    ((Ta477C60*)this)->Other_477C60(a1);
+    sub_4BEBD0(a1, (char*)this + 0x100, 4);
+    sub_4BEBD0(a1, (char*)this + 0x104, 4);
+}
+
+// 0x4CBD40 — two-argument constructor wrapper installing vtable 0x623BA8.
+extern char g_vt_623BA8;
+class Tc4C5540 {
+public:
+    void Other_4C5540(int a1, int a2);
+};
+class Sc4CBD40 {
+public:
+    int vtable_00;
+    Sc4CBD40* Init_4CBD40(int a1, int a2);
+};
+MATCH_FUNC(0x4CBD40)
+Sc4CBD40* Sc4CBD40::Init_4CBD40(int a1, int a2)
+{
+    ((Tc4C5540*)this)->Other_4C5540(a1, a2);
+    *(void**)this = &g_vt_623BA8;
+    return this;
+}

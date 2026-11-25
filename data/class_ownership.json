@@ -1506,12 +1506,12 @@
    "vtable": "0x620C7C",
    "anchor": "0x473CB0",
    "methods": 26,
-   "owned_methods": 8,
-   "unowned_methods": 18,
+   "owned_methods": 9,
+   "unowned_methods": 17,
    "primary_file": "Source/ui/C_vt620C7C.cpp",
    "owner_files": {
     "Source/ui/C_vt620C7C.cpp": 7,
-    "Source/ui/free_ui.cpp": 1
+    "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/ui/free_ui.cpp"
@@ -3660,21 +3660,23 @@
    "vtable": "0x628D40",
    "anchor": "0x403DC0",
    "methods": 24,
-   "owned_methods": 7,
-   "unowned_methods": 17,
+   "owned_methods": 8,
+   "unowned_methods": 16,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
     "Source/app/C_vt61C62C.cpp": 1,
     "Source/app/free_app.cpp": 1,
     "Source/gfx/C_vt61DA40.cpp": 1,
-    "Source/sim/C_vt61C8E4.cpp": 1
+    "Source/sim/C_vt61C8E4.cpp": 1,
+    "Source/sim/free_sim.cpp": 1
    },
    "other_files": [
     "Source/app/C_vt61C62C.cpp",
     "Source/app/free_app.cpp",
     "Source/gfx/C_vt61DA40.cpp",
-    "Source/sim/C_vt61C8E4.cpp"
+    "Source/sim/C_vt61C8E4.cpp",
+    "Source/sim/free_sim.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -3712,15 +3714,15 @@
    "vtable": "0x628F04",
    "anchor": "0x548620",
    "methods": 24,
-   "owned_methods": 7,
-   "unowned_methods": 17,
+   "owned_methods": 8,
+   "unowned_methods": 16,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
     "Source/app/C_vt61C62C.cpp": 1,
     "Source/sim/C_vt61C8E4.cpp": 1,
     "Source/sim/C_vt628F04.cpp": 1,
-    "Source/sim/free_sim.cpp": 1
+    "Source/sim/free_sim.cpp": 2
    },
    "other_files": [
     "Source/app/C_vt61C62C.cpp",
@@ -3762,14 +3764,14 @@
    "vtable": "0x6290C4",
    "anchor": "0x54ABC0",
    "methods": 25,
-   "owned_methods": 8,
-   "unowned_methods": 17,
+   "owned_methods": 9,
+   "unowned_methods": 16,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
     "Source/app/C_vt61C62C.cpp": 1,
     "Source/app/C_vt61C9D4.cpp": 1,
-    "Source/sim/free_sim.cpp": 1,
+    "Source/sim/free_sim.cpp": 2,
     "Source/ui/C_pnl_btn.cpp": 2
    },
    "other_files": [
@@ -4913,12 +4915,13 @@
    "vtable": "0x62C1E0",
    "anchor": "0x5B1170",
    "methods": 160,
-   "owned_methods": 72,
-   "unowned_methods": 88,
+   "owned_methods": 74,
+   "unowned_methods": 86,
    "primary_file": "Source/sim/C_vt62C1E0.cpp",
    "owner_files": {
     "Source/app/C_vt61D890.cpp": 1,
     "Source/app/C_vt61DF78.cpp": 18,
+    "Source/game/free_game.cpp": 2,
     "Source/gfx/C_vt61DA40.cpp": 1,
     "Source/sim/C_vt62C1E0.cpp": 48,
     "Source/sim/free_sim.cpp": 2,
@@ -4927,6 +4930,7 @@
    "other_files": [
     "Source/app/C_vt61D890.cpp",
     "Source/app/C_vt61DF78.cpp",
+    "Source/game/free_game.cpp",
     "Source/gfx/C_vt61DA40.cpp",
     "Source/sim/free_sim.cpp",
     "Source/ui/C_pnl_edit.cpp"
@@ -9029,10 +9033,12 @@
    "vtable": null,
    "anchor": "0x54E420",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/sim/free_sim.cpp",
+   "owner_files": {
+    "Source/sim/free_sim.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -9044,10 +9050,12 @@
    "vtable": null,
    "anchor": "0x54E580",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/sim/free_sim.cpp",
+   "owner_files": {
+    "Source/sim/free_sim.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -9059,10 +9067,12 @@
    "vtable": null,
    "anchor": "0x54E750",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/sim/free_sim.cpp",
+   "owner_files": {
+    "Source/sim/free_sim.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false

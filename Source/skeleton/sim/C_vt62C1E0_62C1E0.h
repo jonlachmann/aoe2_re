@@ -111,8 +111,8 @@ public:
     void method_011();  // sub_421B40 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_012();  // sub_421B70 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_013();  // sub_421C20 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
-    void method_014();  // sub_421C70 [lifted]: same object, connected by this-edge call sites
-    void method_015();  // sub_421C90 [lifted]: same object, connected by this-edge call sites
+    void method_014();  // sub_421C70 [matched]: same object, connected by this-edge call sites — Source/game/free_game.cpp
+    void method_015();  // sub_421C90 [matched]: same object, connected by this-edge call sites — Source/game/free_game.cpp
     void method_016();  // sub_421CF0 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_017();  // sub_421D00 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_018();  // sub_421D30 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp

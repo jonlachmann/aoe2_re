@@ -1512,3 +1512,21 @@ Sd46AB70* Sd46AB70::D_46AB70(int flags)
         sub_5F90B0((int)this);
     return this;
 }
+
+// 0x45B520 — conditional one-argument thiscall on the field at +0x188.
+class Tc4BD7A0 {
+public:
+    void Other_4BD7A0(int a1);
+};
+class Sc45B520 {
+public:
+    char pad_00[0x188];
+    Tc4BD7A0* field_188;          // +0x188
+    void M_45B520(int a1);
+};
+MATCH_FUNC(0x45B520)
+void Sc45B520::M_45B520(int a1)
+{
+    if (this->field_188)
+        this->field_188->Other_4BD7A0(a1);
+}

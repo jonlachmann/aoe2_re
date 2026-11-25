@@ -5277,3 +5277,107 @@ Sc542A50* Sc542A50::Init_542A50(int a1, int a2)
     this->type_04 = 0x69;
     return this;
 }
+
+// 0x547900 — helper then two subobject appends at +0x40 and +0x44.
+class Sc547900 {
+public:
+    void M_547900(int a1);
+};
+MATCH_FUNC(0x547900)
+void Sc547900::M_547900(int a1)
+{
+    ((Ta4098D0*)this)->Other_4098D0(a1);
+    sub_4BEBD0(a1, (char*)this + 0x40, 4);
+    sub_4BEBD0(a1, (char*)this + 0x44, 4);
+}
+
+// 0x548810 — helper then appends at +0x40 (size 1) and +0x44 (size 4).
+class Sc548810 {
+public:
+    void M_548810(int a1);
+};
+MATCH_FUNC(0x548810)
+void Sc548810::M_548810(int a1)
+{
+    ((Ta4098D0*)this)->Other_4098D0(a1);
+    sub_4BEBD0(a1, (char*)this + 0x40, 1);
+    sub_4BEBD0(a1, (char*)this + 0x44, 4);
+}
+
+// 0x54AD00 — helper then appends at +0x40 (size 2) and +0x44 (size 4).
+class Sc54AD00 {
+public:
+    void M_54AD00(int a1);
+};
+MATCH_FUNC(0x54AD00)
+void Sc54AD00::M_54AD00(int a1)
+{
+    ((Ta4098D0*)this)->Other_4098D0(a1);
+    sub_4BEBD0(a1, (char*)this + 0x40, 2);
+    sub_4BEBD0(a1, (char*)this + 0x44, 4);
+}
+
+// 0x58AA50 — two-argument constructor wrapper installing vtable 0x62AAE0.
+extern char g_vt_62AAE0;
+class Tc43A380 {
+public:
+    void Other_43A380(int a1, int a2);
+};
+class Sc58AA50 {
+public:
+    int vtable_00;
+    Sc58AA50* Init_58AA50(int a1, int a2);
+};
+MATCH_FUNC(0x58AA50)
+Sc58AA50* Sc58AA50::Init_58AA50(int a1, int a2)
+{
+    ((Tc43A380*)this)->Other_43A380(a1, a2);
+    *(void**)this = &g_vt_62AAE0;
+    return this;
+}
+
+// 0x59BB70 — two-argument constructor wrapper installing vtable 0x62B4E8.
+extern char g_vt_62B4E8;
+class Tc49A160 {
+public:
+    void Other_49A160(int a1, int a2);
+};
+class Sc59BB70 {
+public:
+    int vtable_00;
+    Sc59BB70* Init_59BB70(int a1, int a2);
+};
+MATCH_FUNC(0x59BB70)
+Sc59BB70* Sc59BB70::Init_59BB70(int a1, int a2)
+{
+    ((Tc49A160*)this)->Other_49A160(a1, a2);
+    *(void**)this = &g_vt_62B4E8;
+    return this;
+}
+
+#pragma optimize("s", on)
+// 0x54E490 — remainder plus first argument forwarded to the helper.
+extern int __cdecl sub_5FCA45();
+extern int __cdecl sub_54E420(int a1);
+MATCH_FUNC(0x54E490)
+int __cdecl sub_54E490(int a1, int a2)
+{
+    return sub_54E420(sub_5FCA45() % a2 + a1);
+}
+
+// 0x54E660 — remainder plus first argument forwarded to the helper.
+extern int __cdecl sub_54E580(int a1);
+MATCH_FUNC(0x54E660)
+int __cdecl sub_54E660(int a1, int a2)
+{
+    return sub_54E580(sub_5FCA45() % a2 + a1);
+}
+
+// 0x54E830 — remainder plus first argument forwarded to the helper.
+extern int __cdecl sub_54E750(int a1);
+MATCH_FUNC(0x54E830)
+int __cdecl sub_54E830(int a1, int a2)
+{
+    return sub_54E750(sub_5FCA45() % a2 + a1);
+}
+#pragma optimize("s", off)

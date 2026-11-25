@@ -810,7 +810,7 @@ void sub_4CB0E0();  // size 447, calls 0, lifted, module ui
 void sub_4CB3A0();  // size 27, calls 0, lifted, module ui
 void sub_4CB3C0();  // size 215, calls 2, lifted, module ui
 void sub_4CB4A0();  // size 2202, calls 12, lifted, module ui
-void sub_4CBD40();  // size 32, calls 1, lifted, module ui
+void sub_4CBD40();  // size 32, calls 1, matched, module ui
 void sub_4CBE62();  // size 314, calls 5, lifted, module ui
 void sub_4CCAB3();  // size 23, calls 0, lifted, module ui
 void sub_4CD0F0();  // size 210, calls 4, lifted, module ui
