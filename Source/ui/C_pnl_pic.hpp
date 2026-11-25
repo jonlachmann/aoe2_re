@@ -69,7 +69,10 @@ public:
     virtual void slot_059();  // slot +0x0EC
     virtual void slot_060();  // slot +0x0F0
 
-    char pad_04[0x5c - 0x04];     // +0x04..+0x5C
+    char pad_04[0x14 - 0x04];     // +0x04..+0x14
+    int field_14;                  // +0x14
+    int field_18;                  // +0x18
+    char pad_1c[0x5c - 0x1c];      // +0x1C..+0x5C
     void* field_5c;                // +0x5C node chain head
     char pad_60[0x6c - 0x60];      // +0x60..+0x6C
     void* field_6c;                // +0x6C active subobject
@@ -90,9 +93,33 @@ public:
     char pad_100[0x120 - 0x100];   // +0x100..+0x120
     int field_120;                 // +0x120
     int field_124;                 // +0x124
-    char pad_128[0x1b8 - 0x128];   // +0x128..+0x1B8
+    int field_128;                 // +0x128
+    char pad_12c[0x138 - 0x12c];   // +0x12C..+0x138
+    int field_138;                 // +0x138
+    char pad_13c[0x170 - 0x13c];   // +0x13C..+0x170
+    int field_170;                 // +0x170
+    int field_174;                 // +0x174
+    int field_178;                 // +0x178
+    int field_17c;                 // +0x17C
+    char pad_180[0x188 - 0x180];   // +0x180..+0x188
+    int field_188;                 // +0x188
+    int field_18c;                 // +0x18C
+    int field_190;                 // +0x190
+    int field_194;                 // +0x194
+    int field_198;                 // +0x198
+    int field_19c;                 // +0x19C
+    int field_1a0;                 // +0x1A0
+    int field_1a4;                 // +0x1A4
+    int field_1a8;                 // +0x1A8
+    int field_1ac;                 // +0x1AC
+    int field_1b0;                 // +0x1B0
+    int field_1b4;                 // +0x1B4
     int field_1b8;                 // +0x1B8 mode
-    char pad_1bc[0x218 - 0x1bc];   // +0x1BC..+0x218
+    char pad_1bc[0x208 - 0x1bc];   // +0x1BC..+0x208
+    int field_208;                 // +0x208 teardown gate
+    char pad_20c[0x210 - 0x20c];   // +0x20C..+0x210
+    void* field_210;               // +0x210 owned object A
+    void* field_214;               // +0x214 owned object B
     int field_218;                // +0x218
     int field_21c;                // +0x21C
     char pad_220[0x224 - 0x220];  // +0x220..+0x224
@@ -106,4 +133,6 @@ public:
                  int a8, int a9, int a10, int a11, int a12, int a13,
                  int a14, int a15);
     int M_4A0460(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+    void M_4B8A80();
+    void M_4B83D0();
 };

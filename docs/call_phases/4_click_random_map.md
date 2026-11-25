@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 262 matched, 292 left to match (2 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 263 matched, 291 left to match (3 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (292)
+## Left to match (291)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -192,7 +192,7 @@
 | 370 | `sub_522C70` | 2 |  | 1_boot_to_menu |  |
 | 372 | `sub_5DC590` | 2 |  | 1_boot_to_menu |  |
 | 376 | `sub_460180` | 6 |  | 1_boot_to_menu |  |
-| 380 | `sub_4A4830` | 109 |  | 1_boot_to_menu |  |
+| 380 | `sub_4A4830` | 109 | WIP | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A4830 |
 | 381 | `sub_4A4600` | 109 |  | 1_boot_to_menu |  |
 | 382 | `sub_4B9F70` | 179 |  | 1_boot_to_menu |  |
 | 383 | `sub_4A0270` | 318 |  | 1_boot_to_menu |  |
@@ -288,7 +288,6 @@
 | 572 | `sub_4A03B0` | 104 |  | 4_click_random_map |  |
 | 573 | `sub_49F730` | 104 |  | 4_click_random_map |  |
 | 575 | `sub_4B7FF0` | 1 |  | 4_click_random_map |  |
-| 576 | `sub_4B83D0` | 1 |  | 1_boot_to_menu |  |
 | 580 | `sub_4AF270` | 42 |  | 4_click_random_map |  |
 | 588 | `sub_4B2E30` | 1 |  | 4_click_random_map |  |
 | 590 | `sub_4B3950` | 6 |  | 1_boot_to_menu |  |
@@ -299,7 +298,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (262)
+## Matched (263)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -480,7 +479,7 @@
 | 432 | `sub_4BCE70` | 35 | MATCH | 4_click_random_map | sub_4BCE70 |
 | 433 | `sub_4BCEB0` | 128 | MATCH | 4_click_random_map | C_pnl_lst::M_4BCEB0 |
 | 435 | `sub_4B88B0` | 35 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4B88B0 |
-| 437 | `sub_4B8A80` | 695 | MATCH | 1_boot_to_menu | S4B8A80::M_4B8A80 |
+| 437 | `sub_4B8A80` | 695 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4B8A80 |
 | 438 | `sub_4BA530` | 35 | MATCH | 1_boot_to_menu | S4BA530::M_4BA530 |
 | 439 | `sub_5C07A0` | 94 | MATCH | 1_boot_to_menu | S5C07A0::Get_5C07A0 |
 | 440 | `sub_4B8C10` | 542 | MATCH | 1_boot_to_menu | C_cluster_4B8B20::M_4B8C10 |
@@ -546,6 +545,7 @@
 | 567 | `sub_4ECE70` | 1 | MATCH | 4_click_random_map | Sd4ECE70::D_4ECE70 |
 | 570 | `sub_4BA0E0` | 50 | MATCH | 4_click_random_map | Sd4BA0E0::D_4BA0E0 |
 | 574 | `sub_4B7FD0` | 1 | MATCH | 4_click_random_map | Sd4B7FD0::D_4B7FD0 |
+| 576 | `sub_4B83D0` | 1 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4B83D0 |
 | 577 | `sub_51EAE0` | 4 | MATCH | 1_boot_to_menu | S51EAE0::M_51EAE0 |
 | 578 | `sub_4BE6D0` | 4 | MATCH | 1_boot_to_menu | sub_4BE6D0 |
 | 579 | `sub_4AF250` | 33 | MATCH | 4_click_random_map | Sd4AF250::D_4AF250 |

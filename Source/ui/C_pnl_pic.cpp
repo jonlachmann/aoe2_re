@@ -99,3 +99,64 @@ int C_pnl_pic::M_4B88B0(int a1, int a2, int a3, int a4, int a5, int a6,
     M_4A0460(a1, a2, a3, a4, a5, a6, 0);
     return 1;
 }
+
+// 0x4B8A80 — recompute the display geometry slots from the current +0x1B8 mode
+// (1 uses +0x138/+0x18/+0x170/+0x178, otherwise +0x128/+0x14/+0x174/+0x17C).
+MATCH_FUNC(0x4B8A80)
+void C_pnl_pic::M_4B8A80()
+{
+    if (field_1b8 == 1)
+    {
+        field_188 = field_138;
+        field_190 = field_18 + field_138 - 5;
+        field_198 = field_170 + 1;
+        field_1a0 = field_138 - 1;
+        field_1a8 = field_190 + 1;
+        field_1b0 = field_178 - 1;
+        return;
+    }
+    field_18c = field_128;
+    field_194 = field_14 + field_128 - 5;
+    field_19c = field_174 + 1;
+    field_1a4 = field_128 - 1;
+    field_1ac = field_194 + 1;
+    field_1b4 = field_17c - 1;
+}
+
+// 0x4B83D0 — release the owned +0x210/+0x214 objects when the +0x208 gate is
+// set, then clear all three.
+class T4B83D0Obj210 {
+public:
+    void M_4A9CA0();
+};
+class T4B83D0Obj214 {
+public:
+    void M_51EAE0();
+};
+extern void __cdecl sub_5F90B0(void* a1);
+
+MATCH_FUNC(0x4B83D0)
+void C_pnl_pic::M_4B83D0()
+{
+    void* p = field_210;
+    if (p != 0)
+    {
+        if (field_208 != 0 && field_210 != 0)
+        {
+            ((T4B83D0Obj210*)field_210)->M_4A9CA0();
+            sub_5F90B0(p);
+        }
+        field_210 = 0;
+    }
+    p = field_214;
+    if (p != 0)
+    {
+        if (field_208 != 0 && field_214 != 0)
+        {
+            ((T4B83D0Obj214*)field_214)->M_51EAE0();
+            sub_5F90B0(p);
+        }
+        field_214 = 0;
+    }
+    field_208 = 0;
+}

@@ -1,6 +1,6 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 612 matched, 1832 left to match (3 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 612 matched, 1832 left to match (4 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (1832)
 
@@ -206,7 +206,7 @@
 | 387 | `sub_4461F0` | 2 |  | 1_boot_to_menu |  |
 | 390 | `sub_4233E0` | 1 |  | 1_boot_to_menu |  |
 | 400 | `sub_4A3A50` | 2 |  | 1_boot_to_menu |  |
-| 402 | `sub_4A4830` | 7 |  | 1_boot_to_menu |  |
+| 402 | `sub_4A4830` | 7 | WIP | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A4830 |
 | 403 | `sub_4A4600` | 7 |  | 1_boot_to_menu |  |
 | 404 | `sub_4B9F70` | 11 |  | 1_boot_to_menu |  |
 | 405 | `sub_4A0270` | 107 |  | 1_boot_to_menu |  |
@@ -2263,7 +2263,7 @@
 | 1620 | `sub_4BCE70` | 1 | MATCH | 4_click_random_map | sub_4BCE70 |
 | 1621 | `sub_4BCEB0` | 2 | MATCH | 4_click_random_map | C_pnl_lst::M_4BCEB0 |
 | 1623 | `sub_4B88B0` | 1 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4B88B0 |
-| 1625 | `sub_4B8A80` | 60 | MATCH | 1_boot_to_menu | S4B8A80::M_4B8A80 |
+| 1625 | `sub_4B8A80` | 60 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4B8A80 |
 | 1626 | `sub_4BA530` | 1 | MATCH | 1_boot_to_menu | S4BA530::M_4BA530 |
 | 1627 | `sub_5C07A0` | 9 | MATCH | 1_boot_to_menu | S5C07A0::Get_5C07A0 |
 | 1628 | `sub_4B8C10` | 49 | MATCH | 1_boot_to_menu | C_cluster_4B8B20::M_4B8C10 |

@@ -153,3 +153,19 @@ void C_TRIBE_Screen_Options::M_4A0AB0(int* a1)
     slot_12();
     *q = old;
 }
+
+// 0x4A4830 — stage the four a8 copies in a local block and dispatch them with
+// a1..a7, a9..a11 and the trailing -1/0 to the +0x11C slot.
+WIP_FUNC(0x4A4830)
+void C_TRIBE_Screen_Options::M_4A4830(int a1, int a2, int a3, int a4, int a5,
+                                      int a6, int a7, int a8, int a9, int a10,
+                                      int a11)
+{
+    struct Quad { int a, b, c, d; };
+    Quad block;
+    block.a = a8;
+    block.b = a8;
+    block.c = a8;
+    block.d = a8;
+    slot_71(a1, a2, a3, a4, a5, a6, a7, (int*)&block, a9, a10, a11, -1, 0);
+}

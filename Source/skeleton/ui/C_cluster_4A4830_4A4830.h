@@ -6,6 +6,6 @@
 
 class C_cluster_4A4830 {
 public:
-    void method_000();  // sub_4A4830 [lifted]
+    void method_000();  // sub_4A4830 [wip] — Source/ui/C_TRIBE_Screen_Options.cpp
     void method_001();  // sub_506400 [lifted]
 };

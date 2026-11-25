@@ -643,7 +643,7 @@ void sub_4B8040();  // size 279, calls 4, lifted, module ui
 void sub_4B8160();  // size 61, calls 1, lifted, module ui
 void sub_4B81A0();  // size 30, calls 0, lifted, module ui
 void sub_4B81C0();  // size 525, calls 9, lifted, module ui
-void sub_4B83D0();  // size 105, calls 3, lifted, module ui
+void sub_4B83D0();  // size 105, calls 3, matched, module ui
 void sub_4B8440();  // size 89, calls 1, lifted, module ui
 void sub_4B84A0();  // size 74, calls 0, lifted, module ui
 void sub_4B84F0();  // size 20, calls 0, matched, module ui

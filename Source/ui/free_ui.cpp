@@ -7317,62 +7317,6 @@ int C_cluster_49F630::M_49F960(int a1)
     return 1;
 }
 
-// 0x4B8A80 — recompute the twelve display geometry slots from the current
-// +0x1B8 mode (1 uses +0x138/+0x18/+0x170/+0x178, otherwise +0x128/+0x14/
-// +0x174/+0x17C).
-class S4B8A80 {
-public:
-    char pad_00[0x14];
-    int field_14;                 // +0x14
-    int field_18;                 // +0x18
-    char pad_1c[0x128 - 0x1c];
-    int field_128;                // +0x128
-    char pad_12c[0x138 - 0x12c];
-    int field_138;                // +0x138
-    char pad_13c[0x170 - 0x13c];
-    int field_170;                // +0x170
-    int field_174;                // +0x174
-    int field_178;                // +0x178
-    int field_17c;                // +0x17C
-    char pad_180[0x188 - 0x180];
-    int field_188;                // +0x188
-    int field_18c;                // +0x18C
-    int field_190;                // +0x190
-    int field_194;                // +0x194
-    int field_198;                // +0x198
-    int field_19c;                // +0x19C
-    int field_1a0;                // +0x1A0
-    int field_1a4;                // +0x1A4
-    int field_1a8;                // +0x1A8
-    int field_1ac;                // +0x1AC
-    int field_1b0;                // +0x1B0
-    int field_1b4;                // +0x1B4
-    int field_1b8;                // +0x1B8
-    void M_4B8A80();
-};
-
-MATCH_FUNC(0x4B8A80)
-void S4B8A80::M_4B8A80()
-{
-    if (field_1b8 == 1)
-    {
-        field_188 = field_138;
-        field_190 = field_18 + field_138 - 5;
-        field_198 = field_170 + 1;
-        field_1a0 = field_138 - 1;
-        field_1a8 = field_190 + 1;
-        field_1b0 = field_178 - 1;
-        return;
-    }
-    field_18c = field_128;
-    field_194 = field_14 + field_128 - 5;
-    field_19c = field_174 + 1;
-    field_1a4 = field_128 - 1;
-    field_1ac = field_194 + 1;
-    field_1b4 = field_17c - 1;
-}
-
-
 // 0x4BE010 — build a six-argument request through the field_04 or field_08
 // object depending on a1, using the two one/-one locals and the +0x10 object,
 // then report the +0x10 object on success (a zero result).
