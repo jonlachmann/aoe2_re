@@ -5621,15 +5621,18 @@
    "vtable": null,
    "anchor": "0x409A10",
    "methods": 3,
-   "owned_methods": 1,
-   "unowned_methods": 2,
-   "primary_file": "Source/app/C_vt61C62C.cpp",
+   "owned_methods": 3,
+   "unowned_methods": 0,
+   "primary_file": "Source/sim/free_sim.cpp",
    "owner_files": {
-    "Source/app/C_vt61C62C.cpp": 1
+    "Source/app/C_vt61C62C.cpp": 1,
+    "Source/sim/free_sim.cpp": 2
    },
-   "other_files": [],
+   "other_files": [
+    "Source/app/C_vt61C62C.cpp"
+   ],
    "staged_files": [],
-   "split": false
+   "split": true
   },
   {
    "class": "C_cluster_409CB0",
@@ -8945,10 +8948,12 @@
    "vtable": null,
    "anchor": "0x542410",
    "methods": 3,
-   "owned_methods": 0,
-   "unowned_methods": 3,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 2,
+   "unowned_methods": 1,
+   "primary_file": "Source/sim/free_sim.cpp",
+   "owner_files": {
+    "Source/sim/free_sim.cpp": 2
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -8975,10 +8980,12 @@
    "vtable": null,
    "anchor": "0x54A3E0",
    "methods": 3,
-   "owned_methods": 0,
-   "unowned_methods": 3,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 2,
+   "unowned_methods": 1,
+   "primary_file": "Source/sim/free_sim.cpp",
+   "owner_files": {
+    "Source/sim/free_sim.cpp": 2
+   },
    "other_files": [],
    "staged_files": [],
    "split": false

@@ -5766,3 +5766,103 @@ void Sb477C60::M_477C60(int a1)
     ((Ta474CB0*)this)->Other_474CB0(a1);
     sub_4BEBD0(a1, (char*)this + 0xd0, 4);
 }
+
+// 0x4AF3E0 — store two arguments then vtable call with constant one.
+struct VT4AF3E0 {
+    char pad_00[0x20];
+    void (__stdcall *slot_20)(int a1);
+};
+class S4AF3E0 {
+public:
+    char pad_00[0x1ec];
+    int field_1ec;                // +0x1ec
+    int field_1f0;                // +0x1f0
+    void M_4AF3E0(int a1, int a2);
+};
+MATCH_FUNC(0x4AF3E0)
+void S4AF3E0::M_4AF3E0(int a1, int a2)
+{
+    this->field_1ec = a1;
+    this->field_1f0 = a2;
+    ((VT4AF3E0*)*(void**)this)->slot_20(1);
+}
+
+// 0x4B3740 — store two arguments then vtable call with constant one.
+struct VT4B3740 {
+    char pad_00[0x20];
+    void (__stdcall *slot_20)(int a1);
+};
+class S4B3740 {
+public:
+    char pad_00[0x118];
+    int field_118;                // +0x118
+    int field_11c;                // +0x11c
+    void M_4B3740(int a1, int a2);
+};
+MATCH_FUNC(0x4B3740)
+void S4B3740::M_4B3740(int a1, int a2)
+{
+    this->field_118 = a1;
+    this->field_11c = a2;
+    ((VT4B3740*)*(void**)this)->slot_20(1);
+}
+
+// 0x4BB9E0 — store two arguments then vtable call with constant one.
+struct VT4BB9E0 {
+    char pad_00[0x20];
+    void (__stdcall *slot_20)(int a1);
+};
+class S4BB9E0 {
+public:
+    char pad_00[0x120];
+    int field_120;                // +0x120
+    int field_124;                // +0x124
+    void M_4BB9E0(int a1, int a2);
+};
+MATCH_FUNC(0x4BB9E0)
+void S4BB9E0::M_4BB9E0(int a1, int a2)
+{
+    this->field_120 = a1;
+    this->field_124 = a2;
+    ((VT4BB9E0*)*(void**)this)->slot_20(1);
+}
+
+// 0x4BBA80 — store two arguments then vtable call with constant one.
+struct VT4BBA80 {
+    char pad_00[0x20];
+    void (__stdcall *slot_20)(int a1);
+};
+class S4BBA80 {
+public:
+    char pad_00[0x138];
+    int field_138;                // +0x138
+    int field_13c;                // +0x13c
+    void M_4BBA80(int a1, int a2);
+};
+MATCH_FUNC(0x4BBA80)
+void S4BBA80::M_4BBA80(int a1, int a2)
+{
+    this->field_138 = a1;
+    this->field_13c = a2;
+    ((VT4BBA80*)*(void**)this)->slot_20(1);
+}
+
+// 0x4BBAA0 — store two arguments then vtable call with constant one.
+struct VT4BBAA0 {
+    char pad_00[0x20];
+    void (__stdcall *slot_20)(int a1);
+};
+class S4BBAA0 {
+public:
+    char pad_00[0x140];
+    int field_140;                // +0x140
+    int field_144;                // +0x144
+    void M_4BBAA0(int a1, int a2);
+};
+MATCH_FUNC(0x4BBAA0)
+void S4BBAA0::M_4BBAA0(int a1, int a2)
+{
+    this->field_140 = a1;
+    this->field_144 = a2;
+    ((VT4BBAA0*)*(void**)this)->slot_20(1);
+}

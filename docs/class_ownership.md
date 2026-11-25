@@ -5,7 +5,7 @@ class's bodies span more than one file; `Staged` means some bodies still
 sit under `Source/simple/` instead of a class-first TU. Owned counts are
 the methods with a known file; unowned slots are still lifted evidence.
 ## Summary
-- 534 classes in the map; 198 have split owner files.
+- 534 classes in the map; 199 have split owner files.
 - 0 classes still have staged simple-file bodies.
 
 ## Split owner files
@@ -13,6 +13,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 |---|---|---|---|---|---|
 | `C_cluster_403DC0` | app | — | Source/app/free_app.cpp | Source/sim/C_cluster_403DC0.cpp | 2/2 |
 | `C_cluster_405790` | app | — | Source/app/C_cluster_405790.cpp | Source/sim/free_sim.cpp | 2/2 |
+| `C_cluster_409A10` | app | — | Source/sim/free_sim.cpp | Source/app/C_vt61C62C.cpp | 3/3 |
 | `C_cluster_41A150` | app | — | Source/app/C_cluster_41A150.cpp | Source/gfx/free_gfx.cpp | 2/2 |
 | `C_vt61C524` | app | 0x61C524 | Source/app/C_vt61C524.cpp | Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 7/25 |
 | `C_vt61C62C` | app | 0x61C62C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 8/24 |

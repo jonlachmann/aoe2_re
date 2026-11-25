@@ -10,7 +10,7 @@ void sub_401698();  // size 434, calls 3, lifted, module app
 void sub_4019BE();  // size 1794, calls 10, lifted, module app
 void sub_402230();  // size 1557, calls 6, lifted, module app
 void sub_402850();  // size 56, calls 0, lifted, module app
-void sub_402990();  // size 40, calls 1, lifted, module app
+void sub_402990();  // size 40, calls 1, matched, module app
 void sub_4029C0();  // size 61, calls 1, lifted, module app
 void sub_402D50();  // size 150, calls 2, lifted, module app
 void sub_402E10();  // size 147, calls 3, lifted, module app
@@ -26,7 +26,7 @@ void sub_404772();  // size 14, calls 9, lifted, module app
 void sub_404780();  // size 208, calls 9, lifted, module app
 void sub_4053A0();  // size 66, calls 1, lifted, module app
 void sub_4053F0();  // size 76, calls 1, lifted, module app
-void sub_405680();  // size 40, calls 1, lifted, module app
+void sub_405680();  // size 40, calls 1, matched, module app
 void sub_4056B0();  // size 93, calls 2, lifted, module app
 void sub_4057D0();  // size 24, calls 1, lifted, module app
 void sub_4057F0();  // size 108, calls 3, lifted, module app
@@ -58,7 +58,7 @@ void sub_407460();  // size 162, calls 2, lifted, module app
 void sub_4079B0();  // size 77, calls 2, lifted, module app
 void sub_407AA0();  // size 131, calls 2, lifted, module app
 void sub_407D50();  // size 101, calls 2, lifted, module app
-void sub_408ED0();  // size 40, calls 1, lifted, module app
+void sub_408ED0();  // size 40, calls 1, matched, module app
 void sub_408F00();  // size 61, calls 1, lifted, module app
 void sub_409560();  // size 50, calls 2, lifted, module app
 void sub_4095A0();  // size 53, calls 1, lifted, module app

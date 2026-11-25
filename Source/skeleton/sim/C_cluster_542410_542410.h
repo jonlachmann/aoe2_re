@@ -7,6 +7,6 @@
 class C_cluster_542410 {
 public:
     void method_000();  // sub_542410 [lifted]
-    void method_001();  // sub_542660 [lifted]
-    void method_002();  // sub_542680 [lifted]
+    void method_001();  // sub_542660 [matched] — Source/sim/free_sim.cpp
+    void method_002();  // sub_542680 [matched] — Source/sim/free_sim.cpp
 };

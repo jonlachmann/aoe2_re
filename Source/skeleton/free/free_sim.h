@@ -183,7 +183,7 @@ void sub_539980();  // size 219, calls 1, lifted, module sim
 void sub_539A60();  // size 111, calls 3, lifted, module sim
 void sub_53B9E0();  // size 805, calls 2, lifted, module sim
 void sub_53CBC0();  // size 131, calls 2, lifted, module sim
-void sub_53CC60();  // size 40, calls 1, lifted, module sim
+void sub_53CC60();  // size 40, calls 1, matched, module sim
 void sub_53CC90();  // size 100, calls 2, lifted, module sim
 void sub_53CD00();  // size 61, calls 1, lifted, module sim
 void sub_53D0E0();  // size 948, calls 2, lifted, module sim
@@ -192,7 +192,7 @@ void sub_53D900();  // size 149, calls 2, lifted, module sim
 void sub_53D9A0();  // size 68, calls 1, lifted, module sim
 void sub_53D9F0();  // size 103, calls 2, lifted, module sim
 void sub_53E790();  // size 69, calls 1, lifted, module sim
-void sub_53E820();  // size 40, calls 1, lifted, module sim
+void sub_53E820();  // size 40, calls 1, matched, module sim
 void sub_53E870();  // size 93, calls 2, lifted, module sim
 void sub_53EC43();  // size 26, calls 0, lifted, module sim
 void sub_53EDFF();  // size 43, calls 0, lifted, module sim
@@ -206,7 +206,7 @@ void sub_540000();  // size 19, calls 0, lifted, module sim
 void sub_540580();  // size 382, calls 5, lifted, module sim
 void sub_540700();  // size 46, calls 0, lifted, module sim
 void sub_540730();  // size 27, calls 0, lifted, module sim
-void sub_540750();  // size 40, calls 1, lifted, module sim
+void sub_540750();  // size 40, calls 1, matched, module sim
 void sub_540790();  // size 111, calls 2, lifted, module sim
 void sub_540BD0();  // size 13, calls 0, matched, module sim
 void sub_540BE0();  // size 39, calls 0, matched, module sim
@@ -214,12 +214,12 @@ void sub_540C10();  // size 142, calls 3, lifted, module sim
 void sub_540CA0();  // size 130, calls 3, lifted, module sim
 void sub_540D30();  // size 91, calls 2, lifted, module sim
 void sub_540E70();  // size 427, calls 1, lifted, module sim
-void sub_541020();  // size 40, calls 1, lifted, module sim
+void sub_541020();  // size 40, calls 1, matched, module sim
 void sub_541050();  // size 40, calls 1, lifted, module sim
 void sub_541250();  // size 103, calls 2, lifted, module sim
 void sub_5412E0();  // size 196, calls 5, lifted, module sim
 void sub_5419D3();  // size 26, calls 0, lifted, module sim
-void sub_542A50();  // size 40, calls 1, lifted, module sim
+void sub_542A50();  // size 40, calls 1, matched, module sim
 void sub_542A80();  // size 120, calls 2, lifted, module sim
 void sub_542B00();  // size 61, calls 1, lifted, module sim
 void sub_5431C0();  // size 328, calls 2, lifted, module sim
@@ -981,7 +981,7 @@ void sub_5A67B0();  // size 23, calls 0, matched, module sim
 void sub_5A67D0();  // size 58, calls 0, matched, module sim
 void sub_5A6830();  // size 51, calls 0, lifted, module sim
 void sub_5A6870();  // size 37, calls 0, lifted, module sim
-void sub_5A6AA0();  // size 30, calls 0, lifted, module sim
+void sub_5A6AA0();  // size 30, calls 0, matched, module sim
 void sub_5A6E80();  // size 270, calls 1, lifted, module sim
 void sub_5A72E0();  // size 94, calls 0, lifted, module sim
 void sub_5A7940();  // size 7, calls 0, matched, module sim

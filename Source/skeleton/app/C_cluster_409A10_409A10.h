@@ -7,6 +7,6 @@
 class C_cluster_409A10 {
 public:
     void method_000();  // sub_409A10 [matched] — Source/app/C_vt61C62C.cpp
-    void method_001();  // sub_53F020 [lifted]
-    void method_002();  // sub_53F040 [lifted]
+    void method_001();  // sub_53F020 [matched] — Source/sim/free_sim.cpp
+    void method_002();  // sub_53F040 [matched] — Source/sim/free_sim.cpp
 };

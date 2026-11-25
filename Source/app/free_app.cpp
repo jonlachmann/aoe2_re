@@ -2409,3 +2409,58 @@ void Sb41A3B0::M_41A3B0(int a1)
     ((Ta529B90*)this)->Other_529B90(a1);
     sub_4BEBD0(a1, (char*)this + 0xa4, 4);
 }
+
+// 0x402990 — three-argument constructor wrapper with type word 0xa.
+extern char g_vt_61C62C;
+class Tc4095A0 {
+public:
+    void Other_4095A0(int a1, int a2, int a3);
+};
+class Sc402990 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    Sc402990* Init_402990(int a1, int a2);
+};
+MATCH_FUNC(0x402990)
+Sc402990* Sc402990::Init_402990(int a1, int a2)
+{
+    ((Tc4095A0*)this)->Other_4095A0(a1, a2, 1);
+    *(void**)this = &g_vt_61C62C;
+    this->type_04 = 0xa;
+    return this;
+}
+
+// 0x405680 — three-argument constructor wrapper with type word 0xd.
+extern char g_vt_61C9D4;
+class Sc405680 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    Sc405680* Init_405680(int a1, int a2);
+};
+MATCH_FUNC(0x405680)
+Sc405680* Sc405680::Init_405680(int a1, int a2)
+{
+    ((Tc4095A0*)this)->Other_4095A0(a1, a2, 1);
+    *(void**)this = &g_vt_61C9D4;
+    this->type_04 = 0xd;
+    return this;
+}
+
+// 0x408ED0 — three-argument constructor wrapper with type word 0xc.
+extern char g_vt_61D1D8;
+class Sc408ED0 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    Sc408ED0* Init_408ED0(int a1, int a2);
+};
+MATCH_FUNC(0x408ED0)
+Sc408ED0* Sc408ED0::Init_408ED0(int a1, int a2)
+{
+    ((Tc4095A0*)this)->Other_4095A0(a1, a2, 1);
+    *(void**)this = &g_vt_61D1D8;
+    this->type_04 = 0xc;
+    return this;
+}

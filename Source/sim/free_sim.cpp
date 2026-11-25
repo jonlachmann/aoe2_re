@@ -5031,3 +5031,249 @@ void Sb596C50::M_596C50(int a1)
     ((Ta598850*)this)->Other_598850(a1);
     sub_4BEBD0(a1, (char*)this + 0x1c2, 2);
 }
+
+// 0x53F020 — helper test then nested field at +0xc8.
+class Th409A10 {
+public:
+    int Other_409A10();
+};
+class Aa53F020 {
+public:
+    char pad_00[8];
+    void* field_08;               // +8
+};
+class Bb53F020 {
+public:
+    char pad_00[8];
+    void* field_08;               // +8
+};
+class Cc53F020 {
+public:
+    char pad_00[0xc8];
+    int field_c8;                 // +0xc8
+};
+class Sc53F020 {
+public:
+    char pad_00[8];
+    Aa53F020* field_08;           // +8
+    int M_53F020();
+};
+MATCH_FUNC(0x53F020)
+int Sc53F020::M_53F020()
+{
+    int r = ((Th409A10*)this)->Other_409A10();
+    if (r)
+        return r;
+    return ((Cc53F020*)((Bb53F020*)this->field_08)->field_08)->field_c8;
+}
+
+// 0x53F040 — helper test then nested field at +0x18.
+class Th409A10b {
+public:
+    int Other_409A10();
+};
+class Bb53F040 {
+public:
+    char pad_00[8];
+    void* field_08;               // +8
+};
+class Cb53F040 {
+public:
+    char pad_00[0x18];
+    int field_18;                 // +0x18
+};
+class Sc53F040 {
+public:
+    char pad_00[8];
+    Aa53F020* field_08;           // +8
+    int M_53F040();
+};
+MATCH_FUNC(0x53F040)
+int Sc53F040::M_53F040()
+{
+    int r = ((Th409A10b*)this)->Other_409A10();
+    if (r)
+        return r;
+    return ((Cb53F040*)((Bb53F040*)this->field_08)->field_08)->field_18;
+}
+
+// 0x542660 — helper test then nested field at +0xc8.
+class Th542410 {
+public:
+    int Other_542410();
+};
+class Sc542660 {
+public:
+    char pad_00[8];
+    Aa53F020* field_08;           // +8
+    int M_542660();
+};
+MATCH_FUNC(0x542660)
+int Sc542660::M_542660()
+{
+    int r = ((Th542410*)this)->Other_542410();
+    if (r)
+        return r;
+    return ((Cc53F020*)((Bb53F020*)this->field_08)->field_08)->field_c8;
+}
+
+// 0x542680 — helper test then nested field at +0x18.
+class Sc542680 {
+public:
+    char pad_00[8];
+    Aa53F020* field_08;           // +8
+    int M_542680();
+};
+MATCH_FUNC(0x542680)
+int Sc542680::M_542680()
+{
+    int r = ((Th542410*)this)->Other_542410();
+    if (r)
+        return r;
+    return ((Cb53F040*)((Bb53F040*)this->field_08)->field_08)->field_18;
+}
+
+// 0x54A430 — helper test then nested field at +0xc8.
+class Th54A3E0 {
+public:
+    int Other_54A3E0();
+};
+class Sc54A430 {
+public:
+    char pad_00[8];
+    Aa53F020* field_08;           // +8
+    int M_54A430();
+};
+MATCH_FUNC(0x54A430)
+int Sc54A430::M_54A430()
+{
+    int r = ((Th54A3E0*)this)->Other_54A3E0();
+    if (r)
+        return r;
+    return ((Cc53F020*)((Bb53F020*)this->field_08)->field_08)->field_c8;
+}
+
+// 0x54A450 — helper test then nested field at +0x18.
+class Sc54A450 {
+public:
+    char pad_00[8];
+    Aa53F020* field_08;           // +8
+    int M_54A450();
+};
+MATCH_FUNC(0x54A450)
+int Sc54A450::M_54A450()
+{
+    int r = ((Th54A3E0*)this)->Other_54A3E0();
+    if (r)
+        return r;
+    return ((Cb53F040*)((Bb53F040*)this->field_08)->field_08)->field_18;
+}
+
+// 0x5A6AA0 — store two arguments then vtable call with constant one.
+struct VT5A6AA0 {
+    char pad_00[0x20];
+    void (__stdcall *slot_20)(int a1);
+};
+class S5A6AA0 {
+public:
+    char pad_00[0x128];
+    int field_128;                // +0x128
+    int field_12c;                // +0x12c
+    void M_5A6AA0(int a1, int a2);
+};
+MATCH_FUNC(0x5A6AA0)
+void S5A6AA0::M_5A6AA0(int a1, int a2)
+{
+    this->field_128 = a1;
+    this->field_12c = a2;
+    ((VT5A6AA0*)*(void**)this)->slot_20(1);
+}
+
+// 0x53CC60 — three-argument constructor wrapper with type word 0x6b.
+class Tc4095A0 {
+public:
+    void Other_4095A0(int a1, int a2, int a3);
+};
+extern char g_vt_6280B4;
+class Sc53CC60 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    Sc53CC60* Init_53CC60(int a1, int a2);
+};
+MATCH_FUNC(0x53CC60)
+Sc53CC60* Sc53CC60::Init_53CC60(int a1, int a2)
+{
+    ((Tc4095A0*)this)->Other_4095A0(a1, a2, 1);
+    *(void**)this = &g_vt_6280B4;
+    this->type_04 = 0x6b;
+    return this;
+}
+
+// 0x53E820 — three-argument constructor wrapper with type word 0x87.
+extern char g_vt_628280;
+class Sc53E820 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    Sc53E820* Init_53E820(int a1, int a2);
+};
+MATCH_FUNC(0x53E820)
+Sc53E820* Sc53E820::Init_53E820(int a1, int a2)
+{
+    ((Tc4095A0*)this)->Other_4095A0(a1, a2, 1);
+    *(void**)this = &g_vt_628280;
+    this->type_04 = 0x87;
+    return this;
+}
+
+// 0x540750 — three-argument constructor wrapper with type word 0x85.
+extern char g_vt_628448;
+class Sc540750 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    Sc540750* Init_540750(int a1, int a2);
+};
+MATCH_FUNC(0x540750)
+Sc540750* Sc540750::Init_540750(int a1, int a2)
+{
+    ((Tc4095A0*)this)->Other_4095A0(a1, a2, 1);
+    *(void**)this = &g_vt_628448;
+    this->type_04 = 0x85;
+    return this;
+}
+
+// 0x541020 — three-argument constructor wrapper with type word 0x79.
+extern char g_vt_628608;
+class Sc541020 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    Sc541020* Init_541020(int a1, int a2);
+};
+MATCH_FUNC(0x541020)
+Sc541020* Sc541020::Init_541020(int a1, int a2)
+{
+    ((Tc4095A0*)this)->Other_4095A0(a1, a2, 1);
+    *(void**)this = &g_vt_628608;
+    this->type_04 = 0x79;
+    return this;
+}
+
+// 0x542A50 — three-argument constructor wrapper with type word 0x69.
+extern char g_vt_6287CC;
+class Sc542A50 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    Sc542A50* Init_542A50(int a1, int a2);
+};
+MATCH_FUNC(0x542A50)
+Sc542A50* Sc542A50::Init_542A50(int a1, int a2)
+{
+    ((Tc4095A0*)this)->Other_4095A0(a1, a2, 1);
+    *(void**)this = &g_vt_6287CC;
+    this->type_04 = 0x69;
+    return this;
+}
