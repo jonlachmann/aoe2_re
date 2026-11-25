@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 265 matched, 289 left to match (4 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 266 matched, 288 left to match (4 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (289)
+## Left to match (288)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -30,7 +30,6 @@
 | 57 | `sub_41F780` | 1 |  | 3_click_single_player |  |
 | 59 | `sub_5BB2D0` | 1117934 |  | 1_boot_to_menu |  |
 | 60 | `sub_420450` | 1117934 |  | 1_boot_to_menu |  |
-| 63 | `sub_521580` | 1117934 |  | 1_boot_to_menu |  |
 | 66 | `sub_4EDC70` | 78816 |  | 1_boot_to_menu |  |
 | 67 | `sub_5217F0` | 78820 |  | 1_boot_to_menu |  |
 | 70 | `sub_5215F0` | 78816 |  | 1_boot_to_menu |  |
@@ -296,7 +295,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (265)
+## Matched (266)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -324,6 +323,7 @@
 | 58 | `sub_41BC30` | 1 | MATCH | 3_click_single_player | C_vt61DF78::M_41BC30 |
 | 61 | `sub_41C800` | 2235888 | MATCH | 1_boot_to_menu | S41C800Table::Add_41C800 |
 | 62 | `sub_5214E0` | 1117934 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5214E0 |
+| 63 | `sub_521580` | 1117934 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Hook_521580 |
 | 64 | `sub_521500` | 1117934 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Hook_521500 |
 | 65 | `sub_522C30` | 1117934 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_522C30 |
 | 68 | `sub_5219B0` | 157640 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Find_5219B0 |

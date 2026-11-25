@@ -15,7 +15,8 @@ public:
     int field_0;                  // +0x00
     char pad_04[0x7c - 0x04];     // +0x04..+0x7C
     int field_7c;                 // +0x7C search gate
-    char pad_80[0x598 - 0x80];    // +0x80..+0x598
+    void* field_80;               // +0x80 node chain head
+    char pad_84[0x598 - 0x84];    // +0x84..+0x598
     int field_598;                // +0x598 entry count
     char pad_59c[0x5b0 - 0x59c];  // +0x59C..+0x5B0
     int field_5b0;                // +0x5B0 entry cursor

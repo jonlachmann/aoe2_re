@@ -89,3 +89,26 @@ void C_cluster_520CE0::Hook_521500()
         }
     }
 }
+
+// 0x521580 — sweep the +0x598 entries through Find_5219B0; for each entry with
+// a non-zero +0x2C byte and +0x08 bit 1, when 0x5217F0 rejects the +0x00 key,
+// decrement +0x5B0 and pass the key to 0x521470.
+MATCH_FUNC(0x521580)
+void C_cluster_520CE0::Hook_521580()
+{
+    if (field_80 == 0)
+        return;
+    for (int i = 0; i < field_598; i++)
+    {
+        int e = Find_5219B0(i);
+        if (e != 0 && *(unsigned char*)(e + 0x2c) != 0 &&
+            (*(unsigned char*)(e + 8) & 1) != 0)
+        {
+            if (M_5217F0(*(int*)e) == 0)
+            {
+                field_5b0--;
+                M_521470(*(int*)e);
+            }
+        }
+    }
+}
