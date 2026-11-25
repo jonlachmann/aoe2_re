@@ -9,6 +9,6 @@ public:
     void method_000();  // sub_4A6990 [lifted]
     void method_001();  // sub_4A6AC0 [lifted]
     void method_002();  // sub_4A6B10 [lifted]
-    void method_003();  // sub_4A6B70 [lifted]
+    void method_003();  // sub_4A6B70 [matched] — Source/ui/free_ui.cpp
     void method_004();  // sub_4A6DD0 [lifted]
 };

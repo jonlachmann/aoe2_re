@@ -3606,3 +3606,35 @@ void sub_5BD500()
 {
     sub_5BD510();
 }
+
+// 0x538140 — tail-call forwarder to 0x48CB20.
+extern void sub_48CB20();
+MATCH_FUNC(0x538140)
+void __cdecl sub_538140()
+{
+    sub_48CB20();
+}
+
+// 0x59D7F0 — tail-call forwarder to 0x4AC4B0.
+extern void sub_4AC4B0();
+MATCH_FUNC(0x59D7F0)
+void __cdecl sub_59D7F0()
+{
+    sub_4AC4B0();
+}
+
+// 0x5C09D0 — tail-call forwarder to 0x4CD3E0.
+extern void sub_4CD3E0();
+MATCH_FUNC(0x5C09D0)
+void __cdecl sub_5C09D0()
+{
+    sub_4CD3E0();
+}
+
+// 0x5C0BA0 — tail-call forwarder to 0x4CE010.
+extern void sub_4CE010();
+MATCH_FUNC(0x5C0BA0)
+void __cdecl sub_5C0BA0()
+{
+    sub_4CE010();
+}

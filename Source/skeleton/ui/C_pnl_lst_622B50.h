@@ -87,7 +87,7 @@ public:
     void method_001();  // sub_4B6840 [matched]: same object, connected by this-edge call sites — Source/ui/C_pnl_lst.cpp
     void method_002();  // sub_4BBD30 [lifted]: same object, connected by this-edge call sites
     void method_003();  // sub_4BBF20 [lifted]: same object, connected by this-edge call sites
-    void method_004();  // sub_4BCE70 [lifted]: same object, connected by this-edge call sites
+    void method_004();  // sub_4BCE70 [matched]: same object, connected by this-edge call sites — Source/ui/free_ui.cpp
     void method_005();  // sub_4BCEB0 [matched]: same object, connected by this-edge call sites — Source/ui/C_pnl_lst.cpp
     void method_006();  // sub_4BCF50 [lifted]: same object, connected by this-edge call sites
     void method_007();  // sub_4D6A50 [lifted]: same object, connected by this-edge call sites
@@ -95,6 +95,6 @@ public:
     void method_009();  // sub_4A1D50 [lifted]: same object, connected by this-edge call sites
     void method_010();  // sub_4B93B0 [lifted]: same object, connected by this-edge call sites
     void method_011();  // sub_5A73C0 [lifted]: same object, connected by this-edge call sites
-    void method_012();  // sub_4B59F0 [lifted]: same object, connected by this-edge call sites
+    void method_012();  // sub_4B59F0 [matched]: same object, connected by this-edge call sites — Source/ui/free_ui.cpp
     void method_013();  // sub_4B5DD0 [lifted]: same object, connected by this-edge call sites
 };

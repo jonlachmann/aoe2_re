@@ -8870,8 +8870,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -9110,8 +9110,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -9419,8 +9419,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -9659,8 +9659,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -10216,8 +10216,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -10765,8 +10765,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -11322,8 +11322,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -11879,8 +11879,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -12448,8 +12448,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -12997,8 +12997,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -13554,8 +13554,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -14111,8 +14111,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -14668,8 +14668,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -15217,8 +15217,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -16735,8 +16735,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -24884,8 +24884,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -25191,8 +25191,8 @@
    {
     "address": "0x4B1700",
     "name": "sub_4B1700",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -27252,8 +27252,8 @@
    {
     "address": "0x4BCE70",
     "name": "sub_4BCE70",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp",
     "evidence": "same object, connected by this-edge call sites"
    },
    {
@@ -27308,8 +27308,8 @@
    {
     "address": "0x4B59F0",
     "name": "sub_4B59F0",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp",
     "evidence": "same object, connected by this-edge call sites"
    },
    {
@@ -28573,8 +28573,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -29108,8 +29108,8 @@
    {
     "address": "0x4B9F60",
     "name": "sub_4B9F60",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -29495,8 +29495,8 @@
    {
     "address": "0x4B9F60",
     "name": "sub_4B9F60",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -30577,8 +30577,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -31236,8 +31236,8 @@
    {
     "address": "0x4C9FF0",
     "name": "sub_4C9FF0",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -31368,8 +31368,8 @@
    {
     "address": "0x4CBD80",
     "name": "sub_4CBD80",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -32485,8 +32485,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -33030,8 +33030,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -33575,8 +33575,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -35671,8 +35671,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -36208,8 +36208,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -36745,8 +36745,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -37282,8 +37282,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -37819,8 +37819,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -37873,8 +37873,8 @@
    {
     "address": "0x4EDC50",
     "name": "sub_4EDC50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A1500",
@@ -38378,8 +38378,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -38915,8 +38915,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -39452,8 +39452,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -40025,8 +40025,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -40598,8 +40598,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -41135,8 +41135,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -41734,8 +41734,8 @@
    {
     "address": "0x4EDC50",
     "name": "sub_4EDC50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A1500",
@@ -42785,8 +42785,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -43883,8 +43883,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -44420,8 +44420,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -44957,8 +44957,8 @@
    {
     "address": "0x4B9B90",
     "name": "sub_4B9B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0AB0",
@@ -49186,8 +49186,8 @@
    {
     "address": "0x538140",
     "name": "sub_538140",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x408680",
@@ -61268,8 +61268,8 @@
    {
     "address": "0x4B1220",
     "name": "sub_4B1220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -62542,8 +62542,8 @@
    {
     "address": "0x59D7F0",
     "name": "sub_59D7F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x59CE70",
@@ -63169,8 +63169,8 @@
    {
     "address": "0x59D7F0",
     "name": "sub_59D7F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x5A4530",
@@ -67042,8 +67042,8 @@
    {
     "address": "0x5C09D0",
     "name": "sub_5C09D0",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -67087,8 +67087,8 @@
    {
     "address": "0x5C0BA0",
     "name": "sub_5C0BA0",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -76517,8 +76517,8 @@
    {
     "address": "0x4A6B70",
     "name": "sub_4A6B70",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A6DD0",
@@ -76847,8 +76847,8 @@
    {
     "address": "0x4B32E0",
     "name": "sub_4B32E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4B4400",
@@ -77347,8 +77347,8 @@
    {
     "address": "0x4C99C0",
     "name": "sub_4C99C0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    }
   ],
   "extra_methods": []

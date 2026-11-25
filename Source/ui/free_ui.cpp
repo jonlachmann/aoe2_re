@@ -3615,3 +3615,137 @@ int S4B2730::M_4B2730(int a1)
 {
     return ((T4B2810*)this)->Other_4B2810(a1);
 }
+
+// 0x4BCE70 — stdcall forwarder to 0x4BCEB0.
+extern int __stdcall sub_4BCEB0(__int16 a1);
+MATCH_FUNC(0x4BCE70)
+int __stdcall sub_4BCE70(__int16 a1)
+{
+    return sub_4BCEB0(a1);
+}
+
+// 0x4B1220 — thiscall forwarder to 0x4A5C10.
+class T4A5C10 {
+public:
+    void* Other_4A5C10(int a2);
+};
+class S4B1220 {
+public:
+    void* M_4B1220(int a2);
+};
+MATCH_FUNC(0x4B1220)
+void* S4B1220::M_4B1220(int a2)
+{
+    return ((T4A5C10*)this)->Other_4A5C10(a2);
+}
+
+// 0x4A6B70 — call the reset helper and set the state field to 6.
+class T4A6990 {
+public:
+    int Other_4A6990();
+};
+class S4A6B70 {
+public:
+    char pad_00[0x1c];
+    int field_1c;
+
+    int M_4A6B70();
+};
+MATCH_FUNC(0x4A6B70)
+int S4A6B70::M_4A6B70()
+{
+    int result = ((T4A6990*)this)->Other_4A6990();
+    field_1c = 6;
+    return result;
+}
+
+// 0x4B32E0 — run the setup helper and return the dword at +0x100.
+class T4B3220 {
+public:
+    void Other_4B3220();
+};
+class S4B32E0 {
+public:
+    char pad_00[0x100];
+    int field_100;
+
+    int M_4B32E0();
+};
+MATCH_FUNC(0x4B32E0)
+int S4B32E0::M_4B32E0()
+{
+    ((T4B3220*)this)->Other_4B3220();
+    return field_100;
+}
+
+// 0x4B59F0 — install the vtable at 0x622B50 and forward to 0x4BA100.
+class T4BA100 {
+public:
+    void Other_4BA100();
+};
+class S4B59F0 {
+public:
+    void M_4B59F0();
+};
+MATCH_FUNC(0x4B59F0)
+void S4B59F0::M_4B59F0()
+{
+    *(void**)this = (void*)0x622B50;
+    ((T4BA100*)this)->Other_4BA100();
+}
+
+// 0x4B1700 — tail-call forwarder to 0x4A0A50.
+extern void sub_4A0A50();
+MATCH_FUNC(0x4B1700)
+void __cdecl sub_4B1700()
+{
+    sub_4A0A50();
+}
+
+// 0x4B9B90 — tail-call forwarder to 0x4A2F40.
+extern void sub_4A2F40();
+MATCH_FUNC(0x4B9B90)
+void __cdecl sub_4B9B90()
+{
+    sub_4A2F40();
+}
+
+// 0x4B9F60 — tail-call forwarder to 0x4B9600.
+extern void sub_4B9600();
+MATCH_FUNC(0x4B9F60)
+void __cdecl sub_4B9F60()
+{
+    sub_4B9600();
+}
+
+// 0x4C99C0 — tail-call forwarder to 0x4BF2A0.
+extern void sub_4BF2A0();
+MATCH_FUNC(0x4C99C0)
+void __cdecl sub_4C99C0()
+{
+    sub_4BF2A0();
+}
+
+// 0x4C9FF0 — tail-call forwarder to 0x4C1160.
+extern void sub_4C1160();
+MATCH_FUNC(0x4C9FF0)
+void __cdecl sub_4C9FF0()
+{
+    sub_4C1160();
+}
+
+// 0x4CBD80 — tail-call forwarder to 0x4C5640.
+extern void sub_4C5640();
+MATCH_FUNC(0x4CBD80)
+void __cdecl sub_4CBD80()
+{
+    sub_4C5640();
+}
+
+// 0x4EDC50 — tail-call forwarder to 0x4B9BA0.
+extern void sub_4B9BA0();
+MATCH_FUNC(0x4EDC50)
+void __cdecl sub_4EDC50()
+{
+    sub_4B9BA0();
+}

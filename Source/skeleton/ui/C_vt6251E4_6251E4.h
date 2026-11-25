@@ -22,7 +22,7 @@ public:
     virtual void slot_009();  // slot +0x024: sub_4A0920 [lifted]
     virtual void slot_010();  // slot +0x028: sub_4A2F30 [lifted]
     virtual void slot_011();  // slot +0x02C: sub_4A0C60 [lifted]
-    virtual void slot_012();  // slot +0x030: sub_4B9B90 [lifted]
+    virtual void slot_012();  // slot +0x030: sub_4B9B90 [matched] — Source/ui/free_ui.cpp
     virtual void slot_013();  // slot +0x034: sub_4A0AB0 [lifted]
     virtual void slot_014();  // slot +0x038: sub_4A0B10 [lifted]
     virtual void slot_015();  // slot +0x03C: sub_4A0BB0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
@@ -31,7 +31,7 @@ public:
     virtual void slot_018();  // slot +0x048: sub_4A0CD0 [lifted]
     virtual void slot_019();  // slot +0x04C: sub_4EDC70 [lifted]
     virtual void slot_020();  // slot +0x050: sub_4A11F0 [lifted]
-    virtual void slot_021();  // slot +0x054: sub_4EDC50 [lifted]
+    virtual void slot_021();  // slot +0x054: sub_4EDC50 [matched] — Source/ui/free_ui.cpp
     virtual void slot_022();  // slot +0x058: sub_4A1500 [lifted]
     virtual void slot_023();  // slot +0x05C: sub_4A15B0 [lifted]
     virtual void slot_024();  // slot +0x060: sub_4364F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp

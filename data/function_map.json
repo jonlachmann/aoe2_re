@@ -48743,8 +48743,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4A6B90",
@@ -52206,8 +52206,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4B1230",
@@ -52280,8 +52280,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4B1710",
@@ -53014,8 +53014,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4B32F0",
@@ -53629,8 +53629,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4B5A00",
@@ -54867,8 +54867,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4B9BA0",
@@ -55108,8 +55108,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4B9F70",
@@ -55896,8 +55896,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4BCE80",
@@ -58657,8 +58657,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4C99D0",
@@ -58759,8 +58759,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4CA000",
@@ -59041,8 +59041,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4CBD90",
@@ -63817,8 +63817,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4EDC60",
@@ -74832,8 +74832,8 @@
   ],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x538150",
@@ -92592,8 +92592,8 @@
   ],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x59D800",
@@ -99567,8 +99567,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x5C09E0",
@@ -99657,8 +99657,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x5C0BB0",

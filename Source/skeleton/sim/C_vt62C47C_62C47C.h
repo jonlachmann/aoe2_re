@@ -13,5 +13,5 @@ public:
     virtual void slot_001();  // slot +0x004: sub_5C0B80 [lifted]
     virtual void slot_002();  // slot +0x008: sub_4378C0 [matched] — Source/ui/C_pnl_edit.cpp
     virtual void slot_003();  // slot +0x00C: sub_5C1080 [lifted]
-    void method_000();  // sub_5C0BA0 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_5C0BA0 [matched]: same object, connected by this-edge call sites — Source/sim/free_sim.cpp
 };
