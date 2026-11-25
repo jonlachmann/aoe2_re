@@ -158,7 +158,7 @@ void sub_5372E0();  // size 67, calls 1, lifted, module sim
 void sub_537330();  // size 391, calls 1, lifted, module sim
 void sub_537610();  // size 114, calls 2, lifted, module sim
 void sub_537690();  // size 114, calls 2, lifted, module sim
-void sub_537770();  // size 17, calls 1, lifted, module sim
+void sub_537770();  // size 17, calls 1, matched, module sim
 void sub_537790();  // size 96, calls 0, lifted, module sim
 void sub_5377F0();  // size 138, calls 4, lifted, module sim
 void sub_537C50();  // size 50, calls 0, lifted, module sim
@@ -280,7 +280,7 @@ void sub_54CC60();  // size 174, calls 4, lifted, module sim
 void sub_54CD30();  // size 148, calls 2, lifted, module sim
 void sub_54D820();  // size 1295, calls 2, lifted, module sim
 void sub_54DDE0();  // size 27, calls 0, matched, module sim
-void sub_54DF30();  // size 16, calls 10, lifted, module sim
+void sub_54DF30();  // size 16, calls 10, matched, module sim
 void sub_54DF40();  // size 205, calls 6, lifted, module sim
 void sub_54E010();  // size 205, calls 6, lifted, module sim
 void sub_54E0E0();  // size 168, calls 3, lifted, module sim
@@ -297,7 +297,7 @@ void sub_54EB80();  // size 68, calls 2, lifted, module sim
 void sub_54EBD0();  // size 311, calls 2, lifted, module sim
 void sub_54ED50();  // size 162, calls 3, lifted, module sim
 void sub_54EE00();  // size 274, calls 3, lifted, module sim
-void sub_54EF40();  // size 11, calls 0, lifted, module sim
+void sub_54EF40();  // size 11, calls 0, matched, module sim
 void sub_54EFE0();  // size 26, calls 1, lifted, module sim
 void sub_54F000();  // size 38, calls 2, lifted, module sim
 void sub_54F070();  // size 85, calls 2, lifted, module sim
@@ -1141,7 +1141,7 @@ void sub_5BF830();  // size 305, calls 4, lifted, module sim
 void sub_5BF970();  // size 29, calls 0, matched, module sim
 void sub_5BFA50();  // size 4, calls 0, matched, module sim
 void sub_5BFA60();  // size 130, calls 0, lifted, module sim
-void sub_5BFAF0();  // size 20, calls 1, lifted, module sim
+void sub_5BFAF0();  // size 20, calls 1, matched, module sim
 void sub_5BFB10();  // size 10, calls 0, matched, module sim
 void sub_5BFB20();  // size 10, calls 0, matched, module sim
 void sub_5BFB30();  // size 31, calls 1, lifted, module sim

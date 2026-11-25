@@ -9,7 +9,7 @@ class C_vt621518 {
 public:
     virtual void slot_000();  // slot +0x000: sub_487950 [lifted]
     virtual void slot_001();  // slot +0x004: sub_434900 [lifted]
-    virtual void slot_002();  // slot +0x008: sub_487A30 [lifted]
+    virtual void slot_002();  // slot +0x008: sub_487A30 [matched] — Source/ui/free_ui.cpp
     virtual void slot_003();  // slot +0x00C: sub_5276E0 [lifted]
     virtual void slot_004();  // slot +0x010: sub_5278A0 [lifted]
     virtual void slot_005();  // slot +0x014: sub_527940 [lifted]

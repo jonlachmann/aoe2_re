@@ -39,7 +39,7 @@ public:
     virtual void slot_027();  // slot +0x06C: sub_5E5B30 [lifted]
     virtual void slot_028();  // slot +0x070: sub_5E6A70 [lifted]
     virtual void slot_029();  // slot +0x074: sub_5E7C20 [lifted]
-    virtual void slot_030();  // slot +0x078: sub_5E7CB0 [lifted]
+    virtual void slot_030();  // slot +0x078: sub_5E7CB0 [matched] — Source/engine-late/free_engine-late.cpp
     virtual void slot_031();  // slot +0x07C: sub_5E7A00 [lifted]
     virtual void slot_032();  // slot +0x080: sub_5E7710 [lifted]
     virtual void slot_033();  // slot +0x084: sub_5E7CD0 [lifted]

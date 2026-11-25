@@ -183,21 +183,17 @@ public:
     int Add_4567F0(int a2);
 };
 
-WIP_FUNC(0x4567F0)
+MATCH_FUNC(0x4567F0)
 int S4567F0::Add_4567F0(int a2)
 {
-    int result = 0;
-    int* i = (int*)this + 528;
-loop:
-    if (*i <= 0) {
-        this->values[result] = a2;
-        return result;
+    int i;
+    for (i = 0; i < 50; i++) {
+        if (this->values[i] <= 0) {
+            this->values[i] = a2;
+            break;
+        }
     }
-    ++result;
-    ++i;
-    if (result < 50)
-        goto loop;
-    return result;
+    return i;
 }
 
 // 0x45AB10 — two derived dimensions computed from the same base field.
@@ -1083,4 +1079,93 @@ MATCH_FUNC(0x465910)
 void __cdecl sub_465910()
 {
     sub_465AE0();
+}
+
+// 0x465100 — dispatch through the array at +8 using the index at +0.
+class T4645A0 {
+public:
+    void Other_4645A0();
+};
+class S465100 {
+public:
+    int index_00;                 // +0
+    char pad_04[4];
+    T4645A0** array_08;           // +8
+    void M_465100();
+};
+MATCH_FUNC(0x465100)
+void S465100::M_465100()
+{
+    this->array_08[this->index_00]->Other_4645A0();
+}
+
+// 0x465110 — dispatch through the array at +8 using the index at +0.
+class T464610 {
+public:
+    void Other_464610();
+};
+class S465110 {
+public:
+    int index_00;                 // +0
+    char pad_04[4];
+    T464610** array_08;           // +8
+    void M_465110();
+};
+MATCH_FUNC(0x465110)
+void S465110::M_465110()
+{
+    this->array_08[this->index_00]->Other_464610();
+}
+
+// 0x465120 — dispatch unless the index is -1.
+class T4646D0 {
+public:
+    void Other_4646D0();
+};
+class S465120 {
+public:
+    int index_00;                 // +0
+    char pad_04[4];
+    T4646D0** array_08;           // +8
+    void M_465120();
+};
+MATCH_FUNC(0x465120)
+void S465120::M_465120()
+{
+    if (this->index_00 == -1)
+        return;
+    this->array_08[this->index_00]->Other_4646D0();
+}
+
+// 0x4457F0 — clear the field at +0x158 then forward.
+class S4457F0 {
+public:
+    char pad_00[0x158];
+    int field_158;                // +0x158
+    void M_4457F0();
+};
+class T4A1CD0 {
+public:
+    void Other_4A1CD0();
+};
+MATCH_FUNC(0x4457F0)
+void S4457F0::M_4457F0()
+{
+    this->field_158 = 0;
+    ((T4A1CD0*)this)->Other_4A1CD0();
+}
+
+// 0x4436B0 — set a global field to 0xffff then forward.
+extern char* g_66A478;
+class T4436B0 {
+public:
+    char pad_00[0x38128];
+    int field_38128;              // +0x38128
+};
+extern void __cdecl sub_4429B0();
+MATCH_FUNC(0x4436B0)
+void __cdecl sub_4436B0()
+{
+    ((T4436B0*)g_66A478)->field_38128 = 0xffff;
+    sub_4429B0();
 }

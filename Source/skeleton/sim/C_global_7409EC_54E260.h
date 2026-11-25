@@ -7,7 +7,7 @@
 class C_global_7409EC {
 public:
     void method_000();  // sub_54E260 [lifted]
-    void method_001();  // sub_54F050 [lifted]
+    void method_001();  // sub_54F050 [matched] — Source/sim/free_sim.cpp
     void method_002();  // sub_54F100 [lifted]
     void method_003();  // sub_54F180 [lifted]
     void method_004();  // sub_54F380 [lifted]

@@ -1808,3 +1808,21 @@ void __cdecl sub_416ED0()
 {
     sub_419700(0);
 }
+
+// 0x41A740 — call the thiscall helper then store the argument at +4.
+class T41A690 {
+public:
+    void Other_41A690();
+};
+class S41A740 {
+public:
+    char pad_00[4];
+    int field_04;                 // +4
+    void M_41A740(int a1);
+};
+MATCH_FUNC(0x41A740)
+void S41A740::M_41A740(int a1)
+{
+    ((T41A690*)this)->Other_41A690();
+    this->field_04 = a1;
+}

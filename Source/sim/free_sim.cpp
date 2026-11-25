@@ -3912,3 +3912,131 @@ void __cdecl sub_55A640()
 {
     ((T473410*)&g_7519A0)->Other_473410(0x32, 0x32, 0);
 }
+
+// 0x54EF40 — global-object no-argument forwarder.
+extern char* g_7409F0;
+class T40E600 {
+public:
+    void Other_40E600();
+};
+MATCH_FUNC(0x54EF40)
+void __cdecl sub_54EF40()
+{
+    ((T40E600*)g_7409F0)->Other_40E600();
+}
+
+// 0x54DF30 — global-object no-argument forwarder.
+extern char* g_7409E0;
+class T581340 {
+public:
+    void Other_581340();
+};
+MATCH_FUNC(0x54DF30)
+void __cdecl sub_54DF30()
+{
+    ((T581340*)g_7409E0)->Other_581340();
+}
+
+// 0x54F050 — one-argument global-object forwarder.
+extern char* g_7409EC;
+class T4AED50 {
+public:
+    void Other_4AED50(int a1);
+};
+MATCH_FUNC(0x54F050)
+void __cdecl sub_54F050(int a1)
+{
+    ((T4AED50*)g_7409EC)->Other_4AED50(a1);
+}
+
+// 0x520120 — call the helper then clear the global flag.
+extern void __cdecl sub_520370();
+extern int g_7407E0;
+MATCH_FUNC(0x520120)
+void __cdecl sub_520120()
+{
+    sub_520370();
+    g_7407E0 = 0;
+}
+
+// 0x537770 — one-argument thiscall on the pointer field at +0x130.
+class T4060B0 {
+public:
+    void Other_4060B0(int a1);
+};
+class S537770 {
+public:
+    char pad_00[0x130];
+    T4060B0* field_130;           // +0x130
+    void M_537770();
+};
+MATCH_FUNC(0x537770)
+void S537770::M_537770()
+{
+    this->field_130->Other_4060B0(0x85);
+}
+
+// 0x53D4A0 — three-argument wrapper reading the field at +8.
+class S53D4A0 {
+public:
+    char pad_00[8];
+    int field_08;                 // +8
+    int M_53D4A0(int a1);
+};
+extern int __stdcall sub_53D4C0(int a1, int a2, int a3);
+WIP_FUNC(0x53D4A0)
+int S53D4A0::M_53D4A0(int a1)
+{
+    return sub_53D4C0(((int*)this)[2], a1, 1);
+}
+
+// 0x580180 — nonzero test on the helper result.
+extern int __stdcall sub_5800B0(int a1);
+MATCH_FUNC(0x580180)
+int __stdcall sub_580180(int a1)
+{
+    return sub_5800B0(a1) != 0;
+}
+
+// 0x5B1EA0 — nonzero test on the helper result.
+extern int __cdecl sub_41DA70();
+MATCH_FUNC(0x5B1EA0)
+int __cdecl sub_5B1EA0()
+{
+    return sub_41DA70() != 0;
+}
+
+// 0x5BFAF0 — two-argument cdecl call with a this-derived first argument.
+class S5BFAF0 {
+public:
+    void M_5BFAF0(int a1);
+};
+extern void __cdecl sub_499C40(void* a1, int a2);
+MATCH_FUNC(0x5BFAF0)
+void S5BFAF0::M_5BFAF0(int a1)
+{
+    sub_499C40((char*)this + 0x14, a1);
+}
+
+// 0x5872E0 — nested pointer call returning constant five.
+class T48F970 {
+public:
+    void Other_48F970();
+};
+class A5872E0 {
+public:
+    char pad_00[0xc];
+    T48F970* field_0c;            // +0xc
+};
+class S5872E0 {
+public:
+    char pad_00[4];
+    A5872E0* field_04;            // +4
+    int M_5872E0(int a1);
+};
+MATCH_FUNC(0x5872E0)
+int S5872E0::M_5872E0(int a1)
+{
+    this->field_04->field_0c->Other_48F970();
+    return 5;
+}

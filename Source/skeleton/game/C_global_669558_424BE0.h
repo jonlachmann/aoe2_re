@@ -8,7 +8,7 @@ class C_global_669558 {
 public:
     void method_000();  // sub_424BE0 [lifted]
     void method_001();  // sub_427080 [lifted]
-    void method_002();  // sub_428460 [lifted]
+    void method_002();  // sub_428460 [matched] — Source/game/free_game.cpp
     void method_003();  // sub_428470 [lifted]
     void method_004();  // sub_42BA80 [lifted]
     void method_005();  // sub_42D260 [lifted]

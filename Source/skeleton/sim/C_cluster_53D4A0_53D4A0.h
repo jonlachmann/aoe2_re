@@ -6,6 +6,6 @@
 
 class C_cluster_53D4A0 {
 public:
-    void method_000();  // sub_53D4A0 [lifted]
+    void method_000();  // sub_53D4A0 [wip] — Source/sim/free_sim.cpp
     void method_001();  // sub_53D4C0 [lifted]
 };

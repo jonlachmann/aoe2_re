@@ -61,7 +61,7 @@ public:
     virtual void slot_051();  // slot +0x0CC: sub_407BA0 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_052();  // slot +0x0D0: sub_417690 [lifted]
     virtual void slot_053();  // slot +0x0D4: sub_5870B0 [lifted]
-    virtual void slot_054();  // slot +0x0D8: sub_5872E0 [lifted]
+    virtual void slot_054();  // slot +0x0D8: sub_5872E0 [matched] — Source/sim/free_sim.cpp
     virtual void slot_055();  // slot +0x0DC: sub_418930 [lifted]
     virtual void slot_056();  // slot +0x0E0: sub_419120 [lifted]
 };

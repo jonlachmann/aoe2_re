@@ -6138,8 +6138,8 @@
    {
     "address": "0x41A740",
     "name": "sub_41A740",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/app/free_app.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -19347,8 +19347,8 @@
    {
     "address": "0x476F60",
     "name": "sub_476F60",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -19838,8 +19838,8 @@
    {
     "address": "0x487A30",
     "name": "sub_487A30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x5276E0",
@@ -35032,8 +35032,8 @@
    {
     "address": "0x4D6A40",
     "name": "sub_4D6A40",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -38083,14 +38083,14 @@
    {
     "address": "0x4F2350",
     "name": "sub_4F2350",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4F2370",
     "name": "sub_4F2370",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4237A0",
@@ -42685,8 +42685,8 @@
    {
     "address": "0x5047D0",
     "name": "sub_5047D0",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp",
     "evidence": "same object, connected by this-edge call sites"
    },
    {
@@ -58672,8 +58672,8 @@
    {
     "address": "0x5872E0",
     "name": "sub_5872E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x418930",
@@ -66179,8 +66179,8 @@
    {
     "address": "0x5B1EA0",
     "name": "sub_5B1EA0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x41DAA0",
@@ -68247,8 +68247,8 @@
    {
     "address": "0x5E7CB0",
     "name": "sub_5E7CB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/engine-late/free_engine-late.cpp"
    },
    {
     "address": "0x5CEE60",
@@ -70111,8 +70111,8 @@
    {
     "address": "0x5E7CB0",
     "name": "sub_5E7CB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/engine-late/free_engine-late.cpp"
    },
    {
     "address": "0x5E7A00",
@@ -70431,8 +70431,8 @@
    {
     "address": "0x428460",
     "name": "sub_428460",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/free_game.cpp"
    },
    {
     "address": "0x428470",
@@ -71195,8 +71195,8 @@
    {
     "address": "0x54F050",
     "name": "sub_54F050",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x54F100",
@@ -74893,8 +74893,8 @@
    {
     "address": "0x47C850",
     "name": "sub_47C850",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x47C870",
@@ -77833,8 +77833,8 @@
    {
     "address": "0x520120",
     "name": "sub_520120",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x520370",
@@ -78529,8 +78529,8 @@
    {
     "address": "0x53D4A0",
     "name": "sub_53D4A0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x53D4C0",
@@ -79345,8 +79345,8 @@
    {
     "address": "0x580180",
     "name": "sub_580180",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    }
   ],
   "extra_methods": []

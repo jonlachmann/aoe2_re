@@ -24,5 +24,5 @@ public:
     virtual void slot_012();  // slot +0x030: sub_41A4E0 [lifted]
     void method_000();  // sub_41A460 [lifted]: same object, connected by this-edge call sites
     void method_001();  // sub_41A690 [lifted]: same object, connected by this-edge call sites
-    void method_002();  // sub_41A740 [lifted]: same object, connected by this-edge call sites
+    void method_002();  // sub_41A740 [matched]: same object, connected by this-edge call sites — Source/app/free_app.cpp
 };

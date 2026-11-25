@@ -2319,3 +2319,11 @@ void __cdecl sub_43EB30()
     sub_43EB40();
     sub_43EB50();
 }
+
+// 0x428460 — one-argument wrapper with a leading zero argument.
+extern void __stdcall sub_428470(int a1, int a2);
+MATCH_FUNC(0x428460)
+void __stdcall sub_428460(int a1)
+{
+    sub_428470(a1, 0);
+}

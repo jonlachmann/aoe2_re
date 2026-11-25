@@ -6,7 +6,7 @@
 
 class C_cluster_520120 {
 public:
-    void method_000();  // sub_520120 [lifted]
+    void method_000();  // sub_520120 [matched] — Source/sim/free_sim.cpp
     void method_001();  // sub_520370 [lifted]
     void method_002();  // sub_520410 [lifted]
     void method_003();  // sub_5206D0 [lifted]

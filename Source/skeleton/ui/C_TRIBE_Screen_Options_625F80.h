@@ -98,6 +98,6 @@ public:
     virtual void slot_085();  // slot +0x154: sub_4A6730 [lifted]
     virtual void slot_086();  // slot +0x158: sub_4A5BB0 [lifted]
     void method_000();  // sub_503E00 [lifted]: same object, connected by this-edge call sites
-    void method_001();  // sub_5047D0 [lifted]: same object, connected by this-edge call sites
+    void method_001();  // sub_5047D0 [matched]: same object, connected by this-edge call sites — Source/ui/free_ui.cpp
     void method_002();  // sub_5049E0 [lifted]: same object, connected by this-edge call sites
 };

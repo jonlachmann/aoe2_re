@@ -107,7 +107,7 @@ void sub_5DDAC0();  // size 129, calls 1, lifted, module engine-late
 void sub_5DDB50();  // size 59, calls 0, lifted, module engine-late
 void sub_5DDB90();  // size 205, calls 0, lifted, module engine-late
 void sub_5DDC60();  // size 139, calls 1, lifted, module engine-late
-void sub_5DDCF0();  // size 7, calls 0, lifted, module engine-late
+void sub_5DDCF0();  // size 7, calls 0, matched, module engine-late
 void sub_5DDD00();  // size 50, calls 0, lifted, module engine-late
 void sub_5DDD40();  // size 691, calls 5, lifted, module engine-late
 void sub_5DE000();  // size 277, calls 0, lifted, module engine-late
@@ -133,7 +133,7 @@ void sub_5E3090();  // size 54, calls 0, lifted, module engine-late
 void sub_5E3100();  // size 20, calls 1, matched, module engine-late
 void sub_5E3120();  // size 20, calls 1, matched, module engine-late
 void sub_5E4205();  // size 75, calls 2, lifted, module engine-late
-void sub_5E4610();  // size 19, calls 1, lifted, module engine-late
+void sub_5E4610();  // size 19, calls 1, matched, module engine-late
 void sub_5E4630();  // size 39, calls 1, lifted, module engine-late
 void sub_5E5160();  // size 10, calls 0, matched, module engine-late
 void sub_5E5C70();  // size 49, calls 1, lifted, module engine-late

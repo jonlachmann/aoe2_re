@@ -4206,3 +4206,196 @@ int S4D64A0::M_4D64A0(int a1, int a2, int a3, int a4, int a5)
     ((T4D6810*)this)->Other_4D6810();
     return 1;
 }
+
+// 0x476F60 — install the vtable at 0x621028 then forward.
+extern char g_vt_621028;
+class T475980 {
+public:
+    void Other_475980();
+};
+class S476F60 {
+public:
+    void M_476F60();
+};
+MATCH_FUNC(0x476F60)
+void S476F60::M_476F60()
+{
+    *(void**)this = &g_vt_621028;
+    ((T475980*)this)->Other_475980();
+}
+
+// 0x4B9B50 — install the vtable at 0x622F54 then forward.
+extern char g_vt_622F54;
+class T4A2C00 {
+public:
+    void Other_4A2C00();
+};
+class S4B9B50 {
+public:
+    void M_4B9B50();
+};
+MATCH_FUNC(0x4B9B50)
+void S4B9B50::M_4B9B50()
+{
+    *(void**)this = &g_vt_622F54;
+    ((T4A2C00*)this)->Other_4A2C00();
+}
+
+// 0x4D6A40 — install the vtable at 0x624770 then forward.
+extern char g_vt_624770;
+class TD6A40 {
+public:
+    void Other_4BA100();
+};
+class S4D6A40 {
+public:
+    void M_4D6A40();
+};
+MATCH_FUNC(0x4D6A40)
+void S4D6A40::M_4D6A40()
+{
+    *(void**)this = &g_vt_624770;
+    ((TD6A40*)this)->Other_4BA100();
+}
+
+// 0x47C850 — four-argument call built from the fields at +8 and +0xc.
+class S47C850 {
+public:
+    char pad_00[8];
+    int field_08;                 // +8
+    int field_0c;                 // +0xc
+    void M_47C850();
+};
+extern void __stdcall sub_47C870(int a1, int a2, int a3, int a4);
+WIP_FUNC(0x47C850)
+void S47C850::M_47C850()
+{
+    sub_47C870(0, 0, this->field_08 - 1, this->field_0c - 1);
+}
+
+// 0x5047D0 — two-argument thiscall on the pointer field at +0x83c.
+class T472CC0 {
+public:
+    void Other_472CC0(int a1, int a2);
+};
+class S5047D0 {
+public:
+    char pad_00[0x83c];
+    T472CC0* field_83c;           // +0x83c
+    void M_5047D0();
+};
+MATCH_FUNC(0x5047D0)
+void S5047D0::M_5047D0()
+{
+    this->field_83c->Other_472CC0(0, 0);
+}
+
+// 0x487A30 — two chained helper calls.
+class T407E30 {
+public:
+    void Other_407E30();
+};
+class S487A30 {
+public:
+    void M_487A30();
+};
+extern void __cdecl sub_488120();
+MATCH_FUNC(0x487A30)
+void S487A30::M_487A30()
+{
+    sub_488120();
+    ((T407E30*)this)->Other_407E30();
+}
+
+// 0x497D90 — call the helper on the nonzero field at +0.
+class S497D90 {
+public:
+    int field_00;                 // +0
+    void M_497D90();
+};
+MATCH_FUNC(0x497D90)
+void S497D90::M_497D90()
+{
+    if (this->field_00)
+        sub_5F90B0v(this->field_00);
+}
+
+// 0x4BEFB0 — call the helper on the nonzero field at +0x2b0.
+extern void __cdecl sub_5FCD00v(int a1);
+class S4BEFB0 {
+public:
+    char pad_00[0x2b0];
+    int field_2b0;                // +0x2b0
+    void M_4BEFB0();
+};
+MATCH_FUNC(0x4BEFB0)
+void S4BEFB0::M_4BEFB0()
+{
+    if (this->field_2b0)
+        sub_5FCD00v(this->field_2b0);
+}
+
+// 0x4BD5E0 — jump through the vtable slot at +0x120.
+struct VT4BD5E0 {
+    char pad_00[0x120];
+    void (__stdcall *slot_120)();
+};
+class S4BD5E0 {
+public:
+    void M_4BD5E0();
+};
+MATCH_FUNC(0x4BD5E0)
+void S4BD5E0::M_4BD5E0()
+{
+    ((VT4BD5E0*)*(void**)this)->slot_120();
+}
+
+// 0x4F2350 — two chained helper calls.
+class T4A2280 {
+public:
+    void Other_4A2280();
+};
+class S4F2350 {
+public:
+    void M_4F2350();
+};
+extern void __cdecl sub_4EE2D0();
+MATCH_FUNC(0x4F2350)
+void S4F2350::M_4F2350()
+{
+    sub_4EE2D0();
+    ((T4A2280*)this)->Other_4A2280();
+}
+
+// 0x4F2370 — two chained helper calls.
+class T4A22A0 {
+public:
+    void Other_4A22A0();
+};
+class S4F2370 {
+public:
+    void M_4F2370();
+};
+extern void __cdecl sub_4EE210();
+MATCH_FUNC(0x4F2370)
+void S4F2370::M_4F2370()
+{
+    sub_4EE210();
+    ((T4A22A0*)this)->Other_4A22A0();
+}
+
+// 0x4B27DF — two-argument vtable call through slot +0xd4.
+struct VT4B27DF {
+    char pad_00[0xd4];
+    void (__stdcall *slot_d4)(int, int);
+};
+class S4B27DF {
+public:
+    void M_4B27DF(int a1, int a2);
+};
+WIP_FUNC(0x4B27DF)
+void S4B27DF::M_4B27DF(int a1, int a2)
+{
+    VT4B27DF* vt = *(VT4B27DF**)this;
+    vt->slot_d4(0, 0);
+}

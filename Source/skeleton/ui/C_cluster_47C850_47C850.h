@@ -6,6 +6,6 @@
 
 class C_cluster_47C850 {
 public:
-    void method_000();  // sub_47C850 [lifted]
+    void method_000();  // sub_47C850 [wip] — Source/ui/free_ui.cpp
     void method_001();  // sub_47C870 [lifted]
 };

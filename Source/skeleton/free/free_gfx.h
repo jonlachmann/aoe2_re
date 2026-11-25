@@ -46,7 +46,7 @@ void sub_442F60();  // size 752, calls 2, lifted, module gfx
 void sub_443250();  // size 52, calls 2, lifted, module gfx
 void sub_443290();  // size 994, calls 1, lifted, module gfx
 void sub_443672();  // size 54, calls 1, lifted, module gfx
-void sub_4436B0();  // size 20, calls 2, lifted, module gfx
+void sub_4436B0();  // size 20, calls 2, matched, module gfx
 void sub_4437C0();  // size 47, calls 0, lifted, module gfx
 void sub_4437F0();  // size 20, calls 0, matched, module gfx
 void sub_4438E0();  // size 122, calls 0, lifted, module gfx
@@ -68,7 +68,7 @@ void sub_445447();  // size 271, calls 2, lifted, module gfx
 void sub_445560();  // size 252, calls 1, lifted, module gfx
 void sub_4456A0();  // size 167, calls 3, lifted, module gfx
 void sub_445750();  // size 150, calls 2, lifted, module gfx
-void sub_4457F0();  // size 16, calls 2, lifted, module gfx
+void sub_4457F0();  // size 16, calls 2, matched, module gfx
 void sub_445850();  // size 609, calls 3, lifted, module gfx
 void sub_445AC0();  // size 941, calls 4, lifted, module gfx
 void sub_445E70();  // size 475, calls 0, lifted, module gfx
@@ -142,7 +142,7 @@ void sub_456730();  // size 44, calls 0, lifted, module gfx
 void sub_456760();  // size 44, calls 0, lifted, module gfx
 void sub_456790();  // size 41, calls 0, matched, module gfx
 void sub_4567C0();  // size 41, calls 0, matched, module gfx
-void sub_4567F0();  // size 39, calls 0, wip, module gfx
+void sub_4567F0();  // size 39, calls 0, matched, module gfx
 void sub_456820();  // size 31, calls 0, lifted, module gfx
 void sub_456980();  // size 134, calls 1, lifted, module gfx
 void sub_456A10();  // size 90, calls 0, lifted, module gfx
@@ -305,9 +305,9 @@ void sub_465010();  // size 40, calls 2, lifted, module gfx
 void sub_465040();  // size 37, calls 1, lifted, module gfx
 void sub_465070();  // size 28, calls 1, lifted, module gfx
 void sub_465090();  // size 97, calls 2, lifted, module gfx
-void sub_465100();  // size 13, calls 5, lifted, module gfx
-void sub_465110();  // size 13, calls 9, lifted, module gfx
-void sub_465120();  // size 19, calls 4, lifted, module gfx
+void sub_465100();  // size 13, calls 5, matched, module gfx
+void sub_465110();  // size 13, calls 9, matched, module gfx
+void sub_465120();  // size 19, calls 4, matched, module gfx
 void sub_465140();  // size 297, calls 9, lifted, module gfx
 void sub_465270();  // size 544, calls 5, lifted, module gfx
 void sub_465490();  // size 16, calls 0, matched, module gfx

@@ -362,3 +362,54 @@ void sub_5EC460()
 {
     sub_5EC700();
 }
+
+// 0x5E4610 — store the argument then call the pointer field at +0x68.
+class T43A410 {
+public:
+    void Other_43A410(int a1);
+};
+class S5E4610 {
+public:
+    char pad_00[0xc];
+    int field_0c;                 // +0xc
+    char pad_10[0x58];
+    T43A410* field_68;            // +0x68
+    void M_5E4610(int a1);
+};
+MATCH_FUNC(0x5E4610)
+void S5E4610::M_5E4610(int a1)
+{
+    this->field_0c = a1;
+    this->field_68->Other_43A410(a1);
+}
+
+// 0x5E7CB0 — two-argument thiscall on the pointer field at +0x34.
+class T47D8B0 {
+public:
+    void Other_47D8B0(int a1, int a2);
+};
+class S5E7CB0 {
+public:
+    char pad_00[0x34];
+    T47D8B0* field_34;            // +0x34
+    void M_5E7CB0(int a1);
+};
+MATCH_FUNC(0x5E7CB0)
+void S5E7CB0::M_5E7CB0(int a1)
+{
+    this->field_34->Other_47D8B0(a1, 0);
+}
+
+// 0x5DDCF0 — integer ratio converted to float.
+class S5DDCF0 {
+public:
+    char pad_00[0x1c];
+    int field_1c;                 // +0x1c
+    int field_20;                 // +0x20
+    float M_5DDCF0();
+};
+MATCH_FUNC(0x5DDCF0)
+float S5DDCF0::M_5DDCF0()
+{
+    return (float)this->field_1c / this->field_20;
+}
