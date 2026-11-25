@@ -8994,11 +8994,11 @@
    "vtable": null,
    "anchor": "0x520CE0",
    "methods": 20,
-   "owned_methods": 5,
-   "unowned_methods": 15,
+   "owned_methods": 6,
+   "unowned_methods": 14,
    "primary_file": "Source/sim/C_cluster_520CE0.cpp",
    "owner_files": {
-    "Source/sim/C_cluster_520CE0.cpp": 5
+    "Source/sim/C_cluster_520CE0.cpp": 6
    },
    "other_files": [],
    "staged_files": [],

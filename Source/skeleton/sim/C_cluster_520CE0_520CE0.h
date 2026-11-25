@@ -11,7 +11,7 @@ public:
     void method_002();  // sub_520F70 [lifted]
     void method_003();  // sub_521470 [lifted]
     void method_004();  // sub_5214E0 [matched] — Source/sim/C_cluster_520CE0.cpp
-    void method_005();  // sub_521500 [lifted]
+    void method_005();  // sub_521500 [matched] — Source/sim/C_cluster_520CE0.cpp
     void method_006();  // sub_521580 [lifted]
     void method_007();  // sub_5215F0 [lifted]
     void method_008();  // sub_521720 [lifted]

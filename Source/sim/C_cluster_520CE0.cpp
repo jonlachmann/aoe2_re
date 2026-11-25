@@ -61,3 +61,31 @@ void C_cluster_520CE0::M_5204C0()
         ((C_cluster_5207B0*)*(int**)((char*)this + 0x29c + i * 4))->Hook_520A80(
             *(char*)((char*)this + i + 0x69c));
 }
+
+// 0x521500 — sweep the +0x598 entries through Find_5219E0; for each hit,
+// either hand it to 0x521BE0 when 0x5217F0 accepts the +0x00 key, or, when the
+// +0x04 bit 1 and +0x210 byte are set, decrement +0x5B0 and pass the key to
+// 0x521470.
+MATCH_FUNC(0x521500)
+void C_cluster_520CE0::Hook_521500()
+{
+    if (field_7c == 0)
+        return;
+    for (int i = 0; i < field_598; i++)
+    {
+        int e = Find_5219E0(i);
+        if (e != 0)
+        {
+            if (M_5217F0(*(int*)e) != 0)
+            {
+                M_521BE0(e);
+            }
+            else if ((*(unsigned char*)(e + 4) & 1) != 0 &&
+                     *(unsigned char*)(e + 0x210) != 0)
+            {
+                field_5b0--;
+                M_521470(*(int*)e);
+            }
+        }
+    }
+}

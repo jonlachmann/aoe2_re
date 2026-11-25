@@ -1,15 +1,14 @@
 # 6_match_idle
 
-880 functions called (0 first seen in this phase): 180 matched, 667 left to match (2 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+880 functions called (0 first seen in this phase): 181 matched, 666 left to match (2 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (667)
+## Left to match (666)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
 | 0 | `sub_5BB2D0` | 660718 |  | 1_boot_to_menu |  |
 | 1 | `sub_420450` | 660718 |  | 1_boot_to_menu |  |
 | 5 | `sub_521580` | 660718 |  | 1_boot_to_menu |  |
-| 6 | `sub_521500` | 660718 |  | 1_boot_to_menu |  |
 | 9 | `sub_4DB730` | 660718 |  | 5_start_game_to_match |  |
 | 10 | `sub_4E1E10` | 660718 |  | 5_start_game_to_match |  |
 | 11 | `sub_4E1FD0` | 660718 |  | 5_start_game_to_match |  |
@@ -674,13 +673,14 @@
 | 878 | `sub_4845F0` | 3 |  | 5_start_game_to_match |  |
 | 879 | `sub_48BD90` | 1 |  | 5_start_game_to_match |  |
 
-## Matched (180)
+## Matched (181)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
 | 2 | `sub_5C6880` | 666845 | MATCH | 1_boot_to_menu | C_pnl_btn::M_5C6880 |
 | 3 | `sub_41C800` | 1387531 | MATCH | 1_boot_to_menu | S41C800Table::Add_41C800 |
 | 4 | `sub_5214E0` | 660718 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5214E0 |
+| 6 | `sub_521500` | 660718 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Hook_521500 |
 | 7 | `sub_522C30` | 660718 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_522C30 |
 | 8 | `sub_49F620` | 684986 | MATCH | 1_boot_to_menu | S49F620::Get_49F620 |
 | 12 | `sub_40B630` | 672732 | MATCH | 5_start_game_to_match | S40B630::Get_40B630 |
