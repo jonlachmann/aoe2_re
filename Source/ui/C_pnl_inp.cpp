@@ -18,20 +18,18 @@ void C_pnl_inp::M_4BBCE0(int a1)
 WIP_FUNC(0x4BD4B0)
 char* C_pnl_inp::M_4BD4B0(int index)
 {
-    int i = 0;
+    int i;
     T4BD4B0Node* node = field_f8;
-    if (node) {
-        for (;;) {
-            if (i == index)
-                return node->field_0;
-            node = node->next_24;
-            i++;
-            if (!node)
-                break;
-        }
+    i = 0;
+    while (node != 0)
+    {
+        if (index == i)
+            return node->field_0;
+        node = node->next_24;
+        ++i;
     }
     g_73e355 = 0;
-    return (char*)0x73e355;
+    return (char*)&g_73e355;
 }
 
 MATCH_FUNC(0x408050)

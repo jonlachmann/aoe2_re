@@ -5957,3 +5957,24 @@ void S5A6830::M_5A6830(int a1)
         this->Vat_20(1);
     }
 }
+
+// 0x521090 — store a4 at +0x78, run the 0x5210D0 dispatcher with a1/a2/a3 and
+// bump the +0x5B0 counter only when it returns a valid slot and a2 has bit 1.
+class S521090 {
+public:
+    char pad_00[0x78];
+    int field_78;                 // +0x78 stored selector
+    char pad_7c[0x5b0 - 0x7c];
+    int field_5b0;                // +0x5B0 validity counter
+    int M_5210D0(int a1, int a2, int a3);
+    void M_521090(int a1, int a2, int a3, int a4);
+};
+
+MATCH_FUNC(0x521090)
+void S521090::M_521090(int a1, int a2, int a3, int a4)
+{
+    field_78 = a4;
+    int r = M_5210D0(a1, a2, a3);
+    if (r != -1 && (a2 & 1))
+        field_5b0++;
+}

@@ -28,7 +28,7 @@ void sub_520ED0();  // size 50, calls 0, matched, module sim
 void sub_520F50();  // size 10, calls 0, matched, module sim
 void sub_520F60();  // size 16, calls 0, matched, module sim
 void sub_520FB0();  // size 212, calls 0, lifted, module sim
-void sub_521090();  // size 54, calls 1, lifted, module sim
+void sub_521090();  // size 54, calls 1, matched, module sim
 void sub_5210D0();  // size 927, calls 9, lifted, module sim
 void sub_521DC0();  // size 368, calls 3, lifted, module sim
 void sub_521F30();  // size 373, calls 3, lifted, module sim

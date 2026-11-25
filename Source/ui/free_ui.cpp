@@ -6474,3 +6474,173 @@ __declspec(naked) int S4BD560::M_4BD560(int a1)
         ret 4
     }
 }
+
+// 0x4A55F0 — eight-argument virtual dispatch at slot 0x13C: reject a zero
+// result, otherwise push the +0x40 subobject's first dword and one into
+// a2's 0x4BA530 method and report success.
+class S4A55F0 {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08();
+    virtual void Vt_09();
+    virtual void Vt_10();
+    virtual void Vt_11();
+    virtual void Vt_12();
+    virtual void Vt_13();
+    virtual void Vt_14();
+    virtual void Vt_15();
+    virtual void Vt_16();
+    virtual void Vt_17();
+    virtual void Vt_18();
+    virtual void Vt_19();
+    virtual void Vt_20();
+    virtual void Vt_21();
+    virtual void Vt_22();
+    virtual void Vt_23();
+    virtual void Vt_24();
+    virtual void Vt_25();
+    virtual void Vt_26();
+    virtual void Vt_27();
+    virtual void Vt_28();
+    virtual void Vt_29();
+    virtual void Vt_30();
+    virtual void Vt_31();
+    virtual void Vt_32();
+    virtual void Vt_33();
+    virtual void Vt_34();
+    virtual void Vt_35();
+    virtual void Vt_36();
+    virtual void Vt_37();
+    virtual void Vt_38();
+    virtual void Vt_39();
+    virtual void Vt_40();
+    virtual void Vt_41();
+    virtual void Vt_42();
+    virtual void Vt_43();
+    virtual void Vt_44();
+    virtual void Vt_45();
+    virtual void Vt_46();
+    virtual void Vt_47();
+    virtual void Vt_48();
+    virtual void Vt_49();
+    virtual void Vt_50();
+    virtual void Vt_51();
+    virtual void Vt_52();
+    virtual void Vt_53();
+    virtual void Vt_54();
+    virtual void Vt_55();
+    virtual void Vt_56();
+    virtual void Vt_57();
+    virtual void Vt_58();
+    virtual void Vt_59();
+    virtual void Vt_60();
+    virtual void Vt_61();
+    virtual void Vt_62();
+    virtual void Vt_63();
+    virtual void Vt_64();
+    virtual void Vt_65();
+    virtual void Vt_66();
+    virtual void Vt_67();
+    virtual void Vt_68();
+    virtual void Vt_69();
+    virtual void Vt_70();
+    virtual void Vt_71();
+    virtual void Vt_72();
+    virtual void Vt_73();
+    virtual void Vt_74();
+    virtual void Vt_75();
+    virtual void Vt_76();
+    virtual void Vt_77();
+    virtual void Vt_78();
+    virtual int Dispatch_13c(int a1, int a2, int a3, int a4, int a5,
+                            int a6, int a7, int a8);
+    int M_4A55F0(int a1, void* a2, void* a3);
+};
+
+class T4BA530_4A55F0 {
+public:
+    void Other_4BA530(int a1, int a2);
+};
+
+MATCH_FUNC(0x4A55F0)
+int S4A55F0::M_4A55F0(int a1, void* a2, void* a3)
+{
+    int sub = *(int*)((char*)a2 + 0x40);
+    if (Dispatch_13c(sub, a1, (int)a2, 0, 0, 0, (int)a3, 0) == 0)
+        return 0;
+    ((T4BA530_4A55F0*)a2)->Other_4BA530(*(int*)a1, 1);
+    return 1;
+}
+// 0x4A0C10 — release the +0x20 subtree's +0x38 buffer through its +0x8C size,
+// append the +0x24 node, then optionally replay it with the +0xF3 byte.
+extern void (__stdcall *g_61c06c)(int a1, int a2);
+class T4A0C20 {
+public:
+    void M_460660(void* a1);
+    void M_460180(void* a1, int a2);
+};
+class S4A0C10 {
+public:
+    char pad_00[0x20];
+    void* field_20;               // +0x20 subtree
+    char node_24[0x8c - 0x24];    // +0x24..+0x8C
+    int field_8c;                 // +0x8C size
+    char pad_90[0xf3 - 0x90];
+    unsigned char field_f3;       // +0xF3
+    void M_4A0C10(int a1);
+};
+
+MATCH_FUNC(0x4A0C10)
+void S4A0C10::M_4A0C10(int a1)
+{
+    int* p = (int*)field_20;
+    int v = *(int*)((char*)p + 0x38);
+    if (v)
+        g_61c06c(v, field_8c);
+    ((T4A0C20*)field_20)->M_460660(node_24);
+    if (a1)
+        ((T4A0C20*)field_20)->M_460180(node_24, field_f3);
+}
+// 0x4A08C0 — mode store at +0x38 with guarded 0x61C30C/0x61C278 replays only
+// when the +0x20 subtree and the +0x6C/+0x70 pair are all present.
+extern int (__stdcall *g_61c30c)(int a1);
+extern void (__stdcall *g_61c278)(int a1, int a2, int a3);
+class S4A08C0 {
+public:
+    char pad_00[0x20];
+    void* field_20;               // +0x20 subtree
+    char pad_24[0x38 - 0x24];
+    int field_38;                 // +0x38 mode
+    char pad_3c[0x6c - 0x3c];
+    int field_6c;                 // +0x6C
+    int field_70;                 // +0x70
+    void M_4A08C0(int a1);
+};
+
+MATCH_FUNC(0x4A08C0)
+void S4A08C0::M_4A08C0(int a1)
+{
+    if (a1 == 1 && field_38 == 2)
+        return;
+    field_38 = a1;
+    if (a1 == 0)
+        return;
+    if (field_20 == 0)
+        return;
+    if (field_70 == 0)
+        return;
+    if (field_6c == 0)
+        return;
+    int* p = (int*)field_20;
+    if (g_61c30c(*(int*)((char*)p + 4)) == 0)
+        return;
+    g_61c278(*(int*)((char*)field_20 + 4), (int)((char*)this + 0x24), 0);
+}
+
