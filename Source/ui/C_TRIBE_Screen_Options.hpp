@@ -185,7 +185,7 @@ public:
     int field_10;                 // +0x10
     int field_14;                 // +0x14
     int field_18;                 // +0x18
-    char pad_1c[0x20 - 0x1c];
+    int field_1c;                 // +0x1C, name pointer set by 0x4A2070
     TField20Obj* field_20;        // +0x20, subobject cleared by 0x4A0C60
     int field_24[4];              // +0x24 swapped by 0x4A0AB0
     int field_34;                 // +0x34
@@ -253,5 +253,6 @@ public:
     void M_4A2040(int a, int b);
     void Get_4A22F0(int* out);
     void SetF8_4A3410(int a, int b);
+    void M_4A2070(char* a1);
     int M_5C6890(int a, int b, int c, int d, int e);
 };

@@ -1,4 +1,9 @@
 #include "C_TRIBE_Screen_Options.hpp"
+#pragma intrinsic(strcpy)
+#pragma intrinsic(strlen)
+
+extern void __cdecl Free_5F90B0(void* p);
+extern void* __cdecl sub_5F8F80(int size);
 
 extern void (__stdcall *g_61C06C)(void* a1, int a2);
 extern int (__stdcall *g_61C098)(void* a1);
@@ -262,3 +267,28 @@ void C_TRIBE_Screen_Options::M_4A0630(int a1, int a2, int a3, int a4)
     if (field_6C != 0)
         slot_08(2);
 }
+
+// 0x4A2070 — replace the +0x1C name buffer: empty/NULL input frees the buffer
+// and clears the pointer; otherwise reuse the buffer when it already fits,
+// or free and allocate strlen(input) bytes, then inline-strcpy the text in.
+MATCH_FUNC(0x4A2070)
+void C_TRIBE_Screen_Options::M_4A2070(char* a1)
+{
+    if (a1 != 0 && strlen(a1) != 0)
+    {
+        if (field_1c == 0 || strlen((char*)field_1c) < strlen(a1))
+        {
+            if (field_1c != 0)
+                Free_5F90B0((void*)field_1c);
+            field_1c = (int)sub_5F8F80((int)strlen(a1) + 1);
+        }
+        strcpy((char*)field_1c, a1);
+    }
+    else if (field_1c != 0)
+    {
+        Free_5F90B0((void*)field_1c);
+        field_1c = 0;
+    }
+}
+#pragma function(strlen)
+#pragma function(strcpy)
