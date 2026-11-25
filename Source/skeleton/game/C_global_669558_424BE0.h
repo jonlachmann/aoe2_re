@@ -17,5 +17,5 @@ public:
     void method_008();  // sub_433800 [lifted]
     void method_009();  // sub_437C40 [lifted]
     void method_010();  // sub_438EB0 [lifted]
-    void method_011();  // sub_439CB0 [lifted]
+    void method_011();  // sub_439CB0 [matched] — Source/game/free_game.cpp
 };

@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1618 |
-| wip | 26 |
+| matched | 1623 |
+| wip | 27 |
 | verified | 18 |
-| lifted | 6089 |
+| lifted | 6083 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -459,7 +459,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_5207B0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_520CE0` | this-edge component with no rooted object identity | 20 | 5 | 15 |
 | `C_cluster_522C70` | this-edge component with no rooted object identity | 2 | 0 | 2 |
-| `C_cluster_522CD0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
+| `C_cluster_522CD0` | this-edge component with no rooted object identity | 2 | 1 | 1 |
 | `C_cluster_522D20` | this-edge component with no rooted object identity | 3 | 0 | 3 |
 | `C_cluster_522E90` | this-edge component with no rooted object identity | 3 | 1 | 2 |
 | `C_cluster_524420` | this-edge component with no rooted object identity | 2 | 0 | 2 |
@@ -551,7 +551,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_global_664524` | every call site passes the global object at 0x664524 | 4 | 0 | 4 |
 | `C_global_6645C4` | every call site passes the global object at 0x6645C4 | 39 | 4 | 35 |
 | `C_global_665344` | every call site passes the global object at 0x665344 | 1 | 0 | 1 |
-| `C_global_669558` | every call site passes the global object at 0x669558 | 12 | 1 | 11 |
+| `C_global_669558` | every call site passes the global object at 0x669558 | 12 | 2 | 10 |
 | `C_global_66A478` | every call site passes the global object at 0x66A478 | 2 | 0 | 2 |
 | `C_global_66DB74` | every call site passes the global object at 0x66DB74 | 5 | 0 | 5 |
 | `C_global_66DB74_member_8` | member pointer at +0x8 of C_global_66DB74 | 1 | 0 | 1 |
@@ -600,11 +600,11 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | app | 323 | 130 | 2 | 191 |
 | crt | 647 | 46 | 2 | 599 |
 | engine-late | 319 | 35 | 0 | 284 |
-| game | 436 | 147 | 4 | 285 |
+| game | 436 | 147 | 5 | 284 |
 | gfx | 410 | 61 | 2 | 347 |
 | runtime-data | 20 | 3 | 0 | 17 |
 | sim | 1283 | 248 | 2 | 1033 |
-| ui | 1230 | 203 | 4 | 1023 |
+| ui | 1230 | 206 | 4 | 1020 |
 
 ## Skeleton tree
 `Source/skeleton/` holds declarations only, generated from this map and

@@ -5400,11 +5400,11 @@
    "vtable": null,
    "anchor": "0x424BE0",
    "methods": 12,
-   "owned_methods": 1,
-   "unowned_methods": 11,
+   "owned_methods": 2,
+   "unowned_methods": 10,
    "primary_file": "Source/game/free_game.cpp",
    "owner_files": {
-    "Source/game/free_game.cpp": 1
+    "Source/game/free_game.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -8911,10 +8911,12 @@
    "vtable": null,
    "anchor": "0x522CD0",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/sim/free_sim.cpp",
+   "owner_files": {
+    "Source/sim/free_sim.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false

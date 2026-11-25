@@ -5777,3 +5777,25 @@ Sc542B00* Sc542B00::Init_542B00(int a1, int a2, int a3, int a4, int a5)
     this->field_28 = a5;
     return this;
 }
+
+// 0x522CD0 — free the +0x00 index array, its entries and the +0x04 block.
+class Sc522CD0 {
+public:
+    void** field_0;               // +0x00
+    void* field_4;                // +0x04
+    int field_8;                  // +0x08
+    void M_522CD0();
+};
+MATCH_FUNC(0x522CD0)
+void Sc522CD0::M_522CD0()
+{
+    for (int i = 0; i < field_8; i++) {
+        void* p = field_0[i];
+        if (p)
+            sub_5F90B0((int)p);
+    }
+    if (field_0)
+        sub_5F90B0((int)field_0);
+    if (field_4)
+        sub_5F90B0((int)field_4);
+}

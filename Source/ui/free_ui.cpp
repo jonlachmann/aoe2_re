@@ -2111,7 +2111,9 @@ public:
     int field_12c;
     int field_130;
     int field_134;
-    char pad_138[0x164 - 0x138];
+    int field_138;
+    int field_13c;
+    char pad_140[0x164 - 0x140];
     int field_164;
     unsigned char field_168;
 
@@ -2120,6 +2122,7 @@ public:
     void M_4BBA40(int v);
     void M_4BBA60(int v);
     void M_4BBAC0(int a, unsigned char b);
+    void M_4BBA80(int a1, int a2);
 };
 
 MATCH_FUNC(0x4BBA00)
@@ -5897,18 +5900,11 @@ struct VT4BBA80 {
     char pad_00[0x20];
     void (__stdcall *slot_20)(int a1);
 };
-class S4BBA80 {
-public:
-    char pad_00[0x138];
-    int field_138;                // +0x138
-    int field_13c;                // +0x13c
-    void M_4BBA80(int a1, int a2);
-};
 MATCH_FUNC(0x4BBA80)
-void S4BBA80::M_4BBA80(int a1, int a2)
+void S4BBA00::M_4BBA80(int a1, int a2)
 {
-    this->field_138 = a1;
-    this->field_13c = a2;
+    field_138 = a1;
+    field_13c = a2;
     ((VT4BBA80*)*(void**)this)->slot_20(1);
 }
 
@@ -6027,4 +6023,55 @@ WIP_FUNC(0x4B9B60)
 int __stdcall sub_4B9B60(int a1, int a2, int a3, int a4)
 {
     return sub_4A23E0(a1, 0, a2, a3, 1, 0, 0, 0, 0, a4) != 0;
+}
+
+// 0x4A6520 — append one triple into the three +0x498/+0x5B0/+0x6C8 tables.
+class Sc4A6520 {
+public:
+    char pad_00[0x494];
+    int field_494;                // +0x494 next index, cap 0x46
+    void M_4A6520(int a1, int a2, int a3);
+};
+MATCH_FUNC(0x4A6520)
+void Sc4A6520::M_4A6520(int a1, int a2, int a3)
+{
+    if (field_494 == 0x46)
+        return;
+    *(int*)((char*)this + field_494 * 4 + 0x498) = a1;
+    *(int*)((char*)this + field_494 * 4 + 0x5b0) = a2;
+    *(int*)((char*)this + field_494 * 4 + 0x6c8) = a3;
+    field_494++;
+}
+
+// 0x4A66F0 — apply the +0x330/+0x334 pair and two flags to a subobject.
+class Sc4A66F0 {
+public:
+    char pad_00[0x330];
+    int field_330;                // +0x330
+    int field_334;                // +0x334
+    void M_4A66F0(S4BBA00* a1);
+};
+MATCH_FUNC(0x4A66F0)
+void Sc4A66F0::M_4A66F0(S4BBA00* a1)
+{
+    if (!a1)
+        return;
+    a1->M_4BBA80(field_330, field_334);
+    a1->M_4BBA40(2);
+    a1->M_4BBA60(2);
+}
+
+// 0x4B3120 — allocate a -0x15 record then configure it with four arguments.
+extern void* (__stdcall *g_61C370)(int a1, int a2);
+class T4B3120Target {
+public:
+    void* Hook_4B3950(int a1, int a2, int a3, int a4);
+};
+MATCH_FUNC(0x4B3120)
+void* __stdcall sub_4B3120(int a1, int a2, int a3, int a4)
+{
+    void* p = g_61C370(a1, -0x15);
+    if (p)
+        return ((T4B3120Target*)p)->Hook_4B3950(a1, a2, a3, a4);
+    return 0;
 }

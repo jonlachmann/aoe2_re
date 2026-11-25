@@ -2611,3 +2611,91 @@ bool Sc422180::M_422180(int a1)
         return 1;
     return 0;
 }
+
+// 0x439410 — clear the ten 0xA0-stride records and the four head fields.
+// WIP: VC6 keeps the zero constant in callee-saved edi across the 0x5FCE14 call
+// (original uses edx before the call and a fresh ecx after it).
+extern void __cdecl Hook_5FCE14_439410(void* a1, int a2);
+class T439410 {
+public:
+    int field_0;                  // +0x00
+    int field_4;                  // +0x04
+    int field_8;                  // +0x08
+    int field_c;                  // +0x0C
+    int field_10;                 // +0x10
+    int field_14;                 // +0x14
+    int field_18;                 // +0x18
+};
+WIP_FUNC(0x439410)
+void __stdcall sub_439410(T439410* a1)
+{
+    a1->field_10 = 0x11;
+    int z = 0;
+    a1->field_14 = z;
+    a1->field_18 = z;
+    int* rec = (int*)((char*)a1 + 0x5c4);
+    for (int i = 0; i < 10; i++) {
+        *rec = z;
+        rec += 0xa0 / 4;
+    }
+    Hook_5FCE14_439410((char*)a1 + 0x1c, 0x662be0);
+    int z2 = 0;
+    a1->field_0 = z2;
+    a1->field_4 = z2;
+    a1->field_8 = z2;
+    a1->field_c = z2;
+}
+
+// 0x439CB0 — constructor seeding the 0x37 0x24-stride records.
+extern void __cdecl Hook_439CB0_log(int a1, int a2, int a3);
+class Sc439CB0 {
+public:
+    int field_0;                  // +0x00
+    int field_4;                  // +0x04
+    int field_8;                  // +0x08
+    int field_c;                  // +0x0C
+    int field_10;                 // +0x10
+    int field_14;                 // +0x14
+    int field_18;                 // +0x18
+    int field_1c;                 // +0x1C
+    int field_20;                 // +0x20
+    int field_24;                 // +0x24
+    int field_28;                 // +0x28
+    int field_2c;                 // +0x2C
+    int field_30;                 // +0x30
+    int field_34;                 // +0x34
+    Sc439CB0* Init_439CB0(int a1);
+};
+MATCH_FUNC(0x439CB0)
+Sc439CB0* Sc439CB0::Init_439CB0(int a1)
+{
+    field_0 = a1;
+    field_4 = 0x3e8;
+    field_8 = 0xa;
+    Hook_439CB0_log(g_669558, 0x651134, 0xa);
+    int v = 1;
+    field_c = v;
+    field_24 = v;
+    field_1c = v;
+    field_18 = 0;
+    field_20 = 0;
+    field_28 = 0;
+    field_2c = 0;
+    field_14 = 0;
+    field_10 = 0;
+    int* rec = (int*)((char*)this + 0x40);
+    for (int i = 0; i < 0x37; i++) {
+        rec[-1] = 0;
+        rec[0] = 0;
+        rec[1] = 0;
+        rec[2] = 0;
+        rec[3] = 0;
+        rec[4] = 0;
+        rec[5] = 0;
+        rec[6] = 0;
+        rec[-2] = 0;
+        rec += 0x24 / 4;
+    }
+    field_34 = 0x28;
+    return this;
+}
