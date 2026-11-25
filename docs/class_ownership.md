@@ -15,10 +15,10 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_cluster_405790` | app | — | Source/app/C_cluster_405790.cpp | Source/sim/free_sim.cpp | 2/2 |
 | `C_cluster_409A10` | app | — | Source/sim/free_sim.cpp | Source/app/C_vt61C62C.cpp | 3/3 |
 | `C_cluster_41A150` | app | — | Source/app/C_cluster_41A150.cpp | Source/gfx/free_gfx.cpp | 2/2 |
-| `C_vt61C524` | app | 0x61C524 | Source/app/C_vt61C524.cpp | Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 7/25 |
+| `C_vt61C524` | app | 0x61C524 | Source/app/C_vt61C524.cpp | Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 8/25 |
 | `C_vt61C62C` | app | 0x61C62C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 8/24 |
 | `C_vt61C71C` | app | 0x61C71C | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 10/25 |
-| `C_vt61C800` | app | 0x61C800 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/C_vt61C800.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 8/24 |
+| `C_vt61C800` | app | 0x61C800 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/C_vt61C800.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 9/24 |
 | `C_vt61C8E4` | app | 0x61C8E4 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/sim/C_vt61C8E4.cpp | 6/24 |
 | `C_vt61C9D4` | app | 0x61C9D4 | Source/app/C_vt61C524.cpp | Source/app/C_vt61C62C.cpp, Source/app/C_vt61C9D4.cpp, Source/app/free_app.cpp, Source/ui/C_pnl_btn.cpp | 9/24 |
 | `C_vt61CAB4` | app | 0x61CAB4 | Source/app/C_vt61CAB4.cpp | Source/app/free_app.cpp | 3/8 |

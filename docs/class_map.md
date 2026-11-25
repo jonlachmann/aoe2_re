@@ -22,18 +22,18 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1528 |
+| matched | 1543 |
 | wip | 21 |
 | verified | 18 |
-| lifted | 6184 |
+| lifted | 6169 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
 |---|---|---|---|---|---|---|
-| `0x61C524` | `C_vt61C524` | 24 | 1 | — | 7 | 18 |
+| `0x61C524` | `C_vt61C524` | 24 | 1 | — | 8 | 17 |
 | `0x61C62C` | `C_vt61C62C` | 24 | 0 | — | 8 | 16 |
 | `0x61C71C` | `C_vt61C71C` | 24 | 1 | — | 10 | 15 |
-| `0x61C800` | `C_vt61C800` | 24 | 0 | — | 8 | 16 |
+| `0x61C800` | `C_vt61C800` | 24 | 0 | — | 9 | 15 |
 | `0x61C8E4` | `C_vt61C8E4` | 24 | 0 | — | 6 | 18 |
 | `0x61C9D4` | `C_vt61C9D4` | 24 | 0 | — | 9 | 15 |
 | `0x61CAB4` | `C_vt61CAB4` | 8 | 0 | — | 3 | 5 |
@@ -597,7 +597,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Functions with no class evidence
 | Region | Functions | Matched | WIP | Left |
 |---|---|---|---|---|
-| app | 323 | 115 | 1 | 207 |
+| app | 323 | 128 | 1 | 194 |
 | crt | 647 | 46 | 2 | 599 |
 | engine-late | 319 | 35 | 0 | 284 |
 | game | 436 | 143 | 4 | 289 |

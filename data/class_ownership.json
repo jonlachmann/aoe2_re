@@ -8,11 +8,11 @@
    "vtable": "0x61C524",
    "anchor": "0x401150",
    "methods": 25,
-   "owned_methods": 7,
-   "unowned_methods": 18,
+   "owned_methods": 8,
+   "unowned_methods": 17,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
-    "Source/app/C_vt61C524.cpp": 4,
+    "Source/app/C_vt61C524.cpp": 5,
     "Source/app/free_app.cpp": 2,
     "Source/ui/C_pnl_btn.cpp": 1
    },
@@ -80,13 +80,13 @@
    "vtable": "0x61C800",
    "anchor": "0x403DC0",
    "methods": 24,
-   "owned_methods": 8,
-   "unowned_methods": 16,
+   "owned_methods": 9,
+   "unowned_methods": 15,
    "primary_file": "Source/app/C_vt61C524.cpp",
    "owner_files": {
     "Source/app/C_vt61C524.cpp": 3,
     "Source/app/C_vt61C62C.cpp": 2,
-    "Source/app/C_vt61C800.cpp": 1,
+    "Source/app/C_vt61C800.cpp": 2,
     "Source/app/free_app.cpp": 1,
     "Source/ui/C_pnl_btn.cpp": 1
    },

@@ -30,7 +30,7 @@ public:
     virtual void slot_018();  // slot +0x048: sub_409CC0 [lifted]
     virtual void slot_019();  // slot +0x04C: sub_409E20 [lifted]
     virtual void slot_020();  // slot +0x050: sub_409E40 [lifted]
-    virtual void slot_021();  // slot +0x054: sub_402960 [lifted]
+    virtual void slot_021();  // slot +0x054: sub_402960 [matched] — Source/app/C_vt61C524.cpp
     virtual void slot_022();  // slot +0x058: sub_409B50 [lifted]
     virtual void slot_023();  // slot +0x05C: sub_4015F0 [lifted]
     void method_000();  // sub_4013E0 [matched]: same object, connected by this-edge call sites — Source/app/free_app.cpp

@@ -20,7 +20,7 @@ public:
     virtual void slot_10();
     virtual void slot_11();
     virtual void slot_12();
-    virtual void slot_13();
+    virtual int M_403C90(float unused, float a1, float a2, float a3);  // slot +0x34
     virtual void slot_14();
     virtual void slot_15();
     virtual void slot_16();
@@ -31,6 +31,11 @@ public:
     virtual void slot_21();
     virtual void slot_22();
     virtual void Vat_5C(int v);
+
+    char pad_04[0x1c];            // +0x04..+0x20
+    float field_20;               // +0x20
+    float field_24;               // +0x24
+    float field_28;               // +0x28
 
     void M_403A20(int unused);
 };

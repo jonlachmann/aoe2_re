@@ -29,12 +29,17 @@ public:
     virtual void Vt_18();
     virtual void Vt_19();
     virtual void Vt_20();
-    virtual void Vt_21();
+    virtual void M_402960(int a1);  // slot +0x54
     virtual void Vt_22();
     virtual void Vat_5C(int v);
 
     unsigned short field_04;      // +0x04
+    char pad_06[2];               // +0x06
+    void* field_08;               // +0x08
+    char pad_0c[4];               // +0x0c
+    int field_10;                 // +0x10
 
+    void Hook_409AD0(int a1);     // unresolved callee at 0x409AD0
     unsigned short Get_409A00();
     bool M_409A20(int unused);
     bool M_409A30(int a, int b);

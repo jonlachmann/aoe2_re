@@ -26,3 +26,14 @@ int C_vt61C524::M_4015E0()
     Vat_5C(1);
     return 1;
 }
+
+MATCH_FUNC(0x402960)
+void C_vt61C524::M_402960(int a1)
+{
+    if (a1 != this->field_10)
+    {
+        int p = (int)this->field_08;
+        *(int*)((char*)p + 0x164) = 0;
+    }
+    this->Hook_409AD0(a1);
+}

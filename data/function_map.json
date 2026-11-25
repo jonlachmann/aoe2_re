@@ -254,8 +254,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61C524.cpp"
  },
  {
   "address": "0x402990",
@@ -478,8 +478,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x4039E0",
@@ -556,8 +556,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61C800.cpp"
  },
  {
   "address": "0x403CF0",
@@ -746,8 +746,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x4053F0",
@@ -760,8 +760,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x405440",
@@ -881,8 +881,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CAB4.cpp"
  },
  {
   "address": "0x4057F0",
@@ -937,8 +937,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CAB4.cpp"
  },
  {
   "address": "0x4058E0",
@@ -1017,8 +1017,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CAB4.cpp"
  },
  {
   "address": "0x405F50",
@@ -1073,8 +1073,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CAB4.cpp"
  },
  {
   "address": "0x406060",
@@ -1087,8 +1087,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CAB4.cpp"
  },
  {
   "address": "0x4060A0",
@@ -1115,8 +1115,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CAB4.cpp"
  },
  {
   "address": "0x4060F0",
@@ -1129,8 +1129,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CAB4.cpp"
  },
  {
   "address": "0x406110",
@@ -1143,8 +1143,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CAB4.cpp"
  },
  {
   "address": "0x406140",
@@ -1157,8 +1157,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CAB4.cpp"
  },
  {
   "address": "0x406170",
@@ -1185,8 +1185,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CAB4.cpp"
  },
  {
   "address": "0x4061B0",

@@ -2465,6 +2465,23 @@ Sc408ED0* Sc408ED0::Init_408ED0(int a1, int a2)
     return this;
 }
 
+// 0x4039B0 — two-argument constructor wrapper with type word 4.
+extern char g_vt_61C800f;
+class Sc4039B0 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    Sc4039B0* Init_4039B0(int a1, int a2);
+};
+MATCH_FUNC(0x4039B0)
+Sc4039B0* Sc4039B0::Init_4039B0(int a1, int a2)
+{
+    ((Tc4095A0*)this)->Other_4095A0(a1, a2, 1);
+    *(void**)this = &g_vt_61C800f;
+    this->type_04 = 4;
+    return this;
+}
+
 // 0x409600 — base constructor: default fields, vtable, optional hook.
 extern char g_vt_61D2C0f;
 class S409600 {
@@ -2489,6 +2506,94 @@ S409600* S409600::Init_409600(int a1, int a2)
     if (a2 != 0)
         this->Hook_4097C0(a1);
     return this;
+}
+
+extern float g_61c584;
+// Node at [this+0x30] used by the 0x4053A0/0x4053F0 guards.
+class T4053A0Node {
+public:
+    char pad_00[0x14];
+    unsigned short field_14;      // +0x14
+    char pad_16[0x1e];
+    int field_34;                 // +0x34
+    char pad_38[8];
+    int field_40;                 // +0x40
+};
+// Data at [this+0x08] used by the same guards.
+class T4053A0Data {
+public:
+    char pad_00[0x44];
+    float field_44;               // +0x44
+    char pad_48[4];
+    unsigned short field_4c;      // +0x4C
+};
+
+// 0x4053A0 — guard on the +0x30 node id, then float threshold lookup.
+class Sc4053A0 {
+public:
+    char pad_00[8];
+    T4053A0Data* field_08;        // +0x08
+    char pad_0c[0x24];
+    T4053A0Node* field_30;        // +0x30
+    int field_34;                 // +0x34
+    char pad_38[8];
+    int field_40;                 // +0x40
+    int M_4053A0();
+};
+MATCH_FUNC(0x4053A0)
+int Sc4053A0::M_4053A0()
+{
+    T4053A0Node* node = this->field_30;
+    unsigned short id = node->field_14;
+    if (id != 0xffff)
+    {
+        T4053A0Data* data = this->field_08;
+        if (data->field_4c == id)
+        {
+            int value = (int)data->field_44;
+            if (value > g_61c584)
+            {
+                if (node->field_40 != 0)
+                    return node->field_40;
+            }
+        }
+    }
+    return node->field_34;
+}
+
+// 0x4053F0 — same id/threshold guard, default value from the nested pointers.
+class T4053F0Inner {
+public:
+    char pad_00[0x18];
+    int field_18;                 // +0x18
+};
+class Sc4053F0 {
+public:
+    char pad_00[8];
+    void* field_08;               // +0x08
+    char pad_0c[0x24];
+    T4053A0Node* field_30;        // +0x30
+    int M_4053F0();
+};
+MATCH_FUNC(0x4053F0)
+int Sc4053F0::M_4053F0()
+{
+    T4053A0Node* node = this->field_30;
+    unsigned short id = node->field_14;
+    if (id != 0xffff)
+    {
+        void* data = this->field_08;
+        if (id == *(unsigned short*)((char*)data + 0x4c))
+        {
+            int value = (int)*(float*)((char*)data + 0x44);
+            if (value > g_61c584)
+            {
+                if (node->field_40 != 0)
+                    return node->field_40;
+            }
+        }
+    }
+    return ((T4053F0Inner*)*(int*)((char*)this->field_08 + 8))->field_18;
 }
 
 // 0x40A370 — bounded index lookup into the +0x90 slot array.
