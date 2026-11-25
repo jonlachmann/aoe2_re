@@ -2493,6 +2493,29 @@ Sc4029C0* Sc4029C0::Init_4029C0(int a1, int a2, int a3, int a4, int a5)
     return this;
 }
 
+// 0x4062D0 — two-argument constructor wrapper, fields +0x30 and +0x40.
+extern char g_vt_61CB58f;
+class Sc4062D0 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x2a];
+    int field_30;                 // +0x30
+    char pad_34[0xc];
+    float field_40;               // +0x40
+    Sc4062D0* Init_4062D0(int a1, int a2);
+};
+MATCH_FUNC(0x4062D0)
+Sc4062D0* Sc4062D0::Init_4062D0(int a1, int a2)
+{
+    sub_409600(a1, 1);
+    *(void**)this = &g_vt_61CB58f;
+    this->type_04 = 0x15;
+    this->field_30 = a2;
+    this->field_40 = 120.0f;
+    return this;
+}
+
 // 0x403EF0 — five-argument constructor wrapper with fields at +0x20..+0x30.
 extern char g_vt_61C8E4f;
 class Sc403EF0 {

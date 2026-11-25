@@ -5470,6 +5470,69 @@ Sc5478B0* Sc5478B0::Init_5478B0(int a1, int a2, int a3, int a4, int a5)
     return this;
 }
 
+// 0x541050 — two-argument constructor wrapper, field +0x30.
+extern char g_vt_628608f;
+class Sc541050 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x2a];
+    int field_30;                 // +0x30
+    Sc541050* Init_541050(int a1, int a2);
+};
+MATCH_FUNC(0x541050)
+Sc541050* Sc541050::Init_541050(int a1, int a2)
+{
+    sub_409600(a1, 1);
+    *(void**)this = &g_vt_628608f;
+    this->type_04 = 0x79;
+    this->field_30 = a2;
+    return this;
+}
+
+// 0x544D80 — two-argument constructor wrapper, field +0x40.
+extern char g_vt_628998f;
+class Sc544D80 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x3a];
+    int field_40;                 // +0x40
+    Sc544D80* Init_544D80(int a1, int a2);
+};
+MATCH_FUNC(0x544D80)
+Sc544D80* Sc544D80::Init_544D80(int a1, int a2)
+{
+    sub_409600(a1, 1);
+    *(void**)this = &g_vt_628998f;
+    this->field_40 = a2;
+    this->type_04 = 0x7b;
+    return this;
+}
+
+// 0x54ABE0 — three-argument constructor wrapper, word +0x40, dword +0x44.
+extern char g_vt_6290C4f;
+class Sc54ABE0 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x3a];
+    short word_40;                // +0x40
+    char pad_42[2];
+    int field_44;                 // +0x44
+    Sc54ABE0* Init_54ABE0(int a1, int a2, int a3);
+};
+MATCH_FUNC(0x54ABE0)
+Sc54ABE0* Sc54ABE0::Init_54ABE0(int a1, int a2, int a3)
+{
+    sub_409600(a1, 1);
+    this->field_44 = a3;
+    *(void**)this = &g_vt_6290C4f;
+    this->type_04 = 0x67;
+    this->word_40 = a2;
+    return this;
+}
+
 // 0x5486D0 — five-argument constructor wrapper with fields at +0x20..+0x30.
 extern char g_vt_628F04f;
 class Sc5486D0 {
