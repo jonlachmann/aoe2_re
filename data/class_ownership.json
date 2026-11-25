@@ -229,21 +229,23 @@
    "vtable": "0x61CE24",
    "anchor": "0x407D30",
    "methods": 205,
-   "owned_methods": 84,
-   "unowned_methods": 121,
+   "owned_methods": 85,
+   "unowned_methods": 120,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 64,
     "Source/gfx/C_TribePopUpHelp.cpp": 4,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 14,
     "Source/ui/C_pnl_edit.cpp": 1,
-    "Source/ui/C_pnl_inp.cpp": 1
+    "Source/ui/C_pnl_inp.cpp": 1,
+    "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/ui/C_TRIBE_Screen_Options.cpp",
     "Source/ui/C_pnl_edit.cpp",
-    "Source/ui/C_pnl_inp.cpp"
+    "Source/ui/C_pnl_inp.cpp",
+    "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -847,8 +849,8 @@
    "vtable": "0x61E328",
    "anchor": "0x4347D0",
    "methods": 214,
-   "owned_methods": 68,
-   "unowned_methods": 146,
+   "owned_methods": 69,
+   "unowned_methods": 145,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 48,
@@ -856,14 +858,16 @@
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 7,
     "Source/ui/C_pnl_edit.cpp": 1,
-    "Source/ui/C_pnl_inp.cpp": 1
+    "Source/ui/C_pnl_inp.cpp": 1,
+    "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/game/C_vt61E328.cpp",
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/ui/C_TRIBE_Screen_Options.cpp",
     "Source/ui/C_pnl_edit.cpp",
-    "Source/ui/C_pnl_inp.cpp"
+    "Source/ui/C_pnl_inp.cpp",
+    "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -1535,8 +1539,8 @@
    "vtable": "0x621518",
    "anchor": "0x487950",
    "methods": 214,
-   "owned_methods": 70,
-   "unowned_methods": 144,
+   "owned_methods": 71,
+   "unowned_methods": 143,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 48,
@@ -1545,7 +1549,7 @@
     "Source/ui/C_TRIBE_Screen_Options.cpp": 7,
     "Source/ui/C_pnl_edit.cpp": 1,
     "Source/ui/C_pnl_inp.cpp": 1,
-    "Source/ui/free_ui.cpp": 2
+    "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/game/C_vt61E328.cpp",
@@ -1587,8 +1591,8 @@
    "vtable": "0x621A28",
    "anchor": "0x48C090",
    "methods": 194,
-   "owned_methods": 98,
-   "unowned_methods": 96,
+   "owned_methods": 99,
+   "unowned_methods": 95,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61C62C.cpp": 1,
@@ -1597,7 +1601,8 @@
     "Source/gfx/C_vt61DA40.cpp": 6,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 17,
     "Source/ui/C_pnl_edit.cpp": 1,
-    "Source/ui/C_pnl_inp.cpp": 1
+    "Source/ui/C_pnl_inp.cpp": 1,
+    "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/app/C_vt61C62C.cpp",
@@ -1605,7 +1610,8 @@
     "Source/gfx/C_vt61DA40.cpp",
     "Source/ui/C_TRIBE_Screen_Options.cpp",
     "Source/ui/C_pnl_edit.cpp",
-    "Source/ui/C_pnl_inp.cpp"
+    "Source/ui/C_pnl_inp.cpp",
+    "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -2960,8 +2966,8 @@
    "vtable": "0x627428",
    "anchor": "0x52CB70",
    "methods": 230,
-   "owned_methods": 54,
-   "unowned_methods": 176,
+   "owned_methods": 55,
+   "unowned_methods": 175,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 32,
@@ -2969,14 +2975,16 @@
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
     "Source/sim/C_vt627428.cpp": 11,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 1,
-    "Source/ui/C_pnl_edit.cpp": 1
+    "Source/ui/C_pnl_edit.cpp": 1,
+    "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/game/C_vt61E328.cpp",
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/sim/C_vt627428.cpp",
     "Source/ui/C_TRIBE_Screen_Options.cpp",
-    "Source/ui/C_pnl_edit.cpp"
+    "Source/ui/C_pnl_edit.cpp",
+    "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -2988,8 +2996,8 @@
    "vtable": "0x627844",
    "anchor": "0x532DC0",
    "methods": 223,
-   "owned_methods": 57,
-   "unowned_methods": 166,
+   "owned_methods": 58,
+   "unowned_methods": 165,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 38,
@@ -2998,7 +3006,8 @@
     "Source/sim/C_vt627428.cpp": 7,
     "Source/sim/free_sim.cpp": 1,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 1,
-    "Source/ui/C_pnl_edit.cpp": 1
+    "Source/ui/C_pnl_edit.cpp": 1,
+    "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/game/C_vt61E328.cpp",
@@ -3006,7 +3015,8 @@
     "Source/sim/C_vt627428.cpp",
     "Source/sim/free_sim.cpp",
     "Source/ui/C_TRIBE_Screen_Options.cpp",
-    "Source/ui/C_pnl_edit.cpp"
+    "Source/ui/C_pnl_edit.cpp",
+    "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -4657,16 +4667,18 @@
    "vtable": "0x62C7CC",
    "anchor": "0x5C5380",
    "methods": 79,
-   "owned_methods": 18,
-   "unowned_methods": 61,
+   "owned_methods": 19,
+   "unowned_methods": 60,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
+    "Source/sim/free_sim.cpp": 1,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 15,
     "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/sim/free_sim.cpp",
     "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
@@ -6101,11 +6113,11 @@
    "vtable": null,
    "anchor": "0x43EB30",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
+   "owned_methods": 2,
+   "unowned_methods": 0,
    "primary_file": "Source/game/free_game.cpp",
    "owner_files": {
-    "Source/game/free_game.cpp": 1
+    "Source/game/free_game.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -7208,10 +7220,12 @@
    "vtable": null,
    "anchor": "0x49F4A0",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/ui/free_ui.cpp",
+   "owner_files": {
+    "Source/ui/free_ui.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -7531,10 +7545,12 @@
    "vtable": null,
    "anchor": "0x4A76D0",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/ui/free_ui.cpp",
+   "owner_files": {
+    "Source/ui/free_ui.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -8692,10 +8708,12 @@
    "vtable": null,
    "anchor": "0x55A590",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/sim/free_sim.cpp",
+   "owner_files": {
+    "Source/sim/free_sim.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -8707,10 +8725,12 @@
    "vtable": null,
    "anchor": "0x55A5E0",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/sim/free_sim.cpp",
+   "owner_files": {
+    "Source/sim/free_sim.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -8722,10 +8742,12 @@
    "vtable": null,
    "anchor": "0x55A630",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/sim/free_sim.cpp",
+   "owner_files": {
+    "Source/sim/free_sim.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false

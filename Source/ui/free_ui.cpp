@@ -4008,3 +4008,45 @@ void S4778B0::M_4778B0()
     *(void**)this = (void*)0x621110;
     sub_474AB0();
 }
+
+// 0x48F980 — tail-call forwarder to 0x48F990.
+extern void sub_48F990();
+MATCH_FUNC(0x48F980)
+void __cdecl sub_48F980()
+{
+    sub_48F990();
+}
+
+// 0x4988D0 — tail-call forwarder to 0x498AD0.
+extern void sub_498AD0();
+MATCH_FUNC(0x4988D0)
+void __cdecl sub_4988D0()
+{
+    sub_498AD0();
+}
+
+// 0x4A6980 — tail-call forwarder to 0x4A6990.
+extern void sub_4A6990();
+MATCH_FUNC(0x4A6980)
+void __cdecl sub_4A6980()
+{
+    sub_4A6990();
+}
+
+// 0x49F4A0 — call 0x49F4B0 and tail-jump to 0x49F4C0.
+extern void sub_49F4B0();
+MATCH_FUNC(0x49F4A0)
+void __cdecl sub_49F4A0()
+{
+    sub_49F4B0();
+    sub_49F4C0();
+}
+
+// 0x4A76D0 — call 0x4A76E0 and tail-jump to 0x4A7710.
+extern void sub_4A76E0();
+MATCH_FUNC(0x4A76D0)
+void __cdecl sub_4A76D0()
+{
+    sub_4A76E0();
+    sub_4A7710();
+}

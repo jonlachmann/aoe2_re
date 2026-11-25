@@ -6,6 +6,6 @@
 
 class C_cluster_55A5E0 {
 public:
-    void method_000();  // sub_55A5E0 [lifted]
+    void method_000();  // sub_55A5E0 [matched] — Source/sim/free_sim.cpp
     void method_001();  // sub_55A5F0 [lifted]
 };

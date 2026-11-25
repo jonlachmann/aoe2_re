@@ -2303,3 +2303,19 @@ int S43EB70::M_43EB70()
     ((T43EB70*)this)->Other_43EB90();
     return (int)this;
 }
+
+// 0x438F00 — tail-call forwarder to 0x438F10.
+extern void sub_438F10();
+MATCH_FUNC(0x438F00)
+void __cdecl sub_438F00()
+{
+    sub_438F10();
+}
+
+// 0x43EB30 — call 0x43EB40 and tail-jump to 0x43EB50.
+MATCH_FUNC(0x43EB30)
+void __cdecl sub_43EB30()
+{
+    sub_43EB40();
+    sub_43EB50();
+}

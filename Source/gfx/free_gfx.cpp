@@ -1076,3 +1076,11 @@ void S440B30::M_440B30()
     *(void**)this = (void*)0x61E948;
     sub_440F00();
 }
+
+// 0x465910 — tail-call forwarder to 0x465AE0.
+extern void sub_465AE0();
+MATCH_FUNC(0x465910)
+void __cdecl sub_465910()
+{
+    sub_465AE0();
+}

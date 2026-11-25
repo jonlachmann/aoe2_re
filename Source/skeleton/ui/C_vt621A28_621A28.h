@@ -176,7 +176,7 @@ public:
     virtual void slot_166();  // slot +0x298: sub_407CF0 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_167();  // slot +0x29C: sub_48F950 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_168();  // slot +0x2A0: sub_48F970 [matched] — Source/app/C_vt61CE24.cpp
-    virtual void slot_169();  // slot +0x2A4: sub_48F980 [lifted]
+    virtual void slot_169();  // slot +0x2A4: sub_48F980 [matched] — Source/ui/free_ui.cpp
     virtual void slot_170();  // slot +0x2A8: sub_4919A0 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_171();  // slot +0x2AC: sub_4919E0 [lifted]
     virtual void slot_172();  // slot +0x2B0: sub_491AA0 [lifted]

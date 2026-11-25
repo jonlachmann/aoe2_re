@@ -87,5 +87,5 @@ public:
     virtual void slot_075();  // slot +0x12C: sub_5C7570 [lifted]
     virtual void slot_076();  // slot +0x130: sub_5C7A80 [lifted]
     virtual void slot_077();  // slot +0x134: sub_5C7E60 [lifted]
-    void method_000();  // sub_5C53A0 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_5C53A0 [matched]: same object, connected by this-edge call sites — Source/sim/free_sim.cpp
 };

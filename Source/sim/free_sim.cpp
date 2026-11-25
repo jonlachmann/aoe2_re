@@ -3664,3 +3664,41 @@ void S58A150::M_58A150()
     *(void**)this = (void*)0x62AA3C;
     sub_58A2F0();
 }
+
+// 0x5C53A0 — tail-call forwarder to 0x5DEFD0.
+extern void sub_5DEFD0();
+MATCH_FUNC(0x5C53A0)
+void __cdecl sub_5C53A0()
+{
+    sub_5DEFD0();
+}
+
+// 0x55A590 — call 0x55A5A0 and tail-jump to 0x55A5C0.
+extern void sub_55A5A0();
+extern void sub_55A5C0();
+MATCH_FUNC(0x55A590)
+void __cdecl sub_55A590()
+{
+    sub_55A5A0();
+    sub_55A5C0();
+}
+
+// 0x55A5E0 — call 0x55A5F0 and tail-jump to 0x55A610.
+extern void sub_55A5F0();
+extern void sub_55A610();
+MATCH_FUNC(0x55A5E0)
+void __cdecl sub_55A5E0()
+{
+    sub_55A5F0();
+    sub_55A610();
+}
+
+// 0x55A630 — call 0x55A640 and tail-jump to 0x55A660.
+extern void sub_55A640();
+extern void sub_55A660();
+MATCH_FUNC(0x55A630)
+void __cdecl sub_55A630()
+{
+    sub_55A640();
+    sub_55A660();
+}
