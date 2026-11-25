@@ -2901,3 +2901,45 @@ int S437420::M_437420(unsigned int a1, unsigned int a2)
     }
     return n;
 }
+
+// 0x4378D0 — clear the +0x2580 field and initialise the 100-record table in
+// place: each 0x60-byte record starts with the 0x662BE0 string copied through
+// inline strlen/memcpy and four zero header ints at +0x50..+0x5C, then register
+// the table with 0x437AD0 and return the object.
+class T4378D0Entry {
+public:
+    char text[0x50];                // +0x00
+    int field_50;                   // +0x50
+    int field_54;                   // +0x54
+    int field_58;                   // +0x58
+    int field_5c;                   // +0x5C
+};
+class S4378D0 {
+public:
+    T4378D0Entry records[100];      // +0x00..+0x2580
+    int field_2580;                 // +0x2580
+    S4378D0* M_4378D0();
+};
+extern char g_662be0[];
+extern void __stdcall sub_5ECE50(void* a1, void* a2);
+
+#pragma intrinsic(strcpy)
+MATCH_FUNC(0x4378D0)
+S4378D0* S4378D0::M_4378D0()
+{
+    field_2580 = 0;
+    T4378D0Entry* e = records;
+    int n = 100;
+    do
+    {
+        strcpy(e->text, g_662be0);
+        e->field_50 = 0;
+        e->field_5c = 0;
+        e->field_58 = 0;
+        e->field_54 = 0;
+        e++;
+    } while (--n);
+    sub_5ECE50((void*)0x437ad0, this);
+    return this;
+}
+#pragma function(strcpy)

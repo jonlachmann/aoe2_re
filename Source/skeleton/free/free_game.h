@@ -296,7 +296,7 @@ void sub_4376D0();  // size 55, calls 1, lifted, module game
 void sub_437710();  // size 39, calls 0, matched, module game
 void sub_4377C0();  // size 189, calls 2, lifted, module game
 void sub_437880();  // size 58, calls 0, lifted, module game
-void sub_4378D0();  // size 113, calls 1, lifted, module game
+void sub_4378D0();  // size 113, calls 1, matched, module game
 void sub_437950();  // size 7, calls 0, matched, module game
 void sub_437960();  // size 14, calls 0, matched, module game
 void sub_437970();  // size 32, calls 0, matched, module game
