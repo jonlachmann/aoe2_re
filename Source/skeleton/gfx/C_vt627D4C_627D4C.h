@@ -32,7 +32,7 @@ public:
     virtual void slot_022();  // slot +0x058: sub_52A710 [lifted]
     virtual void slot_023();  // slot +0x05C: sub_52A7A0 [lifted]
     virtual void slot_024();  // slot +0x060: sub_52A8B0 [lifted]
-    virtual void slot_025();  // slot +0x064: sub_53CC50 [lifted]
+    virtual void slot_025();  // slot +0x064: sub_53CC50 [matched] — Source/sim/free_sim.cpp
     virtual void slot_026();  // slot +0x068: sub_52AA10 [lifted]
     virtual void slot_027();  // slot +0x06C: sub_52AB60 [lifted]
     virtual void slot_028();  // slot +0x070: sub_52A990 [lifted]

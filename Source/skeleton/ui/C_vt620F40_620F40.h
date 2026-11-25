@@ -10,12 +10,12 @@
 class C_vt620F40 {
 public:
     virtual void slot_000();  // slot +0x000: sub_476750 [lifted]
-    virtual void slot_001();  // slot +0x004: sub_476B00 [lifted]
+    virtual void slot_001();  // slot +0x004: sub_476B00 [matched] — Source/ui/free_ui.cpp
     virtual void slot_002();  // slot +0x008: sub_474C20 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_474C50 [lifted]
     virtual void slot_004();  // slot +0x010: sub_474C80 [lifted]
-    virtual void slot_005();  // slot +0x014: sub_476B10 [lifted]
-    virtual void slot_006();  // slot +0x018: sub_476B20 [lifted]
+    virtual void slot_005();  // slot +0x014: sub_476B10 [matched] — Source/ui/free_ui.cpp
+    virtual void slot_006();  // slot +0x018: sub_476B20 [matched] — Source/ui/free_ui.cpp
     virtual void slot_007();  // slot +0x01C: sub_474AC0 [lifted]
     virtual void slot_008();  // slot +0x020: sub_476A90 [lifted]
     virtual void slot_009();  // slot +0x024: sub_47A080 [lifted]

@@ -1785,3 +1785,18 @@ void S411A30::M_411A30()
     *(void**)this = (void*)0x61D704;
     sub_4114F0();
 }
+
+// 0x41A3E0 — thiscall forwarder to 0x52A7A0 with one stacked argument.
+class T52A7A0 {
+public:
+    void Other_52A7A0(int a1);
+};
+class S41A3E0 {
+public:
+    void M_41A3E0(int a1);
+};
+MATCH_FUNC(0x41A3E0)
+void S41A3E0::M_41A3E0(int a1)
+{
+    ((T52A7A0*)this)->Other_52A7A0(a1);
+}

@@ -12,7 +12,7 @@ public:
     virtual void slot_002();  // slot +0x008: sub_409660 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_409810 [lifted]
     virtual void slot_004();  // slot +0x010: sub_409880 [lifted]
-    virtual void slot_005();  // slot +0x014: sub_53CD40 [lifted]
+    virtual void slot_005();  // slot +0x014: sub_53CD40 [matched] — Source/sim/free_sim.cpp
     virtual void slot_006();  // slot +0x018: sub_409A00 [matched] — Source/app/C_vt61C524.cpp
     virtual void slot_007();  // slot +0x01C: sub_540800 [matched] — Source/app/C_vt628448.cpp
     virtual void slot_008();  // slot +0x020: sub_409A40 [lifted]

@@ -5047,8 +5047,8 @@
    {
     "address": "0x41A3E0",
     "name": "sub_41A3E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x52A8B0",
@@ -8858,8 +8858,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -9407,8 +9407,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -9964,8 +9964,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -10513,8 +10513,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -11070,8 +11070,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -11627,8 +11627,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -12196,8 +12196,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -12745,8 +12745,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -13302,8 +13302,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -13859,8 +13859,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -14416,8 +14416,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -14965,8 +14965,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -15523,8 +15523,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -16483,8 +16483,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -17116,8 +17116,8 @@
    {
     "address": "0x41A3E0",
     "name": "sub_41A3E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x52A8B0",
@@ -19018,8 +19018,8 @@
    {
     "address": "0x476B00",
     "name": "sub_476B00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x474C20",
@@ -19042,14 +19042,14 @@
    {
     "address": "0x476B10",
     "name": "sub_476B10",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x476B20",
     "name": "sub_476B20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x474AC0",
@@ -23134,8 +23134,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -24632,8 +24632,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -28561,8 +28561,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -30325,8 +30325,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -31921,8 +31921,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -32473,8 +32473,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -33018,8 +33018,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -33563,8 +33563,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -34100,8 +34100,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -35102,8 +35102,8 @@
    {
     "address": "0x4DA4A0",
     "name": "sub_4DA4A0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4DA4B0",
@@ -35114,8 +35114,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -35659,8 +35659,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -36196,8 +36196,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -36733,8 +36733,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -37270,8 +37270,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -37807,8 +37807,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -38059,8 +38059,8 @@
    {
     "address": "0x4EDC60",
     "name": "sub_4EDC60",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A2040",
@@ -38366,8 +38366,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -38903,8 +38903,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -39440,8 +39440,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -40013,8 +40013,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -40586,8 +40586,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -41123,8 +41123,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -41668,8 +41668,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -42214,8 +42214,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -42773,8 +42773,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -43319,8 +43319,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -43871,8 +43871,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -44408,8 +44408,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -44945,8 +44945,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -45483,8 +45483,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -47590,8 +47590,8 @@
    {
     "address": "0x532CC0",
     "name": "sub_532CC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x52A410",
@@ -47632,8 +47632,8 @@
    {
     "address": "0x52F020",
     "name": "sub_52F020",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x52F7F0",
@@ -50420,8 +50420,8 @@
    {
     "address": "0x53CC50",
     "name": "sub_53CC50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x52AA10",
@@ -51429,8 +51429,8 @@
    {
     "address": "0x53CD40",
     "name": "sub_53CD40",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x409A00",
@@ -51743,8 +51743,8 @@
    {
     "address": "0x53CD40",
     "name": "sub_53CD40",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x409A00",
@@ -52065,8 +52065,8 @@
    {
     "address": "0x53CD40",
     "name": "sub_53CD40",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x409A00",
@@ -53248,8 +53248,8 @@
    {
     "address": "0x53CD40",
     "name": "sub_53CD40",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x409A00",
@@ -53578,8 +53578,8 @@
    {
     "address": "0x53CD40",
     "name": "sub_53CD40",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x409A00",
@@ -54222,8 +54222,8 @@
    {
     "address": "0x53CD40",
     "name": "sub_53CD40",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x409A00",
@@ -61016,8 +61016,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0C60",
@@ -76085,8 +76085,8 @@
    {
     "address": "0x4A2F30",
     "name": "sub_4A2F30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    }
   ],
   "extra_methods": []

@@ -4085,3 +4085,93 @@ void __cdecl sub_4A7710()
 {
     ((T4A8310*)&g_66FA50)->Other_4A8310();
 }
+
+// 0x476B00 — thiscall forwarder to 0x474C00.
+class T474C00 {
+public:
+    void Other_474C00(int a1);
+};
+class S476B00 {
+public:
+    void M_476B00(int a1);
+};
+MATCH_FUNC(0x476B00)
+void S476B00::M_476B00(int a1)
+{
+    ((T474C00*)this)->Other_474C00(a1);
+}
+
+// 0x476B10 — thiscall forwarder to 0x474CB0.
+class T474CB0 {
+public:
+    void Other_474CB0(int a1);
+};
+class S476B10 {
+public:
+    void M_476B10(int a1);
+};
+MATCH_FUNC(0x476B10)
+void S476B10::M_476B10(int a1)
+{
+    ((T474CB0*)this)->Other_474CB0(a1);
+}
+
+// 0x476B20 — thiscall forwarder to 0x474CE0.
+class T474CE0 {
+public:
+    void Other_474CE0(int a1);
+};
+class S476B20 {
+public:
+    void M_476B20(int a1);
+};
+MATCH_FUNC(0x476B20)
+void S476B20::M_476B20(int a1)
+{
+    ((T474CE0*)this)->Other_474CE0(a1);
+}
+
+// 0x4A2F30 — thiscall forwarder to 0x4A0C10.
+class T4A0C10 {
+public:
+    void Other_4A0C10(int a1);
+};
+class S4A2F30 {
+public:
+    void M_4A2F30(int a1);
+};
+MATCH_FUNC(0x4A2F30)
+void S4A2F30::M_4A2F30(int a1)
+{
+    ((T4A0C10*)this)->Other_4A0C10(a1);
+}
+
+// 0x4DA4A0 — thiscall forwarder to 0x4A08C0.
+class T4A08C0 {
+public:
+    void Other_4A08C0(int a1);
+};
+class S4DA4A0 {
+public:
+    void M_4DA4A0(int a1);
+};
+MATCH_FUNC(0x4DA4A0)
+void S4DA4A0::M_4DA4A0(int a1)
+{
+    ((T4A08C0*)this)->Other_4A08C0(a1);
+}
+
+// 0x4EDC60 — thiscall forwarder to 0x4B9BB0.
+class T4B9BB0 {
+public:
+    void Other_4B9BB0(int a1);
+};
+class S4EDC60 {
+public:
+    void M_4EDC60(int a1);
+};
+MATCH_FUNC(0x4EDC60)
+void S4EDC60::M_4EDC60(int a1)
+{
+    ((T4B9BB0*)this)->Other_4B9BB0(a1);
+}

@@ -3742,3 +3742,85 @@ void __cdecl sub_5BD510()
 {
     ((T5BD400*)&g_75FF58)->Other_5BD400();
 }
+
+// 0x55A5C0 — register the thunk at 0x55A5D0 with the CRT callback helper.
+extern void __cdecl sub_5FD62D(void* fn);
+MATCH_FUNC(0x55A5C0)
+void __cdecl sub_55A5C0()
+{
+    sub_5FD62D((void*)&sub_55A5D0);
+}
+
+// 0x55A610 — register the thunk at 0x55A620 with the CRT callback helper.
+MATCH_FUNC(0x55A610)
+void __cdecl sub_55A610()
+{
+    sub_5FD62D((void*)&sub_55A620);
+}
+
+// 0x55A660 — register the thunk at 0x55A670 with the CRT callback helper.
+MATCH_FUNC(0x55A660)
+void __cdecl sub_55A660()
+{
+    sub_5FD62D((void*)&sub_55A670);
+}
+
+// 0x52F020 — thiscall forwarder to 0x533A60.
+class T533A60 {
+public:
+    void Other_533A60(int a1);
+};
+class S52F020 {
+public:
+    void M_52F020(int a1);
+};
+MATCH_FUNC(0x52F020)
+void S52F020::M_52F020(int a1)
+{
+    ((T533A60*)this)->Other_533A60(a1);
+}
+
+// 0x532CC0 — thiscall forwarder to 0x537710.
+class T537710 {
+public:
+    void Other_537710(int a1);
+};
+class S532CC0 {
+public:
+    void M_532CC0(int a1);
+};
+MATCH_FUNC(0x532CC0)
+void S532CC0::M_532CC0(int a1)
+{
+    ((T537710*)this)->Other_537710(a1);
+}
+
+// 0x53CC50 — thiscall forwarder to 0x52AC50.
+class T52AC50 {
+public:
+    void Other_52AC50(int a1);
+};
+class S53CC50 {
+public:
+    void M_53CC50(int a1);
+};
+MATCH_FUNC(0x53CC50)
+void S53CC50::M_53CC50(int a1)
+{
+    ((T52AC50*)this)->Other_52AC50(a1);
+}
+
+// 0x53CD40 — thiscall forwarder to 0x4098D0.
+class T4098D0 {
+public:
+    void Other_4098D0(int a1);
+};
+class S53CD40 {
+public:
+    void M_53CD40(int a1);
+};
+MATCH_FUNC(0x53CD40)
+void S53CD40::M_53CD40(int a1)
+{
+    ((T4098D0*)this)->Other_4098D0(a1);
+}

@@ -30,7 +30,7 @@ public:
     virtual void slot_020();  // slot +0x050: sub_52A5A0 [lifted]
     virtual void slot_021();  // slot +0x054: sub_52A680 [lifted]
     virtual void slot_022();  // slot +0x058: sub_52A710 [lifted]
-    virtual void slot_023();  // slot +0x05C: sub_41A3E0 [lifted]
+    virtual void slot_023();  // slot +0x05C: sub_41A3E0 [matched] — Source/app/free_app.cpp
     virtual void slot_024();  // slot +0x060: sub_52A8B0 [lifted]
     virtual void slot_025();  // slot +0x064: sub_52AC50 [lifted]
     virtual void slot_026();  // slot +0x068: sub_52AA10 [lifted]

@@ -422,11 +422,11 @@ void sub_55A110();  // size 189, calls 2, lifted, module sim
 void sub_55A1D0();  // size 616, calls 4, lifted, module sim
 void sub_55A440();  // size 29, calls 2, lifted, module sim
 void sub_55A460();  // size 294, calls 2, lifted, module sim
-void sub_55A5C0();  // size 12, calls 1, lifted, module sim
+void sub_55A5C0();  // size 12, calls 1, matched, module sim
 void sub_55A5D0();  // size 10, calls 1, matched, module sim
-void sub_55A610();  // size 12, calls 1, lifted, module sim
+void sub_55A610();  // size 12, calls 1, matched, module sim
 void sub_55A620();  // size 10, calls 1, matched, module sim
-void sub_55A660();  // size 12, calls 1, lifted, module sim
+void sub_55A660();  // size 12, calls 1, matched, module sim
 void sub_55A670();  // size 10, calls 1, matched, module sim
 void sub_55AE40();  // size 1728, calls 4, lifted, module sim
 void sub_55D4E0();  // size 146, calls 2, lifted, module sim

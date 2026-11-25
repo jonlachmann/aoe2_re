@@ -25,14 +25,14 @@ public:
     virtual void slot_013();  // slot +0x034: sub_529DB0 [lifted]
     virtual void slot_014();  // slot +0x038: sub_5308A0 [lifted]
     virtual void slot_015();  // slot +0x03C: sub_48D400 [lifted]
-    virtual void slot_016();  // slot +0x040: sub_532CC0 [lifted]
+    virtual void slot_016();  // slot +0x040: sub_532CC0 [matched] — Source/sim/free_sim.cpp
     virtual void slot_017();  // slot +0x044: sub_52A410 [lifted]
     virtual void slot_018();  // slot +0x048: sub_52A440 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_019();  // slot +0x04C: sub_52EDA0 [lifted]
     virtual void slot_020();  // slot +0x050: sub_52EFF0 [lifted]
     virtual void slot_021();  // slot +0x054: sub_533A00 [lifted]
     virtual void slot_022();  // slot +0x058: sub_533A30 [lifted]
-    virtual void slot_023();  // slot +0x05C: sub_52F020 [lifted]
+    virtual void slot_023();  // slot +0x05C: sub_52F020 [matched] — Source/sim/free_sim.cpp
     virtual void slot_024();  // slot +0x060: sub_52F7F0 [lifted]
     virtual void slot_025();  // slot +0x064: sub_52DD40 [lifted]
     virtual void slot_026();  // slot +0x068: sub_52AA10 [lifted]
