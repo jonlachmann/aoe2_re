@@ -1,6 +1,6 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 268 matched, 286 left to match (6 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 268 matched, 286 left to match (7 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (286)
 
@@ -46,7 +46,7 @@
 | 98 | `sub_460740` | 569 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
 | 102 | `sub_5230F0` | 182552 |  | 1_boot_to_menu |  |
 | 103 | `sub_522D90` | 182552 |  | 1_boot_to_menu |  |
-| 106 | `sub_51EB90` | 79 |  | 1_boot_to_menu |  |
+| 106 | `sub_51EB90` | 79 | WIP | 1_boot_to_menu | S51EB90::M_51EB90 |
 | 107 | `sub_51EFF0` | 228 |  | 1_boot_to_menu |  |
 | 109 | `sub_619BC0` | 24100 |  | 1_boot_to_menu |  |
 | 110 | `sub_610269` | 1195 |  | 1_boot_to_menu |  |

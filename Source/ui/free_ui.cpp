@@ -7734,3 +7734,46 @@ int S4AF2E0::M_4AF2E0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
         M_4AF4B0(i, a10, 0);
     return 1;
 }
+
+// 0x51EB90 — four-output accessor over the 0x20-byte entry array at +0x10:
+// gate on the +0x14 flag and an inclusive 0..+0x18 index range, then fill the
+// four caller outputs from entry +0x10/+0x14/+0x18/+0x1C with the negated and
+// span-minus-one values; every miss zero-fills the outputs and returns false.
+class T51EB90Entry {
+public:
+    char pad_00[0x10];
+    int field_10;                   // +0x10
+    int field_14;                   // +0x14
+    int field_18;                   // +0x18
+    int field_1c;                   // +0x1C
+};
+class S51EB90 {
+public:
+    char pad_00[0x10];
+    T51EB90Entry* field_10;         // +0x10 entry array
+    unsigned char field_14;         // +0x14 valid flag
+    char pad_15[0x18 - 0x15];
+    int field_18;                   // +0x18 entry count
+    bool M_51EB90(int* a1, int* a2, int* a3, int* a4, int index);
+};
+
+WIP_FUNC(0x51EB90)
+bool S51EB90::M_51EB90(int* a1, int* a2, int* a3, int* a4, int index)
+{
+    if (field_14 != 0 && index >= 0 && index <= field_18)
+    {
+        int* p1 = a1;
+        int* p2 = a2;
+        T51EB90Entry* e = &field_10[index];
+        *p1 = -(e->field_18);
+        *p2 = -(e->field_1c);
+        *a3 = e->field_10 - e->field_18 - 1;
+        *a4 = e->field_14 - e->field_1c - 1;
+        return true;
+    }
+    *a1 = 0;
+    *a2 = 0;
+    *a3 = 0;
+    *a4 = 0;
+    return false;
+}

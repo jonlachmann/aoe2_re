@@ -1213,7 +1213,7 @@ void sub_51E7F0();  // size 494, calls 8, lifted, module ui
 void sub_51E9E0();  // size 247, calls 1, lifted, module ui
 void sub_51EAE0();  // size 93, calls 3, matched, module ui
 void sub_51EB40();  // size 72, calls 0, lifted, module ui
-void sub_51EB90();  // size 147, calls 0, lifted, module ui
+void sub_51EB90();  // size 147, calls 0, wip, module ui
 void sub_51EC30();  // size 176, calls 1, lifted, module ui
 void sub_51ECE0();  // size 505, calls 0, lifted, module ui
 void sub_51EED9();  // size 54, calls 0, lifted, module ui

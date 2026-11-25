@@ -1,6 +1,6 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 618 matched, 1826 left to match (7 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 618 matched, 1826 left to match (8 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (1826)
 
@@ -42,7 +42,7 @@
 | 80 | `sub_460740` | 24697 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
 | 84 | `sub_5230F0` | 12602620 |  | 1_boot_to_menu |  |
 | 85 | `sub_522D90` | 12592118 |  | 1_boot_to_menu |  |
-| 88 | `sub_51EB90` | 153 |  | 1_boot_to_menu |  |
+| 88 | `sub_51EB90` | 153 | WIP | 1_boot_to_menu | S51EB90::M_51EB90 |
 | 89 | `sub_51EFF0` | 445778 |  | 1_boot_to_menu |  |
 | 91 | `sub_619BC0` | 341804 |  | 1_boot_to_menu |  |
 | 92 | `sub_6101EA` | 4016 |  | 1_boot_to_menu |  |

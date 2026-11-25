@@ -1,6 +1,6 @@
 # 6_match_idle
 
-880 functions called (0 first seen in this phase): 183 matched, 664 left to match (2 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+880 functions called (0 first seen in this phase): 183 matched, 664 left to match (3 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (664)
 
@@ -503,7 +503,7 @@
 | 674 | `sub_445270` | 18 |  | 5_start_game_to_match |  |
 | 677 | `sub_5A6030` | 54 |  | 1_boot_to_menu |  |
 | 678 | `sub_4AFAC0` | 54 |  | 1_boot_to_menu | pnl_btn::draw2 |
-| 679 | `sub_51EB90` | 54 |  | 1_boot_to_menu |  |
+| 679 | `sub_51EB90` | 54 | WIP | 1_boot_to_menu | S51EB90::M_51EB90 |
 | 680 | `sub_6101B0` | 72 |  | 1_boot_to_menu |  |
 | 681 | `sub_6103B3` | 198 |  | 1_boot_to_menu |  |
 | 682 | `sub_6102A9` | 162 |  | 1_boot_to_menu |  |

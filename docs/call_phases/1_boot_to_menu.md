@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 395 matched, 310 left to match (10 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 395 matched, 310 left to match (11 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (310)
 
@@ -276,7 +276,7 @@
 | 741 | `sub_522920` | 2 |  | 1_boot_to_menu |  |
 | 742 | `sub_521780` | 1 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_521780 |
 | 745 | `sub_5215F0` | 2144833 |  | 1_boot_to_menu |  |
-| 748 | `sub_51EB90` | 22 |  | 1_boot_to_menu |  |
+| 748 | `sub_51EB90` | 22 | WIP | 1_boot_to_menu | S51EB90::M_51EB90 |
 | 749 | `sub_4A0920` | 40 |  | 1_boot_to_menu |  |
 | 750 | `sub_4BC260` | 20 |  | 1_boot_to_menu | pnl_txt::draw |
 | 751 | `sub_4BC360` | 20 |  | 1_boot_to_menu | pnl_txt::draw_background2 |

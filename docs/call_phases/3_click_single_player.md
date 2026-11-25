@@ -1,6 +1,6 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 89 matched, 164 left to match (3 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 89 matched, 164 left to match (4 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (164)
 
@@ -55,7 +55,7 @@
 | 109 | `sub_460740` | 160 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
 | 113 | `sub_5230F0` | 54894 |  | 1_boot_to_menu |  |
 | 114 | `sub_522D90` | 54894 |  | 1_boot_to_menu |  |
-| 117 | `sub_51EB90` | 30 |  | 1_boot_to_menu |  |
+| 117 | `sub_51EB90` | 30 | WIP | 1_boot_to_menu | S51EB90::M_51EB90 |
 | 118 | `sub_51EFF0` | 139 |  | 1_boot_to_menu |  |
 | 120 | `sub_619BC0` | 10954 |  | 1_boot_to_menu |  |
 | 121 | `sub_610269` | 886 |  | 1_boot_to_menu |  |
