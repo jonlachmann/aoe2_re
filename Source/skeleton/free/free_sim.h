@@ -714,7 +714,7 @@ void sub_58A160();  // size 157, calls 4, lifted, module sim
 void sub_58A200();  // size 163, calls 4, lifted, module sim
 void sub_58A2B0();  // size 60, calls 2, lifted, module sim
 void sub_58A2F0();  // size 94, calls 2, lifted, module sim
-void sub_58A780();  // size 83, calls 2, lifted, module sim
+void sub_58A780();  // size 83, calls 2, matched, module sim
 void sub_58A7E0();  // size 16, calls 2, matched, module sim
 void sub_58A7F0();  // size 13, calls 0, matched, module sim
 void sub_58A800();  // size 7, calls 0, matched, module sim

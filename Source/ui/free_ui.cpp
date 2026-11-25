@@ -6271,13 +6271,78 @@ int S498DC0::M_498DC0(char a1)
     return M_4988E0();
 }
 
-// 0x4A2F40 — two flag bytes at +0xF6/+0xF7 on the 0x61EEA0-vtable object:
-// reset the +0x480 subobject on the first flag, then drive slot 0xFC from the
-// second. The original reloads ecx between the calls, so the shape is asm.
-extern void __stdcall sub_4A2D50(int a1);
+// 0x4A2F40 — two flag bytes at +0xF6/+0xF7: reset the +0x480 subobject on
+// the first flag, then drive vtable slot 0xFC from the second.
+class T4A2D50 {
+public:
+    void Other_4A2D50(int a1);
+};
 class S4A2F40 {
 public:
-    void* vtbl_00;                // +0x00 vtable 0x61EEA0
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08();
+    virtual void Vt_09();
+    virtual void Vt_10();
+    virtual void Vt_11();
+    virtual void Vt_12();
+    virtual void Vt_13();
+    virtual void Vt_14();
+    virtual void Vt_15();
+    virtual void Vt_16();
+    virtual void Vt_17();
+    virtual void Vt_18();
+    virtual void Vt_19();
+    virtual void Vt_20();
+    virtual void Vt_21();
+    virtual void Vt_22();
+    virtual void Vt_23();
+    virtual void Vt_24();
+    virtual void Vt_25();
+    virtual void Vt_26();
+    virtual void Vt_27();
+    virtual void Vt_28();
+    virtual void Vt_29();
+    virtual void Vt_30();
+    virtual void Vt_31();
+    virtual void Vt_32();
+    virtual void Vt_33();
+    virtual void Vt_34();
+    virtual void Vt_35();
+    virtual void Vt_36();
+    virtual void Vt_37();
+    virtual void Vt_38();
+    virtual void Vt_39();
+    virtual void Vt_40();
+    virtual void Vt_41();
+    virtual void Vt_42();
+    virtual void Vt_43();
+    virtual void Vt_44();
+    virtual void Vt_45();
+    virtual void Vt_46();
+    virtual void Vt_47();
+    virtual void Vt_48();
+    virtual void Vt_49();
+    virtual void Vt_50();
+    virtual void Vt_51();
+    virtual void Vt_52();
+    virtual void Vt_53();
+    virtual void Vt_54();
+    virtual void Vt_55();
+    virtual void Vt_56();
+    virtual void Vt_57();
+    virtual void Vt_58();
+    virtual void Vt_59();
+    virtual void Vt_60();
+    virtual void Vt_61();
+    virtual void Vt_62();
+    virtual void Dispatch_fc(int a1);
     char pad_04[0xf6 - 0x04];
     unsigned char field_f6;       // +0xF6
     unsigned char field_f7;       // +0xF7
@@ -6287,42 +6352,19 @@ public:
 };
 
 MATCH_FUNC(0x4A2F40)
-__declspec(naked) void S4A2F40::M_4A2F40()
+void S4A2F40::M_4A2F40()
 {
-    __asm
+    if (field_f7)
     {
-        push esi
-        mov esi, ecx
-        mov al, byte ptr [esi + 0f7h]
-        test al, al
-        je check_f6_4A2F40
-        mov eax, dword ptr [esi + 480h]
-        test eax, eax
-        je clear_f7_4A2F40
-        push 1
-        call sub_4A2D50
-    clear_f7_4A2F40:
-        mov byte ptr [esi + 0f7h], 0
-    check_f6_4A2F40:
-        mov al, byte ptr [esi + 0f6h]
-        test al, al
-        je slot_off_4A2F40
-        mov eax, dword ptr [esi]
-        push 1
-        mov ecx, esi
-        call dword ptr [eax + 0fch]
-        pop esi
-        ret
-    slot_off_4A2F40:
-        mov edx, dword ptr [esi]
-        push 0
-        mov ecx, esi
-        call dword ptr [edx + 0fch]
-        pop esi
-        ret
+        if (field_480)
+            ((T4A2D50*)this)->Other_4A2D50(1);
+        field_f7 = 0;
     }
+    if (field_f6)
+        Dispatch_fc(1);
+    else
+        Dispatch_fc(0);
 }
-
 // 0x4A33C0 — name setter at +0x100 (0x103-byte buffer terminated at +0x203)
 // and the +0x204 value; a null source clears the first byte.
 extern void __cdecl sub_5FCB40(void* dst, void* src, int n);
@@ -6385,58 +6427,38 @@ int S49F770::M_49F770(int a1, int a2)
     return 0;
 }
 
-// 0x4BB990 — copy four dwords into +0x108, store the +0x118/+0x11C pair, then
-// drive 0x4BBD30 and vtable slot 0x20 with the constant one.
-extern void __stdcall sub_4BBD30(int a1);
-struct VT4BB990 {
-    char pad_00[0x20];
-    void (__stdcall *slot_20)(int a1);
-};
+// 0x4BB990 — copy four dwords into +0x108, store the +0x118/+0x11C pair,
+// then drive 0x4BBD30 and vtable slot 0x20 with the constant one.
 class S4BB990 {
 public:
-    void* vtbl_00;                // +0x00 vtable
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Dispatch_20(int a1);
     char pad_04[0x108 - 0x04];
     int field_108[4];             // +0x108..+0x118
     int field_118;                // +0x118
     int field_11c;                // +0x11C
+    void M_4BBD30(int a1);
     void M_4BB990(int* a1, int a2, int a3);
 };
 
 MATCH_FUNC(0x4BB990)
-__declspec(naked) void S4BB990::M_4BB990(int* a1, int a2, int a3)
+void S4BB990::M_4BB990(int* a1, int a2, int a3)
 {
-    __asm
-    {
-        mov eax, dword ptr [esp + 4]
-        push esi
-        mov esi, ecx
-        push edi
-        mov edx, 4
-        lea ecx, [esi + 108h]
-    copy_4BB990:
-        mov edi, dword ptr [eax]
-        add eax, 4
-        mov dword ptr [ecx], edi
-        add ecx, 4
-        dec edx
-        jne copy_4BB990
-        mov ecx, dword ptr [esp + 14h]
-        mov eax, dword ptr [esp + 10h]
-        mov dword ptr [esi + 11ch], ecx
-        push 1
-        mov ecx, esi
-        mov dword ptr [esi + 118h], eax
-        call sub_4BBD30
-        mov edx, dword ptr [esi]
-        push 1
-        mov ecx, esi
-        call dword ptr [edx + 20h]
-        pop edi
-        pop esi
-        ret 0ch
-    }
+    int i;
+    for (i = 0; i < 4; i++)
+        field_108[i] = a1[i];
+    field_118 = a2;
+    field_11c = a3;
+    M_4BBD30(1);
+    Dispatch_20(1);
 }
-
 // 0x4BD560 — walk the +0xF8 node chain for index a1 and return its +0x04 slot
 // value; when absent, clear the first byte of the 0x73E354 fallback and return
 // its address.
@@ -6644,3 +6666,29 @@ void S4A08C0::M_4A08C0(int a1)
     g_61c278(*(int*)((char*)field_20 + 4), (int)((char*)this + 0x24), 0);
 }
 
+
+// 0x4A39F0 — set the +0x354 name from a1 (strcpy intrinsic) and the +0x458
+// value from a2; a null name clears the first byte only.
+#pragma intrinsic(strcpy)
+class S4A39F0 {
+public:
+    char pad_00[0x354];
+    char name_354[1];             // +0x354 name buffer
+    char pad_355[0x458 - 0x355];
+    int field_458;                // +0x458
+    void M_4A39F0(char* a1, int a2);
+};
+
+MATCH_FUNC(0x4A39F0)
+void S4A39F0::M_4A39F0(char* a1, int a2)
+{
+    if (a1)
+    {
+        strcpy(name_354, a1);
+        field_458 = a2;
+        return;
+    }
+    name_354[0] = 0;
+    field_458 = a2;
+}
+#pragma function(strcpy)

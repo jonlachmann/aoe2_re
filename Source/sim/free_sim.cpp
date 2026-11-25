@@ -5978,3 +5978,27 @@ void S521090::M_521090(int a1, int a2, int a3, int a4)
     if (r != -1 && (a2 & 1))
         field_5b0++;
 }
+
+// 0x58A780 — copy the 0x6645C4-derived name at +0x1776 into +0x113, then run
+// the two +0x58Axxx helpers and return this.
+#pragma intrinsic(strcpy)
+extern char* g_6645c4;
+class S58A780 {
+public:
+    char pad_00[0x113];
+    char name_113[1];             // +0x113 name buffer
+    void M_58A9D0(int a1);
+    void M_58A7F0(int a1);
+    S58A780* M_58A780(int a1);
+};
+
+MATCH_FUNC(0x58A780)
+S58A780* S58A780::M_58A780(int a1)
+{
+    int base = *(int*)(g_6645c4 + 0x24);
+    strcpy(name_113, (char*)(base + 0x1776));
+    M_58A9D0(a1);
+    M_58A7F0(0);
+    return this;
+}
+#pragma function(strcpy)

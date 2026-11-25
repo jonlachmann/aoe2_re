@@ -420,7 +420,7 @@ void sub_4A3980();  // size 23, calls 0, matched, module ui
 void sub_4A39A0();  // size 23, calls 0, matched, module ui
 void sub_4A39C0();  // size 23, calls 0, matched, module ui
 void sub_4A39E0();  // size 13, calls 0, matched, module ui
-void sub_4A39F0();  // size 85, calls 0, lifted, module ui
+void sub_4A39F0();  // size 85, calls 0, matched, module ui
 void sub_4A3A50();  // size 345, calls 7, lifted, module ui
 void sub_4A3BB0();  // size 241, calls 2, lifted, module ui
 void sub_4A3CB0();  // size 7, calls 0, matched, module ui

@@ -1637,10 +1637,13 @@ void Sc45B520::M_45B520(int a1)
 }
 
 // 0x462B50 — initialize the two +0x00/+0x104 name pointers from the shared
-// allocator, then inline-copy the name at +0x108 into the +0x04 buffer. VC6
-// emits a hand-rolled scan/copy here, so the asm keeps its exact shape.
+// allocator, then copy the embedded name at +0x108 into the +0x04 buffer.
+// strcpy becomes VC6's scan/copy intrinsic under the scoped pragma.
 extern char* __cdecl Hook_5FF0A3();
-extern void __cdecl sub_462BA0();
+class T462BA0 {
+public:
+    void Other_462BA0();
+};
 class S462B50 {
 public:
     char* field_00;               // +0x00 name pointer
@@ -1650,46 +1653,25 @@ public:
     S462B50* M_462B50();
 };
 
+#pragma intrinsic(strcpy)
 MATCH_FUNC(0x462B50)
-__declspec(naked) S462B50* S462B50::M_462B50()
+S462B50* S462B50::M_462B50()
 {
-    __asm
-    {
-        push ebx
-        push esi
-        push edi
-        mov ebx, ecx
-        call Hook_5FF0A3
-        mov ecx, ebx
-        mov dword ptr [ebx], eax
-        mov dword ptr [ebx + 104h], eax
-        call sub_462BA0
-        lea edi, [ebx + 108h]
-        or ecx, -1
-        xor eax, eax
-        lea edx, [ebx + 4]
-        repne scasb
-        not ecx
-        sub edi, ecx
-        mov eax, ecx
-        mov esi, edi
-        mov edi, edx
-        shr ecx, 2
-        rep movsd
-        mov ecx, eax
-        mov eax, ebx
-        and ecx, 3
-        rep movsb
-        pop edi
-        pop esi
-        pop ebx
-        ret
-    }
+    char* p = Hook_5FF0A3();
+    field_00 = p;
+    field_104 = p;
+    ((T462BA0*)this)->Other_462BA0();
+    strcpy(name_04, src_108);
+    return this;
 }
+#pragma function(strcpy)
 
-// 0x461CA0 — reset the 0x100-byte buffer's head/tail bytes, then forward it to
+// 0x461CA0 — reset the 0x100-byte buffer head/tail bytes, then forward it to
 // the 0x45F6F0 screen helper through the object stored at this->+0x00.
-extern void __cdecl sub_45F6F0(int a1, int a2, int a3);
+class T45F6F0_461CA0 {
+public:
+    void Other_45F6F0(int a1, int a2, char* a3);
+};
 class S461CA0 {
 public:
     void* field_00;               // +0x00 object workspace
@@ -1697,25 +1679,15 @@ public:
 };
 
 MATCH_FUNC(0x461CA0)
-__declspec(naked) void S461CA0::M_461CA0(char* a1)
+void S461CA0::M_461CA0(char* a1)
 {
-    __asm
-    {
-        mov eax, dword ptr [esp + 4]
-        xor edx, edx
-        push eax
-        push 100h
-        mov byte ptr [eax], dl
-        mov byte ptr [eax + 1], dl
-        mov byte ptr [eax + 2], dl
-        mov byte ptr [eax + 3], dl
-        mov byte ptr [eax + 3fch], 0ffh
-        mov byte ptr [eax + 3fdh], 0ffh
-        mov byte ptr [eax + 3feh], 0ffh
-        mov byte ptr [eax + 3ffh], dl
-        mov ecx, dword ptr [ecx]
-        push edx
-        call sub_45F6F0
-        ret 4
-    }
+    a1[0] = 0;
+    a1[1] = 0;
+    a1[2] = 0;
+    a1[3] = 0;
+    a1[0x3fc] = 0xff;
+    a1[0x3fd] = 0xff;
+    a1[0x3fe] = 0xff;
+    a1[0x3ff] = 0;
+    ((T45F6F0_461CA0*)field_00)->Other_45F6F0(0, 0x100, a1);
 }

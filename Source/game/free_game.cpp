@@ -2723,3 +2723,43 @@ void S42D1D0::M_42D1D0()
         ((int*)((char*)this + 0x1398))[i - 1] = v;
     }
 }
+
+// 0x43E740 — base-constructor call, own 0x61E8C0 vtable, then zero the nine
+// +0x10D4..+0x10F8 state slots.
+class T440A90 {
+public:
+    void Other_440A90();
+};
+class S43E740 {
+public:
+    void* vtbl_00;                // +0x00 vtable 0x61E8C0
+    char pad_04[0x10d4 - 0x04];
+    int field_10d4;               // +0x10D4
+    int field_10d8;               // +0x10D8
+    int field_10dc;               // +0x10DC
+    int field_10e0;               // +0x10E0
+    int field_10e4;               // +0x10E4
+    int field_10e8;               // +0x10E8
+    int field_10ec;               // +0x10EC
+    char pad_10f0[4];             // 0x10F0..0x10F4
+    int field_10f4;               // +0x10F4
+    int field_10f8;               // +0x10F8
+    S43E740* M_43E740();
+};
+
+MATCH_FUNC(0x43E740)
+S43E740* S43E740::M_43E740()
+{
+    ((T440A90*)this)->Other_440A90();
+    *(void**)this = (void*)0x61E8C0;
+    field_10d4 = 0;
+    field_10d8 = 0;
+    field_10dc = 0;
+    field_10e0 = 0;
+    field_10e4 = 0;
+    field_10e8 = 0;
+    field_10ec = 0;
+    field_10f4 = 0;
+    field_10f8 = 0;
+    return this;
+}
