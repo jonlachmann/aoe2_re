@@ -286,7 +286,7 @@ void sub_41B000();  // size 15, calls 0, matched, module app
 void sub_41B010();  // size 15, calls 0, matched, module app
 void sub_41B020();  // size 322, calls 3, lifted, module app
 void sub_41B190();  // size 174, calls 2, lifted, module app
-void sub_41B700();  // size 84, calls 0, lifted, module app
+void sub_41B700();  // size 84, calls 0, matched, module app
 void sub_41C7A0();  // size 91, calls 0, lifted, module app
 void sub_41C800();  // size 50, calls 0, matched, module app
 void sub_41C840();  // size 7, calls 0, matched, module app

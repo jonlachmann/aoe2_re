@@ -25956,8 +25956,8 @@
    {
     "address": "0x4B3690",
     "name": "sub_4B3690",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_edit.cpp"
    },
    {
     "address": "0x4A0920",
@@ -66491,8 +66491,8 @@
    {
     "address": "0x5BC500",
     "name": "sub_5BC500",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/C_vt62C1E0.cpp"
    }
   ],
   "extra_methods": [
@@ -66814,8 +66814,8 @@
    {
     "address": "0x5BB080",
     "name": "sub_5BB080",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/sim/C_vt62C1E0.cpp",
     "evidence": "same object, connected by this-edge call sites"
    },
    {

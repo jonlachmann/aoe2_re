@@ -146,7 +146,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt62B5A0` | sim | 0x62B5A0 | Source/sim/free_sim.cpp | Source/app/C_vt61CE24.cpp, Source/app/C_vt61D890.cpp, Source/app/C_vt61DF78.cpp, Source/gfx/C_vt61DA40.cpp, Source/sim/C_vt62B5A0.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_vt622368.cpp | 12/102 |
 | `C_vt62B750` | sim | 0x62B750 | Source/sim/free_sim.cpp | Source/app/C_vt61CE24.cpp, Source/app/C_vt61D890.cpp, Source/app/C_vt61DF78.cpp, Source/gfx/C_vt61DA40.cpp, Source/sim/C_vt62B5A0.cpp, Source/sim/C_vt62B750.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_vt622368.cpp | 13/102 |
 | `C_vt62C064` | sim | 0x62C064 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp | 32/63 |
-| `C_vt62C1E0` | sim | 0x62C1E0 | Source/sim/C_vt62C1E0.cpp | Source/app/C_vt61D890.cpp, Source/app/C_vt61DF78.cpp, Source/game/free_game.cpp, Source/gfx/C_vt61DA40.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_edit.cpp | 79/160 |
+| `C_vt62C1E0` | sim | 0x62C1E0 | Source/sim/C_vt62C1E0.cpp | Source/app/C_vt61D890.cpp, Source/app/C_vt61DF78.cpp, Source/game/free_game.cpp, Source/gfx/C_vt61DA40.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_edit.cpp | 81/160 |
 | `C_vt62C47C` | sim | 0x62C47C | Source/sim/free_sim.cpp | Source/ui/C_pnl_edit.cpp | 3/5 |
 | `C_vt62C7CC` | sim | 0x62C7CC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp | 24/79 |
 | `C_vt62C9CC` | sim | 0x62C9CC | Source/sim/C_vt62C9CC.cpp | Source/engine-late/C_view.cpp, Source/engine-late/free_engine-late.cpp, Source/sim/free_sim.cpp | 6/72 |
@@ -155,7 +155,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_cluster_4BD5A0` | ui | — | Source/ui/free_ui.cpp | Source/ui/C_cluster_4BD5A0.cpp | 2/2 |
 | `C_pnl_btn` | ui | 0x6224E4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 26/63 |
 | `C_pnl_btn` | ui | 0x622838 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 26/63 |
-| `C_pnl_edit` | ui | 0x622934 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/free_ui.cpp | 33/66 |
+| `C_pnl_edit` | ui | 0x622934 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/free_ui.cpp | 34/66 |
 | `C_pnl_inp` | ui | 0x622A28 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 32/74 |
 | `C_pnl_lst` | ui | 0x622B50 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/C_pnl_lst.cpp, Source/ui/free_ui.cpp | 30/87 |
 | `C_pnl_msg` | ui | 0x622C74 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 34/63 |

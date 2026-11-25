@@ -18,7 +18,7 @@ public:
     virtual void slot_005();  // slot +0x014: sub_4B32F0 [matched] — Source/ui/C_pnl_edit.cpp
     virtual void slot_006();  // slot +0x018: sub_4A07E0 [lifted]
     virtual void slot_007();  // slot +0x01C: sub_4A0890 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
-    virtual void slot_008();  // slot +0x020: sub_4B3690 [lifted]
+    virtual void slot_008();  // slot +0x020: sub_4B3690 [matched] — Source/ui/C_pnl_edit.cpp
     virtual void slot_009();  // slot +0x024: sub_4A0920 [lifted]
     virtual void slot_010();  // slot +0x028: sub_4A0C10 [lifted]
     virtual void slot_011();  // slot +0x02C: sub_4A0C60 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp

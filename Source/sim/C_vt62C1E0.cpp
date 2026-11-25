@@ -305,3 +305,36 @@ void C_vt62C1E0::Set_5BC4D0(int a, int b, int c, int d)
     *(int*)((char*)this + 0x11c8) = c;
     *(int*)((char*)this + 0x11cc) = d;
 }
+
+extern int g_65C928;
+extern int g_65C92C;
+extern int g_65B480;
+extern int g_65B484;
+extern char g_65B488;
+extern char g_65BED8;
+extern char g_659FE0;
+extern char g_65AA30;
+extern void __cdecl sub_5FCB40(char* dst, char* src, int n);
+
+// 0x5BB080 — clear or copy the 0x1F-stride record at +0x10A8.
+MATCH_FUNC(0x5BB080)
+void C_vt62C1E0::M_5BB080(int a1, char* a2)
+{
+    if (a2 == 0) {
+        *(char*)((char*)this + a1 * 0x1f + 0x10a8) = 0;
+    } else {
+        char* rec = (char*)this + a1 * 0x1f;
+        sub_5FCB40(rec + 0x10a8, a2, 0x1e);
+        *(char*)(rec + 0x10c6) = 0;
+    }
+}
+
+// 0x5BC500 — branch on the basegame +0x8E0 flag and load one 4-dword set.
+MATCH_FUNC(0x5BC500)
+void C_vt62C1E0::M_5BC500()
+{
+    if (*(short*)((char*)this->field_24 + 0x8e0) == 1)
+        this->Set_5BC4D0((int)&g_65B488, g_65C928, (int)&g_65BED8, g_65C92C);
+    else
+        this->Set_5BC4D0((int)&g_659FE0, g_65B480, (int)&g_65AA30, g_65B484);
+}

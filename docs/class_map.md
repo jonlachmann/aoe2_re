@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1609 |
+| matched | 1618 |
 | wip | 26 |
 | verified | 18 |
-| lifted | 6098 |
+| lifted | 6089 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -116,7 +116,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x6225E0` | `C_vt6225E0` | 89 | 0 | panel_ez | 36 | 53 |
 | `0x622744` | `C_vt622744` | 61 | 2 | — | 32 | 31 |
 | `0x622838` | `C_pnl_btn` | 63 | 0 | pnl_btn | 26 | 37 |
-| `0x622934` | `C_pnl_edit` | 61 | 5 | pnl_edit | 33 | 33 |
+| `0x622934` | `C_pnl_edit` | 61 | 5 | pnl_edit | 34 | 32 |
 | `0x622A28` | `C_pnl_inp` | 74 | 0 | pnl_inp | 31 | 43 |
 | `0x622B50` | `C_pnl_lst` | 73 | 14 | pnl_lst | 29 | 58 |
 | `0x622C74` | `C_pnl_msg` | 62 | 1 | pnl_msg | 34 | 29 |
@@ -239,7 +239,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x62BD70` | `C_tpnl_per` | 61 | 1 | tpnl_per | 33 | 29 |
 | `0x62BEF0` | `C_tpnl_tim` | 61 | 1 | tpnl_tim | 31 | 31 |
 | `0x62C064` | `C_vt62C064` | 62 | 1 | — | 32 | 31 |
-| `0x62C1E0` | `C_vt62C1E0` | 87 | 73 | basegame | 77 | 83 |
+| `0x62C1E0` | `C_vt62C1E0` | 87 | 73 | basegame | 79 | 81 |
 | `0x62C470` | `C_vt62C470` | 3 | 1 | — | 3 | 1 |
 | `0x62C47C` | `C_vt62C47C` | 4 | 1 | — | 3 | 2 |
 | `0x62C5A4` | `C_vt62C5A4` | 4 | 0 | — | 0 | 4 |
@@ -597,14 +597,14 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Functions with no class evidence
 | Region | Functions | Matched | WIP | Left |
 |---|---|---|---|---|
-| app | 323 | 129 | 2 | 192 |
+| app | 323 | 130 | 2 | 191 |
 | crt | 647 | 46 | 2 | 599 |
 | engine-late | 319 | 35 | 0 | 284 |
-| game | 436 | 146 | 4 | 286 |
+| game | 436 | 147 | 4 | 285 |
 | gfx | 410 | 61 | 2 | 347 |
 | runtime-data | 20 | 3 | 0 | 17 |
 | sim | 1283 | 248 | 2 | 1033 |
-| ui | 1230 | 199 | 4 | 1027 |
+| ui | 1230 | 203 | 4 | 1023 |
 
 ## Skeleton tree
 `Source/skeleton/` holds declarations only, generated from this map and

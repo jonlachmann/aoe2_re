@@ -2589,3 +2589,25 @@ void Sc425650::M_425650(int a1)
     this->field_15fc->Hook_43A0A0(a1);
     this->field_15fc->Hook_43A090(a1);
 }
+
+// 0x422180 — compare a trimmed +0x518 string of the basegame object with a1.
+extern int (__stdcall *g_61C2D8)(char* a1);
+extern void __cdecl sub_5FCB40(char* dst, char* src, int n);
+extern int __cdecl sub_5FCC80(char* a1, int a2);
+class Sc422180 {
+public:
+    char pad_00[0x24];
+    void* field_24;               // +0x24 basegame object
+    bool M_422180(int a1);
+};
+MATCH_FUNC(0x422180)
+bool Sc422180::M_422180(int a1)
+{
+    char buf[0x100];
+    sub_5FCB40(buf, (char*)this->field_24 + 0x518, 0xff);
+    buf[0xff] = 0;
+    g_61C2D8(buf);
+    if (sub_5FCC80(buf, a1))
+        return 1;
+    return 0;
+}

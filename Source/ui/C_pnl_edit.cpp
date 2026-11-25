@@ -34,3 +34,14 @@ __declspec(naked) void C_pnl_edit::M_5ED9FA()
         jmp dword ptr [g_pfn_61c0bc]
     }
 }
+
+extern void (__stdcall *g_61C278)(void* a1, int a2, int a3);
+
+// 0x4B3690 — slot 8: clear the +0x6c flag then free the +0xf8 block.
+MATCH_FUNC(0x4B3690)
+void C_pnl_edit::slot08_4B3690(int a1)
+{
+    this->Hook_4A08C0(1);
+    if (field_6c != 0 && a1 != 0 && field_f8 != 0 && field_108 == 0)
+        g_61C278(field_f8, 0, 1);
+}

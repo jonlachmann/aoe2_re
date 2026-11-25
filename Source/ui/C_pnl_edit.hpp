@@ -10,6 +10,12 @@ public:
     virtual void slot_000();
     virtual void slot_001();
     virtual void slot02_4A0750(int a1, int a2, int a3, int a4);
+    virtual void slot_003();
+    virtual void slot_004();
+    virtual void slot_005();
+    virtual void slot_006();
+    virtual void slot_007();
+    virtual void slot08_4B3690(int a1);
 
     char pad_04[0x6c - 4];
     int field_6c;                 // +0x6C
@@ -19,6 +25,7 @@ public:
     int field_108;                // +0x108
 
     void Hook_4A07A0(int a1);     // unresolved shared slot body at 0x4A07A0
+    void Hook_4A08C0(int a1);     // unresolved shared slot body at 0x4A08C0
     static void M_4378C0();
     void M_5ED9F4();
     void M_5ED9FA();

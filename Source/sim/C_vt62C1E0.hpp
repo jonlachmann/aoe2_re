@@ -15,7 +15,8 @@ public:
 
 class C_vt62C1E0 {
 public:
-    char pad_00[0x28];
+    char pad_00[0x24];
+    void* field_24;               // +0x24 basegame object
     void* field_28;               // +0x28 window handle
     char pad_2c[0x74 - 0x2c];
     int field_74;                 // +0x74
@@ -117,4 +118,6 @@ public:
     void SetInt_5BB220(int v);
     unsigned char* Clear_5BB230();
     void Set_5BC4D0(int a, int b, int c, int d);
+    void M_5BB080(int a1, char* a2);
+    void M_5BC500();
 };

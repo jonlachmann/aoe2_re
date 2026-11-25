@@ -3014,3 +3014,30 @@ int __stdcall sub_41D670(int a1, int a2, int a3, int a4)
         return p->field_0->slot_08(p, a1, a2, a3, a4);
     return 0;
 }
+
+// 0x41B700 — copy a string while expanding each 0x41..0x5F byte through the
+// 0x64D3F4 word table until the destination count reaches the limit.
+extern int g_64d3f4[];
+MATCH_FUNC(0x41B700)
+int __cdecl sub_41B700(char* a1, char* a2, int a3)
+{
+    char* sp = a1;
+    char* dp = a2;
+    char c = *sp;
+    sp++;
+    int n = 0;
+    while (c != 0 && n < a3) {
+        if (c >= 'A' && c <= '_') {
+            int v = g_64d3f4[c];
+            *dp++ = (char)(v >> 8);
+            *dp++ = (char)v;
+            n += 2;
+        } else {
+            *dp++ = c;
+            n++;
+        }
+        c = *sp++;
+    }
+    *dp = 0;
+    return (int)dp;
+}
