@@ -352,6 +352,38 @@ __declspec(naked) void __cdecl sub_5FCDE1(int a1, int a2, int a3)
     }
 }
 
+// 0x5F9780 — fastcall two-pointer splice: +0x14 link moves to the second
+// object's +0x08 slot.
+MATCH_FUNC(0x5F9780)
+void __fastcall sub_5F9780(int* a1, int* a2)
+{
+    *(int*)((char*)a2 + 8) = *(int*)((char*)a1 + 0x14);
+    *(int*)((char*)a1 + 0x14) = (int)a2;
+}
+
+// 0x5F9EF0 — fastcall free-list push: the low byte before the block indexes
+// the 0x64-based slot array, then the block header's +0x0C count drops.
+MATCH_FUNC(0x5F9EF0)
+__declspec(naked) void __fastcall sub_5F9EF0(int* p)
+{
+    __asm
+    {
+        push esi
+        xor eax, eax
+        mov esi, ecx
+        mov al, byte ptr [ecx - 1]
+        and esi, 0xffff0000
+        mov edx, dword ptr [esi]
+        lea eax, [edx + eax*4 + 0x64]
+        mov edx, dword ptr [eax]
+        mov dword ptr [ecx], edx
+        mov dword ptr [eax], ecx
+        dec word ptr [esi + 0xc]
+        pop esi
+        ret
+    }
+}
+
 extern int g_772a1c;
 MATCH_FUNC(0x6004BD)
 int Get_6004BD()
@@ -489,3 +521,4 @@ int __stdcall sub_5FB470(int a1)
 {
     return Hook_5FB490(0x18, 0, 0, a1, 0, 0, 0, 0, 0);
 }
+

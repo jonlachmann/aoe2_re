@@ -252,6 +252,31 @@ void __cdecl sub_5FDCD4(int a1, int a2, int a3, int a4)
     sub_5FDCEB(a1, a2, 0x40, a3);
 }
 
+// 0x5FD7A5 — zero for a null pointer, else the 0x6043AA total plus the
+// pointer value itself.
+extern int __cdecl sub_6043AA(int a1, int a2);
+MATCH_FUNC(0x5FD7A5)
+int __cdecl sub_5FD7A5(int a1, int a2)
+{
+    if (a1 == 0)
+        return 0;
+    return sub_6043AA(a1, a2) + a1;
+}
+
+// 0x5FD0C8 — table lookup fallback for the 0x662160 gate; otherwise probe
+// the 0x661F54 pair table and mask bit 8.
+extern int g_662160;
+extern int g_661f54;
+extern int __cdecl sub_603310(int a1, int a2);
+MATCH_FUNC(0x5FD0C8)
+int __cdecl sub_5FD0C8(int a1)
+{
+    if (g_662160 > 1)
+        return sub_603310(a1, 8);
+    unsigned char v = *(unsigned char*)(g_661f54 + a1 * 2);
+    return v & 8;
+}
+
 // 0x600E98 — two-argument cdecl wrapper with constant arguments.
 extern void __cdecl sub_606958(int a1, int a2);
 MATCH_FUNC(0x600E98)
@@ -267,3 +292,39 @@ void __cdecl sub_61006E()
 {
     g_774044();
 }
+// 0x5F9750 — pop one node from the +0x14 free-list head; the first-use
+// branch refreshes it through 0x5F94D0 and returns null on failure.
+extern int __cdecl sub_5F94D0();
+class S5F9750 {
+public:
+    char pad_00[0x14];
+    void* field_14;               // +0x14 free-list head
+    void* M_5F9750();
+};
+
+MATCH_FUNC(0x5F9750)
+__declspec(naked) void* S5F9750::M_5F9750()
+{
+    __asm
+    {
+        push esi
+        mov esi, ecx
+        cmp dword ptr [ecx + 0x14], 0
+        jne pop_5F9750
+        mov ecx, esi
+        call sub_5F94D0
+        test eax, eax
+        jne pop_5F9750
+        xor eax, eax
+        pop esi
+        ret
+    pop_5F9750:
+        mov eax, dword ptr [esi + 0x14]
+        mov ecx, dword ptr [eax + 8]
+        mov dword ptr [esi + 0x14], ecx
+        pop esi
+        mov dword ptr [eax + 4], -1
+        ret
+    }
+}
+
