@@ -811,22 +811,20 @@ public:
     char Find_539890(int a2, int* a3);
 };
 
-WIP_FUNC(0x539890)
+MATCH_FUNC(0x539890)
 char S539890::Find_539890(int a2, int* a3)
 {
     int* v3 = this->head;
     int v4 = 1;
     if (v3) {
-        while (v4 != a2) {
+        while (v3) {
+            if (v4 == a2) {
+                *a3 = (int)v3;
+                return 1;
+            }
             v3 = *(int**)((char*)v3 + 24);
             ++v4;
-            if (!v3) {
-                *a3 = 0;
-                return 0;
-            }
         }
-        *a3 = (int)v3;
-        return 1;
     }
     *a3 = 0;
     return 0;
@@ -841,20 +839,18 @@ public:
     char Find_5398D0(int a2, int* a3);
 };
 
-WIP_FUNC(0x5398D0)
+MATCH_FUNC(0x5398D0)
 char S5398D0::Find_5398D0(int a2, int* a3)
 {
     int* v3 = this->head;
     if (v3) {
-        while (*(int*)((char*)v3 + 4) != a2) {
-            v3 = *(int**)((char*)v3 + 24);
-            if (!v3) {
-                *a3 = 0;
-                return 0;
+        while (v3) {
+            if (*(int*)((char*)v3 + 4) == a2) {
+                *a3 = (int)v3;
+                return 1;
             }
+            v3 = *(int**)((char*)v3 + 24);
         }
-        *a3 = (int)v3;
-        return 1;
     }
     *a3 = 0;
     return 0;
@@ -894,15 +890,15 @@ public:
     int Get_54BDB0();
 };
 
-WIP_FUNC(0x54BDB0)
+MATCH_FUNC(0x54BDB0)
 int S54BDB0::Get_54BDB0()
 {
-    if (*(float*)((char*)this->object + 68) <= 0.0f)
-        return *(int*)((char*)*(int**)((volatile char*)this + 48) + 52);
-    int result = *(int*)((char*)*(int**)((volatile char*)this + 48) + 64);
-    if (!result)
-        return *(int*)((char*)*(int**)((volatile char*)this + 48) + 52);
-    return result;
+    if (*(float*)((char*)this->object + 68) > 0.0f) {
+        int result = *(int*)((char*)*(int**)((char*)this + 48) + 64);
+        if (result)
+            return result;
+    }
+    return *(int*)((char*)*(int**)((char*)this + 48) + 52);
 }
 
 // 0x54BDE0 — same value choice through the object's own member.
@@ -1036,17 +1032,18 @@ public:
     int Contains_580AF0(int a2);
 };
 
-WIP_FUNC(0x580AF0)
+MATCH_FUNC(0x580AF0)
 int S580AF0::Contains_580AF0(int a2)
 {
-    int v2 = 0;
-    int* i = (int*)this + 345;
-    for (; *i != a2; i += 6) {
-        ++v2;
-        if (v2 == 50)
-            return 0;
+    int result = 0;
+    int* p = (int*)((char*)this + 0x564);
+    while (result < 50) {
+        if (*p == a2)
+            return 1;
+        ++result;
+        p += 6;
     }
-    return 1;
+    return 0;
 }
 
 // 0x580E50 — four-entry bounded table at self[826].

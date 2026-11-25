@@ -188,15 +188,15 @@ int S4567F0::Add_4567F0(int a2)
 {
     int result = 0;
     int* i = (int*)this + 528;
-    while (*i > 0) {
-        ++result;
-        ++i;
-        if (result >= 50)
-            break;
-    }
-    if (result >= 50)
+loop:
+    if (*i <= 0) {
+        this->values[result] = a2;
         return result;
-    this->values[result] = a2;
+    }
+    ++result;
+    ++i;
+    if (result < 50)
+        goto loop;
     return result;
 }
 

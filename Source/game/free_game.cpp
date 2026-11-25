@@ -497,11 +497,12 @@ public:
 WIP_FUNC(0x438840)
 unsigned S438840::Append_438840(int a2, int a3)
 {
-    this->values[20 * a2 + this->count] = a3;
-    this->count = this->count + 1;
-    unsigned result = this->count;
+    int* self = (int*)this;
+    self[20 * a2 + 145 + self[144]] = a3;
+    unsigned result;
+    result = self[144] = self[144] + 1;
     if (result >= 0x14)
-        this->count = 0;
+        self[144] = 0;
     return result;
 }
 
@@ -1585,18 +1586,19 @@ public:
     int field_2c;
     char pad_30[0xd0 - 0x30];
     S43A420Tail tail_d0;
-    void Init_43A420();
+    int Init_43A420();
 };
 
 WIP_FUNC(0x43A420)
-void S43A420::Init_43A420()
+int S43A420::Init_43A420()
 {
     field_28 = 0;
     field_2c = 0;
-    S43A420Tail* tail = (S43A420Tail*)((char*)this + 0xd0);
-    tail->field_0 = 0;
-    tail->field_4 = 0;
-    tail->field_8 = 0;
+    char* result = (char*)this + 0xd0;
+    *((int*)result) = 0;
+    *((int*)(result + 4)) = 0;
+    *(result + 8) = 0;
+    return (int)result;
 }
 
 class S43GetBulk {
@@ -1918,16 +1920,18 @@ public:
     unsigned int count_218;
     char pad_21c[0x220 - 0x21c];
     char* base_220;
-    char* M_4238D0(int i);
+    char* M_4238D0(unsigned a2);
 };
 
 WIP_FUNC(0x4238D0)
-char* S4238D0::M_4238D0(int i)
+char* S4238D0::M_4238D0(unsigned a2)
 {
-    char* p = base_220 + i * 160;
-    if (p == 0 || (unsigned)i > count_218)
+    int* self = (int*)this;
+    int base = self[136];
+    char* result = (char*)(base + 160 * a2);
+    if (!result || a2 > self[134])
         return (char*)&g_64DB20;
-    return p;
+    return result;
 }
 
 // sub_4254D0 (VA 0x4254D0, 0x15 bytes) - member: field_1528 defaults to 1.
@@ -2047,12 +2051,16 @@ public:
     unsigned char GetBit_433E50();
 };
 
-WIP_FUNC(0x433E50)
+MATCH_FUNC(0x433E50)
 unsigned char S433E50::GetBit_433E50()
 {
     if (field_18 == 0)
         return 0;
-    return (unsigned char)((*(int*)(field_14 + 4) >> 1) & 1);
+    int w = *(int*)(field_14 + 4);
+    unsigned char v = (unsigned char)w;
+    v = v >> 1;
+    v = v & 1;
+    return v;
 }
 
 // sub_435830 (VA 0x435830, 0xF bytes) - member: copies the float at

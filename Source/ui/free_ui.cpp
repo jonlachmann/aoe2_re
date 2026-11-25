@@ -825,12 +825,11 @@ int __cdecl sub_48BF10(int a1);
 WIP_FUNC(0x48BF10)
 int __cdecl sub_48BF10(int a1)
 {
-    if (a1) {
-        if (*(unsigned char*)(a1 + 78) == 80) {
-            int v = *(int*)(a1 + 452);
-            if (v)
-                return v;
-        }
+    if (a1 == 0)
+        return 0;
+    if (*(unsigned char*)(a1 + 78) == 80) {
+        if (*(int*)(a1 + 452))
+            return *(int*)(a1 + 452);
     }
     return a1;
 }
@@ -1048,16 +1047,17 @@ public:
     int Compute_494DA0(float a2);
 };
 
-WIP_FUNC(0x494DA0)
+MATCH_FUNC(0x494DA0)
 int S494DA0Body::Compute_494DA0(float a2)
 {
     this->field_c8 = a2;
-    int result = (int)this->field_00;
-    double v3 = (double)*(int*)(result + 8);
+    int* result = this->field_00;
+    float v = (float)*(int*)((char*)result + 8);
     this->field_cc = a2;
-    this->field_d0 = (float)(v3 - a2);
-    this->field_d4 = (float)((double)*(int*)(result + 12) - a2);
-    return result;
+    this->field_d0 = v - a2;
+    float v2 = (float)*(int*)((char*)result + 12);
+    this->field_d4 = v2 - a2;
+    return (int)result;
 }
 
 // 0x499BA0 — replace underscores with spaces in place; returns the terminator.
@@ -1103,7 +1103,7 @@ char S4A9F20::Round_4A9F20()
 {
     int v = this->field_14 + 3;
     char result = (char)v;
-    return result & 0xFC;
+    return (char)(result & 0xFC);
 }
 
 // 0x4ADF40 — reset four trailing short slots to -1.
@@ -1183,15 +1183,17 @@ public:
     char Check_4E8230(int a2);
 };
 
-WIP_FUNC(0x4E8230)
+MATCH_FUNC(0x4E8230)
 char S4E8230::Check_4E8230(int a2)
 {
     int* v2 = this->field_1200;
     int* v3 = *(int**)((char*)v2 + 76);
     int* v4 = *(int**)((char*)v3 + 4 * a2);
     int* v5 = *(int**)((char*)v4 + 168);
-    return *(unsigned char*)((char*)v2 + 650) &&
-           *(float*)((char*)v5 + 28) > 0.0f;
+    if (*(unsigned char*)((char*)v2 + 650) &&
+        *(float*)((char*)v5 + 28) > 0.0f)
+        return (char)1;
+    return (char)0;
 }
 
 class S464D90 {
@@ -2823,19 +2825,19 @@ public:
     char* list_4;
     char pad_08[0x2c - 0x08];
     int field_2c;
-    void M_4A6A90(int v);
+    int M_4A6A90(int v);
 };
 
-WIP_FUNC(0x4A6A90)
-void S4A6A90::M_4A6A90(int v)
+MATCH_FUNC(0x4A6A90)
+int S4A6A90::M_4A6A90(int v)
 {
     char* p = list_4;
     while (p != 0)
         p = *(char**)(p + 4);
-    int vv = v;
-    int old = field_2c;
-    if (vv == 1)
-        field_2c = old - 1;
+    int result = field_2c;
+    if (v == 1)
+        field_2c = result - 1;
+    return result;
 }
 
 // sub_4A6B50 (VA 0x4A6B50, 0x11 bytes) - member: stores two args at +4/+8.
