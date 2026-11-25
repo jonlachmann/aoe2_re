@@ -6692,3 +6692,41 @@ void S4A39F0::M_4A39F0(char* a1, int a2)
     field_458 = a2;
 }
 #pragma function(strcpy)
+
+// 0x4A1E50 — when the +0x40 subobject exists, forward through its 0x4A1EA0
+// method; otherwise map the masked a1 selector to the +0xE0 value.
+class T4A1EA0 {
+public:
+    void Other_4A1EA0(void* a1, int a2, short a3);
+};
+class S4A1E50 {
+public:
+    char pad_00[0x40];
+    void* field_40;               // +0x40 subobject
+    char pad_44[0xe0 - 0x44];
+    int field_e0;                 // +0xE0 mapped value
+    void M_4A1E50(int a1, short a2);
+};
+
+MATCH_FUNC(0x4A1E50)
+void S4A1E50::M_4A1E50(int a1, short a2)
+{
+    if (field_40)
+    {
+        ((T4A1EA0*)field_40)->Other_4A1EA0(this, a1, a2);
+        return;
+    }
+    int sel = a1 & 0xff;
+    switch (sel)
+    {
+    case 0:
+        field_e0 = a2;
+        break;
+    case 1:
+        field_e0 = 0;
+        break;
+    case 2:
+        field_e0 = 0;
+        break;
+    }
+}

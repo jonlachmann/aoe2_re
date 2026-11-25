@@ -6002,3 +6002,37 @@ S58A780* S58A780::M_58A780(int a1)
     return this;
 }
 #pragma function(strcpy)
+
+// 0x51EAE0 — dispose a 0x51Exx state object: conditional release of +0x0C,
+// a possible 0x4BE6D0 transfer, then per-index 0x51FA10 resets over +0x18 and
+// the +0x08 buffer release.
+extern void __cdecl sub_4BE6D0(int a1, int a2);
+class S51EAE0 {
+public:
+    int field_00;                 // +0x00 release mode
+    int field_04;                 // +0x04 transfer argument
+    void* field_08;               // +0x08 buffer
+    void* field_0c;               // +0x0C conditional buffer
+    char pad_10[0x18 - 0x10];
+    int field_18;                 // +0x18 count
+    void M_51FA10(int a1);
+    void M_51EAE0();
+};
+
+MATCH_FUNC(0x51EAE0)
+void S51EAE0::M_51EAE0()
+{
+    if (field_0c)
+    {
+        if (field_00 == 1)
+            sub_5F90B0((int)field_0c);
+        if (field_00 == 0)
+            sub_4BE6D0((int)field_0c, field_04);
+    }
+    if (field_08)
+    {
+        for (int i = 0; i < field_18; i++)
+            M_51FA10(i);
+        sub_5F90B0((int)field_08);
+    }
+}
