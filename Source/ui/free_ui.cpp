@@ -7417,3 +7417,225 @@ int __cdecl sub_4BE760(int a1, int a2)
     sub_5FDFB5(r, 0, 0);
     return r;
 }
+
+// 0x4BE080 — build the two-element {4,4} block and run the six-argument
+// request through the field_04 or field_08 object; on success return the
+// call-updated a2 parameter, otherwise -1.
+class S4BE080 {
+public:
+    char pad_00[4];
+    void* field_04;                 // +0x04 object
+    void* field_08;                 // +0x08 object
+    int M_4BE080(int a1, int a2);
+};
+
+MATCH_FUNC(0x4BE080)
+int S4BE080::M_4BE080(int a1, int a2)
+{
+    int block[2] = { 4, 4 };
+    int rc;
+    if (a1)
+        rc = g_61C004(field_04, a2, 0, &block[1], &a2, &block[0]);
+    else
+        rc = g_61C004(field_08, a2, 0, &block[1], &a2, &block[0]);
+    if (rc == 0)
+        return a2;
+    return -1;
+}
+
+// 0x4BDE90 — zero the three +0x00..+0x08 handles, then run the three 9-argument
+// 0x61C008 table calls that populate them (+0x04/+0x0C, this/+0x0C, +0x08/+0x0C)
+// and return the object.
+class S4BDE90 {
+public:
+    int field_00;                   // +0x00
+    int field_04;                   // +0x04
+    int field_08;                   // +0x08
+    int field_0c;                   // +0x0C
+    S4BDE90* M_4BDE90(int a1);
+};
+extern int (__stdcall *g_61C008)(int a1, int a2, int a3, int a4, int a5,
+                                 int a6, int a7, void* a8, void* a9);
+
+MATCH_FUNC(0x4BDE90)
+S4BDE90* S4BDE90::M_4BDE90(int a1)
+{
+    field_00 = 0;
+    field_04 = 0;
+    field_08 = 0;
+    g_61C008(0x80000001, a1, 0, 0, 0, 0xf003f, 0, &field_04, &field_0c);
+    g_61C008(0x80000002, a1, 0, 0, 0, 0xf003f, 0, this, &field_0c);
+    g_61C008(0x80000002, a1, 0, 0, 0, 1, 0, &field_08, &field_0c);
+    return this;
+}
+
+// 0x4ECF80 — two virtual slots on this object (+0x10C and +0x120) guard the
+// final +0xF4 call on the +0x974 subobject, gated by +0x1C90 on 0x6645C4.
+class T4ECF80Sub {
+public:
+    virtual void slot_000();
+    virtual void slot_001();
+    virtual void slot_002();
+    virtual void slot_003();
+    virtual void slot_004();
+    virtual void slot_005();
+    virtual void slot_006();
+    virtual void slot_007();
+    virtual void slot_008();
+    virtual void slot_009();
+    virtual void slot_010();
+    virtual void slot_011();
+    virtual void slot_012();
+    virtual void slot_013();
+    virtual void slot_014();
+    virtual void slot_015();
+    virtual void slot_016();
+    virtual void slot_017();
+    virtual void slot_018();
+    virtual void slot_019();
+    virtual void slot_020();
+    virtual void slot_021();
+    virtual void slot_022();
+    virtual void slot_023();
+    virtual void slot_024();
+    virtual void slot_025();
+    virtual void slot_026();
+    virtual void slot_027();
+    virtual void slot_028();
+    virtual void slot_029();
+    virtual void slot_030();
+    virtual void slot_031();
+    virtual void slot_032();
+    virtual void slot_033();
+    virtual void slot_034();
+    virtual void slot_035();
+    virtual void slot_036();
+    virtual void slot_037();
+    virtual void slot_038();
+    virtual void slot_039();
+    virtual void slot_040();
+    virtual void slot_041();
+    virtual void slot_042();
+    virtual void slot_043();
+    virtual void slot_044();
+    virtual void slot_045();
+    virtual void slot_046();
+    virtual void slot_047();
+    virtual void slot_048();
+    virtual void slot_049();
+    virtual void slot_050();
+    virtual void slot_051();
+    virtual void slot_052();
+    virtual void slot_053();
+    virtual void slot_054();
+    virtual void slot_055();
+    virtual void slot_056();
+    virtual void slot_057();
+    virtual void slot_058();
+    virtual void slot_059();
+    virtual void slot_060();
+    virtual void slot_061(int a1);
+};
+class T4ECF80G {
+public:
+    char pad_00[0x1c90];
+    void* field_1c90;               // +0x1C90
+};
+class S4ECF80 {
+public:
+    virtual void slot_000();
+    virtual void slot_001();
+    virtual void slot_002();
+    virtual void slot_003();
+    virtual void slot_004();
+    virtual void slot_005();
+    virtual void slot_006();
+    virtual void slot_007();
+    virtual void slot_008();
+    virtual void slot_009();
+    virtual void slot_010();
+    virtual void slot_011();
+    virtual void slot_012();
+    virtual void slot_013();
+    virtual void slot_014();
+    virtual void slot_015();
+    virtual void slot_016();
+    virtual void slot_017();
+    virtual void slot_018();
+    virtual void slot_019();
+    virtual void slot_020();
+    virtual void slot_021();
+    virtual void slot_022();
+    virtual void slot_023();
+    virtual void slot_024();
+    virtual void slot_025();
+    virtual void slot_026();
+    virtual void slot_027();
+    virtual void slot_028();
+    virtual void slot_029();
+    virtual void slot_030();
+    virtual void slot_031();
+    virtual void slot_032();
+    virtual void slot_033();
+    virtual void slot_034();
+    virtual void slot_035();
+    virtual void slot_036();
+    virtual void slot_037();
+    virtual void slot_038();
+    virtual void slot_039();
+    virtual void slot_040();
+    virtual void slot_041();
+    virtual void slot_042();
+    virtual void slot_043();
+    virtual void slot_044();
+    virtual void slot_045();
+    virtual void slot_046();
+    virtual void slot_047();
+    virtual void slot_048();
+    virtual void slot_049();
+    virtual void slot_050();
+    virtual void slot_051();
+    virtual void slot_052();
+    virtual void slot_053();
+    virtual void slot_054();
+    virtual void slot_055();
+    virtual void slot_056();
+    virtual void slot_057();
+    virtual void slot_058();
+    virtual void slot_059();
+    virtual void slot_060();
+    virtual void slot_061();
+    virtual void slot_062();
+    virtual void slot_063();
+    virtual void slot_064();
+    virtual void slot_065();
+    virtual void slot_066();
+    virtual int slot_067(void* a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8);
+    virtual void slot_068();
+    virtual void slot_069();
+    virtual void slot_070();
+    virtual void slot_071();
+    virtual int slot_072(void* a1, void* a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);
+
+    char pad_04[0x970 - 0x04];
+    void* field_970;                // +0x970
+    void* field_974;                // +0x974
+    void M_4ECF80();
+};
+extern T4ECF80G* g_6645c4;
+
+MATCH_FUNC(0x4ECF80)
+void S4ECF80::M_4ECF80()
+{
+    if (slot_067(this, &field_974, 0x24e, 0x1a7, 0x1c, 0x1c, 0, 0) != 0)
+    {
+        if (slot_072(this, &field_970, 0x2537, 0x272, 0x1a4, 0x9e, 0x26,
+                    0xb, 0, 1, 1) != 0)
+        {
+            if (g_6645c4->field_1c90 != 0)
+            {
+                ((T4ECF80Sub*)field_974)->slot_061(1);
+            }
+        }
+    }
+}
