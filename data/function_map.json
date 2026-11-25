@@ -113568,8 +113568,8 @@
   "slot_classes": [],
   "module": "crt",
   "region": "crt",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/crt/free_crt.cpp"
  },
  {
   "address": "0x5FCE01",
@@ -114086,8 +114086,8 @@
   "slot_classes": [],
   "module": "crt",
   "region": "crt",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/crt/free_crt_s.cpp"
  },
  {
   "address": "0x5FDCEB",
@@ -114226,8 +114226,8 @@
   "slot_classes": [],
   "module": "crt",
   "region": "crt",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/crt/free_crt_s.cpp"
  },
  {
   "address": "0x5FE314",
@@ -116102,8 +116102,8 @@
   "slot_classes": [],
   "module": "crt",
   "region": "crt",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/crt/free_crt_s.cpp"
  },
  {
   "address": "0x6026F5",
@@ -116116,8 +116116,8 @@
   "slot_classes": [],
   "module": "crt",
   "region": "crt",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/crt/free_crt_s.cpp"
  },
  {
   "address": "0x60270C",
@@ -116564,8 +116564,8 @@
   "slot_classes": [],
   "module": "crt",
   "region": "crt",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/crt/free_crt_s.cpp"
  },
  {
   "address": "0x604224",
@@ -118412,8 +118412,8 @@
   "slot_classes": [],
   "module": "crt",
   "region": "crt",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/crt/free_crt_s.cpp"
  },
  {
   "address": "0x60696E",

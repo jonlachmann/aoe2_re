@@ -326,6 +326,32 @@ __declspec(naked) short __fastcall sub_5F9D00(char* a1, int a2)
     }
 }
 
+// 0x5FCDE1 — four-argument forwarder gated by a 0x602979 result.
+extern int __cdecl sub_602979();
+extern void __cdecl sub_602809(int a1, int a2, int a3, int a4);
+// 0x5FCDE1 — four-argument forwarder gated by a 0x602979 result.
+extern int __cdecl sub_602979();
+extern void __cdecl sub_602809(int a1, int a2, int a3, int a4);
+MATCH_FUNC(0x5FCDE1)
+__declspec(naked) void __cdecl sub_5FCDE1(int a1, int a2, int a3)
+{
+    __asm
+    {
+        call sub_602979
+        test eax, eax
+        jne body_5FCDE1
+        ret
+    body_5FCDE1:
+        push eax
+        push dword ptr [esp + 0x10]
+        push dword ptr [esp + 0x10]
+        push dword ptr [esp + 0x10]
+        call sub_602809
+        add esp, 0x10
+        ret
+    }
+}
+
 extern int g_772a1c;
 MATCH_FUNC(0x6004BD)
 int Get_6004BD()

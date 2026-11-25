@@ -173,6 +173,85 @@ void __cdecl sub_6033C4()
     }
 }
 
+// 0x5FE2FA — call every non-null function pointer over [a1, a2).
+MATCH_FUNC(0x5FE2FA)
+void __cdecl sub_5FE2FA(void** a1, void** a2)
+{
+    while (a1 < a2)
+    {
+        void (*fn)() = (void (*)())*a1;
+        if (fn != 0)
+            fn();
+        ++a1;
+    }
+}
+
+// 0x6026DB — one-byte cursor: decrement +4, consume *+0 when available, else
+// refresh through 0x602730.
+extern int __cdecl sub_602730(int a1);
+MATCH_FUNC(0x6026DB)
+__declspec(naked) int __cdecl sub_6026DB(int a1)
+{
+    __asm
+    {
+        mov edx, dword ptr [esp + 4]
+        dec dword ptr [edx + 4]
+        js slow_6026DB
+        mov ecx, dword ptr [edx]
+        movzx eax, byte ptr [ecx]
+        inc ecx
+        mov dword ptr [edx], ecx
+        ret
+    slow_6026DB:
+        push edx
+        call sub_602730
+        pop ecx
+        ret
+    }
+}
+
+// 0x6026F5 — skip when the first argument is -1, else forward both.
+extern void __cdecl sub_6070DA(int a1, int a2);
+MATCH_FUNC(0x6026F5)
+void __cdecl sub_6026F5(int a1, int a2)
+{
+    if (a1 != -1)
+        sub_6070DA(a1, a2);
+}
+
+// 0x604208 — one-time lazy -3 invocation gate.
+extern void __cdecl sub_603E44(int a1);
+extern int g_773e0c;
+MATCH_FUNC(0x604208)
+void __cdecl sub_604208()
+{
+    if (g_773e0c == 0)
+    {
+        sub_603E44(-3);
+        g_773e0c = 1;
+    }
+}
+
+// 0x606958 — mask bit 0x80000 out of the second argument before forwarding
+// to the FPU-control helper 0x606923.
+extern int __cdecl sub_606923(int a1, int a2);
+MATCH_FUNC(0x606958)
+void __cdecl sub_606958(int a1, int a2)
+{
+    sub_606923(a1, a2 & 0xfff7ffff);
+}
+
+// 0x5FCDE1 — four-argument forwarder gated by a 0x602979 result.
+extern int __cdecl sub_602979();
+extern void __cdecl sub_602809(int a1, int a2, int a3, int a4);
+// 0x5FDCD4 — four-argument forwarder with the 0x40 option constant in slot 3.
+extern void __cdecl sub_5FDCEB(int a1, int a2, int a3, int a4);
+MATCH_FUNC(0x5FDCD4)
+void __cdecl sub_5FDCD4(int a1, int a2, int a3, int a4)
+{
+    sub_5FDCEB(a1, a2, 0x40, a3);
+}
+
 // 0x600E98 — two-argument cdecl wrapper with constant arguments.
 extern void __cdecl sub_606958(int a1, int a2);
 MATCH_FUNC(0x600E98)

@@ -238,7 +238,7 @@ void sub_5FCC80();  // size 128, calls 0, lifted, module crt
 void sub_5FCD00();  // size 86, calls 4, lifted, module crt
 void sub_5FCD56();  // size 52, calls 2, lifted, module crt
 void sub_5FCD8A();  // size 87, calls 1, lifted, module crt
-void sub_5FCDE1();  // size 32, calls 2, lifted, module crt
+void sub_5FCDE1();  // size 32, calls 2, matched, module crt
 void sub_5FCE01();  // size 19, calls 1, matched, module crt
 void sub_5FCE14();  // size 82, calls 2, lifted, module crt
 void sub_5FCE66();  // size 106, calls 1, lifted, module crt
@@ -275,7 +275,7 @@ void sub_5FD839();  // size 14, calls 1, matched, module crt
 void sub_5FD847();  // size 484, calls 3, lifted, module crt
 void sub_5FDA2B();  // size 179, calls 3, lifted, module crt
 void sub_5FDADE();  // size 502, calls 2, lifted, module crt
-void sub_5FDCD4();  // size 23, calls 1, lifted, module crt
+void sub_5FDCD4();  // size 23, calls 1, matched, module crt
 void sub_5FDCEB();  // size 697, calls 7, lifted, module crt
 void sub_5FDFA4();  // size 17, calls 1, matched, module crt
 void sub_5FDFB5();  // size 154, calls 2, lifted, module crt
@@ -285,7 +285,7 @@ void sub_5FE212();  // size 45, calls 1, lifted, module crt
 void sub_5FE23F();  // size 17, calls 1, matched, module crt
 void sub_5FE250();  // size 17, calls 1, matched, module crt
 void sub_5FE261();  // size 153, calls 1, lifted, module crt
-void sub_5FE2FA();  // size 26, calls 0, lifted, module crt
+void sub_5FE2FA();  // size 26, calls 0, matched, module crt
 void sub_5FE314();  // size 87, calls 1, lifted, module crt
 void sub_5FE370();  // size 47, calls 0, lifted, module crt
 void sub_5FE3A0();  // size 88, calls 0, lifted, module crt
@@ -419,8 +419,8 @@ void sub_601C7F();  // size 1884, calls 10, lifted, module crt
 void sub_6023DB();  // size 271, calls 10, lifted, module crt
 void sub_6024EA();  // size 442, calls 10, lifted, module crt
 void sub_6026A4();  // size 55, calls 1, lifted, module crt
-void sub_6026DB();  // size 26, calls 1, lifted, module crt
-void sub_6026F5();  // size 23, calls 1, lifted, module crt
+void sub_6026DB();  // size 26, calls 1, matched, module crt
+void sub_6026F5();  // size 23, calls 1, matched, module crt
 void sub_60270C();  // size 36, calls 2, lifted, module crt
 void sub_602730();  // size 217, calls 2, lifted, module crt
 void sub_602809();  // size 368, calls 1, lifted, module crt
@@ -452,7 +452,7 @@ void sub_603FDD();  // size 74, calls 0, lifted, module crt
 void sub_604027();  // size 51, calls 0, lifted, module crt
 void sub_60405A();  // size 41, calls 0, lifted, module crt
 void sub_604083();  // size 389, calls 2, lifted, module crt
-void sub_604208();  // size 28, calls 1, lifted, module crt
+void sub_604208();  // size 28, calls 1, matched, module crt
 void sub_604224();  // size 61, calls 0, lifted, module crt
 void sub_604261();  // size 249, calls 2, lifted, module crt
 void sub_60435A();  // size 4, calls 0, matched, module crt
@@ -584,7 +584,7 @@ void sub_6068D3();  // size 28, calls 0, lifted, module crt
 void sub_6068EF();  // size 28, calls 0, lifted, module crt
 void sub_60690B();  // size 24, calls 0, lifted, module crt
 void sub_606923();  // size 53, calls 2, lifted, module crt
-void sub_606958();  // size 22, calls 1, lifted, module crt
+void sub_606958();  // size 22, calls 1, matched, module crt
 void sub_60696E();  // size 146, calls 0, lifted, module crt
 void sub_606A00();  // size 137, calls 0, lifted, module crt
 void sub_606A89();  // size 73, calls 0, lifted, module crt
