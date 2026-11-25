@@ -8306,10 +8306,12 @@
    "vtable": null,
    "anchor": "0x4AF870",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/ui/free_ui.cpp",
+   "owner_files": {
+    "Source/ui/free_ui.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false

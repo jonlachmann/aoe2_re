@@ -6845,3 +6845,239 @@ int S4BDF50::M_4BDF50(int a1, int a2, int a3)
         result = g_61C000(field_00, a2, 0, 4, &a3, 4);
     return result == 0;
 }
+
+// 0x4AF870 — iterate the +0x208 item-pointer array up to the +0x20C short
+// count, clear each item's +0x204 flag and drive its vtable slot 0xF4 with
+// zero, then set the owner's own flag and drive its slot 0xF4 with one.
+class T4AF870Item {
+public:
+    virtual void Vat_00();
+    virtual void Vat_01();
+    virtual void Vat_02();
+    virtual void Vat_03();
+    virtual void Vat_04();
+    virtual void Vat_05();
+    virtual void Vat_06();
+    virtual void Vat_07();
+    virtual void Vat_08();
+    virtual void Vat_09();
+    virtual void Vat_10();
+    virtual void Vat_11();
+    virtual void Vat_12();
+    virtual void Vat_13();
+    virtual void Vat_14();
+    virtual void Vat_15();
+    virtual void Vat_16();
+    virtual void Vat_17();
+    virtual void Vat_18();
+    virtual void Vat_19();
+    virtual void Vat_20();
+    virtual void Vat_21();
+    virtual void Vat_22();
+    virtual void Vat_23();
+    virtual void Vat_24();
+    virtual void Vat_25();
+    virtual void Vat_26();
+    virtual void Vat_27();
+    virtual void Vat_28();
+    virtual void Vat_29();
+    virtual void Vat_30();
+    virtual void Vat_31();
+    virtual void Vat_32();
+    virtual void Vat_33();
+    virtual void Vat_34();
+    virtual void Vat_35();
+    virtual void Vat_36();
+    virtual void Vat_37();
+    virtual void Vat_38();
+    virtual void Vat_39();
+    virtual void Vat_40();
+    virtual void Vat_41();
+    virtual void Vat_42();
+    virtual void Vat_43();
+    virtual void Vat_44();
+    virtual void Vat_45();
+    virtual void Vat_46();
+    virtual void Vat_47();
+    virtual void Vat_48();
+    virtual void Vat_49();
+    virtual void Vat_50();
+    virtual void Vat_51();
+    virtual void Vat_52();
+    virtual void Vat_53();
+    virtual void Vat_54();
+    virtual void Vat_55();
+    virtual void Vat_56();
+    virtual void Vat_57();
+    virtual void Vat_58();
+    virtual void Vat_59();
+    virtual void Vat_60();
+    virtual void Dispatch_f4(int a1);
+
+    char pad_04[0x204 - 0x04];    // +0x04..+0x204
+    int field_204;                // +0x204 clear flag
+};
+class C_cluster_4AF870 {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08();
+    virtual void Vt_09();
+    virtual void Vt_10();
+    virtual void Vt_11();
+    virtual void Vt_12();
+    virtual void Vt_13();
+    virtual void Vt_14();
+    virtual void Vt_15();
+    virtual void Vt_16();
+    virtual void Vt_17();
+    virtual void Vt_18();
+    virtual void Vt_19();
+    virtual void Vt_20();
+    virtual void Vt_21();
+    virtual void Vt_22();
+    virtual void Vt_23();
+    virtual void Vt_24();
+    virtual void Vt_25();
+    virtual void Vt_26();
+    virtual void Vt_27();
+    virtual void Vt_28();
+    virtual void Vt_29();
+    virtual void Vt_30();
+    virtual void Vt_31();
+    virtual void Vt_32();
+    virtual void Vt_33();
+    virtual void Vt_34();
+    virtual void Vt_35();
+    virtual void Vt_36();
+    virtual void Vt_37();
+    virtual void Vt_38();
+    virtual void Vt_39();
+    virtual void Vt_40();
+    virtual void Vt_41();
+    virtual void Vt_42();
+    virtual void Vt_43();
+    virtual void Vt_44();
+    virtual void Vt_45();
+    virtual void Vt_46();
+    virtual void Vt_47();
+    virtual void Vt_48();
+    virtual void Vt_49();
+    virtual void Vt_50();
+    virtual void Vt_51();
+    virtual void Vt_52();
+    virtual void Vt_53();
+    virtual void Vt_54();
+    virtual void Vt_55();
+    virtual void Vt_56();
+    virtual void Vt_57();
+    virtual void Vt_58();
+    virtual void Vt_59();
+    virtual void Vt_60();
+    virtual void Dispatch_f4(int a1);
+
+    char pad_04[0x204 - 0x04];    // +0x04..+0x204
+    int field_204;                // +0x204 owner flag
+    T4AF870Item** arr_208;        // +0x208 item array
+    short count_20c;              // +0x20C item count
+    void M_4AF870();
+};
+
+MATCH_FUNC(0x4AF870)
+void C_cluster_4AF870::M_4AF870()
+{
+    for (int i = 0; i < count_20c; i++)
+    {
+        arr_208[i]->field_204 = 0;
+        arr_208[i]->Dispatch_f4(0);
+    }
+    field_204 = 1;
+    Dispatch_f4(1);
+}
+
+// 0x48B3C0 — select row a1 from the +0x64 source table's +0x10 stride-0x20
+// rows; copy four row values and the two differences into the +0x74..+0xB0
+// display fields.
+class T48B3C0Source {
+public:
+    char pad_00[0x10];
+    int* rows_10;                 // +0x10 row base
+};
+class S48B3C0 {
+public:
+    char pad_00[0x10];
+    int count_10;                 // +0x10 row count
+    char pad_14[0x64 - 0x14];
+    T48B3C0Source* source_64;     // +0x64
+    char pad_68[0x74 - 0x68];
+    int field_74;                 // +0x74
+    int field_78;                 // +0x78
+    char pad_7c[0x94 - 0x7c];
+    int field_94;                 // +0x94 selected row
+    char pad_98[0xa4 - 0x98];
+    int field_a4;                 // +0xA4
+    int field_a8;                 // +0xA8
+    int field_ac;                 // +0xAC
+    int field_b0;                 // +0xB0
+    void M_48B3C0(int a1);
+};
+
+MATCH_FUNC(0x48B3C0)
+void S48B3C0::M_48B3C0(int a1)
+{
+    if (a1 < 0 || a1 >= count_10)
+        return;
+    field_94 = a1;
+    int* row = (int*)((char*)source_64->rows_10 + (a1 << 5));
+    field_74 = row[4];
+    field_78 = row[5];
+    field_a4 = row[7];
+    field_a8 = row[6];
+    field_b0 = field_74 - row[6];
+    field_ac = field_78 - row[7];
+}
+
+// 0x4BEF50 — reset a large UI-state object: sentinel/flag fields, the current
+// clock copied to three +0x2A4/+0x2A8/+0x2AC slots, a 0x65-dword zeroed
+// +0x10C table, and three trailing zero slots; returns this.
+extern int (__cdecl *g_61C3C8)();
+class S4BEF50 {
+public:
+    char pad_00[0x100];           // 0x00..0x100
+    int field_100;                // +0x100 sentinel
+    int field_104;                // +0x104
+    char pad_108[0x10c - 0x108];  // +0x108..+0x10C
+    int table_10c[0x65];          // +0x10C..+0x2A0
+    int field_2a0;                // +0x2A0
+    int field_2a4;                // +0x2A4
+    int field_2a8;                // +0x2A8
+    int field_2ac;                // +0x2AC
+    int field_2b0;                // +0x2B0
+    int field_2b4;                // +0x2B4
+    int field_2b8;                // +0x2B8
+    S4BEF50* M_4BEF50();
+};
+
+MATCH_FUNC(0x4BEF50)
+S4BEF50* S4BEF50::M_4BEF50()
+{
+    field_100 = 0x1869f;
+    field_104 = 0;
+    field_2a0 = 0;
+    int v = g_61C3C8();
+    field_2a8 = v;
+    field_2ac = v;
+    field_2a4 = v;
+    for (int i = 0; i < 0x65; i++)
+        table_10c[i] = 0;
+    field_2b4 = 0;
+    field_2b8 = 0;
+    field_2b0 = 0;
+    return this;
+}

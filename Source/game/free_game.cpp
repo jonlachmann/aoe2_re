@@ -2822,3 +2822,42 @@ S43E740* S43E740::M_43E740()
     field_10f8 = 0;
     return this;
 }
+
+// 0x421EC0 — early-exit cleanup: run the two 0x61C3xx callbacks when the
+// +0x204 flag is set, dispatch the 0x66EA48 object's 0x49FFB0 method, mark
+// +0x200 active, then forward the 0x61C308(0,0x7F00) result to +0x1F4.
+extern int (__stdcall *g_61c324)();
+extern int (__stdcall *g_61c320)();
+extern int (__stdcall *g_61c308)(int a1, int a2);
+class T66EA48_421EC0 {
+public:
+    void Other_49FFB0();
+};
+extern char g_66ea48;
+class T41FA40_421EC0 {
+public:
+    void Other_41FA40(int a1);
+};
+class S421EC0 {
+public:
+    char pad_00[0x1f4];
+    void* field_1f4;              // +0x1F4 optional target
+    char pad_1f8[0x200 - 0x1f8];  // +0x1F8..+0x200
+    int field_200;                // +0x200 active flag
+    int field_204;                // +0x204 early-exit flag
+    void M_421EC0();
+};
+
+MATCH_FUNC(0x421EC0)
+void S421EC0::M_421EC0()
+{
+    if (field_204)
+    {
+        if (g_61c324())
+            g_61c320();
+    }
+    ((T66EA48_421EC0*)&g_66ea48)->Other_49FFB0();
+    field_200 = 1;
+    if (field_1f4)
+        ((T41FA40_421EC0*)this)->Other_41FA40(g_61c308(0, 0x7f00));
+}

@@ -220,7 +220,7 @@ void sub_48A890();  // size 43, calls 0, matched, module ui
 void mouseptr::LoadCursors();  // size 592, calls 14, lifted, module win
 void sub_48AB10();  // size 111, calls 3, lifted, module ui
 void sub_48AB80();  // size 356, calls 4, lifted, module ui
-void sub_48B3C0();  // size 91, calls 0, lifted, module ui
+void sub_48B3C0();  // size 91, calls 0, matched, module ui
 void sub_48B420();  // size 97, calls 0, lifted, module ui
 void sub_48B4F0();  // size 50, calls 0, lifted, module ui
 void sub_48B530();  // size 15, calls 0, matched, module ui
@@ -733,7 +733,7 @@ void sub_4BEBD0();  // size 192, calls 5, lifted, module ui
 void sub_4BECB0();  // size 16, calls 1, matched, module ui
 void sub_4BEEB0();  // size 69, calls 1, lifted, module ui
 void sub_4BEF00();  // size 67, calls 1, lifted, module ui
-void sub_4BEF50();  // size 92, calls 0, lifted, module ui
+void sub_4BEF50();  // size 92, calls 0, matched, module ui
 void sub_4BEFB0();  // size 18, calls 1, matched, module ui
 void sub_4BEFD0();  // size 75, calls 0, lifted, module ui
 void sub_4BF020();  // size 19, calls 0, matched, module ui

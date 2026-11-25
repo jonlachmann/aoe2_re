@@ -76763,8 +76763,8 @@
    {
     "address": "0x4AF870",
     "name": "sub_4AF870",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4B0D30",
