@@ -5381,3 +5381,58 @@ int __cdecl sub_54E830(int a1, int a2)
     return sub_54E750(sub_5FCA45() % a2 + a1);
 }
 #pragma optimize("s", off)
+
+// 0x53CD00 — five-argument constructor wrapper with fields at +0x20..+0x30.
+extern char g_vt_6280B4f;
+extern void __stdcall sub_409600(int a1, int a2);
+class Sc53CD00 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x1a];
+    int field_20;                 // +0x20
+    int field_24;                 // +0x24
+    int field_28;                 // +0x28
+    char pad_2c[4];
+    int field_30;                 // +0x30
+    Sc53CD00* Init_53CD00(int a1, int a2, int a3, int a4, int a5);
+};
+MATCH_FUNC(0x53CD00)
+Sc53CD00* Sc53CD00::Init_53CD00(int a1, int a2, int a3, int a4, int a5)
+{
+    sub_409600(a1, 1);
+    this->field_30 = a2;
+    *(void**)this = &g_vt_6280B4f;
+    this->type_04 = 0x6b;
+    this->field_20 = a3;
+    this->field_24 = a4;
+    this->field_28 = a5;
+    return this;
+}
+
+// 0x542B00 — five-argument constructor wrapper with fields at +0x20..+0x30.
+extern char g_vt_6287CCf;
+class Sc542B00 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x1a];
+    int field_20;                 // +0x20
+    int field_24;                 // +0x24
+    int field_28;                 // +0x28
+    char pad_2c[4];
+    int field_30;                 // +0x30
+    Sc542B00* Init_542B00(int a1, int a2, int a3, int a4, int a5);
+};
+MATCH_FUNC(0x542B00)
+Sc542B00* Sc542B00::Init_542B00(int a1, int a2, int a3, int a4, int a5)
+{
+    sub_409600(a1, 1);
+    this->field_30 = a2;
+    *(void**)this = &g_vt_6287CCf;
+    this->type_04 = 0x69;
+    this->field_20 = a3;
+    this->field_24 = a4;
+    this->field_28 = a5;
+    return this;
+}
