@@ -140,3 +140,16 @@ void C_TRIBE_Screen_Options::M_4A22D0()
         n = n->field_8;
     }
 }
+
+// 0x4A0AB0 — swap the four +0x24 dwords with an incoming four-dword object,
+// notify slot +0x30, then restore the original quad.
+MATCH_FUNC(0x4A0AB0)
+void C_TRIBE_Screen_Options::M_4A0AB0(int* a1)
+{
+    struct Quad { int a, b, c, d; };
+    Quad* q = (Quad*)((char*)this + 0x24);
+    Quad old = *q;
+    *q = *(Quad*)a1;
+    slot_12();
+    *q = old;
+}

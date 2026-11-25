@@ -7081,3 +7081,26 @@ S4BEF50* S4BEF50::M_4BEF50()
     field_2b0 = 0;
     return this;
 }
+
+// 0x499C40 — replace a heap string: free the existing pointer, then allocate
+// strlen(source)+1 and inline-copy the source into it.
+extern void* __cdecl sub_5F8FF0(unsigned int a1, int a2);
+MATCH_FUNC(0x499C40)
+#pragma intrinsic(strlen)
+#pragma intrinsic(memcpy)
+void __cdecl sub_499C40(void** a1, char* a2)
+{
+    if (*a1)
+    {
+        sub_5F90B0((int)*a1);
+        *a1 = 0;
+    }
+    if (a2)
+    {
+        unsigned int n = (unsigned int)strlen(a2) + 1;
+        *a1 = sub_5F8FF0(n, 1);
+        memcpy(*a1, a2, n);
+    }
+}
+#pragma function(memcpy)
+#pragma function(strlen)

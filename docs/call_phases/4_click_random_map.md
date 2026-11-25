@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 252 matched, 302 left to match (2 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 253 matched, 301 left to match (2 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (302)
+## Left to match (301)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -104,7 +104,6 @@
 | 157 | `sub_610074` | 38 |  | 1_boot_to_menu |  |
 | 160 | `sub_4A0920` | 194 |  | 1_boot_to_menu |  |
 | 161 | `sub_4AFAC0` | 60 |  | 1_boot_to_menu | pnl_btn::draw2 |
-| 163 | `sub_4A0AB0` | 153 |  | 1_boot_to_menu |  |
 | 164 | `sub_619DE0` | 2938 |  | 1_boot_to_menu |  |
 | 166 | `sub_461B50` | 11 |  | 1_boot_to_menu |  |
 | 168 | `sub_461760` | 33 |  | 1_boot_to_menu |  |
@@ -309,7 +308,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (252)
+## Matched (253)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -363,6 +362,7 @@
 | 158 | `sub_45FE10` | 168 | MATCH | 1_boot_to_menu | TDrawArea::Unlock_45FE10 |
 | 159 | `sub_4A0C60` | 284 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0C60 |
 | 162 | `sub_4A0BB0` | 120 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0BB0 |
+| 163 | `sub_4A0AB0` | 153 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0AB0 |
 | 165 | `sub_461B40` | 11 | MATCH | 1_boot_to_menu | TDrawArea::Set_461B40 |
 | 167 | `sub_460650` | 11 | MATCH | 1_boot_to_menu | TDrawArea::GetPitch_460650 |
 | 169 | `sub_461370` | 378 | MATCH | 1_boot_to_menu | TDrawArea::HLine_461370 |

@@ -2771,14 +2771,16 @@ WIP_FUNC(0x42AE00)
 void S42D1D0::M_42AE00()
 {
     sub_4378C0(g_669558, 0x64f114);
+    unsigned int i = 0;
     int* p = (int*)((char*)this + 0x13e4);
-    for (int i = 0; i <= count_12d8; i++)
+    while (i <= count_12d8)
     {
         *(int*)((char*)p + 0x9fc) = 0;
         *p = 0;
         *(int*)((char*)p + 0x28) = 0;
         *(int*)((char*)p + 0x50) = 0;
         *(int*)((char*)p + 0xcc) = 0;
+        i++;
         p++;
     }
 }

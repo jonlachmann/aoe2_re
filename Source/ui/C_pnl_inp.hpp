@@ -147,6 +147,8 @@ public:
     virtual void slot_059();
     virtual void slot_060();
     virtual void Vat_f4(int a, int b);
+    virtual void Vat_f8();
+    virtual void Vat_fc(char* a1, int a2);
 
     char pad_04[0x40 - 4];
     T4BCE20Sub* field_40;         // +0x40, subobject dispatched by 0x4BCE20
@@ -162,8 +164,10 @@ public:
     int field_188;                // +0x188
 
     void Hook_4A07A0(int a1);     // unresolved shared slot body at 0x4A07A0
+    void Other_4A2140(int a1, char* a2, int a3);
     void M_408050(int a, int b);
     void M_4BBCE0(int a1);
+    void M_4BADD0(int a1);
     char* M_4BD4B0(int index);
     void SetInt_4B4600(int v);
     void M_4BAF60(int a, int b, int c, int d);

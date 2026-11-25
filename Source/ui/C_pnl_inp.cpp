@@ -57,3 +57,13 @@ int C_pnl_inp::M_4BCE20(int a, int b, int c, int d)
         s->Vat_C4(this, 1, 0, 0);
     return 0;
 }
+
+// 0x4BADD0 — build a 0x1000-byte stack buffer, pass it through the 0x4A2140
+// capture helper, then hand it to vtable slot 0xFC with the zero mode.
+MATCH_FUNC(0x4BADD0)
+void C_pnl_inp::M_4BADD0(int a1)
+{
+    char buffer[0x1000];
+    Other_4A2140(a1, buffer, 0x1000);
+    Vat_fc(buffer, 0);
+}

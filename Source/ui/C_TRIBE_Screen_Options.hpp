@@ -109,7 +109,8 @@ public:
 
     char pad_04[0x20 - 4];
     TField20Obj* field_20;        // +0x20, subobject cleared by 0x4A0C60
-    char pad_24[0x38 - 0x24];
+    int field_24[4];              // +0x24 swapped by 0x4A0AB0
+    char pad_34[0x38 - 0x34];     // +0x34..+0x38
     void* field_38;               // +0x38
     char pad_3c[0x40 - 0x3c];
     T4A2280Obj* field_40;         // +0x40, subobject toggled by 0x4A07A0
@@ -151,6 +152,7 @@ public:
     void M_4A0C60();
     void M_4A2280();
     void M_4A22D0();
+    void M_4A0AB0(int* a1);
     void M_4A0BB0(int v);
     void M_4A2040(int a, int b);
     void Get_4A22F0(int* out);
