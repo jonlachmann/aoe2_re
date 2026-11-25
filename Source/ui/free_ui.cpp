@@ -6075,3 +6075,20 @@ void* __stdcall sub_4B3120(int a1, int a2, int a3, int a4)
         return ((T4B3120Target*)p)->Hook_4B3950(a1, a2, a3, a4);
     return 0;
 }
+
+// 0x4CFAC0 — copy a1 into the +0x00 name buffer, clear +0x104/+0x108.
+class Sc4CFAC0 {
+public:
+    char name_00[0x104];          // +0x00
+    int field_104;                // +0x104
+    int field_108;                // +0x108
+    char* M_4CFAC0(char* a1);
+};
+MATCH_FUNC(0x4CFAC0)
+char* Sc4CFAC0::M_4CFAC0(char* a1)
+{
+    strcpy(name_00, a1);
+    field_104 = 0;
+    field_108 = 0;
+    return (char*)this;
+}

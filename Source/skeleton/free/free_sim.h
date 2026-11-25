@@ -42,7 +42,7 @@ void sub_522640();  // size 731, calls 13, lifted, module sim
 void sub_522920();  // size 634, calls 8, lifted, module sim
 void sub_522E10();  // size 29, calls 0, matched, module sim
 void sub_522E30();  // size 89, calls 0, lifted, module sim
-void sub_522FF0();  // size 105, calls 0, lifted, module sim
+void sub_522FF0();  // size 105, calls 0, matched, module sim
 void sub_5230F0();  // size 955, calls 3, lifted, module sim
 void sub_5234B0();  // size 237, calls 1, lifted, module sim
 void sub_5235A0();  // size 339, calls 1, lifted, module sim

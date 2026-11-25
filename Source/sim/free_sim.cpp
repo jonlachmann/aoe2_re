@@ -5823,3 +5823,50 @@ void C_cluster_522CD0::M_522F90()
         sub_5F90B0((int)field_4c);
     this->M_522CD0();
 }
+
+// 0x522FF0 — sort the two coordinate pairs, clamp to +0x50/+0x54 and store.
+class Sc522FF0 {
+public:
+    char pad_00[0x50];
+    int field_50;                 // +0x50
+    int field_54;                 // +0x54
+    int field_58;                 // +0x58
+    int field_5c;                 // +0x5C
+    int field_60;                 // +0x60
+    int field_64;                 // +0x64
+    void M_522FF0(int a1, int a2, int a3, int a4);
+};
+MATCH_FUNC(0x522FF0)
+void Sc522FF0::M_522FF0(int a1, int a2, int a3, int a4)
+{
+    if (a1 > a3) {
+        int t = a1;
+        a1 = a3;
+        a3 = t;
+    }
+    if (a2 > a4) {
+        int t = a2;
+        a2 = a4;
+        a4 = t;
+    }
+    if (a2 < 0)
+        a2 = 0;
+    if (a4 < 0)
+        return;
+    if (a2 >= field_50)
+        return;
+    if (a4 >= field_50)
+        a4 = field_50 - 1;
+    if (a1 < 0)
+        a1 = 0;
+    if (a3 < 0)
+        return;
+    if (a1 >= field_54)
+        return;
+    if (a3 >= field_54)
+        a3 = field_54 - 1;
+    field_60 = a2;
+    field_64 = a4;
+    field_58 = a1;
+    field_5c = a3;
+}
