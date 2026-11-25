@@ -9,7 +9,7 @@ class C_vt627844 {
 public:
     virtual void slot_000();  // slot +0x000: sub_532DC0 [matched] — Source/sim/free_sim.cpp
     virtual void slot_001();  // slot +0x004: sub_434900 [lifted]
-    virtual void slot_002();  // slot +0x008: sub_407E30 [lifted]
+    virtual void slot_002();  // slot +0x008: sub_407E30 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_003();  // slot +0x00C: sub_5276E0 [lifted]
     virtual void slot_004();  // slot +0x010: sub_5278A0 [lifted]
     virtual void slot_005();  // slot +0x014: sub_527940 [lifted]
@@ -18,7 +18,7 @@ public:
     virtual void slot_008();  // slot +0x020: sub_5294D0 [lifted]
     virtual void slot_009();  // slot +0x024: sub_5336C0 [lifted]
     virtual void slot_010();  // slot +0x028: sub_529870 [lifted]
-    virtual void slot_011();  // slot +0x02C: sub_407FB0 [lifted]
+    virtual void slot_011();  // slot +0x02C: sub_407FB0 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_012();  // slot +0x030: sub_533570 [lifted]
     virtual void slot_013();  // slot +0x034: sub_529DB0 [lifted]
     virtual void slot_014();  // slot +0x038: sub_436D50 [lifted]
@@ -35,7 +35,7 @@ public:
     virtual void slot_025();  // slot +0x064: sub_533B00 [lifted]
     virtual void slot_026();  // slot +0x068: sub_52AA10 [lifted]
     virtual void slot_027();  // slot +0x06C: sub_52AB60 [lifted]
-    virtual void slot_028();  // slot +0x070: sub_408030 [lifted]
+    virtual void slot_028();  // slot +0x070: sub_408030 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_029();  // slot +0x074: sub_537DB0 [lifted]
     virtual void slot_030();  // slot +0x078: sub_533FF0 [lifted]
     virtual void slot_031();  // slot +0x07C: sub_4356F0 [lifted]
@@ -47,7 +47,7 @@ public:
     virtual void slot_037();  // slot +0x094: sub_536B20 [lifted]
     virtual void slot_038();  // slot +0x098: sub_536CA0 [lifted]
     virtual void slot_039();  // slot +0x09C: sub_5370E0 [lifted]
-    virtual void slot_040();  // slot +0x0A0: sub_408060 [lifted]
+    virtual void slot_040();  // slot +0x0A0: sub_408060 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_041();  // slot +0x0A4: sub_4080A0 [lifted]
     virtual void slot_042();  // slot +0x0A8: sub_537B30 [lifted]
     virtual void slot_043();  // slot +0x0AC: sub_408330 [lifted]

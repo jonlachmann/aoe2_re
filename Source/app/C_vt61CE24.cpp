@@ -4,6 +4,53 @@ extern float g_61c598;
 extern float g_61c5a8;
 extern float g_61c584;
 extern float g_61C584;
+extern void __stdcall sub_48CB50(int a1);
+
+MATCH_FUNC(0x407E30)
+void C_vt61CE24::M_407E30()
+{
+    if (this->field_130 != 0)
+        this->field_130->Clear_4058C0();
+    this->Hook_526CA0();
+}
+
+MATCH_FUNC(0x407FB0)
+void C_vt61CE24::M_407FB0()
+{
+    this->Hook_529AF0();
+    this->field_130->Clear_405860();
+}
+
+MATCH_FUNC(0x408010)
+void C_vt61CE24::M_408010(int a1)
+{
+    sub_48CB50(a1);
+    this->field_130->Clear_4058C0();
+}
+
+MATCH_FUNC(0x408030)
+void C_vt61CE24::M_408030()
+{
+    this->field_130->Clear_4058C0();
+    this->Hook_52A990();
+}
+
+MATCH_FUNC(0x408060)
+void C_vt61CE24::M_408060(void* a1, int a2, int a3, int a4)
+{
+    if (a1 != (void*)this)
+    {
+        Vat_308(a1, a2, a3, a4, 0, -1);
+        this->byte_134++;
+    }
+}
+
+MATCH_FUNC(0x407E50)
+void C_vt61CE24::M_407E50(int a1, int a2, int a3, int a4, int a5)
+{
+    this->Hook_48C240(a1, a2, a3, a4, a5);
+    this->byte_12c = 0;
+}
 
 MATCH_FUNC(0x407B30)
 bool C_vt61CE24::M_407B30()

@@ -10,9 +10,9 @@ public:
     virtual void slot_000();  // slot +0x000: sub_4057B0 [matched] — Source/app/free_app.cpp
     virtual void slot_001();  // slot +0x004: sub_4058E0 [lifted]
     virtual void slot_002();  // slot +0x008: sub_405B70 [lifted]
-    virtual void slot_003();  // slot +0x00C: sub_405E60 [lifted]
-    virtual void slot_004();  // slot +0x010: sub_405EB0 [lifted]
+    virtual void slot_003();  // slot +0x00C: sub_405E60 [matched] — Source/app/C_vt61CAB4.cpp
+    virtual void slot_004();  // slot +0x010: sub_405EB0 [matched] — Source/app/C_vt61CAB4.cpp
     virtual void slot_005();  // slot +0x014: sub_406220 [matched] — Source/app/C_vt61CAB4.cpp
     virtual void slot_006();  // slot +0x018: sub_4061C0 [matched] — Source/app/C_vt61CAB4.cpp
-    virtual void slot_007();  // slot +0x01C: sub_4061F0 [lifted]
+    virtual void slot_007();  // slot +0x01C: sub_4061F0 [matched] — Source/app/C_vt61CAB4.cpp
 };

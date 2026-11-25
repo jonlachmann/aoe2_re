@@ -75,6 +75,63 @@ void* C_vt61CAB4::Get_406180(int a1)
 extern void* __cdecl sub_5F8FF0(int a1, int a2);
 extern void __cdecl sub_5F90B0(void* p);
 
+MATCH_FUNC(0x405E60)
+char C_vt61CAB4::M_405E60()
+{
+    N4061C0* node = this->field_08;
+    if (node == 0)
+        return 1;
+    char result = ((T4061C0*)node->obj_0)->Vt_8();
+    N4061C0* next = this->field_08->next_4;
+    while (next != 0)
+    {
+        ((T4061C0*)next->obj_0)->Vt_9();
+        next = next->next_4;
+    }
+    if (result == 1)
+        this->Hook_405FD0();
+    return result;
+}
+
+MATCH_FUNC(0x405EB0)
+char C_vt61CAB4::M_405EB0()
+{
+    char result;
+    N4061C0* node = this->field_08;
+    if (node == 0)
+    {
+        result = 1;
+    }
+    else
+    {
+        result = ((T4061C0*)node->obj_0)->Vt_10();
+        node = this->field_08;
+        if (node != 0)
+        {
+            N4061C0* next = node->next_4;
+            while (next != 0)
+            {
+                ((T4061C0*)next->obj_0)->Vt_9();
+                next = next->next_4;
+            }
+            if (result == 1)
+                this->Hook_405FD0();
+        }
+    }
+    return result;
+}
+
+MATCH_FUNC(0x4061F0)
+void C_vt61CAB4::M_4061F0(int a1, int a2, int a3)
+{
+    N4061C0* node = this->field_08;
+    while (node != 0)
+    {
+        ((T4061C0*)node->obj_0)->Vat_44(a1, a2, a3);
+        node = node->next_4;
+    }
+}
+
 MATCH_FUNC(0x405F00)
 void C_vt61CAB4::M_405F00(int a1)
 {

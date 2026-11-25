@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1543 |
-| wip | 21 |
+| matched | 1552 |
+| wip | 22 |
 | verified | 18 |
-| lifted | 6169 |
+| lifted | 6159 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -36,11 +36,11 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x61C800` | `C_vt61C800` | 24 | 0 | — | 9 | 15 |
 | `0x61C8E4` | `C_vt61C8E4` | 24 | 0 | — | 6 | 18 |
 | `0x61C9D4` | `C_vt61C9D4` | 24 | 0 | — | 9 | 15 |
-| `0x61CAB4` | `C_vt61CAB4` | 8 | 0 | — | 3 | 5 |
+| `0x61CAB4` | `C_vt61CAB4` | 8 | 0 | — | 6 | 2 |
 | `0x61CB58` | `C_vt61CB58` | 24 | 0 | — | 9 | 15 |
 | `0x61CC40` | `C_vt61CC40` | 24 | 1 | — | 8 | 17 |
 | `0x61CD2C` | `C_vt61CD2C` | 24 | 1 | — | 8 | 17 |
-| `0x61CE24` | `C_vt61CE24` | 204 | 1 | — | 90 | 115 |
+| `0x61CE24` | `C_vt61CE24` | 204 | 1 | — | 96 | 109 |
 | `0x61D1D8` | `C_vt61D1D8` | 25 | 0 | — | 6 | 19 |
 | `0x61D2C0` | `C_vt61D2C0` | 24 | 0 | — | 10 | 14 |
 | `0x61D320` | `C_vt61D320` | 1 | 1 | — | 2 | 0 |
@@ -68,7 +68,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x61DEB8` | `C_vt61DEB8` | 16 | 1 | — | 9 | 8 |
 | `0x61DF78` | `C_vt61DF78` | 87 | 3 | basegame | 38 | 52 |
 | `0x61E15C` | `C_vt61E15C` | 1 | 1 | — | 1 | 1 |
-| `0x61E328` | `C_vt61E328` | 214 | 0 | — | 74 | 140 |
+| `0x61E328` | `C_vt61E328` | 214 | 0 | — | 78 | 136 |
 | `0x61E8A0` | `C_vt61E8A0` | 5 | 1 | — | 1 | 5 |
 | `0x61E8C0` | `C_vt61E8C0` | 1 | 1 | — | 2 | 0 |
 | `0x61E948` | `C_vt61E948` | 1 | 1 | — | 2 | 0 |
@@ -101,7 +101,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x621110` | `C_vt621110` | 25 | 1 | — | 12 | 14 |
 | `0x621200` | `C_vt621200` | 25 | 1 | — | 13 | 13 |
 | `0x6213C0` | `C_vt6213C0` | 15 | 2 | — | 2 | 15 |
-| `0x621518` | `C_vt621518` | 214 | 0 | — | 77 | 137 |
+| `0x621518` | `C_vt621518` | 214 | 0 | — | 79 | 135 |
 | `0x6218FC` | `C_vt6218FC` | 42 | 1 | — | 30 | 13 |
 | `0x621A28` | `C_vt621A28` | 194 | 0 | — | 100 | 94 |
 | `0x621E20` | `C_vt621E20` | 6 | 1 | — | 1 | 6 |
@@ -169,8 +169,8 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x626B28` | `C_scr_vc` | 87 | 1 | panel_ez, scr_vc | 32 | 56 |
 | `0x626E04` | `C_tpnl_obj` | 64 | 0 | tpnl_obj | 24 | 40 |
 | `0x627094` | `C_vt627094` | 186 | 0 | — | 133 | 53 |
-| `0x627428` | `C_vt627428` | 226 | 4 | — | 61 | 169 |
-| `0x627844` | `C_vt627844` | 223 | 0 | — | 63 | 160 |
+| `0x627428` | `C_vt627428` | 226 | 4 | — | 62 | 168 |
+| `0x627844` | `C_vt627844` | 223 | 0 | — | 67 | 156 |
 | `0x627D48` | `C_vt627D48` | 1 | 1 | — | 1 | 1 |
 | `0x627D4C` | `C_vt627D4C` | 186 | 0 | — | 134 | 52 |
 | `0x6280B4` | `C_vt6280B4` | 24 | 0 | — | 6 | 18 |
@@ -184,7 +184,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x6287CC` | `C_vt6287CC` | 24 | 0 | — | 7 | 17 |
 | `0x6288B8` | `C_vt6288B8` | 24 | 0 | — | 5 | 19 |
 | `0x628998` | `C_vt628998` | 24 | 0 | — | 10 | 14 |
-| `0x6289FC` | `C_vt6289FC` | 8 | 1 | — | 4 | 5 |
+| `0x6289FC` | `C_vt6289FC` | 8 | 1 | — | 7 | 2 |
 | `0x628A9C` | `C_vt628A9C` | 24 | 1 | — | 8 | 17 |
 | `0x628B7C` | `C_vt628B7C` | 24 | 1 | — | 7 | 18 |
 | `0x628C60` | `C_vt628C60` | 24 | 1 | — | 8 | 17 |

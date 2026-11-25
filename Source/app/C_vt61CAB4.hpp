@@ -21,15 +21,16 @@ public:
     virtual void Vt_5();
     virtual short Vt_6();         // slot +0x18
     virtual void Vt_7(int v);     // slot +0x1C
-    virtual void Vt_8();
-    virtual void Vt_9();
-    virtual void Vt_10();
+    virtual char Vt_8();          // slot +0x20
+    virtual void Vt_9();          // slot +0x24
+    virtual char Vt_10();         // slot +0x28
     virtual int Vt_11();          // slot +0x2C
     virtual int Vt_12(int a1, int a2, int a3, int a4);  // slot +0x30
     virtual int Vt_13(int a1, int a2, int a3, int a4);  // slot +0x34
     virtual void Vt_14();
     virtual void Vt_15();
     virtual void Vat_40(int v);
+    virtual void Vat_44(int a1, int a2, int a3);  // slot +0x44
 };
 
 class C_vt61CAB4 {
@@ -51,4 +52,7 @@ public:
     void M_406060(int a1);
     void* M_406020();
     void M_405F00(int a1);
+    char M_405E60();
+    char M_405EB0();
+    void M_4061F0(int a1, int a2, int a3);
 };

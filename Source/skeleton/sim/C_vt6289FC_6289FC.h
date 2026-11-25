@@ -12,10 +12,10 @@ public:
     virtual void slot_000();  // slot +0x000: sub_545070 [matched] — Source/sim/free_sim.cpp
     virtual void slot_001();  // slot +0x004: sub_5450A0 [lifted]
     virtual void slot_002();  // slot +0x008: sub_545850 [lifted]
-    virtual void slot_003();  // slot +0x00C: sub_405E60 [lifted]
-    virtual void slot_004();  // slot +0x010: sub_405EB0 [lifted]
+    virtual void slot_003();  // slot +0x00C: sub_405E60 [matched] — Source/app/C_vt61CAB4.cpp
+    virtual void slot_004();  // slot +0x010: sub_405EB0 [matched] — Source/app/C_vt61CAB4.cpp
     virtual void slot_005();  // slot +0x014: sub_406220 [matched] — Source/app/C_vt61CAB4.cpp
     virtual void slot_006();  // slot +0x018: sub_4061C0 [matched] — Source/app/C_vt61CAB4.cpp
-    virtual void slot_007();  // slot +0x01C: sub_4061F0 [lifted]
+    virtual void slot_007();  // slot +0x01C: sub_4061F0 [matched] — Source/app/C_vt61CAB4.cpp
     void method_000();  // sub_545090 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt6289FC.cpp
 };

@@ -35,7 +35,7 @@ public:
     virtual void slot_025();  // slot +0x064: sub_52AC50 [lifted]
     virtual void slot_026();  // slot +0x068: sub_52AA10 [lifted]
     virtual void slot_027();  // slot +0x06C: sub_52AB60 [lifted]
-    virtual void slot_028();  // slot +0x070: sub_408030 [lifted]
+    virtual void slot_028();  // slot +0x070: sub_408030 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_029();  // slot +0x074: sub_52A9E0 [lifted]
     virtual void slot_030();  // slot +0x078: sub_4355E0 [lifted]
     virtual void slot_031();  // slot +0x07C: sub_4356F0 [lifted]
@@ -47,7 +47,7 @@ public:
     virtual void slot_037();  // slot +0x094: sub_52B3A0 [lifted]
     virtual void slot_038();  // slot +0x098: sub_407B40 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_039();  // slot +0x09C: sub_408050 [matched] — Source/ui/C_pnl_inp.cpp
-    virtual void slot_040();  // slot +0x0A0: sub_408060 [lifted]
+    virtual void slot_040();  // slot +0x0A0: sub_408060 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_041();  // slot +0x0A4: sub_4080A0 [lifted]
     virtual void slot_042();  // slot +0x0A8: sub_408200 [lifted]
     virtual void slot_043();  // slot +0x0AC: sub_408330 [lifted]

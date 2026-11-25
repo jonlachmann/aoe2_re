@@ -988,14 +988,14 @@
    {
     "address": "0x405E60",
     "name": "sub_405E60",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CAB4.cpp"
    },
    {
     "address": "0x405EB0",
     "name": "sub_405EB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CAB4.cpp"
    },
    {
     "address": "0x406220",
@@ -1012,8 +1012,8 @@
    {
     "address": "0x4061F0",
     "name": "sub_4061F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CAB4.cpp"
    }
   ],
   "extra_methods": []
@@ -1169,8 +1169,8 @@
    {
     "address": "0x406330",
     "name": "sub_406330",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/free_app.cpp"
    }
   ],
   "extra_methods": []
@@ -1524,14 +1524,14 @@
    {
     "address": "0x407E50",
     "name": "sub_407E50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407E30",
     "name": "sub_407E30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x5276E0",
@@ -1584,8 +1584,8 @@
    {
     "address": "0x407FB0",
     "name": "sub_407FB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407FD0",
@@ -1656,8 +1656,8 @@
    {
     "address": "0x408010",
     "name": "sub_408010",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x408990",
@@ -1686,8 +1686,8 @@
    {
     "address": "0x408030",
     "name": "sub_408030",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52A9E0",
@@ -1758,8 +1758,8 @@
    {
     "address": "0x408060",
     "name": "sub_408060",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x4080A0",
@@ -6989,8 +6989,8 @@
    {
     "address": "0x407E30",
     "name": "sub_407E30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x5276E0",
@@ -7043,8 +7043,8 @@
    {
     "address": "0x407FB0",
     "name": "sub_407FB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x434B20",
@@ -7145,8 +7145,8 @@
    {
     "address": "0x408030",
     "name": "sub_408030",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52A9E0",
@@ -7217,8 +7217,8 @@
    {
     "address": "0x408060",
     "name": "sub_408060",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x4080A0",
@@ -19994,8 +19994,8 @@
    {
     "address": "0x408030",
     "name": "sub_408030",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x52A9E0",
@@ -20066,8 +20066,8 @@
    {
     "address": "0x408060",
     "name": "sub_408060",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x4080A0",
@@ -47734,8 +47734,8 @@
    {
     "address": "0x408060",
     "name": "sub_408060",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x4080A0",
@@ -48904,8 +48904,8 @@
    {
     "address": "0x407E30",
     "name": "sub_407E30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x5276E0",
@@ -48958,8 +48958,8 @@
    {
     "address": "0x407FB0",
     "name": "sub_407FB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x533570",
@@ -49060,8 +49060,8 @@
    {
     "address": "0x408030",
     "name": "sub_408030",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x537DB0",
@@ -49132,8 +49132,8 @@
    {
     "address": "0x408060",
     "name": "sub_408060",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x4080A0",
@@ -53167,14 +53167,14 @@
    {
     "address": "0x405E60",
     "name": "sub_405E60",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CAB4.cpp"
    },
    {
     "address": "0x405EB0",
     "name": "sub_405EB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CAB4.cpp"
    },
    {
     "address": "0x406220",
@@ -53191,8 +53191,8 @@
    {
     "address": "0x4061F0",
     "name": "sub_4061F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CAB4.cpp"
    }
   ],
   "extra_methods": [

@@ -2508,6 +2508,58 @@ S409600* S409600::Init_409600(int a1, int a2)
     return this;
 }
 
+// --- 0x406330: mode write + node/data derived value pair.
+class T406330Node {
+public:
+    char pad_00[0x14];
+    unsigned short field_14;      // +0x14
+};
+class T406330Data {
+public:
+    char pad_00[0xc];
+    void* field_0c;               // +0x0C
+};
+class T406330Value {
+public:
+    char pad_00[0x90];
+    int field_90;                 // +0x90
+    char pad_94[0x160 - 0x94];
+    int field_160;                // +0x160
+};
+class Sc406330 {
+public:
+    char pad_00[8];
+    T406330Data* field_08;        // +0x08
+    char field_0c;                // +0x0C
+    char pad_0d[0x2c - 0x0d];
+    int field_2c;                 // +0x2C
+    T406330Node* field_30;        // +0x30
+    char pad_34[0x40 - 0x34];
+    int field_40;                 // +0x40
+    void M_406330(char a1);
+};
+WIP_FUNC(0x406330)
+void Sc406330::M_406330(char a1)
+{
+    this->field_0c = a1;
+    if (a1 == 6)
+    {
+        T406330Node* node = this->field_30;
+        T406330Data* data = this->field_08;
+        unsigned short id = node->field_14;
+        void* p = *(void**)((char*)data + 0xc);
+        void* q = *(void**)((char*)p + 0xa8);
+        int v;
+        if (id == 0x10)
+            v = *(int*)((char*)q + 0x90);
+        else
+            v = *(int*)((char*)q + 0x160);
+        int v2 = v;
+        this->field_2c = v;
+        this->field_40 = v2;
+    }
+}
+
 extern float g_61c584;
 // Node at [this+0x30] used by the 0x4053A0/0x4053F0 guards.
 class T4053A0Node {
