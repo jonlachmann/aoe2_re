@@ -168,7 +168,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_scr_game` | ui | 0x624914 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_scr_game.cpp, Source/ui/free_ui.cpp | 38/88 |
 | `C_scr_sed` | ui | 0x626338 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 39/89 |
 | `C_scr_vc` | ui | 0x626B28 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 40/88 |
-| `C_tpnl_btn` | ui | 0x62B970 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 28/63 |
+| `C_tpnl_btn` | ui | 0x62B970 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_tpnl_btn.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 29/63 |
 | `C_vt620C7C` | ui | 0x620C7C | Source/ui/C_vt620C7C.cpp | Source/ui/free_ui.cpp | 9/26 |
 | `C_vt620D6C` | ui | 0x620D6C | Source/app/C_vt61CE24.cpp | Source/gfx/C_vt61DA40.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/free_ui.cpp | 16/26 |
 | `C_vt620E50` | ui | 0x620E50 | Source/ui/C_vt620C7C.cpp | Source/ui/free_ui.cpp | 8/26 |

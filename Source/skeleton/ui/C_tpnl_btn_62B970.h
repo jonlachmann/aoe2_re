@@ -27,7 +27,7 @@ public:
     virtual void slot_016();  // slot +0x040: sub_4A0BE0 [lifted]
     virtual void slot_017();  // slot +0x044: sub_4A0C90 [lifted]
     virtual void slot_018();  // slot +0x048: sub_4B0AE0 [lifted]
-    virtual void slot_019();  // slot +0x04C: sub_5A6680 [lifted]
+    virtual void slot_019();  // slot +0x04C: sub_5A6680 [matched] — Source/sim/C_tpnl_btn.cpp
     virtual void slot_020();  // slot +0x050: sub_4A11F0 [lifted]
     virtual void slot_021();  // slot +0x054: sub_4A1440 [lifted]
     virtual void slot_022();  // slot +0x058: sub_4B0820 [lifted]
