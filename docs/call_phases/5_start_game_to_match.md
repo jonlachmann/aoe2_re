@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 606 matched, 1838 left to match (3 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 609 matched, 1835 left to match (3 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1838)
+## Left to match (1835)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -104,7 +104,6 @@
 | 147 | `sub_4BC260` | 53 |  | 1_boot_to_menu | pnl_txt::draw |
 | 148 | `sub_4BC360` | 53 |  | 1_boot_to_menu | pnl_txt::draw_background2 |
 | 149 | `sub_4BC750` | 53 |  | 1_boot_to_menu |  |
-| 150 | `sub_4BD4E0` | 53 |  | 1_boot_to_menu |  |
 | 152 | `sub_4BCBC0` | 53 |  | 1_boot_to_menu |  |
 | 154 | `sub_4BC560` | 53 |  | 1_boot_to_menu | pnl_txt::draw_border |
 | 155 | `sub_4AFAC0` | 153 |  | 1_boot_to_menu | pnl_btn::draw2 |
@@ -214,7 +213,6 @@
 | 405 | `sub_4A0270` | 107 |  | 1_boot_to_menu |  |
 | 407 | `sub_4BA190` | 10 |  | 1_boot_to_menu |  |
 | 408 | `sub_4BA410` | 70 |  | 1_boot_to_menu |  |
-| 409 | `sub_4A0530` | 137 |  | 1_boot_to_menu |  |
 | 412 | `sub_4BBAE0` | 12 |  | 1_boot_to_menu |  |
 | 417 | `sub_48A8C0` | 4 |  | 1_boot_to_menu | mouseptr::LoadCursors |
 | 418 | `sub_5B44D0` | 2 |  | 5_start_game_to_match |  |
@@ -1119,7 +1117,6 @@
 | 1622 | `sub_4B8730` | 1 |  | 1_boot_to_menu |  |
 | 1623 | `sub_4B88B0` | 1 |  | 1_boot_to_menu |  |
 | 1624 | `sub_4B8910` | 11 |  | 1_boot_to_menu |  |
-| 1625 | `sub_4B8A80` | 60 |  | 1_boot_to_menu |  |
 | 1629 | `sub_4B8B20` | 49 |  | 1_boot_to_menu |  |
 | 1630 | `sub_4B1E60` | 5 |  | 4_click_random_map |  |
 | 1632 | `sub_4B1E00` | 1 |  | 4_click_random_map |  |
@@ -1845,7 +1842,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (606)
+## Matched (609)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -1891,6 +1888,7 @@
 | 90 | `sub_619820` | 133001 | MATCH | 1_boot_to_menu | sub_619820 |
 | 144 | `sub_45FE10` | 24318 | MATCH | 1_boot_to_menu | TDrawArea::Unlock_45FE10 |
 | 145 | `sub_4A0C60` | 12326 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0C60 |
+| 150 | `sub_4BD4E0` | 53 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4E0 |
 | 151 | `sub_4BD560` | 53 | MATCH | 1_boot_to_menu | S4BD560::M_4BD560 |
 | 153 | `sub_4BD4B0` | 55 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4B0 |
 | 156 | `sub_4A0BB0` | 66 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0BB0 |
@@ -2012,6 +2010,7 @@
 | 399 | `sub_4A39E0` | 3 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4A39E0 |
 | 401 | `sub_4A39F0` | 2 | MATCH | 1_boot_to_menu | S4A39F0::M_4A39F0 |
 | 406 | `sub_41F6A0` | 57 | MATCH | 1_boot_to_menu | S41F6A0Table::Entry_41F6A0 |
+| 409 | `sub_4A0530` | 137 | MATCH | 1_boot_to_menu | S4A05D0::M_4A0530 |
 | 410 | `sub_4BB990` | 12 | MATCH | 1_boot_to_menu | S4BB990::M_4BB990 |
 | 411 | `sub_4BB9E0` | 21 | MATCH | 1_boot_to_menu | S4BB9E0::M_4BB9E0 |
 | 413 | `sub_4BBA20` | 7 | MATCH | 1_boot_to_menu | S4BBA00::M_4BBA20 |
@@ -2265,6 +2264,7 @@
 | 1619 | `sub_4B5A00` | 1 | MATCH | 4_click_random_map | S4BSetBulk::SetInt_4B5A00 |
 | 1620 | `sub_4BCE70` | 1 | MATCH | 4_click_random_map | sub_4BCE70 |
 | 1621 | `sub_4BCEB0` | 2 | MATCH | 4_click_random_map | C_pnl_lst::M_4BCEB0 |
+| 1625 | `sub_4B8A80` | 60 | MATCH | 1_boot_to_menu | S4B8A80::M_4B8A80 |
 | 1626 | `sub_4BA530` | 1 | MATCH | 1_boot_to_menu | S4BA530::M_4BA530 |
 | 1627 | `sub_5C07A0` | 9 | MATCH | 1_boot_to_menu | S5C07A0::Get_5C07A0 |
 | 1628 | `sub_4B8C10` | 49 | MATCH | 1_boot_to_menu | C_cluster_4B8B20::M_4B8C10 |

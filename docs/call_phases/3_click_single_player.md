@@ -1,8 +1,8 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 83 matched, 170 left to match (1 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 84 matched, 169 left to match (1 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (170)
+## Left to match (169)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -132,7 +132,6 @@
 | 196 | `sub_4BC260` | 22 |  | 1_boot_to_menu | pnl_txt::draw |
 | 197 | `sub_4BC360` | 22 |  | 1_boot_to_menu | pnl_txt::draw_background2 |
 | 198 | `sub_4BC750` | 24 |  | 1_boot_to_menu |  |
-| 199 | `sub_4BD4E0` | 24 |  | 1_boot_to_menu |  |
 | 201 | `sub_4BCBC0` | 24 |  | 1_boot_to_menu |  |
 | 203 | `sub_4BC560` | 22 |  | 1_boot_to_menu | pnl_txt::draw_border |
 | 204 | `sub_610DEA` | 2 |  | 1_boot_to_menu |  |
@@ -177,7 +176,7 @@
 | 282 | `sub_610EB1` | 4 |  | 3_click_single_player |  |
 | 284 | `sub_610E66` | 1 |  | 3_click_single_player |  |
 
-## Matched (83)
+## Matched (84)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -237,6 +236,7 @@
 | 178 | `sub_460650` | 9 | MATCH | 1_boot_to_menu | TDrawArea::GetPitch_460650 |
 | 180 | `sub_461370` | 48 | MATCH | 1_boot_to_menu | TDrawArea::HLine_461370 |
 | 182 | `sub_461400` | 48 | MATCH | 1_boot_to_menu | TDrawArea::VLine_461400 |
+| 199 | `sub_4BD4E0` | 24 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4E0 |
 | 200 | `sub_4BD560` | 24 | MATCH | 1_boot_to_menu | S4BD560::M_4BD560 |
 | 202 | `sub_4BD4B0` | 24 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4B0 |
 | 211 | `sub_6032E5` | 21 | MATCH | 1_boot_to_menu | sub_6032E5 |

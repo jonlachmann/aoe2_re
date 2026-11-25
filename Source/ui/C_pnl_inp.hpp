@@ -11,8 +11,15 @@ class C_pnl_inp;
 // holds the result at +0x00 and the successor at +0x24.
 class T4BD4B0Node {
 public:
-    char* field_0;                // +0x00
-    char pad_04[0x24 - 4];
+    void* field_0;                // +0x00 output A
+    char pad_04[0xc - 4];
+    void* field_c;                // +0x0C output B
+    unsigned char field_10;       // +0x10 optional geometry flag
+    char pad_11[0x14 - 0x11];
+    int field_14;                 // +0x14
+    int field_18;                 // +0x18
+    int field_1c;                 // +0x1C
+    int field_20;                 // +0x20
     T4BD4B0Node* next_24;         // +0x24
 };
 
@@ -169,6 +176,7 @@ public:
     void M_4BBCE0(int a1);
     void M_4BADD0(int a1);
     char* M_4BD4B0(int index);
+    void M_4BD4E0(int index, void* a2, void* a3, int* a4, int* a5, unsigned char flag);
     void SetInt_4B4600(int v);
     void M_4BAF60(int a, int b, int c, int d);
     int M_4BCE20(int a, int b, int c, int d);

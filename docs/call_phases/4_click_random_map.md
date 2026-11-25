@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 255 matched, 299 left to match (2 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 258 matched, 296 left to match (2 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (299)
+## Left to match (296)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -123,7 +123,6 @@
 | 185 | `sub_4BC260` | 101 |  | 1_boot_to_menu | pnl_txt::draw |
 | 186 | `sub_4BC360` | 101 |  | 1_boot_to_menu | pnl_txt::draw_background2 |
 | 187 | `sub_4BC750` | 102 |  | 1_boot_to_menu |  |
-| 188 | `sub_4BD4E0` | 102 |  | 1_boot_to_menu |  |
 | 190 | `sub_4BCBC0` | 102 |  | 1_boot_to_menu |  |
 | 192 | `sub_4BC560` | 101 |  | 1_boot_to_menu | pnl_txt::draw_border |
 | 193 | `sub_610DEA` | 23 |  | 1_boot_to_menu |  |
@@ -201,7 +200,6 @@
 | 383 | `sub_4A0270` | 318 |  | 1_boot_to_menu |  |
 | 385 | `sub_4BA190` | 144 |  | 1_boot_to_menu |  |
 | 386 | `sub_4BA410` | 509 |  | 1_boot_to_menu |  |
-| 387 | `sub_4A0530` | 361 |  | 1_boot_to_menu |  |
 | 390 | `sub_4BBAE0` | 179 |  | 1_boot_to_menu |  |
 | 399 | `sub_4A4570` | 29 |  | 1_boot_to_menu |  |
 | 401 | `sub_4A3D40` | 14 |  | 1_boot_to_menu |  |
@@ -222,7 +220,6 @@
 | 434 | `sub_4B8730` | 35 |  | 1_boot_to_menu |  |
 | 435 | `sub_4B88B0` | 35 |  | 1_boot_to_menu |  |
 | 436 | `sub_4B8910` | 153 |  | 1_boot_to_menu |  |
-| 437 | `sub_4B8A80` | 695 |  | 1_boot_to_menu |  |
 | 441 | `sub_4B8B20` | 542 |  | 1_boot_to_menu |  |
 | 442 | `sub_4B1E60` | 59 |  | 4_click_random_map |  |
 | 445 | `sub_4B1E00` | 35 |  | 4_click_random_map |  |
@@ -306,7 +303,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (255)
+## Matched (258)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -365,6 +362,7 @@
 | 167 | `sub_460650` | 11 | MATCH | 1_boot_to_menu | TDrawArea::GetPitch_460650 |
 | 169 | `sub_461370` | 378 | MATCH | 1_boot_to_menu | TDrawArea::HLine_461370 |
 | 171 | `sub_461400` | 378 | MATCH | 1_boot_to_menu | TDrawArea::VLine_461400 |
+| 188 | `sub_4BD4E0` | 102 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4E0 |
 | 189 | `sub_4BD560` | 102 | MATCH | 1_boot_to_menu | S4BD560::M_4BD560 |
 | 191 | `sub_4BD4B0` | 211 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4B0 |
 | 197 | `sub_461130` | 6 | MATCH | 3_click_single_player | TDrawArea::FrameRect_461130 |
@@ -454,6 +452,7 @@
 | 378 | `sub_522CD0` | 1 | MATCH | 1_boot_to_menu | C_cluster_522CD0::M_522CD0 |
 | 379 | `sub_5F9AA0` | 2 | MATCH | 1_boot_to_menu | sub_5F9AA0 |
 | 384 | `sub_41F6A0` | 533 | MATCH | 1_boot_to_menu | S41F6A0Table::Entry_41F6A0 |
+| 387 | `sub_4A0530` | 361 | MATCH | 1_boot_to_menu | S4A05D0::M_4A0530 |
 | 388 | `sub_4BB990` | 179 | MATCH | 1_boot_to_menu | S4BB990::M_4BB990 |
 | 389 | `sub_4BB9E0` | 396 | MATCH | 1_boot_to_menu | S4BB9E0::M_4BB9E0 |
 | 391 | `sub_4BBA20` | 109 | MATCH | 1_boot_to_menu | S4BBA00::M_4BBA20 |
@@ -482,6 +481,7 @@
 | 431 | `sub_4B5A00` | 35 | MATCH | 4_click_random_map | S4BSetBulk::SetInt_4B5A00 |
 | 432 | `sub_4BCE70` | 35 | MATCH | 4_click_random_map | sub_4BCE70 |
 | 433 | `sub_4BCEB0` | 128 | MATCH | 4_click_random_map | C_pnl_lst::M_4BCEB0 |
+| 437 | `sub_4B8A80` | 695 | MATCH | 1_boot_to_menu | S4B8A80::M_4B8A80 |
 | 438 | `sub_4BA530` | 35 | MATCH | 1_boot_to_menu | S4BA530::M_4BA530 |
 | 439 | `sub_5C07A0` | 94 | MATCH | 1_boot_to_menu | S5C07A0::Get_5C07A0 |
 | 440 | `sub_4B8C10` | 542 | MATCH | 1_boot_to_menu | C_cluster_4B8B20::M_4B8C10 |

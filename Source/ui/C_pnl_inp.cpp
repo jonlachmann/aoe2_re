@@ -22,7 +22,7 @@ char* C_pnl_inp::M_4BD4B0(int index)
     for (T4BD4B0Node* node = field_f8; node; node = node->next_24)
     {
         if (i == index)
-            return node->field_0;
+            return (char*)node->field_0;
         i++;
     }
     g_73e355 = 0;
@@ -66,4 +66,38 @@ void C_pnl_inp::M_4BADD0(int a1)
     char buffer[0x1000];
     Other_4A2140(a1, buffer, 0x1000);
     Vat_fc(buffer, 0);
+}
+
+// 0x4BD4E0 — walk the +0xF8 indexed node chain to the matching index and copy
+// the +0x00/+0x0C results; when the +0x10 flag is set and both optional output
+// pointers exist, copy one of the two +0x14/+0x18 or +0x1C/+0x20 pairs.
+MATCH_FUNC(0x4BD4E0)
+void C_pnl_inp::M_4BD4E0(int index, void* a2, void* a3, int* a4, int* a5,
+                         unsigned char flag)
+{
+    *(void**)a2 = 0;
+    *(void**)a3 = 0;
+    int i = 0;
+    for (T4BD4B0Node* node = field_f8; node; node = node->next_24)
+    {
+        if (i == index)
+        {
+            *(void**)a2 = node->field_0;
+            *(void**)a3 = node->field_c;
+            if (node->field_10 != 0 && a4 != 0 && a5 != 0)
+            {
+                if (flag != 0)
+                {
+                    *a4 = node->field_1c;
+                    *a5 = node->field_20;
+                }
+                else
+                {
+                    *a4 = node->field_14;
+                    *a5 = node->field_18;
+                }
+            }
+        }
+        i++;
+    }
 }
