@@ -17,7 +17,7 @@ void sub_440BC0();  // size 64, calls 2, matched, module gfx
 void sub_440C00();  // size 64, calls 2, matched, module gfx
 void sub_440C40();  // size 127, calls 4, lifted, module gfx
 void sub_440CC0();  // size 64, calls 2, matched, module gfx
-void sub_440D00();  // size 60, calls 2, lifted, module gfx
+void sub_440D00();  // size 60, calls 2, matched, module gfx
 void sub_440D40();  // size 445, calls 4, lifted, module gfx
 void sub_440F70();  // size 21, calls 0, matched, module gfx
 void sub_440F90();  // size 388, calls 1, lifted, module gfx

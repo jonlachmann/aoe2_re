@@ -23126,8 +23126,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440D40",
@@ -46613,8 +46613,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4A3760",
@@ -51387,8 +51387,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4AF3E0",
@@ -55255,8 +55255,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4BA5C0",
@@ -119378,8 +119378,8 @@
   "slot_classes": [],
   "module": "runtime-data",
   "region": "runtime-data",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/crt/free_crt.cpp"
  },
  {
   "address": "0x6197C0",
@@ -119406,8 +119406,8 @@
   "slot_classes": [],
   "module": "runtime-data",
   "region": "runtime-data",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/crt/free_crt.cpp"
  },
  {
   "address": "0x619860",

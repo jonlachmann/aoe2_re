@@ -6175,3 +6175,74 @@ void S4BA530::M_4BA530(S5C07A0* a1, int a2)
         this->Vat_0c(field_0c, field_10, field_14, field_18);
     }
 }
+
+// 0x4BA580 — classify a string's first byte: 2 when the 0x61C0D0 predicate
+// accepts it, 1 in the 0xA1..0xDF range, otherwise 0.
+extern int (__stdcall *g_pfn_61c0d0)(char a1);
+MATCH_FUNC(0x4BA580)
+int __stdcall sub_4BA580(unsigned char* a1)
+{
+    if (a1 != 0)
+    {
+        if (*a1 != 0)
+        {
+            if (g_pfn_61c0d0(*a1))
+                return 2;
+            if (*a1 >= 0xa1 && *a1 <= 0xdf)
+                return 1;
+        }
+    }
+    return 0;
+}
+
+// 0x4A3710 — record the two selector bytes and publish a counter from the
+// 0x61C040 allocator after notifying slot +0x10.
+extern int (__stdcall *g_61C040)(int a1);
+class S4A3710 {
+public:
+    virtual void slot_000();
+    virtual void slot_004();
+    virtual void slot_008();
+    virtual void slot_00c();
+    virtual void Vat_10(int a1);
+
+    char pad_04[0x468 - 4];       // 0x04..0x468
+    unsigned char byte_468;       // +0x468
+    unsigned char byte_469;       // +0x469
+    char pad_46a[0x474 - 0x46a];  // 0x46A..0x474
+    int field_474;                // +0x474
+    int field_478;                // +0x478
+    int field_47c;                // +0x47C
+
+    void M_4A3710(int a1, int a2);
+};
+
+MATCH_FUNC(0x4A3710)
+void S4A3710::M_4A3710(int a1, int a2)
+{
+    this->Vat_10(a1);
+    byte_468 = a1;
+    byte_469 = a2;
+    field_478 = g_61C040(4);
+    field_474 = 1;
+    field_47c = 0;
+}
+
+// 0x4AF3A0 — six-argument orchestrator on the shared 0x4AFxxx object: sets
+// the +0x1EC/+0x1F0 pair, then the +0x1A4 indexed entry, then the
+// +0x1F4/+0x1F44/+0x1F48 triple.
+class S4AF3A0 {
+public:
+    void M_4AF3E0(int a1, int a2);
+    void M_4AF510(int a1, int a2);
+    void M_4AF7D0(int a1, int a2, int a3);
+    void M_4AF3A0(int a1, int a2, int a3, int a4, int a5, int a6);
+};
+
+MATCH_FUNC(0x4AF3A0)
+void S4AF3A0::M_4AF3A0(int a1, int a2, int a3, int a4, int a5, int a6)
+{
+    M_4AF3E0(a5, a6);
+    M_4AF510(0, a1);
+    M_4AF7D0(a2, a3, a4);
+}

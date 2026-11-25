@@ -813,15 +813,19 @@ public:
     int field_08;
     int field_0c;
     int field_10;
-    char pad_14[4];               // 0x14..0x18
+    int field_14;                 // +0x14 state flag
     int field_18;
-    char pad_1c[0x10];            // 0x1c..0x2c
+    char pad_1c[0x08];            // 0x1c..0x24
+    int field_24;
+    int field_28;                 // +0x28 reset by M_440D00
     int field_2c;
+    int* M_440F70(int a1);        // __thiscall sibling helper at 0x440F70
     void M_440B40(int a1);
     void M_440B80(int a1);
     void M_440BC0(int a1);
     void M_440C00(int a1);
     void M_440CC0(int a1);
+    void M_440D00(int a1);
 };
 
 MATCH_FUNC(0x440B40)
@@ -855,6 +859,20 @@ void S440B40::M_440BC0(int a1)
         field_04 = 1;
     else
         field_04 = 0;
+}
+
+MATCH_FUNC(0x440D00)
+void S440B40::M_440D00(int a1)
+{
+    if (a1 != 0)
+    {
+        field_14 = 1;
+        field_28 = 0;
+    }
+    else
+        field_14 = 0;
+    if (field_2c == 0)
+        Hook_4378C0(this, 0x651420, M_440F70(a1));
 }
 
 MATCH_FUNC(0x440C00)

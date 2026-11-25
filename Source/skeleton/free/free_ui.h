@@ -409,7 +409,7 @@ void panel_ez::setup_shadow_area();  // size 467, calls 11, lifted, module ui
 void sub_4A33C0();  // size 74, calls 1, lifted, module ui
 void sub_4A3430();  // size 358, calls 7, lifted, module ui
 void sub_4A35A0();  // size 358, calls 7, lifted, module ui
-void sub_4A3710();  // size 69, calls 0, lifted, module ui
+void sub_4A3710();  // size 69, calls 0, matched, module ui
 void sub_4A3760();  // size 312, calls 5, lifted, module ui
 void sub_4A38A0();  // size 65, calls 0, matched, module ui
 void sub_4A38F0();  // size 13, calls 0, matched, module ui
@@ -547,7 +547,7 @@ void sub_4AF0D0();  // size 11, calls 0, matched, module ui
 void sub_4AF270();  // size 112, calls 2, lifted, module ui
 void sub_4AF2E0();  // size 110, calls 3, lifted, module ui
 void sub_4AF350();  // size 13, calls 0, matched, module ui
-void sub_4AF3A0();  // size 60, calls 3, lifted, module ui
+void sub_4AF3A0();  // size 60, calls 3, matched, module ui
 void sub_4AF3E0();  // size 30, calls 0, matched, module ui
 void sub_4AF400();  // size 136, calls 2, lifted, module ui
 void sub_4AF490();  // size 25, calls 0, matched, module ui
@@ -661,7 +661,7 @@ void sub_4B9D80();  // size 127, calls 1, lifted, module ui
 void sub_4B9E70();  // size 127, calls 1, lifted, module ui
 void sub_4BA100();  // size 144, calls 4, lifted, module ui
 void sub_4BA530();  // size 65, calls 1, matched, module ui
-void sub_4BA580();  // size 60, calls 0, lifted, module ui
+void sub_4BA580();  // size 60, calls 0, matched, module ui
 void sub_4BA6E0();  // size 223, calls 2, lifted, module ui
 void sub_4BA7C0();  // size 76, calls 3, lifted, module ui
 void pnl_txt::word_wrap_append();  // size 1461, calls 13, lifted, module ui

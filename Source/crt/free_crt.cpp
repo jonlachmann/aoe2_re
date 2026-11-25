@@ -301,6 +301,56 @@ void __cdecl sub_6199C0(int a1)
 }
 #pragma optimize("y", on)
 
+// 0x619780 — publish four 4-byte values to paired globals (8 slots).
+extern int g_774060;
+extern int g_774068;
+extern int g_774070;
+extern int g_774078;
+extern int g_774064;
+extern int g_77406c;
+extern int g_774074;
+extern int g_77407c;
+#pragma optimize("y", off)
+MATCH_FUNC(0x619780)
+void __cdecl sub_619780(int a1, int a2, int a3, int a4)
+{
+    g_774060 = a1;
+    g_774068 = a1;
+    g_774070 = a2;
+    g_774078 = a2;
+    g_774064 = a3;
+    g_77406c = a3;
+    g_774074 = a4;
+    g_77407c = a4;
+}
+#pragma optimize("y", on)
+
+// 0x619820 — publish seven values to 0x774000..0x77408C (store order a1, a2,
+// a3, a5, a7, a4, a6).
+extern int g_774000;
+extern int g_774004;
+extern int g_774008;
+extern int g_774080;
+extern int g_774084;
+extern int g_774088;
+extern int g_77408c;
+#pragma optimize("s", on)
+#pragma optimize("y", off)
+MATCH_FUNC(0x619820)
+void __cdecl sub_619820(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+{
+    int v;
+    v = a1; g_774000 = v;
+    v = a2; g_774004 = v;
+    v = a3; g_774008 = v;
+    v = a5; g_774080 = v;
+    v = a7; g_774084 = v;
+    v = a4; g_774088 = v;
+    v = a6; g_77408c = v;
+}
+#pragma optimize("y", on)
+#pragma optimize("s", off)
+
 // 0x5FB470 — heap-init wrapper: forwards one stack argument plus fixed
 // constants to the __fastcall heap initializer at 0x5FB490. WIP: the original
 // hand-tuned CRT interleaves edx/ecx setup between the arg pushes.

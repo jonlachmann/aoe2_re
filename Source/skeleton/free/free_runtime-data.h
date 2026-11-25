@@ -5,9 +5,9 @@
 
 void sub_61006E();  // size 6, calls 0, matched, module runtime-data
 void sub_617461();  // size 316, calls 0, lifted, module runtime-data
-void sub_619780();  // size 57, calls 0, lifted, module runtime-data
+void sub_619780();  // size 57, calls 0, matched, module runtime-data
 void sub_6197C0();  // size 81, calls 0, lifted, module runtime-data
-void sub_619820();  // size 61, calls 0, lifted, module runtime-data
+void sub_619820();  // size 61, calls 0, matched, module runtime-data
 void sub_619860();  // size 33, calls 0, lifted, module runtime-data
 void sub_6198A0();  // size 41, calls 0, lifted, module runtime-data
 void sub_6198E0();  // size 11, calls 0, matched, module runtime-data
