@@ -51,3 +51,13 @@ void C_cluster_520CE0::M_522C50()
     g_pfn_61c2ec(*(void**)((char*)this + 0x5bc));
     *(void**)((char*)this + 0x5bc) = 0;
 }
+
+// 0x5204C0 — walk the +0x79C count, +0x29C pointer table and +0x69C byte
+// table on the object pointed to by g_6645c4+0x80, dispatching each entry.
+MATCH_FUNC(0x5204C0)
+void C_cluster_520CE0::M_5204C0()
+{
+    for (int i = 0; i < *(int*)((char*)this + 0x79c); i++)
+        ((C_cluster_5207B0*)*(int**)((char*)this + 0x29c + i * 4))->Hook_520A80(
+            *(char*)((char*)this + i + 0x69c));
+}

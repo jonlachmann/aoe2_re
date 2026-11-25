@@ -481,7 +481,7 @@ void sub_4A7720();  // size 478, calls 5, lifted, module ui
 void sub_4A7CC0();  // size 833, calls 7, lifted, module ui
 void sub_4A8010();  // size 558, calls 7, lifted, module ui
 void sub_4A8240();  // size 161, calls 2, lifted, module ui
-void sub_4A8320();  // size 135, calls 0, lifted, module ui
+void sub_4A8320();  // size 135, calls 0, matched, module ui
 void sub_4A83B0();  // size 489, calls 11, lifted, module ui
 void sub_4A8599();  // size 39, calls 0, lifted, module ui
 void sub_4A88CD();  // size 3305, calls 6, lifted, module ui

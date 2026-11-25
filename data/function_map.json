@@ -23042,8 +23042,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440B80",
@@ -23056,8 +23056,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440BC0",
@@ -23070,8 +23070,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440C00",
@@ -23084,8 +23084,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440C40",
@@ -23112,8 +23112,8 @@
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440D00",
@@ -49221,8 +49221,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_vt6222D4.cpp"
  },
  {
   "address": "0x4A83B0",
@@ -68696,8 +68696,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/C_cluster_520CE0.cpp"
  },
  {
   "address": "0x520500",
@@ -68962,8 +68962,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x520E10",
@@ -68976,8 +68976,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x520E50",
@@ -68990,8 +68990,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x520E90",
@@ -69004,8 +69004,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x520ED0",
@@ -69018,8 +69018,8 @@
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x520F10",
@@ -112644,8 +112644,8 @@
   "slot_classes": [],
   "module": "crt",
   "region": "crt",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/crt/free_crt.cpp"
  },
  {
   "address": "0x5FB490",

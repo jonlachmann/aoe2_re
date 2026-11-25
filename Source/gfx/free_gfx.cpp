@@ -803,6 +803,82 @@ extern "C" int* __stdcall sub_440F70(int flag)
     return flag ? &g_6514FC : &g_6514E4;
 }
 
+// 0x440B40..0x440CC0 — five toggle setters on the same object: when the +0x2C
+// logger is absent, report the new state through the empty 0x4378C0 stub.
+extern void __cdecl Hook_4378C0(void* a1, int a2, void* a3);
+class S440B40 {
+public:
+    int vtbl_00;                  // +0x00 vtable 0x61E948
+    int field_04;
+    int field_08;
+    int field_0c;
+    int field_10;
+    char pad_14[4];               // 0x14..0x18
+    int field_18;
+    char pad_1c[0x10];            // 0x1c..0x2c
+    int field_2c;
+    void M_440B40(int a1);
+    void M_440B80(int a1);
+    void M_440BC0(int a1);
+    void M_440C00(int a1);
+    void M_440CC0(int a1);
+};
+
+MATCH_FUNC(0x440B40)
+void S440B40::M_440B40(int a1)
+{
+    if (field_2c == 0)
+        Hook_4378C0(this, 0x65137c, sub_440F70(a1));
+    if (a1)
+        field_0c = 1;
+    else
+        field_0c = 0;
+}
+
+MATCH_FUNC(0x440B80)
+void S440B40::M_440B80(int a1)
+{
+    if (field_2c == 0)
+        Hook_4378C0(this, 0x651390, sub_440F70(a1));
+    if (a1)
+        field_10 = 1;
+    else
+        field_10 = 0;
+}
+
+MATCH_FUNC(0x440BC0)
+void S440B40::M_440BC0(int a1)
+{
+    if (field_2c == 0)
+        Hook_4378C0(this, 0x6513a8, sub_440F70(a1));
+    if (a1)
+        field_04 = 1;
+    else
+        field_04 = 0;
+}
+
+MATCH_FUNC(0x440C00)
+void S440B40::M_440C00(int a1)
+{
+    if (field_2c == 0)
+        Hook_4378C0(this, 0x6513c4, sub_440F70(a1));
+    if (a1)
+        field_08 = 1;
+    else
+        field_08 = 0;
+}
+
+MATCH_FUNC(0x440CC0)
+void S440B40::M_440CC0(int a1)
+{
+    if (field_2c == 0)
+        Hook_4378C0(this, 0x651404, sub_440F70(a1));
+    if (a1)
+        field_18 = 1;
+    else
+        field_18 = 0;
+}
+
 // sub_4437F0 (VA 0x4437F0, 20 bytes) - cdecl: publish the arg as the global
 // pointer at 0x66A478 and stamp 0xABCD1234 at object offset +0x38178.
 int global_66A478;

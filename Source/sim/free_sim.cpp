@@ -1938,16 +1938,67 @@ void S52SetImmBulk::Set_520500()
     *(int*)((char*)this + 0x79c) = 0x0;
 }
 
+// The instance dereferenced from the caller's +0x90 field: setter at +0x70 and
+// five 0x104-stride name buffers at +0x84..+0x494.
 class S52SetBulk {
 public:
     void SetInt_520F50(int v);
     void SetByte_52BC90(unsigned char v);
+    void CopyName_520DD0(char* a1);
+    void CopyName_520E10(char* a1);
+    void CopyName_520E50(char* a1);
+    void CopyName_520E90(char* a1);
+    void CopyName_520ED0(char* a1);
+
+    char pad_00[0x70];           // 0x00..0x70
+    int field_70;                // 0x70
+    char pad_74[0x10];           // 0x74..0x84
+    char name_84[0x104];         // 0x84..0x188
+    char name_188[0x104];        // 0x188..0x28c
+    char name_28c[0x104];        // 0x28c..0x390
+    char name_390[0x104];        // 0x390..0x494
+    char name_494[0x104];        // 0x494..0x598
 };
 
 MATCH_FUNC(0x520F50)
 void S52SetBulk::SetInt_520F50(int v)
 {
-    *(int*)((char*)this + 0x70) = v;
+    field_70 = v;
+}
+
+MATCH_FUNC(0x520DD0)
+void S52SetBulk::CopyName_520DD0(char* a1)
+{
+    if (a1)
+        strcpy(name_84, a1);
+}
+
+MATCH_FUNC(0x520E10)
+void S52SetBulk::CopyName_520E10(char* a1)
+{
+    if (a1)
+        strcpy(name_188, a1);
+}
+
+MATCH_FUNC(0x520E50)
+void S52SetBulk::CopyName_520E50(char* a1)
+{
+    if (a1)
+        strcpy(name_28c, a1);
+}
+
+MATCH_FUNC(0x520E90)
+void S52SetBulk::CopyName_520E90(char* a1)
+{
+    if (a1)
+        strcpy(name_390, a1);
+}
+
+MATCH_FUNC(0x520ED0)
+void S52SetBulk::CopyName_520ED0(char* a1)
+{
+    if (a1)
+        strcpy(name_494, a1);
 }
 
 class S54SetBulk {

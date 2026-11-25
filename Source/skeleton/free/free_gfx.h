@@ -11,12 +11,12 @@ void sub_440750();  // size 1, calls 0, matched, module gfx
 void sub_440760();  // size 692, calls 2, lifted, module gfx
 void sub_440A20();  // size 111, calls 2, lifted, module gfx
 void sub_440A90();  // size 117, calls 7, lifted, module gfx
-void sub_440B40();  // size 64, calls 2, lifted, module gfx
-void sub_440B80();  // size 64, calls 2, lifted, module gfx
-void sub_440BC0();  // size 64, calls 2, lifted, module gfx
-void sub_440C00();  // size 64, calls 2, lifted, module gfx
+void sub_440B40();  // size 64, calls 2, matched, module gfx
+void sub_440B80();  // size 64, calls 2, matched, module gfx
+void sub_440BC0();  // size 64, calls 2, matched, module gfx
+void sub_440C00();  // size 64, calls 2, matched, module gfx
 void sub_440C40();  // size 127, calls 4, lifted, module gfx
-void sub_440CC0();  // size 64, calls 2, lifted, module gfx
+void sub_440CC0();  // size 64, calls 2, matched, module gfx
 void sub_440D00();  // size 60, calls 2, lifted, module gfx
 void sub_440D40();  // size 445, calls 4, lifted, module gfx
 void sub_440F70();  // size 21, calls 0, matched, module gfx

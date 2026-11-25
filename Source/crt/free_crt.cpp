@@ -300,3 +300,14 @@ void __cdecl sub_6199C0(int a1)
     g_77401C = a1;
 }
 #pragma optimize("y", on)
+
+// 0x5FB470 — heap-init wrapper: forwards one stack argument plus fixed
+// constants to the __fastcall heap initializer at 0x5FB490. WIP: the original
+// hand-tuned CRT interleaves edx/ecx setup between the arg pushes.
+extern int __fastcall Hook_5FB490(int a1, int a2, int a3, int a4, int a5,
+                                   int a6, int a7, int a8, int a9);
+WIP_FUNC(0x5FB470)
+int __stdcall sub_5FB470(int a1)
+{
+    return Hook_5FB490(0x18, 0, 0, a1, 0, 0, 0, 0, 0);
+}

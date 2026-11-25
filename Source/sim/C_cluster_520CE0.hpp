@@ -5,6 +5,11 @@
 
 #include "Function.hpp"
 
+class C_cluster_5207B0 {
+public:
+    void Hook_520A80(char a1);     // unresolved callee at 0x520A80
+};
+
 class C_cluster_520CE0 {
 public:
     int field_0;                  // +0x00
@@ -15,4 +20,5 @@ public:
     void M_5214E0();
     void M_522C30();
     void M_522C50();
+    void M_5204C0();
 };
