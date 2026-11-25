@@ -2493,6 +2493,47 @@ Sc4029C0* Sc4029C0::Init_4029C0(int a1, int a2, int a3, int a4, int a5)
     return this;
 }
 
+// 0x4073F0 — six-argument constructor wrapper with a field-default branch.
+extern char g_vt_61CD2Cf;
+class Sc4073F0 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[2];
+    void* field_08;               // +8
+    char pad_0c[0x14];
+    int field_20;                 // +0x20
+    int field_24;                 // +0x24
+    int field_28;                 // +0x28
+    char pad_2c[0xc];
+    int field_38;                 // +0x38
+    char pad_3c[4];
+    int field_40;                 // +0x40
+    Sc4073F0* Init_4073F0(int a1, int a2, int a3, int a4, int a5, int a6);
+};
+MATCH_FUNC(0x4073F0)
+Sc4073F0* Sc4073F0::Init_4073F0(int a1, int a2, int a3, int a4, int a5, int a6)
+{
+    sub_409600(a1, 1);
+    this->field_20 = a2;
+    *(void**)this = &g_vt_61CD2Cf;
+    this->type_04 = 1;
+    this->field_24 = a3;
+    this->field_28 = a4;
+    this->field_40 = a5;
+    this->field_38 = a6;
+    if (a6 == 0)
+    {
+        int p = *(int*)((char*)this->field_08 + 8);
+        int c = *(int*)((char*)p + 0xc8);
+        if (c == 0)
+            this->field_38 = *(int*)((char*)p + 0x18);
+        else
+            this->field_38 = c;
+    }
+    return this;
+}
+
 // 0x4062D0 — two-argument constructor wrapper, fields +0x30 and +0x40.
 extern char g_vt_61CB58f;
 class Sc4062D0 {

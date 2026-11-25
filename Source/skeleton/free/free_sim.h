@@ -200,7 +200,7 @@ void sub_53F060();  // size 13, calls 0, matched, module sim
 void sub_53F200();  // size 259, calls 3, lifted, module sim
 void sub_53F310();  // size 318, calls 2, lifted, module sim
 void sub_53F470();  // size 169, calls 2, lifted, module sim
-void sub_53F520();  // size 102, calls 1, lifted, module sim
+void sub_53F520();  // size 102, calls 1, wip, module sim
 void sub_53F590();  // size 79, calls 2, lifted, module sim
 void sub_540000();  // size 19, calls 0, lifted, module sim
 void sub_540580();  // size 382, calls 5, lifted, module sim
@@ -215,7 +215,7 @@ void sub_540CA0();  // size 130, calls 3, lifted, module sim
 void sub_540D30();  // size 91, calls 2, matched, module sim
 void sub_540E70();  // size 427, calls 1, lifted, module sim
 void sub_541020();  // size 40, calls 1, matched, module sim
-void sub_541050();  // size 40, calls 1, lifted, module sim
+void sub_541050();  // size 40, calls 1, matched, module sim
 void sub_541250();  // size 103, calls 2, lifted, module sim
 void sub_5412E0();  // size 196, calls 5, lifted, module sim
 void sub_5419D3();  // size 26, calls 0, lifted, module sim
@@ -232,7 +232,7 @@ void sub_54494D();  // size 19, calls 1, lifted, module sim
 void sub_544960();  // size 47, calls 1, lifted, module sim
 void sub_544AE0();  // size 514, calls 3, lifted, module sim
 void sub_544CF0();  // size 103, calls 2, lifted, module sim
-void sub_544D80();  // size 40, calls 1, lifted, module sim
+void sub_544D80();  // size 40, calls 1, matched, module sim
 void sub_544DB0();  // size 106, calls 2, lifted, module sim
 void sub_545000();  // size 66, calls 1, lifted, module sim
 void sub_545345();  // size 31, calls 1, lifted, module sim
@@ -265,7 +265,7 @@ void sub_5499B9();  // size 26, calls 0, lifted, module sim
 void sub_54A7B0();  // size 311, calls 3, lifted, module sim
 void sub_54A8F0();  // size 514, calls 4, lifted, module sim
 void sub_54AB40();  // size 115, calls 2, lifted, module sim
-void sub_54ABE0();  // size 49, calls 1, lifted, module sim
+void sub_54ABE0();  // size 49, calls 1, matched, module sim
 void sub_54AFA0();  // size 62, calls 1, lifted, module sim
 void sub_54AFE0();  // size 234, calls 2, lifted, module sim
 void sub_54B0F0();  // size 172, calls 3, lifted, module sim

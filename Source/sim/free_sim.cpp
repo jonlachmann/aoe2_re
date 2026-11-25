@@ -5533,6 +5533,57 @@ Sc54ABE0* Sc54ABE0::Init_54ABE0(int a1, int a2, int a3)
     return this;
 }
 
+// 0x53F520 — five-argument constructor wrapper with default fields at +0x40..+0x5c.
+extern char g_vt_628368f;
+class Sc53F520 {
+public:
+    int vtable_00;                // +0
+    short type_04;                // +4
+    char pad_06[0x1a];
+    int field_20;                 // +0x20
+    int field_24;                 // +0x24
+    int field_28;                 // +0x28
+    char pad_2c[4];
+    int field_30;                 // +0x30
+    char pad_34[0xc];
+    char byte_40;                 // +0x40
+    char pad_41[3];
+    float field_44;               // +0x44
+    float field_48;               // +0x48
+    char byte_4c;                 // +0x4c
+    char byte_4d;                 // +0x4d
+    char pad_4e[2];
+    int field_50;                 // +0x50
+    int field_54;                 // +0x54
+    int field_58;                 // +0x58
+    int field_5c;                 // +0x5c
+    Sc53F520* Init_53F520(int a1, int a2, int a3, int a4, int a5);
+};
+WIP_FUNC(0x53F520)
+Sc53F520* Sc53F520::Init_53F520(int a1, int a2, int a3, int a4, int a5)
+{
+    sub_409600(a1, 1);
+    // Original loads a4 into ecx at 0x1c and a5 into edx at 0x23, then defers
+    // the +0x24/+0x28 stores past vtable/type. All tried source orders keep the
+    // late-argument loads after the zero block.
+    this->field_30 = a2;
+    this->field_20 = a3;
+    this->byte_4c = 0;
+    this->byte_4d = 0;
+    this->field_50 = 0;
+    this->field_54 = 0;
+    this->field_58 = 0;
+    this->byte_40 = 0;
+    this->field_44 = 1.0f;
+    this->field_48 = -1.0f;
+    this->field_5c = -1;
+    *(void**)this = &g_vt_628368f;
+    this->type_04 = 0x68;
+    this->field_24 = a4;
+    this->field_28 = a5;
+    return this;
+}
+
 // 0x5486D0 — five-argument constructor wrapper with fields at +0x20..+0x30.
 extern char g_vt_628F04f;
 class Sc5486D0 {
