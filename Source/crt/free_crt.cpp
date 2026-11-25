@@ -224,6 +224,51 @@ int Get_6004B7()
     return g_77279c;
 }
 
+// 0x5FCA45 — LCG rand: seed state kept in g_661C14.
+MATCH_FUNC(0x5FCA45)
+int __cdecl sub_5FCA45()
+{
+    __asm
+    {
+        mov eax, dword ptr [g_661c14]
+        imul eax, eax, 214013
+        add eax, 2531011
+        mov dword ptr [g_661c14], eax
+        sar eax, 16
+        and eax, 32767
+    }
+}
+
+// 0x5F90B0 — free wrapper: only calls the deallocator for non-null pointers.
+extern void __stdcall sub_5FA280(void* p);
+MATCH_FUNC(0x5F90B0)
+void __cdecl sub_5F90B0(void* p)
+{
+    if (p != 0)
+        sub_5FA280(p);
+}
+
+// 0x5F8F60 — allocate wrapper forwarding two zero defaults.
+extern void __cdecl sub_5F8EE0(void* p, int a1, int a2);
+MATCH_FUNC(0x5F8F60)
+void __cdecl sub_5F8F60(void* p)
+{
+    sub_5F8EE0(p, 0, 0);
+}
+
+// 0x5FC8D4 — CRT init/refresh sequence.
+extern int __cdecl sub_600EE8();
+extern void __cdecl sub_600E98();
+extern int g_772704;
+MATCH_FUNC(0x5FC8D4)
+void __cdecl sub_5FC8D4()
+{
+    Init_5FC8EC();
+    g_772704 = sub_600EE8();
+    sub_600E98();
+    __asm { fnclex }
+}
+
 extern int g_772a1c;
 MATCH_FUNC(0x6004BD)
 int Get_6004BD()
@@ -349,7 +394,7 @@ void __cdecl sub_619820(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
     v = a6; g_77408c = v;
 }
 #pragma optimize("y", on)
-#pragma optimize("s", off)
+#pragma optimize("", on)
 
 // 0x5FB470 — heap-init wrapper: forwards one stack argument plus fixed
 // constants to the __fastcall heap initializer at 0x5FB490. WIP: the original

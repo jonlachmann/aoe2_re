@@ -125,6 +125,30 @@ void __cdecl sub_603B83()
         sub_607382();
 }
 
+// 0x5FF22D — forward two arguments plus a zero default.
+extern void __cdecl sub_5FF240(int a1, int a2, int a3);
+MATCH_FUNC(0x5FF22D)
+void __cdecl sub_5FF22D(int a1, int a2)
+{
+    sub_5FF240(0, a1, a2);
+}
+
+// 0x5FCE01 — forward two arguments plus the 0x40 constant.
+extern void __cdecl sub_5FCDE1(int a1, int a2, int a3);
+MATCH_FUNC(0x5FCE01)
+void __cdecl sub_5FCE01(int a1, int a2)
+{
+    sub_5FCDE1(a1, a2, 0x40);
+}
+
+// 0x6032E5 — pop four bytes from an advancing stack cursor.
+MATCH_FUNC(0x6032E5)
+int __cdecl sub_6032E5(int* p)
+{
+    *p += 4;
+    return *(int*)(*p - 4);
+}
+
 // 0x600E98 — two-argument cdecl wrapper with constant arguments.
 extern void __cdecl sub_606958(int a1, int a2);
 MATCH_FUNC(0x600E98)

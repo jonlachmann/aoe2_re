@@ -5726,10 +5726,12 @@
    "vtable": null,
    "anchor": "0x46FC10",
    "methods": 8,
-   "owned_methods": 0,
-   "unowned_methods": 8,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 7,
+   "primary_file": "Source/crt/free_crt.cpp",
+   "owner_files": {
+    "Source/crt/free_crt.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false

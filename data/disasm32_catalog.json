@@ -66661,23 +66661,8 @@
    "address": 4820416,
    "address_hex": "0x00498DC0",
    "name": "sub_00498DC0",
-   "end": 4820419,
-   "size": 3,
-   "num_blocks": 3,
-   "num_instructions": 18,
-   "is_thunk": false,
-   "entry_kind": "start",
-   "calls_to": [
-    4819168,
-    4819664
-   ]
-  },
-  {
-   "address": 4820419,
-   "address_hex": "0x00498DC3",
-   "name": "sub_00498DC3",
    "end": 4820468,
-   "size": 49,
+   "size": 52,
    "num_blocks": 3,
    "num_instructions": 17,
    "is_thunk": false,

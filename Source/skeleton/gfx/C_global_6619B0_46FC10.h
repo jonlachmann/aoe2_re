@@ -13,5 +13,5 @@ public:
     void method_004();  // sub_52C6B0 [lifted]
     void method_005();  // sub_5D2DA0 [lifted]
     void method_006();  // sub_5F8EE0 [lifted]
-    void method_007();  // sub_5F8F60 [lifted]
+    void method_007();  // sub_5F8F60 [matched] — Source/crt/free_crt.cpp
 };

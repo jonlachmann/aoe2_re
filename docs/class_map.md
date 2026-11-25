@@ -4,7 +4,7 @@ catalog, symbol strings, and call-site object identity in the lifted code.
 Regenerate when a vtable or name is recovered. Machine-readable forms:
 `data/function_map.json` and `data/class_map.json`.
 ## What is evidence-backed
-- 7751 real function starts (`entry_kind == start`; the catalog's other
+- 7750 real function starts (`entry_kind == start`; the catalog's other
   11388 entries are interior/alias fragments).
 - 221 vtable classes recovered; 1887 distinct functions are
   virtual slots. This is real class membership (constructor writes the vtable).
@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1651 |
+| matched | 1659 |
 | wip | 28 |
 | verified | 18 |
-| lifted | 6054 |
+| lifted | 6045 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -543,7 +543,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_5EDEC0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_5EE380` | this-edge component with no rooted object identity | 5 | 0 | 5 |
 | `C_cluster_5EF1F0` | this-edge component with no rooted object identity | 3 | 0 | 3 |
-| `C_global_6619B0` | every call site passes the global object at 0x6619B0 | 8 | 0 | 8 |
+| `C_global_6619B0` | every call site passes the global object at 0x6619B0 | 8 | 1 | 7 |
 | `C_global_66450C` | every call site passes the global object at 0x66450C | 1 | 0 | 1 |
 | `C_global_664510` | every call site passes the global object at 0x664510 | 1 | 0 | 1 |
 | `C_global_66451C` | every call site passes the global object at 0x66451C | 26 | 6 | 20 |
@@ -573,7 +573,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | Region | Functions |
 |---|---|
 | sim | 2300 |
-| ui | 2231 |
+| ui | 2230 |
 | app | 759 |
 | game | 656 |
 | crt | 649 |
@@ -585,7 +585,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | Module hint | Functions |
 |---|---|
 | sim | 2298 |
-| ui | 2234 |
+| ui | 2233 |
 | app | 759 |
 | game | 658 |
 | crt | 649 |
@@ -598,13 +598,13 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | Region | Functions | Matched | WIP | Left |
 |---|---|---|---|---|
 | app | 323 | 130 | 2 | 191 |
-| crt | 647 | 46 | 3 | 598 |
+| crt | 647 | 52 | 3 | 592 |
 | engine-late | 319 | 35 | 0 | 284 |
 | game | 436 | 148 | 5 | 283 |
 | gfx | 410 | 67 | 2 | 341 |
 | runtime-data | 20 | 5 | 0 | 15 |
 | sim | 1283 | 256 | 2 | 1025 |
-| ui | 1230 | 214 | 4 | 1012 |
+| ui | 1229 | 215 | 4 | 1010 |
 
 ## Skeleton tree
 `Source/skeleton/` holds declarations only, generated from this map and

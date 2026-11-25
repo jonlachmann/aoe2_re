@@ -6246,3 +6246,27 @@ void S4AF3A0::M_4AF3A0(int a1, int a2, int a3, int a4, int a5, int a6)
     M_4AF510(0, a1);
     M_4AF7D0(a2, a3, a4);
 }
+
+// 0x498DC0 — state-byte setter on the 0x4988E0/0x498AD0 object: unchanged
+// state returns the +0x114 value, otherwise resets through 0x498AD0, stores
+// the byte, and returns the 0x4988E0 result.
+class S498DC0 {
+public:
+    char pad_00[0x104];
+    char field_104;               // +0x104 state byte
+    char pad_105[0x114 - 0x105];
+    int field_114;                // +0x114
+    void M_498AD0();
+    int M_4988E0();
+    int M_498DC0(char a1);
+};
+
+MATCH_FUNC(0x498DC0)
+int S498DC0::M_498DC0(char a1)
+{
+    if (a1 == field_104)
+        return field_114;
+    M_498AD0();
+    field_104 = a1;
+    return M_4988E0();
+}
