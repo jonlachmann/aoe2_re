@@ -37,3 +37,35 @@ void C_pnl_lst::M_4BAE20(int* a1, short a2)
         a2--;
     }
 }
+
+// 0x4B5A10 — set the +0x19C display mode from the seven-case argument, forward
+// all seven arguments to 0x4BBC20, then activate +0x198 once with 0x4BBD30.
+MATCH_FUNC(0x4B5A10)
+void C_pnl_lst::M_4B5A10(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+{
+    switch (a1)
+    {
+    case 1:
+    case 2:
+    case 5:
+        field_19c = 1;
+        break;
+    case 3:
+    case 6:
+        field_19c = 2;
+        break;
+    case 4:
+    case 7:
+        field_19c = 3;
+        break;
+    default:
+        field_19c = 1;
+        break;
+    }
+    M_4BBC20(a1, a2, a3, a4, a5, a6, a7);
+    if (field_198 == 0)
+    {
+        field_198 = 1;
+        Other_4BBD30(1);
+    }
+}

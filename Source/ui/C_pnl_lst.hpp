@@ -85,11 +85,24 @@ public:
     short field_104;              // +0x104
     char pad_106[0x150 - 0x106];  // +0x106..+0x150
     short field_150;              // +0x150
+    char pad_152[0x188 - 0x152];  // +0x152..+0x188
+    int field_188;                // +0x188
+    unsigned char field_18c;      // +0x18C
+    unsigned char field_18d;      // +0x18D
+    unsigned char field_18e;      // +0x18E
+    unsigned char field_18f;      // +0x18F
+    unsigned char field_190;      // +0x190
+    unsigned char field_191;      // +0x191
+    char pad_192[0x198 - 0x192];  // +0x192..+0x198
+    int field_198;                // +0x198 active flag
+    int field_19c;                // +0x19C mode
 
     int Other_4BBD30(int v);
+    void M_4BBC20(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
     void Other_4BCF90(int a1, int a2, int a3);
 
     static int __stdcall M_4B6840(int v);
     void M_4BCEB0(short v);
     void M_4BAE20(int* a1, short a2);
+    void M_4B5A10(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
 };

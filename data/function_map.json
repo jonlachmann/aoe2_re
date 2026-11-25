@@ -53645,8 +53645,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4B5AB0",
@@ -56737,8 +56737,8 @@
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4BE7E0",

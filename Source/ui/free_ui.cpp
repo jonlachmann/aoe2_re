@@ -7379,3 +7379,41 @@ int S4BD6A0::M_4BD6A0(int a1)
     }
     return 0;
 }
+
+// 0x4BE760 — allocate the +0x73FE18..+0x73FE3C global table: reserve a1/a2
+// bytes, install the two 0x10000-byte blocks, zero the counters and return the
+// allocation size (also on failure).
+extern int __cdecl sub_5FDCD4(int a1, int a2);
+extern int __cdecl sub_5FDFB5(int a1, int a2, int a3);
+extern int __cdecl sub_5FDFA4(int a1);
+extern unsigned char g_73fe30;
+extern int g_73fe28;
+extern int g_73fe34;
+extern int g_73fe2c;
+extern int g_73fe38;
+extern int g_73fe24;
+extern int g_73fe1c;
+extern int g_73fe3c;
+extern int g_73fe18;
+
+MATCH_FUNC(0x4BE760)
+int __cdecl sub_4BE760(int a1, int a2)
+{
+    int r = sub_5FDCD4(a1, a2);
+    if (r < 0)
+        return r;
+    g_73fe30 = 2;
+    g_73fe28 = 0;
+    void* h = sub_5F8FF0(0x10000, 1);
+    g_73fe34 = (int)h;
+    g_73fe2c = (int)h;
+    g_73fe38 = 0;
+    g_73fe24 = 0;
+    g_73fe1c = r;
+    sub_5FDFB5(r, 0, 2);
+    int v = sub_5FDFA4(r);
+    g_73fe3c = v;
+    g_73fe18 = 0;
+    sub_5FDFB5(r, 0, 0);
+    return r;
+}

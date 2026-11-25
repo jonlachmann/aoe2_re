@@ -181,11 +181,17 @@ def check(cpp, catalog, diff):
             results.append((kind, va, False))
             continue
         ours, masked = funcs[sym]
-        if len(ours) > catalog.get(va, {}).get("size", len(ours)):
-            ours = ours.rstrip(b"\x90\xcc") or ours   # VC6 pads /Gy sections to 16 with nop
         size = catalog.get(va, {}).get("size", len(ours))
-        orig = original(va, max(size, len(ours)))
-        same = len(ours) == size and all(o in masked or orig[o] == ours[o] for o in range(len(ours)))
+        # A /Gy COMDAT section can carry local jump tables after the function
+        # body, which the catalog's size does not count. Accept that tail only
+        # when every extra byte is a masked relocation or nop/cc padding, so
+        # appended real instructions still fail.
+        extra = ours[size:] if len(ours) > size else b""
+        tail_ok = all((size + i) in masked or b in (0x90, 0xcc)
+                      for i, b in enumerate(extra))
+        orig = original(va, size)
+        same = len(ours) >= size and tail_ok and all(
+            o in masked or orig[o] == ours[o] for o in range(size))
         status = "OK" if same else "FAIL!" if kind == "MATCH" else "differs"
         print(f"{kind}_FUNC 0x{va:X} {sym}: {status}"
               + ("" if same else f"  (ours {len(ours)} bytes, original {size})"))

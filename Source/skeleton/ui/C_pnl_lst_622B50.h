@@ -77,7 +77,7 @@ public:
     virtual void slot_064();  // slot +0x100: sub_4BAF60 [matched] — Source/ui/C_pnl_inp.cpp
     virtual void slot_065();  // slot +0x104: sub_4BAF10 [lifted]
     virtual void slot_066();  // slot +0x108: sub_4BAE80 [lifted]
-    virtual void slot_067();  // slot +0x10C: sub_4B5A10 [lifted]
+    virtual void slot_067();  // slot +0x10C: sub_4B5A10 [matched] — Source/ui/C_pnl_lst.cpp
     virtual void slot_068();  // slot +0x110: sub_4B4600 [matched] — Source/ui/C_pnl_inp.cpp
     virtual void slot_069();  // slot +0x114: sub_4BC750 [lifted]
     virtual void slot_070();  // slot +0x118: sub_4BD030 [lifted]

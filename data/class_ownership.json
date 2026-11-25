@@ -2172,15 +2172,15 @@
    "vtable": "0x622B50",
    "anchor": "0x4B59D0",
    "methods": 87,
-   "owned_methods": 35,
-   "unowned_methods": 52,
+   "owned_methods": 36,
+   "unowned_methods": 51,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 1,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 20,
     "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/C_pnl_inp.cpp": 5,
-    "Source/ui/C_pnl_lst.cpp": 3,
+    "Source/ui/C_pnl_lst.cpp": 4,
     "Source/ui/free_ui.cpp": 5
    },
    "other_files": [
