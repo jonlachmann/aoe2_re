@@ -2863,3 +2863,41 @@ void S421EC0::M_421EC0()
     if (field_1f4)
         ((T41FA40_421EC0*)this)->Other_41FA40(g_61c308(0, 0x7f00));
 }
+
+
+// 0x437420 — filtered stride-0x24 scan over the +0x114 table: count entries
+// whose +0x04 value lies in [a1,a2] (or a1/a2 are both zero) and, for entries
+// whose +0x14 is positive, dispatch the +0x740 callback with the index.
+class T437420Entry {
+public:
+    char pad_00[4];
+    unsigned int field_04;          // +0x04 value
+    char pad_08[0x14 - 0x08];
+    unsigned int field_14;          // +0x14
+};
+class S437420 {
+public:
+    char pad_00[4];
+    unsigned int field_04;          // +0x04 entry count
+    char pad_08[0x114 - 0x08];
+    T437420Entry* field_114;        // +0x114 table base
+    void M_437740(unsigned int a1);
+    int M_437420(unsigned int a1, unsigned int a2);
+};
+
+MATCH_FUNC(0x437420)
+int S437420::M_437420(unsigned int a1, unsigned int a2)
+{
+    int n = 0;
+    for (unsigned int i = 0; i <= field_04; i++)
+    {
+        unsigned int v = ((T437420Entry*)((char*)field_114 + i * 0x24))->field_04;
+        if ((v >= a1 && v <= a2) || (a1 == 0 && a2 == 0))
+        {
+            n++;
+            if (((T437420Entry*)((char*)field_114 + i * 0x24))->field_14 > 0)
+                M_437740(i);
+        }
+    }
+    return n;
+}

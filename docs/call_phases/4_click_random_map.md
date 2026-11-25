@@ -1,6 +1,6 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 263 matched, 291 left to match (3 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 263 matched, 291 left to match (4 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (291)
 
@@ -189,7 +189,7 @@
 | 366 | `sub_45FB60` | 1 |  | 1_boot_to_menu |  |
 | 367 | `sub_45FED0` | 1 |  | 1_boot_to_menu |  |
 | 369 | `sub_522EB0` | 2 |  | 1_boot_to_menu |  |
-| 370 | `sub_522C70` | 2 |  | 1_boot_to_menu |  |
+| 370 | `sub_522C70` | 2 | WIP | 1_boot_to_menu | S522C70::M_522C70 |
 | 372 | `sub_5DC590` | 2 |  | 1_boot_to_menu |  |
 | 376 | `sub_460180` | 6 |  | 1_boot_to_menu |  |
 | 380 | `sub_4A4830` | 109 | WIP | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A4830 |

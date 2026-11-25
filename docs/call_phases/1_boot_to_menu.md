@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 381 matched, 324 left to match (5 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 382 matched, 323 left to match (6 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (324)
+## Left to match (323)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -53,7 +53,7 @@
 | 255 | `sub_45FED0` | 25 |  | 1_boot_to_menu |  |
 | 257 | `sub_460740` | 151 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
 | 258 | `sub_522EB0` | 48 |  | 1_boot_to_menu |  |
-| 259 | `sub_522C70` | 48 |  | 1_boot_to_menu |  |
+| 259 | `sub_522C70` | 48 | WIP | 1_boot_to_menu | S522C70::M_522C70 |
 | 261 | `sub_5DC590` | 48 |  | 1_boot_to_menu |  |
 | 266 | `sub_5230F0` | 52052 |  | 1_boot_to_menu |  |
 | 267 | `sub_522D90` | 52052 |  | 1_boot_to_menu |  |
@@ -170,7 +170,6 @@
 | 442 | `sub_437490` | 8 |  | 1_boot_to_menu |  |
 | 443 | `sub_42AE00` | 1 | WIP | 1_boot_to_menu | S42D1D0::M_42AE00 |
 | 444 | `sub_42AE50` | 1 |  | 1_boot_to_menu |  |
-| 450 | `sub_437420` | 1 |  | 1_boot_to_menu |  |
 | 455 | `sub_439030` | 1 |  | 1_boot_to_menu |  |
 | 456 | `sub_438F10` | 1 |  | 1_boot_to_menu |  |
 | 467 | `sub_41E760` | 1 |  | 1_boot_to_menu | basegame::setup_fonts |
@@ -331,7 +330,7 @@
 | 812 | `sub_4B5AB0` | 6434496 |  | 1_boot_to_menu |  |
 | 813 | `sub_5A6680` | 19303488 |  | 1_boot_to_menu |  |
 
-## Matched (381)
+## Matched (382)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -530,6 +529,7 @@
 | 447 | `sub_4308C0` | 2 | MATCH | 1_boot_to_menu | C_global_66451C::Clear_4308C0 |
 | 448 | `sub_42D1D0` | 1 | MATCH | 1_boot_to_menu | S42D1D0::M_42D1D0 |
 | 449 | `sub_437410` | 1 | MATCH | 1_boot_to_menu | sub_437410 |
+| 450 | `sub_437420` | 1 | MATCH | 1_boot_to_menu | S437420::M_437420 |
 | 451 | `sub_423A70` | 1 | MATCH | 1_boot_to_menu | S423A70::Init_423A70 |
 | 452 | `sub_408650` | 3 | MATCH | 1_boot_to_menu | C_vt61CE24::M_408650 |
 | 453 | `sub_438ED0` | 1 | MATCH | 1_boot_to_menu | C_cluster_438ED0::M_438ED0 |

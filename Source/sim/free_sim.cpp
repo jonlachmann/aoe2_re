@@ -6042,3 +6042,48 @@ void S51EAE0::M_51EAE0()
         sub_5F90B0((int)field_08);
     }
 }
+
+
+// 0x522C70 — initialise the +0x00..+0x28 block, run the interior reset, and,
+// when a1 is positive, configure the +0x08 stride pair and dispatch a1.
+class S522C70 {
+public:
+    int field_00;                   // +0x00
+    int field_04;                   // +0x04
+    int field_08;                   // +0x08
+    int field_0c;                   // +0x0C
+    int field_10;                   // +0x10
+    int field_14;                   // +0x14
+    int field_18;                   // +0x18
+    int field_1c;                   // +0x1C
+    int field_20;                   // +0x20
+    int field_24;                   // +0x24
+    int field_28;                   // +0x28
+    void M_5DCC30();
+    void M_5DC590(int a1);
+    void M_522D20(int a1);
+    S522C70* M_522C70(int a1, int a2, int a3);
+};
+
+WIP_FUNC(0x522C70)
+S522C70* S522C70::M_522C70(int a1, int a2, int a3)
+{
+    field_14 = -1;
+    field_18 = -1;
+    field_28 = a3;
+    field_00 = 0;
+    field_04 = 0;
+    field_0c = 8;
+    field_08 = 0;
+    field_10 = 0;
+    field_1c = 0;
+    field_20 = 0;
+    field_24 = a2;
+    M_5DCC30();
+    if (a1 > 0)
+    {
+        M_5DC590(8);
+        M_522D20(a1);
+    }
+    return this;
+}
