@@ -221,7 +221,7 @@ void mouseptr::LoadCursors();  // size 592, calls 14, lifted, module win
 void sub_48AB10();  // size 111, calls 3, lifted, module ui
 void sub_48AB80();  // size 356, calls 4, lifted, module ui
 void sub_48B3C0();  // size 91, calls 0, matched, module ui
-void sub_48B420();  // size 97, calls 0, lifted, module ui
+void sub_48B420();  // size 97, calls 0, matched, module ui
 void sub_48B4F0();  // size 50, calls 0, lifted, module ui
 void sub_48B530();  // size 15, calls 0, matched, module ui
 void sub_48B540();  // size 110, calls 0, lifted, module ui
@@ -372,12 +372,12 @@ void sub_49F6E0();  // size 74, calls 2, lifted, module ui
 void sub_49F730();  // size 55, calls 0, lifted, module ui
 void sub_49F7C0();  // size 139, calls 4, lifted, module ui
 void sub_49F850();  // size 143, calls 2, lifted, module ui
-void sub_49F8E0();  // size 44, calls 1, lifted, module ui
+void sub_49F8E0();  // size 44, calls 1, wip, module ui
 void sub_49F910();  // size 69, calls 3, lifted, module ui
-void sub_49F960();  // size 92, calls 2, lifted, module ui
+void sub_49F960();  // size 92, calls 2, matched, module ui
 void sub_49F9C0();  // size 43, calls 2, lifted, module ui
 void sub_49F9F0();  // size 87, calls 1, matched, module ui
-void sub_49FB00();  // size 93, calls 2, lifted, module ui
+void sub_49FB00();  // size 93, calls 2, matched, module ui
 void sub_49FB60();  // size 664, calls 4, lifted, module ui
 void sub_49FE00();  // size 84, calls 0, matched, module ui
 void sub_49FED0();  // size 66, calls 0, matched, module ui

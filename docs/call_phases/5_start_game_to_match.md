@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 603 matched, 1841 left to match (3 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 606 matched, 1838 left to match (3 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1841)
+## Left to match (1838)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -172,13 +172,11 @@
 | 324 | `sub_42D5B0` | 5 |  | 4_click_random_map |  |
 | 325 | `sub_42F130` | 5 |  | 4_click_random_map |  |
 | 327 | `sub_428470` | 10 |  | 4_click_random_map |  |
-| 328 | `sub_49F960` | 25 |  | 1_boot_to_menu |  |
 | 329 | `sub_49FA50` | 38 |  | 1_boot_to_menu |  |
 | 330 | `sub_5B7BC0` | 1 |  | 5_start_game_to_match |  |
 | 331 | `sub_520F10` | 1 |  | 5_start_game_to_match |  |
 | 332 | `sub_521870` | 1 |  | 5_start_game_to_match |  |
 | 333 | `sub_521970` | 1 |  | 5_start_game_to_match |  |
-| 335 | `sub_49FB00` | 6 |  | 1_boot_to_menu |  |
 | 336 | `sub_4B9BB0` | 12 |  | 1_boot_to_menu |  |
 | 337 | `sub_4A5C10` | 12 |  | 1_boot_to_menu |  |
 | 340 | `sub_422FF0` | 16 |  | 1_boot_to_menu |  |
@@ -1572,7 +1570,6 @@
 | 2195 | `sub_481410` | 12001 |  | 5_start_game_to_match |  |
 | 2196 | `sub_5DA140` | 12001 |  | 5_start_game_to_match |  |
 | 2197 | `sub_5A2800` | 12001 |  | 5_start_game_to_match |  |
-| 2198 | `sub_48B420` | 12001 |  | 1_boot_to_menu |  |
 | 2199 | `sub_5239A0` | 12001 |  | 5_start_game_to_match |  |
 | 2200 | `sub_5D8340` | 144012 |  | 5_start_game_to_match |  |
 | 2202 | `sub_4207F0` | 10 |  | 5_start_game_to_match |  |
@@ -1848,7 +1845,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (603)
+## Matched (606)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -1987,7 +1984,9 @@
 | 321 | `sub_5FD067` | 10409 | MATCH | 1_boot_to_menu | sub_5FD067 |
 | 323 | `sub_5BB040` | 3 | MATCH | 1_boot_to_menu | C_vt62C1E0::SetByte2_5BB040 |
 | 326 | `sub_428460` | 10 | MATCH | 4_click_random_map | sub_428460 |
+| 328 | `sub_49F960` | 25 | MATCH | 1_boot_to_menu | C_cluster_49F630::M_49F960 |
 | 334 | `sub_49F770` | 6 | MATCH | 1_boot_to_menu | S49F770::M_49F770 |
+| 335 | `sub_49FB00` | 6 | MATCH | 1_boot_to_menu | S49F770::M_49FB00 |
 | 338 | `sub_4A1E20` | 14 | MATCH | 1_boot_to_menu | C_TribePopUpHelp::M_4A1E20 |
 | 339 | `sub_461C70` | 10 | MATCH | 1_boot_to_menu | TDrawArea::CopyPalette_461C70 |
 | 343 | `sub_461CA0` | 67104 | MATCH | 1_boot_to_menu | S461CA0::M_461CA0 |
@@ -2387,6 +2386,7 @@
 | 2178 | `sub_43A070` | 242 | MATCH | 5_start_game_to_match | S43SetBulk::SetInt_43A070 |
 | 2180 | `sub_40B630` | 1203648 | MATCH | 5_start_game_to_match | S40B630::Get_40B630 |
 | 2182 | `sub_48A860` | 12001 | MATCH | 5_start_game_to_match | S48GetBulk::Get_48A860 |
+| 2198 | `sub_48B420` | 12001 | MATCH | 1_boot_to_menu | S48B3C0::M_48B420 |
 | 2201 | `sub_4DC7B0` | 10 | MATCH | 5_start_game_to_match | S4DC7B0::M_4DC7B0 |
 | 2203 | `sub_42C290` | 10 | MATCH | 5_start_game_to_match | S42C290::M_42C290 |
 | 2223 | `sub_437740` | 26 | MATCH | 5_start_game_to_match | C_cluster_437740::MarkRecord_437740 |

@@ -6464,9 +6464,111 @@ public:
     void* field_04;               // +0x04 registration object
     int field_08;                 // +0x08
     int field_0c;                 // +0x0C
+    void* field_10;               // +0x10 current object
+    void M_49F8E0();
     void M_49FB00(int a1, int a2);
     int M_49F770(int a1, int a2);
 };
+
+// 0x49F8E0 — refresh the +0x0C mirror from +0x10; free the old mirror first
+// when it is a different non-zero object.
+extern void __stdcall sub_5BFB20(int a1);
+WIP_FUNC(0x49F8E0)
+void S49F770::M_49F8E0()
+{
+    if (field_0c == 0)
+    {
+        field_0c = (int)field_10;
+    }
+    else
+    {
+        if (field_0c == (int)field_10)
+        {
+            field_0c = (int)field_10;
+        }
+        else
+        {
+            sub_5BFB20(field_0c);
+            field_0c = (int)field_10;
+        }
+    }
+}
+
+// 0x49FB00 — switch the active object: clear the previous object's own slot
+// 0xD0 flag, install a1, mark it active, then signal slot 0x20 with 2.
+class T49FB00Obj {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08(int a1);
+    virtual void Vt_09();
+    virtual void Vt_10();
+    virtual void Vt_11();
+    virtual void Vt_12();
+    virtual void Vt_13();
+    virtual void Vt_14();
+    virtual void Vt_15();
+    virtual void Vt_16();
+    virtual void Vt_17();
+    virtual void Vt_18();
+    virtual void Vt_19();
+    virtual void Vt_20();
+    virtual void Vt_21();
+    virtual void Vt_22();
+    virtual void Vt_23();
+    virtual void Vt_24();
+    virtual void Vt_25();
+    virtual void Vt_26();
+    virtual void Vt_27();
+    virtual void Vt_28();
+    virtual void Vt_29();
+    virtual void Vt_30();
+    virtual void Vt_31();
+    virtual void Vt_32();
+    virtual void Vt_33();
+    virtual void Vt_34();
+    virtual void Vt_35();
+    virtual void Vt_36();
+    virtual void Vt_37();
+    virtual void Vt_38();
+    virtual void Vt_39();
+    virtual void Vt_40();
+    virtual void Vt_41();
+    virtual void Vt_42();
+    virtual void Vt_43();
+    virtual void Vt_44();
+    virtual void Vt_45();
+    virtual void Vt_46();
+    virtual void Vt_47();
+    virtual void Vt_48();
+    virtual void Vt_49();
+    virtual void Vt_50();
+    virtual void Vt_51();
+    virtual void Vt_52(int a1);
+    void SetIndex_5BE8D0(int a1); // shared 0x5BE8D0 setter
+};
+extern int g_664528;
+extern void (__stdcall *g_61C2CC)(int a1);
+MATCH_FUNC(0x49FB00)
+void S49F770::M_49FB00(int a1, int a2)
+{
+    T49FB00Obj* obj = (T49FB00Obj*)a1;
+    obj->SetIndex_5BE8D0((int)field_10);
+    if (field_10)
+        ((T49FB00Obj*)field_10)->Vt_52(0);
+    field_10 = obj;
+    obj->Vt_52(1);
+    ((T49FB00Obj*)field_10)->Vt_08(2);
+    g_61C2CC(g_664528);
+    if (a2)
+        M_49F8E0();
+}
 
 MATCH_FUNC(0x49F770)
 int S49F770::M_49F770(int a1, int a2)
@@ -7018,14 +7120,22 @@ public:
     char pad_68[0x74 - 0x68];
     int field_74;                 // +0x74
     int field_78;                 // +0x78
-    char pad_7c[0x94 - 0x7c];
+    int field_7c;                 // +0x7C
+    int field_80;                 // +0x80
+    char pad_84[0x94 - 0x84];
     int field_94;                 // +0x94 selected row
-    char pad_98[0xa4 - 0x98];
+    int field_98;                 // +0x98 selected row (48B420)
+    char pad_9c[0xa4 - 0x9c];
     int field_a4;                 // +0xA4
     int field_a8;                 // +0xA8
     int field_ac;                 // +0xAC
     int field_b0;                 // +0xB0
+    int field_b4;                 // +0xB4
+    int field_b8;                 // +0xB8
+    int field_bc;                 // +0xBC
+    int field_c0;                 // +0xC0
     void M_48B3C0(int a1);
+    void M_48B420(int a1);
 };
 
 MATCH_FUNC(0x48B3C0)
@@ -7041,6 +7151,23 @@ void S48B3C0::M_48B3C0(int a1)
     field_a8 = row[6];
     field_b0 = field_74 - row[6];
     field_ac = field_78 - row[7];
+}
+
+// 0x48B420 — same row selection as 48B3C0 but writes the alternate +0x7C/+0x80
+// and +0xB4/+0xB8 value pair plus the two differences at +0xC0/+0xBC.
+MATCH_FUNC(0x48B420)
+void S48B3C0::M_48B420(int a1)
+{
+    if (a1 < 0 || a1 >= count_10)
+        return;
+    field_98 = a1;
+    int* row = (int*)((char*)source_64->rows_10 + (a1 << 5));
+    field_7c = row[4];
+    field_80 = row[5];
+    field_b4 = row[7];
+    field_b8 = row[6];
+    field_c0 = field_7c - row[6];
+    field_bc = field_80 - row[7];
 }
 
 // 0x4BEF50 — reset a large UI-state object: sentinel/flag fields, the current
@@ -7104,3 +7231,42 @@ void __cdecl sub_499C40(void** a1, char* a2)
 }
 #pragma function(memcpy)
 #pragma function(strlen)
+
+// 0x49F960 — remove a registered entry: locate its node through 0x49FA50,
+// decrement the +0x18 count, unlink the +0x04/+0x08 neighbours, dispatch the
+// node object's slot 0, free the node and report success.
+class T49F960NodeObj {
+public:
+    virtual void Vt_00(int a1);
+};
+class T49F960Node {
+public:
+    T49F960NodeObj* field_0Obj;   // +0x00 registered object
+    T49F960Node* prev_04;         // +0x04
+    T49F960Node* next_08;         // +0x08
+};
+class C_cluster_49F630 {
+public:
+    char pad_00[0x14];            // +0x00..+0x14
+    T49F960Node* head_14;         // +0x14 sentinel head
+    int count_18;                 // +0x18 entry count
+    T49F960Node* M_49FA50(int a1);
+    int M_49F960(int a1);
+};
+
+MATCH_FUNC(0x49F960)
+int C_cluster_49F630::M_49F960(int a1)
+{
+    if (a1 == 0)
+        return 0;
+    T49F960Node* node = M_49FA50(a1);
+    if (node == 0)
+        return 0;
+    count_18--;
+    node->prev_04->next_08 = node->next_08;
+    node->next_08->prev_04 = node->prev_04;
+    if (node->field_0Obj)
+        node->field_0Obj->Vt_00(1);
+    sub_5F90B0((int)node);
+    return 1;
+}

@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 253 matched, 301 left to match (2 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 255 matched, 299 left to match (2 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (301)
+## Left to match (299)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -274,7 +274,6 @@
 | 540 | `sub_428470` | 15 |  | 4_click_random_map |  |
 | 541 | `sub_430A70` | 1 |  | 1_boot_to_menu |  |
 | 542 | `sub_4BE010` | 1 |  | 1_boot_to_menu |  |
-| 545 | `sub_49FB00` | 1 |  | 1_boot_to_menu |  |
 | 547 | `sub_4B9BB0` | 2 |  | 1_boot_to_menu |  |
 | 548 | `sub_4A5C10` | 2 |  | 1_boot_to_menu |  |
 | 549 | `sub_422FF0` | 4 |  | 1_boot_to_menu |  |
@@ -290,7 +289,6 @@
 | 563 | `sub_610EA0` | 20 |  | 4_click_random_map |  |
 | 564 | `sub_610E2E` | 14 |  | 4_click_random_map |  |
 | 565 | `sub_610E58` | 4 |  | 4_click_random_map |  |
-| 566 | `sub_49F960` | 1 |  | 1_boot_to_menu |  |
 | 568 | `sub_4ED7C0` | 1 |  | 4_click_random_map |  |
 | 569 | `sub_4A2120` | 112 |  | 4_click_random_map |  |
 | 571 | `sub_4BA100` | 53 |  | 4_click_random_map |  |
@@ -308,7 +306,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (253)
+## Matched (255)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -539,10 +537,12 @@
 | 539 | `sub_428460` | 15 | MATCH | 4_click_random_map | sub_428460 |
 | 543 | `sub_4329B0` | 1 | MATCH | 1_boot_to_menu | S432Accessors::Set1C68_4329B0 |
 | 544 | `sub_49F770` | 1 | MATCH | 1_boot_to_menu | S49F770::M_49F770 |
+| 545 | `sub_49FB00` | 1 | MATCH | 1_boot_to_menu | S49F770::M_49FB00 |
 | 546 | `sub_4EDC60` | 1 | MATCH | 1_boot_to_menu | S4EDC60::M_4EDC60 |
 | 550 | `sub_461C70` | 2 | MATCH | 1_boot_to_menu | TDrawArea::CopyPalette_461C70 |
 | 552 | `sub_461CA0` | 33195 | MATCH | 1_boot_to_menu | S461CA0::M_461CA0 |
 | 557 | `sub_4B1700` | 66 | MATCH | 4_click_random_map | sub_4B1700 |
+| 566 | `sub_49F960` | 1 | MATCH | 1_boot_to_menu | C_cluster_49F630::M_49F960 |
 | 567 | `sub_4ECE70` | 1 | MATCH | 4_click_random_map | Sd4ECE70::D_4ECE70 |
 | 570 | `sub_4BA0E0` | 50 | MATCH | 4_click_random_map | Sd4BA0E0::D_4BA0E0 |
 | 574 | `sub_4B7FD0` | 1 | MATCH | 4_click_random_map | Sd4B7FD0::D_4B7FD0 |

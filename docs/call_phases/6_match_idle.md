@@ -1,8 +1,8 @@
 # 6_match_idle
 
-880 functions called (0 first seen in this phase): 178 matched, 669 left to match (2 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+880 functions called (0 first seen in this phase): 179 matched, 668 left to match (2 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (669)
+## Left to match (668)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -103,7 +103,6 @@
 | 127 | `sub_481410` | 6007 |  | 5_start_game_to_match |  |
 | 128 | `sub_5DA140` | 6007 |  | 5_start_game_to_match |  |
 | 129 | `sub_5A2800` | 6007 |  | 5_start_game_to_match |  |
-| 130 | `sub_48B420` | 6007 |  | 1_boot_to_menu |  |
 | 131 | `sub_5239A0` | 6007 |  | 5_start_game_to_match |  |
 | 132 | `sub_5D8340` | 72084 |  | 5_start_game_to_match |  |
 | 133 | `sub_460BF0` | 6007 |  | 5_start_game_to_match |  |
@@ -676,7 +675,7 @@
 | 878 | `sub_4845F0` | 3 |  | 5_start_game_to_match |  |
 | 879 | `sub_48BD90` | 1 |  | 5_start_game_to_match |  |
 
-## Matched (178)
+## Matched (179)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -712,6 +711,7 @@
 | 109 | `sub_619820` | 66131 | MATCH | 1_boot_to_menu | sub_619820 |
 | 111 | `sub_48A860` | 6007 | MATCH | 5_start_game_to_match | S48GetBulk::Get_48A860 |
 | 121 | `sub_4AF0B0` | 6745 | MATCH | 5_start_game_to_match | S4AF0B0::M_4AF0B0 |
+| 130 | `sub_48B420` | 6007 | MATCH | 1_boot_to_menu | S48B3C0::M_48B420 |
 | 137 | `sub_45FE10` | 12104 | MATCH | 1_boot_to_menu | TDrawArea::Unlock_45FE10 |
 | 138 | `sub_4A0C60` | 6079 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0C60 |
 | 139 | `sub_41C850` | 6007 | MATCH | 5_start_game_to_match | S41C850::Inc_41C850 |
