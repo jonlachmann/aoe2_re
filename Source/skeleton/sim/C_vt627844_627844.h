@@ -209,7 +209,7 @@ public:
     virtual void slot_199();  // slot +0x31C: sub_408880 [matched] — Source/app/free_app.cpp
     virtual void slot_200();  // slot +0x320: sub_408AB0 [lifted]
     virtual void slot_201();  // slot +0x324: sub_537F70 [lifted]
-    virtual void slot_202();  // slot +0x328: sub_407E80 [lifted]
+    virtual void slot_202();  // slot +0x328: sub_407E80 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_203();  // slot +0x32C: sub_533510 [lifted]
     virtual void slot_204();  // slot +0x330: sub_536730 [lifted]
     virtual void slot_205();  // slot +0x334: sub_534770 [lifted]

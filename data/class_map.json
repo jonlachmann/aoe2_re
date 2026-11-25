@@ -686,8 +686,8 @@
    {
     "address": "0x403F50",
     "name": "sub_403F50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x409A00",
@@ -1230,8 +1230,8 @@
    {
     "address": "0x406670",
     "name": "sub_406670",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x409A40",
@@ -1590,8 +1590,8 @@
    {
     "address": "0x407FD0",
     "name": "sub_407FD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x529DB0",
@@ -1896,8 +1896,8 @@
    {
     "address": "0x407B50",
     "name": "sub_407B50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407B80",
@@ -2730,8 +2730,8 @@
    {
     "address": "0x407E80",
     "name": "sub_407E80",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407F50",
@@ -5287,8 +5287,8 @@
    {
     "address": "0x407B50",
     "name": "sub_407B50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407B80",
@@ -8189,8 +8189,8 @@
    {
     "address": "0x407E80",
     "name": "sub_407E80",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407F50",
@@ -17356,8 +17356,8 @@
    {
     "address": "0x407B50",
     "name": "sub_407B50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407B80",
@@ -21038,8 +21038,8 @@
    {
     "address": "0x407E80",
     "name": "sub_407E80",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407F50",
@@ -21774,8 +21774,8 @@
    {
     "address": "0x407B50",
     "name": "sub_407B50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407B80",
@@ -46743,8 +46743,8 @@
    {
     "address": "0x407B50",
     "name": "sub_407B50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407B80",
@@ -48706,8 +48706,8 @@
    {
     "address": "0x407E80",
     "name": "sub_407E80",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x533510",
@@ -50104,8 +50104,8 @@
    {
     "address": "0x407E80",
     "name": "sub_407E80",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x533510",
@@ -50648,8 +50648,8 @@
    {
     "address": "0x407B50",
     "name": "sub_407B50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/C_vt61CE24.cpp"
    },
    {
     "address": "0x407B80",

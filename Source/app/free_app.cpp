@@ -2508,6 +2508,88 @@ S409600* S409600::Init_409600(int a1, int a2)
     return this;
 }
 
+// 0x406670 — gate on a bool and two -1.0f bit patterns, dispatch slot +0x5C.
+class Sc406670 {
+public:
+    virtual void Vt_0();
+    virtual void Vt_1();
+    virtual void Vt_2();
+    virtual void Vt_3();
+    virtual void Vt_4();
+    virtual void Vt_5();
+    virtual void Vt_6();
+    virtual void Vt_7();
+    virtual void Vt_8();
+    virtual void Vt_9();
+    virtual void Vt_10();
+    virtual void Vt_11();
+    virtual void Vt_12();
+    virtual void Vt_13();
+    virtual void Vt_14();
+    virtual void Vt_15();
+    virtual void Vt_16();
+    virtual void Vt_17();
+    virtual void Vt_18();
+    virtual void Vt_19();
+    virtual void Vt_20();
+    virtual void Vt_21();
+    virtual void Vt_22();
+    virtual void Vat_5C(int v);
+
+    char pad_04[0xc];             // +0x04..+0x10
+    int field_10;                 // +0x10
+    char pad_14[0xc];             // +0x14..+0x20
+    int field_20;                 // +0x20
+    int field_24;                 // +0x24
+    void M_406670(bool a1);
+};
+MATCH_FUNC(0x406670)
+void Sc406670::M_406670(bool a1)
+{
+    if (a1)
+    {
+        if (this->field_10 == 0)
+        {
+            if (this->field_20 == (int)0xbf800000 || this->field_24 == (int)0xbf800000)
+            {
+                Vat_5C(1);
+                return;
+            }
+        }
+        Vat_5C(3);
+    }
+    else
+        Vat_5C(4);
+}
+
+extern void __stdcall sub_4098D0(void* a1);
+// 0x403F50 — clear six sub-fields then the +0x51 byte.
+class Sc403F50 {
+public:
+    char pad_00[0x40];
+    int field_40;                 // +0x40
+    char field_44;                // +0x44
+    char field_45;                // +0x45
+    char pad_46[2];
+    int field_48;                 // +0x48
+    int field_4c;                 // +0x4C
+    char field_50;                // +0x50
+    char field_51;                // +0x51
+    void M_403F50(void* a1);
+};
+MATCH_FUNC(0x403F50)
+void Sc403F50::M_403F50(void* a1)
+{
+    sub_4098D0(a1);
+    sub_4BEBD0((int)a1, &this->field_40, 4);
+    sub_4BEBD0((int)a1, &this->field_44, 1);
+    sub_4BEBD0((int)a1, &this->field_45, 1);
+    sub_4BEBD0((int)a1, &this->field_48, 4);
+    sub_4BEBD0((int)a1, &this->field_4c, 4);
+    sub_4BEBD0((int)a1, &this->field_50, 1);
+    sub_4BEBD0((int)a1, &this->field_51, 1);
+}
+
 // --- 0x406330: mode write + node/data derived value pair.
 class T406330Node {
 public:

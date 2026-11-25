@@ -73,6 +73,20 @@ class T4058C0Target {
 public:
     void Clear_4058C0();          // unresolved callee at 0x4058C0
     void Clear_405860();          // unresolved callee at 0x405860
+    void Method_405880(void* a1); // unresolved callee at 0x405880
+};
+
+// Target object at [*[a1+0x88]] used by 0x407B50.
+class T5DDB50Target {
+public:
+    void Hook_5DDB50(int a1, int a2);  // unresolved callee at 0x5DDB50
+};
+
+// Subobject at [this+0x08] used by 0x4079B0.
+class T52B460Target {
+public:
+    float Method_52B460(int a1);         // unresolved callee at 0x52B460
+    float Method_52B510(int a1, int a2, int a3);  // unresolved callee at 0x52B510
 };
 
 // Subobject at [this+0x20] used by 0x52AF30. It dispatches slot +0xEC (index
@@ -157,7 +171,7 @@ public:
     virtual void slot_009();
     virtual void slot_010();
     virtual void M_407FB0();      // slot +0x2C
-    virtual void slot_012();
+    virtual void M_407FD0(void* a1);  // slot +0x30
     virtual void slot_013();
     virtual void slot_014();
     virtual void slot_015();
@@ -208,7 +222,7 @@ public:
     virtual void slot_060();
     virtual void slot_061();
     virtual void slot_062();
-    virtual void slot_063();
+    virtual void M_407B50(void* a1);  // slot +0xFC
     virtual void slot_064();
     virtual void slot_065();
     virtual void slot_066();
@@ -340,6 +354,15 @@ public:
     virtual void slot_192();
     virtual void slot_193();
     virtual void Vat_308(void* a1, int a2, int a3, int a4, int a5, int a6);
+    virtual void slot_195();
+    virtual void slot_196();
+    virtual void slot_197();
+    virtual void slot_198();
+    virtual void slot_199();
+    virtual void slot_200();
+    virtual void slot_201();
+    virtual int M_407E80(int a1, int a2, int a3, int a4, int a5);  // slot +0x328
+    virtual void* Vat_32C();
 
     char pad_04[8 - 4];
     void* field_08;               // +0x08, generic subobject pointer
@@ -350,11 +373,15 @@ public:
     char pad_1C[0x20 - 0x1C];
     T52AF30Sub* field_20;         // +0x20, subobject dispatched by 0x52AF30
     void* field_24;               // +0x24, generic subobject pointer
-    char pad_28[0x44 - 0x28];
+    int field_28;                 // +0x28
+    char pad_2c[0x38 - 0x2c];
+    float field_38;               // +0x38
+    float field_3C;               // +0x3C
+    float field_40;               // +0x40
     int field_44;                 // +0x44
     char pad_48[0x4C - 0x48];
     unsigned short field_4C;      // +0x4C
-    char pad_4E[0x4F - 0x4E];
+    char byte_4e;                 // +0x4E
     char field_4F;                // +0x4F
     char pad_50[0x76 - 0x50];
     char field_76;                // +0x76
@@ -383,8 +410,10 @@ public:
     void Hook_529AF0();           // unresolved callee at 0x529AF0
     void Hook_52A990();           // unresolved callee at 0x52A990
     void Hook_48C240(int a1, int a2, int a3, int a4, int a5);  // unresolved callee at 0x48C240
+    void Hook_48C330(int a1, int a2, int a3, int a4, int a5);  // unresolved callee at 0x48C330
 
     void M_408060(void* a1, int a2, int a3, int a4);
+    bool M_4079B0();
     void M_52AF30();
     void M_48D470(void* p);
     bool M_407B30();

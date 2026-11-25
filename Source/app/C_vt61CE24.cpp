@@ -5,6 +5,41 @@ extern float g_61c5a8;
 extern float g_61c584;
 extern float g_61C584;
 extern void __stdcall sub_48CB50(int a1);
+extern void __stdcall sub_48C860(void* a1);
+extern void __cdecl sub_4BEBD0(void* a1, void* a2, int a3);
+
+WIP_FUNC(0x4079B0)
+bool C_vt61CE24::M_4079B0()
+{
+    if (this->field_10 != 0)
+    {
+        if (((T52B460Target*)this->field_08)->Method_52B460((int)this->field_10) <= this->field_40)
+            return 1;
+    }
+    else
+    {
+        if (((T52B460Target*)this->field_08)->Method_52B510((int)this->field_20, (int)this->field_24, this->field_28) <= this->field_40)
+            return 1;
+    }
+    return 0;
+}
+
+MATCH_FUNC(0x407B50)
+void C_vt61CE24::M_407B50(void* a1)
+{
+    int x = (int)this->field_3C;
+    int y = (int)this->field_38;
+    ((T5DDB50Target*)*(void**)((char*)a1 + 0x88))->Hook_5DDB50(y, x);
+}
+
+MATCH_FUNC(0x407FD0)
+void C_vt61CE24::M_407FD0(void* a1)
+{
+    sub_48C860(a1);
+    sub_4BEBD0(a1, &this->byte_12c, 1);
+    sub_4BEBD0(a1, &this->byte_134, 1);
+    ((T4058C0Target*)this->field_130)->Method_405880(a1);
+}
 
 MATCH_FUNC(0x407E30)
 void C_vt61CE24::M_407E30()
@@ -33,6 +68,17 @@ void C_vt61CE24::M_408030()
 {
     this->field_130->Clear_4058C0();
     this->Hook_52A990();
+}
+
+MATCH_FUNC(0x407E80)
+int C_vt61CE24::M_407E80(int a1, int a2, int a3, int a4, int a5)
+{
+    this->Hook_48C330(a1, a2, a3, a4, a5);
+    this->byte_4e = 0x28;
+    this->byte_12c = 0;
+    this->field_130 = (T4058C0Target*)this->Vat_32C();
+    this->byte_134 = 0;
+    return 1;
 }
 
 MATCH_FUNC(0x408060)

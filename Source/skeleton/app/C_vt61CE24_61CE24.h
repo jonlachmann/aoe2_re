@@ -21,7 +21,7 @@ public:
     virtual void slot_009();  // slot +0x024: sub_4088C0 [lifted]
     virtual void slot_010();  // slot +0x028: sub_529870 [lifted]
     virtual void slot_011();  // slot +0x02C: sub_407FB0 [matched] — Source/app/C_vt61CE24.cpp
-    virtual void slot_012();  // slot +0x030: sub_407FD0 [lifted]
+    virtual void slot_012();  // slot +0x030: sub_407FD0 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_013();  // slot +0x034: sub_529DB0 [lifted]
     virtual void slot_014();  // slot +0x038: sub_48CF00 [lifted]
     virtual void slot_015();  // slot +0x03C: sub_48D400 [lifted]
@@ -72,7 +72,7 @@ public:
     virtual void slot_060();  // slot +0x0F0: sub_52AFE0 [lifted]
     virtual void slot_061();  // slot +0x0F4: sub_52B110 [lifted]
     virtual void slot_062();  // slot +0x0F8: sub_52AFB0 [lifted]
-    virtual void slot_063();  // slot +0x0FC: sub_407B50 [lifted]
+    virtual void slot_063();  // slot +0x0FC: sub_407B50 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_064();  // slot +0x100: sub_407B80 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_065();  // slot +0x104: sub_52BC80 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_066();  // slot +0x108: sub_52BC90 [matched] — Source/app/C_vt61CE24.cpp
@@ -211,7 +211,7 @@ public:
     virtual void slot_199();  // slot +0x31C: sub_408880 [matched] — Source/app/free_app.cpp
     virtual void slot_200();  // slot +0x320: sub_408AB0 [lifted]
     virtual void slot_201();  // slot +0x324: sub_408C40 [lifted]
-    virtual void slot_202();  // slot +0x328: sub_407E80 [lifted]
+    virtual void slot_202();  // slot +0x328: sub_407E80 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_203();  // slot +0x32C: sub_407F50 [lifted]
     void method_000();  // sub_407DC0 [lifted]: same object, connected by this-edge call sites
 };

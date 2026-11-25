@@ -642,8 +642,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x403FC0",
@@ -1400,8 +1400,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x4066B0",
@@ -1596,8 +1596,8 @@
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/app/C_vt61CE24.cpp"
  },
  {
   "address": "0x407A00",
@@ -1698,8 +1698,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CE24.cpp"
  },
  {
   "address": "0x407B80",
@@ -2624,8 +2624,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CE24.cpp"
  },
  {
   "address": "0x407ED0",
@@ -2692,8 +2692,8 @@
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61CE24.cpp"
  },
  {
   "address": "0x408010",
