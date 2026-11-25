@@ -93,7 +93,9 @@ public:
     char pad_f3[0xf8 - 0xf3];      // +0xF3..+0xF8
     int field_f8;                  // +0xF8
     int field_fc;                  // +0xFC
-    char pad_100[0x120 - 0x100];   // +0x100..+0x120
+    int field_100;                 // +0x100
+    int field_104;                 // +0x104
+    char pad_108[0x120 - 0x108];   // +0x108..+0x120
     int field_120;                 // +0x120
     int field_124;                 // +0x124
     int field_128;                 // +0x128
@@ -147,6 +149,9 @@ public:
     C_pnl_pic* M_4B7F20();
     void M_4B8510();
     int M_4A1160();
+    int M_4B9D80(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
+                 int a8, int a9, int a10, int a11, int a12, int a13,
+                 int a14);
     int M_4B88B0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                  int a8, int a9, int a10, int a11, int a12, int a13,
                  int a14, int a15);

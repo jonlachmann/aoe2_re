@@ -193,3 +193,21 @@ C_pnl_pic* C_pnl_pic::M_4B7F20()
     field_1fc = -1;
     return this;
 }
+
+// 0x4B9D80 — setter forwarding 14 arguments to 0x4B88B0: record the +0x1C8/
+// +0x1CC pair from the last two arguments, forward the rest with five zeros
+// inserted at positions 8, 9, 11, 13 and 15; on success store the +0x100/
+// +0x104 pair from the middle arguments and return 1, otherwise return 0.
+MATCH_FUNC(0x4B9D80)
+int C_pnl_pic::M_4B9D80(int a1, int a2, int a3, int a4, int a5, int a6,
+                        int a7, int a8, int a9, int a10, int a11, int a12,
+                        int a13, int a14)
+{
+    field_1c8 = a13;
+    field_1cc = a14;
+    if (M_4B88B0(a1, a2, a3, a4, a5, a6, a7, 0, 0, a8, 0, a9, 0, a10, 0) == 0)
+        return 0;
+    field_100 = a11;
+    field_104 = a12;
+    return 1;
+}
