@@ -7,5 +7,5 @@
 class C_cluster_522CD0 {
 public:
     void method_000();  // sub_522CD0 [matched] — Source/sim/free_sim.cpp
-    void method_001();  // sub_522F90 [lifted]
+    void method_001();  // sub_522F90 [matched] — Source/sim/free_sim.cpp
 };

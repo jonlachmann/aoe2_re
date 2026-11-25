@@ -5779,15 +5779,22 @@ Sc542B00* Sc542B00::Init_542B00(int a1, int a2, int a3, int a4, int a5)
 }
 
 // 0x522CD0 — free the +0x00 index array, its entries and the +0x04 block.
-class Sc522CD0 {
+class C_cluster_522CD0 {
 public:
     void** field_0;               // +0x00
     void* field_4;                // +0x04
     int field_8;                  // +0x08
+    char pad_0c[0x3c - 0x0c];
+    void* field_3c;               // +0x3C
+    void* field_40;               // +0x40
+    void* field_44;               // +0x44
+    void* field_48;               // +0x48
+    void* field_4c;               // +0x4C
     void M_522CD0();
+    void M_522F90();
 };
 MATCH_FUNC(0x522CD0)
-void Sc522CD0::M_522CD0()
+void C_cluster_522CD0::M_522CD0()
 {
     for (int i = 0; i < field_8; i++) {
         void* p = field_0[i];
@@ -5798,4 +5805,21 @@ void Sc522CD0::M_522CD0()
         sub_5F90B0((int)field_0);
     if (field_4)
         sub_5F90B0((int)field_4);
+}
+
+// 0x522F90 — free the five +0x3C..+0x4C pointer arrays then run the base clear.
+MATCH_FUNC(0x522F90)
+void C_cluster_522CD0::M_522F90()
+{
+    if (field_3c)
+        sub_5F90B0((int)field_3c);
+    if (field_40)
+        sub_5F90B0((int)field_40);
+    if (field_44)
+        sub_5F90B0((int)field_44);
+    if (field_48)
+        sub_5F90B0((int)field_48);
+    if (field_4c)
+        sub_5F90B0((int)field_4c);
+    this->M_522CD0();
 }

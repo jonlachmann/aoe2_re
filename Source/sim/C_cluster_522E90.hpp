@@ -15,6 +15,13 @@ public:
     int field_20;                 // +0x20
     char pad_24[0x38 - 0x24];
     int field_38;                 // +0x38
+    void* field_3C;               // +0x3C
+    void* field_40;               // +0x40
+    void* field_44;               // +0x44
+    void* field_48;               // +0x48
+    void* field_4C;               // +0x4C
+    int field_50;                 // +0x50
 
     void M_522E90();
+    void M_523060();
 };

@@ -8911,11 +8911,11 @@
    "vtable": null,
    "anchor": "0x522CD0",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
+   "owned_methods": 2,
+   "unowned_methods": 0,
    "primary_file": "Source/sim/free_sim.cpp",
    "owner_files": {
-    "Source/sim/free_sim.cpp": 1
+    "Source/sim/free_sim.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -8928,10 +8928,12 @@
    "vtable": null,
    "anchor": "0x522D20",
    "methods": 3,
-   "owned_methods": 0,
-   "unowned_methods": 3,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 2,
+   "primary_file": "Source/sim/C_cluster_522D20.cpp",
+   "owner_files": {
+    "Source/sim/C_cluster_522D20.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -8943,11 +8945,11 @@
    "vtable": null,
    "anchor": "0x522E90",
    "methods": 3,
-   "owned_methods": 1,
-   "unowned_methods": 2,
+   "owned_methods": 2,
+   "unowned_methods": 1,
    "primary_file": "Source/sim/C_cluster_522E90.cpp",
    "owner_files": {
-    "Source/sim/C_cluster_522E90.cpp": 1
+    "Source/sim/C_cluster_522E90.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
