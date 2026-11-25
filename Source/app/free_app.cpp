@@ -1535,3 +1535,176 @@ int S41F6E0::M_41F6E0(int i)
         return 0;
     return arr_8c[i];
 }
+
+// Small app-region increment members.
+class S40A3D0 {
+public:
+    char pad_00[0x88];
+    int count_88;
+
+    void Inc_40A3D0();
+};
+MATCH_FUNC(0x40A3D0)
+void S40A3D0::Inc_40A3D0()
+{
+    ++count_88;
+}
+
+class S40A410 {
+public:
+    char pad_00[0xa0];
+    int count_a0;
+
+    void Inc_40A410();
+};
+MATCH_FUNC(0x40A410)
+void S40A410::Inc_40A410()
+{
+    ++count_a0;
+}
+
+class S40B670 {
+public:
+    char pad_00[0x7c];
+    int count_7c;
+
+    void Inc_40B670();
+};
+MATCH_FUNC(0x40B670)
+void S40B670::Inc_40B670()
+{
+    ++count_7c;
+}
+
+class S41C840 {
+public:
+    char pad_00[0x534];
+    int count_534;
+
+    void Inc_41C840();
+};
+MATCH_FUNC(0x41C840)
+void S41C840::Inc_41C840()
+{
+    ++count_534;
+}
+
+class S41C850 {
+public:
+    char pad_00[0x538];
+    int count_538;
+
+    void Inc_41C850();
+};
+MATCH_FUNC(0x41C850)
+void S41C850::Inc_41C850()
+{
+    ++count_538;
+}
+
+// 0x41CF60 — tail-forward through the pointer at +0x1c.
+class T465010 {
+public:
+    void Other_465010();
+};
+
+class S41CF60 {
+public:
+    char pad_00[0x1c];
+    T465010* field_1c;
+
+    void M_41CF60();
+};
+MATCH_FUNC(0x41CF60)
+void S41CF60::M_41CF60()
+{
+    field_1c->Other_465010();
+}
+
+// 0x40EB90 — free __cdecl forwarding call with one argument.
+class T40DE50 {
+public:
+    int Other_40DE50(int a2);
+};
+class S40EB90 {
+public:
+    int M_40EB90(int a2);
+};
+MATCH_FUNC(0x40EB90)
+int S40EB90::M_40EB90(int a2)
+{
+    return ((T40DE50*)this)->Other_40DE50(a2);
+}
+
+// 0x41F8A0 — pass the window handle at +0x28 to the global API slot.
+extern int (__stdcall *g_61C2CC)(void* hwnd);
+class S41F8A0 {
+public:
+    char pad_00[0x28];
+    void* hwnd_28;
+
+    int M_41F8A0();
+};
+MATCH_FUNC(0x41F8A0)
+int S41F8A0::M_41F8A0()
+{
+    return g_61C2CC(*(void**)((char*)this + 0x28));
+}
+
+// 0x41FAA0 — forward an int through the object at +0x1e8.
+class T48B3C0 {
+public:
+    int Other_48B3C0(int a1);
+};
+class S41FAA0 {
+public:
+    char pad_00[0x1e8];
+    T48B3C0* field_1e8;
+
+    int M_41FAA0(int a1);
+};
+MATCH_FUNC(0x41FAA0)
+int S41FAA0::M_41FAA0(int a1)
+{
+    return field_1e8->Other_48B3C0(a1);
+}
+
+// 0x41B000 — char accessor on the pointer at +4, 20 when absent.
+class T526430 {
+public:
+    char Other_526430();
+};
+class S41B000 {
+public:
+    char pad_00[4];
+    T526430* field_4;
+
+    char M_41B000();
+};
+MATCH_FUNC(0x41B000)
+char S41B000::M_41B000()
+{
+    if (field_4)
+        return field_4->Other_526430();
+    return 20;
+}
+
+// 0x41B010 — int accessor on the pointer at +4, 0 when absent.
+class T5267D0 {
+public:
+    int Other_5267D0();
+};
+class S41B010 {
+public:
+    char pad_00[4];
+    T5267D0* field_4;
+
+    int M_41B010();
+};
+MATCH_FUNC(0x41B010)
+int S41B010::M_41B010()
+{
+    if (field_4)
+        return field_4->Other_5267D0();
+    return 0;
+}

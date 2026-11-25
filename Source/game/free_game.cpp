@@ -2110,3 +2110,172 @@ int S43EBD0::M_43EBD0(int v)
     count_4++;
     return 1;
 }
+
+// Game-region wrapper members that forward an int arg to a field-owned object.
+class S425680 {
+public:
+    char pad_00[0x15fc];
+    S43SetBulk* field_15fc;
+
+    void M_425680(int a1);
+};
+MATCH_FUNC(0x425680)
+void S425680::M_425680(int a1)
+{
+    field_15fc->SetInt_43A0B0(a1);
+}
+
+class S4256A0 {
+public:
+    char pad_00[0x15f8];
+    S43SetBulk* field_15f8;
+
+    void M_4256A0(int a1);
+};
+MATCH_FUNC(0x4256A0)
+void S4256A0::M_4256A0(int a1)
+{
+    field_15f8->SetInt_438620(a1);
+}
+
+class S4266B0 {
+public:
+    char pad_00[0x15fc];
+    S43SetBulk* field_15fc;
+
+    void M_4266B0(int a1);
+};
+MATCH_FUNC(0x4266B0)
+void S4266B0::M_4266B0(int a1)
+{
+    field_15fc->SetInt_43A0B0(a1);
+}
+
+// 0x438EB0 takes its arg through a member-call ABI at the field-owned object.
+class T438EB0 {
+public:
+    void Other_438EB0(int a1);
+};
+
+class S42FD00 {
+public:
+    char pad_00[0x15f8];
+    T438EB0* field_15f8;
+
+    void M_42FD00(int a1);
+};
+MATCH_FUNC(0x42FD00)
+void S42FD00::M_42FD00(int a1)
+{
+    field_15f8->Other_438EB0(a1);
+}
+
+// 0x421A50 — tail-forward through the pointer at +0x1c.
+class T464AF0 {
+public:
+    int Other_464AF0();
+};
+
+class S421A50 {
+public:
+    char pad_00[0x1c];
+    T464AF0* field_1c;
+
+    int M_421A50();
+};
+MATCH_FUNC(0x421A50)
+int S421A50::M_421A50()
+{
+    return field_1c->Other_464AF0();
+}
+
+// 0x437BF0 — call a two-argument app helper with the global and a constant.
+extern int g_669558;
+extern void __cdecl sub_4378C0(int a1, int a2);
+
+class S437BF0 {
+public:
+    void M_437BF0();
+};
+MATCH_FUNC(0x437BF0)
+void S437BF0::M_437BF0()
+{
+    sub_4378C0(g_669558, 0x650EE0);
+}
+
+// 0x436E60 — free __cdecl call with a zero argument.
+extern int __stdcall sub_436E70(int a1);
+MATCH_FUNC(0x436E60)
+int __cdecl sub_436E60()
+{
+    return sub_436E70(0);
+}
+
+// 0x437410 — free __cdecl call with two zero arguments.
+extern int __stdcall sub_437420(int a1, int a2);
+MATCH_FUNC(0x437410)
+int __cdecl sub_437410()
+{
+    return sub_437420(0, 0);
+}
+
+// 0x438C00 — forward 50 through the object at +0x104.
+class T4BEFD0 {
+public:
+    int Other_4BEFD0(int a1);
+};
+class S438C00 {
+public:
+    char pad_00[0x104];
+    T4BEFD0* field_104;
+
+    int M_438C00();
+};
+MATCH_FUNC(0x438C00)
+int S438C00::M_438C00()
+{
+    return field_104->Other_4BEFD0(50);
+}
+
+// 0x439C90 — free __cdecl forwarding call with two arguments.
+class T439840 {
+public:
+    int Other_439840(void* dst, char* str);
+};
+class S439C90 {
+public:
+    int M_439C90(void* dst, char* str);
+};
+MATCH_FUNC(0x439C90)
+int S439C90::M_439C90(void* dst, char* str)
+{
+    return ((T439840*)this)->Other_439840(dst, str);
+}
+
+// 0x43E7B0 — install the vtable pointer and forward through the same object.
+class T440B30 {
+public:
+    void Other_440B30();
+};
+class S43E7B0 {
+public:
+    void M_43E7B0();
+};
+MATCH_FUNC(0x43E7B0)
+void S43E7B0::M_43E7B0()
+{
+    *(void**)this = (void*)0x61E8C0;
+    ((T440B30*)this)->Other_440B30();
+}
+
+// 0x43EB40 — forward through the global object at 0x665660.
+extern char g_665660;
+class T43EB70 {
+public:
+    int Other_43EB70();
+};
+MATCH_FUNC(0x43EB40)
+int __cdecl sub_43EB40()
+{
+    return ((T43EB70*)&g_665660)->Other_43EB70();
+}

@@ -7,6 +7,6 @@
 class C_cluster_436E30 {
 public:
     void method_000();  // sub_436E30 [lifted]
-    void method_001();  // sub_436E60 [lifted]
+    void method_001();  // sub_436E60 [matched] — Source/game/free_game.cpp
     void method_002();  // sub_436E70 [lifted]
 };

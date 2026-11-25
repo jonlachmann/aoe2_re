@@ -3492,3 +3492,78 @@ void sub_4BCE80()
 {
     sub_4BD490();
 }
+
+// 0x492340 — call a free helper and consume one stacked argument.
+extern int __stdcall sub_492210();
+MATCH_FUNC(0x492340)
+int __stdcall sub_492340(int a2)
+{
+    int result = sub_492210();
+    return result;
+}
+
+// 0x49ADC0 — pass the dword at +0 to the CRT-backed helper.
+extern int __cdecl sub_5F90B0(int a1);
+extern void __cdecl sub_5F90B0v(int a1);
+class S49ADC0 {
+public:
+    int field_0;
+
+    void M_49ADC0();
+};
+MATCH_FUNC(0x49ADC0)
+void S49ADC0::M_49ADC0()
+{
+    sub_5F90B0v(field_0);
+}
+
+// 0x4AB240 — increment the dword at +0x10.
+class S4AB240 {
+public:
+    char pad_00[0x10];
+    int count_10;
+
+    void Inc_4AB240();
+};
+MATCH_FUNC(0x4AB240)
+void S4AB240::Inc_4AB240()
+{
+    ++count_10;
+}
+
+// 0x4AE910 — forward 1 through the object at +0x88.
+class T5DDB90 {
+public:
+    int Other_5DDB90(int a1);
+};
+class S4AE910 {
+public:
+    char pad_00[0x88];
+    T5DDB90* field_88;
+
+    int M_4AE910();
+};
+MATCH_FUNC(0x4AE910)
+int S4AE910::M_4AE910()
+{
+    return field_88->Other_5DDB90(1);
+}
+
+// 0x4AF0A0 — return the dword at +0x10 through the helper, or zero.
+class S4AF0A0 {
+public:
+    char pad_00[0x10];
+    int field_10;
+
+    int M_4AF0A0();
+};
+#pragma optimize("s", on)
+MATCH_FUNC(0x4AF0A0)
+int S4AF0A0::M_4AF0A0()
+{
+    int result = field_10;
+    if (result)
+        result = sub_5F90B0(result);
+    return result;
+}
+#pragma optimize("", on)

@@ -8333,8 +8333,8 @@
    {
     "address": "0x43E7B0",
     "name": "sub_43E7B0",
-    "state": "lifted",
-    "file": null,
+    "state": "matched",
+    "file": "Source/game/free_game.cpp",
     "evidence": "same object, connected by this-edge call sites"
    }
   ]
@@ -73003,8 +73003,8 @@
    {
     "address": "0x436E60",
     "name": "sub_436E60",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/free_game.cpp"
    },
    {
     "address": "0x436E70",
@@ -73029,8 +73029,8 @@
    {
     "address": "0x437410",
     "name": "sub_437410",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/free_game.cpp"
    },
    {
     "address": "0x437420",
@@ -73171,8 +73171,8 @@
    {
     "address": "0x439C90",
     "name": "sub_439C90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/free_game.cpp"
    }
   ],
   "extra_methods": []
@@ -73419,8 +73419,8 @@
    {
     "address": "0x43EB40",
     "name": "sub_43EB40",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/free_game.cpp"
    }
   ],
   "extra_methods": []

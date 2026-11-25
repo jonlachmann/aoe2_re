@@ -878,10 +878,12 @@
    "vtable": "0x61E8C0",
    "anchor": "0x43E790",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/game/free_game.cpp",
+   "owner_files": {
+    "Source/game/free_game.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -5758,10 +5760,12 @@
    "vtable": null,
    "anchor": "0x436E30",
    "methods": 3,
-   "owned_methods": 0,
-   "unowned_methods": 3,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 2,
+   "primary_file": "Source/game/free_game.cpp",
+   "owner_files": {
+    "Source/game/free_game.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -5773,10 +5777,12 @@
    "vtable": null,
    "anchor": "0x437410",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/game/free_game.cpp",
+   "owner_files": {
+    "Source/game/free_game.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -5850,10 +5856,12 @@
    "vtable": null,
    "anchor": "0x439840",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/game/free_game.cpp",
+   "owner_files": {
+    "Source/game/free_game.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -5957,10 +5965,12 @@
    "vtable": null,
    "anchor": "0x43EB30",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/game/free_game.cpp",
+   "owner_files": {
+    "Source/game/free_game.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
