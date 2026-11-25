@@ -75949,8 +75949,8 @@
    {
     "address": "0x49F4B0",
     "name": "sub_49F4B0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    }
   ],
   "extra_methods": []

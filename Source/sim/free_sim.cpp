@@ -3702,3 +3702,43 @@ void __cdecl sub_55A630()
     sub_55A640();
     sub_55A660();
 }
+
+// 0x55A5D0 — forward through the global object at 0x7519F0.
+extern char g_7519F0;
+class T4734D0 {
+public:
+    void Other_4734D0();
+};
+MATCH_FUNC(0x55A5D0)
+void __cdecl sub_55A5D0()
+{
+    ((T4734D0*)&g_7519F0)->Other_4734D0();
+}
+
+// 0x55A620 — forward through the global object at 0x7519C8.
+extern char g_7519C8;
+MATCH_FUNC(0x55A620)
+void __cdecl sub_55A620()
+{
+    ((T4734D0*)&g_7519C8)->Other_4734D0();
+}
+
+// 0x55A670 — forward through the global object at 0x7519A0.
+extern char g_7519A0;
+MATCH_FUNC(0x55A670)
+void __cdecl sub_55A670()
+{
+    ((T4734D0*)&g_7519A0)->Other_4734D0();
+}
+
+// 0x5BD510 — forward through the global object at 0x75FF58.
+extern char g_75FF58;
+class T5BD400 {
+public:
+    void Other_5BD400();
+};
+MATCH_FUNC(0x5BD510)
+void __cdecl sub_5BD510()
+{
+    ((T5BD400*)&g_75FF58)->Other_5BD400();
+}

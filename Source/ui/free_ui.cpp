@@ -4050,3 +4050,38 @@ void __cdecl sub_4A76D0()
     sub_4A76E0();
     sub_4A7710();
 }
+
+// 0x49F4B0 — forward through the global object at 0x66EA48.
+extern char g_66EA48;
+class T49F4E0 {
+public:
+    void Other_49F4E0();
+};
+MATCH_FUNC(0x49F4B0)
+void __cdecl sub_49F4B0()
+{
+    ((T49F4E0*)&g_66EA48)->Other_49F4E0();
+}
+
+// 0x49F4D0 — forward through the global object at 0x66EA48.
+class T49F570 {
+public:
+    void Other_49F570();
+};
+MATCH_FUNC(0x49F4D0)
+void __cdecl sub_49F4D0()
+{
+    ((T49F570*)&g_66EA48)->Other_49F570();
+}
+
+// 0x4A7710 — forward through the global object at 0x66FA50.
+extern char g_66FA50;
+class T4A8310 {
+public:
+    void Other_4A8310();
+};
+MATCH_FUNC(0x4A7710)
+void __cdecl sub_4A7710()
+{
+    ((T4A8310*)&g_66FA50)->Other_4A8310();
+}
