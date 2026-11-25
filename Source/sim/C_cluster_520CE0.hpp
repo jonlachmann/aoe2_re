@@ -7,8 +7,12 @@
 
 class C_cluster_520CE0 {
 public:
+    int field_0;                  // +0x00
+    void Hook_521580();           // unresolved callee at 0x521580
+    void Hook_521500();           // unresolved callee at 0x521500
     int Find_5219B0(int a2);
     int Find_5219E0(int a2);
+    void M_5214E0();
     void M_522C30();
     void M_522C50();
 };

@@ -79,5 +79,9 @@ public:
     virtual void Vt_69();
     virtual void Vat_118(int a, int b, int zero, int c, int d);
 
+    char pad_04[0xfc - 4];
+    short field_fc;               // +0xFC
+
     void M_4BD000(int a, int b, int c, int d);
+    void M_4BCF90(int a1, int a2, int a3);
 };

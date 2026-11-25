@@ -6,5 +6,5 @@
 
 class C_cluster_460660_member_20 {
 public:
-    void method_000();  // sub_4A0C60 [lifted]
+    void method_000();  // sub_4A0C60 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
 };

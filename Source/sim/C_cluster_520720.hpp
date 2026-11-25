@@ -9,7 +9,9 @@ public:
     int field_0;                  // +0x00
     unsigned char field_4;        // +0x04
     unsigned char field_5;        // +0x05
-    char pad_06[0xC - 0x06];
+    char pad_06[0x08 - 0x06];
+    int field_8;                  // +0x08
+
     int field_C;                  // +0x0C
     int field_10;                 // +0x10
     int field_14;                 // +0x14
@@ -18,4 +20,5 @@ public:
     int field_1C;                 // +0x1C
 
     void Init_520750();
+    C_cluster_520720* M_520720(int a1, int a2, int a3);
 };

@@ -7,5 +7,10 @@
 
 class C_cluster_49FE60 {
 public:
+    char pad_00[0xac0];
+    int field_ac0;                // +0xAC0
+    int field_ac4;                // +0xAC4
+
     void M_5ED9D6();
+    void M_49FE60();
 };

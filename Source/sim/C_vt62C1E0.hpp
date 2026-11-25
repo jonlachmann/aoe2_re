@@ -77,6 +77,8 @@ public:
     void ConditionC9_421D70(unsigned char v);
     void ConditionCA_421D90(unsigned char v);
     int Get_422320();
+    void Hook_5BAD80(int a1);     // unresolved callee at 0x5BAD80
+    void M_5BAEE0(char* src);     // inline strcpy into +0x1240
     void Wrap_5B5C50();
     int Get_5BAD50();
     void SetInt_5BAD60(int v);
@@ -85,6 +87,7 @@ public:
     char* Get_5BAEB0();
     void SetInt_5BAF20(int v);
     void SetInt_5BAF40(int v);
+    void M_5BAEC0(int a1);
     void Set_5BAF70(int a, int b);
     void SetByte_5BAFA0(int index, unsigned char v);
     void SetInt_5BAFD0(int index, int v);

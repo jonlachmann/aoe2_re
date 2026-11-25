@@ -881,13 +881,13 @@
    "vtable": "0x61DF78",
    "anchor": "0x41BC60",
    "methods": 90,
-   "owned_methods": 38,
-   "unowned_methods": 52,
+   "owned_methods": 40,
+   "unowned_methods": 50,
    "primary_file": "Source/app/C_vt61DF78.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 4,
     "Source/app/C_vt61D890.cpp": 1,
-    "Source/app/C_vt61DF78.cpp": 27,
+    "Source/app/C_vt61DF78.cpp": 29,
     "Source/app/free_app.cpp": 1,
     "Source/engine-late/C_view.cpp": 1,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 1,
@@ -1013,17 +1013,21 @@
    "vtable": "0x61E9CC",
    "anchor": "0x443A50",
    "methods": 67,
-   "owned_methods": 27,
-   "unowned_methods": 40,
+   "owned_methods": 32,
+   "unowned_methods": 35,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 23
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
-    "Source/gfx/free_gfx.cpp"
+    "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -1035,18 +1039,20 @@
    "vtable": "0x61EAD8",
    "anchor": "0x447510",
    "methods": 89,
-   "owned_methods": 33,
-   "unowned_methods": 56,
+   "owned_methods": 37,
+   "unowned_methods": 52,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1059,20 +1065,22 @@
    "vtable": "0x61ECBC",
    "anchor": "0x447BE0",
    "methods": 90,
-   "owned_methods": 34,
-   "unowned_methods": 56,
+   "owned_methods": 38,
+   "unowned_methods": 52,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/C_vt61ECBC.cpp": 1,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/C_vt61ECBC.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1085,18 +1093,20 @@
    "vtable": "0x61EEA0",
    "anchor": "0x448940",
    "methods": 89,
-   "owned_methods": 32,
-   "unowned_methods": 57,
+   "owned_methods": 36,
+   "unowned_methods": 53,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1109,18 +1119,20 @@
    "vtable": "0x61F084",
    "anchor": "0x44A240",
    "methods": 90,
-   "owned_methods": 32,
-   "unowned_methods": 58,
+   "owned_methods": 36,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1133,18 +1145,20 @@
    "vtable": "0x61F268",
    "anchor": "0x44B3E0",
    "methods": 90,
-   "owned_methods": 32,
-   "unowned_methods": 58,
+   "owned_methods": 36,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1157,20 +1171,22 @@
    "vtable": "0x61F3CC",
    "anchor": "0x44B9F0",
    "methods": 92,
-   "owned_methods": 34,
-   "unowned_methods": 58,
+   "owned_methods": 38,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
     "Source/gfx/C_vt61F3CC.cpp": 2,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 27,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 30,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/C_vt61F3CC.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1183,18 +1199,20 @@
    "vtable": "0x61F5B8",
    "anchor": "0x44C150",
    "methods": 89,
-   "owned_methods": 32,
-   "unowned_methods": 57,
+   "owned_methods": 36,
+   "unowned_methods": 53,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1207,18 +1225,20 @@
    "vtable": "0x61F71C",
    "anchor": "0x44C7D0",
    "methods": 90,
-   "owned_methods": 32,
-   "unowned_methods": 58,
+   "owned_methods": 36,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 27,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 30,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1231,18 +1251,20 @@
    "vtable": "0x61F900",
    "anchor": "0x44CEE0",
    "methods": 90,
-   "owned_methods": 32,
-   "unowned_methods": 58,
+   "owned_methods": 36,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1255,18 +1277,20 @@
    "vtable": "0x61FB64",
    "anchor": "0x44D3A0",
    "methods": 90,
-   "owned_methods": 32,
-   "unowned_methods": 58,
+   "owned_methods": 36,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1279,18 +1303,20 @@
    "vtable": "0x61FD48",
    "anchor": "0x44E2D0",
    "methods": 89,
-   "owned_methods": 32,
-   "unowned_methods": 57,
+   "owned_methods": 36,
+   "unowned_methods": 53,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1303,18 +1329,20 @@
    "vtable": "0x61FEAC",
    "anchor": "0x44EF00",
    "methods": 90,
-   "owned_methods": 32,
-   "unowned_methods": 58,
+   "owned_methods": 36,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1327,18 +1355,20 @@
    "vtable": "0x620090",
    "anchor": "0x451180",
    "methods": 92,
-   "owned_methods": 30,
-   "unowned_methods": 62,
+   "owned_methods": 34,
+   "unowned_methods": 58,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 28,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1351,17 +1381,21 @@
    "vtable": "0x620274",
    "anchor": "0x45A5C0",
    "methods": 62,
-   "owned_methods": 27,
-   "unowned_methods": 35,
+   "owned_methods": 31,
+   "unowned_methods": 31,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 23
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
-    "Source/gfx/free_gfx.cpp"
+    "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -1373,18 +1407,20 @@
    "vtable": "0x6203EC",
    "anchor": "0x45BDA0",
    "methods": 90,
-   "owned_methods": 31,
-   "unowned_methods": 59,
+   "owned_methods": 35,
+   "unowned_methods": 55,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/gfx/free_gfx.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 28,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/free_gfx.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1830,16 +1866,20 @@
    "vtable": "0x621F6C",
    "anchor": "0x4A0250",
    "methods": 61,
-   "owned_methods": 27,
-   "unowned_methods": 34,
+   "owned_methods": 32,
+   "unowned_methods": 29,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1852,16 +1892,18 @@
    "vtable": "0x622060",
    "anchor": "0x4A23C0",
    "methods": 89,
-   "owned_methods": 31,
-   "unowned_methods": 58,
+   "owned_methods": 35,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1930,17 +1972,19 @@
    "vtable": "0x6224E4",
    "anchor": "0x4AF250",
    "methods": 63,
-   "owned_methods": 20,
-   "unowned_methods": 43,
+   "owned_methods": 26,
+   "unowned_methods": 37,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 14,
-    "Source/ui/C_pnl_btn.cpp": 3,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 17,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 5,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
     "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -1954,16 +1998,18 @@
    "vtable": "0x6225E0",
    "anchor": "0x4B0F80",
    "methods": 89,
-   "owned_methods": 32,
-   "unowned_methods": 57,
+   "owned_methods": 36,
+   "unowned_methods": 53,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1976,16 +2022,20 @@
    "vtable": "0x622744",
    "anchor": "0x4B12F0",
    "methods": 63,
-   "owned_methods": 27,
-   "unowned_methods": 36,
+   "owned_methods": 32,
+   "unowned_methods": 31,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 22,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -1998,17 +2048,19 @@
    "vtable": "0x622838",
    "anchor": "0x4B2C20",
    "methods": 63,
-   "owned_methods": 20,
-   "unowned_methods": 43,
+   "owned_methods": 26,
+   "unowned_methods": 37,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 14,
-    "Source/ui/C_pnl_btn.cpp": 3,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 17,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 5,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
     "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2022,17 +2074,19 @@
    "vtable": "0x622934",
    "anchor": "0x4B2E10",
    "methods": 66,
-   "owned_methods": 29,
-   "unowned_methods": 37,
+   "owned_methods": 33,
+   "unowned_methods": 33,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 22,
-    "Source/ui/C_pnl_edit.cpp": 3,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 24,
+    "Source/ui/C_pnl_btn.cpp": 1,
+    "Source/ui/C_pnl_edit.cpp": 4,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_pnl_edit.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2046,17 +2100,19 @@
    "vtable": "0x622A28",
    "anchor": "0x4B4610",
    "methods": 74,
-   "owned_methods": 27,
-   "unowned_methods": 47,
+   "owned_methods": 31,
+   "unowned_methods": 43,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 21,
-    "Source/ui/C_pnl_inp.cpp": 4,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_pnl_btn.cpp": 1,
+    "Source/ui/C_pnl_inp.cpp": 5,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_pnl_inp.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2070,18 +2126,20 @@
    "vtable": "0x622B50",
    "anchor": "0x4B59D0",
    "methods": 87,
-   "owned_methods": 25,
-   "unowned_methods": 62,
+   "owned_methods": 29,
+   "unowned_methods": 58,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 17,
-    "Source/ui/C_pnl_inp.cpp": 2,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 19,
+    "Source/ui/C_pnl_btn.cpp": 1,
+    "Source/ui/C_pnl_inp.cpp": 3,
     "Source/ui/C_pnl_lst.cpp": 2,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_pnl_inp.cpp",
     "Source/ui/C_pnl_lst.cpp",
     "Source/ui/free_ui.cpp"
@@ -2096,16 +2154,20 @@
    "vtable": "0x622C74",
    "anchor": "0x4B69A0",
    "methods": 63,
-   "owned_methods": 29,
-   "unowned_methods": 34,
+   "owned_methods": 34,
+   "unowned_methods": 29,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 5,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2118,16 +2180,20 @@
    "vtable": "0x622D6C",
    "anchor": "0x4B7FD0",
    "methods": 61,
-   "owned_methods": 27,
-   "unowned_methods": 34,
+   "owned_methods": 32,
+   "unowned_methods": 29,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2140,16 +2206,20 @@
    "vtable": "0x622E60",
    "anchor": "0x4B8880",
    "methods": 62,
-   "owned_methods": 25,
-   "unowned_methods": 37,
+   "owned_methods": 30,
+   "unowned_methods": 32,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 20,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2162,16 +2232,18 @@
    "vtable": "0x622F54",
    "anchor": "0x4B9B10",
    "methods": 87,
-   "owned_methods": 33,
-   "unowned_methods": 54,
+   "owned_methods": 37,
+   "unowned_methods": 50,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2184,16 +2256,22 @@
    "vtable": "0x6230B0",
    "anchor": "0x4B9D50",
    "methods": 62,
-   "owned_methods": 26,
-   "unowned_methods": 36,
+   "owned_methods": 32,
+   "unowned_methods": 30,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 20,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1,
+    "Source/ui/C_vt6230B0.cpp": 1,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
+    "Source/ui/C_vt6230B0.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2206,16 +2284,20 @@
    "vtable": "0x6231A4",
    "anchor": "0x4B9E40",
    "methods": 62,
-   "owned_methods": 26,
-   "unowned_methods": 36,
+   "owned_methods": 31,
+   "unowned_methods": 31,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 20,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2228,17 +2310,21 @@
    "vtable": "0x623318",
    "anchor": "0x4BA0E0",
    "methods": 73,
-   "owned_methods": 27,
-   "unowned_methods": 46,
+   "owned_methods": 32,
+   "unowned_methods": 41,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 22,
-    "Source/ui/C_pnl_inp.cpp": 3,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 24,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1,
+    "Source/ui/C_pnl_inp.cpp": 4,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_pnl_inp.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2252,19 +2338,21 @@
    "vtable": "0x6234C8",
    "anchor": "0x4BD990",
    "methods": 94,
-   "owned_methods": 34,
-   "unowned_methods": 60,
+   "owned_methods": 38,
+   "unowned_methods": 56,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
     "Source/gfx/C_vt61F3CC.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 27,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 30,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/C_vt6234C8.cpp": 1,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/gfx/C_vt61F3CC.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_vt6234C8.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2465,16 +2553,20 @@
    "vtable": "0x623C5C",
    "anchor": "0x4CCAD0",
    "methods": 62,
-   "owned_methods": 26,
-   "unowned_methods": 36,
+   "owned_methods": 31,
+   "unowned_methods": 31,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2529,17 +2621,19 @@
    "vtable": "0x623F24",
    "anchor": "0x4D0AD0",
    "methods": 89,
-   "owned_methods": 31,
-   "unowned_methods": 58,
+   "owned_methods": 35,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 28,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/C_scr_ach.cpp": 1,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_scr_ach.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2553,16 +2647,18 @@
    "vtable": "0x624100",
    "anchor": "0x4D3E50",
    "methods": 88,
-   "owned_methods": 33,
-   "unowned_methods": 55,
+   "owned_methods": 37,
+   "unowned_methods": 51,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2575,16 +2671,18 @@
    "vtable": "0x6242DC",
    "anchor": "0x4D4460",
    "methods": 88,
-   "owned_methods": 33,
-   "unowned_methods": 55,
+   "owned_methods": 37,
+   "unowned_methods": 51,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2597,16 +2695,18 @@
    "vtable": "0x6244B8",
    "anchor": "0x4D5890",
    "methods": 87,
-   "owned_methods": 33,
-   "unowned_methods": 54,
+   "owned_methods": 37,
+   "unowned_methods": 50,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2619,16 +2719,18 @@
    "vtable": "0x624614",
    "anchor": "0x4D63D0",
    "methods": 89,
-   "owned_methods": 32,
-   "unowned_methods": 57,
+   "owned_methods": 36,
+   "unowned_methods": 53,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2641,17 +2743,21 @@
    "vtable": "0x624770",
    "anchor": "0x4D6A20",
    "methods": 74,
-   "owned_methods": 28,
-   "unowned_methods": 46,
+   "owned_methods": 33,
+   "unowned_methods": 41,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 22,
-    "Source/ui/C_pnl_inp.cpp": 3,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 24,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1,
+    "Source/ui/C_pnl_inp.cpp": 4,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_pnl_inp.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2665,17 +2771,19 @@
    "vtable": "0x624914",
    "anchor": "0x4D9AF0",
    "methods": 88,
-   "owned_methods": 31,
-   "unowned_methods": 57,
+   "owned_methods": 35,
+   "unowned_methods": 53,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 24,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 27,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/C_scr_game.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_scr_game.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2689,16 +2797,18 @@
    "vtable": "0x624AF4",
    "anchor": "0x4E8860",
    "methods": 87,
-   "owned_methods": 33,
-   "unowned_methods": 54,
+   "owned_methods": 37,
+   "unowned_methods": 50,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2711,16 +2821,18 @@
    "vtable": "0x624CD0",
    "anchor": "0x4E95B0",
    "methods": 87,
-   "owned_methods": 33,
-   "unowned_methods": 54,
+   "owned_methods": 37,
+   "unowned_methods": 50,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2733,16 +2845,18 @@
    "vtable": "0x624E2C",
    "anchor": "0x4EA710",
    "methods": 87,
-   "owned_methods": 33,
-   "unowned_methods": 54,
+   "owned_methods": 37,
+   "unowned_methods": 50,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2755,16 +2869,18 @@
    "vtable": "0x625008",
    "anchor": "0x4EAE50",
    "methods": 87,
-   "owned_methods": 32,
-   "unowned_methods": 55,
+   "owned_methods": 36,
+   "unowned_methods": 51,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 28,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2777,16 +2893,18 @@
    "vtable": "0x6251E4",
    "anchor": "0x4ECE70",
    "methods": 90,
-   "owned_methods": 33,
-   "unowned_methods": 57,
+   "owned_methods": 37,
+   "unowned_methods": 53,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 24,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 27,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 7
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2799,16 +2917,18 @@
    "vtable": "0x625340",
    "anchor": "0x4F24F0",
    "methods": 87,
-   "owned_methods": 33,
-   "unowned_methods": 54,
+   "owned_methods": 37,
+   "unowned_methods": 50,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2821,16 +2941,18 @@
    "vtable": "0x62551C",
    "anchor": "0x4F2980",
    "methods": 87,
-   "owned_methods": 32,
-   "unowned_methods": 55,
+   "owned_methods": 36,
+   "unowned_methods": 51,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 28,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2843,17 +2965,19 @@
    "vtable": "0x6256F8",
    "anchor": "0x4F3440",
    "methods": 93,
-   "owned_methods": 32,
-   "unowned_methods": 61,
+   "owned_methods": 36,
+   "unowned_methods": 57,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 28,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/C_vt6256F8.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_vt6256F8.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2867,17 +2991,19 @@
    "vtable": "0x6258F8",
    "anchor": "0x4F5A90",
    "methods": 93,
-   "owned_methods": 32,
-   "unowned_methods": 61,
+   "owned_methods": 36,
+   "unowned_methods": 57,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 28,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/C_vt6256F8.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_vt6256F8.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2891,16 +3017,18 @@
    "vtable": "0x625A6C",
    "anchor": "0x4FFD50",
    "methods": 87,
-   "owned_methods": 33,
-   "unowned_methods": 54,
+   "owned_methods": 37,
+   "unowned_methods": 50,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2913,16 +3041,18 @@
    "vtable": "0x625C48",
    "anchor": "0x5001F0",
    "methods": 88,
-   "owned_methods": 33,
-   "unowned_methods": 55,
+   "owned_methods": 37,
+   "unowned_methods": 51,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2935,17 +3065,19 @@
    "vtable": "0x625DA4",
    "anchor": "0x501100",
    "methods": 88,
-   "owned_methods": 33,
-   "unowned_methods": 55,
+   "owned_methods": 37,
+   "unowned_methods": 51,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/C_vt625DA4.cpp": 2,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_vt625DA4.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -2959,14 +3091,16 @@
    "vtable": "0x625F80",
    "anchor": "0x503880",
    "methods": 90,
-   "owned_methods": 31,
-   "unowned_methods": 59,
+   "owned_methods": 35,
+   "unowned_methods": 55,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 27,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 30,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -2979,16 +3113,18 @@
    "vtable": "0x62615C",
    "anchor": "0x5052A0",
    "methods": 88,
-   "owned_methods": 33,
-   "unowned_methods": 55,
+   "owned_methods": 37,
+   "unowned_methods": 51,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -3001,16 +3137,18 @@
    "vtable": "0x626338",
    "anchor": "0x5061F0",
    "methods": 89,
-   "owned_methods": 31,
-   "unowned_methods": 58,
+   "owned_methods": 35,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -3023,16 +3161,18 @@
    "vtable": "0x626614",
    "anchor": "0x51BE20",
    "methods": 87,
-   "owned_methods": 33,
-   "unowned_methods": 54,
+   "owned_methods": 37,
+   "unowned_methods": 50,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -3045,16 +3185,18 @@
    "vtable": "0x6267F0",
    "anchor": "0x51C770",
    "methods": 87,
-   "owned_methods": 32,
-   "unowned_methods": 55,
+   "owned_methods": 36,
+   "unowned_methods": 51,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 28,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -3067,17 +3209,19 @@
    "vtable": "0x62694C",
    "anchor": "0x51D120",
    "methods": 87,
-   "owned_methods": 33,
-   "unowned_methods": 54,
+   "owned_methods": 37,
+   "unowned_methods": 50,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/C_vt62694C.cpp": 1,
     "Source/ui/free_ui.cpp": 4
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_vt62694C.cpp",
     "Source/ui/free_ui.cpp"
    ],
@@ -3091,16 +3235,18 @@
    "vtable": "0x626B28",
    "anchor": "0x51E500",
    "methods": 88,
-   "owned_methods": 32,
-   "unowned_methods": 56,
+   "owned_methods": 36,
+   "unowned_methods": 52,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 27,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 30,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 3
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -3113,17 +3259,21 @@
    "vtable": "0x626E04",
    "anchor": "0x523AA0",
    "methods": 64,
-   "owned_methods": 24,
-   "unowned_methods": 40,
+   "owned_methods": 29,
+   "unowned_methods": 35,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/sim/free_sim.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 20
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
-    "Source/sim/free_sim.cpp"
+    "Source/sim/free_sim.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -4512,18 +4662,20 @@
    "vtable": "0x62AC80",
    "anchor": "0x58EE40",
    "methods": 90,
-   "owned_methods": 32,
-   "unowned_methods": 58,
+   "owned_methods": 36,
+   "unowned_methods": 54,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/sim/free_sim.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 29,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/sim/free_sim.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
@@ -4779,13 +4931,13 @@
    "vtable": "0x62B970",
    "anchor": "0x4B2C20",
    "methods": 63,
-   "owned_methods": 20,
-   "unowned_methods": 43,
+   "owned_methods": 25,
+   "unowned_methods": 38,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 14,
-    "Source/ui/C_pnl_btn.cpp": 3,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 17,
+    "Source/ui/C_pnl_btn.cpp": 5,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
@@ -4803,17 +4955,21 @@
    "vtable": "0x62BAEC",
    "anchor": "0x5A6A80",
    "methods": 62,
-   "owned_methods": 27,
-   "unowned_methods": 35,
+   "owned_methods": 32,
+   "unowned_methods": 30,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/sim/free_sim.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 23
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
-    "Source/sim/free_sim.cpp"
+    "Source/sim/free_sim.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -4825,17 +4981,21 @@
    "vtable": "0x62BC64",
    "anchor": "0x5A7780",
    "methods": 66,
-   "owned_methods": 25,
-   "unowned_methods": 41,
+   "owned_methods": 30,
+   "unowned_methods": 36,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/sim/free_sim.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 20
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
-    "Source/sim/free_sim.cpp"
+    "Source/sim/free_sim.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -4847,19 +5007,23 @@
    "vtable": "0x62BD70",
    "anchor": "0x5AC190",
    "methods": 62,
-   "owned_methods": 28,
-   "unowned_methods": 34,
+   "owned_methods": 33,
+   "unowned_methods": 29,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/sim/C_tpnl_per.cpp": 1,
     "Source/sim/free_sim.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 23
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/sim/C_tpnl_per.cpp",
-    "Source/sim/free_sim.cpp"
+    "Source/sim/free_sim.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -4871,17 +5035,21 @@
    "vtable": "0x62BEF0",
    "anchor": "0x5AC3F0",
    "methods": 62,
-   "owned_methods": 26,
-   "unowned_methods": 36,
+   "owned_methods": 31,
+   "unowned_methods": 31,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/sim/free_sim.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 22
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 25,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
-    "Source/sim/free_sim.cpp"
+    "Source/sim/free_sim.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -4893,17 +5061,21 @@
    "vtable": "0x62C064",
    "anchor": "0x5AD410",
    "methods": 63,
-   "owned_methods": 27,
-   "unowned_methods": 36,
+   "owned_methods": 32,
+   "unowned_methods": 31,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/sim/free_sim.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 23
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
-    "Source/sim/free_sim.cpp"
+    "Source/sim/free_sim.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -4915,15 +5087,15 @@
    "vtable": "0x62C1E0",
    "anchor": "0x5B1170",
    "methods": 160,
-   "owned_methods": 74,
-   "unowned_methods": 86,
+   "owned_methods": 77,
+   "unowned_methods": 83,
    "primary_file": "Source/sim/C_vt62C1E0.cpp",
    "owner_files": {
     "Source/app/C_vt61D890.cpp": 1,
-    "Source/app/C_vt61DF78.cpp": 18,
+    "Source/app/C_vt61DF78.cpp": 19,
     "Source/game/free_game.cpp": 2,
     "Source/gfx/C_vt61DA40.cpp": 1,
-    "Source/sim/C_vt62C1E0.cpp": 48,
+    "Source/sim/C_vt62C1E0.cpp": 50,
     "Source/sim/free_sim.cpp": 2,
     "Source/ui/C_pnl_edit.cpp": 2
    },
@@ -4997,17 +5169,21 @@
    "vtable": "0x62C634",
    "anchor": "0x5DE830",
    "methods": 70,
-   "owned_methods": 21,
-   "unowned_methods": 49,
+   "owned_methods": 26,
+   "unowned_methods": 44,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/engine-late/free_engine-late.cpp": 1,
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 17
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 20,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/engine-late/free_engine-late.cpp",
-    "Source/gfx/C_TribePopUpHelp.cpp"
+    "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -5019,14 +5195,14 @@
    "vtable": "0x62C7CC",
    "anchor": "0x5C5380",
    "methods": 79,
-   "owned_methods": 20,
-   "unowned_methods": 59,
+   "owned_methods": 24,
+   "unowned_methods": 55,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
     "Source/sim/free_sim.cpp": 2,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 15,
-    "Source/ui/C_pnl_btn.cpp": 1
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 18,
+    "Source/ui/C_pnl_btn.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
@@ -5082,20 +5258,22 @@
    "vtable": "0x62CC3C",
    "anchor": "0x5D2210",
    "methods": 73,
-   "owned_methods": 29,
-   "unowned_methods": 44,
+   "owned_methods": 33,
+   "unowned_methods": 40,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/engine-late/C_view.cpp": 1,
     "Source/engine-late/free_engine-late.cpp": 1,
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 23,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 26,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/C_pnl_edit.cpp": 1
    },
    "other_files": [
     "Source/engine-late/C_view.cpp",
     "Source/engine-late/free_engine-late.cpp",
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_pnl_edit.cpp"
    ],
    "staged_files": [],
@@ -5108,19 +5286,23 @@
    "vtable": "0x62CEE8",
    "anchor": "0x5DE830",
    "methods": 71,
-   "owned_methods": 22,
-   "unowned_methods": 49,
+   "owned_methods": 27,
+   "unowned_methods": 44,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/engine-late/free_engine-late.cpp": 1,
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/sim/C_diam_map.cpp": 1,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 17
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 20,
+    "Source/ui/C_TribePopUpHelp.cpp": 1,
+    "Source/ui/C_pnl_btn.cpp": 1
    },
    "other_files": [
     "Source/engine-late/free_engine-late.cpp",
     "Source/gfx/C_TribePopUpHelp.cpp",
-    "Source/sim/C_diam_map.cpp"
+    "Source/sim/C_diam_map.cpp",
+    "Source/ui/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -5132,20 +5314,22 @@
    "vtable": "0x62D080",
    "anchor": "0x5DEFB0",
    "methods": 78,
-   "owned_methods": 22,
-   "unowned_methods": 56,
+   "owned_methods": 26,
+   "unowned_methods": 52,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/engine-late/C_view.cpp": 1,
     "Source/engine-late/free_engine-late.cpp": 1,
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 16,
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 19,
+    "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/C_pnl_edit.cpp": 1
    },
    "other_files": [
     "Source/engine-late/C_view.cpp",
     "Source/engine-late/free_engine-late.cpp",
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_pnl_btn.cpp",
     "Source/ui/C_pnl_edit.cpp"
    ],
    "staged_files": [],
@@ -5199,10 +5383,12 @@
    "vtable": null,
    "anchor": "0x41C920",
    "methods": 1,
-   "owned_methods": 0,
-   "unowned_methods": 1,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 0,
+   "primary_file": "Source/app/C_vt61DF78.cpp",
+   "owner_files": {
+    "Source/app/C_vt61DF78.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -5246,11 +5432,11 @@
    "vtable": null,
    "anchor": "0x426110",
    "methods": 26,
-   "owned_methods": 4,
-   "unowned_methods": 22,
+   "owned_methods": 6,
+   "unowned_methods": 20,
    "primary_file": "Source/game/C_global_66451C.cpp",
    "owner_files": {
-    "Source/game/C_global_66451C.cpp": 3,
+    "Source/game/C_global_66451C.cpp": 5,
     "Source/game/free_game.cpp": 1
    },
    "other_files": [
@@ -5326,11 +5512,11 @@
    "vtable": null,
    "anchor": "0x43C050",
    "methods": 39,
-   "owned_methods": 1,
-   "unowned_methods": 38,
+   "owned_methods": 3,
+   "unowned_methods": 36,
    "primary_file": "Source/game/C_global_6645C4.cpp",
    "owner_files": {
-    "Source/game/C_global_6645C4.cpp": 1
+    "Source/game/C_global_6645C4.cpp": 3
    },
    "other_files": [],
    "staged_files": [],
@@ -5992,10 +6178,12 @@
    "vtable": null,
    "anchor": "0x41F470",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/app/C_cluster_41F470.cpp",
+   "owner_files": {
+    "Source/app/C_cluster_41F470.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -6090,10 +6278,12 @@
    "vtable": null,
    "anchor": "0x423AC0",
    "methods": 8,
-   "owned_methods": 0,
-   "unowned_methods": 8,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 3,
+   "unowned_methods": 5,
+   "primary_file": "Source/game/C_cluster_423AC0.cpp",
+   "owner_files": {
+    "Source/game/C_cluster_423AC0.cpp": 3
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -6364,10 +6554,12 @@
    "vtable": null,
    "anchor": "0x438ED0",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 2,
+   "unowned_methods": 0,
+   "primary_file": "Source/game/C_cluster_438ED0.cpp",
+   "owner_files": {
+    "Source/game/C_cluster_438ED0.cpp": 2
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -6589,15 +6781,17 @@
    "vtable": null,
    "anchor": "0x443970",
    "methods": 29,
-   "owned_methods": 2,
-   "unowned_methods": 27,
-   "primary_file": "Source/ui/free_ui.cpp",
+   "owned_methods": 3,
+   "unowned_methods": 26,
+   "primary_file": "Source/ui/C_vt6230B0.cpp",
    "owner_files": {
     "Source/gfx/C_cluster_443970.cpp": 1,
+    "Source/ui/C_vt6230B0.cpp": 1,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
-    "Source/gfx/C_cluster_443970.cpp"
+    "Source/gfx/C_cluster_443970.cpp",
+    "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -6955,11 +7149,11 @@
    "vtable": null,
    "anchor": "0x472AA0",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
+   "owned_methods": 2,
+   "unowned_methods": 0,
    "primary_file": "Source/ui/C_cluster_472AA0.cpp",
    "owner_files": {
-    "Source/ui/C_cluster_472AA0.cpp": 1
+    "Source/ui/C_cluster_472AA0.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -7659,11 +7853,11 @@
    "vtable": null,
    "anchor": "0x49FE60",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
+   "owned_methods": 2,
+   "unowned_methods": 0,
    "primary_file": "Source/ui/C_cluster_49FE60.cpp",
    "owner_files": {
-    "Source/ui/C_cluster_49FE60.cpp": 1
+    "Source/ui/C_cluster_49FE60.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -7676,10 +7870,12 @@
    "vtable": null,
    "anchor": "0x4A0630",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/ui/C_pnl_btn.cpp",
+   "owner_files": {
+    "Source/ui/C_pnl_btn.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -7755,10 +7951,12 @@
    "vtable": null,
    "anchor": "0x4A2140",
    "methods": 5,
-   "owned_methods": 0,
-   "unowned_methods": 5,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 4,
+   "primary_file": "Source/ui/free_ui.cpp",
+   "owner_files": {
+    "Source/ui/free_ui.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -7939,15 +8137,18 @@
    "vtable": null,
    "anchor": "0x4A76D0",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
+   "owned_methods": 2,
+   "unowned_methods": 0,
    "primary_file": "Source/ui/free_ui.cpp",
    "owner_files": {
+    "Source/ui/C_vt6222D4.cpp": 1,
     "Source/ui/free_ui.cpp": 1
    },
-   "other_files": [],
+   "other_files": [
+    "Source/ui/C_vt6222D4.cpp"
+   ],
    "staged_files": [],
-   "split": false
+   "split": true
   },
   {
    "class": "C_cluster_4AC180",
@@ -8182,10 +8383,12 @@
    "vtable": null,
    "anchor": "0x4B8B20",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/ui/C_cluster_4B8B20.cpp",
+   "owner_files": {
+    "Source/ui/C_cluster_4B8B20.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -8242,11 +8445,11 @@
    "vtable": null,
    "anchor": "0x4BAE20",
    "methods": 3,
-   "owned_methods": 1,
-   "unowned_methods": 2,
+   "owned_methods": 2,
+   "unowned_methods": 1,
    "primary_file": "Source/ui/C_cluster_4BAE20.cpp",
    "owner_files": {
-    "Source/ui/C_cluster_4BAE20.cpp": 1
+    "Source/ui/C_cluster_4BAE20.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -8591,11 +8794,11 @@
    "vtable": null,
    "anchor": "0x5200F0",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
+   "owned_methods": 2,
+   "unowned_methods": 0,
    "primary_file": "Source/sim/C_cluster_5200F0.cpp",
    "owner_files": {
-    "Source/sim/C_cluster_5200F0.cpp": 1
+    "Source/sim/C_cluster_5200F0.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -8640,11 +8843,11 @@
    "vtable": null,
    "anchor": "0x520720",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
+   "owned_methods": 2,
+   "unowned_methods": 0,
    "primary_file": "Source/sim/C_cluster_520720.cpp",
    "owner_files": {
-    "Source/sim/C_cluster_520720.cpp": 1
+    "Source/sim/C_cluster_520720.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -8672,11 +8875,11 @@
    "vtable": null,
    "anchor": "0x520CE0",
    "methods": 20,
-   "owned_methods": 4,
-   "unowned_methods": 16,
+   "owned_methods": 5,
+   "unowned_methods": 15,
    "primary_file": "Source/sim/C_cluster_520CE0.cpp",
    "owner_files": {
-    "Source/sim/C_cluster_520CE0.cpp": 4
+    "Source/sim/C_cluster_520CE0.cpp": 5
    },
    "other_files": [],
    "staged_files": [],
@@ -9119,11 +9322,11 @@
    "vtable": null,
    "anchor": "0x55A590",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
+   "owned_methods": 2,
+   "unowned_methods": 0,
    "primary_file": "Source/sim/free_sim.cpp",
    "owner_files": {
-    "Source/sim/free_sim.cpp": 1
+    "Source/sim/free_sim.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -10053,10 +10256,12 @@
    "vtable": null,
    "anchor": "0x4A0C60",
    "methods": 1,
-   "owned_methods": 0,
-   "unowned_methods": 1,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 0,
+   "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
+   "owner_files": {
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false

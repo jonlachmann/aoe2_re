@@ -6,6 +6,6 @@
 
 class C_cluster_49FE60 {
 public:
-    void method_000();  // sub_49FE60 [lifted]
+    void method_000();  // sub_49FE60 [matched] — Source/ui/C_cluster_49FE60.cpp
     void method_001();  // sub_5ED9D6 [matched] — Source/ui/C_cluster_49FE60.cpp
 };

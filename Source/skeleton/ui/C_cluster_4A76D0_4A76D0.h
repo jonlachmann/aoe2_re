@@ -7,5 +7,5 @@
 class C_cluster_4A76D0 {
 public:
     void method_000();  // sub_4A76D0 [matched] — Source/ui/free_ui.cpp
-    void method_001();  // sub_4A76E0 [lifted]
+    void method_001();  // sub_4A76E0 [matched] — Source/ui/C_vt6222D4.cpp
 };

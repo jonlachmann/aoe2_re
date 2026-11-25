@@ -6,5 +6,5 @@
 
 class C_global_664510 {
 public:
-    void method_000();  // sub_41C920 [lifted]
+    void method_000();  // sub_41C920 [wip] — Source/app/C_vt61DF78.cpp
 };

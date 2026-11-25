@@ -15,8 +15,8 @@ public:
     void method_006();  // sub_42FA40 [lifted]
     void method_007();  // sub_42FB90 [lifted]
     void method_008();  // sub_42FBC0 [matched] — Source/game/C_global_66451C.cpp
-    void method_009();  // sub_42FD20 [lifted]
-    void method_010();  // sub_42FD60 [lifted]
+    void method_009();  // sub_42FD20 [matched] — Source/game/C_global_66451C.cpp
+    void method_010();  // sub_42FD60 [matched] — Source/game/C_global_66451C.cpp
     void method_011();  // sub_4302F0 [lifted]
     void method_012();  // sub_4308C0 [matched] — Source/game/C_global_66451C.cpp
     void method_013();  // sub_430A70 [lifted]

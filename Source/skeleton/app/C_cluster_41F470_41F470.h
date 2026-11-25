@@ -7,5 +7,5 @@
 class C_cluster_41F470 {
 public:
     void method_000();  // sub_41F470 [lifted]
-    void method_001();  // sub_41F540 [lifted]
+    void method_001();  // sub_41F540 [matched] — Source/app/C_cluster_41F470.cpp
 };

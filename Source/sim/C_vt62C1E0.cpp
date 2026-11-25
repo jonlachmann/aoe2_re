@@ -2,6 +2,20 @@
 
 extern unsigned char g_75fdc4;
 
+MATCH_FUNC(0x5BAEC0)
+void C_vt62C1E0::M_5BAEC0(int a1)
+{
+    int old = field_11D0;
+    field_11D4 = a1;
+    this->Hook_5BAD80(old);
+}
+
+MATCH_FUNC(0x5BAEE0)
+void C_vt62C1E0::M_5BAEE0(char* src)
+{
+    strcpy((char*)this + 0x1240, src);
+}
+
 MATCH_FUNC(0x421750)
 float C_vt62C1E0::Get924_421750() { return field_924; }
 

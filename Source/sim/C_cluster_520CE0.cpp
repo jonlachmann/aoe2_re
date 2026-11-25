@@ -1,5 +1,15 @@
 #include "C_cluster_520CE0.hpp"
 
+MATCH_FUNC(0x5214E0)
+void C_cluster_520CE0::M_5214E0()
+{
+    if (field_0 == 0) {
+        this->Hook_521580();
+        this->Hook_521500();
+        this->M_522C30();
+    }
+}
+
 MATCH_FUNC(0x5219B0)
 int C_cluster_520CE0::Find_5219B0(int a2)
 {

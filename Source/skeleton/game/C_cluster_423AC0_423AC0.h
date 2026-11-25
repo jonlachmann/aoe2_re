@@ -6,12 +6,12 @@
 
 class C_cluster_423AC0 {
 public:
-    void method_000();  // sub_423AC0 [lifted]
+    void method_000();  // sub_423AC0 [matched] — Source/game/C_cluster_423AC0.cpp
     void method_001();  // sub_423AE0 [lifted]
     void method_002();  // sub_423D70 [lifted]
     void method_003();  // sub_4240E0 [lifted]
     void method_004();  // sub_424110 [lifted]
-    void method_005();  // sub_4241B0 [lifted]
+    void method_005();  // sub_4241B0 [matched] — Source/game/C_cluster_423AC0.cpp
     void method_006();  // sub_424240 [lifted]
-    void method_007();  // sub_4242F0 [lifted]
+    void method_007();  // sub_4242F0 [matched] — Source/game/C_cluster_423AC0.cpp
 };

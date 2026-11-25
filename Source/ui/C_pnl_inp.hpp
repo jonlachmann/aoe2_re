@@ -7,6 +7,15 @@
 
 class C_pnl_inp;
 
+// Indexed node chain reached from C_pnl_inp::field_f8 (0x4BD4B0). Each node
+// holds the result at +0x00 and the successor at +0x24.
+class T4BD4B0Node {
+public:
+    char* field_0;                // +0x00
+    char pad_04[0x24 - 4];
+    T4BD4B0Node* next_24;         // +0x24
+};
+
 // Subobject at [this+0x40] used by 0x4BCE20. It dispatches slot +0xC4 (index
 // 49) and receives the outer object plus three literal flags.
 class T4BCE20Sub {
@@ -130,10 +139,13 @@ public:
 
     char pad_04[0x40 - 4];
     T4BCE20Sub* field_40;         // +0x40, subobject dispatched by 0x4BCE20
-    char pad_44[0x188 - 0x44];
+    char pad_44[0xf8 - 0x44];
+    T4BD4B0Node* field_f8;        // +0xF8 head of the indexed node chain
+    char pad_fc[0x188 - 0xfc];
     int field_188;                // +0x188
 
     void M_408050(int a, int b);
+    char* M_4BD4B0(int index);
     void SetInt_4B4600(int v);
     void M_4BAF60(int a, int b, int c, int d);
     int M_4BCE20(int a, int b, int c, int d);

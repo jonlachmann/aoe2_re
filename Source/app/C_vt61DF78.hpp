@@ -24,7 +24,7 @@ public:
     virtual void slot_006();
     virtual void slot_007();
     virtual void slot_008();
-    virtual void slot_009(char* a, char* buf, int size);
+    virtual char* slot09_41C920(char* a1, char* buf, int len);
     virtual void slot_010(int a, int b, int e, int c, int d);
     virtual void slot_011();
     virtual void slot_012();
@@ -49,7 +49,7 @@ public:
     virtual void slot_031();
     virtual void slot_032();
     virtual void slot_033();
-    virtual void slot_034();
+    virtual int slot34_41DA70();
     virtual void slot_035();
     virtual void slot_036();
     virtual void slot_037();
@@ -94,9 +94,12 @@ public:
     virtual int Vat_130();
     virtual int Vat_134();
 
-    char pad_04[0x28 - 4];
+    char pad_04[0x24 - 4];
+    int field_24;                 // +0x24, base for the 0x66E string offset
     void* field_28;               // +0x28, window handle for SetWindowTextA
-    char pad_2C[0x60 - 0x2C];
+    char pad_2C[0x34 - 0x2C];
+    int field_34;                 // +0x34, result of the 0x49FB60 build
+    char pad_38[0x60 - 0x38];
     int field_60;                 // +0x60
     char pad_64[0x1B0 - 0x64];
     void* field_1B0;              // +0x1B0, subobject for 0x4213D0

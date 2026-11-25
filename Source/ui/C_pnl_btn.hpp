@@ -9,8 +9,8 @@ class C_pnl_btn {
 public:
     virtual void slot_00();
     virtual void slot_01();
-    virtual void slot_02();
-    virtual void slot_03();
+    virtual void slot02_4A0750(int a1, int a2, int a3, int a4);
+    virtual void slot03_4AF9D0(int a, int b, int c, int d);
     virtual void slot_04();
     virtual void slot_05();
     virtual void slot_06();
@@ -21,6 +21,8 @@ public:
     int field_154;                // +0x154
     char pad_158[0x202 - 0x158];
     short field_202;              // +0x202
+
+    void Hook_4A0630(int a, int b, int c, int d);   // unresolved callee at 0x4A0630
 
     void M_4AF8D0(short v);
     void M_4B0EE0();

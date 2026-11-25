@@ -6,6 +6,6 @@
 
 class C_cluster_472AA0 {
 public:
-    void method_000();  // sub_472AA0 [lifted]
+    void method_000();  // sub_472AA0 [matched] — Source/ui/C_cluster_472AA0.cpp
     void method_001();  // sub_472B00 [matched] — Source/ui/C_cluster_472AA0.cpp
 };

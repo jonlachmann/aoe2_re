@@ -3906,6 +3906,13 @@ void __cdecl sub_55A5F0()
     ((T473410*)&g_7519C8)->Other_473410(0x32, 0x32, 0);
 }
 
+// 0x55A5A0 — three-argument global-object forwarder.
+MATCH_FUNC(0x55A5A0)
+void __cdecl sub_55A5A0()
+{
+    ((T473410*)&g_7519F0)->Other_473410(0xff, 0xff, 0);
+}
+
 // 0x55A640 — three-argument global-object forwarder.
 MATCH_FUNC(0x55A640)
 void __cdecl sub_55A640()

@@ -22,5 +22,7 @@ public:
     char pad_12C[1948 - 300];
     int field_79C;                // +1948
 
+    void Hook_520170(int a1, int a2);   // unresolved callee at 0x520170
     int Reset_520130();
+    C_cluster_5200F0* M_5200F0(int a1, int a2);
 };

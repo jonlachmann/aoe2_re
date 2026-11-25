@@ -1,5 +1,39 @@
 #include "C_TRIBE_Screen_Options.hpp"
 
+extern void (__stdcall *g_61C06C)(void* a1, int a2);
+
+MATCH_FUNC(0x4A0890)
+void C_TRIBE_Screen_Options::M_4A0890(int a1, int a2, int a3, int a4)
+{
+    slot_06(0, a1, a2, 0, 0, a3, a3, a4, a4, 0, 0, 0, 0);
+}
+
+MATCH_FUNC(0x4A07A0)
+void C_TRIBE_Screen_Options::M_4A07A0(int v)
+{
+    if (field_6C == v)
+        return;
+    field_6C = v;
+    if (v != 0) {
+        slot_08(1);
+        return;
+    }
+    this->Hook_4A1CD0();
+    if (field_40)
+        field_40->Vt_08(1);
+}
+
+MATCH_FUNC(0x4A0C60)
+void C_TRIBE_Screen_Options::M_4A0C60()
+{
+    TField20Obj* sub = field_20;
+    field_38 = 0;
+    if (sub->field_38)
+        g_61C06C(sub->field_38, 0);
+    field_20->Hook_460660(0);
+    field_F7 = 0;
+}
+
 MATCH_FUNC(0x407C00)
 int C_TRIBE_Screen_Options::M_407C00(int a, int b)
 {

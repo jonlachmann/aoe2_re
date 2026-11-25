@@ -2,6 +2,35 @@
 
 extern "C" __declspec(dllimport) int __stdcall SetWindowTextA(void* hwnd, char* text);
 extern unsigned char g_6642f0;
+extern int g_664510;
+extern "C" int __stdcall Hook_473AE0(int a1, int a2, char* a3, int a4);   // unresolved callee at 0x473AE0
+
+// Global object at 0x66EA48 is constructed by 0x49FB60 (664 bytes).
+class T49FB60 {
+public:
+    int Hook_49FB60(void* a1, int a2, int a3);   // unresolved callee at 0x49FB60
+};
+
+WIP_FUNC(0x41C920)
+char* C_vt61DF78::slot09_41C920(char* a1, char* buf, int len)
+{
+    unsigned int r = Hook_473AE0(g_664510, (int)a1, buf, len);
+    if (r != 0) {
+    } else {
+        buf[0] = (char)r;
+    }
+    buf[len - 1] = 0;
+    return buf;
+}
+
+MATCH_FUNC(0x41DA70)
+int C_vt61DF78::slot34_41DA70()
+{
+    T49FB60* build = (T49FB60*)0x66ea48;
+    int r = build->Hook_49FB60((void*)(field_24 + 0x66e), 0xc544, 1);
+    field_34 = r;
+    return r != 0;
+}
 
 MATCH_FUNC(0x41BC00)
 void C_vt61DF78::SetInt_41BC00(int v)
@@ -125,7 +154,7 @@ bool C_vt61DF78::M_4208B0(int a, int b, int c, int d)
 MATCH_FUNC(0x41C900)
 char* C_vt61DF78::M_41C900(char* a)
 {
-    slot_009(a, (char*)0x664308, 0x200);
+    slot09_41C920(a, (char*)0x664308, 0x200);
     return (char*)0x664308;
 }
 

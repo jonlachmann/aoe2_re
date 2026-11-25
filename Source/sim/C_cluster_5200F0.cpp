@@ -1,5 +1,16 @@
 #include "C_cluster_5200F0.hpp"
 
+extern C_cluster_5200F0* g_7407E0;    // global current object at 0x7407E0
+
+MATCH_FUNC(0x5200F0)
+C_cluster_5200F0* C_cluster_5200F0::M_5200F0(int a1, int a2)
+{
+    g_7407E0 = this;
+    this->Reset_520130();
+    this->Hook_520170(a1, a2);
+    return this;
+}
+
 // 0x520130 — reset the scattered counters and flags; +24 is set to one.
 MATCH_FUNC(0x520130)
 int C_cluster_5200F0::Reset_520130()

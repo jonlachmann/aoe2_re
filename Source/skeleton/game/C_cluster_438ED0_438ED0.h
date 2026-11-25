@@ -6,6 +6,6 @@
 
 class C_cluster_438ED0 {
 public:
-    void method_000();  // sub_438ED0 [lifted]
-    void method_001();  // sub_439950 [lifted]
+    void method_000();  // sub_438ED0 [matched] — Source/game/C_cluster_438ED0.cpp
+    void method_001();  // sub_439950 [matched] — Source/game/C_cluster_438ED0.cpp
 };

@@ -9,6 +9,14 @@
 
 // Object reached through the node chain walked by 0x4A2280/0x4A22D0. Slot
 // +0xE0 (index 56) and +0xEC (index 59) are the ones those loops dispatch.
+// Subobject reached through [C_TRIBE_Screen_Options+0x20] by 0x4A0C60.
+class TField20Obj {
+public:
+    char pad_00[0x38];
+    void* field_38;               // +0x38
+    void Hook_460660(int a1);     // unresolved callee at 0x460660
+};
+
 class T4A2280Obj {
 public:
     virtual void Vt_00();
@@ -19,7 +27,7 @@ public:
     virtual void Vt_05();
     virtual void Vt_06();
     virtual void Vt_07();
-    virtual void Vt_08();
+    virtual void Vt_08(int v);
     virtual void Vt_09();
     virtual void Vt_10();
     virtual void Vt_11();
@@ -90,7 +98,7 @@ public:
     virtual void slot_03();
     virtual void slot_04();
     virtual void slot_05();
-    virtual void slot_06();
+    virtual void slot_06(int z0, int a1, int a2, int z1, int z2, int a3, int a3b, int a4, int a4b, int z3, int z4, int z5, int z6);
     virtual void slot_07();
     virtual void slot_08(int v);
     virtual void slot_09();
@@ -99,7 +107,13 @@ public:
     virtual void slot_12();
     virtual void Vat_34(int v);
 
-    char pad_04[0x58 - 4];
+    char pad_04[0x20 - 4];
+    TField20Obj* field_20;        // +0x20, subobject cleared by 0x4A0C60
+    char pad_24[0x38 - 0x24];
+    void* field_38;               // +0x38
+    char pad_3c[0x40 - 0x3c];
+    T4A2280Obj* field_40;         // +0x40, subobject toggled by 0x4A07A0
+    char pad_44[0x58 - 0x44];
     T4A2280Node* field_58;        // +0x58, chain head
     char pad_5C[0x60 - 0x5C];
     int field_60;                 // +0x60
@@ -120,7 +134,7 @@ public:
     unsigned char field_F3;       // +0xF3
     char pad_F4[0xF6 - 0xF4];
     unsigned char field_F6;       // +0xF6
-    char pad_F7[0xF8 - 0xF7];
+    unsigned char field_F7;       // +0xF7, cleared by 0x4A0C60
     int field_F8;                 // +0xF8
     int field_FC;                 // +0xFC
 
@@ -130,7 +144,11 @@ public:
     int M_4364F0(int a, int b);
     int Get_4474F0();
     int Get_447500();
+    void Hook_4A1CD0();           // unresolved callee at 0x4A1CD0
     void M_4A0780(unsigned char v);
+    void M_4A0890(int a1, int a2, int a3, int a4);
+    void M_4A07A0(int v);
+    void M_4A0C60();
     void M_4A2280();
     void M_4A22D0();
     void M_4A0BB0(int v);

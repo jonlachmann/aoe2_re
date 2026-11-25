@@ -1,5 +1,26 @@
 #include "C_pnl_inp.hpp"
 
+extern unsigned char g_73e355;
+
+WIP_FUNC(0x4BD4B0)
+char* C_pnl_inp::M_4BD4B0(int index)
+{
+    int i = 0;
+    T4BD4B0Node* node = field_f8;
+    if (node) {
+        for (;;) {
+            if (i == index)
+                return node->field_0;
+            node = node->next_24;
+            i++;
+            if (!node)
+                break;
+        }
+    }
+    g_73e355 = 0;
+    return (char*)0x73e355;
+}
+
 MATCH_FUNC(0x408050)
 void C_pnl_inp::M_408050(int a, int b)
 {

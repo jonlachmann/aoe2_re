@@ -1719,6 +1719,15 @@ public:
     void SetF8_4A3410(int a, int b);
 };
 
+extern "C" int __stdcall Hook_4A2140(int a1, void* a2, int a3);   // unresolved callee at 0x4A2140
+
+MATCH_FUNC(0x4A2180)
+int __stdcall sub_4A2180(int a1)
+{
+    Hook_4A2140(a1, (int*)0x66e848, 0x200);
+    return 0x66e848;
+}
+
 MATCH_FUNC(0x4A21B0)
 void S4A2100::SetE8_4A21B0(int a, int b)
 {

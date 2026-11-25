@@ -12,16 +12,16 @@ class C_vt61F71C {
 public:
     virtual void slot_000();  // slot +0x000: sub_44C7D0 [matched] — Source/gfx/free_gfx.cpp
     virtual void slot_001();  // slot +0x004: sub_4A0460 [lifted]
-    virtual void slot_002();  // slot +0x008: sub_4A0750 [lifted]
+    virtual void slot_002();  // slot +0x008: sub_4A0750 [matched] — Source/ui/C_pnl_btn.cpp
     virtual void slot_003();  // slot +0x00C: sub_4A0630 [lifted]
     virtual void slot_004();  // slot +0x010: sub_4A0780 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
-    virtual void slot_005();  // slot +0x014: sub_4A07A0 [lifted]
+    virtual void slot_005();  // slot +0x014: sub_4A07A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_006();  // slot +0x018: sub_4A07E0 [lifted]
-    virtual void slot_007();  // slot +0x01C: sub_4A0890 [lifted]
+    virtual void slot_007();  // slot +0x01C: sub_4A0890 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_008();  // slot +0x020: sub_4A08C0 [lifted]
     virtual void slot_009();  // slot +0x024: sub_4A0920 [lifted]
     virtual void slot_010();  // slot +0x028: sub_4A2F30 [matched] — Source/ui/free_ui.cpp
-    virtual void slot_011();  // slot +0x02C: sub_4A0C60 [lifted]
+    virtual void slot_011();  // slot +0x02C: sub_4A0C60 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_012();  // slot +0x030: sub_4A2F40 [lifted]
     virtual void slot_013();  // slot +0x034: sub_4A0AB0 [lifted]
     virtual void slot_014();  // slot +0x038: sub_4A0B10 [lifted]

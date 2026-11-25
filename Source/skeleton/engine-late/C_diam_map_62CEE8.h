@@ -12,16 +12,16 @@ class C_diam_map__ {
 public:
     virtual void slot_000();  // slot +0x000: sub_5DE830 [matched] — Source/engine-late/free_engine-late.cpp
     virtual void slot_001();  // slot +0x004: sub_4A0460 [lifted]
-    virtual void slot_002();  // slot +0x008: sub_4A0750 [lifted]
+    virtual void slot_002();  // slot +0x008: sub_4A0750 [matched] — Source/ui/C_pnl_btn.cpp
     virtual void slot_003();  // slot +0x00C: sub_4A0630 [lifted]
     virtual void slot_004();  // slot +0x010: sub_4A0780 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
-    virtual void slot_005();  // slot +0x014: sub_4A07A0 [lifted]
+    virtual void slot_005();  // slot +0x014: sub_4A07A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_006();  // slot +0x018: sub_4A07E0 [lifted]
-    virtual void slot_007();  // slot +0x01C: sub_4A0890 [lifted]
+    virtual void slot_007();  // slot +0x01C: sub_4A0890 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_008();  // slot +0x020: sub_4441E0 [lifted]
     virtual void slot_009();  // slot +0x024: sub_4A0920 [lifted]
     virtual void slot_010();  // slot +0x028: sub_4A0C10 [lifted]
-    virtual void slot_011();  // slot +0x02C: sub_4A0C60 [lifted]
+    virtual void slot_011();  // slot +0x02C: sub_4A0C60 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_012();  // slot +0x030: sub_5DED00 [lifted]
     virtual void slot_013();  // slot +0x034: sub_4A0AB0 [lifted]
     virtual void slot_014();  // slot +0x038: sub_4A0B10 [lifted]
@@ -62,7 +62,7 @@ public:
     virtual void slot_049();  // slot +0x0C4: sub_4A1BE0 [lifted]
     virtual void slot_050();  // slot +0x0C8: sub_4A22F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_051();  // slot +0x0CC: sub_445800 [lifted]
-    virtual void slot_052();  // slot +0x0D0: sub_4A1E20 [lifted]
+    virtual void slot_052();  // slot +0x0D0: sub_4A1E20 [matched] — Source/ui/C_TribePopUpHelp.cpp
     virtual void slot_053();  // slot +0x0D4: sub_4A2040 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_054();  // slot +0x0D8: sub_4A1FF0 [lifted]
     virtual void slot_055();  // slot +0x0DC: sub_4A21D0 [lifted]
