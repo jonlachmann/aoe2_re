@@ -280,14 +280,16 @@ void M_414300()
 class S4060A0 {
 public:
     char pad_00[8];
-    void* field_8;
-    unsigned char Check_4060A0();
+    int field_8;
+    bool Check_4060A0();
 };
+#pragma optimize("s", on)
 WIP_FUNC(0x4060A0)
-unsigned char S4060A0::Check_4060A0()
+bool S4060A0::Check_4060A0()
 {
-    return this->field_8 != 0;
+    return this->field_8;
 }
+#pragma optimize("", on)
 
 class S40F4A0 {
 public:

@@ -500,7 +500,8 @@ unsigned S438840::Append_438840(int a2, int a3)
     int* self = (int*)this;
     self[20 * a2 + 145 + self[144]] = a3;
     unsigned result;
-    result = self[144] = self[144] + 1;
+    result = self[144] + 1;
+    self[144] = result;
     if (result >= 0x14)
         self[144] = 0;
     return result;
@@ -1589,17 +1590,20 @@ public:
     int Init_43A420();
 };
 
+#pragma optimize("s", on)
 WIP_FUNC(0x43A420)
 int S43A420::Init_43A420()
 {
-    field_28 = 0;
-    field_2c = 0;
+    int zero = 0;
+    field_28 = zero;
+    field_2c = zero;
     char* result = (char*)this + 0xd0;
     *((int*)result) = 0;
     *((int*)(result + 4)) = 0;
     *(result + 8) = 0;
     return (int)result;
 }
+#pragma optimize("", on)
 
 class S43GetBulk {
 public:
@@ -1919,17 +1923,15 @@ public:
     char pad_00[0x218];
     unsigned int count_218;
     char pad_21c[0x220 - 0x21c];
-    char* base_220;
+    int base_220;
     char* M_4238D0(unsigned a2);
 };
 
 WIP_FUNC(0x4238D0)
 char* S4238D0::M_4238D0(unsigned a2)
 {
-    int* self = (int*)this;
-    int base = self[136];
-    char* result = (char*)(base + 160 * a2);
-    if (!result || a2 > self[134])
+    char* result = (char*)(base_220 + 160 * a2);
+    if (!result || a2 > count_218)
         return (char*)&g_64DB20;
     return result;
 }
@@ -2273,9 +2275,31 @@ extern char g_665660;
 class T43EB70 {
 public:
     int Other_43EB70();
+    void Other_43EB90();
 };
 MATCH_FUNC(0x43EB40)
 int __cdecl sub_43EB40()
 {
     return ((T43EB70*)&g_665660)->Other_43EB70();
+}
+
+// 0x43EB50 — register the thunk at 0x43EB60 with the CRT callback helper.
+extern void sub_43EB60();
+extern void __cdecl sub_5FD62D(void* fn);
+MATCH_FUNC(0x43EB50)
+void __cdecl sub_43EB50()
+{
+    sub_5FD62D((void*)&sub_43EB60);
+}
+
+// 0x43EB70 — clear the object through its init helper and return itself.
+class S43EB70 {
+public:
+    int M_43EB70();
+};
+MATCH_FUNC(0x43EB70)
+int S43EB70::M_43EB70()
+{
+    ((T43EB70*)this)->Other_43EB90();
+    return (int)this;
 }

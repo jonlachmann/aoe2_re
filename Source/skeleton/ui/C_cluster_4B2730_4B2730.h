@@ -6,6 +6,6 @@
 
 class C_cluster_4B2730 {
 public:
-    void method_000();  // sub_4B2730 [lifted]
+    void method_000();  // sub_4B2730 [matched] — Source/ui/free_ui.cpp
     void method_001();  // sub_4B2810 [lifted]
 };

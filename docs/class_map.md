@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1108 |
+| matched | 1114 |
 | wip | 15 |
 | verified | 19 |
-| lifted | 6609 |
+| lifted | 6603 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -85,7 +85,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x61FB64` | `C_vt61FB64` | 89 | 1 | panel_ez | 29 | 61 |
 | `0x61FD48` | `C_vt61FD48` | 89 | 0 | panel_ez | 29 | 60 |
 | `0x61FEAC` | `C_vt61FEAC` | 89 | 1 | panel_ez | 29 | 61 |
-| `0x620090` | `C_TribeTechHelpScreen` | 87 | 5 | TribeTechHelpScreen, panel_ez | 27 | 65 |
+| `0x620090` | `C_TribeTechHelpScreen` | 87 | 5 | TribeTechHelpScreen, panel_ez | 28 | 64 |
 | `0x620274` | `C_TribePopUpHelp` | 62 | 0 | TribePopUpHelp | 26 | 36 |
 | `0x6203EC` | `C_vt6203EC` | 89 | 1 | panel_ez | 28 | 62 |
 | `0x6205D0` | `C_vt6205D0` | 190 | 0 | — | 132 | 58 |
@@ -122,7 +122,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x622C74` | `C_pnl_msg` | 62 | 1 | pnl_msg | 28 | 35 |
 | `0x622D6C` | `C_pnl_pic` | 61 | 0 | pnl_pic | 26 | 35 |
 | `0x622E60` | `C_pnl_scbr` | 61 | 1 | pnl_scbr | 23 | 39 |
-| `0x622F54` | `C_vt622F54` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x622F54` | `C_vt622F54` | 87 | 0 | panel_ez | 30 | 57 |
 | `0x6230B0` | `C_vt6230B0` | 61 | 1 | — | 23 | 39 |
 | `0x6231A4` | `C_vt6231A4` | 61 | 1 | — | 23 | 39 |
 | `0x623318` | `C_pnl_txt` | 73 | 0 | pnl_txt | 26 | 47 |
@@ -141,32 +141,32 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x623C5C` | `C_vt623C5C` | 61 | 1 | — | 25 | 37 |
 | `0x623E50` | `C_vt623E50` | 3 | 1 | — | 1 | 3 |
 | `0x623E5C` | `C_vt623E5C` | 4 | 1 | — | 2 | 3 |
-| `0x623F24` | `C_scr_ach` | 87 | 2 | panel_ez, scr_ach | 28 | 61 |
-| `0x624100` | `C_vt624100` | 87 | 1 | panel_ez | 29 | 59 |
-| `0x6242DC` | `C_vt6242DC` | 87 | 1 | panel_ez | 29 | 59 |
-| `0x6244B8` | `C_vt6244B8` | 87 | 0 | panel_ez | 29 | 58 |
-| `0x624614` | `C_vt624614` | 87 | 2 | panel_ez | 28 | 61 |
+| `0x623F24` | `C_scr_ach` | 87 | 2 | panel_ez, scr_ach | 29 | 60 |
+| `0x624100` | `C_vt624100` | 87 | 1 | panel_ez | 30 | 58 |
+| `0x6242DC` | `C_vt6242DC` | 87 | 1 | panel_ez | 30 | 58 |
+| `0x6244B8` | `C_vt6244B8` | 87 | 0 | panel_ez | 30 | 57 |
+| `0x624614` | `C_vt624614` | 87 | 2 | panel_ez | 29 | 60 |
 | `0x624770` | `C_scr_cred` | 73 | 1 | scr_cred | 26 | 48 |
 | `0x624914` | `C_scr_game` | 87 | 1 | panel_ez, scr_game | 27 | 61 |
-| `0x624AF4` | `C_vt624AF4` | 87 | 0 | panel_ez | 29 | 58 |
-| `0x624CD0` | `C_vt624CD0` | 87 | 0 | panel_ez | 29 | 58 |
-| `0x624E2C` | `C_vt624E2C` | 87 | 0 | panel_ez | 29 | 58 |
-| `0x625008` | `C_vt625008` | 87 | 0 | panel_ez | 28 | 59 |
+| `0x624AF4` | `C_vt624AF4` | 87 | 0 | panel_ez | 30 | 57 |
+| `0x624CD0` | `C_vt624CD0` | 87 | 0 | panel_ez | 30 | 57 |
+| `0x624E2C` | `C_vt624E2C` | 87 | 0 | panel_ez | 30 | 57 |
+| `0x625008` | `C_vt625008` | 87 | 0 | panel_ez | 29 | 58 |
 | `0x6251E4` | `C_vt6251E4` | 87 | 3 | panel_ez | 26 | 64 |
-| `0x625340` | `C_vt625340` | 87 | 0 | panel_ez | 29 | 58 |
-| `0x62551C` | `C_vt62551C` | 87 | 0 | panel_ez | 28 | 59 |
-| `0x6256F8` | `C_vt6256F8` | 93 | 0 | panel_ez | 28 | 65 |
-| `0x6258F8` | `C_vt6258F8` | 93 | 0 | panel_ez | 28 | 65 |
-| `0x625A6C` | `C_vt625A6C` | 87 | 0 | panel_ez | 29 | 58 |
-| `0x625C48` | `C_vt625C48` | 87 | 1 | panel_ez | 29 | 59 |
+| `0x625340` | `C_vt625340` | 87 | 0 | panel_ez | 30 | 57 |
+| `0x62551C` | `C_vt62551C` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x6256F8` | `C_vt6256F8` | 93 | 0 | panel_ez | 29 | 64 |
+| `0x6258F8` | `C_vt6258F8` | 93 | 0 | panel_ez | 29 | 64 |
+| `0x625A6C` | `C_vt625A6C` | 87 | 0 | panel_ez | 30 | 57 |
+| `0x625C48` | `C_vt625C48` | 87 | 1 | panel_ez | 30 | 58 |
 | `0x625DA4` | `C_vt625DA4` | 87 | 1 | panel_ez | 30 | 58 |
-| `0x625F80` | `C_TRIBE_Screen_Options` | 87 | 3 | TRIBE_Screen_Options, panel_ez | 27 | 63 |
-| `0x62615C` | `C_vt62615C` | 87 | 1 | panel_ez | 29 | 59 |
-| `0x626338` | `C_scr_sed` | 87 | 2 | panel_ez, scr_sed | 28 | 61 |
-| `0x626614` | `C_vt626614` | 87 | 0 | panel_ez | 29 | 58 |
-| `0x6267F0` | `C_vt6267F0` | 87 | 0 | panel_ez | 28 | 59 |
-| `0x62694C` | `C_vt62694C` | 87 | 0 | panel_ez | 29 | 58 |
-| `0x626B28` | `C_scr_vc` | 87 | 1 | panel_ez, scr_vc | 29 | 59 |
+| `0x625F80` | `C_TRIBE_Screen_Options` | 87 | 3 | TRIBE_Screen_Options, panel_ez | 28 | 62 |
+| `0x62615C` | `C_vt62615C` | 87 | 1 | panel_ez | 30 | 58 |
+| `0x626338` | `C_scr_sed` | 87 | 2 | panel_ez, scr_sed | 29 | 60 |
+| `0x626614` | `C_vt626614` | 87 | 0 | panel_ez | 30 | 57 |
+| `0x6267F0` | `C_vt6267F0` | 87 | 0 | panel_ez | 29 | 58 |
+| `0x62694C` | `C_vt62694C` | 87 | 0 | panel_ez | 30 | 57 |
+| `0x626B28` | `C_scr_vc` | 87 | 1 | panel_ez, scr_vc | 30 | 58 |
 | `0x626E04` | `C_tpnl_obj` | 64 | 0 | tpnl_obj | 23 | 41 |
 | `0x627094` | `C_vt627094` | 186 | 0 | — | 132 | 54 |
 | `0x627428` | `C_vt627428` | 226 | 4 | — | 54 | 176 |
@@ -314,7 +314,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_43D310` | this-edge component with no rooted object identity | 3 | 0 | 3 |
 | `C_cluster_43D450` | this-edge component with no rooted object identity | 5 | 0 | 5 |
 | `C_cluster_43EB30` | this-edge component with no rooted object identity | 2 | 1 | 1 |
-| `C_cluster_43EB70` | this-edge component with no rooted object identity | 4 | 1 | 3 |
+| `C_cluster_43EB70` | this-edge component with no rooted object identity | 4 | 2 | 2 |
 | `C_cluster_441120` | this-edge component with no rooted object identity | 3 | 0 | 3 |
 | `C_cluster_4412B0` | this-edge component with no rooted object identity | 7 | 2 | 5 |
 | `C_cluster_441B40` | this-edge component with no rooted object identity | 4 | 1 | 3 |
@@ -394,7 +394,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_49FE60_member_AC4` | member pointer at +0xAC4 of C_cluster_49FE60 | 1 | 0 | 1 |
 | `C_cluster_4A0630` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_4A0C10` | this-edge component with no rooted object identity | 2 | 0 | 2 |
-| `C_cluster_4A1440` | this-edge component with no rooted object identity | 2 | 0 | 2 |
+| `C_cluster_4A1440` | this-edge component with no rooted object identity | 2 | 1 | 1 |
 | `C_cluster_4A1830` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_4A19E0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_4A2140` | this-edge component with no rooted object identity | 5 | 0 | 5 |
@@ -418,7 +418,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_4AD860` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_4AF360` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_4AF870` | this-edge component with no rooted object identity | 2 | 0 | 2 |
-| `C_cluster_4B2730` | this-edge component with no rooted object identity | 2 | 0 | 2 |
+| `C_cluster_4B2730` | this-edge component with no rooted object identity | 2 | 1 | 1 |
 | `C_cluster_4B2C20` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_4B3220` | this-edge component with no rooted object identity | 3 | 0 | 3 |
 | `C_cluster_4B4550` | this-edge component with no rooted object identity | 2 | 2 | 0 |
@@ -600,11 +600,11 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | app | 323 | 104 | 1 | 218 |
 | crt | 647 | 19 | 1 | 627 |
 | engine-late | 319 | 23 | 0 | 296 |
-| game | 436 | 141 | 3 | 292 |
+| game | 436 | 142 | 3 | 291 |
 | gfx | 410 | 52 | 3 | 355 |
 | runtime-data | 20 | 0 | 0 | 20 |
 | sim | 1283 | 215 | 0 | 1068 |
-| ui | 1230 | 169 | 2 | 1059 |
+| ui | 1230 | 171 | 2 | 1057 |
 
 ## Skeleton tree
 `Source/skeleton/` holds declarations only, generated from this map and

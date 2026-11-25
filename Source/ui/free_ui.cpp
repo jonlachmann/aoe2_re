@@ -825,13 +825,13 @@ int __cdecl sub_48BF10(int a1);
 WIP_FUNC(0x48BF10)
 int __cdecl sub_48BF10(int a1)
 {
-    if (a1 == 0)
-        return 0;
-    if (*(unsigned char*)(a1 + 78) == 80) {
-        if (*(int*)(a1 + 452))
-            return *(int*)(a1 + 452);
+    int result = a1;
+    if (result && *(unsigned char*)(result + 78) == 80) {
+        int cached = *(int*)(result + 452);
+        if (cached)
+            return cached;
     }
-    return a1;
+    return result;
 }
 
 // 0x48E2D0 — member of vtable class C_vt61CE24: scaled speed value.
@@ -1098,13 +1098,13 @@ public:
     char Round_4A9F20();
 };
 
+#pragma optimize("s", on)
 WIP_FUNC(0x4A9F20)
 char S4A9F20::Round_4A9F20()
 {
-    int v = this->field_14 + 3;
-    char result = (char)v;
-    return (char)(result & 0xFC);
+    return (this->field_14 + 3) & 0xFC;
 }
+#pragma optimize("", on)
 
 // 0x4ADF40 — reset four trailing short slots to -1.
 class S4ADF40 {
@@ -3567,3 +3567,51 @@ int S4AF0A0::M_4AF0A0()
     return result;
 }
 #pragma optimize("", on)
+
+// 0x4A7700 — register the thunk at 0x4A7710 with the CRT callback helper.
+extern void __cdecl sub_5FD62D(void* fn);
+extern void sub_4A7710();
+MATCH_FUNC(0x4A7700)
+void __cdecl sub_4A7700()
+{
+    sub_5FD62D((void*)&sub_4A7710);
+}
+
+// 0x49F4C0 — register the thunk at 0x49F4D0 with the CRT callback helper.
+extern void sub_49F4D0();
+MATCH_FUNC(0x49F4C0)
+void __cdecl sub_49F4C0()
+{
+    sub_5FD62D((void*)&sub_49F4D0);
+}
+
+// 0x4B9BA0 — run the cleanup helper and report success.
+class T4A1440 {
+public:
+    void Other_4A1440();
+};
+class S4B9BA0 {
+public:
+    int M_4B9BA0();
+};
+MATCH_FUNC(0x4B9BA0)
+int S4B9BA0::M_4B9BA0()
+{
+    ((T4A1440*)this)->Other_4A1440();
+    return 0;
+}
+
+// 0x4B2730 — thiscall forwarder to the class body at 0x4B2810.
+class T4B2810 {
+public:
+    int Other_4B2810(int a1);
+};
+class S4B2730 {
+public:
+    int M_4B2730(int a1);
+};
+MATCH_FUNC(0x4B2730)
+int S4B2730::M_4B2730(int a1)
+{
+    return ((T4B2810*)this)->Other_4B2810(a1);
+}
