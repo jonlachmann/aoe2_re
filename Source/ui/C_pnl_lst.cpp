@@ -1,6 +1,7 @@
 #include "C_pnl_lst.hpp"
 
 extern "C" int __stdcall sub_4BCF50(int v);
+extern int (__stdcall *g_61C3C8)();
 
 MATCH_FUNC(0x4B6840)
 int __stdcall C_pnl_lst::M_4B6840(int v)
@@ -106,4 +107,36 @@ void C_pnl_lst::M_4B3760(int a1, unsigned char a2, unsigned char a3, unsigned ch
     }
     slot_003(field_c, field_10, field_14, field_18);
     slot_008(1);
+}
+
+// 0x4B5AB0 — tick gate: run the 0x4A1160 update, return 0 when both +0x1B4/
+// +0x1B8 are clear or the unsigned elapsed time since +0x1AC is still below
+// the +0x1B0 interval; on expiry record the current tick, then when +0x1B4 is
+// set re-sync +0x104 from the +0x100 word and dispatch the 3-arg slot 3 call,
+// otherwise re-sync from the +0x102 word and dispatch slot 2.
+MATCH_FUNC(0x4B5AB0)
+int C_pnl_lst::M_4B5AB0()
+{
+    Hook_4A1160();
+    if (field_1b4 == 0 && field_1b8 == 0)
+        return 0;
+    unsigned int now = (unsigned int)g_61C3C8();
+    if ((now - (unsigned int)field_1ac) < (unsigned int)field_1b0)
+        return 0;
+    field_1ac = (int)now;
+    if (field_1b4 != 0)
+    {
+        short v = field_100;
+        if (field_104 != v)
+            Hook_4B60B0(1, v, 1);
+        Hook_4B60B0(3, 0, 1);
+    }
+    else
+    {
+        short v = field_102;
+        if (field_104 != v)
+            Hook_4B60B0(1, v, 1);
+        Hook_4B60B0(2, 0, 1);
+    }
+    return 0;
 }
