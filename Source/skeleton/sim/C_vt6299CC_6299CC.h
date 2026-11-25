@@ -9,7 +9,7 @@
 
 class C_vt6299CC {
 public:
-    virtual void slot_000();  // slot +0x000: sub_56AC10 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_56AC10 [matched] — Source/sim/free_sim.cpp
     virtual void slot_001();  // slot +0x004: sub_411590 [matched] — Source/app/C_vt61D328.cpp
     virtual void slot_002();  // slot +0x008: sub_56B080 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_4378C0 [matched] — Source/ui/C_pnl_edit.cpp

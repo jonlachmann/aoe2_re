@@ -4040,3 +4040,907 @@ int S5872E0::M_5872E0(int a1)
     this->field_04->field_0c->Other_48F970();
     return 5;
 }
+
+// Scalar deleting destructor wrappers.
+extern int __cdecl sub_5F90B0(int a1);
+
+class Td523ac0 {
+public:
+    void Other_523ac0();
+};
+class Sd523AA0 {
+public:
+    Sd523AA0* D_523AA0(int flags);
+};
+MATCH_FUNC(0x523AA0)
+Sd523AA0* Sd523AA0::D_523AA0(int flags)
+{
+    ((Td523ac0*)this)->Other_523ac0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td526980 {
+public:
+    void Other_526980();
+};
+class Sd526900 {
+public:
+    Sd526900* D_526900(int flags);
+};
+MATCH_FUNC(0x526900)
+Sd526900* Sd526900::D_526900(int flags)
+{
+    ((Td526980*)this)->Other_526980();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td52cf70 {
+public:
+    void Other_52cf70();
+};
+class Sd52CB70 {
+public:
+    Sd52CB70* D_52CB70(int flags);
+};
+MATCH_FUNC(0x52CB70)
+Sd52CB70* Sd52CB70::D_52CB70(int flags)
+{
+    ((Td52cf70*)this)->Other_52cf70();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td532eb0 {
+public:
+    void Other_532eb0();
+};
+class Sd532DC0 {
+public:
+    Sd532DC0* D_532DC0(int flags);
+};
+MATCH_FUNC(0x532DC0)
+Sd532DC0* Sd532DC0::D_532DC0(int flags)
+{
+    ((Td532eb0*)this)->Other_532eb0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td539af0 {
+public:
+    void Other_539af0();
+};
+class Sd539AD0 {
+public:
+    Sd539AD0* D_539AD0(int flags);
+};
+MATCH_FUNC(0x539AD0)
+Sd539AD0* Sd539AD0::D_539AD0(int flags)
+{
+    ((Td539af0*)this)->Other_539af0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td53d9f0 {
+public:
+    void Other_53d9f0();
+};
+class Sd53D8E0 {
+public:
+    Sd53D8E0* D_53D8E0(int flags);
+};
+MATCH_FUNC(0x53D8E0)
+Sd53D8E0* Sd53D8E0::D_53D8E0(int flags)
+{
+    ((Td53d9f0*)this)->Other_53d9f0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td53e8d0 {
+public:
+    void Other_53e8d0();
+};
+class Sd53E850 {
+public:
+    Sd53E850* D_53E850(int flags);
+};
+MATCH_FUNC(0x53E850)
+Sd53E850* Sd53E850::D_53E850(int flags)
+{
+    ((Td53e8d0*)this)->Other_53e8d0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td53f590 {
+public:
+    void Other_53f590();
+};
+class Sd53F450 {
+public:
+    Sd53F450* D_53F450(int flags);
+};
+MATCH_FUNC(0x53F450)
+Sd53F450* Sd53F450::D_53F450(int flags)
+{
+    ((Td53f590*)this)->Other_53f590();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5413b0 {
+public:
+    void Other_5413b0();
+};
+class Sd5412C0 {
+public:
+    Sd5412C0* D_5412C0(int flags);
+};
+MATCH_FUNC(0x5412C0)
+Sd5412C0* Sd5412C0::D_5412C0(int flags)
+{
+    ((Td5413b0*)this)->Other_5413b0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td544db0 {
+public:
+    void Other_544db0();
+};
+class Sd544D60 {
+public:
+    Sd544D60* D_544D60(int flags);
+};
+MATCH_FUNC(0x544D60)
+Sd544D60* Sd544D60::D_544D60(int flags)
+{
+    ((Td544db0*)this)->Other_544db0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td545090 {
+public:
+    void Other_545090();
+};
+class Sd545070 {
+public:
+    Sd545070* D_545070(int flags);
+};
+MATCH_FUNC(0x545070)
+Sd545070* Sd545070::D_545070(int flags)
+{
+    ((Td545090*)this)->Other_545090();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td546350 {
+public:
+    void Other_546350();
+};
+class Sd546280 {
+public:
+    Sd546280* D_546280(int flags);
+};
+MATCH_FUNC(0x546280)
+Sd546280* Sd546280::D_546280(int flags)
+{
+    ((Td546350*)this)->Other_546350();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td546900 {
+public:
+    void Other_546900();
+};
+class Sd546830 {
+public:
+    Sd546830* D_546830(int flags);
+};
+MATCH_FUNC(0x546830)
+Sd546830* Sd546830::D_546830(int flags)
+{
+    ((Td546900*)this)->Other_546900();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5472f0 {
+public:
+    void Other_5472f0();
+};
+class Sd547220 {
+public:
+    Sd547220* D_547220(int flags);
+};
+MATCH_FUNC(0x547220)
+Sd547220* Sd547220::D_547220(int flags)
+{
+    ((Td5472f0*)this)->Other_5472f0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5482b0 {
+public:
+    void Other_5482b0();
+};
+class Sd548200 {
+public:
+    Sd548200* D_548200(int flags);
+};
+MATCH_FUNC(0x548200)
+Sd548200* Sd548200::D_548200(int flags)
+{
+    ((Td5482b0*)this)->Other_5482b0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td548720 {
+public:
+    void Other_548720();
+};
+class Sd548620 {
+public:
+    Sd548620* D_548620(int flags);
+};
+MATCH_FUNC(0x548620)
+Sd548620* Sd548620::D_548620(int flags)
+{
+    ((Td548720*)this)->Other_548720();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td549400 {
+public:
+    void Other_549400();
+};
+class Sd549330 {
+public:
+    Sd549330* D_549330(int flags);
+};
+MATCH_FUNC(0x549330)
+Sd549330* Sd549330::D_549330(int flags)
+{
+    ((Td549400*)this)->Other_549400();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td54ac20 {
+public:
+    void Other_54ac20();
+};
+class Sd54ABC0 {
+public:
+    Sd54ABC0* D_54ABC0(int flags);
+};
+MATCH_FUNC(0x54ABC0)
+Sd54ABC0* Sd54ABC0::D_54ABC0(int flags)
+{
+    ((Td54ac20*)this)->Other_54ac20();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td54b1f0 {
+public:
+    void Other_54b1f0();
+};
+class Sd54B0D0 {
+public:
+    Sd54B0D0* D_54B0D0(int flags);
+};
+MATCH_FUNC(0x54B0D0)
+Sd54B0D0* Sd54B0D0::D_54B0D0(int flags)
+{
+    ((Td54b1f0*)this)->Other_54b1f0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td54c110 {
+public:
+    void Other_54c110();
+};
+class Sd54C040 {
+public:
+    Sd54C040* D_54C040(int flags);
+};
+MATCH_FUNC(0x54C040)
+Sd54C040* Sd54C040::D_54C040(int flags)
+{
+    ((Td54c110*)this)->Other_54c110();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td54c7d0 {
+public:
+    void Other_54c7d0();
+};
+class Sd54C720 {
+public:
+    Sd54C720* D_54C720(int flags);
+};
+MATCH_FUNC(0x54C720)
+Sd54C720* Sd54C720::D_54C720(int flags)
+{
+    ((Td54c7d0*)this)->Other_54c7d0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td54cde0 {
+public:
+    void Other_54cde0();
+};
+class Sd54CD10 {
+public:
+    Sd54CD10* D_54CD10(int flags);
+};
+MATCH_FUNC(0x54CD10)
+Sd54CD10* Sd54CD10::D_54CD10(int flags)
+{
+    ((Td54cde0*)this)->Other_54cde0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td54fe50 {
+public:
+    void Other_54fe50();
+};
+class Sd54FD90 {
+public:
+    Sd54FD90* D_54FD90(int flags);
+};
+MATCH_FUNC(0x54FD90)
+Sd54FD90* Sd54FD90::D_54FD90(int flags)
+{
+    ((Td54fe50*)this)->Other_54fe50();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td550980 {
+public:
+    void Other_550980();
+};
+class Sd550930 {
+public:
+    Sd550930* D_550930(int flags);
+};
+MATCH_FUNC(0x550930)
+Sd550930* Sd550930::D_550930(int flags)
+{
+    ((Td550980*)this)->Other_550980();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td55cd10 {
+public:
+    void Other_55cd10();
+};
+class Sd55B500 {
+public:
+    Sd55B500* D_55B500(int flags);
+};
+MATCH_FUNC(0x55B500)
+Sd55B500* Sd55B500::D_55B500(int flags)
+{
+    ((Td55cd10*)this)->Other_55cd10();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td56afa0 {
+public:
+    void Other_56afa0();
+};
+class Sd56AC10 {
+public:
+    Sd56AC10* D_56AC10(int flags);
+};
+MATCH_FUNC(0x56AC10)
+Sd56AC10* Sd56AC10::D_56AC10(int flags)
+{
+    ((Td56afa0*)this)->Other_56afa0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td56c4f0 {
+public:
+    void Other_56c4f0();
+};
+class Sd56C450 {
+public:
+    Sd56C450* D_56C450(int flags);
+};
+MATCH_FUNC(0x56C450)
+Sd56C450* Sd56C450::D_56C450(int flags)
+{
+    ((Td56c4f0*)this)->Other_56c4f0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td56cb50 {
+public:
+    void Other_56cb50();
+};
+class Sd56CB30 {
+public:
+    Sd56CB30* D_56CB30(int flags);
+};
+MATCH_FUNC(0x56CB30)
+Sd56CB30* Sd56CB30::D_56CB30(int flags)
+{
+    ((Td56cb50*)this)->Other_56cb50();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td56e4f0 {
+public:
+    void Other_56e4f0();
+};
+class Sd56E010 {
+public:
+    Sd56E010* D_56E010(int flags);
+};
+MATCH_FUNC(0x56E010)
+Sd56E010* Sd56E010::D_56E010(int flags)
+{
+    ((Td56e4f0*)this)->Other_56e4f0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td56faf0 {
+public:
+    void Other_56faf0();
+};
+class Sd56FAD0 {
+public:
+    Sd56FAD0* D_56FAD0(int flags);
+};
+MATCH_FUNC(0x56FAD0)
+Sd56FAD0* Sd56FAD0::D_56FAD0(int flags)
+{
+    ((Td56faf0*)this)->Other_56faf0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td573360 {
+public:
+    void Other_573360();
+};
+class Sd571B50 {
+public:
+    Sd571B50* D_571B50(int flags);
+};
+MATCH_FUNC(0x571B50)
+Sd571B50* Sd571B50::D_571B50(int flags)
+{
+    ((Td573360*)this)->Other_573360();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td585ff0 {
+public:
+    void Other_585ff0();
+};
+class Sd587A00 {
+public:
+    Sd587A00* D_587A00(int flags);
+};
+MATCH_FUNC(0x587A00)
+Sd587A00* Sd587A00::D_587A00(int flags)
+{
+    ((Td585ff0*)this)->Other_585ff0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td58aa90 {
+public:
+    void Other_58aa90();
+};
+class Sd58AA70 {
+public:
+    Sd58AA70* D_58AA70(int flags);
+};
+MATCH_FUNC(0x58AA70)
+Sd58AA70* Sd58AA70::D_58AA70(int flags)
+{
+    ((Td58aa90*)this)->Other_58aa90();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td58ee60 {
+public:
+    void Other_58ee60();
+};
+class Sd58EE40 {
+public:
+    Sd58EE40* D_58EE40(int flags);
+};
+MATCH_FUNC(0x58EE40)
+Sd58EE40* Sd58EE40::D_58EE40(int flags)
+{
+    ((Td58ee60*)this)->Other_58ee60();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td595ad0 {
+public:
+    void Other_595ad0();
+};
+class Sd595AB0 {
+public:
+    Sd595AB0* D_595AB0(int flags);
+};
+MATCH_FUNC(0x595AB0)
+Sd595AB0* Sd595AB0::D_595AB0(int flags)
+{
+    ((Td595ad0*)this)->Other_595ad0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td595e20 {
+public:
+    void Other_595e20();
+};
+class Sd595DD0 {
+public:
+    Sd595DD0* D_595DD0(int flags);
+};
+MATCH_FUNC(0x595DD0)
+Sd595DD0* Sd595DD0::D_595DD0(int flags)
+{
+    ((Td595e20*)this)->Other_595e20();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td596a60 {
+public:
+    void Other_596a60();
+};
+class Sd596190 {
+public:
+    Sd596190* D_596190(int flags);
+};
+MATCH_FUNC(0x596190)
+Sd596190* Sd596190::D_596190(int flags)
+{
+    ((Td596a60*)this)->Other_596a60();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td598350 {
+public:
+    void Other_598350();
+};
+class Sd597A20 {
+public:
+    Sd597A20* D_597A20(int flags);
+};
+MATCH_FUNC(0x597A20)
+Sd597A20* Sd597A20::D_597A20(int flags)
+{
+    ((Td598350*)this)->Other_598350();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td598fa0 {
+public:
+    void Other_598fa0();
+};
+class Sd598F80 {
+public:
+    Sd598F80* D_598F80(int flags);
+};
+MATCH_FUNC(0x598F80)
+Sd598F80* Sd598F80::D_598F80(int flags)
+{
+    ((Td598fa0*)this)->Other_598fa0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5995b0 {
+public:
+    void Other_5995b0();
+};
+class Sd599550 {
+public:
+    Sd599550* D_599550(int flags);
+};
+MATCH_FUNC(0x599550)
+Sd599550* Sd599550::D_599550(int flags)
+{
+    ((Td5995b0*)this)->Other_5995b0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td59b890 {
+public:
+    void Other_59b890();
+};
+class Sd59B850 {
+public:
+    Sd59B850* D_59B850(int flags);
+};
+MATCH_FUNC(0x59B850)
+Sd59B850* Sd59B850::D_59B850(int flags)
+{
+    ((Td59b890*)this)->Other_59b890();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td59cbe0 {
+public:
+    void Other_59cbe0();
+};
+class Sd59C5E0 {
+public:
+    Sd59C5E0* D_59C5E0(int flags);
+};
+MATCH_FUNC(0x59C5E0)
+Sd59C5E0* Sd59C5E0::D_59C5E0(int flags)
+{
+    ((Td59cbe0*)this)->Other_59cbe0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5a44b0 {
+public:
+    void Other_5a44b0();
+};
+class Sd5A4330 {
+public:
+    Sd5A4330* D_5A4330(int flags);
+};
+MATCH_FUNC(0x5A4330)
+Sd5A4330* Sd5A4330::D_5A4330(int flags)
+{
+    ((Td5a44b0*)this)->Other_5a44b0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5a6ac0 {
+public:
+    void Other_5a6ac0();
+};
+class Sd5A6A80 {
+public:
+    Sd5A6A80* D_5A6A80(int flags);
+};
+MATCH_FUNC(0x5A6A80)
+Sd5A6A80* Sd5A6A80::D_5A6A80(int flags)
+{
+    ((Td5a6ac0*)this)->Other_5a6ac0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5a77a0 {
+public:
+    void Other_5a77a0();
+};
+class Sd5A7780 {
+public:
+    Sd5A7780* D_5A7780(int flags);
+};
+MATCH_FUNC(0x5A7780)
+Sd5A7780* Sd5A7780::D_5A7780(int flags)
+{
+    ((Td5a77a0*)this)->Other_5a77a0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5ac1b0 {
+public:
+    void Other_5ac1b0();
+};
+class Sd5AC190 {
+public:
+    Sd5AC190* D_5AC190(int flags);
+};
+MATCH_FUNC(0x5AC190)
+Sd5AC190* Sd5AC190::D_5AC190(int flags)
+{
+    ((Td5ac1b0*)this)->Other_5ac1b0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5ac410 {
+public:
+    void Other_5ac410();
+};
+class Sd5AC3F0 {
+public:
+    Sd5AC3F0* D_5AC3F0(int flags);
+};
+MATCH_FUNC(0x5AC3F0)
+Sd5AC3F0* Sd5AC3F0::D_5AC3F0(int flags)
+{
+    ((Td5ac410*)this)->Other_5ac410();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5ad430 {
+public:
+    void Other_5ad430();
+};
+class Sd5AD410 {
+public:
+    Sd5AD410* D_5AD410(int flags);
+};
+MATCH_FUNC(0x5AD410)
+Sd5AD410* Sd5AD410::D_5AD410(int flags)
+{
+    ((Td5ad430*)this)->Other_5ad430();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5b1190 {
+public:
+    void Other_5b1190();
+};
+class Sd5B1170 {
+public:
+    Sd5B1170* D_5B1170(int flags);
+};
+MATCH_FUNC(0x5B1170)
+Sd5B1170* Sd5B1170::D_5B1170(int flags)
+{
+    ((Td5b1190*)this)->Other_5b1190();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5c09d0 {
+public:
+    void Other_5c09d0();
+};
+class Sd5C09B0 {
+public:
+    Sd5C09B0* D_5C09B0(int flags);
+};
+MATCH_FUNC(0x5C09B0)
+Sd5C09B0* Sd5C09B0::D_5C09B0(int flags)
+{
+    ((Td5c09d0*)this)->Other_5c09d0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5c0ba0 {
+public:
+    void Other_5c0ba0();
+};
+class Sd5C0B80 {
+public:
+    Sd5C0B80* D_5C0B80(int flags);
+};
+MATCH_FUNC(0x5C0B80)
+Sd5C0B80* Sd5C0B80::D_5C0B80(int flags)
+{
+    ((Td5c0ba0*)this)->Other_5c0ba0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5c53a0 {
+public:
+    void Other_5c53a0();
+};
+class Sd5C5380 {
+public:
+    Sd5C5380* D_5C5380(int flags);
+};
+MATCH_FUNC(0x5C5380)
+Sd5C5380* Sd5C5380::D_5C5380(int flags)
+{
+    ((Td5c53a0*)this)->Other_5c53a0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5c8790 {
+public:
+    void Other_5c8790();
+};
+class Sd5C8770 {
+public:
+    Sd5C8770* D_5C8770(int flags);
+};
+MATCH_FUNC(0x5C8770)
+Sd5C8770* Sd5C8770::D_5C8770(int flags)
+{
+    ((Td5c8790*)this)->Other_5c8790();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}

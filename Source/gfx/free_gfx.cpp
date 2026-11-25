@@ -1169,3 +1169,346 @@ void __cdecl sub_4436B0()
     ((T4436B0*)g_66A478)->field_38128 = 0xffff;
     sub_4429B0();
 }
+
+// Scalar deleting destructor wrappers.
+extern int __cdecl sub_5F90B0(int a1);
+
+class Td440b30 {
+public:
+    void Other_440b30();
+};
+class Sd440B10 {
+public:
+    Sd440B10* D_440B10(int flags);
+};
+MATCH_FUNC(0x440B10)
+Sd440B10* Sd440B10::D_440B10(int flags)
+{
+    ((Td440b30*)this)->Other_440b30();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td443a70 {
+public:
+    void Other_443a70();
+};
+class Sd443A50 {
+public:
+    Sd443A50* D_443A50(int flags);
+};
+MATCH_FUNC(0x443A50)
+Sd443A50* Sd443A50::D_443A50(int flags)
+{
+    ((Td443a70*)this)->Other_443a70();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td447530 {
+public:
+    void Other_447530();
+};
+class Sd447510 {
+public:
+    Sd447510* D_447510(int flags);
+};
+MATCH_FUNC(0x447510)
+Sd447510* Sd447510::D_447510(int flags)
+{
+    ((Td447530*)this)->Other_447530();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td447c10 {
+public:
+    void Other_447c10();
+};
+class Sd447BE0 {
+public:
+    Sd447BE0* D_447BE0(int flags);
+};
+MATCH_FUNC(0x447BE0)
+Sd447BE0* Sd447BE0::D_447BE0(int flags)
+{
+    ((Td447c10*)this)->Other_447c10();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td448960 {
+public:
+    void Other_448960();
+};
+class Sd448940 {
+public:
+    Sd448940* D_448940(int flags);
+};
+MATCH_FUNC(0x448940)
+Sd448940* Sd448940::D_448940(int flags)
+{
+    ((Td448960*)this)->Other_448960();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td44a260 {
+public:
+    void Other_44a260();
+};
+class Sd44A240 {
+public:
+    Sd44A240* D_44A240(int flags);
+};
+MATCH_FUNC(0x44A240)
+Sd44A240* Sd44A240::D_44A240(int flags)
+{
+    ((Td44a260*)this)->Other_44a260();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td44b470 {
+public:
+    void Other_44b470();
+};
+class Sd44B3E0 {
+public:
+    Sd44B3E0* D_44B3E0(int flags);
+};
+MATCH_FUNC(0x44B3E0)
+Sd44B3E0* Sd44B3E0::D_44B3E0(int flags)
+{
+    ((Td44b470*)this)->Other_44b470();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td44ba10 {
+public:
+    void Other_44ba10();
+};
+class Sd44B9F0 {
+public:
+    Sd44B9F0* D_44B9F0(int flags);
+};
+MATCH_FUNC(0x44B9F0)
+Sd44B9F0* Sd44B9F0::D_44B9F0(int flags)
+{
+    ((Td44ba10*)this)->Other_44ba10();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td44c170 {
+public:
+    void Other_44c170();
+};
+class Sd44C150 {
+public:
+    Sd44C150* D_44C150(int flags);
+};
+MATCH_FUNC(0x44C150)
+Sd44C150* Sd44C150::D_44C150(int flags)
+{
+    ((Td44c170*)this)->Other_44c170();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td44c7f0 {
+public:
+    void Other_44c7f0();
+};
+class Sd44C7D0 {
+public:
+    Sd44C7D0* D_44C7D0(int flags);
+};
+MATCH_FUNC(0x44C7D0)
+Sd44C7D0* Sd44C7D0::D_44C7D0(int flags)
+{
+    ((Td44c7f0*)this)->Other_44c7f0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td44cf00 {
+public:
+    void Other_44cf00();
+};
+class Sd44CEE0 {
+public:
+    Sd44CEE0* D_44CEE0(int flags);
+};
+MATCH_FUNC(0x44CEE0)
+Sd44CEE0* Sd44CEE0::D_44CEE0(int flags)
+{
+    ((Td44cf00*)this)->Other_44cf00();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td44d3c0 {
+public:
+    void Other_44d3c0();
+};
+class Sd44D3A0 {
+public:
+    Sd44D3A0* D_44D3A0(int flags);
+};
+MATCH_FUNC(0x44D3A0)
+Sd44D3A0* Sd44D3A0::D_44D3A0(int flags)
+{
+    ((Td44d3c0*)this)->Other_44d3c0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td44e2f0 {
+public:
+    void Other_44e2f0();
+};
+class Sd44E2D0 {
+public:
+    Sd44E2D0* D_44E2D0(int flags);
+};
+MATCH_FUNC(0x44E2D0)
+Sd44E2D0* Sd44E2D0::D_44E2D0(int flags)
+{
+    ((Td44e2f0*)this)->Other_44e2f0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td44ef20 {
+public:
+    void Other_44ef20();
+};
+class Sd44EF00 {
+public:
+    Sd44EF00* D_44EF00(int flags);
+};
+MATCH_FUNC(0x44EF00)
+Sd44EF00* Sd44EF00::D_44EF00(int flags)
+{
+    ((Td44ef20*)this)->Other_44ef20();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td4511a0 {
+public:
+    void Other_4511a0();
+};
+class Sd451180 {
+public:
+    Sd451180* D_451180(int flags);
+};
+MATCH_FUNC(0x451180)
+Sd451180* Sd451180::D_451180(int flags)
+{
+    ((Td4511a0*)this)->Other_4511a0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td45a5e0 {
+public:
+    void Other_45a5e0();
+};
+class Sd45A5C0 {
+public:
+    Sd45A5C0* D_45A5C0(int flags);
+};
+MATCH_FUNC(0x45A5C0)
+Sd45A5C0* Sd45A5C0::D_45A5C0(int flags)
+{
+    ((Td45a5e0*)this)->Other_45a5e0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td45c8b0 {
+public:
+    void Other_45c8b0();
+};
+class Sd45BDA0 {
+public:
+    Sd45BDA0* D_45BDA0(int flags);
+};
+MATCH_FUNC(0x45BDA0)
+Sd45BDA0* Sd45BDA0::D_45BDA0(int flags)
+{
+    ((Td45c8b0*)this)->Other_45c8b0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td41a150 {
+public:
+    void Other_41a150();
+};
+class Sd45D0F0 {
+public:
+    Sd45D0F0* D_45D0F0(int flags);
+};
+MATCH_FUNC(0x45D0F0)
+Sd45D0F0* Sd45D0F0::D_45D0F0(int flags)
+{
+    ((Td41a150*)this)->Other_41a150();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td462850 {
+public:
+    void Other_462850();
+};
+class Sd462650 {
+public:
+    Sd462650* D_462650(int flags);
+};
+MATCH_FUNC(0x462650)
+Sd462650* Sd462650::D_462650(int flags)
+{
+    ((Td462850*)this)->Other_462850();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td46ab90 {
+public:
+    void Other_46ab90();
+};
+class Sd46AB70 {
+public:
+    Sd46AB70* D_46AB70(int flags);
+};
+MATCH_FUNC(0x46AB70)
+Sd46AB70* Sd46AB70::D_46AB70(int flags)
+{
+    ((Td46ab90*)this)->Other_46ab90();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}

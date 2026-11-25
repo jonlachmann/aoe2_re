@@ -54,7 +54,7 @@ public:
     virtual void slot_042();  // slot +0x0A8: sub_5E9990 [lifted]
     virtual void slot_043();  // slot +0x0AC: sub_5E9D50 [lifted]
     virtual void slot_044();  // slot +0x0B0: sub_5E2CC0 [matched] — Source/app/C_vt61DF78.cpp
-    virtual void slot_045();  // slot +0x0B4: sub_5E2CD0 [lifted]
+    virtual void slot_045();  // slot +0x0B4: sub_5E2CD0 [matched] — Source/engine-late/free_engine-late.cpp
     virtual void slot_046();  // slot +0x0B8: sub_5E53F0 [lifted]
     virtual void slot_047();  // slot +0x0BC: sub_5E52C0 [lifted]
     virtual void slot_048();  // slot +0x0C0: sub_5E3D90 [lifted]

@@ -9,7 +9,7 @@
 
 class C_vt62094C {
 public:
-    virtual void slot_000();  // slot +0x000: sub_462650 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_462650 [matched] — Source/gfx/free_gfx.cpp
     virtual void slot_001();  // slot +0x004: sub_4628C0 [lifted]
     virtual void slot_002();  // slot +0x008: sub_4629C0 [lifted]
     void method_000();  // sub_462850 [lifted]: same object, connected by this-edge call sites

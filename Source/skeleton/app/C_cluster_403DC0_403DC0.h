@@ -6,6 +6,6 @@
 
 class C_cluster_403DC0 {
 public:
-    void method_000();  // sub_403DC0 [lifted]
+    void method_000();  // sub_403DC0 [matched] — Source/app/free_app.cpp
     void method_001();  // sub_540780 [matched] — Source/sim/C_cluster_403DC0.cpp
 };

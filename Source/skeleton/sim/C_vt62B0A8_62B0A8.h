@@ -9,7 +9,7 @@
 
 class C_vt62B0A8 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_596190 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_596190 [matched] — Source/sim/free_sim.cpp
     virtual void slot_001();  // slot +0x004: sub_596A70 [lifted]
     virtual void slot_002();  // slot +0x008: sub_596BD0 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_596C00 [lifted]

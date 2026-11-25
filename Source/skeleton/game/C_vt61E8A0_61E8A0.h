@@ -11,7 +11,7 @@ class C_vt61E8A0 {
 public:
     virtual void slot_000();  // slot +0x000: sub_43BC60 [lifted]
     virtual void slot_001();  // slot +0x004: sub_43BD10 [lifted]
-    virtual void slot_002();  // slot +0x008: sub_43A3D0 [lifted]
+    virtual void slot_002();  // slot +0x008: sub_43A3D0 [matched] — Source/game/free_game.cpp
     virtual void slot_003();  // slot +0x00C: sub_43A750 [lifted]
     virtual void slot_004();  // slot +0x010: sub_43D9E0 [lifted]
     void method_000();  // sub_43A3F0 [lifted]: same object, connected by this-edge call sites

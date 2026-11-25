@@ -37,7 +37,7 @@ void sub_421C00();  // size 18, calls 0, matched, module game
 void sub_421C30();  // size 18, calls 0, matched, module game
 void sub_421C50();  // size 13, calls 0, matched, module game
 void sub_421C60();  // size 13, calls 0, matched, module game
-void sub_421CB0();  // size 14, calls 0, lifted, module game
+void sub_421CB0();  // size 14, calls 0, wip, module game
 void sub_421CC0();  // size 16, calls 1, matched, module game
 void sub_421CD0();  // size 13, calls 0, matched, module game
 void sub_421CE0();  // size 13, calls 0, matched, module game

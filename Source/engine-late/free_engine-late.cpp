@@ -413,3 +413,74 @@ float S5DDCF0::M_5DDCF0()
 {
     return (float)this->field_1c / this->field_20;
 }
+
+// Scalar deleting destructor wrappers.
+extern int __cdecl sub_5F90B0(int a1);
+
+class Td5d2230 {
+public:
+    void Other_5d2230();
+};
+class Sd5D2210 {
+public:
+    Sd5D2210* D_5D2210(int flags);
+};
+MATCH_FUNC(0x5D2210)
+Sd5D2210* Sd5D2210::D_5D2210(int flags)
+{
+    ((Td5d2230*)this)->Other_5d2230();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5c3200 {
+public:
+    void Other_5c3200();
+};
+class Sd5DE830 {
+public:
+    Sd5DE830* D_5DE830(int flags);
+};
+MATCH_FUNC(0x5DE830)
+Sd5DE830* Sd5DE830::D_5DE830(int flags)
+{
+    ((Td5c3200*)this)->Other_5c3200();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5defd0 {
+public:
+    void Other_5defd0();
+};
+class Sd5DEFB0 {
+public:
+    Sd5DEFB0* D_5DEFB0(int flags);
+};
+MATCH_FUNC(0x5DEFB0)
+Sd5DEFB0* Sd5DEFB0::D_5DEFB0(int flags)
+{
+    ((Td5defd0*)this)->Other_5defd0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td5e2cf0 {
+public:
+    void Other_5e2cf0();
+};
+class Sd5E2CD0 {
+public:
+    Sd5E2CD0* D_5E2CD0(int flags);
+};
+MATCH_FUNC(0x5E2CD0)
+Sd5E2CD0* Sd5E2CD0::D_5E2CD0(int flags)
+{
+    ((Td5e2cf0*)this)->Other_5e2cf0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}

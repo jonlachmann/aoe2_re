@@ -22,7 +22,7 @@ public:
     void method_013();  // sub_430A70 [lifted]
     void method_014();  // sub_430AF0 [lifted]
     void method_015();  // sub_430B20 [lifted]
-    void method_016();  // sub_431680 [lifted]
+    void method_016();  // sub_431680 [matched] — Source/game/free_game.cpp
     void method_017();  // sub_4316A0 [lifted]
     void method_018();  // sub_431710 [lifted]
     void method_019();  // sub_431960 [lifted]

@@ -9,7 +9,7 @@
 
 class C_vt623BA8 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_4CBD60 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_4CBD60 [matched] — Source/ui/free_ui.cpp
     virtual void slot_001();  // slot +0x004: sub_4C56B0 [lifted]
     virtual void slot_002();  // slot +0x008: sub_4CBFC0 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_4CBD90 [lifted]

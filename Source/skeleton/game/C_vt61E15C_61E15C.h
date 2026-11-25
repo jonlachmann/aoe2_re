@@ -9,6 +9,6 @@
 
 class C_vt61E15C {
 public:
-    virtual void slot_000();  // slot +0x000: sub_423360 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_423360 [matched] — Source/game/free_game.cpp
     void method_000();  // sub_4235C0 [lifted]: same object, connected by this-edge call sites
 };

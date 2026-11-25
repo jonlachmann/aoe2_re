@@ -9,7 +9,7 @@
 
 class C_vt61CE24 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_407D30 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_407D30 [matched] — Source/app/free_app.cpp
     virtual void slot_001();  // slot +0x004: sub_407E50 [lifted]
     virtual void slot_002();  // slot +0x008: sub_407E30 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_5276E0 [lifted]
@@ -129,7 +129,7 @@ public:
     virtual void slot_117();  // slot +0x1D4: sub_407C30 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_118();  // slot +0x1D8: sub_407C40 [matched] — Source/gfx/C_TribePopUpHelp.cpp
     virtual void slot_119();  // slot +0x1DC: sub_48E120 [lifted]
-    virtual void slot_120();  // slot +0x1E0: sub_4089C0 [lifted]
+    virtual void slot_120();  // slot +0x1E0: sub_4089C0 [matched] — Source/app/free_app.cpp
     virtual void slot_121();  // slot +0x1E4: sub_4089E0 [lifted]
     virtual void slot_122();  // slot +0x1E8: sub_48E340 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_123();  // slot +0x1EC: sub_48E370 [lifted]

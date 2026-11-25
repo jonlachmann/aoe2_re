@@ -9,6 +9,6 @@
 
 class C_vt620B74 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_472AD0 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_472AD0 [matched] — Source/ui/free_ui.cpp
     void method_000();  // sub_472AF0 [matched]: same object, connected by this-edge call sites — Source/ui/free_ui.cpp
 };

@@ -22,240 +22,240 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1234 |
-| wip | 18 |
+| matched | 1445 |
+| wip | 19 |
 | verified | 19 |
-| lifted | 6480 |
+| lifted | 6268 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
 |---|---|---|---|---|---|---|
-| `0x61C524` | `C_vt61C524` | 24 | 1 | — | 6 | 19 |
-| `0x61C62C` | `C_vt61C62C` | 24 | 0 | — | 7 | 17 |
-| `0x61C71C` | `C_vt61C71C` | 24 | 1 | — | 8 | 17 |
-| `0x61C800` | `C_vt61C800` | 24 | 0 | — | 7 | 17 |
-| `0x61C8E4` | `C_vt61C8E4` | 24 | 0 | — | 5 | 19 |
-| `0x61C9D4` | `C_vt61C9D4` | 24 | 0 | — | 8 | 16 |
-| `0x61CAB4` | `C_vt61CAB4` | 8 | 0 | — | 2 | 6 |
-| `0x61CB58` | `C_vt61CB58` | 24 | 0 | — | 7 | 17 |
-| `0x61CC40` | `C_vt61CC40` | 24 | 1 | — | 7 | 18 |
-| `0x61CD2C` | `C_vt61CD2C` | 24 | 1 | — | 6 | 19 |
-| `0x61CE24` | `C_vt61CE24` | 204 | 1 | — | 85 | 120 |
-| `0x61D1D8` | `C_vt61D1D8` | 25 | 0 | — | 5 | 20 |
-| `0x61D2C0` | `C_vt61D2C0` | 24 | 0 | — | 9 | 15 |
-| `0x61D320` | `C_vt61D320` | 1 | 1 | — | 1 | 1 |
-| `0x61D324` | `C_vt61D324` | 1 | 1 | — | 1 | 1 |
-| `0x61D328` | `C_vt61D328` | 18 | 2 | — | 13 | 7 |
-| `0x61D380` | `C_vt61D380` | 1 | 1 | — | 1 | 1 |
-| `0x61D384` | `C_vt61D384` | 23 | 3 | — | 14 | 12 |
-| `0x61D460` | `C_vt61D460` | 16 | 1 | — | 12 | 5 |
-| `0x61D4A0` | `C_vt61D4A0` | 16 | 1 | — | 13 | 4 |
-| `0x61D4E0` | `C_vt61D4E0` | 1 | 1 | — | 0 | 2 |
-| `0x61D4E4` | `C_vt61D4E4` | 1 | 1 | — | 0 | 2 |
-| `0x61D4E8` | `C_vt61D4E8` | 15 | 1 | — | 14 | 2 |
-| `0x61D524` | `C_vt61D524` | 1 | 1 | — | 1 | 1 |
-| `0x61D5A8` | `C_vt61D5A8` | 23 | 0 | — | 17 | 6 |
-| `0x61D604` | `C_vt61D604` | 1 | 1 | — | 1 | 1 |
-| `0x61D608` | `C_vt61D608` | 15 | 0 | — | 13 | 2 |
-| `0x61D6C4` | `C_vt61D6C4` | 1 | 1 | — | 1 | 1 |
-| `0x61D6C8` | `C_vt61D6C8` | 15 | 1 | — | 14 | 2 |
-| `0x61D704` | `C_vt61D704` | 15 | 1 | — | 14 | 2 |
-| `0x61D7C0` | `C_vt61D7C0` | 16 | 1 | — | 14 | 3 |
-| `0x61D890` | `C_vt61D890` | 57 | 1 | — | 7 | 51 |
-| `0x61DA40` | `C_vt61DA40` | 187 | 0 | — | 133 | 54 |
-| `0x61DDB0` | `C_vt61DDB0` | 13 | 3 | — | 2 | 14 |
-| `0x61DE70` | `C_vt61DE70` | 16 | 1 | — | 9 | 8 |
-| `0x61DEB8` | `C_vt61DEB8` | 16 | 1 | — | 8 | 9 |
-| `0x61DF78` | `C_vt61DF78` | 87 | 3 | basegame | 37 | 53 |
-| `0x61E15C` | `C_vt61E15C` | 1 | 1 | — | 0 | 2 |
-| `0x61E328` | `C_vt61E328` | 214 | 0 | — | 69 | 145 |
-| `0x61E8A0` | `C_vt61E8A0` | 5 | 1 | — | 0 | 6 |
-| `0x61E8C0` | `C_vt61E8C0` | 1 | 1 | — | 1 | 1 |
-| `0x61E948` | `C_vt61E948` | 1 | 1 | — | 1 | 1 |
-| `0x61E9CC` | `C_diam_map` | 67 | 0 | diam_map | 26 | 41 |
-| `0x61EAD8` | `C_vt61EAD8` | 89 | 0 | panel_ez | 32 | 57 |
-| `0x61ECBC` | `C_vt61ECBC` | 89 | 1 | panel_ez | 33 | 57 |
-| `0x61EEA0` | `C_vt61EEA0` | 89 | 0 | panel_ez | 31 | 58 |
-| `0x61F084` | `C_vt61F084` | 89 | 1 | panel_ez | 31 | 59 |
-| `0x61F268` | `C_vt61F268` | 89 | 1 | panel_ez | 31 | 59 |
-| `0x61F3CC` | `C_vt61F3CC` | 91 | 1 | panel_ez | 33 | 59 |
-| `0x61F5B8` | `C_vt61F5B8` | 89 | 0 | panel_ez | 31 | 58 |
-| `0x61F71C` | `C_vt61F71C` | 89 | 1 | panel_ez | 31 | 59 |
-| `0x61F900` | `C_vt61F900` | 89 | 1 | panel_ez | 31 | 59 |
-| `0x61FB64` | `C_vt61FB64` | 89 | 1 | panel_ez | 31 | 59 |
-| `0x61FD48` | `C_vt61FD48` | 89 | 0 | panel_ez | 31 | 58 |
-| `0x61FEAC` | `C_vt61FEAC` | 89 | 1 | panel_ez | 31 | 59 |
-| `0x620090` | `C_TribeTechHelpScreen` | 87 | 5 | TribeTechHelpScreen, panel_ez | 29 | 63 |
-| `0x620274` | `C_TribePopUpHelp` | 62 | 0 | TribePopUpHelp | 26 | 36 |
-| `0x6203EC` | `C_vt6203EC` | 89 | 1 | panel_ez | 30 | 60 |
-| `0x6205D0` | `C_vt6205D0` | 190 | 0 | — | 133 | 57 |
-| `0x62094C` | `C_vt62094C` | 3 | 1 | — | 0 | 4 |
-| `0x620A64` | `C_vt620A64` | 43 | 1 | — | 29 | 15 |
-| `0x620B74` | `C_vt620B74` | 1 | 1 | — | 1 | 1 |
-| `0x620BF8` | `C_vt620BF8` | 1 | 1 | — | 0 | 2 |
-| `0x620C7C` | `C_vt620C7C` | 26 | 0 | — | 7 | 19 |
-| `0x620D6C` | `C_vt620D6C` | 25 | 1 | — | 13 | 13 |
-| `0x620E50` | `C_vt620E50` | 26 | 0 | — | 7 | 19 |
-| `0x620F40` | `C_vt620F40` | 26 | 1 | — | 16 | 11 |
-| `0x621028` | `C_vt621028` | 26 | 1 | — | 8 | 19 |
-| `0x621110` | `C_vt621110` | 25 | 1 | — | 10 | 16 |
-| `0x621200` | `C_vt621200` | 25 | 1 | — | 12 | 14 |
-| `0x6213C0` | `C_vt6213C0` | 15 | 2 | — | 1 | 16 |
-| `0x621518` | `C_vt621518` | 214 | 0 | — | 72 | 142 |
-| `0x6218FC` | `C_vt6218FC` | 42 | 1 | — | 29 | 14 |
-| `0x621A28` | `C_vt621A28` | 194 | 0 | — | 99 | 95 |
-| `0x621E20` | `C_vt621E20` | 6 | 1 | — | 0 | 7 |
+| `0x61C524` | `C_vt61C524` | 24 | 1 | — | 7 | 18 |
+| `0x61C62C` | `C_vt61C62C` | 24 | 0 | — | 8 | 16 |
+| `0x61C71C` | `C_vt61C71C` | 24 | 1 | — | 9 | 16 |
+| `0x61C800` | `C_vt61C800` | 24 | 0 | — | 8 | 16 |
+| `0x61C8E4` | `C_vt61C8E4` | 24 | 0 | — | 6 | 18 |
+| `0x61C9D4` | `C_vt61C9D4` | 24 | 0 | — | 9 | 15 |
+| `0x61CAB4` | `C_vt61CAB4` | 8 | 0 | — | 3 | 5 |
+| `0x61CB58` | `C_vt61CB58` | 24 | 0 | — | 8 | 16 |
+| `0x61CC40` | `C_vt61CC40` | 24 | 1 | — | 8 | 17 |
+| `0x61CD2C` | `C_vt61CD2C` | 24 | 1 | — | 7 | 18 |
+| `0x61CE24` | `C_vt61CE24` | 204 | 1 | — | 87 | 118 |
+| `0x61D1D8` | `C_vt61D1D8` | 25 | 0 | — | 6 | 19 |
+| `0x61D2C0` | `C_vt61D2C0` | 24 | 0 | — | 10 | 14 |
+| `0x61D320` | `C_vt61D320` | 1 | 1 | — | 2 | 0 |
+| `0x61D324` | `C_vt61D324` | 1 | 1 | — | 2 | 0 |
+| `0x61D328` | `C_vt61D328` | 18 | 2 | — | 14 | 6 |
+| `0x61D380` | `C_vt61D380` | 1 | 1 | — | 2 | 0 |
+| `0x61D384` | `C_vt61D384` | 23 | 3 | — | 15 | 11 |
+| `0x61D460` | `C_vt61D460` | 16 | 1 | — | 13 | 4 |
+| `0x61D4A0` | `C_vt61D4A0` | 16 | 1 | — | 14 | 3 |
+| `0x61D4E0` | `C_vt61D4E0` | 1 | 1 | — | 1 | 1 |
+| `0x61D4E4` | `C_vt61D4E4` | 1 | 1 | — | 1 | 1 |
+| `0x61D4E8` | `C_vt61D4E8` | 15 | 1 | — | 15 | 1 |
+| `0x61D524` | `C_vt61D524` | 1 | 1 | — | 2 | 0 |
+| `0x61D5A8` | `C_vt61D5A8` | 23 | 0 | — | 18 | 5 |
+| `0x61D604` | `C_vt61D604` | 1 | 1 | — | 2 | 0 |
+| `0x61D608` | `C_vt61D608` | 15 | 0 | — | 14 | 1 |
+| `0x61D6C4` | `C_vt61D6C4` | 1 | 1 | — | 2 | 0 |
+| `0x61D6C8` | `C_vt61D6C8` | 15 | 1 | — | 15 | 1 |
+| `0x61D704` | `C_vt61D704` | 15 | 1 | — | 15 | 1 |
+| `0x61D7C0` | `C_vt61D7C0` | 16 | 1 | — | 15 | 2 |
+| `0x61D890` | `C_vt61D890` | 57 | 1 | — | 8 | 50 |
+| `0x61DA40` | `C_vt61DA40` | 187 | 0 | — | 134 | 53 |
+| `0x61DDB0` | `C_vt61DDB0` | 13 | 3 | — | 3 | 13 |
+| `0x61DE70` | `C_vt61DE70` | 16 | 1 | — | 10 | 7 |
+| `0x61DEB8` | `C_vt61DEB8` | 16 | 1 | — | 9 | 8 |
+| `0x61DF78` | `C_vt61DF78` | 87 | 3 | basegame | 38 | 52 |
+| `0x61E15C` | `C_vt61E15C` | 1 | 1 | — | 1 | 1 |
+| `0x61E328` | `C_vt61E328` | 214 | 0 | — | 71 | 143 |
+| `0x61E8A0` | `C_vt61E8A0` | 5 | 1 | — | 1 | 5 |
+| `0x61E8C0` | `C_vt61E8C0` | 1 | 1 | — | 2 | 0 |
+| `0x61E948` | `C_vt61E948` | 1 | 1 | — | 2 | 0 |
+| `0x61E9CC` | `C_diam_map` | 67 | 0 | diam_map | 27 | 40 |
+| `0x61EAD8` | `C_vt61EAD8` | 89 | 0 | panel_ez | 33 | 56 |
+| `0x61ECBC` | `C_vt61ECBC` | 89 | 1 | panel_ez | 34 | 56 |
+| `0x61EEA0` | `C_vt61EEA0` | 89 | 0 | panel_ez | 32 | 57 |
+| `0x61F084` | `C_vt61F084` | 89 | 1 | panel_ez | 32 | 58 |
+| `0x61F268` | `C_vt61F268` | 89 | 1 | panel_ez | 32 | 58 |
+| `0x61F3CC` | `C_vt61F3CC` | 91 | 1 | panel_ez | 34 | 58 |
+| `0x61F5B8` | `C_vt61F5B8` | 89 | 0 | panel_ez | 32 | 57 |
+| `0x61F71C` | `C_vt61F71C` | 89 | 1 | panel_ez | 32 | 58 |
+| `0x61F900` | `C_vt61F900` | 89 | 1 | panel_ez | 32 | 58 |
+| `0x61FB64` | `C_vt61FB64` | 89 | 1 | panel_ez | 32 | 58 |
+| `0x61FD48` | `C_vt61FD48` | 89 | 0 | panel_ez | 32 | 57 |
+| `0x61FEAC` | `C_vt61FEAC` | 89 | 1 | panel_ez | 32 | 58 |
+| `0x620090` | `C_TribeTechHelpScreen` | 87 | 5 | TribeTechHelpScreen, panel_ez | 30 | 62 |
+| `0x620274` | `C_TribePopUpHelp` | 62 | 0 | TribePopUpHelp | 27 | 35 |
+| `0x6203EC` | `C_vt6203EC` | 89 | 1 | panel_ez | 31 | 59 |
+| `0x6205D0` | `C_vt6205D0` | 190 | 0 | — | 134 | 56 |
+| `0x62094C` | `C_vt62094C` | 3 | 1 | — | 1 | 3 |
+| `0x620A64` | `C_vt620A64` | 43 | 1 | — | 30 | 14 |
+| `0x620B74` | `C_vt620B74` | 1 | 1 | — | 2 | 0 |
+| `0x620BF8` | `C_vt620BF8` | 1 | 1 | — | 1 | 1 |
+| `0x620C7C` | `C_vt620C7C` | 26 | 0 | — | 8 | 18 |
+| `0x620D6C` | `C_vt620D6C` | 25 | 1 | — | 14 | 12 |
+| `0x620E50` | `C_vt620E50` | 26 | 0 | — | 8 | 18 |
+| `0x620F40` | `C_vt620F40` | 26 | 1 | — | 17 | 10 |
+| `0x621028` | `C_vt621028` | 26 | 1 | — | 9 | 18 |
+| `0x621110` | `C_vt621110` | 25 | 1 | — | 11 | 15 |
+| `0x621200` | `C_vt621200` | 25 | 1 | — | 13 | 13 |
+| `0x6213C0` | `C_vt6213C0` | 15 | 2 | — | 2 | 15 |
+| `0x621518` | `C_vt621518` | 214 | 0 | — | 74 | 140 |
+| `0x6218FC` | `C_vt6218FC` | 42 | 1 | — | 30 | 13 |
+| `0x621A28` | `C_vt621A28` | 194 | 0 | — | 100 | 94 |
+| `0x621E20` | `C_vt621E20` | 6 | 1 | — | 1 | 6 |
 | `0x621EC8` | `C_vt621EC8` | 1 | 0 | — | 0 | 1 |
 | `0x621ECC` | `C_vt621ECC` | 1 | 0 | — | 0 | 1 |
 | `0x621F64` | `C_vt621F64` | 2 | 0 | — | 0 | 2 |
-| `0x621F6C` | `C_vt621F6C` | 61 | 0 | — | 26 | 35 |
-| `0x622060` | `C_vt622060` | 87 | 2 | panel_ez | 30 | 59 |
-| `0x6222D4` | `C_vt6222D4` | 1 | 1 | — | 1 | 1 |
-| `0x622368` | `C_vt622368` | 83 | 2 | — | 28 | 57 |
-| `0x6224E4` | `C_pnl_btn` | 63 | 0 | pnl_btn | 19 | 44 |
-| `0x6225E0` | `C_vt6225E0` | 89 | 0 | panel_ez | 31 | 58 |
-| `0x622744` | `C_vt622744` | 61 | 2 | — | 26 | 37 |
-| `0x622838` | `C_pnl_btn` | 63 | 0 | pnl_btn | 19 | 44 |
-| `0x622934` | `C_pnl_edit` | 61 | 5 | pnl_edit | 28 | 38 |
-| `0x622A28` | `C_pnl_inp` | 74 | 0 | pnl_inp | 26 | 48 |
-| `0x622B50` | `C_pnl_lst` | 73 | 14 | pnl_lst | 24 | 63 |
-| `0x622C74` | `C_pnl_msg` | 62 | 1 | pnl_msg | 28 | 35 |
-| `0x622D6C` | `C_pnl_pic` | 61 | 0 | pnl_pic | 26 | 35 |
-| `0x622E60` | `C_pnl_scbr` | 61 | 1 | pnl_scbr | 24 | 38 |
-| `0x622F54` | `C_vt622F54` | 87 | 0 | panel_ez | 32 | 55 |
-| `0x6230B0` | `C_vt6230B0` | 61 | 1 | — | 25 | 37 |
-| `0x6231A4` | `C_vt6231A4` | 61 | 1 | — | 25 | 37 |
-| `0x623318` | `C_pnl_txt` | 73 | 0 | pnl_txt | 26 | 47 |
-| `0x6234C8` | `C_vt6234C8` | 93 | 1 | panel_ez | 33 | 61 |
-| `0x62363C` | `C_vt62363C` | 2 | 1 | — | 0 | 3 |
-| `0x6236D0` | `C_vt6236D0` | 2 | 1 | — | 0 | 3 |
-| `0x6237E0` | `C_vt6237E0` | 8 | 1 | — | 0 | 9 |
-| `0x623804` | `C_vt623804` | 2 | 0 | — | 0 | 2 |
-| `0x62388C` | `C_vt62388C` | 2 | 0 | — | 0 | 2 |
-| `0x623920` | `C_vt623920` | 2 | 1 | — | 0 | 3 |
-| `0x6239A8` | `C_vt6239A8` | 13 | 1 | — | 0 | 14 |
-| `0x623A5C` | `C_vt623A5C` | 2 | 0 | — | 0 | 2 |
-| `0x623AE4` | `C_vt623AE4` | 8 | 1 | — | 2 | 7 |
-| `0x623B20` | `C_vt623B20` | 2 | 1 | — | 0 | 3 |
-| `0x623BA8` | `C_vt623BA8` | 13 | 1 | — | 1 | 13 |
-| `0x623C5C` | `C_vt623C5C` | 61 | 1 | — | 25 | 37 |
-| `0x623E50` | `C_vt623E50` | 3 | 1 | — | 1 | 3 |
-| `0x623E5C` | `C_vt623E5C` | 4 | 1 | — | 2 | 3 |
-| `0x623F24` | `C_scr_ach` | 87 | 2 | panel_ez, scr_ach | 30 | 59 |
-| `0x624100` | `C_vt624100` | 87 | 1 | panel_ez | 32 | 56 |
-| `0x6242DC` | `C_vt6242DC` | 87 | 1 | panel_ez | 32 | 56 |
-| `0x6244B8` | `C_vt6244B8` | 87 | 0 | panel_ez | 32 | 55 |
-| `0x624614` | `C_vt624614` | 87 | 2 | panel_ez | 31 | 58 |
-| `0x624770` | `C_scr_cred` | 73 | 1 | scr_cred | 27 | 47 |
-| `0x624914` | `C_scr_game` | 87 | 1 | panel_ez, scr_game | 30 | 58 |
-| `0x624AF4` | `C_vt624AF4` | 87 | 0 | panel_ez | 32 | 55 |
-| `0x624CD0` | `C_vt624CD0` | 87 | 0 | panel_ez | 32 | 55 |
-| `0x624E2C` | `C_vt624E2C` | 87 | 0 | panel_ez | 32 | 55 |
-| `0x625008` | `C_vt625008` | 87 | 0 | panel_ez | 31 | 56 |
-| `0x6251E4` | `C_vt6251E4` | 87 | 3 | panel_ez | 32 | 58 |
-| `0x625340` | `C_vt625340` | 87 | 0 | panel_ez | 32 | 55 |
-| `0x62551C` | `C_vt62551C` | 87 | 0 | panel_ez | 31 | 56 |
-| `0x6256F8` | `C_vt6256F8` | 93 | 0 | panel_ez | 31 | 62 |
-| `0x6258F8` | `C_vt6258F8` | 93 | 0 | panel_ez | 31 | 62 |
-| `0x625A6C` | `C_vt625A6C` | 87 | 0 | panel_ez | 32 | 55 |
-| `0x625C48` | `C_vt625C48` | 87 | 1 | panel_ez | 32 | 56 |
-| `0x625DA4` | `C_vt625DA4` | 87 | 1 | panel_ez | 32 | 56 |
-| `0x625F80` | `C_TRIBE_Screen_Options` | 87 | 3 | TRIBE_Screen_Options, panel_ez | 30 | 60 |
-| `0x62615C` | `C_vt62615C` | 87 | 1 | panel_ez | 32 | 56 |
-| `0x626338` | `C_scr_sed` | 87 | 2 | panel_ez, scr_sed | 30 | 59 |
-| `0x626614` | `C_vt626614` | 87 | 0 | panel_ez | 32 | 55 |
-| `0x6267F0` | `C_vt6267F0` | 87 | 0 | panel_ez | 31 | 56 |
-| `0x62694C` | `C_vt62694C` | 87 | 0 | panel_ez | 32 | 55 |
-| `0x626B28` | `C_scr_vc` | 87 | 1 | panel_ez, scr_vc | 31 | 57 |
-| `0x626E04` | `C_tpnl_obj` | 64 | 0 | tpnl_obj | 23 | 41 |
-| `0x627094` | `C_vt627094` | 186 | 0 | — | 132 | 54 |
-| `0x627428` | `C_vt627428` | 226 | 4 | — | 57 | 173 |
-| `0x627844` | `C_vt627844` | 223 | 0 | — | 58 | 165 |
-| `0x627D48` | `C_vt627D48` | 1 | 1 | — | 0 | 2 |
-| `0x627D4C` | `C_vt627D4C` | 186 | 0 | — | 133 | 53 |
-| `0x6280B4` | `C_vt6280B4` | 24 | 0 | — | 5 | 19 |
-| `0x62819C` | `C_vt62819C` | 24 | 0 | — | 5 | 19 |
-| `0x628280` | `C_vt628280` | 24 | 1 | — | 6 | 19 |
-| `0x628368` | `C_vt628368` | 24 | 0 | — | 6 | 18 |
-| `0x628448` | `C_vt628448` | 24 | 0 | — | 9 | 15 |
-| `0x628528` | `C_vt628528` | 24 | 0 | — | 9 | 15 |
-| `0x628608` | `C_vt628608` | 24 | 0 | — | 8 | 16 |
-| `0x6286E8` | `C_vt6286E8` | 24 | 2 | — | 5 | 21 |
-| `0x6287CC` | `C_vt6287CC` | 24 | 0 | — | 6 | 18 |
-| `0x6288B8` | `C_vt6288B8` | 24 | 0 | — | 4 | 20 |
-| `0x628998` | `C_vt628998` | 24 | 0 | — | 8 | 16 |
-| `0x6289FC` | `C_vt6289FC` | 8 | 1 | — | 3 | 6 |
-| `0x628A9C` | `C_vt628A9C` | 24 | 1 | — | 7 | 18 |
-| `0x628B7C` | `C_vt628B7C` | 24 | 1 | — | 6 | 19 |
-| `0x628C60` | `C_vt628C60` | 24 | 1 | — | 7 | 18 |
-| `0x628D40` | `C_vt628D40` | 24 | 0 | — | 6 | 18 |
-| `0x628E24` | `C_vt628E24` | 24 | 1 | — | 8 | 17 |
-| `0x628F04` | `C_vt628F04` | 24 | 0 | — | 6 | 18 |
-| `0x628FE4` | `C_vt628FE4` | 24 | 2 | — | 6 | 20 |
-| `0x6290C4` | `C_vt6290C4` | 24 | 1 | — | 7 | 18 |
-| `0x6291AC` | `C_vt6291AC` | 24 | 1 | — | 6 | 19 |
-| `0x629294` | `C_vt629294` | 24 | 1 | — | 8 | 17 |
-| `0x629374` | `C_vt629374` | 24 | 1 | — | 7 | 18 |
-| `0x629458` | `C_vt629458` | 24 | 1 | — | 8 | 17 |
-| `0x6295D8` | `C_vt6295D8` | 18 | 1 | — | 14 | 5 |
-| `0x6296A0` | `C_vt6296A0` | 23 | 1 | — | 15 | 9 |
-| `0x62983C` | `C_vt62983C` | 15 | 1 | — | 12 | 4 |
-| `0x6299CC` | `C_vt6299CC` | 23 | 3 | — | 14 | 12 |
-| `0x629AB0` | `C_vt629AB0` | 16 | 1 | — | 14 | 3 |
-| `0x629B70` | `C_vt629B70` | 1 | 1 | — | 1 | 1 |
-| `0x629B74` | `C_vt629B74` | 16 | 1 | — | 12 | 5 |
-| `0x629C38` | `C_vt629C38` | 1 | 1 | — | 0 | 2 |
-| `0x629C5C` | `C_vt629C5C` | 17 | 3 | — | 12 | 8 |
-| `0x629E10` | `C_vt629E10` | 57 | 0 | — | 7 | 50 |
-| `0x629EF4` | `C_vt629EF4` | 57 | 0 | — | 7 | 50 |
-| `0x629FD8` | `C_vt629FD8` | 57 | 1 | — | 5 | 53 |
-| `0x62A0C0` | `C_vt62A0C0` | 59 | 0 | — | 7 | 52 |
-| `0x62A1AC` | `C_vt62A1AC` | 59 | 0 | — | 4 | 55 |
-| `0x62A298` | `C_vt62A298` | 57 | 0 | — | 7 | 50 |
-| `0x62A37C` | `C_vt62A37C` | 57 | 0 | — | 8 | 49 |
-| `0x62A460` | `C_vt62A460` | 57 | 0 | — | 8 | 49 |
-| `0x62A544` | `C_vt62A544` | 57 | 0 | — | 4 | 53 |
-| `0x62A628` | `C_vt62A628` | 57 | 2 | — | 8 | 51 |
-| `0x62A70C` | `C_vt62A70C` | 57 | 0 | — | 5 | 52 |
-| `0x62A7F0` | `C_vt62A7F0` | 58 | 0 | — | 5 | 53 |
-| `0x62A8D8` | `C_vt62A8D8` | 57 | 0 | — | 8 | 49 |
+| `0x621F6C` | `C_vt621F6C` | 61 | 0 | — | 27 | 34 |
+| `0x622060` | `C_vt622060` | 87 | 2 | panel_ez | 31 | 58 |
+| `0x6222D4` | `C_vt6222D4` | 1 | 1 | — | 2 | 0 |
+| `0x622368` | `C_vt622368` | 83 | 2 | — | 29 | 56 |
+| `0x6224E4` | `C_pnl_btn` | 63 | 0 | pnl_btn | 20 | 43 |
+| `0x6225E0` | `C_vt6225E0` | 89 | 0 | panel_ez | 32 | 57 |
+| `0x622744` | `C_vt622744` | 61 | 2 | — | 27 | 36 |
+| `0x622838` | `C_pnl_btn` | 63 | 0 | pnl_btn | 20 | 43 |
+| `0x622934` | `C_pnl_edit` | 61 | 5 | pnl_edit | 29 | 37 |
+| `0x622A28` | `C_pnl_inp` | 74 | 0 | pnl_inp | 27 | 47 |
+| `0x622B50` | `C_pnl_lst` | 73 | 14 | pnl_lst | 25 | 62 |
+| `0x622C74` | `C_pnl_msg` | 62 | 1 | pnl_msg | 29 | 34 |
+| `0x622D6C` | `C_pnl_pic` | 61 | 0 | pnl_pic | 27 | 34 |
+| `0x622E60` | `C_pnl_scbr` | 61 | 1 | pnl_scbr | 25 | 37 |
+| `0x622F54` | `C_vt622F54` | 87 | 0 | panel_ez | 33 | 54 |
+| `0x6230B0` | `C_vt6230B0` | 61 | 1 | — | 26 | 36 |
+| `0x6231A4` | `C_vt6231A4` | 61 | 1 | — | 26 | 36 |
+| `0x623318` | `C_pnl_txt` | 73 | 0 | pnl_txt | 27 | 46 |
+| `0x6234C8` | `C_vt6234C8` | 93 | 1 | panel_ez | 34 | 60 |
+| `0x62363C` | `C_vt62363C` | 2 | 1 | — | 1 | 2 |
+| `0x6236D0` | `C_vt6236D0` | 2 | 1 | — | 1 | 2 |
+| `0x6237E0` | `C_vt6237E0` | 8 | 1 | — | 1 | 8 |
+| `0x623804` | `C_vt623804` | 2 | 0 | — | 1 | 1 |
+| `0x62388C` | `C_vt62388C` | 2 | 0 | — | 1 | 1 |
+| `0x623920` | `C_vt623920` | 2 | 1 | — | 1 | 2 |
+| `0x6239A8` | `C_vt6239A8` | 13 | 1 | — | 1 | 13 |
+| `0x623A5C` | `C_vt623A5C` | 2 | 0 | — | 1 | 1 |
+| `0x623AE4` | `C_vt623AE4` | 8 | 1 | — | 3 | 6 |
+| `0x623B20` | `C_vt623B20` | 2 | 1 | — | 1 | 2 |
+| `0x623BA8` | `C_vt623BA8` | 13 | 1 | — | 2 | 12 |
+| `0x623C5C` | `C_vt623C5C` | 61 | 1 | — | 26 | 36 |
+| `0x623E50` | `C_vt623E50` | 3 | 1 | — | 2 | 2 |
+| `0x623E5C` | `C_vt623E5C` | 4 | 1 | — | 3 | 2 |
+| `0x623F24` | `C_scr_ach` | 87 | 2 | panel_ez, scr_ach | 31 | 58 |
+| `0x624100` | `C_vt624100` | 87 | 1 | panel_ez | 33 | 55 |
+| `0x6242DC` | `C_vt6242DC` | 87 | 1 | panel_ez | 33 | 55 |
+| `0x6244B8` | `C_vt6244B8` | 87 | 0 | panel_ez | 33 | 54 |
+| `0x624614` | `C_vt624614` | 87 | 2 | panel_ez | 32 | 57 |
+| `0x624770` | `C_scr_cred` | 73 | 1 | scr_cred | 28 | 46 |
+| `0x624914` | `C_scr_game` | 87 | 1 | panel_ez, scr_game | 31 | 57 |
+| `0x624AF4` | `C_vt624AF4` | 87 | 0 | panel_ez | 33 | 54 |
+| `0x624CD0` | `C_vt624CD0` | 87 | 0 | panel_ez | 33 | 54 |
+| `0x624E2C` | `C_vt624E2C` | 87 | 0 | panel_ez | 33 | 54 |
+| `0x625008` | `C_vt625008` | 87 | 0 | panel_ez | 32 | 55 |
+| `0x6251E4` | `C_vt6251E4` | 87 | 3 | panel_ez | 33 | 57 |
+| `0x625340` | `C_vt625340` | 87 | 0 | panel_ez | 33 | 54 |
+| `0x62551C` | `C_vt62551C` | 87 | 0 | panel_ez | 32 | 55 |
+| `0x6256F8` | `C_vt6256F8` | 93 | 0 | panel_ez | 32 | 61 |
+| `0x6258F8` | `C_vt6258F8` | 93 | 0 | panel_ez | 32 | 61 |
+| `0x625A6C` | `C_vt625A6C` | 87 | 0 | panel_ez | 33 | 54 |
+| `0x625C48` | `C_vt625C48` | 87 | 1 | panel_ez | 33 | 55 |
+| `0x625DA4` | `C_vt625DA4` | 87 | 1 | panel_ez | 33 | 55 |
+| `0x625F80` | `C_TRIBE_Screen_Options` | 87 | 3 | TRIBE_Screen_Options, panel_ez | 31 | 59 |
+| `0x62615C` | `C_vt62615C` | 87 | 1 | panel_ez | 33 | 55 |
+| `0x626338` | `C_scr_sed` | 87 | 2 | panel_ez, scr_sed | 31 | 58 |
+| `0x626614` | `C_vt626614` | 87 | 0 | panel_ez | 33 | 54 |
+| `0x6267F0` | `C_vt6267F0` | 87 | 0 | panel_ez | 32 | 55 |
+| `0x62694C` | `C_vt62694C` | 87 | 0 | panel_ez | 33 | 54 |
+| `0x626B28` | `C_scr_vc` | 87 | 1 | panel_ez, scr_vc | 32 | 56 |
+| `0x626E04` | `C_tpnl_obj` | 64 | 0 | tpnl_obj | 24 | 40 |
+| `0x627094` | `C_vt627094` | 186 | 0 | — | 133 | 53 |
+| `0x627428` | `C_vt627428` | 226 | 4 | — | 58 | 172 |
+| `0x627844` | `C_vt627844` | 223 | 0 | — | 60 | 163 |
+| `0x627D48` | `C_vt627D48` | 1 | 1 | — | 1 | 1 |
+| `0x627D4C` | `C_vt627D4C` | 186 | 0 | — | 134 | 52 |
+| `0x6280B4` | `C_vt6280B4` | 24 | 0 | — | 6 | 18 |
+| `0x62819C` | `C_vt62819C` | 24 | 0 | — | 6 | 18 |
+| `0x628280` | `C_vt628280` | 24 | 1 | — | 7 | 18 |
+| `0x628368` | `C_vt628368` | 24 | 0 | — | 7 | 17 |
+| `0x628448` | `C_vt628448` | 24 | 0 | — | 10 | 14 |
+| `0x628528` | `C_vt628528` | 24 | 0 | — | 10 | 14 |
+| `0x628608` | `C_vt628608` | 24 | 0 | — | 9 | 15 |
+| `0x6286E8` | `C_vt6286E8` | 24 | 2 | — | 6 | 20 |
+| `0x6287CC` | `C_vt6287CC` | 24 | 0 | — | 7 | 17 |
+| `0x6288B8` | `C_vt6288B8` | 24 | 0 | — | 5 | 19 |
+| `0x628998` | `C_vt628998` | 24 | 0 | — | 9 | 15 |
+| `0x6289FC` | `C_vt6289FC` | 8 | 1 | — | 4 | 5 |
+| `0x628A9C` | `C_vt628A9C` | 24 | 1 | — | 8 | 17 |
+| `0x628B7C` | `C_vt628B7C` | 24 | 1 | — | 7 | 18 |
+| `0x628C60` | `C_vt628C60` | 24 | 1 | — | 8 | 17 |
+| `0x628D40` | `C_vt628D40` | 24 | 0 | — | 7 | 17 |
+| `0x628E24` | `C_vt628E24` | 24 | 1 | — | 9 | 16 |
+| `0x628F04` | `C_vt628F04` | 24 | 0 | — | 7 | 17 |
+| `0x628FE4` | `C_vt628FE4` | 24 | 2 | — | 7 | 19 |
+| `0x6290C4` | `C_vt6290C4` | 24 | 1 | — | 8 | 17 |
+| `0x6291AC` | `C_vt6291AC` | 24 | 1 | — | 7 | 18 |
+| `0x629294` | `C_vt629294` | 24 | 1 | — | 9 | 16 |
+| `0x629374` | `C_vt629374` | 24 | 1 | — | 8 | 17 |
+| `0x629458` | `C_vt629458` | 24 | 1 | — | 9 | 16 |
+| `0x6295D8` | `C_vt6295D8` | 18 | 1 | — | 15 | 4 |
+| `0x6296A0` | `C_vt6296A0` | 23 | 1 | — | 16 | 8 |
+| `0x62983C` | `C_vt62983C` | 15 | 1 | — | 13 | 3 |
+| `0x6299CC` | `C_vt6299CC` | 23 | 3 | — | 15 | 11 |
+| `0x629AB0` | `C_vt629AB0` | 16 | 1 | — | 15 | 2 |
+| `0x629B70` | `C_vt629B70` | 1 | 1 | — | 2 | 0 |
+| `0x629B74` | `C_vt629B74` | 16 | 1 | — | 13 | 4 |
+| `0x629C38` | `C_vt629C38` | 1 | 1 | — | 1 | 1 |
+| `0x629C5C` | `C_vt629C5C` | 17 | 3 | — | 13 | 7 |
+| `0x629E10` | `C_vt629E10` | 57 | 0 | — | 8 | 49 |
+| `0x629EF4` | `C_vt629EF4` | 57 | 0 | — | 8 | 49 |
+| `0x629FD8` | `C_vt629FD8` | 57 | 1 | — | 6 | 52 |
+| `0x62A0C0` | `C_vt62A0C0` | 59 | 0 | — | 8 | 51 |
+| `0x62A1AC` | `C_vt62A1AC` | 59 | 0 | — | 5 | 54 |
+| `0x62A298` | `C_vt62A298` | 57 | 0 | — | 8 | 49 |
+| `0x62A37C` | `C_vt62A37C` | 57 | 0 | — | 9 | 48 |
+| `0x62A460` | `C_vt62A460` | 57 | 0 | — | 9 | 48 |
+| `0x62A544` | `C_vt62A544` | 57 | 0 | — | 5 | 52 |
+| `0x62A628` | `C_vt62A628` | 57 | 2 | — | 9 | 50 |
+| `0x62A70C` | `C_vt62A70C` | 57 | 0 | — | 6 | 51 |
+| `0x62A7F0` | `C_vt62A7F0` | 58 | 0 | — | 6 | 52 |
+| `0x62A8D8` | `C_vt62A8D8` | 57 | 0 | — | 9 | 48 |
 | `0x62AA3C` | `C_vt62AA3C` | 4 | 0 | — | 1 | 3 |
-| `0x62AAE0` | `C_vt62AAE0` | 7 | 1 | — | 1 | 7 |
-| `0x62AC80` | `C_vt62AC80` | 89 | 1 | panel_ez | 31 | 59 |
-| `0x62AF98` | `C_vt62AF98` | 3 | 1 | — | 1 | 3 |
-| `0x62B024` | `C_vt62B024` | 1 | 1 | — | 0 | 2 |
-| `0x62B0A8` | `C_vt62B0A8` | 27 | 1 | — | 9 | 19 |
-| `0x62B198` | `C_vt62B198` | 26 | 1 | — | 8 | 19 |
+| `0x62AAE0` | `C_vt62AAE0` | 7 | 1 | — | 2 | 6 |
+| `0x62AC80` | `C_vt62AC80` | 89 | 1 | panel_ez | 32 | 58 |
+| `0x62AF98` | `C_vt62AF98` | 3 | 1 | — | 2 | 2 |
+| `0x62B024` | `C_vt62B024` | 1 | 1 | — | 1 | 1 |
+| `0x62B0A8` | `C_vt62B0A8` | 27 | 1 | — | 10 | 18 |
+| `0x62B198` | `C_vt62B198` | 26 | 1 | — | 9 | 18 |
 | `0x62B214` | `C_vt62B214` | 4 | 0 | — | 0 | 4 |
-| `0x62B224` | `C_vt62B224` | 25 | 1 | — | 13 | 13 |
-| `0x62B308` | `C_vt62B308` | 18 | 1 | — | 2 | 17 |
-| `0x62B450` | `C_vt62B450` | 6 | 1 | — | 1 | 6 |
+| `0x62B224` | `C_vt62B224` | 25 | 1 | — | 14 | 12 |
+| `0x62B308` | `C_vt62B308` | 18 | 1 | — | 3 | 16 |
+| `0x62B450` | `C_vt62B450` | 6 | 1 | — | 2 | 5 |
 | `0x62B4E8` | `C_vt62B4E8` | 1 | 0 | — | 0 | 1 |
-| `0x62B5A0` | `C_vt62B5A0` | 101 | 1 | — | 11 | 91 |
-| `0x62B750` | `C_vt62B750` | 101 | 1 | — | 12 | 90 |
-| `0x62B970` | `C_tpnl_btn` | 63 | 0 | tpnl_btn, tpnl_inv | 19 | 44 |
-| `0x62BAEC` | `C_tpnl_inv` | 61 | 1 | tpnl_inv | 26 | 36 |
-| `0x62BC64` | `C_tpnl_obj` | 63 | 3 | tpnl_obj | 24 | 42 |
-| `0x62BD70` | `C_tpnl_per` | 61 | 1 | tpnl_per | 27 | 35 |
-| `0x62BEF0` | `C_tpnl_tim` | 61 | 1 | tpnl_tim | 25 | 37 |
-| `0x62C064` | `C_vt62C064` | 62 | 1 | — | 26 | 37 |
-| `0x62C1E0` | `C_vt62C1E0` | 87 | 73 | basegame | 70 | 90 |
-| `0x62C470` | `C_vt62C470` | 3 | 1 | — | 2 | 2 |
-| `0x62C47C` | `C_vt62C47C` | 4 | 1 | — | 2 | 3 |
+| `0x62B5A0` | `C_vt62B5A0` | 101 | 1 | — | 12 | 90 |
+| `0x62B750` | `C_vt62B750` | 101 | 1 | — | 13 | 89 |
+| `0x62B970` | `C_tpnl_btn` | 63 | 0 | tpnl_btn, tpnl_inv | 20 | 43 |
+| `0x62BAEC` | `C_tpnl_inv` | 61 | 1 | tpnl_inv | 27 | 35 |
+| `0x62BC64` | `C_tpnl_obj` | 63 | 3 | tpnl_obj | 25 | 41 |
+| `0x62BD70` | `C_tpnl_per` | 61 | 1 | tpnl_per | 28 | 34 |
+| `0x62BEF0` | `C_tpnl_tim` | 61 | 1 | tpnl_tim | 26 | 36 |
+| `0x62C064` | `C_vt62C064` | 62 | 1 | — | 27 | 36 |
+| `0x62C1E0` | `C_vt62C1E0` | 87 | 73 | basegame | 71 | 89 |
+| `0x62C470` | `C_vt62C470` | 3 | 1 | — | 3 | 1 |
+| `0x62C47C` | `C_vt62C47C` | 4 | 1 | — | 3 | 2 |
 | `0x62C5A4` | `C_vt62C5A4` | 4 | 0 | — | 0 | 4 |
-| `0x62C634` | `C_diam_map` | 70 | 0 | diam_map | 20 | 50 |
-| `0x62C7CC` | `C_vt62C7CC` | 78 | 1 | — | 19 | 60 |
-| `0x62C9CC` | `C_vt62C9CC` | 71 | 1 | — | 5 | 67 |
+| `0x62C634` | `C_diam_map` | 70 | 0 | diam_map | 21 | 49 |
+| `0x62C7CC` | `C_vt62C7CC` | 78 | 1 | — | 20 | 59 |
+| `0x62C9CC` | `C_vt62C9CC` | 71 | 1 | — | 6 | 66 |
 | `0x62CBAC` | `C_vt62CBAC` | 4 | 0 | — | 0 | 4 |
-| `0x62CC3C` | `C_view` | 71 | 2 | view | 28 | 45 |
-| `0x62CEE8` | `C_diam_map` | 70 | 1 | diam_map | 21 | 50 |
-| `0x62D080` | `C_vt62D080` | 78 | 0 | — | 21 | 57 |
-| `0x62D238` | `C_vt62D238` | 71 | 1 | — | 7 | 65 |
+| `0x62CC3C` | `C_view` | 71 | 2 | view | 29 | 44 |
+| `0x62CEE8` | `C_diam_map` | 70 | 1 | diam_map | 22 | 49 |
+| `0x62D080` | `C_vt62D080` | 78 | 0 | — | 22 | 56 |
+| `0x62D238` | `C_vt62D238` | 71 | 1 | — | 8 | 64 |
 
 ## Non-virtual classes (call-site object identity)
 | Class | Evidence | Methods | Matched | Remaining |
 |---|---|---|---|---|
-| `C_cluster_403DC0` | this-edge component with no rooted object identity | 2 | 1 | 1 |
+| `C_cluster_403DC0` | this-edge component with no rooted object identity | 2 | 2 | 0 |
 | `C_cluster_405790` | this-edge component with no rooted object identity | 2 | 1 | 1 |
 | `C_cluster_408200` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_409A10` | this-edge component with no rooted object identity | 3 | 1 | 2 |
@@ -278,7 +278,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_416ED0` | this-edge component with no rooted object identity | 2 | 1 | 1 |
 | `C_cluster_417250` | this-edge component with no rooted object identity | 3 | 0 | 3 |
 | `C_cluster_419310` | this-edge component with no rooted object identity | 2 | 0 | 2 |
-| `C_cluster_41A150` | this-edge component with no rooted object identity | 2 | 1 | 1 |
+| `C_cluster_41A150` | this-edge component with no rooted object identity | 2 | 2 | 0 |
 | `C_cluster_41A410` | this-edge component with no rooted object identity | 2 | 1 | 1 |
 | `C_cluster_41CC10` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_41F470` | this-edge component with no rooted object identity | 2 | 0 | 2 |
@@ -419,7 +419,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_4AF360` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_4AF870` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_4B2730` | this-edge component with no rooted object identity | 2 | 1 | 1 |
-| `C_cluster_4B2C20` | this-edge component with no rooted object identity | 2 | 1 | 1 |
+| `C_cluster_4B2C20` | this-edge component with no rooted object identity | 2 | 2 | 0 |
 | `C_cluster_4B3220` | this-edge component with no rooted object identity | 3 | 1 | 2 |
 | `C_cluster_4B4550` | this-edge component with no rooted object identity | 2 | 2 | 0 |
 | `C_cluster_4B70F0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
@@ -437,7 +437,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_4BF6B0` | this-edge component with no rooted object identity | 6 | 1 | 5 |
 | `C_cluster_4BF790` | this-edge component with no rooted object identity | 3 | 0 | 3 |
 | `C_cluster_4BF790_member_34` | member pointer at +0x34 of C_cluster_4BF790 | 1 | 0 | 1 |
-| `C_cluster_4C25F0` | this-edge component with no rooted object identity | 2 | 1 | 1 |
+| `C_cluster_4C25F0` | this-edge component with no rooted object identity | 2 | 2 | 0 |
 | `C_cluster_4C5170` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_4C77F0` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_4CD260` | this-edge component with no rooted object identity | 2 | 0 | 2 |
@@ -504,7 +504,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_cluster_580060` | this-edge component with no rooted object identity | 3 | 1 | 2 |
 | `C_cluster_580920` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_582B90` | this-edge component with no rooted object identity | 2 | 0 | 2 |
-| `C_cluster_585FF0` | this-edge component with no rooted object identity | 2 | 1 | 1 |
+| `C_cluster_585FF0` | this-edge component with no rooted object identity | 2 | 2 | 0 |
 | `C_cluster_593D30` | this-edge component with no rooted object identity | 2 | 0 | 2 |
 | `C_cluster_594060` | this-edge component with no rooted object identity | 5 | 1 | 4 |
 | `C_cluster_5942E0` | this-edge component with no rooted object identity | 3 | 0 | 3 |
@@ -546,7 +546,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `C_global_6619B0` | every call site passes the global object at 0x6619B0 | 8 | 0 | 8 |
 | `C_global_66450C` | every call site passes the global object at 0x66450C | 1 | 0 | 1 |
 | `C_global_664510` | every call site passes the global object at 0x664510 | 1 | 0 | 1 |
-| `C_global_66451C` | every call site passes the global object at 0x66451C | 26 | 3 | 23 |
+| `C_global_66451C` | every call site passes the global object at 0x66451C | 26 | 4 | 22 |
 | `C_global_664520` | every call site passes the global object at 0x664520 | 2 | 0 | 2 |
 | `C_global_664524` | every call site passes the global object at 0x664524 | 4 | 0 | 4 |
 | `C_global_6645C4` | every call site passes the global object at 0x6645C4 | 39 | 1 | 38 |
@@ -598,11 +598,11 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | Region | Functions | Matched | WIP | Left |
 |---|---|---|---|---|
 | app | 323 | 104 | 1 | 218 |
-| crt | 647 | 21 | 2 | 624 |
+| crt | 647 | 46 | 2 | 599 |
 | engine-late | 319 | 25 | 0 | 294 |
-| game | 436 | 143 | 3 | 290 |
+| game | 436 | 143 | 4 | 289 |
 | gfx | 410 | 59 | 2 | 349 |
-| runtime-data | 20 | 0 | 0 | 20 |
+| runtime-data | 20 | 3 | 0 | 17 |
 | sim | 1283 | 228 | 0 | 1055 |
 | ui | 1230 | 181 | 3 | 1046 |
 

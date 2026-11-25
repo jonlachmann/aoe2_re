@@ -12,8 +12,8 @@
    {
     "address": "0x401150",
     "name": "sub_401150",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -177,8 +177,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -334,8 +334,8 @@
    {
     "address": "0x402DF0",
     "name": "sub_402DF0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -499,8 +499,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -656,8 +656,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -813,8 +813,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -970,8 +970,8 @@
    {
     "address": "0x4057B0",
     "name": "sub_4057B0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4058E0",
@@ -1031,8 +1031,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -1188,8 +1188,8 @@
    {
     "address": "0x406530",
     "name": "sub_406530",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -1353,8 +1353,8 @@
    {
     "address": "0x4073D0",
     "name": "sub_4073D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -1518,8 +1518,8 @@
    {
     "address": "0x407D30",
     "name": "sub_407D30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x407E50",
@@ -2238,8 +2238,8 @@
    {
     "address": "0x4089C0",
     "name": "sub_4089C0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4089E0",
@@ -2763,8 +2763,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -2926,8 +2926,8 @@
    {
     "address": "0x4095E0",
     "name": "sub_4095E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -3083,8 +3083,8 @@
    {
     "address": "0x409FB0",
     "name": "sub_409FB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    }
   ],
   "extra_methods": [
@@ -3110,8 +3110,8 @@
    {
     "address": "0x40A200",
     "name": "sub_40A200",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    }
   ],
   "extra_methods": [
@@ -3137,8 +3137,8 @@
    {
     "address": "0x40A5C0",
     "name": "sub_40A5C0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x411590",
@@ -3273,8 +3273,8 @@
    {
     "address": "0x40B520",
     "name": "sub_40B520",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    }
   ],
   "extra_methods": [
@@ -3300,8 +3300,8 @@
    {
     "address": "0x40B7B0",
     "name": "sub_40B7B0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x411590",
@@ -3473,8 +3473,8 @@
    {
     "address": "0x40CAD0",
     "name": "sub_40CAD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x411590",
@@ -3590,8 +3590,8 @@
    {
     "address": "0x40D4B0",
     "name": "sub_40D4B0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x411590",
@@ -3707,8 +3707,8 @@
    {
     "address": "0x40D9E0",
     "name": "sub_40D9E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    }
   ],
   "extra_methods": [
@@ -3734,8 +3734,8 @@
    {
     "address": "0x40EA00",
     "name": "sub_40EA00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    }
   ],
   "extra_methods": [
@@ -3761,8 +3761,8 @@
    {
     "address": "0x410820",
     "name": "sub_410820",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x411590",
@@ -3872,8 +3872,8 @@
    {
     "address": "0x410870",
     "name": "sub_410870",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    }
   ],
   "extra_methods": [
@@ -3899,8 +3899,8 @@
    {
     "address": "0x410950",
     "name": "sub_410950",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x411590",
@@ -4050,8 +4050,8 @@
    {
     "address": "0x411400",
     "name": "sub_411400",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    }
   ],
   "extra_methods": [
@@ -4077,8 +4077,8 @@
    {
     "address": "0x411430",
     "name": "sub_411430",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x411590",
@@ -4180,8 +4180,8 @@
    {
     "address": "0x411820",
     "name": "sub_411820",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    }
   ],
   "extra_methods": [
@@ -4207,8 +4207,8 @@
    {
     "address": "0x4119B0",
     "name": "sub_4119B0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x411590",
@@ -4318,8 +4318,8 @@
    {
     "address": "0x411A10",
     "name": "sub_411A10",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x411590",
@@ -4429,8 +4429,8 @@
    {
     "address": "0x411BB0",
     "name": "sub_411BB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x411590",
@@ -4546,8 +4546,8 @@
    {
     "address": "0x411F60",
     "name": "sub_411F60",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x412080",
@@ -4909,8 +4909,8 @@
    {
     "address": "0x45D0F0",
     "name": "sub_45D0F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x41A1D0",
@@ -6044,8 +6044,8 @@
    {
     "address": "0x41A440",
     "name": "sub_41A440",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x41AA30",
@@ -6157,8 +6157,8 @@
    {
     "address": "0x41AD00",
     "name": "sub_41AD00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x41ADB0",
@@ -6274,8 +6274,8 @@
    {
     "address": "0x41B170",
     "name": "sub_41B170",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x41ADB0",
@@ -6393,8 +6393,8 @@
    {
     "address": "0x41BC60",
     "name": "sub_41BC60",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x41CF70",
@@ -6950,8 +6950,8 @@
    {
     "address": "0x423360",
     "name": "sub_423360",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/free_game.cpp"
    }
   ],
   "extra_methods": [
@@ -6977,8 +6977,8 @@
    {
     "address": "0x4347D0",
     "name": "sub_4347D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/free_game.cpp"
    },
    {
     "address": "0x434900",
@@ -7697,8 +7697,8 @@
    {
     "address": "0x4089C0",
     "name": "sub_4089C0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4089E0",
@@ -8286,8 +8286,8 @@
    {
     "address": "0x43A3D0",
     "name": "sub_43A3D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/free_game.cpp"
    },
    {
     "address": "0x43A750",
@@ -8325,8 +8325,8 @@
    {
     "address": "0x43E790",
     "name": "sub_43E790",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/free_game.cpp"
    }
   ],
   "extra_methods": [
@@ -8352,8 +8352,8 @@
    {
     "address": "0x440B10",
     "name": "sub_440B10",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    }
   ],
   "extra_methods": [
@@ -8381,8 +8381,8 @@
    {
     "address": "0x443A50",
     "name": "sub_443A50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -8798,8 +8798,8 @@
    {
     "address": "0x447510",
     "name": "sub_447510",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -9347,8 +9347,8 @@
    {
     "address": "0x447BE0",
     "name": "sub_447BE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -9904,8 +9904,8 @@
    {
     "address": "0x448940",
     "name": "sub_448940",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -10453,8 +10453,8 @@
    {
     "address": "0x44A240",
     "name": "sub_44A240",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -11010,8 +11010,8 @@
    {
     "address": "0x44B3E0",
     "name": "sub_44B3E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -11567,8 +11567,8 @@
    {
     "address": "0x44B9F0",
     "name": "sub_44B9F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -12136,8 +12136,8 @@
    {
     "address": "0x44C150",
     "name": "sub_44C150",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -12685,8 +12685,8 @@
    {
     "address": "0x44C7D0",
     "name": "sub_44C7D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -13242,8 +13242,8 @@
    {
     "address": "0x44CEE0",
     "name": "sub_44CEE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -13799,8 +13799,8 @@
    {
     "address": "0x44D3A0",
     "name": "sub_44D3A0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -14356,8 +14356,8 @@
    {
     "address": "0x44E2D0",
     "name": "sub_44E2D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -14905,8 +14905,8 @@
    {
     "address": "0x44EF00",
     "name": "sub_44EF00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -15463,8 +15463,8 @@
    {
     "address": "0x451180",
     "name": "sub_451180",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -16036,8 +16036,8 @@
    {
     "address": "0x45A5C0",
     "name": "sub_45A5C0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -16423,8 +16423,8 @@
    {
     "address": "0x45BDA0",
     "name": "sub_45BDA0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4A0460",
@@ -16978,8 +16978,8 @@
    {
     "address": "0x45D0F0",
     "name": "sub_45D0F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x41A1D0",
@@ -18131,8 +18131,8 @@
    {
     "address": "0x462650",
     "name": "sub_462650",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x4628C0",
@@ -18170,8 +18170,8 @@
    {
     "address": "0x46AB70",
     "name": "sub_46AB70",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x46A900",
@@ -18449,8 +18449,8 @@
    {
     "address": "0x472AD0",
     "name": "sub_472AD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    }
   ],
   "extra_methods": [
@@ -18476,8 +18476,8 @@
    {
     "address": "0x4734B0",
     "name": "sub_4734B0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    }
   ],
   "extra_methods": [
@@ -18503,8 +18503,8 @@
    {
     "address": "0x473CB0",
     "name": "sub_473CB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x474480",
@@ -18672,8 +18672,8 @@
    {
     "address": "0x474820",
     "name": "sub_474820",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x474C00",
@@ -18843,8 +18843,8 @@
    {
     "address": "0x474D70",
     "name": "sub_474D70",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x475B10",
@@ -19012,8 +19012,8 @@
    {
     "address": "0x476750",
     "name": "sub_476750",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x476B00",
@@ -19189,8 +19189,8 @@
    {
     "address": "0x476B90",
     "name": "sub_476B90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4770B0",
@@ -19366,8 +19366,8 @@
    {
     "address": "0x4772D0",
     "name": "sub_4772D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x477B50",
@@ -19537,8 +19537,8 @@
    {
     "address": "0x477DD0",
     "name": "sub_477DD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x479350",
@@ -19708,8 +19708,8 @@
    {
     "address": "0x47B820",
     "name": "sub_47B820",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x47C120",
@@ -19826,8 +19826,8 @@
    {
     "address": "0x487950",
     "name": "sub_487950",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x434900",
@@ -20546,8 +20546,8 @@
    {
     "address": "0x4089C0",
     "name": "sub_4089C0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4089E0",
@@ -21123,8 +21123,8 @@
    {
     "address": "0x488330",
     "name": "sub_488330",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x46A900",
@@ -21396,8 +21396,8 @@
    {
     "address": "0x48C090",
     "name": "sub_48C090",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x48C240",
@@ -22573,8 +22573,8 @@
    {
     "address": "0x497E70",
     "name": "sub_497E70",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x497FC0",
@@ -22693,8 +22693,8 @@
    {
     "address": "0x4A0250",
     "name": "sub_4A0250",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -23074,8 +23074,8 @@
    {
     "address": "0x4A23C0",
     "name": "sub_4A23C0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -23624,8 +23624,8 @@
    {
     "address": "0x4A82F0",
     "name": "sub_4A82F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    }
   ],
   "extra_methods": [
@@ -23651,8 +23651,8 @@
    {
     "address": "0x4AA5E0",
     "name": "sub_4AA5E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4AACE0",
@@ -24179,8 +24179,8 @@
    {
     "address": "0x4AF250",
     "name": "sub_4AF250",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -24572,8 +24572,8 @@
    {
     "address": "0x4B0F80",
     "name": "sub_4B0F80",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -25119,8 +25119,8 @@
    {
     "address": "0x4B12F0",
     "name": "sub_4B12F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -25515,8 +25515,8 @@
    {
     "address": "0x4B2C20",
     "name": "sub_4B2C20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -25908,8 +25908,8 @@
    {
     "address": "0x4B2E10",
     "name": "sub_4B2E10",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -26325,8 +26325,8 @@
    {
     "address": "0x4B4610",
     "name": "sub_4B4610",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -26784,8 +26784,8 @@
    {
     "address": "0x4B59D0",
     "name": "sub_4B59D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -27336,8 +27336,8 @@
    {
     "address": "0x4B69A0",
     "name": "sub_4B69A0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -27731,8 +27731,8 @@
    {
     "address": "0x4B7FD0",
     "name": "sub_4B7FD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -28112,8 +28112,8 @@
    {
     "address": "0x4B8880",
     "name": "sub_4B8880",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -28501,8 +28501,8 @@
    {
     "address": "0x4B9B10",
     "name": "sub_4B9B10",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -29036,8 +29036,8 @@
    {
     "address": "0x4B9D50",
     "name": "sub_4B9D50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -29423,8 +29423,8 @@
    {
     "address": "0x4B9E40",
     "name": "sub_4B9E40",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -29812,8 +29812,8 @@
    {
     "address": "0x4BA0E0",
     "name": "sub_4BA0E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -30265,8 +30265,8 @@
    {
     "address": "0x4BD990",
     "name": "sub_4BD990",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -30844,8 +30844,8 @@
    {
     "address": "0x4BF280",
     "name": "sub_4BF280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4BF310",
@@ -30877,8 +30877,8 @@
    {
     "address": "0x4C25F0",
     "name": "sub_4C25F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4C0330",
@@ -30910,8 +30910,8 @@
    {
     "address": "0x4C0F70",
     "name": "sub_4C0F70",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4C13A0",
@@ -30979,8 +30979,8 @@
    {
     "address": "0x4C25F0",
     "name": "sub_4C25F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4C2610",
@@ -31004,8 +31004,8 @@
    {
     "address": "0x4C25F0",
     "name": "sub_4C25F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4C3090",
@@ -31029,8 +31029,8 @@
    {
     "address": "0x4C3B40",
     "name": "sub_4C3B40",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4C3C20",
@@ -31062,8 +31062,8 @@
    {
     "address": "0x4C5620",
     "name": "sub_4C5620",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4C56B0",
@@ -31161,8 +31161,8 @@
    {
     "address": "0x4C25F0",
     "name": "sub_4C25F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4C99D0",
@@ -31186,8 +31186,8 @@
    {
     "address": "0x4C9FD0",
     "name": "sub_4C9FD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4C13A0",
@@ -31255,8 +31255,8 @@
    {
     "address": "0x4C25F0",
     "name": "sub_4C25F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4CAE60",
@@ -31288,8 +31288,8 @@
    {
     "address": "0x4CBD60",
     "name": "sub_4CBD60",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4C56B0",
@@ -31387,8 +31387,8 @@
    {
     "address": "0x4CCAD0",
     "name": "sub_4CCAD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -31774,8 +31774,8 @@
    {
     "address": "0x4CD300",
     "name": "sub_4CD300",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4CD410",
@@ -31819,8 +31819,8 @@
    {
     "address": "0x4CD5A0",
     "name": "sub_4CD5A0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4237A0",
@@ -31861,8 +31861,8 @@
    {
     "address": "0x4D0AD0",
     "name": "sub_4D0AD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -32413,8 +32413,8 @@
    {
     "address": "0x4D3E50",
     "name": "sub_4D3E50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -32958,8 +32958,8 @@
    {
     "address": "0x4D4460",
     "name": "sub_4D4460",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -33503,8 +33503,8 @@
    {
     "address": "0x4D5890",
     "name": "sub_4D5890",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -34040,8 +34040,8 @@
    {
     "address": "0x4D63D0",
     "name": "sub_4D63D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -34592,8 +34592,8 @@
    {
     "address": "0x4D6A20",
     "name": "sub_4D6A20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -35054,8 +35054,8 @@
    {
     "address": "0x4D9AF0",
     "name": "sub_4D9AF0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -35599,8 +35599,8 @@
    {
     "address": "0x4E8860",
     "name": "sub_4E8860",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -36136,8 +36136,8 @@
    {
     "address": "0x4E95B0",
     "name": "sub_4E95B0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -36673,8 +36673,8 @@
    {
     "address": "0x4EA710",
     "name": "sub_4EA710",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -37210,8 +37210,8 @@
    {
     "address": "0x4EAE50",
     "name": "sub_4EAE50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -37747,8 +37747,8 @@
    {
     "address": "0x4ECE70",
     "name": "sub_4ECE70",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -38306,8 +38306,8 @@
    {
     "address": "0x4F24F0",
     "name": "sub_4F24F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -38843,8 +38843,8 @@
    {
     "address": "0x4F2980",
     "name": "sub_4F2980",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -39380,8 +39380,8 @@
    {
     "address": "0x4F3440",
     "name": "sub_4F3440",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -39953,8 +39953,8 @@
    {
     "address": "0x4F5A90",
     "name": "sub_4F5A90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -40526,8 +40526,8 @@
    {
     "address": "0x4FFD50",
     "name": "sub_4FFD50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -41063,8 +41063,8 @@
    {
     "address": "0x5001F0",
     "name": "sub_5001F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -41608,8 +41608,8 @@
    {
     "address": "0x501100",
     "name": "sub_501100",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -42154,8 +42154,8 @@
    {
     "address": "0x503880",
     "name": "sub_503880",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -42713,8 +42713,8 @@
    {
     "address": "0x5052A0",
     "name": "sub_5052A0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -43259,8 +43259,8 @@
    {
     "address": "0x5061F0",
     "name": "sub_5061F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -43811,8 +43811,8 @@
    {
     "address": "0x51BE20",
     "name": "sub_51BE20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -44348,8 +44348,8 @@
    {
     "address": "0x51C770",
     "name": "sub_51C770",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -44885,8 +44885,8 @@
    {
     "address": "0x51D120",
     "name": "sub_51D120",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -45423,8 +45423,8 @@
    {
     "address": "0x51E500",
     "name": "sub_51E500",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -45968,8 +45968,8 @@
    {
     "address": "0x523AA0",
     "name": "sub_523AA0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4A0460",
@@ -46365,8 +46365,8 @@
    {
     "address": "0x526900",
     "name": "sub_526900",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x526B00",
@@ -47494,8 +47494,8 @@
    {
     "address": "0x52CB70",
     "name": "sub_52CB70",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x434900",
@@ -48892,8 +48892,8 @@
    {
     "address": "0x532DC0",
     "name": "sub_532DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x434900",
@@ -49612,8 +49612,8 @@
    {
     "address": "0x4089C0",
     "name": "sub_4089C0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4089E0",
@@ -50243,8 +50243,8 @@
    {
     "address": "0x539AD0",
     "name": "sub_539AD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    }
   ],
   "extra_methods": [
@@ -50270,8 +50270,8 @@
    {
     "address": "0x45D0F0",
     "name": "sub_45D0F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    },
    {
     "address": "0x526B00",
@@ -51399,8 +51399,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -51556,8 +51556,8 @@
    {
     "address": "0x53D8E0",
     "name": "sub_53D8E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -51713,8 +51713,8 @@
    {
     "address": "0x53E850",
     "name": "sub_53E850",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -51878,8 +51878,8 @@
    {
     "address": "0x53F450",
     "name": "sub_53F450",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -52035,8 +52035,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -52192,8 +52192,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -52349,8 +52349,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -52506,8 +52506,8 @@
    {
     "address": "0x5412C0",
     "name": "sub_5412C0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -52678,8 +52678,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -52835,8 +52835,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -52992,8 +52992,8 @@
    {
     "address": "0x544D60",
     "name": "sub_544D60",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -53149,8 +53149,8 @@
    {
     "address": "0x545070",
     "name": "sub_545070",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x5450A0",
@@ -53218,8 +53218,8 @@
    {
     "address": "0x546280",
     "name": "sub_546280",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -53383,8 +53383,8 @@
    {
     "address": "0x546830",
     "name": "sub_546830",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -53548,8 +53548,8 @@
    {
     "address": "0x547220",
     "name": "sub_547220",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -53713,8 +53713,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x4097C0",
@@ -53870,8 +53870,8 @@
    {
     "address": "0x548200",
     "name": "sub_548200",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -54035,8 +54035,8 @@
    {
     "address": "0x548620",
     "name": "sub_548620",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -54192,8 +54192,8 @@
    {
     "address": "0x549330",
     "name": "sub_549330",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -54364,8 +54364,8 @@
    {
     "address": "0x54ABC0",
     "name": "sub_54ABC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -54529,8 +54529,8 @@
    {
     "address": "0x54B0D0",
     "name": "sub_54B0D0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -54694,8 +54694,8 @@
    {
     "address": "0x54C040",
     "name": "sub_54C040",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -54859,8 +54859,8 @@
    {
     "address": "0x54C720",
     "name": "sub_54C720",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -55024,8 +55024,8 @@
    {
     "address": "0x54CD10",
     "name": "sub_54CD10",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4097C0",
@@ -55189,8 +55189,8 @@
    {
     "address": "0x54FD90",
     "name": "sub_54FD90",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x411590",
@@ -55318,8 +55318,8 @@
    {
     "address": "0x550930",
     "name": "sub_550930",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x411590",
@@ -55477,8 +55477,8 @@
    {
     "address": "0x55B500",
     "name": "sub_55B500",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x411590",
@@ -55588,8 +55588,8 @@
    {
     "address": "0x56AC10",
     "name": "sub_56AC10",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x411590",
@@ -55761,8 +55761,8 @@
    {
     "address": "0x56C450",
     "name": "sub_56C450",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x411590",
@@ -55878,8 +55878,8 @@
    {
     "address": "0x56CB30",
     "name": "sub_56CB30",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    }
   ],
   "extra_methods": [
@@ -55905,8 +55905,8 @@
    {
     "address": "0x56E010",
     "name": "sub_56E010",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x411590",
@@ -56022,8 +56022,8 @@
    {
     "address": "0x56FAD0",
     "name": "sub_56FAD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    }
   ],
   "extra_methods": [
@@ -56049,8 +56049,8 @@
    {
     "address": "0x571B50",
     "name": "sub_571B50",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x411590",
@@ -56186,8 +56186,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -56541,8 +56541,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -56896,8 +56896,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -57259,8 +57259,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -57626,8 +57626,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -57993,8 +57993,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -58348,8 +58348,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -58703,8 +58703,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -59058,8 +59058,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -59413,8 +59413,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -59783,8 +59783,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -60138,8 +60138,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -60499,8 +60499,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x412080",
@@ -60903,8 +60903,8 @@
    {
     "address": "0x58AA70",
     "name": "sub_58AA70",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x58AAA0",
@@ -60956,8 +60956,8 @@
    {
     "address": "0x58EE40",
     "name": "sub_58EE40",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4A0460",
@@ -61511,8 +61511,8 @@
    {
     "address": "0x595AB0",
     "name": "sub_595AB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4628C0",
@@ -61550,8 +61550,8 @@
    {
     "address": "0x595DD0",
     "name": "sub_595DD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    }
   ],
   "extra_methods": [
@@ -61577,8 +61577,8 @@
    {
     "address": "0x596190",
     "name": "sub_596190",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x596A70",
@@ -61760,8 +61760,8 @@
    {
     "address": "0x597A20",
     "name": "sub_597A20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x5983B0",
@@ -61974,8 +61974,8 @@
    {
     "address": "0x598F80",
     "name": "sub_598F80",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x479350",
@@ -62145,8 +62145,8 @@
    {
     "address": "0x599550",
     "name": "sub_599550",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x599820",
@@ -62274,8 +62274,8 @@
    {
     "address": "0x59B850",
     "name": "sub_59B850",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x497FC0",
@@ -62350,8 +62350,8 @@
    {
     "address": "0x59C5E0",
     "name": "sub_59C5E0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x59E1F0",
@@ -62977,8 +62977,8 @@
    {
     "address": "0x5A4330",
     "name": "sub_5A4330",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x59E1F0",
@@ -63607,8 +63607,8 @@
    {
     "address": "0x4B2C20",
     "name": "sub_4B2C20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4A0460",
@@ -64000,8 +64000,8 @@
    {
     "address": "0x5A6A80",
     "name": "sub_5A6A80",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4A0460",
@@ -64389,8 +64389,8 @@
    {
     "address": "0x5A7780",
     "name": "sub_5A7780",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4A0460",
@@ -64804,8 +64804,8 @@
    {
     "address": "0x5AC190",
     "name": "sub_5AC190",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4A0460",
@@ -65193,8 +65193,8 @@
    {
     "address": "0x5AC3F0",
     "name": "sub_5AC3F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4A0460",
@@ -65580,8 +65580,8 @@
    {
     "address": "0x5AD410",
     "name": "sub_5AD410",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4A0460",
@@ -65975,8 +65975,8 @@
    {
     "address": "0x5B1170",
     "name": "sub_5B1170",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x41CF70",
@@ -67022,8 +67022,8 @@
    {
     "address": "0x5C09B0",
     "name": "sub_5C09B0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x5C0A60",
@@ -67067,8 +67067,8 @@
    {
     "address": "0x5C0B80",
     "name": "sub_5C0B80",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4378C0",
@@ -67145,8 +67145,8 @@
    {
     "address": "0x5DE830",
     "name": "sub_5DE830",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/engine-late/free_engine-late.cpp"
    },
    {
     "address": "0x4A0460",
@@ -67578,8 +67578,8 @@
    {
     "address": "0x5C5380",
     "name": "sub_5C5380",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x4A0460",
@@ -68337,8 +68337,8 @@
    {
     "address": "0x5C8770",
     "name": "sub_5C8770",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    },
    {
     "address": "0x5E53F0",
@@ -68553,8 +68553,8 @@
    {
     "address": "0x5D2210",
     "name": "sub_5D2210",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/engine-late/free_engine-late.cpp"
    },
    {
     "address": "0x4A0460",
@@ -69009,8 +69009,8 @@
    {
     "address": "0x5DE830",
     "name": "sub_5DE830",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/engine-late/free_engine-late.cpp"
    },
    {
     "address": "0x4A0460",
@@ -69450,8 +69450,8 @@
    {
     "address": "0x5DEFB0",
     "name": "sub_5DEFB0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/engine-late/free_engine-late.cpp"
    },
    {
     "address": "0x4A0460",
@@ -70201,8 +70201,8 @@
    {
     "address": "0x5E2CD0",
     "name": "sub_5E2CD0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/engine-late/free_engine-late.cpp"
    },
    {
     "address": "0x5E53F0",
@@ -70621,8 +70621,8 @@
    {
     "address": "0x431680",
     "name": "sub_431680",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/game/free_game.cpp"
    },
    {
     "address": "0x4316A0",
@@ -71599,8 +71599,8 @@
    {
     "address": "0x403DC0",
     "name": "sub_403DC0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/app/free_app.cpp"
    },
    {
     "address": "0x540780",
@@ -72347,8 +72347,8 @@
    {
     "address": "0x45D0F0",
     "name": "sub_45D0F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/gfx/free_gfx.cpp"
    }
   ],
   "extra_methods": []
@@ -76815,8 +76815,8 @@
    {
     "address": "0x4B2C20",
     "name": "sub_4B2C20",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4B2C40",
@@ -77341,8 +77341,8 @@
    {
     "address": "0x4C25F0",
     "name": "sub_4C25F0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/free_ui.cpp"
    },
    {
     "address": "0x4C99C0",
@@ -79423,8 +79423,8 @@
    {
     "address": "0x587A00",
     "name": "sub_587A00",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/sim/free_sim.cpp"
    }
   ],
   "extra_methods": []

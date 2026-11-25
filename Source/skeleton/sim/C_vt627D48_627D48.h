@@ -9,6 +9,6 @@
 
 class C_vt627D48 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_539AD0 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_539AD0 [matched] — Source/sim/free_sim.cpp
     void method_000();  // sub_539AF0 [lifted]: same object, connected by this-edge call sites
 };

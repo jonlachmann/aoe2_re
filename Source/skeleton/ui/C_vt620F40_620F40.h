@@ -9,7 +9,7 @@
 
 class C_vt620F40 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_476750 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_476750 [matched] — Source/ui/free_ui.cpp
     virtual void slot_001();  // slot +0x004: sub_476B00 [matched] — Source/ui/free_ui.cpp
     virtual void slot_002();  // slot +0x008: sub_474C20 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_474C50 [lifted]

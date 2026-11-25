@@ -9,7 +9,7 @@
 
 class C_vt623920 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_4C3B40 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_4C3B40 [matched] — Source/ui/free_ui.cpp
     virtual void slot_001();  // slot +0x004: sub_4C3C20 [lifted]
     void method_000();  // sub_4C3B60 [lifted]: same object, connected by this-edge call sites
 };

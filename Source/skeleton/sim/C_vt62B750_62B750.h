@@ -9,7 +9,7 @@
 
 class C_vt62B750 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_5A4330 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_5A4330 [matched] — Source/sim/free_sim.cpp
     virtual void slot_001();  // slot +0x004: sub_59E1F0 [lifted]
     virtual void slot_002();  // slot +0x008: sub_4AAE60 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_4237A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp

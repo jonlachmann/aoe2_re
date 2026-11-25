@@ -282,3 +282,21 @@ void __cdecl sub_5FD518()
 {
     sub_5FD521(1);
 }
+
+// 0x6198E0 — low byte of the global dword.
+extern int g_774040;
+MATCH_FUNC(0x6198E0)
+int M_6198E0()
+{
+    return g_774040 & 0xFF;
+}
+
+// 0x6199C0 — store the argument in the global dword (frame pointer kept).
+extern int g_77401C;
+#pragma optimize("y", off)
+MATCH_FUNC(0x6199C0)
+void __cdecl sub_6199C0(int a1)
+{
+    g_77401C = a1;
+}
+#pragma optimize("y", on)

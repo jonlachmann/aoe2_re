@@ -7,7 +7,7 @@
 
 class C_vt6205D0 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_45D0F0 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_45D0F0 [matched] — Source/gfx/free_gfx.cpp
     virtual void slot_001();  // slot +0x004: sub_41A1D0 [lifted]
     virtual void slot_002();  // slot +0x008: sub_526CA0 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_5276E0 [lifted]

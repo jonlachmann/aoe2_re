@@ -9,7 +9,7 @@
 
 class C_vt62AF98 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_595AB0 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_595AB0 [matched] — Source/sim/free_sim.cpp
     virtual void slot_001();  // slot +0x004: sub_4628C0 [lifted]
     virtual void slot_002();  // slot +0x008: sub_595AE0 [lifted]
     void method_000();  // sub_595AD0 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62AF98.cpp

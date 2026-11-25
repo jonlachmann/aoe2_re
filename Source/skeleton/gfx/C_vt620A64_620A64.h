@@ -9,7 +9,7 @@
 
 class C_vt620A64 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_46AB70 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_46AB70 [matched] — Source/gfx/free_gfx.cpp
     virtual void slot_001();  // slot +0x004: sub_46A900 [matched] — Source/gfx/C_vt620A64.cpp
     virtual void slot_002();  // slot +0x008: sub_46A910 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_46A940 [matched] — Source/gfx/C_vt620A64.cpp

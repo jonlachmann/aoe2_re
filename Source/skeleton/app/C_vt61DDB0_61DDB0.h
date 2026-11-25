@@ -9,7 +9,7 @@
 
 class C_vt61DDB0 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_41A440 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_41A440 [matched] — Source/app/free_app.cpp
     virtual void slot_001();  // slot +0x004: sub_41AA30 [lifted]
     virtual void slot_002();  // slot +0x008: sub_41A890 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_41A910 [lifted]

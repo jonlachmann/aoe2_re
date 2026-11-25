@@ -2327,3 +2327,114 @@ void __stdcall sub_428460(int a1)
 {
     sub_428470(a1, 0);
 }
+
+// 0x431680 — two chained helper calls.
+class T431710 {
+public:
+    void Other_431710();
+};
+class S431680 {
+public:
+    void M_431680();
+};
+extern void __cdecl sub_4316A0();
+MATCH_FUNC(0x431680)
+void S431680::M_431680()
+{
+    sub_4316A0();
+    ((T431710*)this)->Other_431710();
+}
+
+// 0x421CB0 — tail-call through the vtable slot at +0xc8 of the field at +0x41c.
+struct VT421CB0 {
+    char pad_00[0xc8];
+    void (__stdcall *slot_c8)();
+};
+class T421CB0 {
+public:
+    VT421CB0* vtable_00;
+};
+class S421CB0 {
+public:
+    char pad_00[0x41c];
+    T421CB0* field_41c;           // +0x41c
+    void M_421CB0();
+};
+WIP_FUNC(0x421CB0)
+void S421CB0::M_421CB0()
+{
+    T421CB0* p = this->field_41c;
+    VT421CB0* vt = p->vtable_00;
+    vt->slot_c8();
+}
+
+// Scalar deleting destructor wrappers.
+extern int __cdecl sub_5F90B0(int a1);
+
+class Td4235c0 {
+public:
+    void Other_4235c0();
+};
+class Sd423360 {
+public:
+    Sd423360* D_423360(int flags);
+};
+MATCH_FUNC(0x423360)
+Sd423360* Sd423360::D_423360(int flags)
+{
+    ((Td4235c0*)this)->Other_4235c0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td434860 {
+public:
+    void Other_434860();
+};
+class Sd4347D0 {
+public:
+    Sd4347D0* D_4347D0(int flags);
+};
+MATCH_FUNC(0x4347D0)
+Sd4347D0* Sd4347D0::D_4347D0(int flags)
+{
+    ((Td434860*)this)->Other_434860();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td43a3f0 {
+public:
+    void Other_43a3f0();
+};
+class Sd43A3D0 {
+public:
+    Sd43A3D0* D_43A3D0(int flags);
+};
+MATCH_FUNC(0x43A3D0)
+Sd43A3D0* Sd43A3D0::D_43A3D0(int flags)
+{
+    ((Td43a3f0*)this)->Other_43a3f0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}
+
+class Td43e7b0 {
+public:
+    void Other_43e7b0();
+};
+class Sd43E790 {
+public:
+    Sd43E790* D_43E790(int flags);
+};
+MATCH_FUNC(0x43E790)
+Sd43E790* Sd43E790::D_43E790(int flags)
+{
+    ((Td43e7b0*)this)->Other_43e7b0();
+    if (flags & 1)
+        sub_5F90B0((int)this);
+    return this;
+}

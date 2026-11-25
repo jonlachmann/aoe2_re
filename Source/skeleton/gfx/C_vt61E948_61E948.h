@@ -9,6 +9,6 @@
 
 class C_vt61E948 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_440B10 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_440B10 [matched] — Source/gfx/free_gfx.cpp
     void method_000();  // sub_440B30 [matched]: same object, connected by this-edge call sites — Source/gfx/free_gfx.cpp
 };

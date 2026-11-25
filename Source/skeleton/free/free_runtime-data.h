@@ -3,17 +3,17 @@
 // Signatures are unknown; these are placeholders, not an ABI claim.
 #pragma once
 
-void sub_61006E();  // size 6, calls 0, lifted, module runtime-data
+void sub_61006E();  // size 6, calls 0, matched, module runtime-data
 void sub_617461();  // size 316, calls 0, lifted, module runtime-data
 void sub_619780();  // size 57, calls 0, lifted, module runtime-data
 void sub_6197C0();  // size 81, calls 0, lifted, module runtime-data
 void sub_619820();  // size 61, calls 0, lifted, module runtime-data
 void sub_619860();  // size 33, calls 0, lifted, module runtime-data
 void sub_6198A0();  // size 41, calls 0, lifted, module runtime-data
-void sub_6198E0();  // size 11, calls 0, lifted, module runtime-data
+void sub_6198E0();  // size 11, calls 0, matched, module runtime-data
 void sub_619940();  // size 41, calls 0, lifted, module runtime-data
 void sub_619980();  // size 33, calls 0, lifted, module runtime-data
-void sub_6199C0();  // size 13, calls 0, lifted, module runtime-data
+void sub_6199C0();  // size 13, calls 0, matched, module runtime-data
 void sub_619A00();  // size 447, calls 0, lifted, module runtime-data
 void sub_619BC0();  // size 544, calls 1, lifted, module runtime-data
 void sub_619DE0();  // size 3424, calls 1, lifted, module runtime-data

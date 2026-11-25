@@ -7,7 +7,7 @@
 
 class C_vt628D40 {
 public:
-    virtual void slot_000();  // slot +0x000: sub_403DC0 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_403DC0 [matched] — Source/app/free_app.cpp
     virtual void slot_001();  // slot +0x004: sub_4097C0 [lifted]
     virtual void slot_002();  // slot +0x008: sub_409660 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_409810 [lifted]

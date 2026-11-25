@@ -10,7 +10,7 @@
 
 class C_scr_game {
 public:
-    virtual void slot_000();  // slot +0x000: sub_4D9AF0 [lifted]
+    virtual void slot_000();  // slot +0x000: sub_4D9AF0 [matched] — Source/ui/free_ui.cpp
     virtual void slot_001();  // slot +0x004: sub_4A0460 [lifted]
     virtual void slot_002();  // slot +0x008: sub_4A0750 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_4A0630 [lifted]
