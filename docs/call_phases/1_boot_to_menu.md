@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 388 matched, 317 left to match (6 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 389 matched, 316 left to match (6 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (317)
+## Left to match (316)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -61,7 +61,6 @@
 | 287 | `sub_4BE490` | 17 |  | 1_boot_to_menu |  |
 | 288 | `sub_4BE3B0` | 17 |  | 1_boot_to_menu |  |
 | 292 | `sub_45EF10` | 9 |  | 1_boot_to_menu |  |
-| 293 | `sub_49FF20` | 1 |  | 1_boot_to_menu |  |
 | 296 | `sub_41E4A0` | 1 |  | 1_boot_to_menu |  |
 | 297 | `sub_51E7F0` | 9 |  | 1_boot_to_menu |  |
 | 298 | `sub_422340` | 1 |  | 1_boot_to_menu |  |
@@ -324,7 +323,7 @@
 | 812 | `sub_4B5AB0` | 6434496 |  | 1_boot_to_menu |  |
 | 813 | `sub_5A6680` | 19303488 |  | 1_boot_to_menu |  |
 
-## Matched (388)
+## Matched (389)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -481,6 +480,7 @@
 | 281 | `sub_460490` | 42 | MATCH | 1_boot_to_menu | TDrawArea::BuildRowPtrs_460490 |
 | 282 | `sub_49FE00` | 1 | MATCH | 1_boot_to_menu | C_vt621F64::M_49FE00 |
 | 291 | `sub_5FD067` | 3142 | MATCH | 1_boot_to_menu | sub_5FD067 |
+| 293 | `sub_49FF20` | 1 | MATCH | 1_boot_to_menu | S49FF20::M_49FF20 |
 | 294 | `sub_5B1EA0` | 1 | MATCH | 1_boot_to_menu | sub_5B1EA0 |
 | 295 | `sub_41DA70` | 1 | MATCH | 1_boot_to_menu | C_vt61DF78::slot34_41DA70 |
 | 303 | `sub_51EAE0` | 1 | MATCH | 1_boot_to_menu | S51EAE0::M_51EAE0 |

@@ -7639,3 +7639,40 @@ void S4ECF80::M_4ECF80()
         }
     }
 }
+
+// 0x49FF20 — when the +0xACC handle is live, clear it, enumerate into the
+// third element of a seven-int local block, then loop transforming the block
+// through the two 0x61C2E0/0x61C2DC calls until enumeration stops, and finally
+// publish +0xAD0 through 0x61C2F8.
+class S49FF20 {
+public:
+    char pad_00[0xacc];
+    int field_acc;                  // +0xACC
+    int field_ad0;                  // +0xAD0
+    void M_49FF20();
+};
+extern int (__stdcall *g_61C2E8)(void* a1, int a2, int a3, int a4, int a5);
+extern int (__stdcall *g_61C2E0)(void* a1);
+extern int (__stdcall *g_61C2DC)(void* a1);
+extern void (__stdcall *g_61C2F8)(int a1, int a2, void* a3, int a4);
+
+MATCH_FUNC(0x49FF20)
+void S49FF20::M_49FF20()
+{
+    if (field_acc == 0)
+        return;
+    int local[7];
+    int (__stdcall *pEnum)(void*, int, int, int, int) = g_61C2E8;
+    field_acc = 0;
+    if (pEnum(&local[0], 0, 0, 0, 1) != 0)
+    {
+        int (__stdcall *pE0)(void*) = g_61C2E0;
+        int (__stdcall *pDC)(void*) = g_61C2DC;
+        do
+        {
+            pE0(&local[0]);
+            pDC(&local[0]);
+        } while (pEnum(&local[0], 0, 0, 0, 1) != 0);
+    }
+    g_61C2F8(0x6f, field_ad0, 0, 0);
+}
