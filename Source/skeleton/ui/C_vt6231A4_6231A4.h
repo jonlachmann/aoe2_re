@@ -70,5 +70,5 @@ public:
     virtual void slot_058();  // slot +0x0E8: sub_4237A0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_059();  // slot +0x0EC: sub_4A22D0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_060();  // slot +0x0F0: sub_4A2320 [lifted]
-    void method_000();  // sub_4B9E60 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_4B9E60 [matched]: same object, connected by this-edge call sites — Source/ui/free_ui.cpp
 };

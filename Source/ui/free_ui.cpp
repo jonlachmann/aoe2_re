@@ -3749,3 +3749,198 @@ void __cdecl sub_4EDC50()
 {
     sub_4B9BA0();
 }
+
+// 0x487BD0 — tail-call forwarder to 0x407FB0.
+extern void sub_407FB0();
+MATCH_FUNC(0x487BD0)
+void __cdecl sub_487BD0()
+{
+    sub_407FB0();
+}
+
+// 0x487C40 — tail-call forwarder to 0x435AD0.
+extern void sub_435AD0();
+MATCH_FUNC(0x487C40)
+void __cdecl sub_487C40()
+{
+    sub_435AD0();
+}
+
+// 0x4B2C40 — tail-call forwarder to 0x4AF270.
+extern void sub_4AF270();
+MATCH_FUNC(0x4B2C40)
+void __cdecl sub_4B2C40()
+{
+    sub_4AF270();
+}
+
+// 0x4B88A0 — install the vtable at 0x622E60 and forward to 0x4A03B0.
+class T4A03B0 {
+public:
+    void Other_4A03B0();
+};
+class S4B88A0 {
+public:
+    void M_4B88A0();
+};
+MATCH_FUNC(0x4B88A0)
+void S4B88A0::M_4B88A0()
+{
+    *(void**)this = (void*)0x622E60;
+    ((T4A03B0*)this)->Other_4A03B0();
+}
+
+// 0x4B9D70 — install the vtable at 0x6230B0 and forward to 0x4B88A0.
+class T4B88A0 {
+public:
+    void Other_4B88A0();
+};
+class S4B9D70 {
+public:
+    void M_4B9D70();
+};
+MATCH_FUNC(0x4B9D70)
+void S4B9D70::M_4B9D70()
+{
+    *(void**)this = (void*)0x6230B0;
+    ((T4B88A0*)this)->Other_4B88A0();
+}
+
+// 0x4B9E60 — install the vtable at 0x6231A4 and forward to 0x4B9D70.
+class T4B9D70 {
+public:
+    void Other_4B9D70();
+};
+class S4B9E60 {
+public:
+    void M_4B9E60();
+};
+MATCH_FUNC(0x4B9E60)
+void S4B9E60::M_4B9E60()
+{
+    *(void**)this = (void*)0x6231A4;
+    ((T4B9D70*)this)->Other_4B9D70();
+}
+
+// 0x4B9E20 — run the base initializer, install the vtable, and return this.
+class T4B9D20 {
+public:
+    void Other_4B9D20();
+};
+class S4B9E20 {
+public:
+    int M_4B9E20();
+};
+MATCH_FUNC(0x4B9E20)
+int S4B9E20::M_4B9E20()
+{
+    ((T4B9D20*)this)->Other_4B9D20();
+    *(void**)this = (void*)0x6231A4;
+    return (int)this;
+}
+
+// 0x4BECB0 — return the flag at +0x105, forwarding when set.
+class T4BEE10 {
+public:
+    char Other_4BEE10();
+};
+class S4BECB0 {
+public:
+    void M_4BECB0();
+};
+MATCH_FUNC(0x4BECB0)
+void S4BECB0::M_4BECB0()
+{
+    if (*(char*)((char*)this + 0x105))
+        ((T4BEE10*)this)->Other_4BEE10();
+}
+
+// 0x4BD5A0 — sign-extend the word at +0x104 and pass it to 0x4BD5B0.
+extern int __stdcall sub_4BD5B0(int a1);
+class S4BD5A0 {
+public:
+    int M_4BD5A0();
+};
+MATCH_FUNC(0x4BD5A0)
+int S4BD5A0::M_4BD5A0()
+{
+    return sub_4BD5B0(*(__int16*)((char*)this + 0x104));
+}
+
+// 0x4CA060 — run the reset helper and report success.
+class T4C1510 {
+public:
+    void Other_4C1510();
+};
+class S4CA060 {
+public:
+    char M_4CA060();
+};
+MATCH_FUNC(0x4CA060)
+char S4CA060::M_4CA060()
+{
+    ((T4C1510*)this)->Other_4C1510();
+    return 1;
+}
+
+// 0x4DF990 — clear the word at +0x1232 and forward to 0x4E8180.
+class T4E8180 {
+public:
+    void Other_4E8180();
+};
+class S4DF990 {
+public:
+    void M_4DF990();
+};
+MATCH_FUNC(0x4DF990)
+void S4DF990::M_4DF990()
+{
+    *(unsigned short*)((char*)this + 0x1232) = 0;
+    ((T4E8180*)this)->Other_4E8180();
+}
+
+// 0x4E6C10 — call the two setup helpers on this and return the second's value.
+class T4DF9A0 {
+public:
+    void Other_4DF9A0();
+};
+class T4DFA20 {
+public:
+    int Other_4DFA20();
+};
+class S4E6C10 {
+public:
+    int M_4E6C10();
+};
+MATCH_FUNC(0x4E6C10)
+int S4E6C10::M_4E6C10()
+{
+    ((T4DF9A0*)this)->Other_4DF9A0();
+    return ((T4DFA20*)this)->Other_4DFA20();
+}
+
+// 0x4E8560 — tail-call through the member pointer at +0x1164.
+class T4B70F0 {
+public:
+    void Other_4B70F0();
+};
+class S4E8560 {
+public:
+    char pad_00[0x1164];
+    T4B70F0* field_1164;
+
+    void M_4E8560();
+};
+MATCH_FUNC(0x4E8560)
+void S4E8560::M_4E8560()
+{
+    field_1164->Other_4B70F0();
+}
+
+// 0x494560 — call the -1 setup helper.
+extern void __stdcall sub_4A6E60(int a1);
+MATCH_FUNC(0x494560)
+void __cdecl sub_494560()
+{
+    sub_4A6E60(-1);
+}

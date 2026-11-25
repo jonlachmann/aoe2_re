@@ -731,7 +731,7 @@ void sub_4BE950();  // size 42, calls 1, lifted, module ui
 void sub_4BE980();  // size 529, calls 4, lifted, module ui
 void sub_4BEBA0();  // size 42, calls 1, lifted, module ui
 void sub_4BEBD0();  // size 192, calls 5, lifted, module ui
-void sub_4BECB0();  // size 16, calls 1, lifted, module ui
+void sub_4BECB0();  // size 16, calls 1, matched, module ui
 void sub_4BEEB0();  // size 69, calls 1, lifted, module ui
 void sub_4BEF00();  // size 67, calls 1, lifted, module ui
 void sub_4BEF50();  // size 92, calls 0, lifted, module ui

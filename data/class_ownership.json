@@ -1513,8 +1513,8 @@
    "vtable": "0x621518",
    "anchor": "0x487950",
    "methods": 214,
-   "owned_methods": 68,
-   "unowned_methods": 146,
+   "owned_methods": 70,
+   "unowned_methods": 144,
    "primary_file": "Source/app/C_vt61CE24.cpp",
    "owner_files": {
     "Source/app/C_vt61CE24.cpp": 48,
@@ -1522,14 +1522,16 @@
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 7,
     "Source/ui/C_pnl_edit.cpp": 1,
-    "Source/ui/C_pnl_inp.cpp": 1
+    "Source/ui/C_pnl_inp.cpp": 1,
+    "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/game/C_vt61E328.cpp",
     "Source/gfx/C_TribePopUpHelp.cpp",
     "Source/ui/C_TRIBE_Screen_Options.cpp",
     "Source/ui/C_pnl_edit.cpp",
-    "Source/ui/C_pnl_inp.cpp"
+    "Source/ui/C_pnl_inp.cpp",
+    "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -1942,15 +1944,17 @@
    "vtable": "0x622E60",
    "anchor": "0x4B8880",
    "methods": 62,
-   "owned_methods": 23,
-   "unowned_methods": 39,
+   "owned_methods": 24,
+   "unowned_methods": 38,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
-    "Source/ui/C_TRIBE_Screen_Options.cpp": 20
+    "Source/ui/C_TRIBE_Screen_Options.cpp": 20,
+    "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
-    "Source/gfx/C_TribePopUpHelp.cpp"
+    "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/free_ui.cpp"
    ],
    "staged_files": [],
    "split": true
@@ -1984,13 +1988,13 @@
    "vtable": "0x6230B0",
    "anchor": "0x4B9D50",
    "methods": 62,
-   "owned_methods": 24,
-   "unowned_methods": 38,
+   "owned_methods": 25,
+   "unowned_methods": 37,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 20,
-    "Source/ui/free_ui.cpp": 1
+    "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
@@ -2006,13 +2010,13 @@
    "vtable": "0x6231A4",
    "anchor": "0x4B9E40",
    "methods": 62,
-   "owned_methods": 24,
-   "unowned_methods": 38,
+   "owned_methods": 25,
+   "unowned_methods": 37,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 3,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 20,
-    "Source/ui/free_ui.cpp": 1
+    "Source/ui/free_ui.cpp": 2
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
@@ -2196,11 +2200,11 @@
    "vtable": "0x623AE4",
    "anchor": "0x4C9FD0",
    "methods": 9,
-   "owned_methods": 1,
-   "unowned_methods": 8,
+   "owned_methods": 2,
+   "unowned_methods": 7,
    "primary_file": "Source/ui/free_ui.cpp",
    "owner_files": {
-    "Source/ui/free_ui.cpp": 1
+    "Source/ui/free_ui.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
@@ -6159,15 +6163,18 @@
    "vtable": null,
    "anchor": "0x443970",
    "methods": 29,
-   "owned_methods": 1,
-   "unowned_methods": 28,
-   "primary_file": "Source/gfx/C_cluster_443970.cpp",
+   "owned_methods": 2,
+   "unowned_methods": 27,
+   "primary_file": "Source/ui/free_ui.cpp",
    "owner_files": {
-    "Source/gfx/C_cluster_443970.cpp": 1
+    "Source/gfx/C_cluster_443970.cpp": 1,
+    "Source/ui/free_ui.cpp": 1
    },
-   "other_files": [],
+   "other_files": [
+    "Source/gfx/C_cluster_443970.cpp"
+   ],
    "staged_files": [],
-   "split": false
+   "split": true
   },
   {
    "class": "C_cluster_443B00",
@@ -6950,10 +6957,12 @@
    "vtable": null,
    "anchor": "0x494560",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/ui/free_ui.cpp",
+   "owner_files": {
+    "Source/ui/free_ui.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -7656,10 +7665,12 @@
    "vtable": null,
    "anchor": "0x4B2C20",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/ui/free_ui.cpp",
+   "owner_files": {
+    "Source/ui/free_ui.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -7829,15 +7840,18 @@
    "vtable": null,
    "anchor": "0x4BD5A0",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
-   "primary_file": "Source/ui/C_cluster_4BD5A0.cpp",
+   "owned_methods": 2,
+   "unowned_methods": 0,
+   "primary_file": "Source/ui/free_ui.cpp",
    "owner_files": {
-    "Source/ui/C_cluster_4BD5A0.cpp": 1
+    "Source/ui/C_cluster_4BD5A0.cpp": 1,
+    "Source/ui/free_ui.cpp": 1
    },
-   "other_files": [],
+   "other_files": [
+    "Source/ui/C_cluster_4BD5A0.cpp"
+   ],
    "staged_files": [],
-   "split": false
+   "split": true
   },
   {
    "class": "C_cluster_4BE550",
@@ -8017,10 +8031,12 @@
    "vtable": null,
    "anchor": "0x4DF1A0",
    "methods": 3,
-   "owned_methods": 0,
-   "unowned_methods": 3,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 2,
+   "primary_file": "Source/ui/free_ui.cpp",
+   "owner_files": {
+    "Source/ui/free_ui.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -8032,10 +8048,12 @@
    "vtable": null,
    "anchor": "0x4DF990",
    "methods": 2,
-   "owned_methods": 0,
-   "unowned_methods": 2,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 1,
+   "primary_file": "Source/ui/free_ui.cpp",
+   "owner_files": {
+    "Source/ui/free_ui.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false
@@ -8047,10 +8065,12 @@
    "vtable": null,
    "anchor": "0x4DF9A0",
    "methods": 7,
-   "owned_methods": 0,
-   "unowned_methods": 7,
-   "primary_file": null,
-   "owner_files": {},
+   "owned_methods": 1,
+   "unowned_methods": 6,
+   "primary_file": "Source/ui/free_ui.cpp",
+   "owner_files": {
+    "Source/ui/free_ui.cpp": 1
+   },
    "other_files": [],
    "staged_files": [],
    "split": false

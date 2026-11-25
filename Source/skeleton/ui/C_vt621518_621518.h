@@ -16,9 +16,9 @@ public:
     virtual void slot_006();  // slot +0x018: sub_527A10 [lifted]
     virtual void slot_007();  // slot +0x01C: sub_527A90 [lifted]
     virtual void slot_008();  // slot +0x020: sub_5294D0 [lifted]
-    virtual void slot_009();  // slot +0x024: sub_487C40 [lifted]
+    virtual void slot_009();  // slot +0x024: sub_487C40 [matched] — Source/ui/free_ui.cpp
     virtual void slot_010();  // slot +0x028: sub_529870 [lifted]
-    virtual void slot_011();  // slot +0x02C: sub_487BD0 [lifted]
+    virtual void slot_011();  // slot +0x02C: sub_487BD0 [matched] — Source/ui/free_ui.cpp
     virtual void slot_012();  // slot +0x030: sub_487BE0 [lifted]
     virtual void slot_013();  // slot +0x034: sub_529DB0 [lifted]
     virtual void slot_014();  // slot +0x038: sub_436D50 [lifted]
