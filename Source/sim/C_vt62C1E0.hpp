@@ -18,7 +18,9 @@ public:
     char pad_00[0x24];
     void* field_24;               // +0x24 basegame object
     void* field_28;               // +0x28 window handle
-    char pad_2c[0x74 - 0x2c];
+    char pad_2c[0x6c - 0x2c];
+    int field_6c;                 // +0x6C
+    char pad_70[0x74 - 0x70];
     int field_74;                 // +0x74
     char pad_78[0x1f4 - 0x78];
     int field_1f4;                // +0x1F4
@@ -60,7 +62,9 @@ public:
     int field_11E8;               // +0x11E8
     unsigned char array_11EC[0xC]; // +0x11EC
     int array_11F8[0xB];          // +0x11F8
-    char pad_1224[0x1ADC - 0x1224];
+    char pad_1224[0x149C - 0x1224];
+    void* field_149c;             // +0x149C
+    char pad_14a0[0x1ADC - 0x14a0];
     unsigned char field_1ADC;     // +0x1ADC
     char pad_1ADD[0x1AE0 - 0x1ADD];
     int field_1AE0;               // +0x1AE0
@@ -77,6 +81,7 @@ public:
     void M_421AD0(int v);
     void M_421B10(unsigned char a, unsigned char b, unsigned char c);
     void Set9AE_421B40(unsigned char v);
+    void M_5BCA10(int a1, int a2);
     void Set9B1_421B70(unsigned char v);
     void Set9BE_421C20(unsigned char v);
     void SetC9_421CF0();

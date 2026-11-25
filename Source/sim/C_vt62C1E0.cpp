@@ -6,6 +6,7 @@ extern "C" void sub_5FCB40(char* dst, char* src, int size);   // unresolved call
 extern int g_66459C;
 extern void (__stdcall *g_61C284)(int a1);
 extern void (__stdcall *g_61C288)(void* a1, int a2, int a3);
+extern void __stdcall Hook_421FC0(int a1, int a2);
 
 MATCH_FUNC(0x41FA40)
 void C_vt62C1E0::M_41FA40(int a1)
@@ -343,4 +344,48 @@ void C_vt62C1E0::M_5BC500()
         this->Set_5BC4D0((int)&g_65B488, g_65C928, (int)&g_65BED8, g_65C92C);
     else
         this->Set_5BC4D0((int)&g_659FE0, g_65B480, (int)&g_65AA30, g_65B484);
+}
+
+// A short vtable subobject reaching slot +0x50 (index 20) through [object].
+class T5BCA10Sub {
+public:
+    virtual void s_000();
+    virtual void s_001();
+    virtual void s_002();
+    virtual void s_003();
+    virtual void s_004();
+    virtual void s_005();
+    virtual void s_006();
+    virtual void s_007();
+    virtual void s_008();
+    virtual void s_009();
+    virtual void s_010();
+    virtual void s_011();
+    virtual void s_012();
+    virtual void s_013();
+    virtual void s_014();
+    virtual void s_015();
+    virtual void s_016();
+    virtual void s_017();
+    virtual void s_018();
+    virtual void s_019();
+    virtual void slot_020(int a1, int a2);
+};
+
+// 0x5BCA10 — position change: refresh the +0x6C object's +0x18/+0x1C pair,
+// run the base handler with the two arguments, and when either value moved,
+// notify the +0x149C subobject through slot +0x50.
+MATCH_FUNC(0x5BCA10)
+void C_vt62C1E0::M_5BCA10(int a1, int a2)
+{
+    int e = *(int*)((char*)this + 0x6c);
+    int b = *(int*)(e + 0x18);
+    int c = *(int*)(e + 0x1c);
+    Hook_421FC0(a1, a2);
+    if (a1 != b || a2 != c)
+    {
+        int o = *(int*)((char*)this + 0x149c);
+        if (o != 0)
+            ((T5BCA10Sub*)o)->slot_020(a1, a2);
+    }
 }

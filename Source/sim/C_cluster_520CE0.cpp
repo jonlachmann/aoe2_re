@@ -1,4 +1,5 @@
 #include "C_cluster_520CE0.hpp"
+#pragma intrinsic(memset)
 
 MATCH_FUNC(0x5214E0)
 void C_cluster_520CE0::M_5214E0()
@@ -193,3 +194,35 @@ int C_cluster_520CE0::M_521780(int a1, int a2)
 fail:
     return 0;
 }
+
+// 0x520D20 — full reset: zero the five +0x84/+0x188/+0x28C/+0x390/+0x494
+// 0x104-byte blocks, the +0x10 0x60-byte block and the +0x70..+0x80 scalars
+// (setting +0x78 to 6), then clear the +0x598..+0x5BC counters and the key.
+MATCH_FUNC(0x520D20)
+void C_cluster_520CE0::M_520D20()
+{
+    field_7c = 0;
+    field_80 = 0;
+    field_70 = 0;
+    field_74 = 0;
+    field_8 = 0;
+    field_78 = 6;
+    memset((char*)this + 0x84, 0, 0x104);
+    memset((char*)this + 0x188, 0, 0x104);
+    memset((char*)this + 0x28c, 0, 0x104);
+    memset((char*)this + 0x390, 0, 0x104);
+    memset((char*)this + 0x494, 0, 0x104);
+    memset((char*)this + 0x10, 0, 0x60);
+    field_59c = 0;
+    field_598 = 0;
+    field_5a0 = 0;
+    field_5a4 = 0;
+    field_5a8 = 0;
+    field_5b0 = 0;
+    field_5ac = 0;
+    field_5b4 = 0;
+    field_5bc = 0;
+    field_5b8 = 0;
+    field_0 = 0;
+}
+#pragma function(memset)

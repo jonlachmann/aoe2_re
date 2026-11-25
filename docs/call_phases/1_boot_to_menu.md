@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 395 matched, 310 left to match (11 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 397 matched, 308 left to match (11 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (310)
+## Left to match (308)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -151,7 +151,6 @@
 | 402 | `sub_498AD0` | 1 |  | 1_boot_to_menu |  |
 | 403 | `sub_498BF0` | 1 |  | 1_boot_to_menu |  |
 | 408 | `sub_498E00` | 1 |  | 1_boot_to_menu |  |
-| 410 | `sub_520D20` | 1 |  | 1_boot_to_menu |  |
 | 417 | `sub_41DBA0` | 1 |  | 1_boot_to_menu |  |
 | 418 | `sub_422980` | 1 |  | 1_boot_to_menu |  |
 | 420 | `sub_58A9D0` | 1 |  | 1_boot_to_menu |  |
@@ -208,7 +207,6 @@
 | 550 | `sub_420FA0` | 1 |  | 1_boot_to_menu |  |
 | 551 | `sub_5B5AB0` | 1 |  | 1_boot_to_menu |  |
 | 552 | `sub_5B1560` | 1 |  | 1_boot_to_menu |  |
-| 555 | `sub_5BCA10` | 1 |  | 1_boot_to_menu |  |
 | 556 | `sub_421FC0` | 1 |  | 1_boot_to_menu |  |
 | 557 | `sub_4EB4B0` | 1 |  | 1_boot_to_menu |  |
 | 570 | `sub_4A3430` | 1 |  | 1_boot_to_menu |  |
@@ -317,7 +315,7 @@
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 | 812 | `sub_4B5AB0` | 6434496 |  | 1_boot_to_menu |  |
 
-## Matched (395)
+## Matched (397)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -497,6 +495,7 @@
 | 404 | `sub_5FCE01` | 1 | MATCH | 1_boot_to_menu | sub_5FCE01 |
 | 405 | `sub_5FCDE1` | 1 | MATCH | 1_boot_to_menu | sub_5FCDE1 |
 | 409 | `sub_520CC0` | 1 | MATCH | 1_boot_to_menu | S520CC0::Init_520CC0 |
+| 410 | `sub_520D20` | 1 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_520D20 |
 | 411 | `sub_520DD0` | 1 | MATCH | 1_boot_to_menu | S52SetBulk::CopyName_520DD0 |
 | 412 | `sub_520E10` | 1 | MATCH | 1_boot_to_menu | S52SetBulk::CopyName_520E10 |
 | 413 | `sub_520E50` | 1 | MATCH | 1_boot_to_menu | S52SetBulk::CopyName_520E50 |
@@ -576,6 +575,7 @@
 | 549 | `sub_520500` | 2 | MATCH | 1_boot_to_menu | S52SetImmBulk::Set_520500 |
 | 553 | `sub_49F960` | 43 | MATCH | 1_boot_to_menu | C_cluster_49F630::M_49F960 |
 | 554 | `sub_421F40` | 1 | MATCH | 1_boot_to_menu | S421F20::M_421F40 |
+| 555 | `sub_5BCA10` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_5BCA10 |
 | 558 | `sub_423AC0` | 1 | MATCH | 1_boot_to_menu | C_cluster_423AC0::M_423AC0 |
 | 559 | `sub_4241B0` | 1 | MATCH | 1_boot_to_menu | C_cluster_423AC0::M_4241B0 |
 | 560 | `sub_4242F0` | 1 | MATCH | 1_boot_to_menu | C_cluster_423AC0::M_4242F0 |
