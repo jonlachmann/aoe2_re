@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 619 matched, 1825 left to match (11 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 620 matched, 1824 left to match (12 of them WIP), 105 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1825)
+## Left to match (1824)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -127,7 +127,6 @@
 | 182 | `sub_45EF10` | 12023 |  | 1_boot_to_menu |  |
 | 183 | `sub_420FA0` | 14 |  | 1_boot_to_menu |  |
 | 184 | `sub_5B5AB0` | 14 |  | 1_boot_to_menu |  |
-| 195 | `sub_45F8A0` | 51 |  | 1_boot_to_menu |  |
 | 196 | `sub_4A3370` | 1 |  | 3_click_single_player |  |
 | 197 | `sub_4A6290` | 1 |  | 3_click_single_player |  |
 | 198 | `sub_4A16C0` | 30 |  | 3_click_single_player |  |
@@ -1106,7 +1105,7 @@
 | 1612 | `sub_4B1390` | 1 |  | 4_click_random_map |  |
 | 1613 | `sub_4B1A20` | 6 |  | 4_click_random_map |  |
 | 1614 | `sub_4B2C00` | 1 |  | 4_click_random_map |  |
-| 1615 | `sub_4B5950` | 1 |  | 1_boot_to_menu |  |
+| 1615 | `sub_4B5950` | 1 | WIP | 1_boot_to_menu | C_cluster_443970::M_4B5950 |
 | 1616 | `sub_4BA390` | 1 |  | 1_boot_to_menu |  |
 | 1617 | `sub_4BA250` | 1 |  | 1_boot_to_menu |  |
 | 1622 | `sub_4B8730` | 1 |  | 1_boot_to_menu |  |
@@ -1832,7 +1831,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (619)
+## Matched (620)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -1892,6 +1891,7 @@
 | 188 | `sub_6032E5` | 2112 | MATCH | 1_boot_to_menu | sub_6032E5 |
 | 193 | `sub_4364F0` | 4374 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4364F0 |
 | 194 | `sub_4FA920` | 10 | MATCH | 4_click_random_map | C_vt6256F8::M_4FA920 |
+| 195 | `sub_45F8A0` | 51 | MATCH | 1_boot_to_menu | C_cluster_45F8A0::M_45F8A0 |
 | 207 | `sub_5BE8D0` | 10 | MATCH | 1_boot_to_menu | S5BE940::SetIndex_5BE8D0 |
 | 209 | `sub_4A2060` | 145 | MATCH | 1_boot_to_menu | S4A2060::Get_4A2060 |
 | 214 | `sub_4A1CD0` | 433 | MATCH | 1_boot_to_menu | S4A1CD0::M_4A1CD0 |

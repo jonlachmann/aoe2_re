@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 399 matched, 306 left to match (14 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 400 matched, 305 left to match (17 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (306)
+## Left to match (305)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -164,7 +164,7 @@
 | 441 | `sub_42DEC0` | 8 |  | 1_boot_to_menu |  |
 | 442 | `sub_437490` | 8 |  | 1_boot_to_menu |  |
 | 443 | `sub_42AE00` | 1 | WIP | 1_boot_to_menu | S42D1D0::M_42AE00 |
-| 444 | `sub_42AE50` | 1 |  | 1_boot_to_menu |  |
+| 444 | `sub_42AE50` | 1 | WIP | 1_boot_to_menu | C_cluster_42AEE0::M_42AE50 |
 | 455 | `sub_439030` | 1 |  | 1_boot_to_menu |  |
 | 467 | `sub_41E760` | 1 |  | 1_boot_to_menu | basegame::setup_fonts |
 | 469 | `sub_41EEE0` | 35 |  | 1_boot_to_menu |  |
@@ -242,7 +242,7 @@
 | 664 | `sub_4A3DE0` | 24 |  | 1_boot_to_menu |  |
 | 665 | `sub_5A5C50` | 9 |  | 1_boot_to_menu |  |
 | 673 | `sub_4A5230` | 3 |  | 1_boot_to_menu |  |
-| 674 | `sub_4B5950` | 3 |  | 1_boot_to_menu |  |
+| 674 | `sub_4B5950` | 3 | WIP | 1_boot_to_menu | C_cluster_443970::M_4B5950 |
 | 675 | `sub_4BA390` | 3 |  | 1_boot_to_menu |  |
 | 676 | `sub_4BA250` | 3 |  | 1_boot_to_menu |  |
 | 678 | `sub_4B60B0` | 3 |  | 1_boot_to_menu |  |
@@ -251,7 +251,7 @@
 | 684 | `sub_4B8910` | 9 |  | 1_boot_to_menu |  |
 | 689 | `sub_4B8B20` | 7 |  | 1_boot_to_menu |  |
 | 696 | `sub_4A4CE0` | 1 |  | 1_boot_to_menu |  |
-| 697 | `sub_4B2D50` | 1 |  | 1_boot_to_menu |  |
+| 697 | `sub_4B2D50` | 1 | WIP | 1_boot_to_menu | C_pnl_edit::M_4B2D50 |
 | 698 | `sub_4B2F60` | 1 |  | 1_boot_to_menu |  |
 | 699 | `sub_4B3580` | 2 |  | 1_boot_to_menu |  |
 | 701 | `sub_4B3160` | 1 |  | 1_boot_to_menu |  |
@@ -307,13 +307,12 @@
 | 797 | `sub_41CF70` | 1 |  | 1_boot_to_menu |  |
 | 800 | `sub_5BB2D0` | 2144832 |  | 1_boot_to_menu |  |
 | 801 | `sub_420450` | 2144832 |  | 1_boot_to_menu |  |
-| 802 | `sub_45F8A0` | 125 |  | 1_boot_to_menu |  |
 | 807 | `sub_4EDC70` | 2144832 |  | 1_boot_to_menu |  |
 | 808 | `sub_5217F0` | 2144832 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 | 812 | `sub_4B5AB0` | 6434496 |  | 1_boot_to_menu |  |
 
-## Matched (399)
+## Matched (400)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -708,6 +707,7 @@
 | 796 | `sub_41C8F0` | 1 | MATCH | 1_boot_to_menu | C_vt61DF78::Get_41C8F0 |
 | 798 | `sub_42D210` | 2144833 | MATCH | 1_boot_to_menu | S42D210::Check_42D210 |
 | 799 | `sub_415750` | 625 | MATCH | 1_boot_to_menu | C_vt61D890::M_415750 |
+| 802 | `sub_45F8A0` | 125 | MATCH | 1_boot_to_menu | C_cluster_45F8A0::M_45F8A0 |
 | 803 | `sub_5214E0` | 2144832 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5214E0 |
 | 804 | `sub_521580` | 2144832 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Hook_521580 |
 | 805 | `sub_521500` | 2144832 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Hook_521500 |

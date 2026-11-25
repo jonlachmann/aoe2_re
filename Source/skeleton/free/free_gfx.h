@@ -212,7 +212,7 @@ void sub_45F3F0();  // size 284, calls 0, lifted, module gfx
 void sub_45F5C0();  // size 144, calls 1, lifted, module gfx
 void sub_45F650();  // size 148, calls 0, lifted, module gfx
 void sub_45F6F0();  // size 427, calls 0, lifted, module gfx
-void sub_45F8A0();  // size 51, calls 0, lifted, module gfx
+void sub_45F8A0();  // size 51, calls 0, matched, module gfx
 void sub_45F8E0();  // size 314, calls 3, lifted, module gfx
 void sub_45FA20();  // size 306, calls 3, lifted, module gfx
 void sub_45FB60();  // size 196, calls 2, lifted, module gfx

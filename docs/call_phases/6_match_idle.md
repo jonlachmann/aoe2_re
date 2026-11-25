@@ -1,8 +1,8 @@
 # 6_match_idle
 
-880 functions called (0 first seen in this phase): 183 matched, 664 left to match (3 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+880 functions called (0 first seen in this phase): 184 matched, 663 left to match (3 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (664)
+## Left to match (663)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -473,7 +473,6 @@
 | 638 | `sub_4A6B90` | 150 |  | 5_start_game_to_match |  |
 | 640 | `sub_49DB10` | 74 |  | 5_start_game_to_match |  |
 | 641 | `sub_49D770` | 79 |  | 5_start_game_to_match |  |
-| 644 | `sub_45F8A0` | 24 |  | 1_boot_to_menu |  |
 | 645 | `sub_48CC70` | 2 |  | 5_start_game_to_match |  |
 | 646 | `sub_48CBC0` | 2 |  | 5_start_game_to_match |  |
 | 647 | `sub_416EE0` | 36 |  | 5_start_game_to_match |  |
@@ -671,7 +670,7 @@
 | 878 | `sub_4845F0` | 3 |  | 5_start_game_to_match |  |
 | 879 | `sub_48BD90` | 1 |  | 5_start_game_to_match |  |
 
-## Matched (183)
+## Matched (184)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -829,6 +828,7 @@
 | 639 | `sub_419810` | 35 | MATCH | 5_start_game_to_match | S419810::Check_419810 |
 | 642 | `sub_474800` | 50 | MATCH | 5_start_game_to_match | C_vt61CE24::Get_474800 |
 | 643 | `sub_52C430` | 74 | MATCH | 5_start_game_to_match | C_vt61DA40::Copy_52C430 |
+| 644 | `sub_45F8A0` | 24 | MATCH | 1_boot_to_menu | C_cluster_45F8A0::M_45F8A0 |
 | 653 | `sub_5EC090` | 91 | MATCH | 5_start_game_to_match | S5EC090::Get_5EC090 |
 | 672 | `sub_461490` | 144 | MATCH | 1_boot_to_menu | TDrawArea::FillRect_461490 |
 | 675 | `sub_461370` | 36 | MATCH | 1_boot_to_menu | TDrawArea::HLine_461370 |

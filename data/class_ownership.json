@@ -6887,17 +6887,19 @@
    "vtable": null,
    "anchor": "0x443970",
    "methods": 29,
-   "owned_methods": 4,
-   "unowned_methods": 25,
-   "primary_file": "Source/ui/C_pnl_pic.cpp",
+   "owned_methods": 6,
+   "unowned_methods": 23,
+   "primary_file": "Source/gfx/C_cluster_443970.cpp",
    "owner_files": {
-    "Source/gfx/C_cluster_443970.cpp": 1,
+    "Source/gfx/C_cluster_443970.cpp": 2,
+    "Source/ui/C_pnl_edit.cpp": 1,
     "Source/ui/C_pnl_pic.cpp": 1,
     "Source/ui/C_vt6230B0.cpp": 1,
     "Source/ui/free_ui.cpp": 1
    },
    "other_files": [
-    "Source/gfx/C_cluster_443970.cpp",
+    "Source/ui/C_pnl_edit.cpp",
+    "Source/ui/C_pnl_pic.cpp",
     "Source/ui/C_vt6230B0.cpp",
     "Source/ui/free_ui.cpp"
    ],

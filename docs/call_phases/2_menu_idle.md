@@ -1,8 +1,8 @@
 # 2_menu_idle
 
-31 functions called (0 first seen in this phase): 17 matched, 14 left to match (1 of them WIP), 0 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+31 functions called (0 first seen in this phase): 18 matched, 13 left to match (1 of them WIP), 0 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (14)
+## Left to match (13)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -19,9 +19,8 @@
 | 26 | `sub_4A0CD0` | 12480 |  | 1_boot_to_menu |  |
 | 27 | `sub_4B0AE0` | 5040 |  | 1_boot_to_menu |  |
 | 29 | `sub_4B3860` | 120 |  | 1_boot_to_menu |  |
-| 30 | `sub_45F8A0` | 24 |  | 1_boot_to_menu |  |
 
-## Matched (17)
+## Matched (18)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -42,6 +41,7 @@
 | 21 | `sub_415750` | 120 | MATCH | 1_boot_to_menu | C_vt61D890::M_415750 |
 | 22 | `sub_41D670` | 120 | MATCH | 1_boot_to_menu | sub_41D670 |
 | 28 | `sub_4364F0` | 2640 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4364F0 |
+| 30 | `sub_45F8A0` | 24 | MATCH | 1_boot_to_menu | C_cluster_45F8A0::M_45F8A0 |
 
 ## CRT / library (0)
 

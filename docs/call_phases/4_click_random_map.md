@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 268 matched, 286 left to match (9 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 269 matched, 285 left to match (10 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (286)
+## Left to match (285)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -128,7 +128,6 @@
 | 199 | `sub_45EF10` | 7 |  | 1_boot_to_menu |  |
 | 200 | `sub_420FA0` | 1 |  | 1_boot_to_menu |  |
 | 201 | `sub_5B5AB0` | 1 |  | 1_boot_to_menu |  |
-| 211 | `sub_45F8A0` | 59 |  | 1_boot_to_menu |  |
 | 212 | `sub_4A3370` | 1 |  | 3_click_single_player |  |
 | 213 | `sub_4A6290` | 1 |  | 3_click_single_player |  |
 | 214 | `sub_4A16C0` | 40 |  | 3_click_single_player |  |
@@ -208,7 +207,7 @@
 | 424 | `sub_4B1A20` | 94 |  | 4_click_random_map |  |
 | 425 | `sub_4BA310` | 35 |  | 4_click_random_map |  |
 | 426 | `sub_4B2C00` | 35 |  | 4_click_random_map |  |
-| 427 | `sub_4B5950` | 35 |  | 1_boot_to_menu |  |
+| 427 | `sub_4B5950` | 35 | WIP | 1_boot_to_menu | C_cluster_443970::M_4B5950 |
 | 428 | `sub_4BA390` | 35 |  | 1_boot_to_menu |  |
 | 429 | `sub_4BA250` | 35 |  | 1_boot_to_menu |  |
 | 434 | `sub_4B8730` | 35 |  | 1_boot_to_menu |  |
@@ -293,7 +292,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (268)
+## Matched (269)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -363,6 +362,7 @@
 | 197 | `sub_461130` | 6 | MATCH | 3_click_single_player | TDrawArea::FrameRect_461130 |
 | 205 | `sub_6032E5` | 207 | MATCH | 1_boot_to_menu | sub_6032E5 |
 | 210 | `sub_4364F0` | 24848 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4364F0 |
+| 211 | `sub_45F8A0` | 59 | MATCH | 1_boot_to_menu | C_cluster_45F8A0::M_45F8A0 |
 | 219 | `sub_4A1E20` | 6 | MATCH | 1_boot_to_menu | C_TribePopUpHelp::M_4A1E20 |
 | 224 | `sub_5BE8D0` | 4 | MATCH | 1_boot_to_menu | S5BE940::SetIndex_5BE8D0 |
 | 227 | `sub_4A2060` | 19 | MATCH | 1_boot_to_menu | S4A2060::Get_4A2060 |

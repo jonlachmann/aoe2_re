@@ -12,9 +12,9 @@ public:
     void method_003();  // sub_4AF0E0 [lifted]
     void method_004();  // sub_4B1230 [lifted]
     void method_005();  // sub_4B2C00 [lifted]
-    void method_006();  // sub_4B2D50 [lifted]
+    void method_006();  // sub_4B2D50 [wip] — Source/ui/C_pnl_edit.cpp
     void method_007();  // sub_4B4570 [lifted]
-    void method_008();  // sub_4B5950 [lifted]
+    void method_008();  // sub_4B5950 [wip] — Source/gfx/C_cluster_443970.cpp
     void method_009();  // sub_4B6890 [lifted]
     void method_010();  // sub_4B7F20 [matched] — Source/ui/C_pnl_pic.cpp
     void method_011();  // sub_4B8730 [lifted]
