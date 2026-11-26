@@ -14,6 +14,7 @@ extern "C" int g_cvt_41bc80_hits = 0;
 extern "C" { extern void* cv_config_ptr; }   // native config object from +0x24
 extern "C" void* cv_regctx = 0;        // native registry context from +0x1d4
 extern "C" int* cv_e4a0_arr = 0;       // native full array pointer for +0x7C
+extern "C" int* cv_e5d0_arr = 0;       // native full array pointer for +0x8C
 extern "C" int cv_win_class = 0;     // 0x41D5D0/0x41D6A0 proof counters
 extern "C" int cv_win_handle = 0;
 extern "C" int cv_de50_hits = 0;
@@ -844,11 +845,109 @@ int C_vt61DF78::slot43_41E4A0()
 }
 
 // 0x41E5D0 — font/panel construction. WIP success contract.
+// 0x520720 is the real matched init method of the 0x20 entry object; the stub
+// ctor below forwards to it so the native bring-up builds real entries while
+// the original VC6 EH frame is preserved on `new`. 0x5207B0 (the entry cleanup)
+// is still lifted and gets a no-op stub.
+class C_cluster_520720 {
+public:
+    C_cluster_520720* M_520720(int a1, int a2, int a3);
+};
+class C_cluster_5207B0 {
+public:
+    void M_5207B0(int a1, int a2, int a3);
+};
+extern void __cdecl Hook_41E5D0Ctor(void* p, int a1, char* a2, int a3);
+class T41E5D0Entry {
+public:
+    char pad_00[0x20];
+    T41E5D0Entry(int a1, char* a2, int a3);
+};
+T41E5D0Entry::T41E5D0Entry(int a1, char* a2, int a3)
+{
+    Hook_41E5D0Ctor(this, a1, a2, a3);
+}
+void __cdecl Hook_41E5D0Ctor(void* p, int a1, char* a2, int a3)
+{
+    ((C_cluster_520720*)p)->M_520720(a1, (int)(size_t)a2, a3);
+}
+void C_cluster_5207B0::M_5207B0(int a1, int a2, int a3)
+{
+    (void)a1; (void)a2; (void)a3;
+}
+
+// 0x41E5D0 (slot +0xA8) — the sibling of 0x41E4A0: seed +0x88 to 3, allocate
+// the 3*4 table through 0x5F8FF0 at +0x8C, zero it, `new` three 0x20 entries
+// from the 0x64D8B4/0x64D8A8/0x64D898 names with codes 0xC47C/0xC47D/0xC47E
+// and the +0x80 object, then walk the table and run each entry's 0x5207B0
+// cleanup with (0,-1,0).
 WIP_FUNC(0x41E5D0)
 int C_vt61DF78::slot42_41E5D0()
 {
+#ifdef MATCHED_NATIVE
+    *(short*)((char*)this + 0x88) = 3;
+    int* arr = (int*)sub_5F8FF0(3, 4);
+    cv_e5d0_arr = arr;
+    *(int*)((char*)this + 0x8c) = 0;
+    if (arr == 0)
+        return 0;
+    for (int i = 0; i < 3; i++)
+        arr[i] = 0;
+    {
+        T41E5D0Entry* a = new T41E5D0Entry(*(int*)((char*)this + 0x80),
+                                           (char*)ADDR(0x64d8b4), 0xc47c);
+        arr[0] = (int)(size_t)a;
+        T41E5D0Entry* b = new T41E5D0Entry(*(int*)((char*)this + 0x80),
+                                           (char*)ADDR(0x64d8a8), 0xc47d);
+        arr[1] = (int)(size_t)b;
+        T41E5D0Entry* c = new T41E5D0Entry(*(int*)((char*)this + 0x80),
+                                           (char*)ADDR(0x64d898), 0xc47e);
+        arr[2] = (int)(size_t)c;
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        C_cluster_5207B0* e = (C_cluster_5207B0*)(size_t)arr[i];
+        if (e != 0)
+            e->M_5207B0(0, -1, 0);
+    }
     return 1;
+#else
+    *(short*)((char*)this + 0x88) = 3;
+    *(int*)((char*)this + 0x8c) = (int)(size_t)sub_5F8FF0(3, 4);
+    if (*(int*)((char*)this + 0x8c) == 0)
+        return 0;
+    {
+        int i = 0;
+        for (; i < *(short*)((char*)this + 0x88); i++)
+            *(int*)((char*)(size_t)*(int*)((char*)this + 0x8c) + i * 4) = 0;
+    }
+    {
+        T41E5D0Entry* a = new T41E5D0Entry(*(int*)((char*)this + 0x80),
+                                           (char*)ADDR(0x64d8b4), 0xc47c);
+        *(int*)((char*)(size_t)*(int*)((char*)this + 0x8c)) = (int)(size_t)a;
+    }
+    {
+        T41E5D0Entry* b = new T41E5D0Entry(*(int*)((char*)this + 0x80),
+                                           (char*)ADDR(0x64d8a8), 0xc47d);
+        *(int*)((char*)(size_t)*(int*)((char*)this + 0x8c) + 4) = (int)(size_t)b;
+    }
+    {
+        T41E5D0Entry* c = new T41E5D0Entry(*(int*)((char*)this + 0x80),
+                                           (char*)ADDR(0x64d898), 0xc47e);
+        *(int*)((char*)(size_t)*(int*)((char*)this + 0x8c) + 8) = (int)(size_t)c;
+        int i = 0;
+        for (; i < *(short*)((char*)this + 0x88); i++)
+        {
+            C_cluster_5207B0* e = (C_cluster_5207B0*)(size_t)
+                *(int*)((char*)(size_t)*(int*)((char*)this + 0x8c) + i * 4);
+            if (e != 0)
+                e->M_5207B0(0, -1, 0);
+        }
+    }
+    return 1;
+#endif
 }
+
 
 // 0x41EA60 — post-screen init. WIP success contract.
 WIP_FUNC(0x41EA60)

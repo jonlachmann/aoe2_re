@@ -424,6 +424,22 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2, hwnd 0x1A2B3C4D,
   DE50/E070 screens 1, WinMain returns 0.
 
+- stage 20 — 0x41E5D0 (391 bytes, base slot +0xA8) is the sibling table setup
+  of 0x41E4A0: seed +0x88 to 3, allocate the 3*4 table at +0x8C through the
+  exempt CRT host replacement 0x5F8FF0, zero it with the explicit
+  member-read `cmp`/`inc`/`[eax*4-4]` loop, `new` three 0x20 entries from the
+  0x64D8B4/0x64D8A8/0x64D898 names with codes 0xC47C/0xC47D/0xC47E and the
+  +0x80 object, then walk the table and run each entry's 0x5207B0 cleanup with
+  (0,-1,0). It remains WIP (ours 384 vs 391 bytes): the only body miss is the
+  `mov [esp+0x14], 0xffffffff` EH-state reset VC6 emits after the third `new`
+  succeeds (all other bytes are identical; the inner jumps then shift by that
+  one instruction). The native path keeps the full array pointer in
+  `cv_e5d0_arr`; the ctor stub forwards to the real matched 0x520720 init and
+  the cleanup is a no-op stub of the still-lifted 0x5207B0, so the menu path now
+  builds real 0x20 entries. Evidence: boot exit 0, no fault, `DC10 status=0
+  DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2, hwnd 0x1A2B3C4D,
+  DE50/E070 screens 1, WinMain returns 0.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
