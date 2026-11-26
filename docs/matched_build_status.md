@@ -279,13 +279,46 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[MessageBox]` line is reached. Gate `[1794/1794] MATCH_FUNCs OK, 11 WIP`;
   matched TUs 166 ok/0 failed; 527 stubs; all-object link 170; boot link 172.
 
+- stage 14 — the 0x41DC10 device-context build and the 0x41DC80 parser WIP:
+  `0x41DC10` is now byte-exact (`MATCH_FUNC OK`, 106 bytes) as
+  `C_vt61DF78::slot36_41DC10` in `Source/app/C_vt61DF78.cpp`. Its source shape
+  is `new T41DC10Obj(path)` — the CRT operator new at 0x5F8F60, operator delete
+  at 0x5F90B0 — which is exactly what produces the original's fs:[0] EH frame:
+  the constructor can throw, so the unwind funclet frees the 0x110 allocation.
+  The body stores the constructed pointer at +0x1D4 and returns non-null as an
+  int (the original's `xor edx; setne dl; mov eax,edx` tail). The TU-local
+  constructor forwards to the already-matched `S4BDE90::M_4BDE90`, and the
+  9-argument slot 0x61C008 is now identified as RegCreateKeyExA and patched with
+  a native trampoline (headless boot succeeds without registry marshalling).
+  `0x41DC80` is a WIP member (448 vs 461 bytes) of the same class: it copies the
+  config's +0x518 path with 0x5FCB40, finds LOGDIR:/LOGNAME: with 0x5FD7C3, walks
+  the text through 0x5FD7A5/0x5FD716/0x5FD66E into 0x651164/0x66955C, and builds
+  the 0xCEC object at +0x1C8 with the 0x440A90 constructor and 0x440B40/B80/BC0
+  setters. The miss is in the two parser loops' register/argument scheduling and
+  the pointer-difference tail, not the calls. The DC80 helper band is CRT/library
+  and now has host replacements in `free_crt.cpp` (strncpy/strstr/advance/ASCII
+  check/copy).
+  The base constructor 0x41B760 now runs the real chain under MATCHED_NATIVE:
+  it calls the byte-verified `slot36_41DC10` through its owner class, writes
+  g_66451C from +0x1D4, and takes the 0x41DC80-failure branch (+0x60 = 0xF) as a
+  stand-in while DC80 is not wired. Evidence: boot exit 0, no fault, and the
+  counters show `DC10=1 status=F` — the device-context object was really built
+  natively and the status advanced from the old 0xE stop to 0xF. Gate
+  `[1795/1795] MATCH_FUNCs OK, 12 WIP`; matched TUs 166 ok/0 failed; 534 stubs;
+  all-object link 170 probe OK; boot link 172 objects. Ownership feedback:
+  0x41B760/0x41DC10/0x41DC80 belong to the base vtable class 0x61DF78
+  (`C_vt61DF78`), whose slots +0x090/+0x094/+0x0B0 they are; 0x41B760 sets
+  vtable 0x61DF78 and is called by the derived 0x5B0EC0 (vtable 0x62C1E0).
+
 Gaps now:
-1. WinMain 0x47AE20 is now byte-exact, and the native run executes the sim
-   constructor and its vtable slots, but the object status ends at 0xE and the
-   MessageBox path, so the run returns before the menu loop. The menu-facing work
-   is still the lifted slot +0x28 (0x5B2F20), the +0x04 slot (0x41CF70) and the
-   device chain 0x41DC10/0x41DC80/0x41BC80; the constructors themselves are WIP
-   (1504 vs 1175 and 432 vs 686).
+1. The native run now executes the byte-verified 0x41DC10 and advances the
+   object status to 0xF (the 0x41DC80 failure branch), so the run still takes the
+   MessageBox path and returns before the menu loop. To reach the menu the base
+   chain must continue: 0x41DC80 needs native wiring (its WIP body is 448/461,
+   and its 0x440A90 constructor is still lifted), then 0x41BC80 (1700), then the
+   WinMain success branch's slot +0x04 (0x41CF70, 243). Slot +0x28 (0x5B2F20,
+   2088) and 0x5B17D0 (862) remain lifted too; the constructors 0x41B760 and
+   0x5B0EC0 are WIP (1504 vs 1175 and 432 vs 686).
 2. Import ABI (partially done): stages 10-11 install trampolines for
    LoadLibraryA/GetProcAddress/FreeLibrary, timeBeginPeriod/timeGetTime/
    timeEndPeriod, GlobalFree and MessageBoxA, marshalling image pointers to

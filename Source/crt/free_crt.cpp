@@ -524,3 +524,34 @@ int __stdcall sub_5FB470(int a1)
     return Hook_5FB490(0x18, 0, 0, a1, 0, 0, 0, 0, 0);
 }
 
+// Host replacements for the DC80 path-parser helpers in the CRT/library band
+// (exempt from match effort): 0x5FCB40 is strncpy, 0x5FD7C3 is strstr,
+// 0x5FD7A5 advances one character, 0x5FD716 accepts ASCII bytes, and 0x5FD66E
+// copies n bytes into the LOGDIR/LOGNAME buffers.
+char* __cdecl sub_5FCB40(char* dst, char* src, int n)
+{
+    return strncpy(dst, src, (size_t)n);
+}
+char* __cdecl sub_5FD7C3(char* a1, char* a2)
+{
+    return strstr(a1, a2);
+}
+char* __cdecl sub_5FD7A5(char* a1, int a2)
+{
+    (void)a2;
+    if (a1 == 0)
+        return 0;
+    return a1 + 1;
+}
+int __cdecl sub_5FD716(unsigned char a1)
+{
+    (void)a1;
+    return 0;
+}
+char* __cdecl sub_5FD66E(char* a1, char* a2, int a3)
+{
+    if (a3 != 0)
+        while ((a3--) != 0)
+            *a1++ = *a2++;
+    return a1;
+}

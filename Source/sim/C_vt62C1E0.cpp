@@ -1,4 +1,5 @@
 #include "C_vt62C1E0.hpp"
+#include "app/C_vt61DF78.hpp"
 #include <string.h>
 #include "Function.hpp"
 #include "matched_mem.h"
@@ -506,12 +507,14 @@ void C_vt62C1E0::M_5BAD80(int a1)
 #ifdef MATCHED_NATIVE
 extern "C" int g_cvt_ctor41_hits = 0;   // proof counters for the native boot
 extern "C" int g_cvt_ctor5b_hits = 0;
+extern "C" int g_cvt_dc10_status = 0;
 extern "C" int g_cvt_slot18_hits = 0;
 extern "C" int g_cvt_slot24_hits = 0;
 extern "C" int g_cvt_slot00_hits = 0;
 #endif
 extern void* g_6645c4;                 // global object slot at 0x6645C4
 extern void* g_664510;                 // global slot at 0x664510
+extern char g_66451c[0x1000];          // 0x66451C receives the 0x41DC10 result
 extern int __stdcall Hook_473AE0(int a1, int a2, char* a3, int a4);
 
 #ifdef MATCHED_NATIVE
@@ -596,7 +599,7 @@ C_vt62C1E0* C_vt62C1E0::M_41B760(void* parent, int flag)
     SCvtI32(this, 0x44, -1); SCvtI32(this, 0x48, -1);
     SCvtI32(this, 0x4c, -1); SCvtI32(this, 0x50, -1);
     SCvtI32(this, 0x54, 0); SCvtI32(this, 0x58, 0); SCvtI32(this, 0x5c, 0);
-    SCvtI32(this, 0x60, 0x0e);           // failed 0x41DC10 branch
+    SCvtI32(this, 0x60, 0);              // success path leaves status 0
     SCvtI32(this, 0x64, 0); SCvtI32(this, 0x68, 0); SCvtI32(this, 0x6c, 0);
     SCvtU8(this, 0x70, 2);
     SCvtI32(this, 0x74, 0);
@@ -676,6 +679,22 @@ C_vt62C1E0* C_vt62C1E0::M_41B760(void* parent, int flag)
 
     // pointer-sized parent config block: write last so +0x2C stays zero.
     *(void**)((char*)this + 0x24) = parent;
+
+    // device chain: 0x41DC10 is now a byte-verified native body (allocates the
+    // 0x110 registry/context object and stores it at +0x1D4). 0x41DC80 is still
+    // WIP without native helper wiring, so this body takes the original's
+    // 0x41DC80-failure branch (+0x60 = 0xF) after the 0x41DC10 success contract
+    // (g_66451C = +0x1D4) has run.
+#ifdef MATCHED_NATIVE
+    if (!((C_vt61DF78*)(void*)this)->C_vt61DF78::slot36_41DC10())
+    {
+        SCvtI32(this, 0x60, 0x0e);
+        return this;
+    }
+    *(int*)g_66451c = *(int*)((char*)this + 0x1d4);
+    SCvtI32(this, 0x60, 0x0f);
+    g_cvt_dc10_status = 0x0f;
+#endif
     return this;
 }
 

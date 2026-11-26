@@ -33,6 +33,7 @@ extern char g_61c3c8[0x1000];   /* timeGetTime */
 extern char g_61c168[0x1000];   /* GlobalFree */
 extern char g_61c37c[0x1000];   /* MessageBoxA */
 extern char g_61c3c4[0x1000];   /* timeEndPeriod */
+extern char g_61C008[0x1000];   /* RegCreateKeyExA (9-arg slot 0x61C008) */
 
 typedef int (__stdcall *TLoadLibraryA)(char *name);
 typedef int (__cdecl *TExport)(int, char *, char *, int);
@@ -188,6 +189,22 @@ static int __stdcall message_box_a(int hwnd, char *text, char *cap, int type)
     return 1;
 }
 
+static int __stdcall reg_create_key_ex_a(int root, char *subkey, int reserved,
+                                         char *cls, int options, int access,
+                                         void *sec, void *outkey, void *disposition)
+{
+    /* The matched 0x4BDE90 passes native stack/config pointers here; the HLE
+     * shim resolves guest VAs and would fault on them. Headless boot does not
+     * need registry handles: succeed and hand back empty handles/dispositions. */
+    (void)root; (void)subkey; (void)reserved; (void)cls; (void)options;
+    (void)access; (void)sec;
+    if (outkey != 0)
+        *(uint32_t*)outkey = 0;
+    if (disposition != 0)
+        *(uint32_t*)disposition = 0;
+    return 0;
+}
+
 static int __stdcall get_last_error(void)
 {
     return (int)call_shim("GetLastError", 0, 0);
@@ -203,6 +220,7 @@ extern "C" void InstallMatchedImports(void)
     *(void**)g_61c168 = (void*)global_free;
     *(void**)g_61c37c = (void*)message_box_a;
     *(void**)g_61c3c4 = (void*)time_end_period;
+    *(void**)g_61C008 = (void*)reg_create_key_ex_a;
 }
 
 /* Diagnostic path: run the WIP language init 0x47B620 natively now that the
@@ -216,13 +234,16 @@ extern "C" int g_cvt_ctor5b_hits;
 extern "C" int g_cvt_slot18_hits;
 extern "C" int g_cvt_slot24_hits;
 extern "C" int g_cvt_slot00_hits;
+extern "C" int g_cvt_slot36_hits;
+extern "C" int g_cvt_dc10_status;
 extern "C" int matched_winmain(void)
 {
     int r = sub_47AE20(0x400000, 0, (char *)(g_matched_base + 0x662be0), 1);
     fprintf(stderr, "[matched-imports] WinMain body 0x47AE20 returned %d\n", r);
-    fprintf(stderr, "[matched-imports] sim ctor hits: 41B760=%d 5B0EC0=%d; vtable slots 00=%d 18=%d 24=%d\n",
+    fprintf(stderr, "[matched-imports] sim ctor hits: 41B760=%d 5B0EC0=%d; vtable slots 00=%d 18=%d 24=%d; DC10=%d status=%X\n",
             g_cvt_ctor41_hits, g_cvt_ctor5b_hits, g_cvt_slot00_hits,
-            g_cvt_slot18_hits, g_cvt_slot24_hits);
+            g_cvt_slot18_hits, g_cvt_slot24_hits, g_cvt_slot36_hits,
+            g_cvt_dc10_status);
     return r;
 }
 
