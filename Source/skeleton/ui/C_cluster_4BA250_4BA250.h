@@ -7,5 +7,5 @@
 class C_cluster_4BA250 {
 public:
     void method_000();  // sub_4BA250 [lifted]
-    void method_001();  // sub_4BA390 [wip] — Source/ui/C_pnl_lst.cpp
+    void method_001();  // sub_4BA390 [matched] — Source/ui/C_pnl_lst.cpp
 };

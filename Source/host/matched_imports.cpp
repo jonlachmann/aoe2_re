@@ -179,12 +179,13 @@ static int __stdcall load_string_a(int module, int id, char *buf, int n)
 
 static int __stdcall message_box_a(int hwnd, char *text, char *cap, int type)
 {
-    uint32_t args[4];
-    args[0] = (uint32_t)hwnd;
-    args[1] = slot_va(text);
-    args[2] = slot_va(cap);
-    args[3] = (uint32_t)type;
-    return (int)call_shim("MessageBoxA", 4, args);
+    /* The matched WinMain passes native stack buffers, not guest VAs; the HLE
+     * shim resolves guest pointers through the image base and would fault.
+     * Headless boot only needs the box's text and an IDOK result. */
+    (void)hwnd; (void)type;
+    fprintf(stderr, "[MessageBox] %s: %s\n",
+            cap != 0 ? cap : "", text != 0 ? text : "");
+    return 1;
 }
 
 static int __stdcall get_last_error(void)
@@ -210,10 +211,18 @@ extern "C" void InstallMatchedImports(void)
 extern int __cdecl sub_47B620(char *a1);
 
 extern int __stdcall sub_47AE20(int hInstance, int hPrevInstance, char *lpCmdLine, int nCmdShow);
+extern "C" int g_cvt_ctor41_hits;
+extern "C" int g_cvt_ctor5b_hits;
+extern "C" int g_cvt_slot18_hits;
+extern "C" int g_cvt_slot24_hits;
+extern "C" int g_cvt_slot00_hits;
 extern "C" int matched_winmain(void)
 {
     int r = sub_47AE20(0x400000, 0, (char *)(g_matched_base + 0x662be0), 1);
     fprintf(stderr, "[matched-imports] WinMain body 0x47AE20 returned %d\n", r);
+    fprintf(stderr, "[matched-imports] sim ctor hits: 41B760=%d 5B0EC0=%d; vtable slots 00=%d 18=%d 24=%d\n",
+            g_cvt_ctor41_hits, g_cvt_ctor5b_hits, g_cvt_slot00_hits,
+            g_cvt_slot18_hits, g_cvt_slot24_hits);
     return r;
 }
 

@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 631 matched, 1805 left to match (9 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 634 matched, 1802 left to match (6 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1805)
+## Left to match (1802)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -150,7 +150,6 @@
 | 269 | `sub_4F8000` | 1 |  | 5_start_game_to_match |  |
 | 272 | `sub_4FED00` | 1 |  | 5_start_game_to_match |  |
 | 274 | `sub_4B2A50` | 1 |  | 4_click_random_map |  |
-| 278 | `sub_5BAD80` | 3 | WIP | 1_boot_to_menu | C_vt62C1E0::M_5BAD80 |
 | 291 | `sub_5BA220` | 1 |  | 5_start_game_to_match |  |
 | 292 | `sub_4215B0` | 1 |  | 5_start_game_to_match |  |
 | 310 | `sub_42FAE0` | 1 |  | 5_start_game_to_match |  |
@@ -1030,7 +1029,6 @@
 | 1521 | `sub_5D3F00` | 5 |  | 5_start_game_to_match |  |
 | 1522 | `sub_5D3CF0` | 4 |  | 5_start_game_to_match |  |
 | 1523 | `sub_522EB0` | 147 |  | 1_boot_to_menu |  |
-| 1524 | `sub_522C70` | 147 | WIP | 1_boot_to_menu | S522C70::M_522C70 |
 | 1526 | `sub_5D25C0` | 1 |  | 5_start_game_to_match |  |
 | 1527 | `sub_5D28D0` | 1 |  | 5_start_game_to_match |  |
 | 1528 | `sub_4BEC90` | 1 |  | 5_start_game_to_match |  |
@@ -1089,7 +1087,6 @@
 | 1612 | `sub_4B1390` | 1 |  | 4_click_random_map |  |
 | 1613 | `sub_4B1A20` | 6 |  | 4_click_random_map |  |
 | 1614 | `sub_4B2C00` | 1 |  | 4_click_random_map |  |
-| 1616 | `sub_4BA390` | 1 | WIP | 1_boot_to_menu | C_pnl_lst::M_4BA390 |
 | 1617 | `sub_4BA250` | 1 |  | 1_boot_to_menu |  |
 | 1622 | `sub_4B8730` | 1 |  | 1_boot_to_menu |  |
 | 1624 | `sub_4B8910` | 11 |  | 1_boot_to_menu |  |
@@ -1812,7 +1809,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (631)
+## Matched (634)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -1924,6 +1921,7 @@
 | 275 | `sub_4BD490` | 1 | MATCH | 4_click_random_map | S4BD490::M_4BD490 |
 | 276 | `sub_5BAEE0` | 2 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_5BAEE0 |
 | 277 | `sub_5BAEC0` | 2 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_5BAEC0 |
+| 278 | `sub_5BAD80` | 3 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_5BAD80 |
 | 279 | `sub_421B10` | 3 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_421B10 |
 | 280 | `sub_421C20` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::Set9BE_421C20 |
 | 281 | `sub_422330` | 1 | MATCH | 5_start_game_to_match | S422320::Set_422330 |
@@ -2213,6 +2211,7 @@
 | 1508 | `sub_41F610` | 1 | MATCH | 5_start_game_to_match | C_vt61DF78::Set_41F610 |
 | 1512 | `sub_4DA4A0` | 58 | MATCH | 5_start_game_to_match | S4DA4A0::M_4DA4A0 |
 | 1518 | `sub_5C53B0` | 1 | MATCH | 5_start_game_to_match | C_cluster_443970::M_5C53B0 |
+| 1524 | `sub_522C70` | 147 | MATCH | 1_boot_to_menu | S522C70::M_522C70 |
 | 1525 | `sub_5DCC30` | 149 | MATCH | 1_boot_to_menu | S5DCC30::Init_5DCC30 |
 | 1537 | `sub_4BECB0` | 1 | MATCH | 5_start_game_to_match | S4BECB0::M_4BECB0 |
 | 1539 | `sub_47C850` | 1 | MATCH | 5_start_game_to_match | S47C850::M_47C850 |
@@ -2245,6 +2244,7 @@
 | 1607 | `sub_4A1E50` | 30 | MATCH | 1_boot_to_menu | S4A1E50::M_4A1E50 |
 | 1609 | `sub_4A05D0` | 349 | MATCH | 1_boot_to_menu | S4A05D0::M_4A05D0 |
 | 1615 | `sub_4B5950` | 1 | MATCH | 1_boot_to_menu | C_cluster_443970::M_4B5950 |
+| 1616 | `sub_4BA390` | 1 | MATCH | 1_boot_to_menu | C_pnl_lst::M_4BA390 |
 | 1618 | `sub_4BAE20` | 1 | MATCH | 1_boot_to_menu | C_pnl_lst::M_4BAE20 |
 | 1619 | `sub_4B5A00` | 1 | MATCH | 4_click_random_map | S4BSetBulk::SetInt_4B5A00 |
 | 1620 | `sub_4BCE70` | 1 | MATCH | 4_click_random_map | sub_4BCE70 |

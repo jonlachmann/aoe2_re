@@ -75,6 +75,12 @@ public:
     unsigned char field_1ADC;     // +0x1ADC
     char pad_1ADD[0x1AE0 - 0x1ADD];
     int field_1AE0;               // +0x1AE0
+    char pad_1AE4[0x1C54 - 0x1AE4]; // +0x1AE4..+0x1C54
+    int field_1C54;               // +0x1C54
+    int field_1C58;               // +0x1C58
+    char pad_1C5C[0x1C8C - 0x1C5C]; // +0x1C5C..+0x1C8C
+    int field_1C8C;               // +0x1C8C
+    int field_1C90;               // +0x1C90
 
     float Get924_421750();
     int Get928_421760();
@@ -104,6 +110,8 @@ public:
     void ConditionC9_421D70(unsigned char v);
     void ConditionCA_421D90(unsigned char v);
     int Get_422320();
+    C_vt62C1E0* M_41B760(void* parent, int flag);  // base constructor 0x41B760
+    C_vt62C1E0* M_5B0EC0(void* parent, int flag);  // derived constructor 0x5B0EC0
     void Hook_5BAD80(int a1);     // unresolved callee at 0x5BAD80
     void M_5BAEE0(char* src);     // inline strcpy into +0x1240
     void Wrap_5B5C50();

@@ -246,12 +246,46 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   link 172 objects; boot run exit 0, language init returns 1, native WinMain
   returns 0 without fault, but the sim-object constructor remains the stop.
 
+- stage 13 — the sim/config object constructors and a native vtable:
+  WinMain `0x47AE20` is now a byte-exact `MATCH_FUNC` (the frame is modelled as
+  `result`, `buf`, the 0x1980 info block passed to the constructor, caption and
+  text; gate reports `?sub_47AE20...: OK`). The constructor call is declared on
+  the WinMain-side `TWinMainObj` as `Init_5B0EC0`; that method forwards to the
+  real owner class `C_vt62C1E0::M_5B0EC0`, so the call site stays direct and the
+  marker stays exact. `Source/sim/C_vt62C1E0.hpp` now extends the layout through
+  the constructor's tail (+0x1C54/+0x1C58/+0x1C8C/+0x1C90, total 0x1C94) and
+  declares `M_41B760` / `M_5B0EC0`.
+  The base constructor `0x41B760` is a WIP member (1504 vs 1175 bytes): it zeroes
+  the 0x1C94 block, sets the base pregame scalars (+0x08..+0x18 = -1, +0x30 = 1,
+  +0x44..+0x50 = -1, +0x70 = 2, +0x1C4/+0x1F4/+0x1F8/+0x9E0 = 1, the 0x41C/0x530/
+  0x914/0xB38 groups), folds the 0x421Axx/0x421Bxx setter families inline where
+  their owner TU models them in separate local classes, writes the +0x9A9..+0xB5
+  and +0x9C0.. bytes, takes the original failed-device branch status +0x60=0xE
+  (its 0x41DC10/0x41DC80/0x41BC80 chain is still lifted), stores the parent config
+  pointer at +0x24 last, and publishes `this` into g_6645c4.
+  The derived constructor `0x5B0EC0` is a WIP member (432 vs 686 bytes): it calls
+  the base, clears the +0x1460 scene block, installs the 0x62C1E0 vtable, calls the
+  matched 0x5BAxxx/0x5BBxxx setters in the original order with their original
+  arguments, clears the nine +0x1AB8 dwords, folds 0x421B90(4) and the 0x5BC460
+  clear, and on the caller flag follows the 0x5B17D0 failure branch (+0x60=1).
+  A native 87-slot vtable replica is built under MATCHED_NATIVE: slot +0x00 is the
+  matched deleting destructor 0x5B1170 through `Sd5B1170::D_5B1170`, +0x18 reads
+  the byte-verified +0x60 status getter, +0x24 is the 0x41C920 resource-fill
+  equivalent, +0x04/+0x28 and all unmatched slots go to a zero-returning trap.
+  MessageBoxA's trampoline now prints native stack caption/text instead of passing
+  them to the guest-pointer HLE (that marshalling faulted with `sig=10`).
+  Evidence: boot exit 0, no fault; counters show the native path really ran:
+  `sim ctor hits: 41B760=1 5B0EC0=1; vtable slots 00=1 18=1 24=1` and the
+  `[MessageBox]` line is reached. Gate `[1794/1794] MATCH_FUNCs OK, 11 WIP`;
+  matched TUs 166 ok/0 failed; 527 stubs; all-object link 170; boot link 172.
+
 Gaps now:
-1. WinMain 0x47AE20 is WIP, not byte-exact (2096 vs 2035; 188 masked diff lines,
-   mostly cfg base shift and register scheduling). Its body now runs natively
-   end to end with real malloc/sprintf, but the sim-object constructor 0x5B0EC0
-   and its base constructor 0x41B760 are still stubs, so the run returns before
-   the menu.
+1. WinMain 0x47AE20 is now byte-exact, and the native run executes the sim
+   constructor and its vtable slots, but the object status ends at 0xE and the
+   MessageBox path, so the run returns before the menu loop. The menu-facing work
+   is still the lifted slot +0x28 (0x5B2F20), the +0x04 slot (0x41CF70) and the
+   device chain 0x41DC10/0x41DC80/0x41BC80; the constructors themselves are WIP
+   (1504 vs 1175 and 432 vs 686).
 2. Import ABI (partially done): stages 10-11 install trampolines for
    LoadLibraryA/GetProcAddress/FreeLibrary, timeBeginPeriod/timeGetTime/
    timeEndPeriod, GlobalFree and MessageBoxA, marshalling image pointers to

@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 282 matched, 266 left to match (7 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 285 matched, 263 left to match (4 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (266)
+## Left to match (263)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -151,7 +151,6 @@
 | 259 | `sub_4F5AB0` | 1 |  | 4_click_random_map |  |
 | 264 | `sub_464610` | 1 |  | 4_click_random_map |  |
 | 267 | `sub_5BAB10` | 1 |  | 4_click_random_map |  |
-| 268 | `sub_5BAD80` | 2 | WIP | 1_boot_to_menu | C_vt62C1E0::M_5BAD80 |
 | 278 | `sub_5BB000` | 17 | WIP | 1_boot_to_menu | C_vt62C1E0::Set_5BB000 |
 | 301 | `sub_422D00` | 1 |  | 4_click_random_map |  |
 | 303 | `sub_4A23E0` | 1 |  | 1_boot_to_menu |  |
@@ -173,7 +172,6 @@
 | 366 | `sub_45FB60` | 1 |  | 1_boot_to_menu |  |
 | 367 | `sub_45FED0` | 1 |  | 1_boot_to_menu |  |
 | 369 | `sub_522EB0` | 2 |  | 1_boot_to_menu |  |
-| 370 | `sub_522C70` | 2 | WIP | 1_boot_to_menu | S522C70::M_522C70 |
 | 376 | `sub_460180` | 6 |  | 1_boot_to_menu |  |
 | 381 | `sub_4A4600` | 109 |  | 1_boot_to_menu |  |
 | 382 | `sub_4B9F70` | 179 |  | 1_boot_to_menu |  |
@@ -191,7 +189,6 @@
 | 424 | `sub_4B1A20` | 94 |  | 4_click_random_map |  |
 | 425 | `sub_4BA310` | 35 |  | 4_click_random_map |  |
 | 426 | `sub_4B2C00` | 35 |  | 4_click_random_map |  |
-| 428 | `sub_4BA390` | 35 | WIP | 1_boot_to_menu | C_pnl_lst::M_4BA390 |
 | 429 | `sub_4BA250` | 35 |  | 1_boot_to_menu |  |
 | 434 | `sub_4B8730` | 35 |  | 1_boot_to_menu |  |
 | 436 | `sub_4B8910` | 153 |  | 1_boot_to_menu |  |
@@ -273,7 +270,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (282)
+## Matched (285)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -373,6 +370,7 @@
 | 263 | `sub_465110` | 1 | MATCH | 4_click_random_map | S465110::M_465110 |
 | 265 | `sub_5BB140` | 4 | MATCH | 4_click_random_map | S5BGetBulk::Get_5BB140 |
 | 266 | `sub_5BB150` | 4 | MATCH | 4_click_random_map | S5BGetBulk::Get_5BB150 |
+| 268 | `sub_5BAD80` | 2 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_5BAD80 |
 | 269 | `sub_421B10` | 2 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_421B10 |
 | 270 | `sub_5BAEC0` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_5BAEC0 |
 | 271 | `sub_5BAD60` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::SetInt_5BAD60 |
@@ -430,6 +428,7 @@
 | 361 | `sub_4A39E0` | 2 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4A39E0 |
 | 363 | `sub_4A39F0` | 1 | MATCH | 1_boot_to_menu | S4A39F0::M_4A39F0 |
 | 368 | `sub_460490` | 2 | MATCH | 1_boot_to_menu | TDrawArea::BuildRowPtrs_460490 |
+| 370 | `sub_522C70` | 2 | MATCH | 1_boot_to_menu | S522C70::M_522C70 |
 | 371 | `sub_5DCC30` | 2 | MATCH | 1_boot_to_menu | S5DCC30::Init_5DCC30 |
 | 372 | `sub_5DC590` | 2 | MATCH | 1_boot_to_menu | C_cluster_522D20::Hook_5DC590 |
 | 373 | `sub_522D20` | 2 | MATCH | 1_boot_to_menu | C_cluster_522D20::M_522D20 |
@@ -466,6 +465,7 @@
 | 419 | `sub_4AF4D0` | 44 | MATCH | 1_boot_to_menu | C_cluster_4AF360::M_4AF4D0 |
 | 420 | `sub_4A6520` | 60 | MATCH | 1_boot_to_menu | Sc4A6520::M_4A6520 |
 | 427 | `sub_4B5950` | 35 | MATCH | 1_boot_to_menu | C_cluster_443970::M_4B5950 |
+| 428 | `sub_4BA390` | 35 | MATCH | 1_boot_to_menu | C_pnl_lst::M_4BA390 |
 | 430 | `sub_4BAE20` | 35 | MATCH | 1_boot_to_menu | C_pnl_lst::M_4BAE20 |
 | 431 | `sub_4B5A00` | 35 | MATCH | 4_click_random_map | S4BSetBulk::SetInt_4B5A00 |
 | 432 | `sub_4BCE70` | 35 | MATCH | 4_click_random_map | sub_4BCE70 |

@@ -6,6 +6,6 @@
 
 class C_cluster_522C70 {
 public:
-    void method_000();  // sub_522C70 [wip] — Source/sim/free_sim.cpp
+    void method_000();  // sub_522C70 [matched] — Source/sim/free_sim.cpp
     void method_001();  // sub_522EB0 [lifted]
 };
