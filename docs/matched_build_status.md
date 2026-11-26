@@ -582,6 +582,21 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   the matched UI entry chain (425650/425680/4256A0, 5200F0, 520410, 520CC0,
   520DD0, 520E10, 520E50, 520E90, 520F50, 520ED0 all entered, 521090 not).
 
+- stage 29 — two more byte-exact phase-1 matches land in the owned TUs.
+  `Source/game/free_game.cpp` gains `MATCH_FUNC(0x430A70)` (114 bytes): the
+  guarded 0x66451C request chain, with the second 0x4BE010 request inlined as
+  the first argument of `0x5FCC80`, the 0x64FD9C compare, then the 0x5FCC68
+  close and the four-argument 0x4BDFB0 update. `Source/ui/free_ui.cpp` gains
+  `MATCH_FUNC(0x472EF0)` (185 bytes) on the real grid object: call sites pass
+  the `+0x83C` grid as `this` (not the 0x6645C4 global), so the class now has
+  +8 count, +0x0C row-pointer array and +0x10 per-row counts; the body bounds
+  a1/a2, fills the 0x20 buffer through the global's vtable slot +0x24, parses
+  with 0x5FCFDC and writes the 12-byte row with per-line inline indexing. Class
+  feedback: `C_global_6645C4` is a vtable object whose +0x24 slot fills buffers;
+  `0x4BE490` stays WIP (176 vs 182) with complete semantics after four register
+  permutations. Evidence after this wave: full gate `[1807/1807] MATCH_FUNCs
+  OK, 31 WIP`; phase docs now 446/815 matched (250 left, 24 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

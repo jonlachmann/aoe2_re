@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 636 matched, 1800 left to match (6 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 637 matched, 1799 left to match (7 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1800)
+## Left to match (1799)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -179,7 +179,7 @@
 | 357 | `sub_4A23E0` | 2 |  | 1_boot_to_menu |  |
 | 360 | `sub_4A0460` | 109 |  | 1_boot_to_menu |  |
 | 361 | `sub_4A11F0` | 650 |  | 1_boot_to_menu |  |
-| 367 | `sub_4BE490` | 109 |  | 1_boot_to_menu |  |
+| 367 | `sub_4BE490` | 109 | WIP | 1_boot_to_menu | sub_4BE490 |
 | 378 | `sub_4A3430` | 2 |  | 1_boot_to_menu |  |
 | 381 | `sub_51E7F0` | 85 |  | 1_boot_to_menu |  |
 | 382 | `sub_4A35A0` | 2 |  | 1_boot_to_menu |  |
@@ -1133,7 +1133,6 @@
 | 1695 | `sub_4F6080` | 1 |  | 5_start_game_to_match |  |
 | 1697 | `sub_4316A0` | 1 |  | 4_click_random_map |  |
 | 1698 | `sub_431710` | 1 |  | 5_start_game_to_match |  |
-| 1699 | `sub_430A70` | 1 |  | 1_boot_to_menu |  |
 | 1701 | `sub_4A2120` | 387 |  | 4_click_random_map |  |
 | 1703 | `sub_4BA100` | 180 |  | 4_click_random_map |  |
 | 1704 | `sub_4A03B0` | 321 |  | 4_click_random_map |  |
@@ -1807,7 +1806,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (636)
+## Matched (637)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -2279,6 +2278,7 @@
 | 1686 | `sub_421B60` | 1 | MATCH | 1_boot_to_menu | S421Accessors::Set9D0_421B60 |
 | 1694 | `sub_4F5A90` | 1 | MATCH | 5_start_game_to_match | Sd4F5A90::D_4F5A90 |
 | 1696 | `sub_431680` | 1 | MATCH | 5_start_game_to_match | S431680::M_431680 |
+| 1699 | `sub_430A70` | 1 | MATCH | 1_boot_to_menu | sub_430A70 |
 | 1700 | `sub_4BE010` | 1 | MATCH | 1_boot_to_menu | S4BE010::M_4BE010 |
 | 1702 | `sub_4BA0E0` | 145 | MATCH | 4_click_random_map | Sd4BA0E0::D_4BA0E0 |
 | 1706 | `sub_4B12F0` | 35 | MATCH | 5_start_game_to_match | Sd4B12F0::D_4B12F0 |

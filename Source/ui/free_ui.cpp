@@ -7919,3 +7919,103 @@ void sub_473BF0()
     }
 }
 
+
+// 0x4BE490 — seed the two outputs, run the matched 0x4BE3B0 lookup with the
+// four parameter addresses, and return 0 when it misses. On a hit with a1==0,
+// toggle +0x? to 1, grow a block through 0x5F8F80, initialise it through
+// 0x5FDFB5, and keep it only when 0x5FDADE reports the a3 value; otherwise the
+// nonzero a1 path clears the index and returns the a4+a1 cursor.
+extern int __cdecl sub_4BE3B0(int a1, int a2, int* a3, int* a4, int* a5,
+                              int* a6);
+extern int __cdecl sub_5F8F80(int a1);
+extern int __cdecl sub_5FDFB5(int a1, int a2, int a3);
+extern int __cdecl sub_5FDADE(int a1, int a2, int a3);
+
+// WIP: ours 176 vs 182. The body is complete semantically, but VC6 assigns the
+// cached output pointers to edi/esi in the reverse order of the original and
+// chooses a stack reload for the a1 split, so the prologue/store phase and the
+// two branch exits still differ. Four source permutations did not recover it.
+WIP_FUNC(0x4BE490)
+int __cdecl sub_4BE490(int a1, int a2, int* a3, int* a4)
+{
+    int* p3 = a3;
+    int* p4 = a4;
+    *p3 = -1;
+    *p4 = 0;
+    if (sub_4BE3B0(a1, a2, &a2, (int*)&a4, &a1, (int*)&a3) != 0)
+    {
+        if (a1 != 0)
+        {
+            *p3 = 0;
+            *p4 = (int)p3;
+            return (int)((char*)p4 + a1);
+        }
+        *p3 = 1;
+        char* p = (char*)sub_5F8F80((int)a3);
+        *p4 = (int)a4;
+        if (p != 0)
+        {
+            sub_5FDFB5(a2, (int)a4, 0);
+            if (sub_5FDADE(a2, (int)p, (int)a3) == (int)a3)
+                return (int)p;
+        }
+    }
+    return 0;
+}
+
+// 0x472EF0 — seven-argument grid setter. Call sites pass the +0x83C grid
+// object as `this` (not the 0x6645C4 global): reject a1/a2 outside +8 count and
+// the +0x10 per-row counts, then fill a 0x20-byte buffer through the global
+// 0x6645C4 object's vtable slot +0x24, parse it with 0x5FCFDC, and write the
+// 12-byte row selected by a1/a2 (value, then the three byte fields).
+extern int __cdecl sub_5FCFDC(char* a1);
+class TVt6645C4 {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08();
+    virtual int Vt_09(int a1, void* a2, int a3);   // slot +0x24
+};
+class S472EF0 {
+public:
+    char pad_00[0x08];
+    int field_08;                  // +0x08 row count
+    int field_0c;                  // +0x0C row pointer array
+    int field_10;                  // +0x10 per-row count array
+    void M_472EF0(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+};
+MATCH_FUNC(0x472EF0)
+void S472EF0::M_472EF0(int a1, int a2, int a3, int a4, int a5, int a6,
+                       int a7)
+{
+    if (a1 < 0 || a1 >= field_08)
+        return;
+    if (a2 < 0 || a2 >= *(int*)(field_10 + a1 * 4))
+        return;
+    int value;
+    if (a7 > -1)
+    {
+        char buf[0x20];
+        ((TVt6645C4*)g_6645c4)->Vt_09(a7, buf, 0x20);
+        if (buf[0] != 0)
+        {
+            int r = sub_5FCFDC(buf);
+            value = r != 0 ? r : (int)(signed char)buf[0];
+        }
+        else
+            value = a3;
+    }
+    else
+        value = a3;
+    int off = a2 * 12;
+    *(int*)(*(int*)(field_0c + a1 * 4) + off) = value;
+    *(unsigned char*)(*(int*)(field_0c + a1 * 4) + off + 8) = (unsigned char)a4;
+    *(unsigned char*)(*(int*)(field_0c + a1 * 4) + off + 9) = (unsigned char)a5;
+    *(unsigned char*)(*(int*)(field_0c + a1 * 4) + off + 0xa) = (unsigned char)a6;
+}

@@ -3272,3 +3272,40 @@ int S47C4Screen::M_425750(int hwnd, int cfg, int obj664524,
     *(int*)(self + 0x4728) = 0;
     return 1;
 }
+
+// 0x430A70 — guarded registry setup through the 0x66451C request object: the
+// first 0x4BE010(0, 0x64FD8C) request must succeed, the second is returned to
+// 0x5FCC80 as the string to compare against 0x64FD9C, then a third request is
+// closed through 0x5FCC68 and the four-argument 0x4BDFB0 update runs.
+class S4BE010 {
+public:
+    char pad_00[4];
+    void* field_04;                 // +0x04
+    void* field_08;                 // +0x08
+    void* field_10;                 // +0x10
+    void* M_4BE010(int a1, int a2);
+    void M_4BDFB0(int a1, int a2, int a3, int a4);
+};
+extern int g_66451c;
+extern int __cdecl sub_5FCC80(char* a1, int a2);
+extern int __cdecl sub_5FCC68(int a1);
+
+MATCH_FUNC(0x430A70)
+void sub_430A70()
+{
+    if (g_66451c != 0)
+    {
+        void* p = ((S4BE010*)g_66451c)->M_4BE010(0, 0x64fd8c);
+        if (p != 0)
+        {
+            int rc = sub_5FCC80((char*)((S4BE010*)g_66451c)->M_4BE010(0, 0x64fd8c),
+                                (int)0x64fd9c);
+            if (rc == 0)
+            {
+                void* r = ((S4BE010*)g_66451c)->M_4BE010(rc, 0x64fd8c);
+                sub_5FCC68((int)r);
+                ((S4BE010*)g_66451c)->M_4BDFB0(0, 0x64fd8c, 0x64fd9c, 2);
+            }
+        }
+    }
+}
