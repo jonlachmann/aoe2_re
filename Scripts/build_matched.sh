@@ -136,7 +136,7 @@ sync = ["#include <string.h>", "", "extern \"C\" char* g_matched_image;",
         "extern \"C\" long g_matched_image_size;", ""]
 for n in sorted(names):
     sync.append("extern char %s[0x1000];" % n)
-sync += ["", "void SyncGuestGlobals()", "{",
+sync += ["", "extern \"C\" void SyncGuestGlobals()", "{",
          "    char* im = g_matched_image;",
          "    if (im == 0) return;"]
 synced = 0
@@ -232,7 +232,11 @@ for o in objs:
             und.add(s)
 allow = {"_bzero", "_free", "_malloc", "_calloc", "_memcpy", "_memset", "_memset_pattern16",
          "_strcmp", "_strcpy", "_strlen", "_fopen", "_fread", "_fclose",
-         "__Unwind_Resume", "__gxx_personality_v0"}
+         "__Unwind_Resume", "__gxx_personality_v0", "___gxx_personality_v0",
+         "___chkstk_darwin",
+         # C++ runtime allocations must come from libc++abi, never a 0-returning
+         # stub: runtime/static initializers allocate through operator new.
+         "__Znwm", "__Znwj", "__Znaj", "__ZdlPv", "__ZdlPvm", "__ZdaPv", "__ZdaPvm"}
 extern = sorted(s for s in und if not s.startswith("_g_") and s not in defined)
 funs = [s for s in extern if s not in allow and s != "_gTab_741758"]
 data = [s for s in extern if s == "_gTab_741758"]

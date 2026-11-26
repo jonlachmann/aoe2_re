@@ -1541,41 +1541,29 @@ int stub_511() { return 0; }
 extern "C" int stub_512() __asm__("__ZN9Th409A10b12Other_409A10Ev");
 int stub_512() { return 0; }
 
-extern "C" int stub_513() __asm__("__ZdlPv");
+extern "C" int stub_513() __asm__("_sub_4BCF50");
 int stub_513() { return 0; }
 
-extern "C" int stub_514() __asm__("__Znwm");
+extern "C" int stub_514() __asm__("_sub_5F8FF0");
 int stub_514() { return 0; }
 
-extern "C" int stub_515() __asm__("___chkstk_darwin");
+extern "C" int stub_515() __asm__("_sub_5FCB40");
 int stub_515() { return 0; }
 
-extern "C" int stub_516() __asm__("___gxx_personality_v0");
+extern "C" int stub_516() __asm__("_sub_5FDA2B");
 int stub_516() { return 0; }
 
-extern "C" int stub_517() __asm__("_sub_4BCF50");
+extern "C" int stub_517() __asm__("_sub_5FDFB5");
 int stub_517() { return 0; }
 
-extern "C" int stub_518() __asm__("_sub_5F8FF0");
+extern "C" int stub_518() __asm__("_sub_5FE04F");
 int stub_518() { return 0; }
 
-extern "C" int stub_519() __asm__("_sub_5FCB40");
+extern "C" int stub_519() __asm__("_sub_6087EC");
 int stub_519() { return 0; }
 
-extern "C" int stub_520() __asm__("_sub_5FDA2B");
+extern "C" int stub_520() __asm__("_timeGetTime");
 int stub_520() { return 0; }
-
-extern "C" int stub_521() __asm__("_sub_5FDFB5");
-int stub_521() { return 0; }
-
-extern "C" int stub_522() __asm__("_sub_5FE04F");
-int stub_522() { return 0; }
-
-extern "C" int stub_523() __asm__("_sub_6087EC");
-int stub_523() { return 0; }
-
-extern "C" int stub_524() __asm__("_timeGetTime");
-int stub_524() { return 0; }
 
 extern "C" char stub_data_0[0x4000] __asm__("_gTab_741758");
 char stub_data_0[0x4000];

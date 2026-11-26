@@ -28,10 +28,11 @@ Evidence (current run):
   `matched_probe_globals.cpp` checks `Get_434BE0()==1.0`, the `M_435810`
   0.0 threshold and `Get_41A090()==FLT_MAX`: `globals exec probe: 0 failures`
   (12 objects)
-- stage 5 — every matched object links into one native executable. The 604
-  extern symbols the object set does not define get host stubs: currently 525
+- stage 5 — every matched object links into one native executable. The
+  extern symbols the object set does not define get host stubs: currently 521
   asm-label functions returning 0 and 1 opaque data array, leaving libSystem
-  names (`malloc`, `memcpy`, `strlen`, ...) to the linker. Result:
+  names (`malloc`, `memcpy`, `strlen`, ...) and C++ runtime helpers to the
+  linker. Result:
   `all matched objects linked: 168; probe_all: OK` (`probe: 0 failures`).
   These stubs are link fillers with host ABI, not guest implementations.
 - stage 3 — portable guest-VA access layer: `Source/matched_mem.h` defines
@@ -86,7 +87,8 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
    the code-folded 0x5BE8D0 body (`T49F650Key::SetIndex_5BE8D0`,
    `T49FB00Obj::SetIndex_5BE8D0`, `C_global_66EA48::Hook_5BE8D0`) calling the
    real `S5BE940::SetIndex_5BE8D0` code, reaching 576 stubs. Every batch keeps
-   the full gate at [1765/1765] and the all-object link at 168 objects. The
+   the full gate at [1765/1765] and the all-object link at 168 objects (170
+   objects including globals and stubs in the boot link). The
    remaining extern inventory is mostly broad-class renames or free-vs-member
    call-site mismatches, which need forwarding methods or caller fixes instead
    of wholesale class renames.
@@ -118,6 +120,33 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   Limit: the address of a generated `g_*` symbol is still its host array
   address, not image+VA; symbol references are consistent by contents (synced),
   while guest-VA constants go through the image.
+- stage 7 — standalone matched boot executable:
+  `Scripts/build_matched_boot.sh` links the matched owner/alias/image/sync/
+  globals/stub objects with the win32hle runtime and the host launcher into
+  `build/matched_boot/aoe_matched_boot`. It compiles the unchanged
+  `Source/host/aoe_host.c` main with `-Drecomp_host_run=matched_recomp_host_run`,
+  so the host setup (shims, drives, command line, screen) is reused and only the
+  run step is replaced by `Source/host/matched_run.c`. That run step maps the
+  PE-backed guest image, syncs the `g_*` arrays, and calls WinMain 0x47AE20 on
+  the guest stack with
+  (hInstance=0x400000,hPrev=0,cmdline=0,nCmdShow=1) through `hle_call_guest`.
+  Entry chain: the reference PE entry is 0x600281 (CRT startup, region crt,
+  lifted because CRT matching is skipped); the CRT calls WinMain 0x47AE20
+  (region ui, catalog state lifted). The boot harness bypasses the lifted CRT
+  entry and starts at WinMain, which is the first VA the boot-to-menu path needs.
+  Evidence: `[host] booted: entry 0x00600281, 0 unresolved imports`,
+  `guest image mapped ... g_* globals synced`, then
+  `checkpoint: WinMain VA 0x0047AE20 reached` and
+  `WinMain returned 0x00000000` — the harness works and the first checkpoint
+  stops at unmatched WinMain (its dispatch entry is still a host stub).
+
+  Two stub-generation defects found while bringing this link up, both fatal to
+  dyld before `main`: the stub object used to define native runtime helpers
+  (`___chkstk_darwin`, `___gxx_personality_v0`) and the C++ allocation
+  operators (`__Znwm`, `__ZdlPv`). Any library initializer that called the
+  stack probe or allocated through `new` got a 0-returning stub, crashing the
+  process in a system framework initializer before the host ran. These symbols
+  are now left to the linker/libc++abi; stub count 525 -> 523 -> 521.
 2. Guest memory: most matched bodies still cast guest VAs in fields/globals
    directly. `ADDR` is proven on one body but not yet applied across the bodies
    or paired with an initialized guest image at boot.

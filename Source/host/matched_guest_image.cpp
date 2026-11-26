@@ -19,7 +19,7 @@ static unsigned get32(const unsigned char* p)
 
 // Minimal PE32 reader: map the whole guest data range and copy each section's
 // raw bytes to its virtual address. Header parse failures return -1.
-int LoadGuestImage(const char* path)
+extern "C" int LoadGuestImage(const char* path)
 {
     FILE* f = fopen(path, "rb");
     if (f == 0)

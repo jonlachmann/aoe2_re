@@ -241,7 +241,7 @@ extern char g_vt_62AF98[0x1000];
 extern char g_vt_62B4E8[0x1000];
 extern char g_vt_62C5A4[0x1000];
 
-void SyncGuestGlobals()
+extern "C" void SyncGuestGlobals()
 {
     char* im = g_matched_image;
     if (im == 0) return;
