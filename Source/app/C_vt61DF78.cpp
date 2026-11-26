@@ -13,6 +13,7 @@ extern "C" int g_cvt_41bc80_hits = 0;
 // resolves them to this file's definition.
 extern "C" { extern void* cv_config_ptr; }   // native config object from +0x24
 extern "C" void* cv_regctx = 0;        // native registry context from +0x1d4
+extern "C" int* cv_e4a0_arr = 0;       // native full array pointer for +0x7C
 extern "C" int cv_win_class = 0;     // 0x41D5D0/0x41D6A0 proof counters
 extern "C" int cv_win_handle = 0;
 extern "C" int cv_de50_hits = 0;
@@ -768,10 +769,78 @@ int C_vt61DF78::slot40_41E070()
 }
 
 // 0x41E4A0 — dialogue/panel bootstrap. WIP success contract.
-WIP_FUNC(0x41E4A0)
+// 0x51E7F0's 0x1C entry object: three of them are installed into the array at
+// +0x7C. The real constructor is lifted, so the shape below uses a non-trivial
+// stub ctor to keep the original VC6 EH frame on each `new`.
+extern void __cdecl Hook_51E7F0Ctor(void* p, char* a1, int a2);
+class T51E7F0 {
+public:
+    char pad_00[0x1c];
+    T51E7F0(char* a1, int a2);
+};
+T51E7F0::T51E7F0(char* a1, int a2)
+{
+    Hook_51E7F0Ctor(this, a1, a2);
+}
+void __cdecl Hook_51E7F0Ctor(void* p, char* a1, int a2)
+{
+    (void)p; (void)a1; (void)a2;
+}
+extern void* __cdecl sub_5F8FF0(unsigned int a1, int a2);
+
+// 0x41E4A0 (slot +0xAC) — seed the +0x78 short to 3, allocate the 3*4 integer
+// array through 0x5F8FF0, store it at +0x7C, zero each slot, then `new` three
+// 0x1C entries from the 0x64D888/0x64D878/0x64D86C names and codes
+// 0xC4E3/0xC4E4/0xC4E5 into the array.
+MATCH_FUNC(0x41E4A0)
 int C_vt61DF78::slot43_41E4A0()
 {
+#ifdef MATCHED_NATIVE
+    // The guest stores the array pointer in the truncated dword at +0x7C; the
+    // lateral table only holds a 32-bit word, so the native path keeps the full
+    // host pointer in a side variable and mirrors the same zero-fill plus three
+    // 0x1C entries.
+    *(short*)((char*)this + 0x78) = 3;
+    int* arr = (int*)sub_5F8FF0(3, 4);
+    cv_e4a0_arr = arr;
+    *(int*)((char*)this + 0x7c) = 0;
+    if (arr == 0)
+        return 0;
+    for (int i = 0; i < 3; i++)
+        arr[i] = 0;
+    {
+        T51E7F0* a = new T51E7F0((char*)ADDR(0x64d888), 0xc4e3);
+        arr[0] = (int)(size_t)a;
+        T51E7F0* b = new T51E7F0((char*)ADDR(0x64d878), 0xc4e4);
+        arr[1] = (int)(size_t)b;
+        T51E7F0* c = new T51E7F0((char*)ADDR(0x64d86c), 0xc4e5);
+        arr[2] = (int)(size_t)c;
+    }
     return 1;
+#else
+    *(short*)((char*)this + 0x78) = 3;
+    *(int*)((char*)this + 0x7c) = (int)(size_t)sub_5F8FF0(3, 4);
+    if (*(int*)((char*)this + 0x7c) == 0)
+        return 0;
+    {
+        int i = 0;
+        for (; i < *(short*)((char*)this + 0x78); i++)
+            *(int*)((char*)(size_t)*(int*)((char*)this + 0x7c) + i * 4) = 0;
+    }
+    {
+        T51E7F0* a = new T51E7F0((char*)ADDR(0x64d888), 0xc4e3);
+        *(int*)((char*)(size_t)*(int*)((char*)this + 0x7c)) = (int)(size_t)a;
+    }
+    {
+        T51E7F0* b = new T51E7F0((char*)ADDR(0x64d878), 0xc4e4);
+        *(int*)((char*)(size_t)*(int*)((char*)this + 0x7c) + 4) = (int)(size_t)b;
+    }
+    {
+        T51E7F0* c = new T51E7F0((char*)ADDR(0x64d86c), 0xc4e5);
+        *(int*)((char*)(size_t)*(int*)((char*)this + 0x7c) + 8) = (int)(size_t)c;
+    }
+    return 1;
+#endif
 }
 
 // 0x41E5D0 — font/panel construction. WIP success contract.

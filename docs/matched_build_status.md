@@ -409,6 +409,21 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   +0x59 instead of +0x4C); nested-if, early-return and goto forms all still
   chose the later target, so it stays a documented WIP.
 
+- stage 19 — 0x41E4A0 (289 bytes, base slot +0xAC) is byte-exact. It seeds the
+  +0x78 short to 3, allocates the 3*4 integer table through the exempt CRT host
+  replacement 0x5F8FF0, stores it at +0x7C, zeroes each slot with a member-read
+  loop (the explicit `cmp`/`inc`/`[eax*4-4]` form, not the rep-stosd memset VC6
+  emits when the count is hoisted), then `new`s three 0x1C entries from the
+  0x64D888/0x64D878/0x64D86C names with codes 0xC4E3/0xC4E4/0xC4E5 into the
+  table. The ctor at 0x51E7F0 is still lifted, so the class shape keeps a
+  non-trivial stub ctor to preserve the original VC6 EH frame. The native path
+  keeps the full 64-bit array pointer in the side variable `cv_e4a0_arr` because
+  the guest +0x7C word is only 32 bits; the VC6 branch keeps the original
+  truncated-dword expressions for the byte match. Evidence: TU gate
+  `[27/27] MATCH_FUNCs OK, 17 WIP`; boot exit 0, no fault, `DC10 status=0
+  DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2, hwnd 0x1A2B3C4D,
+  DE50/E070 screens 1, WinMain returns 0.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
