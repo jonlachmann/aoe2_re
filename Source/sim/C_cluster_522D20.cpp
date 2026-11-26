@@ -50,3 +50,46 @@ void C_cluster_522D20::Hook_5DC590(int a1)
     field_0 = a;
     field_c = a1;
 }
+
+// 0x522D90 — pop the next record pointer. Empty queue first appends one via
+// 0x522D20(field_24); a +0x10 head node is unlinked and returned; otherwise
+// the +0x14/+0x18 bucket entry is taken (stride 0x10), the queue count drops,
+// and the bucket rolls over when the size array marks its end.
+// Not reachable in plain C++: the overrun check is a bare 0xCC (int3) with
+// fall-through, which VC6 only emits for `__asm int 3` (no __debugbreak
+// intrinsic in VC6). With `__asm int 3` in place of the volatile store this
+// exact body is byte-exact (verified); every C stand-in (volatile store,
+// extern call) shifts the register allocation (edi/ebx/ebp) of the whole
+// bucket path.
+WIP_FUNC(0x522D90)
+void* C_cluster_522D20::M_522D90()
+{
+    if (field_20 == 0)
+        M_522D20(field_24);
+
+    if (field_10 != 0)
+    {
+        int* node = (int*)(size_t)field_10;
+        field_10 = *node;
+        --field_20;
+        return node;
+    }
+
+    int idx = field_14;
+    int n = field_18;
+    int* entry = (int*)(field_0[idx] + n * 0x10);
+    --field_20;
+    ++field_18;
+    if (field_18 == field_4[idx])
+    {
+        field_14 = ++idx;
+        field_18 = 0;
+        if (idx == field_8)
+        {
+            field_14 = -1;
+            if (field_20 > 0)
+                *(volatile char*)0 = 0;   // original: __asm int 3 (see above)
+        }
+    }
+    return entry;
+}

@@ -5664,11 +5664,11 @@
    "vtable": null,
    "anchor": "0x43C050",
    "methods": 39,
-   "owned_methods": 4,
-   "unowned_methods": 35,
+   "owned_methods": 5,
+   "unowned_methods": 34,
    "primary_file": "Source/game/C_global_6645C4.cpp",
    "owner_files": {
-    "Source/game/C_global_6645C4.cpp": 4
+    "Source/game/C_global_6645C4.cpp": 5
    },
    "other_files": [],
    "staged_files": [],
@@ -9118,11 +9118,11 @@
    "vtable": null,
    "anchor": "0x522D20",
    "methods": 3,
-   "owned_methods": 1,
-   "unowned_methods": 2,
+   "owned_methods": 2,
+   "unowned_methods": 1,
    "primary_file": "Source/sim/C_cluster_522D20.cpp",
    "owner_files": {
-    "Source/sim/C_cluster_522D20.cpp": 1
+    "Source/sim/C_cluster_522D20.cpp": 2
    },
    "other_files": [],
    "staged_files": [],

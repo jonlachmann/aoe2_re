@@ -1,6 +1,9 @@
 // free_crt — CRT-region free functions migrated from Source/simple.
 // Standard /O2 bodies (the size-optimized pair lives in free_crt_s.cpp).
 #include "Function.hpp"
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
 
 
 class S407B80 {
@@ -230,7 +233,7 @@ int Get_6004B7()
 }
 
 // 0x5FCA45 — LCG rand: seed state kept in g_661C14.
-WIP_FUNC(0x5FCA45)
+LIBRARY_FUNC(0x5FCA45)
 int __cdecl sub_5FCA45()
 {
     int s = g_661c14;
@@ -240,7 +243,7 @@ int __cdecl sub_5FCA45()
 }
 
 // 0x5F90B0 — free wrapper: only calls the deallocator for non-null pointers.
-extern void __stdcall sub_5FA280(void* p);
+void __stdcall sub_5FA280(void* p);
 MATCH_FUNC(0x5F90B0)
 void __cdecl sub_5F90B0(void* p)
 {
@@ -248,19 +251,47 @@ void __cdecl sub_5F90B0(void* p)
         sub_5FA280(p);
 }
 
-// 0x5F8F60 — allocate wrapper forwarding two zero defaults.
-extern void __cdecl sub_5F8EE0(void* p, int a1, int a2);
-MATCH_FUNC(0x5F8F60)
-void __cdecl sub_5F8F60(void* p)
+// Host replacements for the CRT heap band (0x5F0000-0x610000 is library code,
+// exempt from match effort). The game calls 0x5F8F60(size) for malloc, which
+// forwards to 0x5F8EE0(size,0,0); 0x5F8FF0(count,size) is the array allocator
+// used by the 0x4732xx tables, and 0x5FA280 is the deallocator behind 0x5F90B0.
+// These keep the original call signatures so the native bodies link directly.
+void* __cdecl sub_5F8EE0(void* p, int a1, int a2)
 {
-    sub_5F8EE0(p, 0, 0);
+    (void)a1; (void)a2;
+    return malloc((size_t)p);
+}
+void* __cdecl sub_5F8FF0(unsigned int a1, int a2)
+{
+    return malloc((size_t)a1 * (unsigned)a2);
+}
+void __stdcall sub_5FA280(void* p)
+{
+    free(p);
+}
+
+// 0x5F8F60 — malloc wrapper forwarding two zero defaults.
+MATCH_FUNC(0x5F8F60)
+void* __cdecl sub_5F8F60(int a1)
+{
+    return sub_5F8EE0((void*)(size_t)a1, 0, 0);
+}
+
+// 0x5FCE14 — variadic sprintf front end (write-formatted-string helper).
+int __cdecl sub_5FCE14(char* dst, char* fmt, ...)
+{
+    va_list ap;
+    va_start(ap, fmt);
+    int r = vsprintf(dst, fmt, ap);
+    va_end(ap);
+    return r;
 }
 
 // 0x5FC8D4 — CRT init/refresh sequence.
 extern int __cdecl sub_600EE8();
 extern void __cdecl sub_600E98();
 extern int g_772704;
-WIP_FUNC(0x5FC8D4)
+LIBRARY_FUNC(0x5FC8D4)
 void __cdecl sub_5FC8D4()
 {
     Init_5FC8EC();
@@ -271,7 +302,7 @@ void __cdecl sub_5FC8D4()
 // 0x5F9AA0 — fastcall tail wrapper: mask the pointer argument and pass zero
 // in edx to 0x5F9930.
 extern int __fastcall sub_5F9930(int a1, int a2);
-WIP_FUNC(0x5F9AA0)
+LIBRARY_FUNC(0x5F9AA0)
 int __fastcall sub_5F9AA0(int a1)
 {
     a1 = a1 & 0xffff0000;
@@ -280,7 +311,7 @@ int __fastcall sub_5F9AA0(int a1)
 
 // 0x5F9A20 — initialize the CRT object slots at +0x08/+0x0C/+0x10/+0x16 and
 // return zero (short).
-WIP_FUNC(0x5F9A20)
+LIBRARY_FUNC(0x5F9A20)
 short __fastcall sub_5F9A20(char* a1, unsigned char a2)
 {
     short r = 0;
@@ -304,7 +335,7 @@ int __fastcall sub_5FC430(char* a1, int a2)
 
 // 0x5F9D00 — initialize a CRT cursor object: self-relative +0x14 extent,
 // +0x10 pointer to self+0x20, +0x08 method pointer; returns short 1.
-WIP_FUNC(0x5F9D00)
+LIBRARY_FUNC(0x5F9D00)
 short __fastcall sub_5F9D00(char* a1, int a2)
 {
     *(int*)(a1 + 0x14) = a2 + (int)a1;
@@ -316,7 +347,7 @@ short __fastcall sub_5F9D00(char* a1, int a2)
 // 0x5FCDE1 — four-argument forwarder gated by a 0x602979 result.
 extern int __cdecl sub_602979();
 extern void __cdecl sub_602809(int a1, int a2, int a3, int a4);
-WIP_FUNC(0x5FCDE1)
+LIBRARY_FUNC(0x5FCDE1)
 void __cdecl sub_5FCDE1(int a1, int a2, int a3)
 {
     int r = sub_602979();
@@ -335,7 +366,7 @@ void __fastcall sub_5F9780(int* a1, int* a2)
 
 // 0x5F9EF0 — fastcall free-list push: the low byte before the block indexes
 // the 0x64-based slot array, then the block header's +0x0C count drops.
-WIP_FUNC(0x5F9EF0)
+LIBRARY_FUNC(0x5F9EF0)
 void __fastcall sub_5F9EF0(int* p)
 {
     unsigned char idx = *(unsigned char*)((char*)p - 1);

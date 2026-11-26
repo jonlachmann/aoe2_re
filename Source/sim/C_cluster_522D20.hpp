@@ -24,4 +24,5 @@ public:
     void Hook_5DC590(int a1);     // unresolved grow callee at 0x5DC590
     void M_5DC590(int a1);
     void M_522D20(int a1);
+    void* M_522D90();
 };

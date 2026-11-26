@@ -15,8 +15,8 @@ public:
     void method_006();  // sub_521580 [matched] — Source/sim/C_cluster_520CE0.cpp
     void method_007();  // sub_5215F0 [lifted]
     void method_008();  // sub_521720 [lifted]
-    void method_009();  // sub_521780 [wip] — Source/sim/C_cluster_520CE0.cpp
-    void method_010();  // sub_5217F0 [wip] — Source/sim/C_cluster_520CE0.cpp
+    void method_009();  // sub_521780 [matched] — Source/sim/C_cluster_520CE0.cpp
+    void method_010();  // sub_5217F0 [matched] — Source/sim/C_cluster_520CE0.cpp
     void method_011();  // sub_521870 [lifted]
     void method_012();  // sub_521970 [lifted]
     void method_013();  // sub_5219B0 [matched] — Source/sim/C_cluster_520CE0.cpp

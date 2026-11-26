@@ -1,8 +1,8 @@
 # 6_match_idle
 
-880 functions called (0 first seen in this phase): 186 matched, 659 left to match (5 of them WIP), 35 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+880 functions called (0 first seen in this phase): 187 matched, 658 left to match (3 of them WIP), 35 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (659)
+## Left to match (658)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -56,7 +56,7 @@
 | 78 | `sub_5D4DC0` | 6007 |  | 5_start_game_to_match |  |
 | 81 | `sub_460740` | 12158 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
 | 83 | `sub_5230F0` | 6234352 |  | 1_boot_to_menu |  |
-| 84 | `sub_522D90` | 6234352 |  | 1_boot_to_menu |  |
+| 84 | `sub_522D90` | 6234352 | WIP | 1_boot_to_menu | C_cluster_522D20::M_522D90 |
 | 85 | `sub_48B5B0` | 79411 |  | 5_start_game_to_match | mouseptr::poll |
 | 86 | `sub_5D5050` | 6007 |  | 5_start_game_to_match |  |
 | 89 | `sub_5D6B70` | 6007 |  | 5_start_game_to_match |  |
@@ -498,7 +498,6 @@
 | 674 | `sub_445270` | 18 |  | 5_start_game_to_match |  |
 | 677 | `sub_5A6030` | 54 |  | 1_boot_to_menu |  |
 | 678 | `sub_4AFAC0` | 54 |  | 1_boot_to_menu | pnl_btn::draw2 |
-| 679 | `sub_51EB90` | 54 | WIP | 1_boot_to_menu | S51EB90::M_51EB90 |
 | 680 | `sub_6101B0` | 72 |  | 1_boot_to_menu |  |
 | 681 | `sub_6103B3` | 198 |  | 1_boot_to_menu |  |
 | 682 | `sub_6102A9` | 162 |  | 1_boot_to_menu |  |
@@ -666,7 +665,7 @@
 | 878 | `sub_4845F0` | 3 |  | 5_start_game_to_match |  |
 | 879 | `sub_48BD90` | 1 |  | 5_start_game_to_match |  |
 
-## Matched (186)
+## Matched (187)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -831,6 +830,7 @@
 | 672 | `sub_461490` | 144 | MATCH | 1_boot_to_menu | TDrawArea::FillRect_461490 |
 | 675 | `sub_461370` | 36 | MATCH | 1_boot_to_menu | TDrawArea::HLine_461370 |
 | 676 | `sub_460F20` | 288 | MATCH | 5_start_game_to_match | TDrawArea::SetPixel_460F20 |
+| 679 | `sub_51EB90` | 54 | MATCH | 1_boot_to_menu | S51EB90::M_51EB90 |
 | 714 | `sub_4073F0` | 12 | MATCH | 5_start_game_to_match | Sc4073F0::Init_4073F0 |
 | 716 | `sub_412BF0` | 11 | MATCH | 5_start_game_to_match | S412BE0::M_412BF0 |
 | 731 | `sub_49F480` | 29 | MATCH | 5_start_game_to_match | S49F480::Insert_49F480 |
@@ -871,9 +871,9 @@
 | 233 | `sub_5FCA63` | 2262 |  | 5_start_game_to_match |  |
 | 234 | `sub_601B74` | 5484 |  | 5_start_game_to_match |  |
 | 235 | `sub_601A01` | 2742 |  | 5_start_game_to_match |  |
-| 245 | `sub_5FCA45` | 1560 | WIP | 1_boot_to_menu | sub_5FCA45 |
+| 245 | `sub_5FCA45` | 1560 | LIBRARY | 1_boot_to_menu | sub_5FCA45 |
 | 256 | `sub_5FA280` | 327 |  | 1_boot_to_menu |  |
-| 257 | `sub_5F9EF0` | 326 | WIP | 1_boot_to_menu | sub_5F9EF0 |
+| 257 | `sub_5F9EF0` | 326 | LIBRARY | 1_boot_to_menu | sub_5F9EF0 |
 | 259 | `sub_5F8FF0` | 58 |  | 1_boot_to_menu |  |
 | 260 | `sub_5F9D20` | 283 |  | 1_boot_to_menu |  |
 | 261 | `sub_5F9D80` | 282 |  | 1_boot_to_menu |  |

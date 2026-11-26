@@ -20,6 +20,8 @@ public:
 
     int Hook_41F6E0(int a1);      // unresolved callee at 0x41F6E0
     bool M_473110(int i, int v);
+    bool M_4732E0(int a1, int a2);
+    bool M_473200(int a1, int a2);
     void M_4732B0(int a1);
     void M_4B0EA0(int a1);
     bool M_4730D0(int x, int y, int v);

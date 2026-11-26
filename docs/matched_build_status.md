@@ -221,11 +221,37 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   Gate `[1766/1766] MATCH_FUNCs OK, 44 WIP`; matched TUs 167 ok/0 failed; 528
   stubs; all-object link 170; boot link 172 objects.
 
+- stage 12 — host CRT heap/format band (exempt) + coherent cluster ownership:
+  `Source/crt/free_crt.cpp` now *defines* the library-band backing rather than
+  leaving generated stubs: `sub_5F8EE0` (malloc backing), `sub_5F8FF0`
+  (count*elem array allocator used by the 0x4732xx tables), `sub_5FA280` (free
+  behind 0x5F90B0) and `sub_5FCE14` (variadic sprintf via vsprintf). The 0x5F8F60
+  marker was corrected from `void(void*)` to `void*(int)` so its bytes still
+  match (`MATCH_FUNC OK`) while WinMain's `malloc` call resolves to that native
+  body; the old `void(void*)` declaration was what kept the boot path on a stub
+  that returned 0. The CRT band is library code and these replacements are not
+  counted as matches. Evidence: the boot run now allocates real buffers and runs
+  all 26 inline strcpys plus sprintf with no fault, where before malloc returned
+  null. The WIP WinMain also keeps the rand buffer in a local `buf` (host pointers
+  are 64-bit, and storing one at cfg+4 let the cfg+8 string clobber its high
+  dword), while cfg+4 still carries the original 4-byte layout slot.
+  Ownership fix: 0x4732E0 is no longer its own ui cluster — its `+0x08` row
+  count, `+0x0C` block pointer table and `+0x10` capacity table are exactly the
+  rows 0x473200 passes, so the body moved into `C_global_6645C4`
+  (`Source/ui/C_cluster_4732E0.*` deleted). 0x473200 is now a WIP member that
+  allocates two a1+1 tables, copies the live row/capacity arrays, frees the old
+  ones and calls `M_4732E0`; 0x522D90 is a WIP member of C_cluster_522D20.
+  Gate `[1786/1788] MATCH_FUNCs OK, 15 WIP`; matched TUs 166 ok/0 failed (one
+  fewer because the folded TU is gone); 528 stubs; all-object link 170; boot
+  link 172 objects; boot run exit 0, language init returns 1, native WinMain
+  returns 0 without fault, but the sim-object constructor remains the stop.
+
 Gaps now:
 1. WinMain 0x47AE20 is WIP, not byte-exact (2096 vs 2035; 188 masked diff lines,
-   mostly cfg+4 base shift and register scheduling). Its body now runs natively
-   end to end, but the internals it calls are stubs, so the run still stops
-   before the menu.
+   mostly cfg base shift and register scheduling). Its body now runs natively
+   end to end with real malloc/sprintf, but the sim-object constructor 0x5B0EC0
+   and its base constructor 0x41B760 are still stubs, so the run returns before
+   the menu.
 2. Import ABI (partially done): stages 10-11 install trampolines for
    LoadLibraryA/GetProcAddress/FreeLibrary, timeBeginPeriod/timeGetTime/
    timeEndPeriod, GlobalFree and MessageBoxA, marshalling image pointers to
@@ -235,8 +261,10 @@ Gaps now:
 3. Guest ABI: matched-to-matched calls are consistent because all bodies are
    compiled by the host compiler; the gap is only at boundaries to unmatched
    lifted code/external imports, which need guest-ABI wrappers.
-4. Coverage: phase docs show 408/815 phase-1 matched (288 left, 38 WIP, 119
-   CRT/library), so even a wired build would boot lifted, not matched, code.
+4. Coverage: phase docs show 428/815 phase-1 matched (268 left, 11 WIP, 119
+   CRT/library); the map reflects the current workspace, so the matched count
+   includes in-progress bodies not yet in this wave. Even a wired build would
+   still boot lifted code through the remaining stubs.
 5. (Done) Asm-based "matches" were rewritten as C++; the tree now has zero
    `__asm` in matched bodies and all 167 matched TUs compile natively.
 
