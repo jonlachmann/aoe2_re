@@ -784,6 +784,23 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   wave: full gate `[1817/1817] MATCH_FUNCs OK, 35 WIP`; phase docs now 456/815
   matched (240 left, 28 WIP, 119 CRT).
 
+- stage 42 — `Source/sim/free_sim.cpp` now carries a byte-exact
+  `MATCH_FUNC(0x522EB0)` (222 bytes) as `C_cluster_522EB0::C_cluster_522EB0`
+  (constructor of the 0x68 clip-span object). The base-subobject initializer
+  calls the reconstructed base ctor 0x522C70 with
+  (ceil(w/32)*h, h*16, 0x10); VC6 emits the EH frame (base class has a dtor)
+  and the post-call state store. The body sets +0x50 = h and +0x54 = w,
+  clamping each to at least 16, runs
+  `TClipSpan::SetRect_522FF0(0,0,w-1,h-1)`, then allocates five h-entry
+  integer arrays at +0x3C..+0x4C via 0x5F8FF0(h,4). Class feedback: the
+  clip-span object has a constructible base subobject at +0 (fields
+  +0..+0x28 = S522C70 layout), +0x3C..+0x4C five h-entry arrays, +0x50
+  height limit, +0x54 width limit; the VC6 EH frame requires the base class
+  destructor declaration. The constructor symbol is
+  `??0C_cluster_522EB0@@QAE@HH@Z`. Evidence after this wave: full gate
+  `[1818/1818] MATCH_FUNCs OK, 35 WIP`; phase docs now 457/815 matched
+  (239 left, 28 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 292 matched, 256 left to match (6 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 293 matched, 255 left to match (6 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (256)
+## Left to match (255)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -167,7 +167,6 @@
 | 364 | `sub_4A2D50` | 1 |  | 4_click_random_map | panel_ez::setup_shadow_area |
 | 365 | `sub_45F8E0` | 1 |  | 1_boot_to_menu |  |
 | 367 | `sub_45FED0` | 1 |  | 1_boot_to_menu |  |
-| 369 | `sub_522EB0` | 2 |  | 1_boot_to_menu |  |
 | 376 | `sub_460180` | 6 |  | 1_boot_to_menu |  |
 | 381 | `sub_4A4600` | 109 |  | 1_boot_to_menu |  |
 | 382 | `sub_4B9F70` | 179 |  | 1_boot_to_menu |  |
@@ -263,7 +262,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (292)
+## Matched (293)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -425,6 +424,7 @@
 | 363 | `sub_4A39F0` | 1 | MATCH | 1_boot_to_menu | S4A39F0::M_4A39F0 |
 | 366 | `sub_45FB60` | 1 | MATCH | 1_boot_to_menu | S_45FB60::M_45FB60 |
 | 368 | `sub_460490` | 2 | MATCH | 1_boot_to_menu | TDrawArea::BuildRowPtrs_460490 |
+| 369 | `sub_522EB0` | 2 | MATCH | 1_boot_to_menu | C_cluster_522EB0::C_cluster_522EB0 |
 | 370 | `sub_522C70` | 2 | MATCH | 1_boot_to_menu | S522C70::M_522C70 |
 | 371 | `sub_5DCC30` | 2 | MATCH | 1_boot_to_menu | S5DCC30::Init_5DCC30 |
 | 372 | `sub_5DC590` | 2 | MATCH | 1_boot_to_menu | C_cluster_522D20::Hook_5DC590 |

@@ -6098,6 +6098,8 @@ public:
     void M_5DC590(int a1);
     void M_522D20(int a1);
     S522C70* M_522C70(int a1, int a2, int a3);
+    S522C70(int a1, int a2, int a3);
+    ~S522C70();
 };
 
 MATCH_FUNC(0x522C70)
@@ -6240,4 +6242,61 @@ void S_5B1CD0::M_5B1CD0()
     if (field_10a4 != 0)
         ((T5B1CD0Field*)field_10a4)->Vt_00(1);
     field_10a4 = new C_539A60(0, 0);
+}
+
+// 0x522EB0 — constructor of the 0x68 clip-span object: base initializer
+// (0x522C70) gets (ceil(w/32)*h, h*16, 0x10), then the +0x50/+0x54 limits
+// are clamped to at least 16, SetRect_522FF0(0,0,w-1,h-1) runs, and five
+// h-entry integer arrays (+0x3C..+0x4C) are allocated through 0x5F8FF0.
+S522C70::S522C70(int a1, int a2, int a3)
+{
+    field_14 = -1;
+    field_18 = -1;
+    field_00 = 0;
+    field_04 = 0;
+    field_0c = 8;
+    field_08 = 0;
+    field_10 = 0;
+    field_1c = 0;
+    field_20 = 0;
+    field_24 = a2;
+    field_28 = a3;
+    M_5DCC30();
+    if (a1 > 0)
+    {
+        M_5DC590(8);
+        M_522D20(a1);
+    }
+}
+
+class C_cluster_522EB0 : public S522C70 {
+public:
+    char pad_2c[0x3c - 0x2c];
+    void* field_3c;               // +0x3C
+    void* field_40;               // +0x40
+    void* field_44;               // +0x44
+    void* field_48;               // +0x48
+    void* field_4c;               // +0x4C
+    int field_50;                 // +0x50 height limit
+    int field_54;                 // +0x54 width limit
+    C_cluster_522EB0(int w, int h);
+    ~C_cluster_522EB0();
+};
+
+MATCH_FUNC(0x522EB0)
+C_cluster_522EB0::C_cluster_522EB0(int w, int h)
+    : S522C70((w + 0x1f) / 32 * h, h << 4, 0x10)
+{
+    field_50 = h;
+    if (h < 0x10)
+        field_50 = 0x10;
+    field_54 = w;
+    if (w < 0x10)
+        field_54 = 0x10;
+    ((TClipSpan*)this)->SetRect_522FF0(0, 0, field_54 - 1, field_50 - 1);
+    field_3c = (void*)sub_5F8FF0(field_50, 4);
+    field_40 = (void*)sub_5F8FF0(field_50, 4);
+    field_44 = (void*)sub_5F8FF0(field_50, 4);
+    field_48 = (void*)sub_5F8FF0(field_50, 4);
+    field_4c = (void*)sub_5F8FF0(field_50, 4);
 }
