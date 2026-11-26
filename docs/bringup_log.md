@@ -508,3 +508,30 @@ frame/button palette. The map interior renders.
 Readable track: byte-exact `sub_560660`/`sub_560680`/`sub_5606A0` (word-type
 checks), `sub_5E68A0` (index compare), `sub_52A440` (forwarder), plus a WIP
 `sub_4B4550` (tail-call form); now 179/179 MATCH, 22 WIP.
+
+### Cursor: invisible in menus, flickering in a match (2026-11-24)
+
+Menus: `mouseptr` (`0x48B4F0`) uses the Windows cursor there,
+`SetCursor(LoadCursorA(NULL, IDC_ARROW))`; the host never set
+`hle_screen_cursor_hook`, so screen.c kept the window's cursor hidden. Fix in
+`aoe_host.c`: show it while the game has a cursor set and `ShowCursor` allows.
+In a match the game calls `SetCursor(NULL)` and draws its own.
+
+Match: `mouseptr::draw` (`0x48B000`) asks the back buffer for its clipper
+before drawing the sprite and only accepts `DD_OK` or
+`DDERR_NOCLIPPERATTACHED` (`0x88760238`). win32hle defined that error as
+`0x88760082`, so the game returned early after the save-under blits and never
+drew the cursor. Fixed in the saved win32hle patch; the cursor is now in every frame.
+
+### Call phases: boot -> menu -> match (2026-11-25)
+
+New host flag `--phases FILE`: each lifted entry bumps a per-VA counter, and the
+driver command `mark LABEL` writes the functions called since the previous mark
+and resets. A headless run marked each step: main menu up, 6 s menu idle, Single
+Player, Random Map, Start Game until the match was live, 6 s in the match. The
+raw data is `data/call_phases.tsv`. `Scripts/phase_report.py` turns it into
+`docs/call_phases/` (one file per phase). Of the 2976 distinct functions, 815 run from boot to the
+main menu and 2161 more from the menu into the match, 1955 of those after Start
+Game. Menu idle and match idle add no new functions. Alias stubs are counted
+under the function they forward to, and strong host overrides (`overrides.c`)
+do not appear.

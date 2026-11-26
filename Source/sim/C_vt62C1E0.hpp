@@ -87,6 +87,7 @@ public:
     void Set9D8_421AC0(int v);
     void M_421AD0(int v);
     void M_421B10(unsigned char a, unsigned char b, unsigned char c);
+    void M_5BAD80(int a1);
     void Set9AE_421B40(unsigned char v);
     void Hook_420BE0(int a1, int a2, int a3, int a4);
     void Hook_421E60();

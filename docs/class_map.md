@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1761 |
-| wip | 41 |
+| matched | 1762 |
+| wip | 42 |
 | verified | 17 |
-| lifted | 5931 |
+| lifted | 5929 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -601,7 +601,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | crt | 647 | 61 | 9 | 577 |
 | engine-late | 319 | 36 | 0 | 283 |
 | game | 436 | 156 | 4 | 276 |
-| gfx | 410 | 71 | 2 | 337 |
+| gfx | 410 | 72 | 2 | 336 |
 | runtime-data | 20 | 5 | 0 | 15 |
 | sim | 1283 | 259 | 2 | 1022 |
 | ui | 1229 | 249 | 8 | 972 |

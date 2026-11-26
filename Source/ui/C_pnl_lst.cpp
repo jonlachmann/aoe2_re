@@ -73,7 +73,8 @@ void C_pnl_lst::M_4B5A10(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 
 // 0x4B3760 — seven-argument display configuration: store +0x154 and the six
 // +0x158..+0x15D bytes, map the first argument to +0x160 (1/2/5 -> 1,
-// 3/6 -> 2, 4/7 -> 3, otherwise 0), propagate the four +0x0C..+0x18 values
+// 3/6 -> 2, 4/7 -> 3, otherwise 0 — the 0x4B3808 table groups a1-1 values
+// 0/1/4 -> 1, 2/5 -> 2 and 3/6 -> 3), propagate the four +0x0C..+0x18 values
 // through slot +0x0C, then notify through slot +0x20 with 1.
 WIP_FUNC(0x4B3760)
 void C_pnl_lst::M_4B3760(int a1, unsigned char a2, unsigned char a3, unsigned char a4,

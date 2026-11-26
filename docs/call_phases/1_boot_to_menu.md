@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 407 matched, 289 left to match (34 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 408 matched, 288 left to match (35 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (289)
+## Left to match (288)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -20,7 +20,7 @@
 | 155 | `sub_440A90` | 2 |  | 1_boot_to_menu |  |
 | 162 | `sub_440D40` | 2 |  | 1_boot_to_menu |  |
 | 163 | `sub_440C40` | 3 |  | 1_boot_to_menu |  |
-| 175 | `sub_5BAD80` | 2 |  | 1_boot_to_menu |  |
+| 175 | `sub_5BAD80` | 2 | WIP | 1_boot_to_menu | C_vt62C1E0::M_5BAD80 |
 | 196 | `sub_5BB000` | 9 | WIP | 1_boot_to_menu | C_vt62C1E0::Set_5BB000 |
 | 200 | `sub_5B17D0` | 1 |  | 1_boot_to_menu |  |
 | 201 | `sub_4BE0F0` | 5 |  | 1_boot_to_menu |  |
@@ -38,7 +38,6 @@
 | 234 | `sub_4208F0` | 6 |  | 1_boot_to_menu |  |
 | 235 | `sub_41F470` | 6 |  | 1_boot_to_menu |  |
 | 240 | `sub_41D7F0` | 1 |  | 1_boot_to_menu |  |
-| 244 | `sub_45DDB0` | 1 |  | 1_boot_to_menu |  |
 | 246 | `sub_45DF20` | 2 | WIP | 1_boot_to_menu | C_cluster_45DF20::M_45DF20 |
 | 248 | `sub_45DFE0` | 138 |  | 1_boot_to_menu |  |
 | 249 | `sub_45E2C0` | 4 |  | 1_boot_to_menu |  |
@@ -296,7 +295,7 @@
 | 808 | `sub_5217F0` | 2144832 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (407)
+## Matched (408)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -431,6 +430,7 @@
 | 241 | `sub_49FED0` | 1 | MATCH | 1_boot_to_menu | C_vt621F64::M_49FED0 |
 | 242 | `sub_41C900` | 2 | MATCH | 1_boot_to_menu | C_vt61DF78::M_41C900 |
 | 243 | `sub_41C920` | 239 | MATCH | 1_boot_to_menu | C_vt61DF78::slot09_41C920 |
+| 244 | `sub_45DDB0` | 1 | MATCH | 1_boot_to_menu | C_cluster_45F8A0::Init_45DDB0 |
 | 245 | `sub_619780` | 1 | MATCH | 1_boot_to_menu | sub_619780 |
 | 247 | `sub_5ECE5C` | 2 | MATCH | 1_boot_to_menu | C_cluster_45DF20::M_5ECE5C |
 | 251 | `sub_45EDE0` | 2 | MATCH | 1_boot_to_menu | S45EDE0::M_45EDE0 |

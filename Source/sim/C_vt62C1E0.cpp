@@ -453,3 +453,42 @@ int __stdcall sub_5BB240(C_vt62C1E0* a1, int a2, unsigned int a3, int a4, int a5
     }
     return sub_41FAC0(a1, a2, a3, a4, a5);
 }
+
+// 0x5BAD80 — grouped nested switch: the +0x11D4 value offset by 0xA selects
+// one of two inner dimension switches on the argument; cases map a1 0..5 to
+// byte-written dimension triples through +0x11D0.
+WIP_FUNC(0x5BAD80)
+void C_vt62C1E0::M_5BAD80(int a1)
+{
+    int v = field_11D4 - 0xa;
+    field_11D0 = a1;
+    switch (v)
+    {
+    case 0:
+    case 6:
+    case 9:
+    case 11:
+    case 13:
+        switch (a1)
+        {
+        case 0: M_421B10(0x90, 0x90, 8); return;
+        case 1: M_421B10(0xa8, 0xa8, 8); return;
+        case 2: M_421B10(0xc8, 0xc8, 8); return;
+        case 3: M_421B10(0xdc, 0xdc, 8); return;
+        case 4: M_421B10(0xf0, 0xf0, 8); return;
+        case 5: M_421B10(0xff, 0xff, 8); return;
+        default: return;
+        }
+    default:
+        switch (a1)
+        {
+        case 0: M_421B10(0x78, 0x78, 8); return;
+        case 1: M_421B10(0x90, 0x90, 8); return;
+        case 2: M_421B10(0xa8, 0xa8, 8); return;
+        case 3: M_421B10(0xc8, 0xc8, 8); return;
+        case 4: M_421B10(0xdc, 0xdc, 8); return;
+        case 5: M_421B10(0xf0, 0xf0, 8); return;
+        default: return;
+        }
+    }
+}
