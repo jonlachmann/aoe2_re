@@ -497,55 +497,87 @@ int T41B0::M_42D210()
     return 1;
 }
 
+// 0x41CF70 (slot +0x04) — the menu message pump. The original reads the
+// 0x61C2DC/0x61C2E0 dispatch/translate slots into ebp/edi, keeps a seven-dword
+// message block in the local frame, handles the 0x664544 hold byte and the
+// +0x1D8 mode 4/2 special path, then alternates GetMessage / PeekMessage. The
+// guest-exact VC6 branch uses the absolute guest IAT addresses so the
+// compiler emits the same absolute memory operands; the native branch reads the
+// host-installed trampoline arrays.
+// 0x41CF70 (slot +0x04) — the menu message pump. The original reads the
+// 0x61C2DC/0x61C2E0 dispatch/translate slots into ebp/edi, keeps a seven-dword
+// message block in the local frame, handles the 0x664544 hold byte and the
+// +0x1D8 mode 4/2 special path, then alternates GetMessage / PeekMessage. The
+// guest-exact VC6 branch uses the absolute guest IAT addresses so the compiler
+// emits the same absolute memory operands; the native branch reads the
+// host-installed trampoline arrays. WIP: ours 240 vs 243 bytes; all operands
+// now match, and the only miss is block placement — VC6 emits the peek block
+// (PeekMessage) before the GetMessage block and shifts every jump target, while
+// the original keeps GetMessage first and the peek/idle blocks after it.
 WIP_FUNC(0x41CF70)
 int C_vt61DF78::slot01_41CF70()
 {
 #ifdef MATCHED_NATIVE
     ++g_cvt_slot04_hits;
-#endif
     int (__stdcall *translate)(void*) =
         *(int (__stdcall**)(void*))g_61c2e0;
     int (__stdcall *dispatch)(void*) =
         *(int (__stdcall**)(void*))g_61c2dc;
+#else
+    int (__stdcall *translate)(void*) =
+        *(int (__stdcall**)(void*))ADDR(0x61c2e0);
+    int (__stdcall *dispatch)(void*) =
+        *(int (__stdcall**)(void*))ADDR(0x61c2dc);
+#endif
+    int zero = 0;
     int msg[7];
-    msg[0] = 0;
-    msg[1] = 0;
-    msg[2] = 0;
-    msg[3] = 0;
-    msg[4] = 0;
-    msg[5] = 0;
-    msg[6] = 0;
+    msg[0] = zero; msg[1] = zero; msg[2] = zero; msg[3] = zero;
+    msg[4] = zero; msg[5] = zero; msg[6] = zero;
 
     while (1)
     {
-        if (g_664544 != 0)
+        if (*(unsigned char*)ADDR(0x664544) != zero)
             goto peek;
-        if (field_30 != 0)
+        if (*(int*)((char*)this + 0x30) != zero)
         {
-            int mode = field_1D8;
+            int mode = *(int*)((char*)this + 0x1d8);
             if (mode == 4 || mode == 2)
             {
-                if (field_1B0 == 0)
+                void* obj = *(void**)((char*)this + 0x1b0);
+                if (obj == 0)
                     goto peek;
-                if (((T41B0*)field_1B0)->M_42D210() == 0)
+                if (((T41B0*)obj)->M_42D210() == zero)
                     goto peek;
             }
         }
-
-        if (!(*(int (__stdcall**)(void*, int, int, int))g_61c2e4)(msg, 0, 0, 0))
+#ifdef MATCHED_NATIVE
+        if (!(*(int (__stdcall**)(void*, int, int, int))g_61c2e4)(
+                msg, 0, 0, 0))
             return msg[2];
+#else
+        if (!(*(int (__stdcall**)(void*, int, int, int))
+                ADDR(0x61c2e4))(msg, 0, 0, 0))
+            return msg[2];
+#endif
         translate(msg);
         dispatch(msg);
         continue;
 
     peek:
-        if ((*(int (__stdcall**)(void*, int, int, int, int))g_61c2e8)(msg, 0, 0, 0, 1) == 0)
+#ifdef MATCHED_NATIVE
+        if ((*(int (__stdcall**)(void*, int, int, int, int))g_61c2e8)(
+                msg, 0, 0, 0, 1) == 0)
             goto idle;
-        if (msg[1] == 0x12)
+#else
+        if ((*(int (__stdcall**)(void*, int, int, int, int))
+                ADDR(0x61c2e8))(msg, 0, 0, 0, 1) == 0)
+            goto idle;
+#endif
+        if (*(int*)((char*)msg + 4) == 0x12)
         {
-            if (g_6645c8 == 0)
+            if (*(int*)ADDR(0x6645c8) == zero)
                 return msg[2];
-            g_6645c8 = 0;
+            *(int*)ADDR(0x6645c8) = zero;
         }
         if (slot_051(msg) == 0)
             continue;
@@ -558,7 +590,6 @@ int C_vt61DF78::slot01_41CF70()
         continue;
     }
 }
-
 
 // Host-side pointer helpers used by the WIP bring-up bodies. The native build
 // keeps the 32-bit guest field offsets, so scalar store/gather helpers are

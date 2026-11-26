@@ -478,6 +478,23 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2, hwnd
   0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
 
+- stage 23 — 0x41CF70 (243 bytes, base slot +0x04, the menu message pump) now
+  carries a guest-exact WIP body: the 0x61C2DC/0x61C2E0 dispatch/translate slots
+  are read into ebp/edi, the seven-dword message block is local, the 0x664544
+  hold byte and +0x1D8 mode 4/2 gate select the GetMessage vs PeekMessage path,
+  msg[1] == 0x12 consults 0x6645C8, the +0xCC slot filters peeked messages, and
+  the +0xD0 slot runs the idle path. The key discovery for this band is that the
+  original indirect calls use *absolute guest IAT memory operands*
+  (`call dword ptr [0x61C2E4]`), so the VC6 branch calls through
+  `ADDR(0x61C2...)` casts and now matches every operand; the native branch keeps
+  the host trampoline arrays `g_61c2dc/e0/e4/e8`. It stays WIP at 240 vs 243
+  bytes: VC6 emits the peek block before the GetMessage block (and shifts all
+  jump targets), while the original keeps GetMessage first followed by the
+  peek/idle blocks; an explicit `peek_mode` branch form expanded to 256 bytes.
+  Evidence: TU gate `[28/28] MATCH_FUNCs OK, 16 WIP`; boot exit 0, no fault,
+  `DC10 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2,
+  hwnd 0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
