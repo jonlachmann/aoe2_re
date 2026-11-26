@@ -54,7 +54,7 @@ public:
     virtual void slot_041();  // slot +0x0A4: basegame::setup_fonts [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_042();  // slot +0x0A8: sub_41E5D0 [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_043();  // slot +0x0AC: sub_41E4A0 [matched] — Source/app/C_vt61DF78.cpp
-    virtual void slot_044();  // slot +0x0B0: sub_41EA60 [wip] — Source/app/C_vt61DF78.cpp
+    virtual void slot_044();  // slot +0x0B0: sub_41EA60 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_045();  // slot +0x0B4: sub_41EB30 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_046();  // slot +0x0B8: sub_41EB60 [lifted]
     virtual void slot_047();  // slot +0x0BC: sub_41ECF0 [lifted]

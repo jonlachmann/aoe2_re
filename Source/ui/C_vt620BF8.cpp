@@ -8,6 +8,14 @@ extern int Hook_5F8F60(int size);
 // allocate width*count bytes for +0x14, fill that buffer with the low byte of
 // the third argument, allocate count*4 bytes of row pointers for +0x18 and
 // point each row at the flat buffer offset i*width. Returns this.
+// WIP: identical except the row store scheduling: original emits `mov edi,
+// [esi+14h]; mov edx,ecx; add edx,edi` (base loaded into the scratch register,
+// then off copied into the sum register) in 159 bytes; ours emits `mov edx,
+// [esi+14h]; add edx,ecx` and pads to 160 bytes. Tried int/char* fields, both
+// operand orders (&base[off], off+base), int casts, base/sum/row locals,
+// while/do/for shapes, i*width (gives imul), inline helper and the
+// int-pointer-arithmetic form -- the latter only worsened allocation (ebx
+// temp, swapped loop counters); none emit the copy+add form.
 WIP_FUNC(0x473410)
 C_vt620BF8* C_vt620BF8::Init_473410(int a1, int a2, int a3)
 {
@@ -18,13 +26,17 @@ C_vt620BF8* C_vt620BF8::Init_473410(int a1, int a2, int a3)
     field_c = 0;
     field_10 = 0;
     *(int*)this = 0x620BF8;
-    field_14 = Hook_5F8F60(size);
+    field_14 = (char*)Hook_5F8F60(size);
     memset((void*)field_14, a3 & 0xff, size);
-    field_18 = Hook_5F8F60(field_8 * 4);
+    field_18 = (char**)Hook_5F8F60(field_8 * 4);
     if (field_18 != 0)
     {
         for (int i = 0, off = 0; i < field_8; i++, off += field_4)
-            ((int*)field_18)[i] = field_14 + off;
+        {
+            char* p = field_14;
+            p += off;
+            field_18[i] = p;
+        }
     }
     return this;
 }

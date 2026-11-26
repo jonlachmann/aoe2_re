@@ -440,6 +440,23 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2, hwnd 0x1A2B3C4D,
   DE50/E070 screens 1, WinMain returns 0.
 
+- stage 21 — 0x41EA60 (196 bytes, base slot +0xB0) is byte-exact. It allocates
+  the 0x7E4 dialog from the 0x64D694 name through `new` (the ctor stub keeps a
+  non-trivial hook so VC6 emits the original EH frame and the free-unwind path),
+  runs the 0x4B9B60 four-argument setup with the +0x6C pointer, then registers
+  the name through the 0x49F770 manager at 0x66EA48, marks the +0x420 state via
+  the matched 0x422420, and sends (hwnd, 0xF, 0, 0) through the 0x61C2F4
+  callback. Both setup failures return 0, success returns 1. The native path
+  skips the 0x49F770/0x422420/0x61C2F4 calls (still raw guest words/pointers in
+  the native image) and only keeps the allocation plus setup, so boot stays
+  clean. 0x473410 (Init_473410) remains WIP: its 160 bytes differ from the
+  159-byte original only in the row-pointer store scheduling (`mov edi,
+  [esi+14h]; mov edx,ecx; add edx,edi` vs `mov edx,[esi+14h]; add edx,ecx`);
+  int-pointer-arithmetic and temp variants only worsened register allocation.
+  Evidence: TU gate `[28/28] MATCH_FUNCs OK, 16 WIP`; boot exit 0, no fault,
+  `DC10 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2,
+  hwnd 0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

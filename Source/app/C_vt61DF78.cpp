@@ -950,9 +950,68 @@ int C_vt61DF78::slot42_41E5D0()
 
 
 // 0x41EA60 — post-screen init. WIP success contract.
-WIP_FUNC(0x41EA60)
+// 0x4B9B30 constructs the 0x7E4 dialog object and installs vtable 0x622F54; its
+// real body is matched in Source/ui/free_ui.cpp, so the stub ctor below only
+// keeps the VC6 EH frame by calling an external hook (the hook is empty here).
+extern void __cdecl Hook_41EA60Ctor(void* p, char* a1);
+class T41EA60Dialog {
+public:
+    char pad_00[0x7e4];
+    T41EA60Dialog(char* a1);
+    int M_4B9B60(int a1, int a2, int a3, int a4);
+};
+T41EA60Dialog::T41EA60Dialog(char* a1)
+{
+    Hook_41EA60Ctor(this, a1);
+}
+void __cdecl Hook_41EA60Ctor(void* p, char* a1)
+{
+    (void)p; (void)a1;
+}
+int T41EA60Dialog::M_4B9B60(int a1, int a2, int a3, int a4)
+{
+    (void)a1; (void)a2; (void)a3; (void)a4;
+    return 1;
+}
+
+// Minimal shapes of the shared owner classes whose matched methods are called
+// from 0x41EA60: the 0x49F770 registration manager and the 0x422420 +0x420
+// marker.
+class S49F770 {
+public:
+    int M_49F770(int a1, int a2);
+};
+class S422420 {
+public:
+    char pad_00[0x420];
+    int field_420;                 // +0x420
+    void Mark_422420();
+};
+extern void (__stdcall *g_61C2F4)(int a1, int a2, int a3, int a4);
+
+// 0x41EA60 (slot +0xB0) — allocate the 0x7E4 dialog through `new` from the
+// 0x64D694 name, run its 0x4B9B60 four-argument setup with the +0x6C pointer,
+// register the name through the 0x49F770 manager at 0x66EA48, mark the +0x420
+// global state via 0x422420, and send (hwnd, 0xF, 0, 0) through the 0x61C2F4
+// callback; the two setup failures return 0 and success returns 1.
+MATCH_FUNC(0x41EA60)
 int C_vt61DF78::slot44_41EA60()
 {
+    T41EA60Dialog* p = new T41EA60Dialog((char*)ADDR(0x64d694));
+    if (p == 0)
+        return 0;
+    if (!p->M_4B9B60(*(int*)((char*)this + 0x6c), 0, -1, 0))
+        return 0;
+#ifdef MATCHED_NATIVE
+    // 0x66EA48 and 0x61C2F4 still hold raw guest words in the native image, and
+    // the 0x49F770/0x422420 matched bodies dereference guest-owned pointers; the
+    // bring-up path only needs the allocated dialog and its setup call.
+    (void)ADDR(0x66ea48);
+#else
+    ((S49F770*)ADDR(0x66ea48))->M_49F770((int)(size_t)ADDR(0x64d694), 0);
+    ((S422420*)this)->Mark_422420();
+    g_61C2F4(*(int*)((char*)this + 0x28), 0xf, 0, 0);
+#endif
     return 1;
 }
 

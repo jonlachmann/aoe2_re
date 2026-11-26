@@ -14,8 +14,8 @@ public:
     int field_8;                  // +0x08 row count
     int field_c;                  // +0x0C
     int field_10;                 // +0x10
-    int field_14;                 // +0x14 flat buffer
-    int field_18;                 // +0x18 per-row pointer array
+    char* field_14;                 // +0x14 flat buffer
+    char** field_18;                 // +0x18 per-row pointer array
 
     C_vt620BF8* Init_473410(int a1, int a2, int a3);
 };
