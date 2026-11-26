@@ -2233,7 +2233,7 @@ int S421A50::M_421A50()
 
 // 0x437BF0 — call a two-argument app helper with the global and a constant.
 extern int g_669558;
-extern void __cdecl sub_4378C0(int a1, int a2);
+extern void __cdecl sub_4378C0(int a1, ...);
 
 class S437BF0 {
 public:
@@ -2990,7 +2990,7 @@ extern "C" void* cv_s47_1604;
 extern "C" void* cv_s47_1610;
 extern "C" void* cv_config_ptr;
 extern void* __cdecl sub_5F8F60(int a1);
-extern void __cdecl sub_4378C0(int a1, int a2);
+extern void __cdecl sub_4378C0(int a1, ...);
 extern int __cdecl sub_437410();
 
 class S4BEF50 {
@@ -3004,6 +3004,7 @@ public:
     unsigned count;
     char pad_0c[0x114 - 0x0c];
     C_cluster_437740* Init_437100(int a1);
+    void M_437490(int key);
 };
 class C_cluster_42AEE0 {
 public:
@@ -3352,4 +3353,47 @@ S422980* S422980::Init_422980(int a1)
     for (int i4 = 0; i4 <= 9; i4++)
         M_422D50(i4, 0);
     return this;
+}
+
+// 0x42DEC0 — four-argument player-slot reset: reject a1 outside [1, +0x12D8],
+// zero the per-player array slots at the 0x1DD0..0x203C block, seed +0x2014
+// with 0xE and +0x1E44 with a2, zero the +0x15D0..+0x15E4 counters, then run
+// the +0x15E8 object's matched M_437490(a1) and log through the empty 0x4378C0
+// variadic helper with the 0x64F860 format.
+class S_42DEC0 {
+public:
+    char pad_00[0x12d8];
+    unsigned short count_12d8;    // +0x12D8
+    void M_42DEC0(unsigned int a1, int a2, int a3, int a4);
+};
+MATCH_FUNC(0x42DEC0)
+void S_42DEC0::M_42DEC0(unsigned int a1, int a2, int a3, int a4)
+{
+    if (a1 < 1)
+        return;
+    if (a1 > count_12d8)
+        return;
+    *(int*)((char*)this + a1 * 4 + 0x1e74) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x1e9c) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x1ec4) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x1eec) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x1f14) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x1f3c) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x1f64) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x1f8c) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x1d70) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x2014) = 0xe;
+    *(char*)((char*)this + a1 + 0x1fdc) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x203c) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x1fb4) = 0;
+    *(int*)((char*)this + a1 * 4 + 0x1e44) = a2;
+    *(int*)((char*)this + a1 * 4 + 0x1de0) = 0;
+    *(int*)((char*)this + 0x15d0) = 0;
+    *(int*)((char*)this + 0x15d4) = 0;
+    *(int*)((char*)this + 0x15d8) = 0;
+    *(int*)((char*)this + 0x15dc) = 0;
+    *(int*)((char*)this + 0x15e0) = 0;
+    *(int*)((char*)this + 0x15e4) = 0;
+    ((C_cluster_437740*)*(int*)((char*)this + 0x15e8))->M_437490((int)a1);
+    sub_4378C0(g_669558, 0x64f860, (int)a1, a2, a3, a4);
 }

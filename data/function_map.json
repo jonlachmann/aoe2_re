@@ -12590,13 +12590,13 @@
   "calls": 1,
   "name": "sub_41EFE0",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "S_41EFE0",
+  "class_evidence": "this-edge dialog font setup: 10-slot vtable (+0x24 slot 9 takes 0x65/buf/0x100), buf[0x100]+0x3C LOGFONT frame",
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x41F0C0",
@@ -17208,13 +17208,13 @@
   "calls": 2,
   "name": "sub_42DEC0",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "S_42DEC0",
+  "class_evidence": "this-edge per-player reset: +0x12D8 count, +0x1DD0..0x203C stride-4 slots, +0x1E44 arg2, +0x15D0..+0x15E4 counters, +0x15E8 437740 logger object",
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/game/free_game.cpp"
  },
  {
   "address": "0x42DFB0",

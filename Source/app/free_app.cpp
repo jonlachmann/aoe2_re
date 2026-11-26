@@ -3076,3 +3076,78 @@ void S41F8B0::M_41F8B0()
     }
     field_1f4 = 1;
 }
+
+// 0x41EFE0 — six-argument dialog font setup. Retrieve the dialog text into
+// buf[0x100] through vtable slot +0x24 (0x65,buf,0x100), convert its charset
+// byte via the matched 0x5FD067, build the 0x3C-byte LOGFONT-like font
+// (height = -g_61c1a4(a3,0x60,0x48); width/escapement/orientation 0; weight
+// a4; italic a6; underline 0; strikeout a5; charset the converted byte;
+// out/clip precision 0; quality/pitch 2; facename copied from a2), then pass
+// &font to g_61c03c.
+class T41EFE0Font {
+public:
+    int lfHeight;                 // +0x00
+    int lfWidth;                  // +0x04
+    int lfEscapement;             // +0x08
+    int lfOrientation;            // +0x0C
+    int lfWeight;                 // +0x10
+    unsigned char lfItalic;       // +0x14
+    unsigned char lfUnderline;    // +0x15
+    unsigned char lfStrikeOut;    // +0x16
+    unsigned char lfCharSet;      // +0x17
+    unsigned char lfOutPrecision; // +0x18
+    unsigned char lfClipPrecision;// +0x19
+    unsigned char lfQuality;      // +0x1A
+    unsigned char lfPitchAndFamily; // +0x1B
+    char lfFaceName[0x20];        // +0x1C
+};
+extern int __cdecl sub_5FD067(char* a1);
+extern int (__stdcall *g_61c1a4)(int a1, int a2, int a3);
+extern void (__stdcall *g_61c03c)(T41EFE0Font* a1);
+class S_41EFE0 {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08();
+    virtual void Vt_09(int a1, char* a2, int a3);   // slot +0x24
+    void M_41EFE0(int a1, int a2, int a3, int a4, int a5, int a6);
+};
+
+#pragma intrinsic(memset, strcpy)
+WIP_FUNC(0x41EFE0)
+void S_41EFE0::M_41EFE0(int a1, int a2, int a3, int a4, int a5, int a6)
+{
+    T41EFE0Font font;
+    char buf[0x100];
+    Vt_09(0x65, buf, 0x100);
+    unsigned char charset = (unsigned char)sub_5FD067(buf);
+    memset(&font, 0, 0x3c);
+    font.lfHeight = -g_61c1a4(a3, 0x60, 0x48);
+    font.lfWidth = 0;
+    font.lfEscapement = 0;
+    font.lfOrientation = 0;
+    font.lfUnderline = 0;
+    font.lfOutPrecision = 0;
+    font.lfClipPrecision = 0;
+    font.lfStrikeOut = (unsigned char)a5;
+    font.lfQuality = 2;
+    font.lfPitchAndFamily = 2;
+    font.lfWeight = a4;
+    font.lfCharSet = charset;
+    font.lfItalic = (unsigned char)a6;
+    strcpy(font.lfFaceName, (char*)a2);
+    g_61c03c(&font);
+}
+
+
+
+
+
+
+#pragma function(memset, strcpy)

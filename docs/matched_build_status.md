@@ -720,6 +720,32 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   wave: full gate `[1816/1816] MATCH_FUNCs OK, 32 WIP`; phase docs now 455/815
   matched (241 left, 25 WIP, 119 CRT).
 
+- stage 39 — `Source/game/free_game.cpp` now carries a byte-exact
+  `MATCH_FUNC(0x42DEC0)` (231 bytes): the four-argument player-slot reset
+  rejects a1 outside [1, +0x12D8] (unsigned compares, hence jb/ja), zeroes the
+  per-player stride-4 slots in the +0x1DD0..+0x203C block (eight at 0x1E74..
+  0x1F8C stride 0x28, plus 0x1D70, 0x1FB4, 0x1DE0, 0x203C), seeds +0x2014
+  with 0xE and +0x1E44 with a2, zeroes the +0x15D0..+0x15E4 counters, then runs
+  the +0x15E8 C_cluster_437740 object's matched M_437490(a1) and logs through
+  the empty 0x4378C0 variadic helper (0x64F860 format, a1..a4). Class feedback:
+  S_42DEC0 owns +0x12D8 (unsigned short cap) and the stride-4 slot block;
+  C_cluster_437740 gains the public M_437490(int) logger-matching signature.
+  The 0x4378C0 declaration became variadic `(int a1, ...)`, which keeps the
+  two-argument callers 0x437BF0 byte-exact. `Source/app/free_app.cpp` also gains
+  a semantically complete `WIP_FUNC(0x41EFE0)` (214 bytes original): a
+  six-argument dialog font setup that retrieves text into buf[0x100] through
+  the 10-slot object's +0x24 slot (slot 9, 0x65/buf/0x100), converts the charset
+  byte through matched 0x5FD067, builds the 0x3C-byte LOGFONT (height =
+  -g_61c1a4(a3,0x60,0x48), width/escapement/orientation 0, weight a4, italic
+  a6, underline 0, strikeout a5, charset from the converted byte, out/clip
+  precision 0, quality/pitch 2, facename strcpy from a2) and passes &font to
+  g_61c03c. WIP because two VC6 scheduling decisions (early neg/edi hoisting and
+  edx-vs-eax weight register) are irreducible from source form. Class feedback:
+  S_41EFE0 is a 10-virtual-slot dialog owner with slot_09(0x65,buf,0x100);
+  T41EFE0Font mirrors LOGFONT (0x3C bytes). Evidence after this wave: full gate
+  `[1817/1817] MATCH_FUNCs OK, 33 WIP`; phase docs now 456/815 matched (240 left,
+  26 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 455 matched, 241 left to match (25 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 456 matched, 240 left to match (26 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (241)
+## Left to match (240)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -137,11 +137,10 @@
 | 429 | `sub_437210` | 1 |  | 1_boot_to_menu |  |
 | 437 | `sub_433550` | 1 |  | 1_boot_to_menu |  |
 | 438 | `sub_438120` | 1 | WIP | 1_boot_to_menu | S438120::Init_438120 |
-| 441 | `sub_42DEC0` | 8 |  | 1_boot_to_menu |  |
 | 455 | `sub_439030` | 1 |  | 1_boot_to_menu |  |
 | 467 | `sub_41E760` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot41_41E760 |
 | 469 | `sub_41EEE0` | 35 |  | 1_boot_to_menu |  |
-| 470 | `sub_41EFE0` | 35 |  | 1_boot_to_menu |  |
+| 470 | `sub_41EFE0` | 35 | WIP | 1_boot_to_menu | S_41EFE0::M_41EFE0 |
 | 472 | `sub_5B1EB0` | 1 |  | 1_boot_to_menu |  |
 | 473 | `sub_5207B0` | 3 |  | 1_boot_to_menu |  |
 | 477 | `sub_462BA0` | 1 |  | 1_boot_to_menu |  |
@@ -248,7 +247,7 @@
 | 801 | `sub_420450` | 2144832 |  | 1_boot_to_menu |  |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (455)
+## Matched (456)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -463,6 +462,7 @@
 | 436 | `sub_424BC0` | 2 | MATCH | 1_boot_to_menu | S424BC0::Init_424BC0 |
 | 439 | `sub_4BEF50` | 2 | MATCH | 1_boot_to_menu | S4BEF50::M_4BEF50 |
 | 440 | `sub_439CB0` | 1 | MATCH | 1_boot_to_menu | Sc439CB0::Init_439CB0 |
+| 441 | `sub_42DEC0` | 8 | MATCH | 1_boot_to_menu | S_42DEC0::M_42DEC0 |
 | 442 | `sub_437490` | 8 | MATCH | 1_boot_to_menu | C_cluster_437740::M_437490 |
 | 443 | `sub_42AE00` | 1 | MATCH | 1_boot_to_menu | S42D1D0::M_42AE00 |
 | 444 | `sub_42AE50` | 1 | MATCH | 1_boot_to_menu | C_cluster_42AEE0::M_42AE50 |
