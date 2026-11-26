@@ -1,4 +1,5 @@
 #include "C_cluster_4ED280.hpp"
+#include "matched_mem.h"
 
 extern int g_664524;
 
@@ -16,7 +17,7 @@ void T4ED280Self::M_4ED280()
     if (Vt_72((int)this, field_978, 0x2536, 0x272, 0x17E, 0x9E, 0x26, 0xB,
               0, 1, 1) == 0)
         return;
-    T4ED280Global* g = (T4ED280Global*)g_664524;
+    T4ED280Global* g = ((T4ED280Global*)ADDR(g_664524));
     if (g == 0)
         return;
     int r = g->M_422A70();

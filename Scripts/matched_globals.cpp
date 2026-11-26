@@ -121,6 +121,7 @@ char g_66f638[0x1000] = {};
 char g_66f63c[0x1000] = {};
 char g_73e354[0x1000] = {};
 char g_73e355[0x1000] = {};
+char g_73facc[0x1000] = {};
 char g_73fe18[0x1000] = {};
 char g_73fe1c[0x1000] = {};
 char g_73fe24[0x1000] = {};

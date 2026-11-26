@@ -1,4 +1,5 @@
 #include "C_TribePopUpHelp.hpp"
+#include "matched_mem.h"
 
 extern void* g_6645c4;
 extern int (__stdcall *g_61C2A0)(int a1);
@@ -27,7 +28,7 @@ int C_TribePopUpHelp::M_4A1440()
 {
     if (field_20 == 0 || field_70 == 0 || field_6c == 0)
         return 0;
-    if (*(int*)((char*)g_6645c4 + 0x30) == 0)
+    if (*(int*)(((char*)ADDR(g_6645c4)) + 0x30) == 0)
         return 0;
     if (g_61C2A0(((T4A1440Field20*)field_20)->field_4) != 0)
         return 0;

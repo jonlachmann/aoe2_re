@@ -2,6 +2,7 @@
 // Sections keep per-file order; preambles are carried only when the file's
 // first marker lives in another module.
 #include "Function.hpp"
+#include "matched_mem.h"
 
 
 extern int g_66d4b0;
@@ -1260,7 +1261,7 @@ extern void __cdecl sub_4429B0();
 MATCH_FUNC(0x4436B0)
 void __cdecl sub_4436B0()
 {
-    ((T4436B0*)g_66A478)->field_38128 = 0xffff;
+    (((T4436B0*)ADDR(g_66A478)))->field_38128 = 0xffff;
     sub_4429B0();
 }
 

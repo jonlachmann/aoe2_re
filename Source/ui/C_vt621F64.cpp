@@ -1,4 +1,5 @@
 #include "C_vt621F64.hpp"
+#include "matched_mem.h"
 
 extern char g_vt_621F64f;
 extern void* g_6645c4;
@@ -59,7 +60,7 @@ void C_vt621F64::M_49FED0()
 {
     if (field_acc != 0)
         return;
-    void* r = ((T6645Slot*)g_6645c4)->Vt_08(0x64);
+    void* r = (((T6645Slot*)ADDR(g_6645c4)))->Vt_08(0x64);
     if (r != 0 && *(char*)r == '1') {
         g_61C2F8(0x6e, 0, (void*)((char*)this + 0xad0), 0);
         field_acc = 1;

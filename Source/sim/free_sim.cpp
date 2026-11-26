@@ -2,6 +2,7 @@
 // Sections keep per-file order; preambles are carried only when the file's
 // first marker lives in another module.
 #include "Function.hpp"
+#include "matched_mem.h"
 
 
 extern int g_66d4b0;
@@ -172,7 +173,7 @@ extern int* g_741f68;
 MATCH_FUNC(0x5542C0)
 int Check_5542C0(int value)
 {
-    return *(unsigned char*)((char*)g_741f68 + 0x155) == value;
+    return *(unsigned char*)(((char*)ADDR(g_741f68)) + 0x155) == value;
 }
 
 class S4CED80 {
@@ -1841,14 +1842,14 @@ extern S5549A0Global* g_741f60;
 MATCH_FUNC(0x5562D0)
 int Get_5562D0()
 {
-    return *(int*)((char*)g_741f60 + 0x1320);
+    return *(int*)(((char*)ADDR(g_741f60)) + 0x1320);
 }
 
 extern int* g_741f5c;
 MATCH_FUNC(0x5566F0)
 int Get_5566F0()
 {
-    return *(int*)((char*)g_741f5c + 0x1074);
+    return *(int*)(((char*)ADDR(g_741f5c)) + 0x1074);
 }
 
 extern int g_741b58[];
@@ -3999,7 +4000,7 @@ public:
 MATCH_FUNC(0x54EF40)
 void __cdecl sub_54EF40()
 {
-    ((T40E600*)g_7409F0)->Other_40E600();
+    (((T40E600*)ADDR(g_7409F0)))->Other_40E600();
 }
 
 // 0x54DF30 — global-object no-argument forwarder.
@@ -4011,7 +4012,7 @@ public:
 MATCH_FUNC(0x54DF30)
 void __cdecl sub_54DF30()
 {
-    ((T581340*)g_7409E0)->Other_581340();
+    (((T581340*)ADDR(g_7409E0)))->Other_581340();
 }
 
 // 0x54F050 — one-argument global-object forwarder.
@@ -4023,7 +4024,7 @@ public:
 MATCH_FUNC(0x54F050)
 void __cdecl sub_54F050(int a1)
 {
-    ((T4AED50*)g_7409EC)->Other_4AED50(a1);
+    (((T4AED50*)ADDR(g_7409EC)))->Other_4AED50(a1);
 }
 
 // 0x520120 — call the helper then clear the global flag.

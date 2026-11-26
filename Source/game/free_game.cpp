@@ -2,6 +2,7 @@
 // Sections keep per-file order; preambles are carried only when the file's
 // first marker lives in another module.
 #include "Function.hpp"
+#include "matched_mem.h"
 
 
 extern int g_66d4b0;
@@ -102,7 +103,7 @@ extern int* g_6645c4;
 MATCH_FUNC(0x439610)
 int* Ref_439610()
 {
-    return (int*)((char*)*(int**)((char*)g_6645c4 + 0x24) + 0xc3f);
+    return (int*)((char*)*(int**)(((char*)ADDR(g_6645c4)) + 0x24) + 0xc3f);
 }
 
 class S407BF0 {

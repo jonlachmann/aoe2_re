@@ -3,6 +3,7 @@
 // of every body in the same file. Preambles are carried only when the file's
 // first marker lives in another module.
 #include "Function.hpp"
+#include "matched_mem.h"
 
 
 extern int g_66d4b0;
@@ -3003,7 +3004,7 @@ public:
 MATCH_FUNC(0x41D670)
 int __stdcall sub_41D670(int a1, int a2, int a3, int a4)
 {
-    T41D670Obj* p = (T41D670Obj*)g_6645c4;
+    T41D670Obj* p = ((T41D670Obj*)ADDR(g_6645c4));
     if (p != 0)
         return p->field_0->slot_08(p, a1, a2, a3, a4);
     return 0;

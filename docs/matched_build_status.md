@@ -24,15 +24,21 @@ Evidence (current run):
 - stage 2 — 236 `g_*` guest globals generated from the objects' own undefined
   lists, 214 of them seeded from the reference binary's data image (`AOE_BIN`)
   rather than zeros; 84 objects link with those globals (`probe: 0 failures`)
-- stage 4 — the 10 globals-only objects execute against the seeded image:
+- stage 4 — the globals-only objects execute against the seeded image:
   `matched_probe_globals.cpp` checks `Get_434BE0()==1.0`, the `M_435810`
   0.0 threshold and `Get_41A090()==FLT_MAX`: `globals exec probe: 0 failures`
-  (10 objects)
+  (11 objects)
 - stage 3 — portable guest-VA access layer: `Source/matched_mem.h` defines
   `ADDR(va)`, a plain cast under VC6 (byte-exact codegen unchanged) and a guest
   image base offset under `-DMATCHED_NATIVE`. `Scripts/matched_probe_va.cpp`
   maps a host guest image, stores guest VA 0x1000 in `g_6645c4`, and
   `M_4BDE70` reads the short at +0x424 through ADDR: `va probe: 0 failures`
+- ADDR is now applied to the 20 typed guest-global pointer casts in the tree
+  (`C_cluster_4EE210` 11, `C_vt6234C8` 1, `C_TribePopUpHelp`, `free_game`,
+  `C_vt621F64`, `C_cluster_4ED280`, `free_gfx`, `free_app`, `free_sim` 6),
+  and the full gate is unchanged at `[1762/1762]`, confirming the macro is
+  codegen-neutral under VC6. Native semantics still need a guest-image layout
+  so a global's *address* (symbol) maps like its *contents*.
 
 The probe exercises two recovered bodies on host-allocated instances:
 `C_cluster_405790::Init_405790` (writes `+0x00` vtbl, `+0x04` arg, `+0x08` zero)
