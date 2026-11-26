@@ -13,9 +13,7 @@ int C_cluster_4B4550::M_4B4550()
 }
 
 MATCH_FUNC(0x5ED9E8)
-__declspec(naked) void C_cluster_4B4550::M_5ED9E8()
+void C_cluster_4B4550::M_5ED9E8()
 {
-    __asm {
-        jmp dword ptr [g_pfn_61c0b0]
-    }
+    g_pfn_61c0b0();
 }

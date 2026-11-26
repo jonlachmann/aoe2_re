@@ -7,11 +7,9 @@ extern void (__stdcall *g_61C04C)(int a1);
 extern int __stdcall Hook_5ECE5C(int a1, int a2, int a3);
 
 MATCH_FUNC(0x5ECE5C)
-__declspec(naked) void C_cluster_45DF20::M_5ECE5C()
+void C_cluster_45DF20::M_5ECE5C()
 {
-    __asm {
-        jmp dword ptr [g_pfn_61c014]
-    }
+    g_pfn_61c014();
 }
 
 // 0x45DF20 — with a zero argument, set +0x54 = 1, create the 0x64DAA0 object

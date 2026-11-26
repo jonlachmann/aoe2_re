@@ -189,25 +189,16 @@ void __cdecl sub_5FE2FA(void** a1, void** a2)
 // 0x6026DB — one-byte cursor: decrement +4, consume *+0 when available, else
 // refresh through 0x602730.
 extern int __cdecl sub_602730(int a1);
-MATCH_FUNC(0x6026DB)
-__declspec(naked) int __cdecl sub_6026DB(int a1)
+WIP_FUNC(0x6026DB)
+int __cdecl sub_6026DB(int a1)
 {
-    __asm
-    {
-        mov edx, dword ptr [esp + 4]
-        dec dword ptr [edx + 4]
-        js slow_6026DB
-        mov ecx, dword ptr [edx]
-        movzx eax, byte ptr [ecx]
-        inc ecx
-        mov dword ptr [edx], ecx
-        ret
-    slow_6026DB:
-        push edx
-        call sub_602730
-        pop ecx
-        ret
-    }
+    int* p = (int*)a1;
+    if (--*(int*)((char*)p + 4) < 0)
+        return sub_602730(a1);
+    unsigned char* q = *(unsigned char**)((char*)p);
+    unsigned char c = *q;
+    *(int*)((char*)p) = (int)(q + 1);
+    return c;
 }
 
 // 0x6026F5 — skip when the first argument is -1, else forward both.
@@ -299,32 +290,22 @@ class S5F9750 {
 public:
     char pad_00[0x14];
     void* field_14;               // +0x14 free-list head
+    void* Hook_5F94D0();          // unresolved callee at 0x5F94D0
     void* M_5F9750();
 };
 
-MATCH_FUNC(0x5F9750)
-__declspec(naked) void* S5F9750::M_5F9750()
+WIP_FUNC(0x5F9750)
+void* S5F9750::M_5F9750()
 {
-    __asm
+    if (field_14 == 0)
     {
-        push esi
-        mov esi, ecx
-        cmp dword ptr [ecx + 0x14], 0
-        jne pop_5F9750
-        mov ecx, esi
-        call sub_5F94D0
-        test eax, eax
-        jne pop_5F9750
-        xor eax, eax
-        pop esi
-        ret
-    pop_5F9750:
-        mov eax, dword ptr [esi + 0x14]
-        mov ecx, dword ptr [eax + 8]
-        mov dword ptr [esi + 0x14], ecx
-        pop esi
-        mov dword ptr [eax + 4], -1
-        ret
+        void* r = Hook_5F94D0();
+        if (r == 0)
+            return 0;
     }
+    void* node = field_14;
+    field_14 = *(void**)((char*)node + 8);
+    *(int*)((char*)node + 4) = -1;
+    return node;
 }
 

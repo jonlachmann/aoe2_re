@@ -230,18 +230,13 @@ int Get_6004B7()
 }
 
 // 0x5FCA45 — LCG rand: seed state kept in g_661C14.
-MATCH_FUNC(0x5FCA45)
+WIP_FUNC(0x5FCA45)
 int __cdecl sub_5FCA45()
 {
-    __asm
-    {
-        mov eax, dword ptr [g_661c14]
-        imul eax, eax, 214013
-        add eax, 2531011
-        mov dword ptr [g_661c14], eax
-        sar eax, 16
-        and eax, 32767
-    }
+    int s = g_661c14;
+    s = s * 214013 + 2531011;
+    g_661c14 = s;
+    return (s >> 16) & 0x7fff;
 }
 
 // 0x5F90B0 — free wrapper: only calls the deallocator for non-null pointers.
@@ -265,43 +260,36 @@ void __cdecl sub_5F8F60(void* p)
 extern int __cdecl sub_600EE8();
 extern void __cdecl sub_600E98();
 extern int g_772704;
-MATCH_FUNC(0x5FC8D4)
+WIP_FUNC(0x5FC8D4)
 void __cdecl sub_5FC8D4()
 {
     Init_5FC8EC();
     g_772704 = sub_600EE8();
     sub_600E98();
-    __asm { fnclex }
 }
 
 // 0x5F9AA0 — fastcall tail wrapper: mask the pointer argument and pass zero
 // in edx to 0x5F9930.
 extern int __fastcall sub_5F9930(int a1, int a2);
-MATCH_FUNC(0x5F9AA0)
-__declspec(naked) int __fastcall sub_5F9AA0(int a1)
+WIP_FUNC(0x5F9AA0)
+int __fastcall sub_5F9AA0(int a1)
 {
-    __asm
-    {
-        and ecx, 0xffff0000
-        xor edx, edx
-        jmp sub_5F9930
-    }
+    a1 = a1 & 0xffff0000;
+    return sub_5F9930(a1, 0);
 }
 
 // 0x5F9A20 — initialize the CRT object slots at +0x08/+0x0C/+0x10/+0x16 and
 // return zero (short).
-MATCH_FUNC(0x5F9A20)
+WIP_FUNC(0x5F9A20)
 short __fastcall sub_5F9A20(char* a1, unsigned char a2)
 {
-    __asm
-    {
-        xor ax, ax
-        and dl, 2
-        mov dword ptr [ecx + 8], 5f9aa0h
-        mov dword ptr [ecx + 0x10], 0
-        mov word ptr [ecx + 0xc], 1
-        mov byte ptr [ecx + 0x16], dl
-    }
+    short r = 0;
+    a2 = a2 & 2;
+    *(int*)(a1 + 8) = 0x5f9aa0;
+    *(int*)(a1 + 0x10) = 0;
+    *(short*)(a1 + 0xc) = 1;
+    *(unsigned char*)(a1 + 0x16) = a2;
+    return r;
 }
 
 // 0x5FC430 — flag test at +0x22, else fastcall-forward edx to 0x5FBCE0.
@@ -316,45 +304,24 @@ int __fastcall sub_5FC430(char* a1, int a2)
 
 // 0x5F9D00 — initialize a CRT cursor object: self-relative +0x14 extent,
 // +0x10 pointer to self+0x20, +0x08 method pointer; returns short 1.
-MATCH_FUNC(0x5F9D00)
-__declspec(naked) short __fastcall sub_5F9D00(char* a1, int a2)
+WIP_FUNC(0x5F9D00)
+short __fastcall sub_5F9D00(char* a1, int a2)
 {
-    __asm
-    {
-        add edx, ecx
-        lea eax, [ecx + 0x20]
-        mov dword ptr [ecx + 0x14], edx
-        mov dword ptr [ecx + 0x10], eax
-        mov dword ptr [ecx + 8], 5f9ef0h
-        mov ax, 1
-        ret
-    }
+    *(int*)(a1 + 0x14) = a2 + (int)a1;
+    *(int*)(a1 + 0x10) = (int)(a1 + 0x20);
+    *(int*)(a1 + 8) = 0x5f9ef0;
+    return 1;
 }
 
 // 0x5FCDE1 — four-argument forwarder gated by a 0x602979 result.
 extern int __cdecl sub_602979();
 extern void __cdecl sub_602809(int a1, int a2, int a3, int a4);
-// 0x5FCDE1 — four-argument forwarder gated by a 0x602979 result.
-extern int __cdecl sub_602979();
-extern void __cdecl sub_602809(int a1, int a2, int a3, int a4);
-MATCH_FUNC(0x5FCDE1)
-__declspec(naked) void __cdecl sub_5FCDE1(int a1, int a2, int a3)
+WIP_FUNC(0x5FCDE1)
+void __cdecl sub_5FCDE1(int a1, int a2, int a3)
 {
-    __asm
-    {
-        call sub_602979
-        test eax, eax
-        jne body_5FCDE1
-        ret
-    body_5FCDE1:
-        push eax
-        push dword ptr [esp + 0x10]
-        push dword ptr [esp + 0x10]
-        push dword ptr [esp + 0x10]
-        call sub_602809
-        add esp, 0x10
-        ret
-    }
+    int r = sub_602979();
+    if (r != 0)
+        sub_602809(a1, a2, a3, r);
 }
 
 // 0x5F9780 — fastcall two-pointer splice: +0x14 link moves to the second
@@ -368,25 +335,15 @@ void __fastcall sub_5F9780(int* a1, int* a2)
 
 // 0x5F9EF0 — fastcall free-list push: the low byte before the block indexes
 // the 0x64-based slot array, then the block header's +0x0C count drops.
-MATCH_FUNC(0x5F9EF0)
-__declspec(naked) void __fastcall sub_5F9EF0(int* p)
+WIP_FUNC(0x5F9EF0)
+void __fastcall sub_5F9EF0(int* p)
 {
-    __asm
-    {
-        push esi
-        xor eax, eax
-        mov esi, ecx
-        mov al, byte ptr [ecx - 1]
-        and esi, 0xffff0000
-        mov edx, dword ptr [esi]
-        lea eax, [edx + eax*4 + 0x64]
-        mov edx, dword ptr [eax]
-        mov dword ptr [ecx], edx
-        mov dword ptr [eax], ecx
-        dec word ptr [esi + 0xc]
-        pop esi
-        ret
-    }
+    unsigned char idx = *(unsigned char*)((char*)p - 1);
+    int base = (int)p & 0xffff0000;
+    int* slot = (int*)(*(int*)base + idx * 4 + 0x64);
+    *(int*)p = *slot;
+    *slot = (int)p;
+    --*(short*)((char*)base + 0xc);
 }
 
 extern int g_772a1c;

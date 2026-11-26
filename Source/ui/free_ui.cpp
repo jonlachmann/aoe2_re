@@ -6629,31 +6629,25 @@ public:
     int M_4BD560(int a1);
 };
 
-MATCH_FUNC(0x4BD560)
-__declspec(naked) int S4BD560::M_4BD560(int a1)
+WIP_FUNC(0x4BD560)
+int S4BD560::M_4BD560(int a1)
 {
-    __asm
+    void* n = field_f8;
+    int i = 0;
+    if (n != 0)
     {
-        mov eax, dword ptr [ecx + 0f8h]
-        xor edx, edx
-        test eax, eax
-        je empty_4BD560
-        mov ecx, dword ptr [esp + 4]
-    loop_4BD560:
-        cmp edx, ecx
-        je found_4BD560
-        mov eax, dword ptr [eax + 24h]
-        inc edx
-        test eax, eax
-        jne loop_4BD560
-    empty_4BD560:
-        mov byte ptr [g_73e354], 0
-        mov eax, offset g_73e354
-        ret 4
-    found_4BD560:
-        mov eax, dword ptr [eax + 4]
-        ret 4
+        for (;;)
+        {
+            if (i == a1)
+                return *(int*)((char*)n + 4);
+            n = *(void**)((char*)n + 0x24);
+            i++;
+            if (n == 0)
+                break;
+        }
     }
+    g_73e354[0] = 0;
+    return (int)g_73e354;
 }
 
 // 0x4A55F0 — eight-argument virtual dispatch at slot 0x13C: reject a zero

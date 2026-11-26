@@ -14,9 +14,7 @@ void C_cluster_49FE60::M_49FE60()
 }
 
 MATCH_FUNC(0x5ED9D6)
-__declspec(naked) void C_cluster_49FE60::M_5ED9D6()
+void C_cluster_49FE60::M_5ED9D6()
 {
-    __asm {
-        jmp dword ptr [g_pfn_61c0a8]
-    }
+    g_pfn_61c0a8();
 }

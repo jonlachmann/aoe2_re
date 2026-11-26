@@ -22,8 +22,8 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1772 |
-| wip | 28 |
+| matched | 1760 |
+| wip | 40 |
 | verified | 17 |
 | lifted | 5933 |
 
@@ -126,7 +126,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x6230B0` | `C_vt6230B0` | 61 | 1 | — | 36 | 26 |
 | `0x6231A4` | `C_vt6231A4` | 61 | 1 | — | 35 | 27 |
 | `0x623318` | `C_pnl_txt` | 73 | 0 | pnl_txt | 41 | 32 |
-| `0x6234C8` | `C_vt6234C8` | 93 | 1 | panel_ez | 46 | 48 |
+| `0x6234C8` | `C_vt6234C8` | 93 | 1 | panel_ez | 45 | 49 |
 | `0x62363C` | `C_vt62363C` | 2 | 1 | — | 1 | 2 |
 | `0x6236D0` | `C_vt6236D0` | 2 | 1 | — | 1 | 2 |
 | `0x6237E0` | `C_vt6237E0` | 8 | 1 | — | 1 | 8 |
@@ -139,7 +139,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x623B20` | `C_vt623B20` | 2 | 1 | — | 1 | 2 |
 | `0x623BA8` | `C_vt623BA8` | 13 | 1 | — | 2 | 12 |
 | `0x623C5C` | `C_vt623C5C` | 61 | 1 | — | 36 | 26 |
-| `0x623E50` | `C_vt623E50` | 3 | 1 | — | 2 | 2 |
+| `0x623E50` | `C_vt623E50` | 3 | 1 | — | 1 | 3 |
 | `0x623E5C` | `C_vt623E5C` | 4 | 1 | — | 3 | 2 |
 | `0x623F24` | `C_scr_ach` | 87 | 2 | panel_ez, scr_ach | 40 | 49 |
 | `0x624100` | `C_vt624100` | 87 | 1 | panel_ez | 42 | 46 |
@@ -598,13 +598,13 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | Region | Functions | Matched | WIP | Left |
 |---|---|---|---|---|
 | app | 323 | 133 | 0 | 190 |
-| crt | 647 | 70 | 0 | 577 |
+| crt | 647 | 61 | 9 | 577 |
 | engine-late | 319 | 36 | 0 | 283 |
 | game | 436 | 156 | 4 | 276 |
 | gfx | 410 | 71 | 2 | 337 |
 | runtime-data | 20 | 5 | 0 | 15 |
 | sim | 1283 | 259 | 2 | 1022 |
-| ui | 1229 | 250 | 6 | 973 |
+| ui | 1229 | 249 | 7 | 973 |
 
 ## Skeleton tree
 `Source/skeleton/` holds declarations only, generated from this map and

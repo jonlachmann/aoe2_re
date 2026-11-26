@@ -2,20 +2,14 @@
 
 extern int g_6645c4;
 
-// The original reuses eax from the decrement test for the pointer load; VC6 C++
-// codegen keeps selecting ecx there, so this body is written as explicit asm.
-MATCH_FUNC(0x4BDE70)
-__declspec(naked) short C_vt6234C8::M_4BDE70()
+// 0x4BDE70 — decrement the +0x81C counter; on zero read the short at +0x424
+// of the object stored in the 0x6645C4 global, otherwise return -1.
+WIP_FUNC(0x4BDE70)
+short C_vt6234C8::M_4BDE70()
 {
-    __asm {
-        mov eax, dword ptr [ecx + 0x81c]
-        dec eax
-        je  L_true
-        or  ax, 0xffff
-        ret
-    L_true:
-        mov eax, dword ptr [g_6645c4]
-        mov ax, word ptr [eax + 0x424]
-        ret
-    }
+    int v = *(int*)((char*)this + 0x81c);
+    if (--v != 0)
+        return -1;
+    int obj = g_6645c4;
+    return *(short*)((char*)obj + 0x424);
 }

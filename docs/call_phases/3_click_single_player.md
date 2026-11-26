@@ -1,8 +1,8 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 94 matched, 159 left to match (6 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 92 matched, 160 left to match (8 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (159)
+## Left to match (160)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -123,6 +123,7 @@
 | 196 | `sub_4BC260` | 22 |  | 1_boot_to_menu | pnl_txt::draw |
 | 197 | `sub_4BC360` | 22 |  | 1_boot_to_menu | pnl_txt::draw_background2 |
 | 198 | `sub_4BC750` | 24 |  | 1_boot_to_menu |  |
+| 200 | `sub_4BD560` | 24 | WIP | 1_boot_to_menu | S4BD560::M_4BD560 |
 | 201 | `sub_4BCBC0` | 24 |  | 1_boot_to_menu |  |
 | 203 | `sub_4BC560` | 22 |  | 1_boot_to_menu | pnl_txt::draw_border |
 | 204 | `sub_610DEA` | 2 |  | 1_boot_to_menu |  |
@@ -166,7 +167,7 @@
 | 282 | `sub_610EB1` | 4 |  | 3_click_single_player |  |
 | 284 | `sub_610E66` | 1 |  | 3_click_single_player |  |
 
-## Matched (94)
+## Matched (92)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -181,7 +182,6 @@
 | 12 | `sub_47DA00` | 2 | MATCH | 1_boot_to_menu | C_cluster_47DA00::Get_47DA00 |
 | 19 | `sub_4A08C0` | 307 | MATCH | 1_boot_to_menu | S4A08C0::M_4A08C0 |
 | 30 | `sub_5F90B0` | 9 | MATCH | 1_boot_to_menu | sub_5F90B0 |
-| 32 | `sub_5F9EF0` | 9 | MATCH | 1_boot_to_menu | sub_5F9EF0 |
 | 35 | `sub_4A2140` | 9 | MATCH | 1_boot_to_menu | sub_4A2140 |
 | 39 | `sub_41F840` | 1 | MATCH | 3_click_single_player | S41F840Lookup::Entry_41F840 |
 | 40 | `sub_5F8F60` | 1 | MATCH | 1_boot_to_menu | sub_5F8F60 |
@@ -236,7 +236,6 @@
 | 180 | `sub_461370` | 48 | MATCH | 1_boot_to_menu | TDrawArea::HLine_461370 |
 | 182 | `sub_461400` | 48 | MATCH | 1_boot_to_menu | TDrawArea::VLine_461400 |
 | 199 | `sub_4BD4E0` | 24 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4E0 |
-| 200 | `sub_4BD560` | 24 | MATCH | 1_boot_to_menu | S4BD560::M_4BD560 |
 | 202 | `sub_4BD4B0` | 24 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4B0 |
 | 211 | `sub_6032E5` | 21 | MATCH | 1_boot_to_menu | sub_6032E5 |
 | 216 | `sub_4364F0` | 8080 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4364F0 |
@@ -265,7 +264,7 @@
 | 279 | `sub_4A1E20` | 1 | MATCH | 1_boot_to_menu | C_TribePopUpHelp::M_4A1E20 |
 | 283 | `sub_461130` | 6 | MATCH | 3_click_single_player | TDrawArea::FrameRect_461130 |
 
-## CRT / library (32)
+## CRT / library (33)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -273,6 +272,7 @@
 | 28 | `sub_5F9D20` | 18 |  | 1_boot_to_menu |  |
 | 29 | `sub_5F9D80` | 18 |  | 1_boot_to_menu |  |
 | 31 | `sub_5FA280` | 9 |  | 1_boot_to_menu |  |
+| 32 | `sub_5F9EF0` | 9 | WIP | 1_boot_to_menu | sub_5F9EF0 |
 | 34 | `sub_5FE370` | 3 |  | 1_boot_to_menu |  |
 | 41 | `sub_5F8EE0` | 1 |  | 1_boot_to_menu |  |
 | 42 | `sub_5FD66E` | 80 |  | 3_click_single_player |  |

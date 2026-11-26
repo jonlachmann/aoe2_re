@@ -1,6 +1,6 @@
 # 6_match_idle
 
-880 functions called (0 first seen in this phase): 188 matched, 659 left to match (3 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+880 functions called (0 first seen in this phase): 186 matched, 659 left to match (5 of them WIP), 35 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (659)
 
@@ -666,7 +666,7 @@
 | 878 | `sub_4845F0` | 3 |  | 5_start_game_to_match |  |
 | 879 | `sub_48BD90` | 1 |  | 5_start_game_to_match |  |
 
-## Matched (188)
+## Matched (186)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -740,13 +740,11 @@
 | 239 | `sub_4779B0` | 2272 | MATCH | 5_start_game_to_match | C_vt620C7C::Get_4779B0 |
 | 241 | `sub_473C70` | 2268 | MATCH | 5_start_game_to_match | C_vt620C7C::Get_473C70 |
 | 242 | `sub_473C80` | 2268 | MATCH | 5_start_game_to_match | C_vt620C7C::Get_473C80 |
-| 245 | `sub_5FCA45` | 1560 | MATCH | 1_boot_to_menu | sub_5FCA45 |
 | 250 | `sub_41B010` | 42 | MATCH | 5_start_game_to_match | S41B010::M_41B010 |
 | 252 | `sub_41B170` | 42 | MATCH | 5_start_game_to_match | Sd41B170::D_41B170 |
 | 253 | `sub_41B240` | 42 | MATCH | 5_start_game_to_match | C_vt61DEB8::Init_41B240 |
 | 254 | `sub_41ADA0` | 42 | MATCH | 5_start_game_to_match | C_vt61DE70::Init_41ADA0 |
 | 255 | `sub_5F90B0` | 327 | MATCH | 1_boot_to_menu | sub_5F90B0 |
-| 257 | `sub_5F9EF0` | 326 | MATCH | 1_boot_to_menu | sub_5F9EF0 |
 | 263 | `sub_5F8F60` | 224 | MATCH | 1_boot_to_menu | sub_5F8F60 |
 | 267 | `sub_41ADB0` | 42 | MATCH | 5_start_game_to_match | C_vt61DE70::M_41ADB0 |
 | 269 | `sub_41AAC0` | 77 | MATCH | 5_start_game_to_match | C_vt61DDB0::M_41AAC0 |
@@ -859,7 +857,7 @@
 | 876 | `sub_4039E0` | 1 | MATCH | 5_start_game_to_match | Sc4039E0::Init_4039E0 |
 | 877 | `sub_403A20` | 1 | MATCH | 5_start_game_to_match | C_vt61C800::M_403A20 |
 
-## CRT / library (33)
+## CRT / library (35)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -873,7 +871,9 @@
 | 233 | `sub_5FCA63` | 2262 |  | 5_start_game_to_match |  |
 | 234 | `sub_601B74` | 5484 |  | 5_start_game_to_match |  |
 | 235 | `sub_601A01` | 2742 |  | 5_start_game_to_match |  |
+| 245 | `sub_5FCA45` | 1560 | WIP | 1_boot_to_menu | sub_5FCA45 |
 | 256 | `sub_5FA280` | 327 |  | 1_boot_to_menu |  |
+| 257 | `sub_5F9EF0` | 326 | WIP | 1_boot_to_menu | sub_5F9EF0 |
 | 259 | `sub_5F8FF0` | 58 |  | 1_boot_to_menu |  |
 | 260 | `sub_5F9D20` | 283 |  | 1_boot_to_menu |  |
 | 261 | `sub_5F9D80` | 282 |  | 1_boot_to_menu |  |

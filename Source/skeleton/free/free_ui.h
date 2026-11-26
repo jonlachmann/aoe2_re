@@ -698,7 +698,7 @@ void sub_4BD400();  // size 35, calls 0, matched, module ui
 void sub_4BD430();  // size 96, calls 0, lifted, module ui
 void sub_4BD490();  // size 17, calls 0, matched, module ui
 void sub_4BD4E0();  // size 119, calls 0, matched, module ui
-void sub_4BD560();  // size 49, calls 0, matched, module ui
+void sub_4BD560();  // size 49, calls 0, wip, module ui
 void sub_4BD5E0();  // size 8, calls 0, matched, module ui
 void sub_4BD680();  // size 20, calls 0, matched, module ui
 void pnl_txt::get_text_rect();  // size 100, calls 3, matched, module ui

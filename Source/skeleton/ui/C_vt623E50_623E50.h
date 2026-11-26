@@ -10,7 +10,7 @@
 class C_vt623E50 {
 public:
     virtual void slot_000();  // slot +0x000: sub_4CD300 [matched] — Source/ui/free_ui.cpp
-    virtual void slot_001();  // slot +0x004: sub_4CD410 [matched] — Source/ui/C_vt623E50.cpp
+    virtual void slot_001();  // slot +0x004: sub_4CD410 [wip] — Source/ui/C_vt623E50.cpp
     virtual void slot_002();  // slot +0x008: sub_4CD430 [lifted]
     void method_000();  // sub_4CD3E0 [lifted]: same object, connected by this-edge call sites
 };

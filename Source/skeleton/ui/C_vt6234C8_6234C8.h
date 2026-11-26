@@ -102,6 +102,6 @@ public:
     virtual void slot_089();  // slot +0x164: sub_4BDBB0 [verified]
     virtual void slot_090();  // slot +0x168: sub_44B9E0 [matched] — Source/gfx/C_vt61F3CC.cpp
     virtual void slot_091();  // slot +0x16C: sub_4BDBE0 [lifted]
-    virtual void slot_092();  // slot +0x170: sub_4BDE70 [matched] — Source/ui/C_vt6234C8.cpp
+    virtual void slot_092();  // slot +0x170: sub_4BDE70 [wip] — Source/ui/C_vt6234C8.cpp
     void method_000();  // sub_4BDB20 [lifted]: same object, connected by this-edge call sites
 };
