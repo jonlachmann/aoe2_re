@@ -160,7 +160,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_pnl_btn` | ui | 0x622838 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 31/63 |
 | `C_pnl_edit` | ui | 0x622934 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 38/66 |
 | `C_pnl_inp` | ui | 0x622A28 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 38/74 |
-| `C_pnl_lst` | ui | 0x622B50 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/C_pnl_lst.cpp, Source/ui/free_ui.cpp | 39/87 |
+| `C_pnl_lst` | ui | 0x622B50 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/C_pnl_lst.cpp, Source/ui/free_ui.cpp | 40/87 |
 | `C_pnl_msg` | ui | 0x622C74 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 38/63 |
 | `C_pnl_pic` | ui | 0x622D6C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 38/61 |
 | `C_pnl_scbr` | ui | 0x622E60 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 34/62 |

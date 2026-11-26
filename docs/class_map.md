@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1763 |
+| matched | 1764 |
 | wip | 22 |
 | verified | 17 |
-| lifted | 5948 |
+| lifted | 5947 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -118,7 +118,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x622838` | `C_pnl_btn` | 63 | 0 | pnl_btn | 30 | 33 |
 | `0x622934` | `C_pnl_edit` | 61 | 5 | pnl_edit | 37 | 29 |
 | `0x622A28` | `C_pnl_inp` | 74 | 0 | pnl_inp | 36 | 38 |
-| `0x622B50` | `C_pnl_lst` | 73 | 14 | pnl_lst | 37 | 50 |
+| `0x622B50` | `C_pnl_lst` | 73 | 14 | pnl_lst | 38 | 49 |
 | `0x622C74` | `C_pnl_msg` | 62 | 1 | pnl_msg | 37 | 26 |
 | `0x622D6C` | `C_pnl_pic` | 61 | 0 | pnl_pic | 36 | 25 |
 | `0x622E60` | `C_pnl_scbr` | 61 | 1 | pnl_scbr | 33 | 29 |

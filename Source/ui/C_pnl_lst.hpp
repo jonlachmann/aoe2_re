@@ -86,7 +86,9 @@ public:
     int field_10;                 // +0x10
     int field_14;                 // +0x14
     int field_18;                 // +0x18
-    char pad_1c[0x100 - 0x1c];    // +0x1C..+0x100
+    char pad_1c[0xfc - 0x1c];     // +0x1C..+0xFC
+    short field_fc;               // +0xFC clamp bound
+    short field_fe;               // +0xFE
     short field_100;              // +0x100
     short field_102;              // +0x102
     short field_104;              // +0x104
@@ -118,7 +120,9 @@ public:
     int field_1b0;                // +0x1B0 tick interval
     int field_1b4;                // +0x1B4 one-shot mode
     int field_1b8;                // +0x1B8 one-shot gate
-    char pad_1bc[0x40];           // +0x1BC..
+    char pad_1bc[0x1c0 - 0x1bc];  // +0x1BC..+0x1C0
+    int field_1c0;                // +0x1C0
+    char pad_1c4[0x40];           // +0x1C4..
 
     int Other_4BBD30(int v);
     void M_4BBC20(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
@@ -129,6 +133,9 @@ public:
     void M_4BAE20(int* a1, short a2);
     void Hook_4A1160();           // unresolved callee at 0x4A1160
     void Hook_4B60B0(int a1, short a2, int a3); // unresolved callee at 0x4B60B0
+    void Hook_4BA5C0(int a1, int a2); // unresolved callee at 0x4BA5C0
+    void Hook_4BBF20(int a1, short a2, int a3); // unresolved callee at 0x4BBF20
+    void M_4B5690();
     int M_4B5AB0();
     void M_4B5A10(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
     void M_4B3760(int a1, unsigned char a2, unsigned char a3, unsigned char a4, unsigned char a5, unsigned char a6, unsigned char a7);

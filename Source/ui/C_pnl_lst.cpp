@@ -140,3 +140,23 @@ int C_pnl_lst::M_4B5AB0()
     }
     return 0;
 }
+
+// 0x4B5690 — flush the +0x1C0 subobject through 0x4BA5C0, clamp both captured
+// +0x100/+0x104 shorts against +0xFC-1, store the clamped +0x104, dispatch the
+// short-argument 0x4BBF20 setter with the original +0x100 word, then notify
+// slot +0x20 with 1.
+MATCH_FUNC(0x4B5690)
+void C_pnl_lst::M_4B5690()
+{
+    short old100 = field_100;
+    short old104 = field_104;
+    Hook_4BA5C0(field_1c0, 0);
+    short lim = field_fc;
+    if (old104 >= lim)
+        old104 = lim - 1;
+    field_104 = old104;
+    if (old100 >= lim)
+        field_100 = lim - 1;
+    Hook_4BBF20(1, old100, 1);
+    slot_008(1);
+}

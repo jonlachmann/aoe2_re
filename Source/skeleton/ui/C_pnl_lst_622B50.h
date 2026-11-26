@@ -83,7 +83,7 @@ public:
     virtual void slot_070();  // slot +0x118: sub_4BD030 [lifted]
     virtual void slot_071();  // slot +0x11C: sub_4BD4B0 [matched] — Source/ui/C_pnl_inp.cpp
     virtual void slot_072();  // slot +0x120: sub_4BD5F0 [wip] — Source/ui/C_pnl_inp.cpp
-    void method_000();  // sub_4B5690 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_4B5690 [matched]: same object, connected by this-edge call sites — Source/ui/C_pnl_lst.cpp
     void method_001();  // sub_4B6840 [matched]: same object, connected by this-edge call sites — Source/ui/C_pnl_lst.cpp
     void method_002();  // sub_4BBD30 [lifted]: same object, connected by this-edge call sites
     void method_003();  // sub_4BBF20 [lifted]: same object, connected by this-edge call sites
