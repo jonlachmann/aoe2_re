@@ -68,6 +68,63 @@ public:
     virtual void Vat_d0(int v);   // +0xD0 (index 52)
 };
 
+// Node reached through the chain at +0x58: object pointer at +0x00, next node
+// at +0x08. The object dispatches one-argument slot +0x20 and plain slot +0x54.
+struct T4A1440Node {
+    void* obj_0;                  // +0x00
+    char pad_4[4];                // +0x04..+0x08
+    T4A1440Node* field_8;         // +0x08 next node
+};
+
+class T4A1440Obj {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08(int v);    // +0x20
+    virtual void Vt_09();
+    virtual void Vt_10();
+    virtual void Vt_11();
+    virtual void Vt_12();
+    virtual void Vt_13();
+    virtual void Vt_14();
+    virtual void Vt_15();
+    virtual void Vt_16();
+    virtual void Vt_17();
+    virtual void Vt_18();
+    virtual void Vt_19();
+    virtual void Vt_20();
+    virtual void Vt_21();         // +0x54
+};
+
+// Object at +0x40: +0x7C gate and a three-argument slot +0x24 (index 9).
+class T4A1440Field40 {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08();
+    virtual void Vt_09(int a1, int a2, int a3);  // +0x24
+    char pad_04[0x7c - 0x04];
+    int field_7c;                 // +0x7C
+};
+
+// Object at +0x20 with the gate word at +0x04.
+struct T4A1440Field20 {
+    char pad_00[4];
+    int field_4;                  // +0x04
+};
+
 class C_TribePopUpHelp {
 public:
     virtual void slot_00();
@@ -79,11 +136,36 @@ public:
     virtual void slot_06();
     virtual void slot_07();
     virtual void slot_08(int v);  // +0x20
+    virtual void slot_09(int a1, int a2, int a3); // +0x24
+    virtual void slot_10();       // +0x28
+    virtual void slot_11();       // +0x2C
+    virtual void slot_12();       // +0x30
+    virtual void slot_13();       // +0x34
+    virtual void slot_14();       // +0x38
+    virtual void slot_15();       // +0x3C
+    virtual void slot_16();       // +0x40
+    virtual void slot_17();       // +0x44
+    virtual void slot_18();       // +0x48
+    virtual void slot_19();       // +0x4C
+    virtual void slot_20();       // +0x50
+    virtual void slot_21();       // +0x54
 
-    char pad_04[0x3c - 4];
+    char pad_04[0x20 - 4];
+    int field_20;                 // +0x20 gate object
+    char pad_24[0x38 - 0x24];
+    int field_38;                 // +0x38 active data
     T4A1E20Sub* field_3c;         // +0x3C
-    char pad_40[0x78 - 0x40];
+    int field_40;                 // +0x40 gate object
+    char pad_44[0x58 - 0x44];
+    T4A1440Node* field_58;        // +0x58 node chain head
+    char pad_5c[0x6c - 0x5c];
+    int field_6c;                 // +0x6C
+    int field_70;                 // +0x70
+    char pad_74[0x78 - 0x74];
     int field_78;                 // +0x78
+    char pad_7c[0x84 - 0x7c];
+    int field_84;                 // +0x84
 
     void M_4A1E20(int v);
+    int M_4A1440();
 };

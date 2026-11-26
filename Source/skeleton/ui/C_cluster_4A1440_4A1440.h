@@ -6,6 +6,6 @@
 
 class C_cluster_4A1440 {
 public:
-    void method_000();  // sub_4A1440 [lifted]
+    void method_000();  // sub_4A1440 [matched] — Source/ui/C_TribePopUpHelp.cpp
     void method_001();  // sub_4B9BA0 [matched] — Source/ui/free_ui.cpp
 };

@@ -1,8 +1,8 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 92 matched, 161 left to match (6 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 93 matched, 160 left to match (6 of them WIP), 32 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (161)
+## Left to match (160)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -48,7 +48,6 @@
 | 94 | `sub_41F470` | 3 |  | 1_boot_to_menu |  |
 | 95 | `sub_45E930` | 3 |  | 1_boot_to_menu |  |
 | 96 | `sub_45FC30` | 66 |  | 1_boot_to_menu |  |
-| 101 | `sub_4A1440` | 312 |  | 1_boot_to_menu |  |
 | 105 | `sub_4A2F90` | 30 |  | 1_boot_to_menu | panel_ez::draw_background2 |
 | 109 | `sub_460740` | 160 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
 | 113 | `sub_5230F0` | 54894 |  | 1_boot_to_menu |  |
@@ -168,7 +167,7 @@
 | 282 | `sub_610EB1` | 4 |  | 3_click_single_player |  |
 | 284 | `sub_610E66` | 1 |  | 3_click_single_player |  |
 
-## Matched (92)
+## Matched (93)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -215,6 +214,7 @@
 | 98 | `sub_520500` | 3 | MATCH | 1_boot_to_menu | S52SetImmBulk::Set_520500 |
 | 99 | `sub_4EDC50` | 3 | MATCH | 1_boot_to_menu | sub_4EDC50 |
 | 100 | `sub_4B9BA0` | 3 | MATCH | 1_boot_to_menu | S4B9BA0::M_4B9BA0 |
+| 101 | `sub_4A1440` | 312 | MATCH | 1_boot_to_menu | C_TribePopUpHelp::M_4A1440 |
 | 102 | `sub_4B3690` | 2 | MATCH | 1_boot_to_menu | C_pnl_edit::slot08_4B3690 |
 | 103 | `sub_4B9B90` | 30 | MATCH | 1_boot_to_menu | sub_4B9B90 |
 | 104 | `sub_4A2F40` | 30 | MATCH | 1_boot_to_menu | S4A2F40::M_4A2F40 |

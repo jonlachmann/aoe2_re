@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 410 matched, 295 left to match (19 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 411 matched, 294 left to match (19 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (295)
+## Left to match (294)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -184,7 +184,6 @@
 | 510 | `sub_45F6F0` | 72772 |  | 1_boot_to_menu |  |
 | 511 | `sub_4A5C10` | 5 |  | 1_boot_to_menu |  |
 | 513 | `sub_45F5C0` | 2 |  | 1_boot_to_menu |  |
-| 515 | `sub_4A1440` | 210 |  | 1_boot_to_menu |  |
 | 518 | `sub_4A2F90` | 24 |  | 1_boot_to_menu | panel_ez::draw_background2 |
 | 523 | `sub_4998B0` | 632 |  | 1_boot_to_menu |  |
 | 524 | `sub_4A0CD0` | 65110 |  | 1_boot_to_menu |  |
@@ -302,7 +301,7 @@
 | 808 | `sub_5217F0` | 2144832 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (410)
+## Matched (411)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -547,6 +546,7 @@
 | 509 | `sub_461CA0` | 72770 | MATCH | 1_boot_to_menu | S461CA0::M_461CA0 |
 | 512 | `sub_4A1E20` | 5 | MATCH | 1_boot_to_menu | C_TribePopUpHelp::M_4A1E20 |
 | 514 | `sub_4B9BA0` | 4 | MATCH | 1_boot_to_menu | S4B9BA0::M_4B9BA0 |
+| 515 | `sub_4A1440` | 210 | MATCH | 1_boot_to_menu | C_TribePopUpHelp::M_4A1440 |
 | 516 | `sub_4B9B90` | 24 | MATCH | 1_boot_to_menu | sub_4B9B90 |
 | 517 | `sub_4A2F40` | 24 | MATCH | 1_boot_to_menu | S4A2F40::M_4A2F40 |
 | 519 | `sub_4A2F30` | 24 | MATCH | 1_boot_to_menu | S4A2F30::M_4A2F30 |

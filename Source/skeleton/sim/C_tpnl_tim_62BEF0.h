@@ -31,7 +31,7 @@ public:
     virtual void slot_018();  // slot +0x048: sub_4A0CD0 [lifted]
     virtual void slot_019();  // slot +0x04C: sub_5ACC70 [lifted]
     virtual void slot_020();  // slot +0x050: sub_4A11F0 [lifted]
-    virtual void slot_021();  // slot +0x054: sub_4A1440 [lifted]
+    virtual void slot_021();  // slot +0x054: sub_4A1440 [matched] — Source/ui/C_TribePopUpHelp.cpp
     virtual void slot_022();  // slot +0x058: sub_4A1500 [lifted]
     virtual void slot_023();  // slot +0x05C: sub_4A15B0 [lifted]
     virtual void slot_024();  // slot +0x060: sub_4364F0 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
