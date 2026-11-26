@@ -1730,20 +1730,20 @@ int S49GetBulk::Get_49FFA0()
     return *(int*)((char*)this + 0xad4);
 }
 
-class S49SetImmBulk {
+class T66EA48_421EC0 {
 public:
-    void Set_49FFB0();
+    void Other_49FFB0();
     void Set_49FFC0();
 };
 
 MATCH_FUNC(0x49FFB0)
-void S49SetImmBulk::Set_49FFB0()
+void T66EA48_421EC0::Other_49FFB0()
 {
     *(int*)((char*)this + 0xad4) = 0x1;
 }
 
 MATCH_FUNC(0x49FFC0)
-void S49SetImmBulk::Set_49FFC0()
+void T66EA48_421EC0::Set_49FFC0()
 {
     *(int*)((char*)this + 0xad4) = 0x0;
 }
@@ -2178,7 +2178,7 @@ void S4BBA00::M_4BBAC0(int a, unsigned char b)
     field_168 = b;
 }
 
-class S4BD7A0 {
+class Tc4BD7A0 {
 public:
     virtual void Vt_0();
     virtual void Vt_1();
@@ -2191,11 +2191,11 @@ public:
     virtual void Vat_20(int v);
     char pad_04[0x1a4 - 4];
     int field_1a4;
-    void M_4BD7A0(int v);
+    void Other_4BD7A0(int v);
 };
 
 MATCH_FUNC(0x4BD7A0)
-void S4BD7A0::M_4BD7A0(int v)
+void Tc4BD7A0::Other_4BD7A0(int v)
 {
     field_1a4 = v;
     Vat_20(1);
@@ -2864,7 +2864,7 @@ public:
     S4A00B0Node* field_8;
 };
 
-class S4A00B0 {
+class S422420Global {
 public:
     char pad_00[0x14];
     S4A00B0Node* field_14;
@@ -2872,7 +2872,7 @@ public:
 };
 
 MATCH_FUNC(0x4A00B0)
-void S4A00B0::Mark_4A00B0()
+void S422420Global::Mark_4A00B0()
 {
     S4A00B0Node* n = field_14->field_8;
     while (n != field_14) {
@@ -6177,15 +6177,15 @@ public:
     int Hook_48F970();
     void Hook_5BE8D0(int a1);
 };
-class S4A1CD0 {
+class C_TRIBE_Screen_Options {
 public:
     char pad_00[0x68];
     int field_68;                 // +0x68
-    void M_4A1CD0();
+    void Hook_4A1CD0();
 };
 
 MATCH_FUNC(0x4A1CD0)
-void S4A1CD0::M_4A1CD0()
+void C_TRIBE_Screen_Options::Hook_4A1CD0()
 {
     if (field_68 != 0)
     {
@@ -6787,7 +6787,7 @@ void S4A0C10::M_4A0C10(int a1)
 // when the +0x20 subtree and the +0x6C/+0x70 pair are all present.
 extern int (__stdcall *g_61c30c)(int a1);
 extern void (__stdcall *g_61c278)(int a1, int a2, int a3);
-class S4A08C0 {
+class C_pnl_edit {
 public:
     char pad_00[0x20];
     void* field_20;               // +0x20 subtree
@@ -6796,11 +6796,11 @@ public:
     char pad_3c[0x6c - 0x3c];
     int field_6c;                 // +0x6C
     int field_70;                 // +0x70
-    void M_4A08C0(int a1);
+    void Hook_4A08C0(int a1);
 };
 
 MATCH_FUNC(0x4A08C0)
-void S4A08C0::M_4A08C0(int a1)
+void C_pnl_edit::Hook_4A08C0(int a1)
 {
     if (a1 == 1 && field_38 == 2)
         return;

@@ -2125,20 +2125,20 @@ void S57SetBulk::SetInt_573F50(int v)
     *(int*)((char*)this + 0xf4) = v;
 }
 
-class S58GetBulk {
+class T4ED280Bulk {
 public:
     int Get_580B20(int unused);
-    int Get_58A800();
+    int M_58A800();
 };
 
 MATCH_FUNC(0x580B20)
-int S58GetBulk::Get_580B20(int unused)
+int T4ED280Bulk::Get_580B20(int unused)
 {
     return *(int*)((char*)this + 0x3f8);
 }
 
 MATCH_FUNC(0x58A800)
-int S58GetBulk::Get_58A800()
+int T4ED280Bulk::M_58A800()
 {
     return *(int*)((char*)this + 0x194);
 }
@@ -5883,7 +5883,7 @@ void C_cluster_522CD0::M_522F90()
 }
 
 // 0x522FF0 — sort the two coordinate pairs, clamp to +0x50/+0x54 and store.
-class Sc522FF0 {
+class TClipSpan {
 public:
     char pad_00[0x50];
     int field_50;                 // +0x50
@@ -5892,10 +5892,10 @@ public:
     int field_5c;                 // +0x5C
     int field_60;                 // +0x60
     int field_64;                 // +0x64
-    void M_522FF0(int a1, int a2, int a3, int a4);
+    void SetRect_522FF0(int a1, int a2, int a3, int a4);
 };
 MATCH_FUNC(0x522FF0)
-void Sc522FF0::M_522FF0(int a1, int a2, int a3, int a4)
+void TClipSpan::SetRect_522FF0(int a1, int a2, int a3, int a4)
 {
     if (a1 > a3) {
         int t = a1;
@@ -5967,7 +5967,7 @@ void S5A6830::M_5A6830(int a1)
 
 // 0x521090 — store a4 at +0x78, run the 0x5210D0 dispatcher with a1/a2/a3 and
 // bump the +0x5B0 counter only when it returns a valid slot and a2 has bit 1.
-class S521090 {
+class T4EE210Obj {
 public:
     char pad_00[0x78];
     int field_78;                 // +0x78 stored selector
@@ -5978,7 +5978,7 @@ public:
 };
 
 MATCH_FUNC(0x521090)
-void S521090::M_521090(int a1, int a2, int a3, int a4)
+void T4EE210Obj::M_521090(int a1, int a2, int a3, int a4)
 {
     field_78 = a4;
     int r = M_5210D0(a1, a2, a3);
@@ -6014,7 +6014,7 @@ S58A780* S58A780::M_58A780(int a1)
 // a possible 0x4BE6D0 transfer, then per-index 0x51FA10 resets over +0x18 and
 // the +0x08 buffer release.
 extern void __cdecl sub_4BE6D0(int a1, int a2);
-class S51EAE0 {
+class T4B83D0Obj214 {
 public:
     int field_00;                 // +0x00 release mode
     int field_04;                 // +0x04 transfer argument
@@ -6027,7 +6027,7 @@ public:
 };
 
 MATCH_FUNC(0x51EAE0)
-void S51EAE0::M_51EAE0()
+void T4B83D0Obj214::M_51EAE0()
 {
     if (field_0c)
     {

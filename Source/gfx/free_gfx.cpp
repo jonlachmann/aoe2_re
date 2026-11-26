@@ -543,18 +543,18 @@ public:
     int Other_464290();
 };
 
-class S464FD0 {
+class T464FD0 {
 public:
     int index_0;              // +0x00
     char pad_04[0x08 - 0x04];
     char** items_8;           // +0x08
 
-    char* M_464FD0();
+    char* Other_464FD0();
     int M_464FF0();
 };
 
 MATCH_FUNC(0x464FD0)
-char* S464FD0::M_464FD0()
+char* T464FD0::Other_464FD0()
 {
     if (index_0 < 0)
         return 0;
@@ -562,7 +562,7 @@ char* S464FD0::M_464FD0()
 }
 
 MATCH_FUNC(0x464FF0)
-int S464FD0::M_464FF0()
+int T464FD0::M_464FF0()
 {
     if (index_0 < 0)
         return -1;
@@ -1157,12 +1157,12 @@ void sub_4695B0()
 
 // 0x440B30 — install the vtable at 0x61E948 and forward to 0x440F00.
 extern void sub_440F00();
-class S440B30 {
+class T440B30 {
 public:
-    void M_440B30();
+    void Other_440B30();
 };
 MATCH_FUNC(0x440B30)
-void S440B30::M_440B30()
+void T440B30::Other_440B30()
 {
     *(void**)this = (void*)0x61E948;
     sub_440F00();

@@ -1419,21 +1419,21 @@ void S42C270::Clear_42C270()
         ((int*)this)[(0x13c0 / 4) + i] = 0;
 }
 
-class S42GetBulk {
+class T4ED280Global {
 public:
-    int Get_422A70();
+    int M_422A70();
     int Get_422E10();
     int Get_42FBC0();
 };
 
 MATCH_FUNC(0x422A70)
-int S42GetBulk::Get_422A70()
+int T4ED280Global::M_422A70()
 {
     return *(int*)((char*)this + 0x128);
 }
 
 MATCH_FUNC(0x422E10)
-int S42GetBulk::Get_422E10()
+int T4ED280Global::Get_422E10()
 {
     return *(int*)((char*)this + 0x120);
 }
@@ -1671,42 +1671,42 @@ void S43SetImmBulk::Set_43F9B0()
     *(int*)((char*)this + 0x0) = 0x0;
 }
 
-class S43SetBulk {
+class T43A410 {
 public:
     void SetInt_438620(int v);
     void SetInt_43A070(int v);
     void SetInt_43A090(int v);
     void SetInt_43A0A0(int v);
     void SetInt_43A0B0(int v);
-    void SetInt_43A410(int v);
+    void Other_43A410(int v);
 };
 
 MATCH_FUNC(0x438620)
-void S43SetBulk::SetInt_438620(int v)
+void T43A410::SetInt_438620(int v)
 {
     *(int*)((char*)this + 0x118) = v;
 }
 
 MATCH_FUNC(0x43A070)
-void S43SetBulk::SetInt_43A070(int v)
+void T43A410::SetInt_43A070(int v)
 {
     *(int*)((char*)this + 0x28) = v;
 }
 
 MATCH_FUNC(0x43A090)
-void S43SetBulk::SetInt_43A090(int v)
+void T43A410::SetInt_43A090(int v)
 {
     *(int*)((char*)this + 0xc) = v;
 }
 
 MATCH_FUNC(0x43A0B0)
-void S43SetBulk::SetInt_43A0B0(int v)
+void T43A410::SetInt_43A0B0(int v)
 {
     *(int*)((char*)this + 0x14) = v;
 }
 
 MATCH_FUNC(0x43A410)
-void S43SetBulk::SetInt_43A410(int v)
+void T43A410::Other_43A410(int v)
 {
     *(int*)((char*)this + 0x25c0) = v;
 }
@@ -2135,7 +2135,7 @@ int S43EBD0::M_43EBD0(int v)
 class S425680 {
 public:
     char pad_00[0x15fc];
-    S43SetBulk* field_15fc;
+    T43A410* field_15fc;
 
     void M_425680(int a1);
 };
@@ -2148,7 +2148,7 @@ void S425680::M_425680(int a1)
 class S4256A0 {
 public:
     char pad_00[0x15f8];
-    S43SetBulk* field_15f8;
+    T43A410* field_15f8;
 
     void M_4256A0(int a1);
 };
@@ -2161,7 +2161,7 @@ void S4256A0::M_4256A0(int a1)
 class S4266B0 {
 public:
     char pad_00[0x15fc];
-    S43SetBulk* field_15fc;
+    T43A410* field_15fc;
 
     void M_4266B0(int a1);
 };
@@ -2837,18 +2837,18 @@ class T41FA40_421EC0 {
 public:
     void Other_41FA40(int a1);
 };
-class S421EC0 {
+class C_vt62C1E0 {
 public:
     char pad_00[0x1f4];
     void* field_1f4;              // +0x1F4 optional target
     char pad_1f8[0x200 - 0x1f8];  // +0x1F8..+0x200
     int field_200;                // +0x200 active flag
     int field_204;                // +0x204 early-exit flag
-    void M_421EC0();
+    void Hook_421EC0();
 };
 
 MATCH_FUNC(0x421EC0)
-void S421EC0::M_421EC0()
+void C_vt62C1E0::Hook_421EC0()
 {
     if (field_204)
     {

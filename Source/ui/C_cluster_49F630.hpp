@@ -26,7 +26,7 @@ public:
     S49FA50Node* head_14;         // +0x14 circular list head
     int count_18;                 // +0x18 node count
 
-    int M_49FA50(char* name);
+    int M_49FA50(int name);
     void Hook_49FB00(int a1, int a2); // unresolved switch at 0x49FB00
     int M_49F650(T49F650Key* key, int a2, int a3);
 };

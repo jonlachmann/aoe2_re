@@ -1340,15 +1340,15 @@ public:
     virtual void Vt_3();
     virtual void Vat_10();
 };
-class S405860 {
+class T4058C0Target {
 public:
     char pad_00[8];
     N405860* field_8;
-    void M_405860();
+    void Clear_405860();
 };
 
 MATCH_FUNC(0x405860)
-void S405860::M_405860()
+void T4058C0Target::Clear_405860()
 {
     N405860* n = field_8;
     while (n != 0) {
@@ -1426,13 +1426,13 @@ int S40E2A0::M_40E2A0()
 
 // sub_40E600 (VA 0x40E600, 0x15 bytes) - member: when the +0x28 object
 // exists, clears its +4 dword and returns 1 (0 otherwise).
-class S40E600 {
+class T40E600 {
 public:
-    int M_40E600();
+    int Other_40E600();
 };
 
 MATCH_FUNC(0x40E600)
-int S40E600::M_40E600()
+int T40E600::Other_40E600()
 {
     char* p = *(char**)((char*)this + 0x28);
     if (p == 0)
@@ -1523,16 +1523,16 @@ int S41F6C0::M_41F6C0(int index)
 
 // sub_41F6E0 (VA 0x41F6E0) - member getter over the int array at +0x8c, bounded
 // by the signed word count at +0x88; 0 when null/out of range.
-class S41F6E0 {
+class C_global_6645C4 {
 public:
     char pad_00[0x88];
     short count_88;
     int* arr_8c;
-    int M_41F6E0(int i);
+    int Hook_41F6E0(int i);
 };
 
 MATCH_FUNC(0x41F6E0)
-int S41F6E0::M_41F6E0(int i)
+int C_global_6645C4::Hook_41F6E0(int i)
 {
     if (arr_8c == 0 || i < 0 || i >= count_88)
         return 0;

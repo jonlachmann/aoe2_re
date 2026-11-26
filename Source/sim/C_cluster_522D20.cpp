@@ -30,7 +30,7 @@ void C_cluster_522D20::M_522D20(int a1)
 // 0x5F8FF0(cap, 4), copy the +0x08 live entries, free the old arrays and
 // install the new ones with the +0x0C capacity.
 MATCH_FUNC(0x5DC590)
-void C_cluster_522D20::M_5DC590(int a1)
+void C_cluster_522D20::Hook_5DC590(int a1)
 {
     if (a1 < field_c)
         return;

@@ -29,7 +29,7 @@ Evidence (current run):
   0.0 threshold and `Get_41A090()==FLT_MAX`: `globals exec probe: 0 failures`
   (12 objects)
 - stage 5 — every matched object links into one native executable. The 604
-  extern symbols the object set does not define get host stubs: currently 601
+  extern symbols the object set does not define get host stubs: currently 576
   asm-label functions returning 0 and 1 opaque data array, leaving libSystem
   names (`malloc`, `memcpy`, `strlen`, ...) to the linker. Result:
   `all matched objects linked: 165; probe_all: OK` (`probe: 0 failures`).
@@ -77,7 +77,19 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
    those definitions to the PE's mangled names replaces stubs with real code.
    43EB90 and 43EB70 were re-homed into the PE-accurate `T43EB70` class
    (`Other_43EB90`, `Other_43EB70`, plus `Other_43EB80`), dropping the stub count
-   from 603 to 601 with the gate unchanged.
+   from 603 to 601 with the gate unchanged. A scripted batch then renamed 21
+   more confined cases (e.g. `S440B30::M_440B30` -> `T440B30::Other_440B30`,
+   `S464FD0::M_464FD0` -> `T464FD0::Other_464FD0`, `S42GetBulk::Get_422A70` ->
+   `T4ED280Global::M_422A70`, three same-class method renames) to 580. Then
+   `C_cluster_49F630::M_49FA50(char*)` became the PE's `int` signature (579),
+   and three C++ forwarding methods were added in `C_cluster_49F630.cpp` for
+   the code-folded 0x5BE8D0 body (`T49F650Key::SetIndex_5BE8D0`,
+   `T49FB00Obj::SetIndex_5BE8D0`, `C_global_66EA48::Hook_5BE8D0`) calling the
+   real `S5BE940::SetIndex_5BE8D0` code, reaching 576 stubs. Every batch keeps
+   the full gate at [1765/1765] and the all-object link at 165 objects. The
+   remaining extern inventory (86 cases) is mostly broad-class renames or
+   free-vs-member call-site mismatches, which need forwarding methods or
+   caller fixes instead of wholesale class renames.
 2. Guest memory: most matched bodies still cast guest VAs in fields/globals
    directly. `ADDR` is proven on one body but not yet applied across the bodies
    or paired with an initialized guest image at boot.

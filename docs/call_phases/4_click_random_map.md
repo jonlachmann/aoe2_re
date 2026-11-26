@@ -300,7 +300,7 @@
 | 24 | `sub_5F8F60` | 328 | MATCH | 1_boot_to_menu | sub_5F8F60 |
 | 30 | `sub_5FF5E6` | 524 | MATCH | 1_boot_to_menu | Skip_5FF5E6 |
 | 31 | `sub_5F90B0` | 908 | MATCH | 1_boot_to_menu | sub_5F90B0 |
-| 35 | `sub_4A08C0` | 6340 | MATCH | 1_boot_to_menu | S4A08C0::M_4A08C0 |
+| 35 | `sub_4A08C0` | 6340 | MATCH | 1_boot_to_menu | C_pnl_edit::Hook_4A08C0 |
 | 39 | `sub_45FE50` | 129 | MATCH | 1_boot_to_menu | TDrawArea::GetDC_45FE50 |
 | 47 | `sub_4BCF90` | 349 | MATCH | 1_boot_to_menu | C_cluster_4BAE20::M_4BCF90 |
 | 48 | `sub_4BD000` | 518 | MATCH | 1_boot_to_menu | C_cluster_4BAE20::M_4BD000 |
@@ -337,7 +337,7 @@
 | 97 | `sub_460660` | 569 | MATCH | 1_boot_to_menu | TDrawArea::SetClipRect_460660 |
 | 99 | `sub_523060` | 569 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_523060 |
 | 100 | `sub_522E90` | 569 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_522E90 |
-| 101 | `sub_522FF0` | 571 | MATCH | 1_boot_to_menu | Sc522FF0::M_522FF0 |
+| 101 | `sub_522FF0` | 571 | MATCH | 1_boot_to_menu | TClipSpan::SetRect_522FF0 |
 | 104 | `sub_45FD90` | 168 | MATCH | 1_boot_to_menu | TDrawArea::Lock_45FD90 |
 | 105 | `sub_460620` | 169 | MATCH | 1_boot_to_menu | TDrawArea::UpdatePitch_460620 |
 | 108 | `sub_619820` | 228 | MATCH | 1_boot_to_menu | sub_619820 |
@@ -358,7 +358,7 @@
 | 219 | `sub_4A1E20` | 6 | MATCH | 1_boot_to_menu | C_TribePopUpHelp::M_4A1E20 |
 | 224 | `sub_5BE8D0` | 4 | MATCH | 1_boot_to_menu | S5BE940::SetIndex_5BE8D0 |
 | 227 | `sub_4A2060` | 19 | MATCH | 1_boot_to_menu | S4A2060::Get_4A2060 |
-| 232 | `sub_4A1CD0` | 309 | MATCH | 1_boot_to_menu | S4A1CD0::M_4A1CD0 |
+| 232 | `sub_4A1CD0` | 309 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::Hook_4A1CD0 |
 | 235 | `sub_4378C0` | 50 | MATCH | 1_boot_to_menu | C_pnl_edit::M_4378C0 |
 | 238 | `sub_421AF0` | 1 | MATCH | 1_boot_to_menu | S421AD0::M_421AF0 |
 | 239 | `sub_421AB0` | 2 | MATCH | 1_boot_to_menu | C_vt62C1E0::Set9D4_421AB0 |
@@ -368,7 +368,7 @@
 | 243 | `sub_5BB210` | 2 | MATCH | 1_boot_to_menu | C_vt62C1E0::SetByte_5BB210 |
 | 244 | `sub_5BB1F0` | 3 | MATCH | 1_boot_to_menu | C_vt62C1E0::SetByte_5BB1F0 |
 | 246 | `sub_41FA40` | 2 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_41FA40 |
-| 247 | `sub_49FFC0` | 1 | MATCH | 4_click_random_map | S49SetImmBulk::Set_49FFC0 |
+| 247 | `sub_49FFC0` | 1 | MATCH | 4_click_random_map | T66EA48_421EC0::Set_49FFC0 |
 | 251 | `sub_4B9B30` | 1 | MATCH | 1_boot_to_menu | Sc4B9B30::Init_4B9B30 |
 | 254 | `sub_4A2070` | 1 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A2070 |
 | 256 | `sub_49F650` | 1 | MATCH | 1_boot_to_menu | C_cluster_49F630::M_49F650 |
@@ -434,7 +434,7 @@
 | 363 | `sub_4A39F0` | 1 | MATCH | 1_boot_to_menu | S4A39F0::M_4A39F0 |
 | 368 | `sub_460490` | 2 | MATCH | 1_boot_to_menu | TDrawArea::BuildRowPtrs_460490 |
 | 371 | `sub_5DCC30` | 2 | MATCH | 1_boot_to_menu | S5DCC30::Init_5DCC30 |
-| 372 | `sub_5DC590` | 2 | MATCH | 1_boot_to_menu | C_cluster_522D20::M_5DC590 |
+| 372 | `sub_5DC590` | 2 | MATCH | 1_boot_to_menu | C_cluster_522D20::Hook_5DC590 |
 | 373 | `sub_522D20` | 2 | MATCH | 1_boot_to_menu | C_cluster_522D20::M_522D20 |
 | 377 | `sub_522F90` | 1 | MATCH | 1_boot_to_menu | C_cluster_522CD0::M_522F90 |
 | 378 | `sub_522CD0` | 1 | MATCH | 1_boot_to_menu | C_cluster_522CD0::M_522CD0 |
@@ -452,7 +452,7 @@
 | 399 | `sub_4A4570` | 29 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A4570 |
 | 400 | `sub_4217B0` | 82 | MATCH | 4_click_random_map | C_vt62C1E0::Get9A9_4217B0 |
 | 401 | `sub_4A3D40` | 14 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A3D40 |
-| 404 | `sub_41F6E0` | 50 | MATCH | 1_boot_to_menu | S41F6E0::M_41F6E0 |
+| 404 | `sub_41F6E0` | 50 | MATCH | 1_boot_to_menu | C_global_6645C4::Hook_41F6E0 |
 | 405 | `sub_4AF2E0` | 61 | MATCH | 1_boot_to_menu | S4AF2E0::M_4AF2E0 |
 | 406 | `sub_4AF9D0` | 239 | MATCH | 1_boot_to_menu | C_pnl_btn::slot03_4AF9D0 |
 | 407 | `sub_4AF860` | 61 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4AF860 |
@@ -486,7 +486,7 @@
 | 455 | `sub_4A1E50` | 43 | MATCH | 1_boot_to_menu | S4A1E50::M_4A1E50 |
 | 457 | `sub_4A05D0` | 146 | MATCH | 1_boot_to_menu | S4A05D0::M_4A05D0 |
 | 462 | `sub_41CE60` | 3 | MATCH | 1_boot_to_menu | S41CE50::M_41CE60 |
-| 463 | `sub_464FD0` | 3 | MATCH | 1_boot_to_menu | S464FD0::M_464FD0 |
+| 463 | `sub_464FD0` | 3 | MATCH | 1_boot_to_menu | T464FD0::Other_464FD0 |
 | 464 | `sub_43FAB0` | 3 | MATCH | 1_boot_to_menu | S43FAB0::Self_43FAB0 |
 | 470 | `sub_4B27F0` | 16 | MATCH | 4_click_random_map | S4B27F0::Set_4B27F0 |
 | 471 | `sub_4AF490` | 28 | MATCH | 1_boot_to_menu | S4AF490::M_4AF490 |
@@ -540,7 +540,7 @@
 | 570 | `sub_4BA0E0` | 50 | MATCH | 4_click_random_map | Sd4BA0E0::D_4BA0E0 |
 | 574 | `sub_4B7FD0` | 1 | MATCH | 4_click_random_map | Sd4B7FD0::D_4B7FD0 |
 | 576 | `sub_4B83D0` | 1 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4B83D0 |
-| 577 | `sub_51EAE0` | 4 | MATCH | 1_boot_to_menu | S51EAE0::M_51EAE0 |
+| 577 | `sub_51EAE0` | 4 | MATCH | 1_boot_to_menu | T4B83D0Obj214::M_51EAE0 |
 | 578 | `sub_4BE6D0` | 4 | MATCH | 1_boot_to_menu | sub_4BE6D0 |
 | 579 | `sub_4AF250` | 33 | MATCH | 4_click_random_map | Sd4AF250::D_4AF250 |
 | 581 | `sub_4B2C20` | 9 | MATCH | 4_click_random_map | Sd4B2C20::D_4B2C20 |
@@ -557,8 +557,8 @@
 | 596 | `sub_49FE00` | 1 | MATCH | 1_boot_to_menu | C_vt621F64::M_49FE00 |
 | 597 | `sub_423360` | 1 | MATCH | 4_click_random_map | Sd423360::D_423360 |
 | 601 | `sub_4FA920` | 284 | MATCH | 4_click_random_map | C_vt6256F8::M_4FA920 |
-| 603 | `sub_421EC0` | 1 | MATCH | 1_boot_to_menu | S421EC0::M_421EC0 |
-| 604 | `sub_49FFB0` | 1 | MATCH | 1_boot_to_menu | S49SetImmBulk::Set_49FFB0 |
+| 603 | `sub_421EC0` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::Hook_421EC0 |
+| 604 | `sub_49FFB0` | 1 | MATCH | 1_boot_to_menu | T66EA48_421EC0::Other_49FFB0 |
 
 ## CRT / library (57)
 
