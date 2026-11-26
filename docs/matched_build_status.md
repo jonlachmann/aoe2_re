@@ -23,11 +23,17 @@ Evidence (current run):
   `probe: 0 failures`
 - stage 2 — 237 `g_*` guest globals generated from the objects' own undefined
   lists, 215 of them seeded from the reference binary's data image (`AOE_BIN`)
-  rather than zeros; 85 objects link with those globals (`probe: 0 failures`)
-- stage 4 — the globals-only objects execute against the seeded image:
+  rather than zeros; 86 objects link with those globals (`probe: 0 failures`)
+- stage 4 — 12 globals-only objects execute against the seeded image:
   `matched_probe_globals.cpp` checks `Get_434BE0()==1.0`, the `M_435810`
   0.0 threshold and `Get_41A090()==FLT_MAX`: `globals exec probe: 0 failures`
-  (11 objects)
+  (12 objects)
+- stage 5 — every matched object links into one native executable. The 604
+  extern symbols the object set does not define get host stubs: 603 asm-label
+  functions returning 0 and 1 opaque data array, leaving libSystem names
+  (`malloc`, `memcpy`, `strlen`, ...) to the linker. Result:
+  `all matched objects linked: 165; probe_all: OK` (`probe: 0 failures`).
+  These stubs are link fillers with host ABI, not guest implementations.
 - stage 3 — portable guest-VA access layer: `Source/matched_mem.h` defines
   `ADDR(va)`, a plain cast under VC6 (byte-exact codegen unchanged) and a guest
   image base offset under `-DMATCHED_NATIVE`. `Scripts/matched_probe_va.cpp`
@@ -63,10 +69,9 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
 
 ## Remaining gaps toward booting to the menu
 
-1. 85 of 165 objects link (74 self-contained + 11 globals-only); the remaining
-   80 reference function symbols (628 distinct) that are unmatched helpers,
-   `_F_*` game functions, Win32 imports or member hook stubs, so they still need
-   wrappers or matches.
+1. (Link milestone) all 165 objects now link into one executable via 604 host
+   stubs, but those stubs return 0 and are not real guest implementations; a boot
+   path needs the actual functions (matches or guest-ABI wrappers) behind them.
 2. Guest memory: most matched bodies still cast guest VAs in fields/globals
    directly. `ADDR` is proven on one body but not yet applied across the bodies
    or paired with an initialized guest image at boot.

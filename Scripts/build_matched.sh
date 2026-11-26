@@ -28,7 +28,7 @@ ok=0; bad=0
 for f in $(cat "$LIST"); do
   out=$B/$(echo "$f" | sed 's|/|_|g;s|\.cpp$|.o|')
   if "$CC" -x c++ -std=c++98 -w -O2 \
-      -fms-extensions -Wno-cast-pointer-to-smaller-type \
+      -fms-extensions -Wno-cast-pointer-to-smaller-type -fno-stack-protector \
       -I"$R/Source" -I"$R/Source/lifted" -I"$R/Source/host" \
       -I"$R/Source/ui" -I"$R/Source/game" -I"$R/Source/gfx" \
       -I"$R/Source/sim" -I"$R/Source/app" -I"$R/Source/crt" \
@@ -46,7 +46,7 @@ echo "matched TUs compiled: $ok ok, $bad failed (objects in $B)"
 OBJ=""
 for o in "$B"/*.o; do
   case "$(basename "$o")" in
-    matched_globals.o|va_*|probe_*) ;;
+    matched_globals.o|matched_stubs.o|va_*|probe_*) ;;
     *) OBJ="$OBJ $o" ;;
   esac
 done
@@ -147,6 +147,62 @@ if "$CC" -std=c++98 -w -O2 -Wl,-no_pie -I"$R/Source" \
 else
   echo "globals exec probe: FAILED"
   head -8 "$B/link_globals_exec.err"
+fi
+
+# Stage 5: link every matched object into one executable. Symbols the object
+# set itself does not define get host stubs (asm-label functions returning 0,
+# opaque data storage) so the remaining cross-TU/import references resolve;
+# libSystem names are left to the linker. This proves the whole object set can
+# link and run as one native binary; stubs are link fillers, not guest code.
+"$R"/venv/bin/python - "$R" "$B" <<'PY'
+import subprocess, glob, sys
+root, B = sys.argv[1], sys.argv[2]
+objs = [o for o in sorted(glob.glob(B + "/*.o"))
+        if not any(k in o for k in ("matched_globals", "matched_stubs", "va_", "probe"))]
+defined = set()
+for o in objs:
+    for l in subprocess.run(["nm", "-g", "--defined-only", o], capture_output=True, text=True).stdout.splitlines():
+        p = l.split()
+        if len(p) >= 3:
+            defined.add(p[2])
+und = set()
+for o in objs:
+    for l in subprocess.run(["nm", "-u", o], capture_output=True, text=True).stdout.splitlines():
+        s = l.strip()
+        if s:
+            und.add(s)
+allow = {"_bzero", "_free", "_malloc", "_memcpy", "_memset", "_memset_pattern16",
+         "_strcmp", "_strcpy", "_strlen", "__Unwind_Resume", "__gxx_personality_v0"}
+extern = sorted(s for s in und if not s.startswith("_g_") and s not in defined)
+funs = [s for s in extern if s not in allow and s != "_gTab_741758"]
+data = [s for s in extern if s == "_gTab_741758"]
+lines = ["// Generated host stubs for extern symbols the matched object set does not define.",
+         "// Function stubs return 0 and carry the original symbol name via an asm label;",
+         "// data stubs provide opaque storage. Used only to grow the matched-only link.",
+         ""]
+for i, s in enumerate(funs):
+    lines.append('extern "C" int stub_%d() __asm__("%s");' % (i, s))
+    lines.append("int stub_%d() { return 0; }" % i)
+    lines.append("")
+for i, s in enumerate(data):
+    lines.append('extern "C" char stub_data_%d[0x4000] __asm__("%s");' % (i, s))
+    lines.append("char stub_data_%d[0x4000];" % i)
+open(root + "/Scripts/matched_stubs.cpp", "w").write("\n".join(lines) + "\n")
+print("%d function stubs, %d data stubs" % (len(funs), len(data)))
+PY
+"$CC" -std=c++98 -w -O2 -fms-extensions -Wno-cast-pointer-to-smaller-type -fno-stack-protector \
+  -I"$R/Source" -c "$R/Scripts/matched_stubs.cpp" -o "$B/matched_stubs.o"
+ALLOBJ=""
+for o in $OBJ; do ALLOBJ="$ALLOBJ $o"; done
+# shellcheck disable=SC2086
+if "$CC" -std=c++98 -w -O2 -Wl,-no_pie -I"$R/Source" \
+    "$B/matched_globals.o" "$B/matched_stubs.o" $ALLOBJ \
+    "$R/Scripts/matched_probe_globals.cpp" -o "$B/probe_all" 2>"$B/link_all.err"; then
+  "$B/probe_all"
+  echo "all matched objects linked: $(echo "$ALLOBJ" | wc -w | tr -d ' '); probe_all: OK"
+else
+  echo "all matched objects link: FAILED (see $B/link_all.err)"
+  head -8 "$B/link_all.err"
 fi
 
 # Stage 3: portable guest-VA access layer (ADDR) under -DMATCHED_NATIVE.
