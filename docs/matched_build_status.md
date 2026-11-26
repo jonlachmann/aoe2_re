@@ -16,14 +16,14 @@ executable and runs it.
 
 Evidence (current run):
 
-- matched/WIP-owner TUs compiled: 164 (every TU in `data/function_map.json` that owns a matched or WIP body)
-- natively compiled by the host compiler: 164, 0 failed
+- matched/WIP-owner TUs compiled: 165 (every TU in `data/function_map.json` that owns a matched or WIP body)
+- natively compiled by the host compiler: 165, 0 failed
 - asm in matched TUs: 0 (see conversion note below)
 - objects with no undefined symbols (self-contained): 74; link exit 0,
   `probe: 0 failures`
-- stage 2 — 236 `g_*` guest globals generated from the objects' own undefined
-  lists, 214 of them seeded from the reference binary's data image (`AOE_BIN`)
-  rather than zeros; 84 objects link with those globals (`probe: 0 failures`)
+- stage 2 — 237 `g_*` guest globals generated from the objects' own undefined
+  lists, 215 of them seeded from the reference binary's data image (`AOE_BIN`)
+  rather than zeros; 85 objects link with those globals (`probe: 0 failures`)
 - stage 4 — the globals-only objects execute against the seeded image:
   `matched_probe_globals.cpp` checks `Get_434BE0()==1.0`, the `M_435810`
   0.0 threshold and `Get_41A090()==FLT_MAX`: `globals exec probe: 0 failures`
@@ -63,7 +63,7 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
 
 ## Remaining gaps toward booting to the menu
 
-1. 84 of 164 objects link (74 self-contained + 10 globals-only); the remaining
+1. 85 of 165 objects link (74 self-contained + 11 globals-only); the remaining
    80 reference function symbols (628 distinct) that are unmatched helpers,
    `_F_*` game functions, Win32 imports or member hook stubs, so they still need
    wrappers or matches.
