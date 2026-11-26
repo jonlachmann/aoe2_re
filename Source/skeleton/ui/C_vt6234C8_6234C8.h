@@ -75,7 +75,7 @@ public:
     virtual void slot_062();  // slot +0x0F8: sub_447500 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_063();  // slot +0x0FC: panel_ez::draw_background [lifted]
     virtual void slot_064();  // slot +0x100: sub_4A3410 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
-    virtual void slot_065();  // slot +0x104: sub_4A3D40 [lifted]
+    virtual void slot_065();  // slot +0x104: sub_4A3D40 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_066();  // slot +0x108: sub_4A3DE0 [lifted]
     virtual void slot_067();  // slot +0x10C: sub_4A4010 [lifted]
     virtual void slot_068();  // slot +0x110: sub_4A4270 [lifted]

@@ -104,7 +104,12 @@ public:
     unsigned char field_15d;      // +0x15D
     char pad_15e[0x160 - 0x15e];  // +0x15E..+0x160
     int field_160;                // +0x160 display mode
-    char pad_164[0x188 - 0x164];  // +0x164..+0x188
+    int field_164;                // +0x164
+    unsigned char field_168;      // +0x168
+    char pad_169[0x16c - 0x169];  // +0x169..+0x16C
+    int field_16c;                // +0x16C
+    unsigned char field_170;      // +0x170
+    char pad_171[0x188 - 0x171];  // +0x171..+0x188
     int field_188;                // +0x188
     unsigned char field_18c;      // +0x18C
     unsigned char field_18d;      // +0x18D
@@ -136,6 +141,12 @@ public:
     void Hook_4BA5C0(int a1, int a2); // unresolved callee at 0x4BA5C0
     void Hook_4BBF20(int a1, short a2, int a3); // unresolved callee at 0x4BBF20
     void M_4B5690();
+    void Hook_4BA250(int a1, int a2, int a3, int a4, int a5, int a6, int* a7,
+                     int a8, int a9, int a10, int a11, int a12, int a13,
+                     int a14, int a15, int a16, int a17);
+    void M_4BA390(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
+                  int a8, int a9, int a10, int a11, int a12, int a13,
+                  int a14, int a15, int a16, int a17);
     int M_4B5AB0();
     void M_4B5A10(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
     void M_4B3760(int a1, unsigned char a2, unsigned char a3, unsigned char a4, unsigned char a5, unsigned char a6, unsigned char a7);

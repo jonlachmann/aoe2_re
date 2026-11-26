@@ -172,7 +172,8 @@ public:
     virtual void slot_63();
     virtual void slot_64();
     virtual void slot_65();
-    virtual void slot_66();
+    virtual void slot_66(int a1, int a2, int a3, int a4, int a5, int a6,
+                         int a7, int a8, int a9, int a10, int a11);
     virtual void slot_67();
     virtual void slot_68();
     virtual void slot_69();
@@ -244,6 +245,8 @@ public:
     void Hook_4A1CD0();           // unresolved callee at 0x4A1CD0
     int Hook_4A2140(int a1, void* a2, int a3); // unresolved callee at 0x4A2140
     void M_4A4570(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
+                  int a8, int a9, int a10, int a11);
+    void M_4A3D40(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                   int a8, int a9, int a10, int a11);
     void M_4A0780(unsigned char v);
     void M_4A07E0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,

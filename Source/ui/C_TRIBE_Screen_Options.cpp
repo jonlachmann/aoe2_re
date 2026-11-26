@@ -305,3 +305,18 @@ void C_TRIBE_Screen_Options::M_4A4570(int a1, int a2, int a3, int a4, int a5,
     Hook_4A2140(a3, buf, 0x200);
     slot_74(a1, a2, (int)buf, a4, a5, a6, a7, a8, a9, a10, a11);
 }
+
+// 0x4A3D40 — format the third and fourth arguments into two 0x78-byte local
+// buffers through 0x4A2140, then dispatch slot +0x108 (slot 66) with both
+// buffers following the first two arguments.
+MATCH_FUNC(0x4A3D40)
+void C_TRIBE_Screen_Options::M_4A3D40(int a1, int a2, int a3, int a4, int a5,
+                                      int a6, int a7, int a8, int a9, int a10,
+                                      int a11)
+{
+    char buf1[0x78];
+    char buf2[0x78];
+    Hook_4A2140(a3, buf1, 0x78);
+    Hook_4A2140(a4, buf2, 0x78);
+    slot_66(a1, a2, (int)buf1, (int)buf2, a5, a6, a7, a8, a9, a10, a11);
+}

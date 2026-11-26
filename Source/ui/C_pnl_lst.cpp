@@ -160,3 +160,20 @@ void C_pnl_lst::M_4B5690()
     Hook_4BBF20(1, old100, 1);
     slot_008(1);
 }
+
+// 0x4BA390 — copy the seventh argument into a four-word temporary, then forward
+// seventeen arguments to 0x4BA250 with the temporary in the seventh slot and
+// the fourteenth/fifteenth pair swapped (a15 then a14).
+WIP_FUNC(0x4BA390)
+void C_pnl_lst::M_4BA390(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
+                         int a8, int a9, int a10, int a11, int a12, int a13,
+                         int a14, int a15, int a16, int a17)
+{
+    int tmp[4];
+    tmp[0] = a7;
+    tmp[1] = a7;
+    tmp[2] = a7;
+    tmp[3] = a7;
+    Hook_4BA250(a1, a2, a3, a4, a5, a6, tmp, a7, a8, a9, a10, a11, a12,
+                a13, a15, a14, a17);
+}

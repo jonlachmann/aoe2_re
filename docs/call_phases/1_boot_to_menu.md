@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 409 matched, 296 left to match (18 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 410 matched, 295 left to match (19 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (296)
+## Left to match (295)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -231,12 +231,11 @@
 | 653 | `sub_4ED280` | 1 |  | 1_boot_to_menu |  |
 | 656 | `sub_4BBC20` | 7 |  | 1_boot_to_menu |  |
 | 658 | `sub_4A1EA0` | 13 |  | 1_boot_to_menu |  |
-| 663 | `sub_4A3D40` | 2 |  | 1_boot_to_menu |  |
 | 664 | `sub_4A3DE0` | 24 |  | 1_boot_to_menu |  |
 | 665 | `sub_5A5C50` | 9 |  | 1_boot_to_menu |  |
 | 673 | `sub_4A5230` | 3 |  | 1_boot_to_menu |  |
 | 674 | `sub_4B5950` | 3 | WIP | 1_boot_to_menu | C_cluster_443970::M_4B5950 |
-| 675 | `sub_4BA390` | 3 |  | 1_boot_to_menu |  |
+| 675 | `sub_4BA390` | 3 | WIP | 1_boot_to_menu | C_pnl_lst::M_4BA390 |
 | 676 | `sub_4BA250` | 3 |  | 1_boot_to_menu |  |
 | 678 | `sub_4B60B0` | 3 |  | 1_boot_to_menu |  |
 | 681 | `sub_4A5480` | 3 |  | 1_boot_to_menu |  |
@@ -303,7 +302,7 @@
 | 808 | `sub_5217F0` | 2144832 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (409)
+## Matched (410)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -635,6 +634,7 @@
 | 660 | `sub_4BBCE0` | 44 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BBCE0 |
 | 661 | `sub_4A07A0` | 91 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A07A0 |
 | 662 | `sub_4A1CD0` | 82 | MATCH | 1_boot_to_menu | S4A1CD0::M_4A1CD0 |
+| 663 | `sub_4A3D40` | 2 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A3D40 |
 | 666 | `sub_5A6780` | 9 | MATCH | 1_boot_to_menu | S5ASetImmBulk::Set_5A6780 |
 | 667 | `sub_4A0890` | 20 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0890 |
 | 668 | `sub_5A6830` | 9 | MATCH | 1_boot_to_menu | S5A6830::M_5A6830 |
