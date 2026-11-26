@@ -112,6 +112,7 @@ public:
     int Get_422320();
     C_vt62C1E0* M_41B760(void* parent, int flag);  // base constructor 0x41B760
     C_vt62C1E0* M_5B0EC0(void* parent, int flag);  // derived constructor 0x5B0EC0
+    int M_5B17D0();              // game-session bring-up 0x5B17D0
     void Hook_5BAD80(int a1);     // unresolved callee at 0x5BAD80
     void M_5BAEE0(char* src);     // inline strcpy into +0x1240
     void Wrap_5B5C50();

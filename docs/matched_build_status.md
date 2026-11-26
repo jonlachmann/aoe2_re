@@ -310,15 +310,40 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   (`C_vt61DF78`), whose slots +0x090/+0x094/+0x0B0 they are; 0x41B760 sets
   vtable 0x61DF78 and is called by the derived 0x5B0EC0 (vtable 0x62C1E0).
 
+- stage 15 — boot past the MessageBox and into the menu/message-pump branch:
+  the base device chain now runs natively through `0x41DC10` (MATCH) and the
+  WIP `0x41DC80`, and the derived creator `0x5B17D0` is modelled as a WIP member
+  that calls the `0x41BC80` (slot +0x74) bring-up. `0x41BC80` itself is a WIP
+  success contract (only registry-free control state: status 0, return 1); its
+  original 1700-byte body drives the resolution/option reads, the +0x78/+0x158/
+  +0x7C and +0x80/+0x84/+0x88/+0x8C/+0x98/+0x9C/+0xA0/+0xA4/+0xA8 virtual init
+  slots, the 0x41F200/0x41F3A0/0x41F0C0/0x465270 subsystem builders and the
+  +0x1B0/+0x1C/+0x20 object/window creation chain; those slots are still lifted.
+  The menu pump slot +0x04 `0x41CF70` is a WIP member with its real control flow:
+  a 7-dword MSG block, GetMessageA/PeekMessageA gates, Translate/Dispatch,
+  WM_QUIT and the 0x6645C8 latch, and the +0xCC/+0xD0 virtual idle/message hooks.
+  A headless GetMessage stands in for WM_QUIT so the loop enters once and exits
+  cleanly. Slot +0x04 is wired in the native 0x62C1E0 vtable replica and the
+  API slots are installed as lowercase-slot trampolines (DispatchMessageA,
+  TranslateMessage, GetMessageA, PeekMessageA). Evidence: boot exit 0, no fault,
+  no MessageBox, `DC10=1 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`, WinMain
+  returns 0; slot 0x24 is not called because status 0 takes the success branch.
+  Gate `[1795/1795] MATCH_FUNCs OK, 12 WIP`; matched TUs 166 ok; boot objects
+  172. Ownership feedback: `0x41BC80` is base vtable 0x61DF78 slot +0x074
+  (index 29), not +0x0B0; `0x41CF70` is slot +0x004 (index 1); `0x41B760`,
+  `0x41DC10` and `0x41DC80` remain the base class `C_vt61DF78`.
+  WIP files: `Source/app/C_vt61DF78.cpp` (BC80/CF70/DC80),
+  `Source/sim/C_vt62C1E0.cpp` (5B17D0).
+
 Gaps now:
-1. The native run now executes the byte-verified 0x41DC10 and advances the
-   object status to 0xF (the 0x41DC80 failure branch), so the run still takes the
-   MessageBox path and returns before the menu loop. To reach the menu the base
-   chain must continue: 0x41DC80 needs native wiring (its WIP body is 448/461,
-   and its 0x440A90 constructor is still lifted), then 0x41BC80 (1700), then the
-   WinMain success branch's slot +0x04 (0x41CF70, 243). Slot +0x28 (0x5B2F20,
-   2088) and 0x5B17D0 (862) remain lifted too; the constructors 0x41B760 and
-   0x5B0EC0 are WIP (1504 vs 1175 and 432 vs 686).
+1. The native run now passes the MessageBox and executes the WinMain success
+   branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
+   cleanly in headless mode. That is the menu/message-pump entry, but the actual
+   menu UI is not yet built: 0x41BC80's WIP body skips its real 0x41D070/+0x78
+   window and screen init chain, and 0x5B17D0's WIP body skips the session-screen
+   builders (0x4320E0/0x421710/0x421AF0). 0x41DC80 remains 448 vs 461; the base
+   and derived constructors 0x41B760 (1504 vs 1175) and 0x5B0EC0 (432 vs 686)
+   remain WIP. Slot +0x28 (0x5B2F20, 2088) remains lifted.
 2. Import ABI (partially done): stages 10-11 install trampolines for
    LoadLibraryA/GetProcAddress/FreeLibrary, timeBeginPeriod/timeGetTime/
    timeEndPeriod, GlobalFree and MessageBoxA, marshalling image pointers to

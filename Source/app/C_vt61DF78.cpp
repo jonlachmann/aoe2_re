@@ -2,12 +2,21 @@
 #include "matched_mem.h"
 #ifdef MATCHED_NATIVE
 extern "C" int g_cvt_slot36_hits = 0;
+extern "C" int g_cvt_slot37_hits = 0;
+extern "C" int g_cvt_slot04_hits = 0;
+extern "C" int g_cvt_41bc80_hits = 0;
 #endif
 
 extern void* __cdecl sub_5F8F60(int a1);
 extern void __cdecl sub_5F90B0(void* p);
 extern void __cdecl sub_5FCB40(char* dst, char* src, int n);
 extern int (__stdcall *g_61C2D8)(char* a1);
+extern char g_61c2dc[0x1000];   // DispatchMessageA
+extern char g_61c2e0[0x1000];   // TranslateMessage
+extern char g_61c2e4[0x1000];   // GetMessageA
+extern char g_61c2e8[0x1000];   // PeekMessageA
+extern unsigned char g_664544;
+extern int g_6645c8;
 extern char* __cdecl sub_5FD7C3(char* a1, char* a2);
 extern char* __cdecl sub_5FD7A5(char* a1, int a2);
 extern int __cdecl sub_5FD716(unsigned char a1);
@@ -224,24 +233,30 @@ int C_vt61DF78::slot36_41DC10()
 // and the 0x5FD7A5/0x5FD716/0x5FD66E character walk into 0x651164/0x66955C, and
 // finally constructs the 0x440A90 object at +0x1C8 (with +0x1D0 and 0x664540
 // passed to its setters).
-class T41DC80Obj {
+// Shared with Source/gfx/free_gfx.cpp: the 0xCEC object's constructor body is
+// modelled there as M_440A90 (0x440A90) and its setters M_440B40/M_440B80/
+// M_440BC0 are byte-verified members of the same class.
+class S440B40 {
 public:
     char pad_00[0xcec];
-    T41DC80Obj();
+    S440B40();
+    S440B40* M_440A90();
+    void M_440B40(int a1);
+    void M_440B80(int a1);
+    void M_440BC0(int a1);
 };
-extern void __cdecl sub_440A90(void* a1);
-T41DC80Obj::T41DC80Obj()
+S440B40::S440B40()
 {
-    sub_440A90(this);
+    M_440A90();
 }
-extern void __cdecl sub_440B40(void* a1, int a2);
-extern void __cdecl sub_440B80(void* a1, int a2);
-extern void __cdecl sub_440BC0(void* a1, int a2);
 extern int g_664540;
 
 WIP_FUNC(0x41DC80)
 int C_vt61DF78::slot37_41DC80()
 {
+#ifdef MATCHED_NATIVE
+    ++g_cvt_slot37_hits;
+#endif
     char buf[0x100];
     char* p;
     char* s;
@@ -288,12 +303,106 @@ int C_vt61DF78::slot37_41DC80()
         }
     }
 
-    T41DC80Obj* obj = new T41DC80Obj();
+    S440B40* obj = new S440B40();
     *(int*)((char*)this + 0x1c8) = (int)(size_t)obj;
     if (obj == 0)
         return 0;
-    sub_440B40(obj, *(int*)((char*)this + 0x1d0));
-    sub_440B80(obj, g_664540);
-    sub_440BC0(obj, 1);
+    obj->M_440B40(*(int*)((char*)this + 0x1d0));
+    obj->M_440B80(g_664540);
+    obj->M_440BC0(1);
+    return 1;
+}
+
+// 0x41CF70 (slot +0x04) — the window/menu message pump. The original keeps a
+// 7-dword MSG block, loops while the 0x664544 quit byte is clear, calls
+// GetMessageA(hwnd 0) for the game screens when the +0x30/+0x1d8/+0x1b0 gate
+// is active, and otherwise PeekMessageA(...,PM_REMOVE). Each message goes to
+// TranslateMessageA + DispatchMessageA; idle path drives the +0xD0 slot, the
+// message path the +0xCC slot, and WM_QUIT clears the 0x6645C8 latch. It
+// returns the MSG wParam left in the block.
+// Native/guest behaviour for the +0x1B0 subobject's aliveness probe.
+int T41B0::M_42D210()
+{
+    return 1;
+}
+
+WIP_FUNC(0x41CF70)
+int C_vt61DF78::slot01_41CF70()
+{
+#ifdef MATCHED_NATIVE
+    ++g_cvt_slot04_hits;
+#endif
+    int (__stdcall *translate)(void*) =
+        *(int (__stdcall**)(void*))g_61c2e0;
+    int (__stdcall *dispatch)(void*) =
+        *(int (__stdcall**)(void*))g_61c2dc;
+    int msg[7];
+    msg[0] = 0;
+    msg[1] = 0;
+    msg[2] = 0;
+    msg[3] = 0;
+    msg[4] = 0;
+    msg[5] = 0;
+    msg[6] = 0;
+
+    while (1)
+    {
+        if (g_664544 != 0)
+            goto peek;
+        if (field_30 != 0)
+        {
+            int mode = field_1D8;
+            if (mode == 4 || mode == 2)
+            {
+                if (field_1B0 == 0)
+                    goto peek;
+                if (((T41B0*)field_1B0)->M_42D210() == 0)
+                    goto peek;
+            }
+        }
+
+        if (!(*(int (__stdcall**)(void*, int, int, int))g_61c2e4)(msg, 0, 0, 0))
+            return msg[2];
+        translate(msg);
+        dispatch(msg);
+        continue;
+
+    peek:
+        if ((*(int (__stdcall**)(void*, int, int, int, int))g_61c2e8)(msg, 0, 0, 0, 1) == 0)
+            goto idle;
+        if (msg[1] == 0x12)
+        {
+            if (g_6645c8 == 0)
+                return msg[2];
+            g_6645c8 = 0;
+        }
+        if (slot_051(msg) == 0)
+            continue;
+        translate(msg);
+        dispatch(msg);
+        continue;
+
+    idle:
+        slot_052();
+        continue;
+    }
+}
+
+// 0x41BC80 (slot +0x74) — basegame device/window/menu bring-up. WIP: only the
+// registry-free control state is modelled here. The original first time-seeds
+// 0x5FCA3B, reads the resolution/option registry values through the matched
+// 0x4BE080 reader on +0x1D4, selects +0x8F4/+0x8FC, drives its +0x78/+0x158/
+// +0x7C virtual init slots and the 0x41F200/0x41F3A0/0x41F0C0/0x465270
+// subsystem builders, allocates the 0x274 object at +0x1B0/0x664514 and the
+// 0x11C/0x10C objects at +0x1C/+0x20, creates the +0x28 window, then leaves
+// status 0 and returns 1. Those slots/builders are still lifted, so this body
+// takes only the success contract: status 0, non-zero result, no MessageBox.
+WIP_FUNC(0x41BC80)
+int C_vt61DF78::slot29_41BC80()
+{
+#ifdef MATCHED_NATIVE
+    ++g_cvt_41bc80_hits;
+#endif
+    field_60 = 0;
     return 1;
 }

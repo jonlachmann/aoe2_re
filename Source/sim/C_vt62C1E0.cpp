@@ -507,6 +507,7 @@ void C_vt62C1E0::M_5BAD80(int a1)
 #ifdef MATCHED_NATIVE
 extern "C" int g_cvt_ctor41_hits = 0;   // proof counters for the native boot
 extern "C" int g_cvt_ctor5b_hits = 0;
+extern "C" int g_cvt_5b17d0_hits = 0;
 extern "C" int g_cvt_dc10_status = 0;
 extern "C" int g_cvt_slot18_hits = 0;
 extern "C" int g_cvt_slot24_hits = 0;
@@ -515,6 +516,7 @@ extern "C" int g_cvt_slot00_hits = 0;
 extern void* g_6645c4;                 // global object slot at 0x6645C4
 extern void* g_664510;                 // global slot at 0x664510
 extern char g_66451c[0x1000];          // 0x66451C receives the 0x41DC10 result
+extern char g_669558[0x1000];          // 0x669558 receives the 0x41DC80 object
 extern int __stdcall Hook_473AE0(int a1, int a2, char* a3, int a4);
 
 #ifdef MATCHED_NATIVE
@@ -540,8 +542,8 @@ static void* vt62_slot00(void* obj, int flags)
 }
 static int vt62_slot04(void* obj)
 {
-    (void)obj;
-    return 0;
+    // 0x41CF70 is the window/menu message pump (slot +0x04); run its body.
+    return ((C_vt61DF78*)(void*)obj)->C_vt61DF78::slot01_41CF70();
 }
 static int vt62_slot18(void* obj)
 {
@@ -692,10 +694,46 @@ C_vt62C1E0* C_vt62C1E0::M_41B760(void* parent, int flag)
         return this;
     }
     *(int*)g_66451c = *(int*)((char*)this + 0x1d4);
-    SCvtI32(this, 0x60, 0x0f);
-    g_cvt_dc10_status = 0x0f;
+    if (!((C_vt61DF78*)(void*)this)->C_vt61DF78::slot37_41DC80())
+    {
+        SCvtI32(this, 0x60, 0x0f);
+        g_cvt_dc10_status = 0x0f;
+        return this;
+    }
+    *(int*)g_669558 = *(int*)((char*)this + 0x1c8);
+    // device/window bring-up: the original calls 0x41BC80 only when the caller
+    // passed a non-zero flag; a zero result while status is still zero raises
+    // the status to 1.
+    if (flag != 0)
+    {
+        if (!((C_vt61DF78*)(void*)this)->C_vt61DF78::slot29_41BC80()
+            && *(int*)((char*)this + 0x60) == 0)
+            SCvtI32(this, 0x60, 1);
+    }
+    g_cvt_dc10_status = *(int*)((char*)this + 0x60);
 #endif
     return this;
+}
+
+// 0x5B17D0 — game-session bring-up called by the derived constructor when the
+// caller flag is set. WIP: the original runs the five 0x4BE0F0 registry writes,
+// calls 0x41BC80, creates the DirectPlay/session objects (0x5ECE38, 0x51D140,
+// 0x49F770, 0x42DBC0, 0x4F2390, 0x4FFE00, 0x4F4920), builds the session screen
+// via 0x4320E0/0x421710/0x421AF0 and drives its +0x20/+0x158 slots before
+// returning 1. Only the status contract and the 0x41BC80 call are modelled:
+// status must be 0 to enter, 0x41BC80's failure returns 0, success returns 1
+// and leaves status 0.
+WIP_FUNC(0x5B17D0)
+int C_vt62C1E0::M_5B17D0()
+{
+#ifdef MATCHED_NATIVE
+    ++g_cvt_5b17d0_hits;
+#endif
+    if (*(int*)((char*)this + 0x60) != 0)
+        return 0;
+    if (!((C_vt61DF78*)(void*)this)->C_vt61DF78::slot29_41BC80())
+        return 0;
+    return 1;
 }
 
 // 0x5B0EC0 — derived constructor for the 0x1C94 sim/config object. The original
@@ -759,9 +797,9 @@ C_vt62C1E0* C_vt62C1E0::M_5B0EC0(void* parent, int flag)
 
     if (flag != 0)
     {
-        // 0x5B17D0 is still lifted; the stub returns 0, so the original path
-        // sets +0x60 = 1 when the current status is zero.
-        if (SCvtI32(this, 0x60, 0), *(int*)((char*)this + 0x60) == 0)
+        // 0x5B17D0 is now modelled natively (WIP) and calls the WIP 0x41BC80
+        // bring-up; its success contract leaves status 0 and returns 1.
+        if (!M_5B17D0() && *(int*)((char*)this + 0x60) == 0)
             SCvtI32(this, 0x60, 1);
     }
 

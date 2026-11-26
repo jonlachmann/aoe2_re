@@ -11,7 +11,7 @@
 class C_vt62C1E0 {
 public:
     virtual void slot_000();  // slot +0x000: sub_5B1170 [matched] — Source/sim/free_sim.cpp
-    virtual void slot_001();  // slot +0x004: sub_41CF70 [lifted]
+    virtual void slot_001();  // slot +0x004: sub_41CF70 [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_002();  // slot +0x008: sub_5BB240 [matched] — Source/sim/C_vt62C1E0.cpp
     virtual void slot_003();  // slot +0x00C: sub_41BC00 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_004();  // slot +0x010: sub_5B2CC0 [lifted]
@@ -39,7 +39,7 @@ public:
     virtual void slot_026();  // slot +0x068: sub_5BC9C0 [lifted]
     virtual void slot_027();  // slot +0x06C: sub_547EE0 [matched] — Source/gfx/C_vt61DA40.cpp
     virtual void slot_028();  // slot +0x070: sub_5BD3E0 [lifted]
-    virtual void slot_029();  // slot +0x074: sub_5B17D0 [lifted]
+    virtual void slot_029();  // slot +0x074: sub_5B17D0 [wip] — Source/sim/C_vt62C1E0.cpp
     virtual void slot_030();  // slot +0x078: sub_5B1D40 [lifted]
     virtual void slot_031();  // slot +0x07C: sub_41D5D0 [lifted]
     virtual void slot_032();  // slot +0x080: sub_41D6A0 [lifted]

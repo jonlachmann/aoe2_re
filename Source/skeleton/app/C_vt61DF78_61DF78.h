@@ -11,7 +11,7 @@
 class C_vt61DF78 {
 public:
     virtual void slot_000();  // slot +0x000: sub_41BC60 [matched] — Source/app/free_app.cpp
-    virtual void slot_001();  // slot +0x004: sub_41CF70 [lifted]
+    virtual void slot_001();  // slot +0x004: sub_41CF70 [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_002();  // slot +0x008: sub_41FAC0 [lifted]
     virtual void slot_003();  // slot +0x00C: sub_41BC00 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_004();  // slot +0x010: sub_41F610 [matched] — Source/app/C_vt61DF78.cpp
@@ -39,7 +39,7 @@ public:
     virtual void slot_026();  // slot +0x068: sub_5EA410 [matched] — Source/engine-late/C_view.cpp
     virtual void slot_027();  // slot +0x06C: sub_407B30 [matched] — Source/app/C_vt61CE24.cpp
     virtual void slot_028();  // slot +0x070: sub_407BE0 [matched] — Source/app/C_vt61CE24.cpp
-    virtual void slot_029();  // slot +0x074: sub_41BC80 [lifted]
+    virtual void slot_029();  // slot +0x074: sub_41BC80 [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_030();  // slot +0x078: sub_41D070 [lifted]
     virtual void slot_031();  // slot +0x07C: sub_41D5D0 [lifted]
     virtual void slot_032();  // slot +0x080: sub_41D6A0 [lifted]

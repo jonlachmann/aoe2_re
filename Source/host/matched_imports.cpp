@@ -34,6 +34,12 @@ extern char g_61c168[0x1000];   /* GlobalFree */
 extern char g_61c37c[0x1000];   /* MessageBoxA */
 extern char g_61c3c4[0x1000];   /* timeEndPeriod */
 extern char g_61C008[0x1000];   /* RegCreateKeyExA (9-arg slot 0x61C008) */
+extern char g_61C2D8[0x1000];   /* CharUpperA (slot 0x61C2D8) */
+/* Lowercase image-slot arrays used by the C_vt61DF78 message pump. */
+extern char g_61c2dc[0x1000];
+extern char g_61c2e0[0x1000];
+extern char g_61c2e4[0x1000];
+extern char g_61c2e8[0x1000];
 
 typedef int (__stdcall *TLoadLibraryA)(char *name);
 typedef int (__cdecl *TExport)(int, char *, char *, int);
@@ -189,6 +195,40 @@ static int __stdcall message_box_a(int hwnd, char *text, char *cap, int type)
     return 1;
 }
 
+static int __stdcall dispatch_message_a(void *msg)
+{
+    (void)msg;
+    return 0;
+}
+
+static int __stdcall translate_message(void *msg)
+{
+    (void)msg;
+    return 1;
+}
+
+/* Headless boot has no real window queue; return zero (WM_QUIT) so the menu
+ * loop's GetMessage gate exits after one iteration instead of blocking. */
+static int __stdcall get_message_a(void *msg, int hwnd, int lo, int hi)
+{
+    (void)msg; (void)hwnd; (void)lo; (void)hi;
+    if (msg != 0)
+    {
+        int *m = (int*)msg;
+        m[0] = 0;
+        m[1] = 0x12;    /* WM_QUIT */
+        m[2] = 0;
+        m[3] = 0;
+    }
+    return 0;
+}
+
+static int __stdcall peek_message_a(void *msg, int hwnd, int lo, int hi, int remove)
+{
+    (void)msg; (void)hwnd; (void)lo; (void)hi; (void)remove;
+    return 0;
+}
+
 static int __stdcall reg_create_key_ex_a(int root, char *subkey, int reserved,
                                          char *cls, int options, int access,
                                          void *sec, void *outkey, void *disposition)
@@ -203,6 +243,23 @@ static int __stdcall reg_create_key_ex_a(int root, char *subkey, int reserved,
     if (disposition != 0)
         *(uint32_t*)disposition = 0;
     return 0;
+}
+
+static int __stdcall char_upper_a(char *s)
+{
+    /* The seeded slot holds the RVA 0x38284A of the name "CharUpperA"; its
+     * callers pass native stack buffers, so upper-case them in place. */
+    if (s != 0)
+    {
+        char *p = s;
+        while (*p != 0)
+        {
+            if (*p >= 'a' && *p <= 'z')
+                *p = (char)(*p - 'a' + 'A');
+            ++p;
+        }
+    }
+    return (int)(uintptr_t)s;
 }
 
 static int __stdcall get_last_error(void)
@@ -221,6 +278,11 @@ extern "C" void InstallMatchedImports(void)
     *(void**)g_61c37c = (void*)message_box_a;
     *(void**)g_61c3c4 = (void*)time_end_period;
     *(void**)g_61C008 = (void*)reg_create_key_ex_a;
+    *(void**)g_61C2D8 = (void*)char_upper_a;
+    *(void**)g_61c2dc = (void*)dispatch_message_a;
+    *(void**)g_61c2e0 = (void*)translate_message;
+    *(void**)g_61c2e4 = (void*)get_message_a;
+    *(void**)g_61c2e8 = (void*)peek_message_a;
 }
 
 /* Diagnostic path: run the WIP language init 0x47B620 natively now that the
@@ -236,6 +298,10 @@ extern "C" int g_cvt_slot24_hits;
 extern "C" int g_cvt_slot00_hits;
 extern "C" int g_cvt_slot36_hits;
 extern "C" int g_cvt_dc10_status;
+extern "C" int g_cvt_slot37_hits;
+extern "C" int g_cvt_slot04_hits;
+extern "C" int g_cvt_41bc80_hits;
+extern "C" int g_cvt_5b17d0_hits;
 extern "C" int matched_winmain(void)
 {
     int r = sub_47AE20(0x400000, 0, (char *)(g_matched_base + 0x662be0), 1);
@@ -244,6 +310,9 @@ extern "C" int matched_winmain(void)
             g_cvt_ctor41_hits, g_cvt_ctor5b_hits, g_cvt_slot00_hits,
             g_cvt_slot18_hits, g_cvt_slot24_hits, g_cvt_slot36_hits,
             g_cvt_dc10_status);
+    fprintf(stderr, "[matched-imports] DC80=%d\n", g_cvt_slot37_hits);
+    fprintf(stderr, "[matched-imports] BC80=%d 5B17D0=%d menu-loop=%d\n",
+            g_cvt_41bc80_hits, g_cvt_5b17d0_hits, g_cvt_slot04_hits);
     return r;
 }
 

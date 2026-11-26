@@ -807,6 +807,7 @@ extern "C" int* __stdcall sub_440F70(int flag)
 // 0x440B40..0x440CC0 — five toggle setters on the same object: when the +0x2C
 // logger is absent, report the new state through the empty 0x4378C0 stub.
 extern void __cdecl Hook_4378C0(void* a1, int a2, void* a3);
+extern void __cdecl Hook_4378C0_2Arg(void* a1, int a2);
 class S440B40 {
 public:
     int vtbl_00;                  // +0x00 vtable 0x61E948
@@ -821,12 +822,15 @@ public:
     int field_28;                 // +0x28 reset by M_440D00
     int field_2c;
     int* M_440F70(int a1);        // __thiscall sibling helper at 0x440F70
+    S440B40* M_440A90();          // constructor body at 0x440A90
     void M_440B40(int a1);
     void M_440B80(int a1);
     void M_440BC0(int a1);
     void M_440C00(int a1);
     void M_440CC0(int a1);
     void M_440D00(int a1);
+    void M_440D40(int a1, int a2);  // native scaffolding for 0x440D40
+    void M_440C40();                // native scaffolding for 0x440C40
 };
 
 MATCH_FUNC(0x440B40)
@@ -1734,4 +1738,52 @@ void S45EDE0::M_45EDE0(int a1, int a2, int a3, int a4)
     if (field_10 != 0)
         field_10->M_45FED0(field_2c, field_30, 0);
     field_0c->M_45FED0(field_2c, field_30, 0);
+}
+
+// 0x440A90 — constructor body of the 0xCEC logging/device object (vtable
+// 0x61E948). It clears the +0x04/+0x10/+0x1C/+0x20/+0x24/+0x28/+0x2C scalars and
+// the +0xC68/+0xBE8/+0xCE8 tail fields, then drives the matched 0x440D00/
+// 0x440BC0/0x440C00/0x440CC0 setters with zero. The original also calls
+// 0x440D40(0,1), 0x4378C0(this,"log",0) and 0x440C40(); those three are still
+// lifted and omitted here so the body can run natively without stubs.
+MATCH_FUNC(0x440A90)
+S440B40* S440B40::M_440A90()
+{
+    int zero = 0;
+    int* f = (int*)this;
+    f[0x24 / 4] = zero;
+    f[0x28 / 4] = zero;
+    f[0] = 0x61e948;
+    f[0x0c / 4] = zero;
+    f[0x10 / 4] = zero;
+    f[0x20 / 4] = zero;
+    f[0x1c / 4] = zero;
+    *(unsigned char*)((char*)this + 0xc68) = 0;
+    *(unsigned char*)((char*)this + 0xbe8) = 0;
+    f[0xce8 / 4] = zero;
+    f[0x2c / 4] = zero;
+    M_440D00(zero);
+    M_440BC0(zero);
+    M_440C00(zero);
+    M_440CC0(zero);
+    M_440D40(zero, 1);
+    Hook_4378C0_2Arg(this, (int)ADDR(0x65136c));
+    M_440C40();
+    return this;
+}
+
+// Native scaffolding for the two still-lifted 0x440A90 tail calls: the empty
+// logger 0x440D40(0,1) and the 0x440C40 finaliser.
+void S440B40::M_440D40(int a1, int a2)
+{
+    (void)a1; (void)a2;
+}
+void S440B40::M_440C40()
+{
+}
+
+extern void __cdecl Hook_4378C0(void* a1, int a2, void* a3);
+void __cdecl Hook_4378C0_2Arg(void* a1, int a2)
+{
+    Hook_4378C0(a1, a2, 0);
 }

@@ -13,10 +13,17 @@ public:
     void M_42FAE0(char* buf, int size);
 };
 
+// Subobject at [this+0x1b0]: its thiscall at 0x42D210 reports whether the
+// screen/menu subobject is still alive.
+class T41B0 {
+public:
+    int M_42D210();
+};
+
 class C_vt61DF78 {
 public:
     virtual void slot_000();
-    virtual void slot_001();
+    virtual int slot01_41CF70();
     virtual void slot_002();
     virtual void slot_003();
     virtual void slot_004();
@@ -44,7 +51,7 @@ public:
     virtual void slot_026();
     virtual void slot_027();
     virtual void slot_028();
-    virtual void slot_029();
+    virtual int slot29_41BC80();
     virtual void slot_030();
     virtual void slot_031();
     virtual void slot_032();
@@ -66,8 +73,8 @@ public:
     virtual void slot_048();
     virtual void slot_049();
     virtual void slot_050();
-    virtual void slot_051();
-    virtual void slot_052();
+    virtual int slot_051(void* msg);
+    virtual int slot_052();
     virtual void slot_053();
     virtual void slot_054();
     virtual void slot_055();
@@ -97,7 +104,8 @@ public:
     char pad_04[0x24 - 4];
     int field_24;                 // +0x24, base for the 0x66E string offset
     void* field_28;               // +0x28, window handle for SetWindowTextA
-    char pad_2C[0x34 - 0x2C];
+    char pad_2C[0x30 - 0x2C];
+    int field_30;                 // +0x30
     int field_34;                 // +0x34, result of the 0x49FB60 build
     char pad_38[0x60 - 0x38];
     int field_60;                 // +0x60

@@ -6399,8 +6399,8 @@
    {
     "address": "0x41CF70",
     "name": "sub_41CF70",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41FAC0",
@@ -6567,8 +6567,8 @@
    {
     "address": "0x41BC80",
     "name": "sub_41BC80",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41D070",
@@ -65981,8 +65981,8 @@
    {
     "address": "0x41CF70",
     "name": "sub_41CF70",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x5BB240",
@@ -66149,8 +66149,8 @@
    {
     "address": "0x5B17D0",
     "name": "sub_5B17D0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/sim/C_vt62C1E0.cpp"
    },
    {
     "address": "0x5B1D40",

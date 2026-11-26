@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 434 matched, 262 left to match (9 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 435 matched, 261 left to match (12 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (262)
+## Left to match (261)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -14,13 +14,12 @@
 | 122 | `sub_5B0EC0` | 1 | WIP | 1_boot_to_menu | C_vt62C1E0::M_5B0EC0 |
 | 123 | `sub_41B760` | 1 | WIP | 1_boot_to_menu | C_vt62C1E0::M_41B760 |
 | 152 | `sub_41DC80` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot37_41DC80 |
-| 155 | `sub_440A90` | 2 |  | 1_boot_to_menu |  |
 | 162 | `sub_440D40` | 2 |  | 1_boot_to_menu |  |
 | 163 | `sub_440C40` | 3 |  | 1_boot_to_menu |  |
 | 196 | `sub_5BB000` | 9 | WIP | 1_boot_to_menu | C_vt62C1E0::Set_5BB000 |
-| 200 | `sub_5B17D0` | 1 |  | 1_boot_to_menu |  |
+| 200 | `sub_5B17D0` | 1 | WIP | 1_boot_to_menu | C_vt62C1E0::M_5B17D0 |
 | 201 | `sub_4BE0F0` | 5 |  | 1_boot_to_menu |  |
-| 207 | `sub_41BC80` | 1 |  | 1_boot_to_menu |  |
+| 207 | `sub_41BC80` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot29_41BC80 |
 | 209 | `sub_4BD830` | 1 |  | 1_boot_to_menu |  |
 | 210 | `sub_4BD7E0` | 2 |  | 1_boot_to_menu |  |
 | 214 | `sub_5B1D40` | 1 |  | 1_boot_to_menu |  |
@@ -263,13 +262,13 @@
 | 793 | `sub_539C80` | 1 |  | 1_boot_to_menu |  |
 | 794 | `sub_53BD10` | 121 |  | 1_boot_to_menu |  |
 | 795 | `sub_472EF0` | 120 |  | 1_boot_to_menu |  |
-| 797 | `sub_41CF70` | 1 |  | 1_boot_to_menu |  |
+| 797 | `sub_41CF70` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot01_41CF70 |
 | 800 | `sub_5BB2D0` | 2144832 |  | 1_boot_to_menu |  |
 | 801 | `sub_420450` | 2144832 |  | 1_boot_to_menu |  |
 | 807 | `sub_4EDC70` | 2144832 |  | 1_boot_to_menu |  |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (434)
+## Matched (435)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -353,6 +352,7 @@
 | 148 | `sub_421A80` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_421A80 |
 | 150 | `sub_41DC10` | 1 | MATCH | 1_boot_to_menu | C_vt61DF78::slot36_41DC10 |
 | 151 | `sub_4BDE90` | 1 | MATCH | 1_boot_to_menu | S4BDE90::M_4BDE90 |
+| 155 | `sub_440A90` | 2 | MATCH | 1_boot_to_menu | S440B40::M_440A90 |
 | 156 | `sub_440D00` | 2 | MATCH | 1_boot_to_menu | S440B40::M_440D00 |
 | 157 | `sub_440F70` | 11 | MATCH | 1_boot_to_menu | sub_440F70 |
 | 158 | `sub_4378C0` | 40 | MATCH | 1_boot_to_menu | C_pnl_edit::M_4378C0 |
