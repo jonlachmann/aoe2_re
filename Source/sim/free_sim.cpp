@@ -6219,3 +6219,25 @@ C_539A60::C_539A60(int a1, int a2) : S472AA0Base(a1, a2)
     M_539B00(v);
     ((C_cluster_472AA0*)this)->Hook_472B20(0, 0);
 }
+
+// 0x5B1CD0 — reset the +0x10A4 object: release the current one through its
+// vtable slot 0 (argument 1), then replace it with a freshly `new`ed 0x1C-byte
+// C_539A60(0,0) (the matched 0x627D48 constructor); the `new` EH frame is
+// reproduced because C_539A60 has a non-trivial base destructor.
+class T5B1CD0Field {
+public:
+    virtual void Vt_00(int a1);
+};
+class S_5B1CD0 {
+public:
+    char pad_00[0x10a4];
+    void* field_10a4;             // +0x10A4 replaceable 0x539A60 object
+    void M_5B1CD0();
+};
+MATCH_FUNC(0x5B1CD0)
+void S_5B1CD0::M_5B1CD0()
+{
+    if (field_10a4 != 0)
+        ((T5B1CD0Field*)field_10a4)->Vt_00(1);
+    field_10a4 = new C_539A60(0, 0);
+}

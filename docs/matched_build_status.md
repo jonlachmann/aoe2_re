@@ -677,6 +677,17 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   MATCH_FUNCs OK, 32 WIP`; phase docs now 452/815 matched (244 left, 25 WIP, 119
   CRT).
 
+- stage 36 — `Source/sim/free_sim.cpp` now carries a byte-exact
+  `MATCH_FUNC(0x5B1CD0)` (104 bytes): reset the +0x10A4 replaceable object by
+  releasing the current one through its vtable slot 0 with argument 1, then
+  assigning `new C_539A60(0,0)` (the matched 0x627D48 constructor, 0x1C bytes).
+  The original `new` EH frame is reproduced because C_539A60 has a non-trivial
+  base destructor. Class feedback: 0x539A60 objects are used as replaceable
+  subobjects at a +0x10A4 field, matching the earlier 0x539A60/58A9D0 evidence
+  that 0x627D48 derives from the 0x472AA0 base. Evidence after this wave: full
+  gate `[1814/1814] MATCH_FUNCs OK, 32 WIP`; phase docs now 453/815 matched (243
+  left, 25 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
