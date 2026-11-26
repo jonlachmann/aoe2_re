@@ -510,6 +510,28 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   fault, `DC10 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window
   class/create 2, hwnd 0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
 
+- stage 25 — 0x41D6A0 (330 bytes, base slot +0x080, main-window creation) now has
+  its full guest-exact WIP body. It probes GetSystemMetrics(0/1) into
+  width/height, selects the extended style from the +0x24 config block
+  (0x2CA0000 with the configured 0x8E4/0x8E8 sizes when +0x894 is clear and the
+  metrics differ, otherwise 0x82080000 with the metrics), calls the 0x61C398
+  CreateWindowEx slot with the +0x24 class and +0x7A window name, then the
+  0x61C38C/0x61C2C4 rect probes with the 0x61C2C8 SetWindowPos correction, the
+  0x61C2FC/0x61C2CC/0x61C300 show/focus path when +0x894 is set, stores
+  +0x28/+0x2C and 0x664528, and calls the matched
+  C_cluster_49FE60::M_49FE60. It stays WIP at 320 vs 330 bytes: every byte of
+  both style branches (0x0000-0x007A, including the literal style pushes and the
+  shared tail) is identical; the residual is VC6 register allocation, which
+  keeps `this` in edi, the metrics pointer in esi and the rect height in ebp
+  (pushing ebp mid-function and shifting the second rect pair from [esp+0x1C] to
+  [esp+0x20]) instead of the original esi/edi/ebx choice with no frame pointer.
+  Single shared-tail calls, ternary argument selection and cached/inline config
+  forms all worsened the shape. The native branch keeps Native_CreateWindow and
+  skips the raw guest slots. Evidence: full gate `[1803/1803] MATCH_FUNCs OK, 27
+  WIP`; boot exit 0, no fault, `DC10 status=0 DC80=1 BC80=1 5B17D0=1
+  menu-loop=1`, window class/create 2, hwnd 0x1A2B3C4D, DE50/E070 screens 1,
+  WinMain returns 0.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

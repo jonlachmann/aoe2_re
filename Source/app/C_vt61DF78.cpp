@@ -700,24 +700,95 @@ int C_vt61DF78::slot31_41D5D0()
 #endif
 }
 
+// 0x41D6A0 (slot +0x080) — create the main window. It probes GetSystemMetrics
+// (0/1) into width/height, picks the extended style from the +0x24 config block
+// (0x2CA0000 sized to the configured 0x8E4/0x8E8 when the sizes differ, else
+// 0x82080000 sized to the metrics), calls the 0x61C398 CreateWindowEx slot, then
+// runs the two 0x61C38C/0x61C2C4 rect probes with the 0x61C2C8 SetWindowPos
+// correction, the 0x61C2FC/0x61C2CC/0x61C300 show/focus path when +0x894 is set,
+// publishes +0x28/0x2C and 0x664528, and calls C_cluster_49FE60::M_49FE60.
+// WIP: ours 320 vs 330 bytes. Every byte of both style branches (0x0000-0x007A)
+// is identical, including the literal 0x2CA0000/0x82080000 pushes and the shared
+// tail; the residual is register allocation: the original keeps `this` in esi,
+// the slot pointer in edi and the new rect height in ebx (no frame pointer),
+// while VC6 here assigns this to edi, gm to esi, and the rect height to ebp, so
+// it pushes ebp mid-function and shifts the second rect pair from [esp+0x1C] to
+// [esp+0x20]. Source variants (single shared-tail call, ternary arg selection,
+// inline vs cached cfg pointer) only worsened the shape. The native branch keeps
+// the Native_CreateWindow flow and skips the raw guest slots.
+extern void __cdecl Hook_49FE60Noop();
+class C_cluster_49FE60 {
+public:
+    void M_49FE60();
+};
 WIP_FUNC(0x41D6A0)
 int C_vt61DF78::slot32_41D6A0()
 {
 #ifdef MATCHED_NATIVE
     ++cv_win_class;
-#endif
-    int w = Native_GetSystemMetrics(0);
-    int h = Native_GetSystemMetrics(1);
     int hwnd = Native_CreateWindow((int)(size_t)CfgI(0x410));
     if (hwnd == 0)
         return 0;
     *(int*)((char*)this + 0x28) = hwnd;
     *(int*)((char*)this + 0x2c) = 1;
-#ifdef MATCHED_NATIVE
     cv_win_handle = hwnd;
-#endif
     *(int*)&g_664528 = hwnd;
     return 1;
+#else
+    int (__stdcall *gm)(int) = (*(int (__stdcall**)(int))ADDR(0x61c390));
+    int width = gm(0);
+    int height = gm(1);
+    int hwnd;
+    if (*(int*)(*(int*)((char*)this + 0x24) + 0x894) == 0
+        && (width != *(int*)(*(int*)((char*)this + 0x24) + 0x8e4)
+            || height != *(int*)(*(int*)((char*)this + 0x24) + 0x8e8)))
+    {
+        hwnd = (*(int (__stdcall**)(int, int, void*, int, int, int, int,
+                                     int, int, int, int, int))
+                ADDR(0x61c398))(0, *(int*)((char*)this + 0x24),
+                                (void*)(*(int*)((char*)this + 0x24) + 0x7a),
+                                0x2ca0000, 0, 0,
+                                *(int*)(*(int*)((char*)this + 0x24) + 0x8e4),
+                                *(int*)(*(int*)((char*)this + 0x24) + 0x8e8),
+                                0, 0,
+                                *(int*)(*(int*)((char*)this + 0x24) + 0x410), 0);
+    }
+    else
+    {
+        hwnd = (*(int (__stdcall**)(int, int, void*, int, int, int, int,
+                                     int, int, int, int, int))
+                ADDR(0x61c398))(0, *(int*)((char*)this + 0x24),
+                                (void*)(*(int*)((char*)this + 0x24) + 0x7a),
+                                0x82080000, 0, 0, width, height, 0, 0,
+                                *(int*)(*(int*)((char*)this + 0x24) + 0x410), 0);
+    }
+    *(int*)((char*)this + 0x28) = hwnd;
+    if (hwnd == 0)
+        return 0;
+    int rc[8];
+    (*(int (__stdcall**)(int, void*))ADDR(0x61c38c))(hwnd, (void*)&rc[0]);
+    (*(int (__stdcall**)(int, void*))ADDR(0x61c2c4))(hwnd, (void*)&rc[4]);
+    if (rc[6] != *(int*)(*(int*)((char*)this + 0x24) + 0x8e4)
+        || rc[7] != *(int*)(*(int*)((char*)this + 0x24) + 0x8e8))
+    {
+        int newh = *(int*)(*(int*)((char*)this + 0x24) + 0x8e8)
+                   - rc[1] - rc[7] + rc[3];
+        int neww = *(int*)(*(int*)((char*)this + 0x24) + 0x8e4)
+                   - rc[1] - rc[6] + rc[3];
+        (*(int (__stdcall**)(int, int, int, int, int, int, int))
+                ADDR(0x61c2c8))(hwnd, 0, rc[1], rc[1], neww, newh, 0);
+    }
+    if (*(int*)(*(int*)((char*)this + 0x24) + 0x894) != 0)
+    {
+        (*(int (__stdcall**)(int, int))ADDR(0x61c2fc))(
+            hwnd, *(int*)(*(int*)((char*)this + 0x24) + 0x618));
+        (*(int (__stdcall**)(int))ADDR(0x61c2cc))(hwnd);
+        (*(int (__stdcall**)(int))ADDR(0x61c300))(hwnd);
+    }
+    *(int*)&g_664528 = *(int*)((char*)this + 0x28);
+    ((C_cluster_49FE60*)ADDR(0x66ea48))->M_49FE60();
+    return 1;
+#endif
 }
 
 // 0x41D7F0 — device/screen setup after window creation. WIP success contract;
