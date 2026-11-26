@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 639 matched, 1797 left to match (7 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 640 matched, 1796 left to match (7 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1797)
+## Left to match (1796)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -31,7 +31,6 @@
 | 59 | `sub_4F6850` | 36496 |  | 4_click_random_map |  |
 | 62 | `sub_4B8CC0` | 2456927 |  | 1_boot_to_menu |  |
 | 66 | `sub_4208F0` | 12012 |  | 1_boot_to_menu |  |
-| 67 | `sub_41F470` | 12012 |  | 1_boot_to_menu |  |
 | 68 | `sub_45E930` | 12012 |  | 1_boot_to_menu |  |
 | 69 | `sub_45FC30` | 804452 |  | 1_boot_to_menu |  |
 | 76 | `sub_4A2F90` | 58 |  | 1_boot_to_menu | panel_ez::draw_background2 |
@@ -1804,7 +1803,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (639)
+## Matched (640)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -1839,6 +1838,7 @@
 | 63 | `sub_4B5AB0` | 2456927 | MATCH | 1_boot_to_menu | C_pnl_lst::M_4B5AB0 |
 | 64 | `sub_42D210` | 1216168 | MATCH | 1_boot_to_menu | S42D210::Check_42D210 |
 | 65 | `sub_4B0AE0` | 453892 | MATCH | 1_boot_to_menu | C_pnl_btn::M_4B0AE0 |
+| 67 | `sub_41F470` | 12012 | MATCH | 1_boot_to_menu | C_cluster_41F470::M_41F470 |
 | 70 | `sub_5204C0` | 12012 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5204C0 |
 | 71 | `sub_520500` | 12012 | MATCH | 1_boot_to_menu | S52SetImmBulk::Set_520500 |
 | 72 | `sub_4B9BA0` | 13 | MATCH | 1_boot_to_menu | S4B9BA0::M_4B9BA0 |

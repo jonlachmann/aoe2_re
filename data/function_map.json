@@ -12647,12 +12647,12 @@
   "name": "sub_41F470",
   "names": [],
   "class": "C_cluster_41F470",
-  "class_evidence": "this-edge component with no rooted object identity",
+  "class_evidence": "this-edge member; +0x28 window ptr, +0x2C/+0x30 state flags, +0x68 S45EA60 object",
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_cluster_41F470.cpp"
  },
  {
   "address": "0x41F540",

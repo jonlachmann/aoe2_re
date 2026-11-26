@@ -648,6 +648,18 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   Evidence after this wave: full gate `[1811/1811] MATCH_FUNCs OK, 32 WIP`;
   phase docs now 450/815 matched (246 left, 25 WIP, 119 CRT).
 
+- stage 34 — `Source/app/C_cluster_41F470.cpp` now carries a byte-exact
+  `MATCH_FUNC(0x41F470)` (206 bytes): the window/session state handler checks
+  +0x2C (running the matched 0x41F540 handoff + 0x61C298 release), then
+  0x61C2A0 on +0x28, then +0x30 (optional 0x61C29C + 0x45EF10 on a 16-byte
+  local, with a tail-merged 0x61C298 release), and finally switches on
+  (0x45E930 & 0xff): case 1 returns 0, case 2 runs the matched 0x45EA60 clear +
+  0x422420 mark and returns 1, case 3 releases +0x28 and 0x61C2EC, default
+  returns 1. Class feedback: C_cluster_41F470 gains +0x2C/+0x30 flags and a
+  +0x68 S45EA60 object; the 16-byte local is a window-rect-like struct. Evidence
+  after this wave: full gate `[1812/1812] MATCH_FUNCs OK, 32 WIP`; phase docs
+  now 451/815 matched (245 left, 25 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
