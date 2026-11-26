@@ -660,6 +660,23 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   after this wave: full gate `[1812/1812] MATCH_FUNCs OK, 32 WIP`; phase docs
   now 451/815 matched (245 left, 25 WIP, 119 CRT).
 
+- stage 35 — `Source/ui/C_TRIBE_Screen_Options.cpp` now carries a byte-exact
+  `MATCH_FUNC(0x4A0460)` (204 bytes): the seven-argument screen-options init
+  stores the +0x40 T4A2280Obj pointer and the +0x20 TField20Obj pointer first,
+  conditionally seeds the +0xA0..+0xBC block when +0x34 is clear, dispatches
+  slot +0x50 with the +0x20 subobject's (field_18, field_1C) pair (or zeros),
+  notifies slot +0x04 with a7, clears +0x68, lazily allocates the +0x54 0xC-byte
+  node via 0x5F8FF0(1,0xC), sets node->this/0/0, and runs the +0x40 object's
+  M_4A0530(node,0,0). Returns 1, or 0 on allocation failure. Class feedback:
+  C_TRIBE_Screen_Options gains +0x54 (node) and +0x68; slot_04 takes one
+  argument; T4A2280Obj owns a non-virtual M_4A0530. Scheduling lesson: assigning
+  +0x20 before the branch keeps a1 in ecx and forces a4 into eax; the block
+  must write +0xA0 before +0xA4 to reproduce the a4-first store order, and the
+  final M_4A0530 call must reload field_54 rather than the local n so eax is
+  freed for the +8 store. Evidence after this wave: full gate `[1813/1813]
+  MATCH_FUNCs OK, 32 WIP`; phase docs now 452/815 matched (244 left, 25 WIP, 119
+  CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

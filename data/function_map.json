@@ -43046,7 +43046,7 @@
   "name": "sub_4A0460",
   "names": [],
   "class": "C_TRIBE_Screen_Options",
-  "class_evidence": "vtable slot",
+  "class_evidence": "this-edge screen-options init: +0x40 T4A2280Obj, +0x20 TField20Obj, +0x54 0xC node, +0x68 cleared",
   "slot_classes": [
    "C_TRIBE_Screen_Options",
    "C_TribePopUpHelp",
@@ -43120,8 +43120,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
  },
  {
   "address": "0x4A0530",

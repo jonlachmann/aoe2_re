@@ -161,44 +161,42 @@ void C_TRIBE_Screen_Options::M_4A0AB0(int* a1)
     *q = old;
 }
 
-// 0x4A4830 — stage the four a8 copies in a local block and dispatch them with
-// a1..a7, a9..a11 and the trailing -1/0 to the +0x11C slot.
-WIP_FUNC(0x4A4830)
+// 0x4A4830 — fill a four-int local block with a8 (a loop: explicit stores
+// sink below the pushes) and dispatch it with a1..a7, a9..a11 and the trailing
+// -1/0 to the +0x11C slot.
+MATCH_FUNC(0x4A4830)
 void C_TRIBE_Screen_Options::M_4A4830(int a1, int a2, int a3, int a4, int a5,
                                       int a6, int a7, int a8, int a9, int a10,
                                       int a11)
 {
-    struct Quad { int a, b, c, d; };
-    Quad block;
-    block.a = a8;
-    block.b = a8;
-    block.c = a8;
-    block.d = a8;
-    slot_71(a1, a2, a3, a4, a5, a6, a7, (int*)&block, a9, a10, a11, -1, 0);
+    int block[4];
+    for (int i = 0; i < 4; i++)
+        block[i] = a8;
+    slot_71(a1, a2, a3, a4, a5, a6, a7, block, a9, a10, a11, -1, 0);
 }
 
 // 0x4A07E0 — thirteen-argument display configuration: store the +0x34,
-// +0x44..+0x50 and +0xA0..+0xBC fields in the original emission order, then
+// +0xA0..+0xBC and +0x44..+0x50 fields in argument order, then
 // dispatch slot +0x50 with the +0x20 subobject's +0x18/+0x1C pair (or two
 // zeros), and notify slot +0x20 with 2 when +0x6C is set.
-WIP_FUNC(0x4A07E0)
+MATCH_FUNC(0x4A07E0)
 void C_TRIBE_Screen_Options::M_4A07E0(int a1, int a2, int a3, int a4, int a5,
                                      int a6, int a7, int a8, int a9, int a10,
                                      int a11, int a12, int a13)
 {
     field_34 = a1;
-    field_A8 = a4;
-    field_A4 = a3;
-    field_B4 = a7;
     field_A0 = a2;
-    field_B0 = a6;
-    field_44 = a10;
+    field_A4 = a3;
+    field_A8 = a4;
     field_AC = a5;
-    field_BC = a9;
-    field_50 = a13;
+    field_B0 = a6;
+    field_B4 = a7;
     field_B8 = a8;
-    field_4c = a12;
+    field_BC = a9;
+    field_44 = a10;
     field_48 = a11;
+    field_4c = a12;
+    field_50 = a13;
     if (field_20 != 0)
         slot_20(field_20->field_18, field_20->field_1c);
     else
@@ -212,15 +210,15 @@ void C_TRIBE_Screen_Options::M_4A07E0(int a1, int a2, int a3, int a4, int a5,
 // object's +0x24..+0x30 edges when its +0xF5 byte is set, clamp to the +0x20
 // subobject's +0x18/+0x1C bounds and to zero, release the +0x8C handle, then
 // allocate it through 0x61C088 while setting +0x70, and notify slot +0x20.
-WIP_FUNC(0x4A0630)
+MATCH_FUNC(0x4A0630)
 void C_TRIBE_Screen_Options::M_4A0630(int a1, int a2, int a3, int a4)
 {
-    int right = a1 + a3 - 1;
-    int bottom = a2 + a4 - 1;
-    field_14 = a3;
-    field_18 = a4;
     field_c = a1;
     field_10 = a2;
+    field_14 = a3;
+    field_18 = a4;
+    int right = a1 + a3 - 1;
+    int bottom = a2 + a4 - 1;
     field_90 = a1;
     field_94 = a2;
     field_98 = right;
@@ -320,3 +318,54 @@ void C_TRIBE_Screen_Options::M_4A3D40(int a1, int a2, int a3, int a4, int a5,
     Hook_4A2140(a4, buf2, 0x78);
     slot_66(a1, a2, (int)buf1, (int)buf2, a5, a6, a7, a8, a9, a10, a11);
 }
+
+// 0x4A0460 — seven-argument init: store the +0x40 subobject pointer, conditionally
+// seed the +0xA0..+0xBC block only when +0x34 is clear, set +0x20 and dispatch
+// slot +0x50 with the +0x20 subobject's (field_18, field_1C) pair (or zeros),
+// notify slot +0x04 with a7, clear +0x68, and lazily allocate the +0x54
+// 0xC-byte node through 0x5F8FF0(1,0xC); on success set node->this/0/0 and run
+// the +0x40 object's 0x4A0530(node,0,0) when +0x40 is set. Returns 1, or 0 when
+// the node allocation fails.
+extern void* __cdecl sub_5F8FF0(unsigned int a1, int a2);
+MATCH_FUNC(0x4A0460)
+int C_TRIBE_Screen_Options::M_4A0460(int a1, int a2, int a3, int a4, int a5,
+                                     int a6, int a7)
+{
+    *(int*)((char*)this + 0x40) = a2;
+    *(int*)((char*)this + 0x20) = a1;
+    if (*(int*)((char*)this + 0x34) == 0)
+    {
+        *(int*)((char*)this + 0xa0) = a3;
+        *(int*)((char*)this + 0xa4) = a4;
+        *(int*)((char*)this + 0xb0) = a5;
+        *(int*)((char*)this + 0xb4) = a5;
+        *(int*)((char*)this + 0xa8) = 0;
+        *(int*)((char*)this + 0xac) = 0;
+        *(int*)((char*)this + 0xb8) = a6;
+        *(int*)((char*)this + 0xbc) = a6;
+    }
+    TField20Obj* p20 = (TField20Obj*)a1;
+    if (p20 != 0)
+        slot_20(p20->field_18, p20->field_1c);
+    else
+        slot_20(0, 0);
+    slot_04(a7);
+    int* existing = (int*)field_54;
+    field_68 = 0;
+    if (existing == 0)
+    {
+        int* n = (int*)sub_5F8FF0(1, 0xc);
+        field_54 = n;
+        if (n == 0)
+            return 0;
+        *n = (int)this;
+        *(int*)((char*)field_54 + 4) = 0;
+        *(int*)((char*)field_54 + 8) = 0;
+        if (*(int*)((char*)this + 0x40) != 0)
+            ((T4A2280Obj*)*(int*)((char*)this + 0x40))->M_4A0530(
+                (int)field_54, 0, 0);
+    }
+    return 1;
+}
+
+

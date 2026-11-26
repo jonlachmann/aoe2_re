@@ -82,6 +82,8 @@ public:
     virtual void Vt_57();
     virtual void Vt_58();
     virtual void Vt_59();
+
+    void M_4A0530(int a1, int a2, int a3);
 };
 
 // Chain node at [this+0x58]: it holds the object pointer at +0x00 and the next
@@ -110,7 +112,7 @@ public:
     virtual void slot_01();
     virtual void slot_02();
     virtual void slot_03();
-    virtual void slot_04();
+    virtual void slot_04(int a1);
     virtual void slot_05();
     virtual void slot_06(int z0, int a1, int a2, int z1, int z2, int a3, int a3b, int a4, int a4b, int z3, int z4, int z5, int z6);
     virtual void slot_07();
@@ -201,12 +203,12 @@ public:
     int field_48;                 // +0x48
     int field_4c;                 // +0x4C
     int field_50;                 // +0x50
-    char pad_54[0x58 - 0x54];
+    void* field_54;                // +0x54 node pointer
     T4A2280Node* field_58;        // +0x58, chain head
     char pad_5C[0x60 - 0x5C];
     int field_60;                 // +0x60
     int field_64;                 // +0x64
-    char pad_68[0x6C - 0x68];
+    int field_68;                  // +0x68
     int field_6C;                 // +0x6C
     int field_70;                 // +0x70
     int field_74;                 // +0x74
@@ -248,6 +250,7 @@ public:
                   int a8, int a9, int a10, int a11);
     void M_4A3D40(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                   int a8, int a9, int a10, int a11);
+    int M_4A0460(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
     void M_4A0780(unsigned char v);
     void M_4A07E0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                   int a8, int a9, int a10, int a11, int a12, int a13);
