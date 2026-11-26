@@ -177,6 +177,14 @@ public:
     char pad_150[0x184 - 0x150];
     int field_184;                // +0x184
     int field_188;                // +0x188
+    unsigned char field_18c;      // +0x18C
+    unsigned char field_18d;      // +0x18D
+    unsigned char field_18e;      // +0x18E
+    unsigned char field_18f;      // +0x18F
+    unsigned char field_190;      // +0x190
+    unsigned char field_191;      // +0x191
+    char pad_192[0x198 - 0x192];  // +0x192..+0x198
+    int field_198;                // +0x198
 
     void Hook_4A07A0(int a1);     // unresolved shared slot body at 0x4A07A0
     void Other_4A2140(int a1, char* a2, int a3);
@@ -187,6 +195,7 @@ public:
     void M_4BD4E0(int index, void* a2, void* a3, int* a4, int* a5, unsigned char flag);
     void SetInt_4B4600(int v);
     void Hook_4BBD30(int a1);
+    void M_4BBC20(int a1, char a2, char a3, char a4, char a5, char a6, char a7);
     void M_4BD5F0();
     void M_4BAF60(int a, int b, int c, int d);
     int M_4BCE20(int a, int b, int c, int d);

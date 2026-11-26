@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1769 |
+| matched | 1770 |
 | wip | 25 |
 | verified | 17 |
-| lifted | 5939 |
+| lifted | 5938 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -117,7 +117,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x622744` | `C_vt622744` | 61 | 2 | — | 37 | 26 |
 | `0x622838` | `C_pnl_btn` | 63 | 0 | pnl_btn | 32 | 31 |
 | `0x622934` | `C_pnl_edit` | 61 | 5 | pnl_edit | 38 | 28 |
-| `0x622A28` | `C_pnl_inp` | 74 | 0 | pnl_inp | 37 | 37 |
+| `0x622A28` | `C_pnl_inp` | 74 | 0 | pnl_inp | 38 | 36 |
 | `0x622B50` | `C_pnl_lst` | 73 | 14 | pnl_lst | 39 | 48 |
 | `0x622C74` | `C_pnl_msg` | 62 | 1 | pnl_msg | 38 | 25 |
 | `0x622D6C` | `C_pnl_pic` | 61 | 0 | pnl_pic | 37 | 24 |
@@ -125,7 +125,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x622F54` | `C_vt622F54` | 87 | 0 | panel_ez | 43 | 44 |
 | `0x6230B0` | `C_vt6230B0` | 61 | 1 | — | 36 | 26 |
 | `0x6231A4` | `C_vt6231A4` | 61 | 1 | — | 35 | 27 |
-| `0x623318` | `C_pnl_txt` | 73 | 0 | pnl_txt | 40 | 33 |
+| `0x623318` | `C_pnl_txt` | 73 | 0 | pnl_txt | 41 | 32 |
 | `0x6234C8` | `C_vt6234C8` | 93 | 1 | panel_ez | 46 | 48 |
 | `0x62363C` | `C_vt62363C` | 2 | 1 | — | 1 | 2 |
 | `0x6236D0` | `C_vt6236D0` | 2 | 1 | — | 1 | 2 |
@@ -146,7 +146,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x6242DC` | `C_vt6242DC` | 87 | 1 | panel_ez | 42 | 46 |
 | `0x6244B8` | `C_vt6244B8` | 87 | 0 | panel_ez | 42 | 45 |
 | `0x624614` | `C_vt624614` | 87 | 2 | panel_ez | 41 | 48 |
-| `0x624770` | `C_scr_cred` | 73 | 1 | scr_cred | 40 | 34 |
+| `0x624770` | `C_scr_cred` | 73 | 1 | scr_cred | 41 | 33 |
 | `0x624914` | `C_scr_game` | 87 | 1 | panel_ez, scr_game | 39 | 49 |
 | `0x624AF4` | `C_vt624AF4` | 87 | 0 | panel_ez | 42 | 45 |
 | `0x624CD0` | `C_vt624CD0` | 87 | 0 | panel_ez | 42 | 45 |

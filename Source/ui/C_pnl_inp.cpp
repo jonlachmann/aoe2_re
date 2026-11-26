@@ -138,3 +138,39 @@ void C_pnl_inp::M_4BD5F0()
     self->Hook_4BBD30(1);
     slot_008(1);
 }
+
+// 0x4BBC20 — store the first argument at +0x188, the six byte arguments at
+// +0x18C/+0x18D/+0x18E/+0x18F/+0x190/+0x191, then select +0x198 from the
+// (a1-1) switch: 1 for indices 0/1/4, 2 for 2/5, 3 for 3/6 and 0 otherwise;
+// finish by pushing 1 through 0x4BBD30.
+MATCH_FUNC(0x4BBC20)
+void C_pnl_inp::M_4BBC20(int a1, char a2, char a3, char a4, char a5, char a6, char a7)
+{
+    field_188 = a1;
+    field_18c = a2;
+    field_18d = a3;
+    field_18e = a4;
+    field_18f = a5;
+    field_190 = a6;
+    field_191 = a7;
+    switch (a1 - 1)
+    {
+    case 0:
+    case 1:
+    case 4:
+        field_198 = 1;
+        break;
+    case 2:
+    case 5:
+        field_198 = 2;
+        break;
+    case 3:
+    case 6:
+        field_198 = 3;
+        break;
+    default:
+        field_198 = 0;
+        break;
+    }
+    Hook_4BBD30(1);
+}
