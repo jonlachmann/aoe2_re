@@ -1013,7 +1013,7 @@ void sub_4ECF00();  // size 128, calls 0, matched, module ui
 void sub_4ECF80();  // size 125, calls 0, matched, module ui
 void sub_4ED000();  // size 370, calls 4, lifted, module ui
 void sub_4ED180();  // size 256, calls 3, lifted, module ui
-void sub_4ED280();  // size 139, calls 2, lifted, module ui
+void sub_4ED280();  // size 139, calls 2, matched, module ui
 void sub_4ED310();  // size 73, calls 0, lifted, module ui
 void sub_4ED360();  // size 719, calls 1, lifted, module ui
 void sub_4ED630();  // size 388, calls 1, lifted, module ui
