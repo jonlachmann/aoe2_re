@@ -12576,13 +12576,13 @@
   "calls": 3,
   "name": "sub_41EEE0",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "S_41EFE0",
+  "class_evidence": "this-edge dialog font options parser: shares 10-slot vtable with 41EFE0; reads 3 slot-+0x24 text fields (0x100/0xA/0xA), picks 0x2BC/0x190 and italic from strstr results, then calls M_41EFE0",
   "slot_classes": [],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/app/free_app.cpp"
  },
  {
   "address": "0x41EFE0",

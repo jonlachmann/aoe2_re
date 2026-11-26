@@ -3103,7 +3103,7 @@ public:
 };
 extern int __cdecl sub_5FD067(char* a1);
 extern int (__stdcall *g_61c1a4)(int a1, int a2, int a3);
-extern void (__stdcall *g_61c03c)(T41EFE0Font* a1);
+extern int (__stdcall *g_61c03c)(T41EFE0Font* a1);
 class S_41EFE0 {
 public:
     virtual void Vt_00();
@@ -3116,12 +3116,13 @@ public:
     virtual void Vt_07();
     virtual void Vt_08();
     virtual void Vt_09(int a1, char* a2, int a3);   // slot +0x24
-    void M_41EFE0(int a1, int a2, int a3, int a4, int a5, int a6);
+    int M_41EFE0(int a1, char* a2, int a3, int a4, int a5, int a6);
+    int M_41EEE0(int a1, int a2, int a3);
 };
 
 #pragma intrinsic(memset, strcpy)
 WIP_FUNC(0x41EFE0)
-void S_41EFE0::M_41EFE0(int a1, int a2, int a3, int a4, int a5, int a6)
+int S_41EFE0::M_41EFE0(int a1, char* a2, int a3, int a4, int a5, int a6)
 {
     T41EFE0Font font;
     char buf[0x100];
@@ -3142,8 +3143,47 @@ void S_41EFE0::M_41EFE0(int a1, int a2, int a3, int a4, int a5, int a6)
     font.lfCharSet = charset;
     font.lfItalic = (unsigned char)a6;
     strcpy(font.lfFaceName, (char*)a2);
-    g_61c03c(&font);
+    return g_61c03c(&font);
 }
+
+// 0x41EEE0 — dialog font options parser: read the first text field (0x100) via
+// vtable slot +0x24; when empty return 0. Read a 0xA byte field at a2+1 and
+// convert it through the matched 0x5FD067, read the 0xA field at a2+2, choose
+// the size 0x2BC when the text contains "B"/"b" else 0x190, set italic when it
+// contains "I"/"i", then run the 0x41EFE0 font setup with
+// (a1, firstfield, converted, size, a3, italic).
+extern char* __cdecl sub_5FCC80(char* a1, char* a2);
+WIP_FUNC(0x41EEE0)
+int S_41EFE0::M_41EEE0(int a1, int a2, int a3)
+{
+    char field3[0xc];
+    char field2[0xc];
+    char field1[0x100];
+    Vt_09(a2, field1, 0x100);
+    if (field1[0] == 0)
+        return 0;
+    Vt_09(a2 + 1, field2, 0xa);
+    int converted = (int)sub_5FD067(field2);
+    Vt_09(a2 + 2, field3, 0xa);
+    int size;
+    if (sub_5FCC80(field3, (char*)ADDR(0x64d8e4)) != 0)
+        size = 0x2bc;
+    else
+    {
+        int small = (int)sub_5FCC80(field3, (char*)ADDR(0x64d8e0));
+        size = 0x190;
+        if (small != 0)
+            size = 0x2bc;
+    }
+    int italic = (sub_5FCC80(field3, (char*)ADDR(0x64d8dc)) != 0 ||
+                  sub_5FCC80(field3, (char*)ADDR(0x64d8d8)) != 0) ? 1 : 0;
+    return M_41EFE0(a1, field1, converted, size, a3, italic);
+}
+
+
+
+
+
 
 
 

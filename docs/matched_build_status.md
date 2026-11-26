@@ -746,6 +746,23 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1817/1817] MATCH_FUNCs OK, 33 WIP`; phase docs now 456/815 matched (240 left,
   26 WIP, 119 CRT).
 
+- stage 40 — `Source/app/free_app.cpp` gains a semantically complete
+  `WIP_FUNC(0x41EEE0)` (254 bytes original): the dialog font options parser
+  reads the first text field (0x100 bytes) through the shared 10-slot vtable's
+  +0x24 slot and returns 0 when empty; reads a 0xA field at a2+1 and converts it
+  with matched 0x5FD067; reads a 0xA field at a2+2; chooses size 0x2BC when the
+  text contains "B"/"b" else 0x190, and italic 1 when it contains "I"/"i"
+  (through the lifted 0x5FCC80 strstr helper); then calls the 0x41EFE0 font
+  setup with (a1, firstfield, converted, size, a3, italic) and returns its
+  result. Class feedback: 0x41EEE0 and 0x41EFE0 are members of the same 10-slot
+  dialog class S_41EFE0; M_41EFE0's second argument is char* (face-name source)
+  and its result is the g_61c03c font handle. WIP because VC6 schedules the
+  size-0x190 default store before the second strstr call instead of after it
+  (the only remaining divergence; explicit if/else and ternary shapes expand to
+  25-line select/branch deltas). Evidence after this wave: full gate
+  `[1817/1817] MATCH_FUNCs OK, 34 WIP`; phase docs now 456/815 matched (240 left,
+  27 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
