@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 273 matched, 281 left to match (10 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 274 matched, 280 left to match (10 of them WIP), 51 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (281)
+## Left to match (280)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -151,7 +151,6 @@
 | 250 | `sub_4F4920` | 1 |  | 4_click_random_map |  |
 | 252 | `sub_4A2370` | 1 |  | 1_boot_to_menu |  |
 | 253 | `sub_4A00E0` | 1 |  | 1_boot_to_menu |  |
-| 256 | `sub_49F650` | 1 |  | 1_boot_to_menu |  |
 | 257 | `sub_49FA50` | 4 |  | 1_boot_to_menu |  |
 | 258 | `sub_4A2AC0` | 1 |  | 1_boot_to_menu |  |
 | 259 | `sub_4F5AB0` | 1 |  | 4_click_random_map |  |
@@ -288,7 +287,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (273)
+## Matched (274)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -377,6 +376,7 @@
 | 247 | `sub_49FFC0` | 1 | MATCH | 4_click_random_map | S49SetImmBulk::Set_49FFC0 |
 | 251 | `sub_4B9B30` | 1 | MATCH | 1_boot_to_menu | Sc4B9B30::Init_4B9B30 |
 | 254 | `sub_4A2070` | 1 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A2070 |
+| 256 | `sub_49F650` | 1 | MATCH | 1_boot_to_menu | C_cluster_49F630::M_49F650 |
 | 260 | `sub_421770` | 5 | MATCH | 4_click_random_map | S421Accessors::IsZero928_421770 |
 | 261 | `sub_421B60` | 1 | MATCH | 1_boot_to_menu | S421Accessors::Set9D0_421B60 |
 | 262 | `sub_5FCA3B` | 1 | MATCH | 1_boot_to_menu | Set_5FCA3B |
