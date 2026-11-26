@@ -200,16 +200,38 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   bytes vs 2035; WIP stops after the language init). Phase docs: 408 matched,
   288 left (38 WIP), 119 CRT/library.
 
+- stage 11 — full WinMain body + native dispatch:
+  `Source/ui/free_boot.cpp` now carries a complete `WIP_FUNC(0x47AE20)` body
+  (2096 vs 2035 bytes; frame 0x1B88). It reproduces the whole init sequence:
+  timer period 1, timeGetTime-seeded rand, `rand()%0x1000` buffer at cfg+4,
+  language init 0x47B620, the title/version (`sprintf("%s")`), 26 further
+  inline strcpy config strings (data/sound/savegame/scenario/campaign/ai/avi/
+  taunt/random trees and command line), the config numeric fields (+0x40c..
+  +0x934), the 0x1C94 allocation, the 0x5B0EC0 object and its vtable slots
+  (+0x00/+0x04/+0x18/+0x24/+0x28), MessageBoxA resource dialog, 0x473BF0,
+  free and timeEndPeriod. `Source/host/matched_imports.cpp` adds trampolines
+  for MessageBoxA (0x61C37C) and timeEndPeriod (0x61C3C4) alongside the six
+  earlier slots, and `matched_winmain()` calls the native body directly (not
+  `hle_call_guest`, which only dispatches recomp-model VAs) with a valid empty
+  command-line pointer (the earlier 0 pointer crashed the command-line strcpy).
+  Evidence: the boot run now passes language init (`0x47B620 returned 1`) and
+  executes the full native WinMain body: `WinMain body 0x47AE20 returned 0`,
+  exit 0, no fault. The remaining unmatched internals (0x5B0EC0, 0x5FCE14,
+  0x5F8EE0 malloc) are still host stubs, so the body returns before menu.
+  Gate `[1766/1766] MATCH_FUNCs OK, 44 WIP`; matched TUs 167 ok/0 failed; 528
+  stubs; all-object link 170; boot link 172 objects.
+
 Gaps now:
-1. WinMain 0x47AE20 is still unmatched (2035 bytes): a 0x1B88 stack frame, 27
-   inline strcpy/strlen+memcpy expansions, a stack config struct, calls to
-   0x47B620 and 0x5B0EC0, and vtable dispatch. Its dispatch entry is a stub, so
-   the matched-only run stops there.
-2. Import ABI (partially done): stage 10 installs trampolines for the six boot
-   slots and marshals image pointers to guest VAs. Limits: only EBUEula has a
-   native export wrapper; slots beyond those six (LoadStringA, MessageBoxA,
-   GlobalAlloc, ...) are not installed yet, and host heap/stack pointers passed
-   to shims are not translated into guest memory.
+1. WinMain 0x47AE20 is WIP, not byte-exact (2096 vs 2035; 188 masked diff lines,
+   mostly cfg+4 base shift and register scheduling). Its body now runs natively
+   end to end, but the internals it calls are stubs, so the run still stops
+   before the menu.
+2. Import ABI (partially done): stages 10-11 install trampolines for
+   LoadLibraryA/GetProcAddress/FreeLibrary, timeBeginPeriod/timeGetTime/
+   timeEndPeriod, GlobalFree and MessageBoxA, marshalling image pointers to
+   guest VAs. Limits: only EBUEula has a native export wrapper; LoadStringA and
+   GlobalAlloc are not installed yet, and host heap/stack pointers passed to
+   shims are not translated into guest memory.
 3. Guest ABI: matched-to-matched calls are consistent because all bodies are
    compiled by the host compiler; the gap is only at boundaries to unmatched
    lifted code/external imports, which need guest-ABI wrappers.

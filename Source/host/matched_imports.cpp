@@ -31,6 +31,8 @@ extern char g_61c1a0[0x1000];   /* FreeLibrary */
 extern char g_61c3d8[0x1000];   /* timeBeginPeriod */
 extern char g_61c3c8[0x1000];   /* timeGetTime */
 extern char g_61c168[0x1000];   /* GlobalFree */
+extern char g_61c37c[0x1000];   /* MessageBoxA */
+extern char g_61c3c4[0x1000];   /* timeEndPeriod */
 
 typedef int (__stdcall *TLoadLibraryA)(char *name);
 typedef int (__cdecl *TExport)(int, char *, char *, int);
@@ -198,12 +200,22 @@ extern "C" void InstallMatchedImports(void)
     *(void**)g_61c3d8 = (void*)time_begin_period;
     *(void**)g_61c3c8 = (void*)time_get_time;
     *(void**)g_61c168 = (void*)global_free;
+    *(void**)g_61c37c = (void*)message_box_a;
+    *(void**)g_61c3c4 = (void*)time_end_period;
 }
 
 /* Diagnostic path: run the WIP language init 0x47B620 natively now that the
  * slots it calls are dispatchable. Used by the boot harness to prove the
  * import layer before WinMain has a body. */
 extern int __cdecl sub_47B620(char *a1);
+
+extern int __stdcall sub_47AE20(int hInstance, int hPrevInstance, char *lpCmdLine, int nCmdShow);
+extern "C" int matched_winmain(void)
+{
+    int r = sub_47AE20(0x400000, 0, (char *)(g_matched_base + 0x662be0), 1);
+    fprintf(stderr, "[matched-imports] WinMain body 0x47AE20 returned %d\n", r);
+    return r;
+}
 
 extern "C" int matched_langtest(void)
 {

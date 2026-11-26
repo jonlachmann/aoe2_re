@@ -10,7 +10,7 @@
 | 83 | `sub_4A8240` | 1 |  | 1_boot_to_menu |  |
 | 89 | `sub_473410` | 3 | WIP | 1_boot_to_menu | C_vt620BF8::Init_473410 |
 | 103 | `sub_5BD400` | 1 |  | 1_boot_to_menu |  |
-| 107 | `sub_47AE20` | 1 | WIP | 1_boot_to_menu | sub_47AE20 |
+| 107 | `sub_47AE20` | 1 | WIP | 1_boot_to_menu |  |
 | 110 | `sub_47B620` | 1 | WIP | 1_boot_to_menu | sub_47B620 |
 | 111 | `sub_473AE0` | 289 |  | 1_boot_to_menu |  |
 | 122 | `sub_5B0EC0` | 1 |  | 1_boot_to_menu |  |

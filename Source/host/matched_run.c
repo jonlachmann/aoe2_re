@@ -27,6 +27,7 @@ extern const uint32_t recomp_dispatch_count;
 /* Import-dispatch layer + WIP-body probe (Source/host/matched_imports.cpp). */
 extern void InstallMatchedImports(void);
 extern int matched_langtest(void);
+extern int matched_winmain(void);
 
 /* WinMain's entry VA in the reference image (PE entry 0x600281 calls it). */
 #define MATCHED_BOOT_WINMAIN_VA 0x0047AE20u
@@ -75,18 +76,10 @@ uint32_t matched_recomp_host_run(void)
      * WinMain itself has a matched body. */
     matched_langtest();
 
-    uint32_t args[4];
-    args[0] = 0x00400000u;
-    args[1] = 0u;
-    args[2] = 0u;
-    args[3] = 1u;
-
-    fprintf(stderr, "[matched boot] calling WinMain 0x%08X with guest stack"
-                    " (hInstance=0x400000, hPrev=0, cmdline=0, nShow=1)\n",
+    fprintf(stderr, "[matched boot] calling the native WinMain body"
+                    " 0x%08X (hInstance=0x400000, hPrev=0, cmdline=0, nShow=1)\n",
             MATCHED_BOOT_WINMAIN_VA);
-    uint32_t r = hle_call_guest(MATCHED_BOOT_WINMAIN_VA, 4, args);
-    fprintf(stderr, "[matched boot] WinMain returned 0x%08X; first checkpoint"
-                    " stops at unmatched VA 0x%08X\n",
-            r, MATCHED_BOOT_WINMAIN_VA);
+    uint32_t r = (uint32_t)matched_winmain();
+    fprintf(stderr, "[matched boot] native WinMain body returned 0x%08X\n", r);
     return r;
 }
