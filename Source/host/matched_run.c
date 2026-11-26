@@ -24,6 +24,10 @@
 extern const recomp_dispatch_entry_t recomp_dispatch_table[];
 extern const uint32_t recomp_dispatch_count;
 
+/* Import-dispatch layer + WIP-body probe (Source/host/matched_imports.cpp). */
+extern void InstallMatchedImports(void);
+extern int matched_langtest(void);
+
 /* WinMain's entry VA in the reference image (PE entry 0x600281 calls it). */
 #define MATCHED_BOOT_WINMAIN_VA 0x0047AE20u
 
@@ -62,6 +66,14 @@ uint32_t matched_recomp_host_run(void)
                         " %ld bytes); g_* globals synced from it\n",
                 (long)g_matched_image_size);
     }
+
+    /* Install native trampolines over the raw IAT words in the generated g_*
+     * slots so matched/WIP bodies can call imports through the win32hle shims. */
+    InstallMatchedImports();
+
+    /* Prove the import layer on the WIP language-init body 0x47B620 before
+     * WinMain itself has a matched body. */
+    matched_langtest();
 
     uint32_t args[4];
     args[0] = 0x00400000u;

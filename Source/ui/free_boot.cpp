@@ -67,3 +67,49 @@ int __cdecl sub_47B620(char* a1)
     freefn(lang_module);
     return result;
 }
+
+// 0x47AE20 — WinMain. Reconstruction of the prologue: raise the timer period,
+// seed the CRT random generator from timeGetTime, allocate a rand()%0x1000
+// buffer, store it in the stack config block at +0x04, and run the language
+// init at 0x47B620 with the path at 0x64D58C. The remaining body copies the
+// config strings and dispatches further work; this WIP stops at that point.
+typedef void* (__cdecl *TMalloc)(int n);
+typedef int (__stdcall *TTimePeriod)(int p);
+typedef unsigned int (__stdcall *TTimeGet)(void);
+extern TTimePeriod g_61c3d8;
+extern TTimeGet g_61c3c8;
+
+extern int __cdecl sub_5FCA3B(unsigned int a1);
+extern int __cdecl sub_5FCA45();
+extern void* __cdecl sub_5F8F60(int a1);
+extern void __cdecl Free_5F90B0(void* p);
+
+WIP_FUNC(0x47AE20)
+int __stdcall sub_47AE20(int hInstance, int hPrevInstance, char* lpCmdLine, int nCmdShow)
+{
+    volatile char cfg[0x1b88];
+    int one = 1;
+
+    g_61c3d8(one);
+    unsigned int t = g_61c3c8();
+    sub_5FCA3B(t);
+    int r = sub_5FCA45();
+    int n = r % 0x1000;
+    char* buf = (char*)sub_5F8F60(n);
+    *(char* volatile*)(cfg + 4) = buf;
+
+    int ok = sub_47B620((char*)ADDR(0x64d58c));
+    if (ok == 0)
+    {
+        if (buf != 0)
+            Free_5F90B0(buf);
+        return 0;
+    }
+    cfg[0] = (char)ok;
+    cfg[0x42c] = (char)one;
+    if (cfg[0] != 0)
+        return 1;
+    if (cfg[0x42c] != 0)
+        return 2;
+    return 0;
+}

@@ -7390,11 +7390,11 @@
    "vtable": null,
    "anchor": "0x47AE20",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
+   "owned_methods": 2,
+   "unowned_methods": 0,
    "primary_file": "Source/ui/free_boot.cpp",
    "owner_files": {
-    "Source/ui/free_boot.cpp": 1
+    "Source/ui/free_boot.cpp": 2
    },
    "other_files": [],
    "staged_files": [],

@@ -65,6 +65,8 @@ extern char g_61c308[0x1000];
 extern char g_61c30c[0x1000];
 extern char g_61c320[0x1000];
 extern char g_61c324[0x1000];
+extern char g_61c3c8[0x1000];
+extern char g_61c3d8[0x1000];
 extern char g_61c584[0x1000];
 extern char g_61c598[0x1000];
 extern char g_61c5a8[0x1000];
@@ -312,6 +314,8 @@ extern "C" void SyncGuestGlobals()
     memcpy(g_61c30c, im + 0x21C30C, 0x1000);
     memcpy(g_61c320, im + 0x21C320, 0x1000);
     memcpy(g_61c324, im + 0x21C324, 0x1000);
+    memcpy(g_61c3c8, im + 0x21C3C8, 0x1000);
+    memcpy(g_61c3d8, im + 0x21C3D8, 0x1000);
     memcpy(g_61c584, im + 0x21C584, 0x1000);
     memcpy(g_61c598, im + 0x21C598, 0x1000);
     memcpy(g_61c5a8, im + 0x21C5A8, 0x1000);

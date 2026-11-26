@@ -180,20 +180,40 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   OK`; boot link 172 objects; boot run unchanged (WinMain checkpoint).
   Phase docs: 408 matched, 288 left (37 WIP), 119 CRT/library.
 
+- stage 10 — native import-dispatch layer:
+  `Source/host/matched_imports.cpp` installs native trampolines into the first
+  dword of the generated IAT-slot arrays (`g_61c110`, `g_61c0d8`, `g_61c1a0`,
+  `g_61c3d8`, `g_61c3c8`, `g_61c168`). A trampoline converts image pointers back
+  to guest VAs and calls the win32hle shim through `hle_call_guest`, so the shim
+  sees the guest ABI it expects; GetProcAddress additionally returns a native
+  wrapper for the resolved export (EBUEula during the boot path).
+  `Source/host/matched_run.c` now calls `InstallMatchedImports()` after syncing
+  the `g_*` arrays and then runs the WIP language init 0x47B620 natively as a
+  proof step (`matched_langtest`). Evidence: `LoadLibraryA("EBUEula.dll") ->
+  0x10500000`, `GetProcAddress("") -> EBUEula wrapper`,
+  `LoadLibraryA("language.dll") -> 0x10510000`, and
+  `language init 0x47B620 returned 1` — a WIP C++ body now runs real game init
+  through the HLE shims with no lifted code. Boot then continues to the WinMain
+  checkpoint as before. Gate `[1766/1766] MATCH_FUNCs OK, 44 WIP`; matched TUs
+  167 ok/0 failed; 526 stubs; all-object link 170; boot link 172 objects.
+  The WIP WinMain 0x47AE20 prologue is now in `Source/ui/free_boot.cpp` (176
+  bytes vs 2035; WIP stops after the language init). Phase docs: 408 matched,
+  288 left (38 WIP), 119 CRT/library.
+
 Gaps now:
 1. WinMain 0x47AE20 is still unmatched (2035 bytes): a 0x1B88 stack frame, 27
    inline strcpy/strlen+memcpy expansions, a stack config struct, calls to
    0x47B620 and 0x5B0EC0, and vtable dispatch. Its dispatch entry is a stub, so
    the matched-only run stops there.
-2. Import ABI: matched/WIP bodies call IAT slots as function pointers
-   (`g_61c110`, `g_61c0d8`, `g_61c1a0`). The generated globals are char arrays
-   synced from the unbound image, so the value at runtime is the IAT VA, not a
-   callable host function pointer; executing 0x47B620 natively needs an import
-   dispatch layer (a shim call through `hle_call_guest`/the register file).
+2. Import ABI (partially done): stage 10 installs trampolines for the six boot
+   slots and marshals image pointers to guest VAs. Limits: only EBUEula has a
+   native export wrapper; slots beyond those six (LoadStringA, MessageBoxA,
+   GlobalAlloc, ...) are not installed yet, and host heap/stack pointers passed
+   to shims are not translated into guest memory.
 3. Guest ABI: matched-to-matched calls are consistent because all bodies are
    compiled by the host compiler; the gap is only at boundaries to unmatched
    lifted code/external imports, which need guest-ABI wrappers.
-4. Coverage: phase docs show 408/815 phase-1 matched (288 left, 37 WIP, 119
+4. Coverage: phase docs show 408/815 phase-1 matched (288 left, 38 WIP, 119
    CRT/library), so even a wired build would boot lifted, not matched, code.
 5. (Done) Asm-based "matches" were rewritten as C++; the tree now has zero
    `__asm` in matched bodies and all 167 matched TUs compile natively.

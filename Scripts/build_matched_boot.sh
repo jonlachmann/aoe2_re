@@ -55,6 +55,8 @@ for f in aoe_shims.c recomp_trace_portable.c eh32_portable.c; do
 done
 "$CC_C" $CF -I"$W" -I"$W/../recomp32" -I"$R/Source/host" -I"$R/Source" \
   -c "$R/Source/host/matched_run.c" -o "$BB/matched_run.o"
+"$CC" $CF -I"$W" -I"$W/../recomp32" -I"$R/Source/host" \
+  -c "$R/Source/host/matched_imports.cpp" -o "$BB/matched_imports.o"
 
 # Matched owner objects + alias/image/sync/globals/stubs. Exclude the prototype
 # probes and va_ test object so only the real matched tree is linked.
@@ -71,8 +73,8 @@ echo "matched objects for boot: $(echo "$ALLOBJ" | wc -w | tr -d ' ')"
 "$CC" -Wl,-no_pie $CF -DMATCHED_NATIVE \
   -I"$R/Source" -I"$W" -I"$W/../recomp32" \
   $ALLOBJ "$BB"/aoe_host.o "$BB"/aoe_shims.o "$BB"/recomp_trace_portable.o \
-  "$BB"/eh32_portable.o "$BB"/matched_run.o \
-  $(ls "$BB"/*.o | grep -v -E 'aoe_host|aoe_shims|recomp_trace|eh32|matched_run') \
+  "$BB"/eh32_portable.o "$BB"/matched_run.o "$BB"/matched_imports.o \
+  $(ls "$BB"/*.o | grep -v -E 'aoe_host|aoe_shims|recomp_trace|eh32|matched_run|matched_imports') \
   -o "$BB/aoe_matched_boot" $SDLLIBS \
     -lSDL2 -lSDL2_ttf -framework Cocoa -lpthread -lm -lz 2>"$BB/link.err"
 echo "linked $BB/aoe_matched_boot ($(nm "$BB/aoe_matched_boot" | grep -c ' T ' ) text symbols)"
