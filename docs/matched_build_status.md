@@ -610,6 +610,19 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   MATCH_FUNCs OK, 31 WIP`; phase docs now 447/815 matched (249 left, 24 WIP, 119
   CRT).
 
+- stage 31 — two byte-exact `C_pnl_lst` setters land in `Source/ui/
+  C_pnl_lst.cpp`. `0x4BA190` (181 bytes, ret 0x40) and `0x4BA250` (184 bytes,
+  ret 0x44) share the 0x4A0460 seven-argument seed and the +0x164/+0x168/
+  +0x16C/+0x170/+0x150/+0x188 store block, then differ: 0x4BA190 dispatches
+  the +0xFC slot with (a16,0), 0x4BB9E0(0,0) and 0x4BBAE0(a10,-1), while
+  0x4BA250 dispatches the +0xF4 slot with (a16,a17), 0x4BB9E0(3,1) and the same
+  last call. Class feedback: both are this-edge members of the panel-list
+  object; 0x4BA390 (already matched) forwards to 0x4BA250, confirming the 17th
+  `int*` argument is the four-int temporary; the header's +0x150..+0x188 fields
+  and slot_061/slot_063 (two-argument) signatures are now proven. Evidence after
+  this wave: full gate `[1810/1810] MATCH_FUNCs OK, 31 WIP`; phase docs now
+  449/815 matched (247 left, 24 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

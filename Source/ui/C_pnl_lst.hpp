@@ -68,9 +68,9 @@ public:
     virtual void slot_058();  // slot +0x0E8
     virtual void slot_059();  // slot +0x0EC
     virtual void slot_060();  // slot +0x0F0
-    virtual void slot_061();  // slot +0x0F4
+    virtual void slot_061(int a1, int a2);  // slot +0x0F4
     virtual void slot_062();  // slot +0x0F8
-    virtual void slot_063();  // slot +0x0FC
+    virtual void slot_063(int a1, int a2);  // slot +0x0FC
     virtual void slot_064();  // slot +0x100
     virtual void slot_065();  // slot +0x104
     virtual void slot_066();  // slot +0x108
@@ -142,7 +142,14 @@ public:
 
     void M_4B5690();
     void M_4BBF20(int a1, short a2, int a3);
-    void Hook_4BA250(int a1, int a2, int a3, int a4, int a5, int a6, int* a7,
+    int M_4A0460(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+    void M_4BB990(int* a1, int a2, int a3);
+    void M_4BB9E0(int a1, int a2);
+    void M_4BBAE0(int a1, int a2);
+    int M_4BA190(int a1, int a2, int a3, int a4, int a5, int a6, int* a7,
+                 int a8, int a9, int a10, int a11, int a12, int a13, int a14,
+                 int a15, int a16);
+    int Hook_4BA250(int a1, int a2, int a3, int a4, int a5, int a6, int* a7,
                      int a8, int a9, int a10, int a11, int a12, int a13,
                      int a14, int a15, int a16, int a17);
     void M_4BA390(int a1, int a2, int a3, int a4, int a5, int a6, int a7,

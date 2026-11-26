@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 447 matched, 249 left to match (24 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 449 matched, 247 left to match (24 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (249)
+## Left to match (247)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -183,7 +183,6 @@
 | 593 | `sub_4A4600` | 50 |  | 1_boot_to_menu |  |
 | 594 | `sub_4B9F70` | 53 |  | 1_boot_to_menu |  |
 | 595 | `sub_4A0270` | 103 |  | 1_boot_to_menu |  |
-| 596 | `sub_4BA190` | 50 |  | 1_boot_to_menu |  |
 | 597 | `sub_4BA410` | 67 |  | 1_boot_to_menu |  |
 | 598 | `sub_4BBD30` | 328 |  | 1_boot_to_menu |  |
 | 600 | `sub_4BA5C0` | 108 |  | 1_boot_to_menu |  |
@@ -202,7 +201,6 @@
 | 664 | `sub_4A3DE0` | 24 |  | 1_boot_to_menu |  |
 | 665 | `sub_5A5C50` | 9 |  | 1_boot_to_menu |  |
 | 673 | `sub_4A5230` | 3 |  | 1_boot_to_menu |  |
-| 676 | `sub_4BA250` | 3 |  | 1_boot_to_menu |  |
 | 678 | `sub_4B60B0` | 3 |  | 1_boot_to_menu |  |
 | 681 | `sub_4A5480` | 3 |  | 1_boot_to_menu |  |
 | 682 | `sub_4B8730` | 6 |  | 1_boot_to_menu |  |
@@ -256,7 +254,7 @@
 | 807 | `sub_4EDC70` | 2144832 |  | 1_boot_to_menu |  |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (447)
+## Matched (449)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -567,6 +565,7 @@
 | 590 | `sub_4A2180` | 5 | MATCH | 1_boot_to_menu | sub_4A2180 |
 | 591 | `sub_4A2140` | 50 | MATCH | 1_boot_to_menu | sub_4A2140 |
 | 592 | `sub_4A4830` | 50 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A4830 |
+| 596 | `sub_4BA190` | 50 | MATCH | 1_boot_to_menu | C_pnl_lst::M_4BA190 |
 | 599 | `sub_4A0530` | 116 | MATCH | 1_boot_to_menu | S4A05D0::M_4A0530 |
 | 602 | `sub_4BB990` | 53 | MATCH | 1_boot_to_menu | S4BB990::M_4BB990 |
 | 603 | `sub_4BB9E0` | 103 | MATCH | 1_boot_to_menu | S4BB9E0::M_4BB9E0 |
@@ -621,6 +620,7 @@
 | 672 | `sub_4BBAC0` | 9 | MATCH | 1_boot_to_menu | S4BBA00::M_4BBAC0 |
 | 674 | `sub_4B5950` | 3 | MATCH | 1_boot_to_menu | C_cluster_443970::M_4B5950 |
 | 675 | `sub_4BA390` | 3 | MATCH | 1_boot_to_menu | C_pnl_lst::M_4BA390 |
+| 676 | `sub_4BA250` | 3 | MATCH | 1_boot_to_menu | C_pnl_lst::Hook_4BA250 |
 | 677 | `sub_4BAE20` | 3 | MATCH | 1_boot_to_menu | C_pnl_lst::M_4BAE20 |
 | 679 | `sub_4B5A10` | 3 | MATCH | 1_boot_to_menu | C_pnl_lst::M_4B5A10 |
 | 680 | `sub_4A55F0` | 3 | MATCH | 1_boot_to_menu | S4A55F0::M_4A55F0 |

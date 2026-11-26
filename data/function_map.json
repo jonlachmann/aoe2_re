@@ -55147,13 +55147,13 @@
   "calls": 4,
   "name": "sub_4BA190",
   "names": [],
-  "class": "C_cluster_4BA190",
-  "class_evidence": "this-edge component with no rooted object identity",
+  "class": "C_pnl_lst",
+  "class_evidence": "this-edge panel-list object; 0x4BA390 forwards to 0x4BA250; same field/slot layout",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4BA250",
@@ -55161,13 +55161,13 @@
   "calls": 4,
   "name": "sub_4BA250",
   "names": [],
-  "class": "C_cluster_4BA250",
-  "class_evidence": "this-edge component with no rooted object identity",
+  "class": "C_pnl_lst",
+  "class_evidence": "this-edge panel-list object; 0x4BA390 forwards to 0x4BA250; same field/slot layout",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4BA310",

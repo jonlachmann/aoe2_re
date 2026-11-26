@@ -76,30 +76,30 @@ void C_pnl_lst::M_4B5A10(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
 // 3/6 -> 2, 4/7 -> 3, otherwise 0 — the 0x4B3808 table groups a1-1 values
 // 0/1/4 -> 1, 2/5 -> 2 and 3/6 -> 3), propagate the four +0x0C..+0x18 values
 // through slot +0x0C, then notify through slot +0x20 with 1.
-WIP_FUNC(0x4B3760)
+MATCH_FUNC(0x4B3760)
 void C_pnl_lst::M_4B3760(int a1, unsigned char a2, unsigned char a3, unsigned char a4,
                          unsigned char a5, unsigned char a6, unsigned char a7)
 {
+    field_154 = a1;
     field_158 = a2;
     field_159 = a3;
-    field_154 = a1;
     field_15a = a4;
     field_15b = a5;
     field_15c = a6;
     field_15d = a7;
-    switch (a1)
+    switch (a1 - 1)
     {
+    case 0:
     case 1:
+    case 4:
+        field_160 = 1;
+        break;
     case 2:
     case 5:
-        field_160 = 1;
+        field_160 = 2;
         break;
     case 3:
     case 6:
-        field_160 = 2;
-        break;
-    case 4:
-    case 7:
         field_160 = 3;
         break;
     default:
@@ -162,28 +162,28 @@ void C_pnl_lst::M_4B5690()
     slot_008(1);
 }
 
-// 0x4BA390 — copy the seventh argument into a four-word temporary, then forward
-// seventeen arguments to 0x4BA250 with the temporary in the seventh slot and
-// the fourteenth/fifteenth pair swapped (a15 then a14).
-WIP_FUNC(0x4BA390)
+// 0x4BA390 — fill a four-int temporary with the seventh argument (a loop:
+// the unrolled stores schedule differently), then forward to the thiscall
+// 0x4BA250 with the temporary in place of a7 and a8..a17 unchanged.
+MATCH_FUNC(0x4BA390)
 void C_pnl_lst::M_4BA390(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                          int a8, int a9, int a10, int a11, int a12, int a13,
                          int a14, int a15, int a16, int a17)
 {
     int tmp[4];
-    tmp[0] = a7;
-    tmp[1] = a7;
-    tmp[2] = a7;
-    tmp[3] = a7;
-    Hook_4BA250(a1, a2, a3, a4, a5, a6, tmp, a7, a8, a9, a10, a11, a12,
-                a13, a15, a14, a17);
+    for (int i = 0; i < 4; i++)
+        tmp[i] = a7;
+    Hook_4BA250(a1, a2, a3, a4, a5, a6, tmp, a8, a9, a10, a11, a12, a13,
+                a14, a15, a16, a17);
 }
 
 // 0x4BBF20 — switch on the low byte of the first argument to adjust the
 // +0x100 word (adding/assigning the second short for 0/1, stepping it for 2/3,
 // applying the +0xFE-derived deltas for 4/5, zeroing for 6 and clamping to
 // +0xFC-1 for 7), then re-sync through 0x4BBD30(a3) and notify slot +0x20.
-WIP_FUNC(0x4BBF20)
+// The body is followed by the VC6 `lea ecx,[ecx]` (8D 49 00) jump-table
+// alignment pad and the 8-entry table at 0x4BBFBC, as in the original.
+MATCH_FUNC(0x4BBF20)
 void C_pnl_lst::M_4BBF20(int a1, short a2, int a3)
 {
     switch (a1 & 0xff)
@@ -215,4 +215,50 @@ void C_pnl_lst::M_4BBF20(int a1, short a2, int a3)
     }
     Other_4BBD30(a3);
     slot_008(1);
+}
+
+// 0x4BA190 — the sixteen-argument sibling of 0x4BA250: same 0x4A0460 seed and
+// field stores, then the +0xFC slot with (a16,0) instead of the +0xF4 slot,
+// zero arguments for 0x4BB9E0, and 0x4BBAE0(a10,-1).
+MATCH_FUNC(0x4BA190)
+int C_pnl_lst::M_4BA190(int a1, int a2, int a3, int a4, int a5, int a6, int* a7,
+                        int a8, int a9, int a10, int a11, int a12, int a13,
+                        int a14, int a15, int a16)
+{
+    M_4A0460(a1, a2, a3, a4, a5, a6, 0);
+    field_164 = a11;
+    field_168 = (unsigned char)a12;
+    field_16c = a13;
+    field_170 = (unsigned char)a14;
+    field_150 = (short)a15;
+    if (a13 != 0)
+        field_188 = 1;
+    slot_063(a16, 0);
+    M_4BB990(a7, a8, a9);
+    M_4BB9E0(0, 0);
+    M_4BBAE0(a10, -1);
+    return 1;
+}
+
+// 0x4BA250 — seventeen-argument sibling: the +0x4A0460 seed/store block, the
+// +0xF4 slot with (a16,a17), 0x4BB990(a7,a8,a9), 0x4BB9E0(3,1) and
+// 0x4BBAE0(a10,-1); returns 1 (the caller 0x4BA390 ignores it).
+MATCH_FUNC(0x4BA250)
+int C_pnl_lst::Hook_4BA250(int a1, int a2, int a3, int a4, int a5, int a6,
+                          int* a7, int a8, int a9, int a10, int a11, int a12,
+                          int a13, int a14, int a15, int a16, int a17)
+{
+    M_4A0460(a1, a2, a3, a4, a5, a6, 0);
+    field_164 = a11;
+    field_168 = (unsigned char)a12;
+    field_16c = a13;
+    field_170 = (unsigned char)a14;
+    field_150 = (short)a15;
+    if (a13 != 0)
+        field_188 = 1;
+    slot_061(a16, a17);
+    M_4BB990(a7, a8, a9);
+    M_4BB9E0(3, 1);
+    M_4BBAE0(a10, -1);
+    return 1;
 }
