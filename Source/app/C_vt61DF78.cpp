@@ -633,14 +633,14 @@ int C_vt61DF78::slot30_41D070()
     return 1;
 }
 
-// 0x41D5D0 — register the window class. The guest-exact body below builds the
-// WNDCLASS-style block and calls the 0x61C2D0/0x61C2D4 slots; under
-// MATCHED_NATIVE the block is built from native values and the slots are the
-// host trampolines in matched_imports.cpp (headless no-op WndProc). WIP: ours
-// 160 vs 152 bytes; the residual misses are the class-name probe (`cmp
-// byte [ecx],bl` instead of `mov dl,[ecx]; cmp dl,bl`) and the indirect call
-// operands (`call dword ptr [0]` instead of `call dword ptr [<reloc>]`), plus
-// the two zero-field stores scheduled before/after the RegisterClass call.
+// 0x41D5D0 — register the window class. The guest-exact VC6 branch reads the
+// +0x24 block through its guest pointer, builds the WNDCLASS-style block, and
+// invokes the 0x61C2D0/0x61C2D4 slots as absolute guest IAT memory operands
+// (`ADDR` casts), which is what the original `call dword ptr [0x61C2...]`
+// bytes require. The native branch uses the host WNDCLASS build plus
+// Native_LoadIcon/Native_RegisterClass (headless no-op WndProc) because the
+// guest pointer/words are not dereferenceable in the native image. MATCH_FUNC
+// (152 bytes): the byte gate is exact.
 static int __stdcall HeadlessWndProc(void* hwnd, unsigned msg, int wp, int lp)
 {
     (void)hwnd; (void)msg; (void)wp; (void)lp;
@@ -658,9 +658,7 @@ struct TWndClassA {
     char* menu;
     char* cls;
 };
-extern int (__stdcall *g_61C2D0)(int a1, void* a2);
-extern short (__stdcall *g_61C2D4)(void* a1);
-WIP_FUNC(0x41D5D0)
+MATCH_FUNC(0x41D5D0)
 int C_vt61DF78::slot31_41D5D0()
 {
 #ifdef MATCHED_NATIVE
@@ -678,38 +676,30 @@ int C_vt61DF78::slot31_41D5D0()
     int ok = Native_RegisterClass(&wc);
     return ok != 0;
 #else
-    // VC6-exact path: the original reads the +0x24 block through its guest
-    // pointer and calls the guest LoadIconA/RegisterClassA slots. The native
-    // path above replaces those with host wrappers because the guest words are
-    // not dereferenceable in the native image.
     int zero = 0;
     if (*(int*)(*(int*)((char*)this + 0x24) + 0x414) != zero)
         return 1;
     TWndClassA wc;
-    char* selected = (char*)ADDR(0x662be0);
     char* cfgname = (char*)(*(int*)((char*)this + 0x24) + 0x645);
     wc.cursor = 0;
-    wc.menu = selected;
-    if (*cfgname != 0)
+    char ch = *cfgname;
+    wc.menu = (char*)ADDR(0x662be0);
+    if (ch != 0)
         wc.menu = cfgname;
-    wc.icon = (void*)(size_t)g_61C2D0(
-        *(int*)(*(int*)((char*)this + 0x24) + 0x410),
-        (void*)(*(int*)((char*)this + 0x24) + 0x61c));
+    wc.icon = (void*)(size_t)(*(int (__stdcall**)(int, void*))
+        ADDR(0x61c2d0))(*(int*)(*(int*)((char*)this + 0x24) + 0x410),
+                        (void*)(*(int*)((char*)this + 0x24) + 0x61c));
     wc.cls = (char*)(size_t)*(int*)((char*)this + 0x24);
     wc.brush = 0;
     wc.hInst = (void*)(size_t)*(int*)(*(int*)((char*)this + 0x24) + 0x410);
     wc.style = 0xb;
     wc.proc = (void*)ADDR(0x41d670);
-    wc.clsExtra = 0;
     wc.wndExtra = 0;
-    return g_61C2D4(&wc) != 0;
+    wc.clsExtra = 0;
+    return (*(short (__stdcall**)(void*))ADDR(0x61c2d4))(&wc) != 0;
 #endif
 }
 
-// 0x41D6A0 — create the main window. WIP with real Win32 calls: read the
-// screen metrics, CreateWindowExA, store the handle at +0x28, g_664528 and set
-// +0x2C = 1. The original also drives GetWindowRect/SetWindowPos/ShowWindow/
-// UpdateWindow/SetFocus once config +0x894 is set; those are skipped here.
 WIP_FUNC(0x41D6A0)
 int C_vt61DF78::slot32_41D6A0()
 {

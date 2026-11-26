@@ -495,6 +495,21 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `DC10 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2,
   hwnd 0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
 
+- stage 24 — 0x41D5D0 (152 bytes, base slot +0x07C, window-class registration)
+  is byte-exact. The guest-exact VC6 branch reads the +0x24 config block through
+  the guest pointer, seeds the +0x20/24 zero fields, selects the class-name
+  probe string (0x662BE0 default or +0x645 when nonempty), builds the
+  WNDCLASS-style block, invokes the 0x61C2D0 icon slot and the 0x61C2D4
+  RegisterClass slot as *absolute guest IAT memory operands* through ADDR
+  casts, and returns the ATOM nonzero flag via the `neg ax / sbb / neg` form.
+  The native branch keeps the host WNDCLASS build with Native_LoadIcon/
+  Native_RegisterClass and the headless no-op WndProc because the guest
+  pointer/words are not dereferenceable in the native image. This closes the
+  register-class half of the window bring-up; 0x41D6A0 window creation remains
+  WIP. Evidence: TU gate `[29/29] MATCH_FUNCs OK, 15 WIP`; boot exit 0, no
+  fault, `DC10 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window
+  class/create 2, hwnd 0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
