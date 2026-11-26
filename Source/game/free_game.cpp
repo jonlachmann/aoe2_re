@@ -2311,14 +2311,10 @@ void __cdecl sub_43EB50()
 }
 
 // 0x43EB70 — clear the object through its init helper and return itself.
-class S43EB70 {
-public:
-    int M_43EB70();
-};
 MATCH_FUNC(0x43EB70)
-int S43EB70::M_43EB70()
+int T43EB70::Other_43EB70()
 {
-    ((T43EB70*)this)->Other_43EB90();
+    Other_43EB90();
     return (int)this;
 }
 

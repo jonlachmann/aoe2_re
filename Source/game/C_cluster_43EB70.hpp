@@ -4,7 +4,7 @@
 
 #include "Function.hpp"
 
-class C_cluster_43EB70 {
+class T43EB70 {
 public:
     int field_00;                 // +0x00
     int field_04;                 // +0x04
@@ -13,8 +13,8 @@ public:
     char pad_AC[0x1A4C - 0xAC];
     int field_1A4C;               // +0x1A4C
 
-    void Init_43EB90();
-    void Forward_43EB80();
+    void Other_43EB90();
+    void Other_43EB80();
 };
 
 void sub_43EB60();

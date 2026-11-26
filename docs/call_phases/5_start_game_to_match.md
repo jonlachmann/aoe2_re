@@ -2421,7 +2421,7 @@
 | 2414 | `sub_589AE0` | 78 | MATCH | 5_start_game_to_match | C_vt62A0C0::M_589AE0 |
 | 2431 | `sub_580AF0` | 19 | MATCH | 5_start_game_to_match | S580AF0::Contains_580AF0 |
 | 2440 | `sub_580B20` | 4 | MATCH | 5_start_game_to_match | S58GetBulk::Get_580B20 |
-| 2447 | `sub_43EB90` | 4 | MATCH | 1_boot_to_menu | C_cluster_43EB70::Init_43EB90 |
+| 2447 | `sub_43EB90` | 4 | MATCH | 1_boot_to_menu | T43EB70::Other_43EB90 |
 | 2448 | `sub_43EBD0` | 4 | MATCH | 5_start_game_to_match | S43EBD0::M_43EBD0 |
 | 2449 | `sub_43EBB0` | 4 | MATCH | 5_start_game_to_match | S43EBB0::Get_43EBB0 |
 | 2452 | `sub_436C60` | 2 | MATCH | 5_start_game_to_match | C_vt61E328::Get_436C60 |

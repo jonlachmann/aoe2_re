@@ -1,13 +1,13 @@
 #include "C_cluster_43EB70.hpp"
 
 MATCH_FUNC(0x43EB80)
-void C_cluster_43EB70::Forward_43EB80()
+void T43EB70::Other_43EB80()
 {
-    Init_43EB90();
+    Other_43EB90();
 }
 
 MATCH_FUNC(0x43EB90)
-void C_cluster_43EB70::Init_43EB90()
+void T43EB70::Other_43EB90()
 {
     field_00 = -1;
     field_04 = 0;
@@ -18,5 +18,5 @@ void C_cluster_43EB70::Init_43EB90()
 MATCH_FUNC(0x43EB60)
 void sub_43EB60()
 {
-    ((C_cluster_43EB70*)0x665660)->Forward_43EB80();
+    ((T43EB70*)0x665660)->Other_43EB80();
 }

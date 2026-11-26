@@ -29,9 +29,9 @@ Evidence (current run):
   0.0 threshold and `Get_41A090()==FLT_MAX`: `globals exec probe: 0 failures`
   (12 objects)
 - stage 5 — every matched object links into one native executable. The 604
-  extern symbols the object set does not define get host stubs: 603 asm-label
-  functions returning 0 and 1 opaque data array, leaving libSystem names
-  (`malloc`, `memcpy`, `strlen`, ...) to the linker. Result:
+  extern symbols the object set does not define get host stubs: currently 601
+  asm-label functions returning 0 and 1 opaque data array, leaving libSystem
+  names (`malloc`, `memcpy`, `strlen`, ...) to the linker. Result:
   `all matched objects linked: 165; probe_all: OK` (`probe: 0 failures`).
   These stubs are link fillers with host ABI, not guest implementations.
 - stage 3 — portable guest-VA access layer: `Source/matched_mem.h` defines
@@ -69,9 +69,15 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
 
 ## Remaining gaps toward booting to the menu
 
-1. (Link milestone) all 165 objects now link into one executable via 604 host
-   stubs, but those stubs return 0 and are not real guest implementations; a boot
-   path needs the actual functions (matches or guest-ABI wrappers) behind them.
+1. (Link milestone) all 165 objects now link into one executable, but most
+   external symbols are still host stubs returning 0. A first batch of naming
+   fixes removed two: the PE-accurate mangling inventory shows ~150 extern
+   symbols already have matched bodies under a different class/method name
+   (e.g. `C_cluster_43EB70::Init_43EB90` vs `T43EB70::Other_43EB90`), so renaming
+   those definitions to the PE's mangled names replaces stubs with real code.
+   43EB90 and 43EB70 were re-homed into the PE-accurate `T43EB70` class
+   (`Other_43EB90`, `Other_43EB70`, plus `Other_43EB80`), dropping the stub count
+   from 603 to 601 with the gate unchanged.
 2. Guest memory: most matched bodies still cast guest VAs in fields/globals
    directly. `ADDR` is proven on one body but not yet applied across the bodies
    or paired with an initialized guest image at boot.

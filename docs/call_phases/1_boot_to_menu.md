@@ -311,8 +311,8 @@
 | 56 | `sub_43E7D0` | 1 | MATCH | 1_boot_to_menu | sub_43E7D0 |
 | 57 | `sub_43EB30` | 1 | MATCH | 1_boot_to_menu | sub_43EB30 |
 | 58 | `sub_43EB40` | 1 | MATCH | 1_boot_to_menu | sub_43EB40 |
-| 59 | `sub_43EB70` | 1 | MATCH | 1_boot_to_menu | S43EB70::M_43EB70 |
-| 60 | `sub_43EB90` | 1 | MATCH | 1_boot_to_menu | C_cluster_43EB70::Init_43EB90 |
+| 59 | `sub_43EB70` | 1 | MATCH | 1_boot_to_menu | T43EB70::Other_43EB70 |
+| 60 | `sub_43EB90` | 1 | MATCH | 1_boot_to_menu | T43EB70::Other_43EB90 |
 | 61 | `sub_43EB50` | 1 | MATCH | 1_boot_to_menu | sub_43EB50 |
 | 62 | `sub_5FD62D` | 6 | MATCH | 1_boot_to_menu | sub_5FD62D |
 | 66 | `sub_465490` | 1 | MATCH | 1_boot_to_menu | sub_465490 |
