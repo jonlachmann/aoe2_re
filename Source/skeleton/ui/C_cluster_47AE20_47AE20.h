@@ -7,5 +7,5 @@
 class C_cluster_47AE20 {
 public:
     void method_000();  // sub_47AE20 [lifted]
-    void method_001();  // sub_47B620 [lifted]
+    void method_001();  // sub_47B620 [wip] — Source/ui/free_boot.cpp
 };

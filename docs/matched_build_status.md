@@ -147,16 +147,41 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   stack probe or allocated through `new` got a 0-returning stub, crashing the
   process in a system framework initializer before the host ran. These symbols
   are now left to the linker/libc++abi; stub count 525 -> 523 -> 521.
-2. Guest memory: most matched bodies still cast guest VAs in fields/globals
-   directly. `ADDR` is proven on one body but not yet applied across the bodies
-   or paired with an initialized guest image at boot.
+- stage 8 — first boot-path bodies:
+  `Source/ui/free_ui.cpp` gains a byte-exact `MATCH_FUNC(0x473BF0)`: the
+  singleton teardown at 0x66DB6C calls the stdcall destructor through IAT
+  0x61C168 and clears the global. `Source/ui/free_boot.cpp` (new TU) holds a
+  `WIP_FUNC(0x47B620)` language-init body: load the module at 0x6530B4, resolve
+  the export at 0x6530AC, load the language DLL argument, read string resources
+  0x3EF/0x3F0 into two 0x104 stack arrays, probe the language string tail with
+  sub_5FDCD4, call the export with either the block+8/language+4 pair or the
+  zero/block+4 pair, then free both modules and return the export result.
+  The WIP body compiles at 272 bytes against 261 (local array offsets and the
+  branch layout still differ). Catalog correction: 0x47B620 takes a cdecl stack
+  argument and never reads `this`, so it is modeled as free `sub_47B620`; the
+  `C_cluster_47AE20` membership stays catalog-only.
+  Evidence: full gate `[1766/1766] MATCH_FUNCs OK, 42 WIP`; matched TUs 166 ok,
+  0 failed; 524 function stubs; `all matched objects linked: 169; probe_all:
+  OK`; boot link 171 objects; run still prints the WinMain checkpoint because
+  0x47AE20 itself remains unmatched.
+
+Gaps now:
+1. WinMain 0x47AE20 is still unmatched (2035 bytes): a 0x1B88 stack frame, 27
+   inline strcpy/strlen+memcpy expansions, a stack config struct, calls to
+   0x47B620 and 0x5B0EC0, and vtable dispatch. Its dispatch entry is a stub, so
+   the matched-only run stops there.
+2. Import ABI: matched/WIP bodies call IAT slots as function pointers
+   (`g_61c110`, `g_61c0d8`, `g_61c1a0`). The generated globals are char arrays
+   synced from the unbound image, so the value at runtime is the IAT VA, not a
+   callable host function pointer; executing 0x47B620 natively needs an import
+   dispatch layer (a shim call through `hle_call_guest`/the register file).
 3. Guest ABI: matched-to-matched calls are consistent because all bodies are
    compiled by the host compiler; the gap is only at boundaries to unmatched
    lifted code/external imports, which need guest-ABI wrappers.
-4. Coverage: phase docs still show 416/815 phase-1 matched (289 left, 23 WIP,
-   110 CRT/library), so even a wired build would boot lifted, not matched, code.
+4. Coverage: phase docs show 408/815 phase-1 matched (288 left, 36 WIP, 119
+   CRT/library), so even a wired build would boot lifted, not matched, code.
 5. (Done) Asm-based "matches" were rewritten as C++; the tree now has zero
-   `__asm` in matched bodies and all 162 matched TUs compile natively.
+   `__asm` in matched bodies and all 166 matched TUs compile natively.
 
 ## Reproduce
 

@@ -7872,3 +7872,18 @@ void S4AF400::M_4AF400(int* a1, short a2)
             *(int*)((char*)field_208 + i) = *(int*)((char*)a1 + i);
     }
 }
+
+// 0x473BF0 — tear down the singleton at 0x66DB6C: when it is present, hand it
+// to the stdcall destructor through the import slot at 0x61C168 and clear the
+// global so a second call is a no-op.
+extern void (__stdcall *g_61c168)(void* a1);
+extern int g_66db6c;
+MATCH_FUNC(0x473BF0)
+void sub_473BF0()
+{
+    if (g_66db6c != 0)
+    {
+        g_61c168((void*)g_66db6c);
+        g_66db6c = 0;
+    }
+}
