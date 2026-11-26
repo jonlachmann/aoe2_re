@@ -67,6 +67,7 @@ public:
     virtual int slot42_41E5D0();
     virtual int slot43_41E4A0();
     virtual int slot44_41EA60();
+    int M_41F3A0();
     virtual void slot_045();
     virtual void slot_046();
     virtual void slot_047();

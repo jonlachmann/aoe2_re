@@ -22,8 +22,8 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1801 |
-| wip | 27 |
+| matched | 1802 |
+| wip | 26 |
 | verified | 17 |
 | lifted | 5905 |
 
@@ -597,7 +597,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Functions with no class evidence
 | Region | Functions | Matched | WIP | Left |
 |---|---|---|---|---|
-| app | 323 | 133 | 3 | 187 |
+| app | 323 | 134 | 2 | 187 |
 | crt | 647 | 61 | 0 | 586 |
 | engine-late | 319 | 36 | 0 | 283 |
 | game | 436 | 160 | 0 | 276 |

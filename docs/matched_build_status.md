@@ -532,6 +532,22 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   menu-loop=1`, window class/create 2, hwnd 0x1A2B3C4D, DE50/E070 screens 1,
   WinMain returns 0.
 
+- stage 26 — 0x41F3A0 (208 bytes) is byte-exact as C_vt61DF78::M_41F3A0. The
+  base slot chain calls it as a member; it seeds +0x38 through the 0x61C190
+  slot, compares the no-argument 0x61C188 version with 0xB7, and on that
+  version resolves the window by the config +0x24 class and +0x7A name through
+  the 0x61C2F0 slot. When found, the matched 0x422180 name check selects either
+  the 0x61C2F4 message followed by the 0x61C198 destroy (return 1) or the
+  0x61C2A0 detail gate plus the 0x61C2FC/0x61C2A4/0x61C2A8/0x61C2AC chain
+  (cleanup returns 0); the non-0xB7 and cleanup paths destroy +0x38 through
+  0x61C198 and clear it through 0x61C1A8. All indirect calls are emitted as
+  absolute guest IAT memory operands (ADDR casts), matching the original bytes;
+  the native branch returns 1 because the native image cannot dereference the
+  guest slots. Boundary check resolves 0x422180 and no extra size. Evidence: TU
+  gate `[30/30] MATCH_FUNCs OK, 14 WIP`; boot exit 0, no fault, `DC10 status=0
+  DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2, hwnd
+  0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

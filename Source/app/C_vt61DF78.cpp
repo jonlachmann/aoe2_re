@@ -1347,10 +1347,68 @@ int sub_41F200()
 {
     return 1;
 }
-WIP_FUNC(0x41F3A0)
-int sub_41F3A0()
+// 0x41F3A0 should only be reached when the device path is active; it
+// checks the shell: seed +0x38 through the 0x61C190 slot, compare the 0x61C188
+// version with 0xB7, then on that version find the window by the className/
+// windowName config strings (0x61C2F0) and either run the 0x422180 name check
+// plus the 0x61C2F4 message and 0x61C198 destroy path, or the 0x61C2A0 detail
+// chain (0x61C2FC/0x61C2A4/0x61C2A8/0x61C2AC), finally clearing +0x38 through
+// 0x61C198/0x61C1A8. Success returns 1; the found-window cleanup returns 0.
+class Sc422180 {
+public:
+    char pad_00[0x24];
+    bool M_422180(int a1);
+};
+MATCH_FUNC(0x41F3A0)
+int C_vt61DF78::M_41F3A0()
 {
+#ifdef MATCHED_NATIVE
     return 1;
+#else
+    int cfg = *(int*)((char*)this + 0x24);
+    int version;
+    *(int*)((char*)this + 0x38) =
+        (*(int (__stdcall**)(int, int, int))ADDR(0x61c190))(0, 1, cfg);
+    version = (*(int (__stdcall**)())ADDR(0x61c188))();
+    if (version == 0xb7)
+    {
+        int found;
+        cfg = *(int*)((char*)this + 0x24);
+        found = (*(int (__stdcall**)(int, char*))ADDR(0x61c2f0))(
+            cfg, (char*)(cfg + 0x7a));
+        if (found != 0)
+        {
+            if (((Sc422180*)this)->M_422180((int)(size_t)ADDR(0x64d8e8)))
+            {
+                (*(int (__stdcall**)(int, int, int, int))ADDR(0x61c2f4))(
+                    found, 0x10, 0, 0);
+                if (*(int*)((char*)this + 0x38) != 0)
+                    (*(int (__stdcall**)(int))ADDR(0x61c198))(
+                        *(int*)((char*)this + 0x38));
+                return 1;
+            }
+            if ((*(int (__stdcall**)(int))ADDR(0x61c2a0))(found) != 0)
+                (*(int (__stdcall**)(int, int))ADDR(0x61c2fc))(
+                    found, 1);
+            (*(int (__stdcall**)(int))ADDR(0x61c2a4))(found);
+            (*(int (__stdcall**)(int))ADDR(0x61c2ac))(
+                (*(int (__stdcall**)(int))ADDR(0x61c2a8))(found));
+        }
+        if (*(int*)((char*)this + 0x38) != 0)
+        {
+            (*(int (__stdcall**)(int))ADDR(0x61c198))(
+                *(int*)((char*)this + 0x38));
+            (*(int (__stdcall**)(int))ADDR(0x61c1a8))(
+                *(int*)((char*)this + 0x38));
+            *(int*)((char*)this + 0x38) = 0;
+        }
+        return 0;
+    }
+    if (*(int*)((char*)this + 0x38) != 0)
+        (*(int (__stdcall**)(int))ADDR(0x61c198))(
+            *(int*)((char*)this + 0x38));
+    return 1;
+#endif
 }
 WIP_FUNC(0x41F0C0)
 int sub_41F0C0(int a1)
@@ -1475,7 +1533,7 @@ int C_vt61DF78::slot29_41BC80()
     // 0x41F3A0 when config +0x88C is set
     if (CfgI(0x88c) != 0)
     {
-        if (!sub_41F3A0())
+        if (!this->M_41F3A0())
         {
             field_60 = 4;
             return 0;
