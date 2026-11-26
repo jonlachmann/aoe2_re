@@ -8019,3 +8019,94 @@ void S472EF0::M_472EF0(int a1, int a2, int a3, int a4, int a5, int a6,
     *(unsigned char*)(*(int*)(field_0c + a1 * 4) + off + 9) = (unsigned char)a5;
     *(unsigned char*)(*(int*)(field_0c + a1 * 4) + off + 0xa) = (unsigned char)a6;
 }
+
+// 0x4EDC70 — one-shot dialog/device action guarded by global 0x740694. Set the
+// guard, and when +0x78 is set hand g_6645C4's +0x90 object its +0x08/+0x0C pair
+// through the matched 0x5217F0 (falling back to 0x5215F0 when it reports no
+// change), dispatch the +0x7FC object's vtable slot +0x14 when the +0x8F8
+// pointer's +0x6C is set, run the matched 0x421EC0 when g_6645C4+0x200 is clear,
+// and when +0xC24/+0xC25 are set compare clock() - +0xC08 against 0x1388 to decide
+// the 0x4EDD40 action. Finally clear the guard and run M_4A1160.
+class T6645Ef {
+public:
+    char pad_00[0x08];
+    int field_08;                 // +0x08
+    int field_0c;                 // +0x0C
+    char pad_10[0x90 - 0x10];
+    void* field_90;               // +0x90
+    char pad_94[0x200 - 0x94];
+    int field_200;                // +0x200
+};
+class T6251Slots {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05(int a1);   // slot +0x14
+};
+class C_cluster_520CE0 {
+public:
+    int M_5217F0(int a1);
+    void M_5215F0(int a1);
+};
+class C_vt62C1E0 {
+public:
+    void Hook_421EC0();
+};
+class C_pnl_pic {
+public:
+    int M_4A1160();
+};
+class C_vt6251E4 {
+public:
+    char pad_00[0x78];
+    int field_78;                 // +0x78
+    char pad_7c[0x7fc - 0x7c];
+    void* field_7fc;              // +0x7FC vtable object
+    char pad_800[0x8f8 - 0x800];
+    void* field_8f8;              // +0x8F8 object with +0x6C
+    char pad_8fc[0xc08 - 0x8fc];
+    unsigned int field_c08;       // +0xC08 clock baseline
+    char pad_c0c[0xc24 - 0xc0c];
+    unsigned char field_c24;      // +0xC24 enable
+    unsigned char field_c25;      // +0xC25 second enable
+    int M_4EDC70();
+    void M_4EDD40();
+};
+MATCH_FUNC(0x4EDC70)
+int C_vt6251E4::M_4EDC70()
+{
+    if (*(int*)ADDR(0x740694) != 0)
+        return 0;
+    *(int*)ADDR(0x740694) = 1;
+    if (field_78 != 0)
+    {
+        T6645Ef* g = (T6645Ef*)g_6645c4;
+        void* obj = g->field_90;
+        if (obj != 0)
+        {
+            int a = g->field_08;
+            int b = g->field_0c;
+            if (((C_cluster_520CE0*)obj)->M_5217F0(a) == 0)
+                ((C_cluster_520CE0*)obj)->M_5215F0(b);
+        }
+    }
+    T6645Ef* gm = (T6645Ef*)g_6645c4;
+    if (*(int*)((char*)field_8f8 + 0x6c) != 0)
+        ((T6251Slots*)field_7fc)->Vt_05(0);
+    T6645Ef* gt = (T6645Ef*)g_6645c4;
+    if (gt->field_200 == 0)
+        ((C_vt62C1E0*)gt)->Hook_421EC0();
+    if (field_c24 == 1 && field_c25 != 0)
+    {
+        unsigned int t = (unsigned int)g_61C3C8();
+        if (t - field_c08 > 0x1388)
+            M_4EDD40();
+    }
+    *(int*)ADDR(0x740694) = 0;
+    return ((C_pnl_pic*)this)->M_4A1160();
+}
+
+

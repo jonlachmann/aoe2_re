@@ -703,6 +703,23 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1815/1815] MATCH_FUNCs OK, 32 WIP`; phase docs now 454/815 matched (242 left,
   25 WIP, 119 CRT).
 
+- stage 38 — `Source/ui/free_ui.cpp` now carries a byte-exact
+  `MATCH_FUNC(0x4EDC70)` (196 bytes): a one-shot dialog/device action guarded
+  by global 0x740694 (via ADDR). Inside, when +0x78 is set it hands g_6645C4's
+  +0x90 object its +0x08/+0x0C pair through the matched 0x5217F0 (0x5215F0
+  fallback when it reports no change), dispatches the +0x7FC object's vtable
+  slot +0x14 when the +0x8F8 pointer's +0x6C is set, runs the matched 0x421EC0
+  when g_6645C4+0x200 is clear, and when +0xC24/+0xC25 are set compares the
+  unsigned clock() - +0xC08 against 0x1388 to gate the 0x4EDD40 action; then
+  clears the guard and returns M_4A1160's result. Class feedback: C_vt6251E4 has
+  fields +0x78/+0x7FC/+0x8F8/+0xC08/+0xC24/+0xC25; the +0x7FC object dispatches
+  slot +0x14; the +0x8F8 object carries a +0x6C gate; +0xC08 is an unsigned
+  clock baseline (unsigned compare, hence jbe). Scheduling lessons: the guard
+  must be `if (guard != 0) return 0;` so VC6 emits the inline early return, and
+  g_6645C4 must be re-cast at each use so the reloads match. Evidence after this
+  wave: full gate `[1816/1816] MATCH_FUNCs OK, 32 WIP`; phase docs now 455/815
+  matched (241 left, 25 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
