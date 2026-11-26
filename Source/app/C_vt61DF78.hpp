@@ -85,7 +85,7 @@ public:
     virtual void slot_060();
     virtual void slot_061();
     virtual void slot_062();
-    virtual int slot63_420D10();
+    virtual int slot63_420D10(int a1, int a2, int a3, int a4);
     virtual void slot_064();
     virtual void slot_065();
     virtual void slot_066();
@@ -100,6 +100,13 @@ public:
     virtual void slot_075();
     virtual int Vat_130();
     virtual int Vat_134();
+    virtual void slot_078();
+    virtual void slot_079();
+    virtual void slot_080();
+    virtual void slot_081();
+    virtual void slot_082();
+    virtual void slot_083();
+    virtual void slot_084();
     virtual int slot85_422340();
 
     char pad_04[0x24 - 4];
@@ -131,6 +138,10 @@ public:
     int M_41BC40(int a, int b, int c, int d, int e);
     int M_41BC50(int a, int b);
     int Get_41C8F0();
+    int M_420BE0(int a1, int a2, int a3, int a4);
+    int Hook_4217B0();
+    int Hook_41F660(int a1);
+    void Hook_41F730(int a1, int a2);
     void Init_41EB30();
     void Set_41F610(int a, int b);
     bool M_4208D0(int a, int b, int c, int d);

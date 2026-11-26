@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 435 matched, 261 left to match (26 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 438 matched, 258 left to match (24 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (261)
+## Left to match (258)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -28,8 +28,6 @@
 | 221 | `sub_41D5D0` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot31_41D5D0 |
 | 222 | `sub_41D6A0` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot32_41D6A0 |
 | 225 | `sub_41FAC0` | 645 |  | 1_boot_to_menu |  |
-| 227 | `sub_420D10` | 3 | WIP | 1_boot_to_menu | C_vt61DF78::slot63_420D10 |
-| 230 | `sub_420BE0` | 1 |  | 1_boot_to_menu |  |
 | 234 | `sub_4208F0` | 6 |  | 1_boot_to_menu |  |
 | 235 | `sub_41F470` | 6 |  | 1_boot_to_menu |  |
 | 240 | `sub_41D7F0` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot33_41D7F0 |
@@ -139,7 +137,6 @@
 | 402 | `sub_498AD0` | 1 |  | 1_boot_to_menu |  |
 | 403 | `sub_498BF0` | 1 |  | 1_boot_to_menu |  |
 | 408 | `sub_498E00` | 1 |  | 1_boot_to_menu |  |
-| 417 | `sub_41DBA0` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot38_41DBA0 |
 | 418 | `sub_422980` | 1 |  | 1_boot_to_menu |  |
 | 420 | `sub_58A9D0` | 1 |  | 1_boot_to_menu |  |
 | 425 | `sub_41DE50` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot39_41DE50 |
@@ -268,7 +265,7 @@
 | 807 | `sub_4EDC70` | 2144832 |  | 1_boot_to_menu |  |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (435)
+## Matched (438)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -396,8 +393,10 @@
 | 223 | `sub_41D670` | 645 | MATCH | 1_boot_to_menu | sub_41D670 |
 | 224 | `sub_5BB240` | 645 | MATCH | 1_boot_to_menu | sub_5BB240 |
 | 226 | `sub_49F620` | 2146118 | MATCH | 1_boot_to_menu | S49F620::Get_49F620 |
+| 227 | `sub_420D10` | 3 | MATCH | 1_boot_to_menu | C_vt61DF78::slot63_420D10 |
 | 228 | `sub_41BC20` | 4 | MATCH | 1_boot_to_menu | C_vt61DF78::M_41BC20 |
 | 229 | `sub_5BB8A0` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_5BB8A0 |
+| 230 | `sub_420BE0` | 1 | MATCH | 1_boot_to_menu | C_vt61DF78::M_420BE0 |
 | 231 | `sub_421EC0` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::Hook_421EC0 |
 | 232 | `sub_49FFB0` | 1 | MATCH | 1_boot_to_menu | T66EA48_421EC0::Other_49FFB0 |
 | 233 | `sub_41FA40` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_41FA40 |
@@ -459,6 +458,7 @@
 | 414 | `sub_520E90` | 1 | MATCH | 1_boot_to_menu | S52SetBulk::CopyName_520E90 |
 | 415 | `sub_520F50` | 1 | MATCH | 1_boot_to_menu | S52SetBulk::SetInt_520F50 |
 | 416 | `sub_520ED0` | 1 | MATCH | 1_boot_to_menu | S52SetBulk::CopyName_520ED0 |
+| 417 | `sub_41DBA0` | 1 | MATCH | 1_boot_to_menu | C_vt61DF78::slot38_41DBA0 |
 | 419 | `sub_58A780` | 1 | MATCH | 1_boot_to_menu | S58A780::M_58A780 |
 | 421 | `sub_520720` | 53 | MATCH | 1_boot_to_menu | C_cluster_520720::M_520720 |
 | 422 | `sub_520750` | 53 | MATCH | 1_boot_to_menu | C_cluster_520720::Init_520750 |

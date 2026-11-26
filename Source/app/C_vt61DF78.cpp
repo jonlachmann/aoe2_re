@@ -143,6 +143,121 @@ int C_vt61DF78::M_41BC50(int a, int b)
     return 1;
 }
 
+
+class T49F620Result {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08();
+    virtual void Vt_09();
+    virtual void Vt_0A();
+    virtual void Vt_0B();
+    virtual void Vt_0C();
+    virtual void Vt_0D();
+    virtual void Vt_0E();
+    virtual void Vt_0F();
+    virtual void Vt_10();
+    virtual void Vt_11();
+    virtual void Vt_12();
+    virtual void Vt_13();
+    virtual void Vt_14(int a, int b);
+    virtual void Vt_15();
+    virtual void Vt_16();
+    virtual void Vt_17();
+    virtual void Vt_18();
+    virtual void Vt_19();
+    virtual void Vt_1A();
+    virtual void Vt_1B();
+    virtual void Vt_1C();
+    virtual void Vt_1D();
+    virtual void Vt_1E();
+    virtual void Vt_1F();
+    virtual void Vt_20();
+    virtual void Vt_21();
+    virtual void Vt_22();
+    virtual void Vt_23();
+    virtual void Vt_24();
+    virtual void Vt_25();
+    virtual void Vt_26();
+    virtual void Vt_27();
+    virtual void Vt_28();
+    virtual void Vt_29();
+    virtual void Vt_2A();
+    virtual void Vt_2B();
+    virtual void Vt_2C();
+    virtual void Vt_2D();
+    virtual void Vt_2E();
+    virtual void Vt_2F();
+    virtual void Vt_30();
+    virtual void Vt_31();
+    virtual void Vt_32();
+    virtual void Vt_33();
+    virtual void Vt_34();
+    virtual void Vt_35();
+    virtual void Vt_36();
+    virtual void Vt_37();
+    virtual void Vt_38();
+    virtual void Vt_39();
+    virtual void Vt_3A();
+    virtual void Vt_EC();
+};
+
+class S49F620Global {
+public:
+    char pad_00[0x10];
+    T49F620Result* Get_49F620();
+};
+
+MATCH_FUNC(0x420BE0)
+int C_vt61DF78::M_420BE0(int a1, int a2, int a3, int a4)
+{
+    (void)a1; (void)a2; (void)a4;
+    if (a3)
+        field_30 = 1;
+    else
+        field_30 = 0;
+    if (field_30 != 0)
+    {
+        int cur = *(int*)((char*)this + 0x1d8);
+        if ((cur == 4 || cur == 6 || cur == 7)
+            && *(int*)((char*)this + 0xb38) == 1)
+        {
+            *(int*)((char*)this + 0xb38) = 0;
+            Hook_41F730(0, 0);
+        }
+        if (((S49F620Global*)ADDR(0x66ea48))->Get_49F620() != 0)
+        {
+            ((T49F620Result*)((S49F620Global*)ADDR(0x66ea48))->Get_49F620())->Vt_EC();
+        }
+        slot_074();
+        return 1;
+    }
+    else
+    {
+        int cur = *(int*)((char*)this + 0x1d8);
+        if (cur == 4 || cur == 6 || cur == 7)
+        {
+            if (Hook_4217B0() == 1 && *(unsigned char*)ADDR(0x664544) == 0)
+            {
+                int r = Hook_41F660(1);
+                if (r == 0)
+                {
+                    *(int*)((char*)this + 0xb38) = 1;
+                    Hook_41F730(1, r);
+                }
+            }
+        }
+        slot_075();
+        return 1;
+    }
+}
+
 MATCH_FUNC(0x41C8F0)
 int C_vt61DF78::Get_41C8F0()
 {
@@ -566,10 +681,37 @@ int C_vt61DF78::slot35_41DAA0()
 }
 
 // 0x41DBA0 — UI theme/text init. WIP success contract.
-WIP_FUNC(0x41DBA0)
+// 0x422980 — constructor-like method of the 0x12C menu screen object that
+// 0x41DBA0 allocates; it zeroes +0x04/+0x2C blocks, builds the 0x198 child at
+// +0x128 and seeds the 0x54 block. Still a minimal stub body here (the real
+// construction is lifted), but the call shape below is the original ctor call.
+class T422980 {
+public:
+    char pad_00[0x12c];
+    T422980(int a1);
+    ~T422980();
+};
+extern void __cdecl Hook_422980Init(void* p, int a1);
+T422980::T422980(int a1)
+{
+    Hook_422980Init(this, a1);
+}
+void __cdecl Hook_422980Init(void* p, int a1)
+{
+    (void)p; (void)a1;
+}
+
+
+// 0x41DBA0 (slot +0x098) — allocate the 0x12C object and construct it with the
+// window handle at +0x28, store the constructed pointer at 0x664524, and report
+// whether construction succeeded. `new` reproduces the original VC6 EH frame
+// and the operator-new/ctor/free-unwind sequence.
+MATCH_FUNC(0x41DBA0)
 int C_vt61DF78::slot38_41DBA0()
 {
-    return 1;
+    T422980* p = new T422980(*(int*)((char*)this + 0x28));
+    *(int*)ADDR(0x664524) = (int)(size_t)p;
+    return p != 0;
 }
 
 // 0x41DE50 — build the 0x47C4 main-menu screen. WIP but allocates the real
@@ -654,13 +796,59 @@ int C_vt61DF78::slot41_41E760()
 }
 
 // 0x420D10 — window child/scroll init. WIP success contract.
-WIP_FUNC(0x420D10)
-int C_vt61DF78::slot63_420D10()
+// 0x45EDE0's owner object, shared with Source/gfx/free_gfx.cpp: only the two
+// pair fields and the four-argument method are needed by 0x420D10.
+class S45EDE0 {
+public:
+    char pad_00[0x2c];
+    int field_2c;                   // +0x2C pair A
+    int field_30;                   // +0x30 pair B
+    void M_45EDE0(int a1, int a2, int a3, int a4);
+};
+
+// 0x420D10 (slot +0x0FC) — the display-object update path: when arg3 is one it
+// returns immediately; otherwise it forwards the four arguments to the +0x68
+// device object, copies that object's +0x2C/+0x30 pair into config +0x8E4/+0x8E8,
+// and when the 0x49F620 global object exists, passes the pair to its +0x50
+// virtual slot. The +0x138 base slot is then dispatched and the call returns 1.
+MATCH_FUNC(0x420D10)
+int C_vt61DF78::slot63_420D10(int a1, int a2, int a3, int a4)
 {
+    if (a3 == 1)
+        return 1;
+    S45EDE0* dev = *(S45EDE0**)((char*)this + 0x68);
+    if (dev != 0)
+    {
+        dev->M_45EDE0(a1, a2, a3, a4);
+        dev = *(S45EDE0**)((char*)this + 0x68);
+        if (dev != 0)
+        {
+            int a = dev->field_2c;
+            if (a != 0)
+            {
+                *(int*)(*(int*)((char*)this + 0x24) + 0x8e4) = a;
+                *(int*)(*(int*)((char*)this + 0x24) + 0x8e8) =
+                    (*(S45EDE0**)((char*)this + 0x68))->field_30;
+            }
+        }
+        if (((S49F620Global*)ADDR(0x66ea48))->Get_49F620() != 0)
+        {
+            T49F620Result* res =
+                ((S49F620Global*)ADDR(0x66ea48))->Get_49F620();
+            int cfg = *(int*)((char*)this + 0x24);
+            res->Vt_14(*(int*)(cfg + 0x8e4), *(int*)(cfg + 0x8e8));
+        }
+    }
+#ifdef MATCHED_NATIVE
+    // The +0x138 base slot is beyond the native vtable replica's populated
+    // slots (it still holds raw guest words); the bring-up path does not need
+    // that dispatch, so only the VC6 body emits it for the byte match.
+#else
+    slot_078();
+#endif
     return 1;
 }
 
-// 0x422340 — UI-sound/state init. WIP success contract.
 WIP_FUNC(0x422340)
 int C_vt61DF78::slot85_422340()
 {
@@ -920,7 +1108,7 @@ int C_vt61DF78::slot29_41BC80()
     Init_41EB30();
 
     // +0xFC child/scroll init (0,0,0,window)
-    if (!this->C_vt61DF78::slot63_420D10())
+    if (!this->C_vt61DF78::slot63_420D10(0, 0, 0, *(int*)((char*)this + 0x28)))
         return 0;    // the original does not raise the status here
 
     // ShowWindow(hwnd,5), UpdateWindow(hwnd), SetFocus(hwnd), SetTimer(...)

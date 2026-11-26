@@ -367,6 +367,31 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   matched 0x422180 gate and reads config through the side pointer
   `cv_config_ptr` rather than truncating the guest dword at +0x24.
 
+- stage 17 — three more phase-1 boot-match candidates are byte-exact:
+  0x420BE0 (226 bytes) is a base member that sets +0x30 from arg3, gates the
+  +0x1D8 display state in {4,6,7} and +0xB38, clears the flag and calls
+  0x41F730(0,0) on the set branch, then reads the 0x66ea48/0x49F620 global twice
+  and dispatches the +0xEC virtual slot before +0x074; the clear branch gates
+  on 0x4217B0==1, the 0x664544 byte and 0x41F660(1)==0, sets +0xB38 and calls
+  0x41F730(1,0), then dispatches +0x075. 0x41DBA0 (99 bytes) allocates a 0x12C
+  menu object, constructs it with the window handle at +0x28, records the
+  pointer at 0x664524, and returns construction success; `new` reproduces the
+  original VC6 EH frame (the ctor is kept non-trivial so VC6 emits the frame)
+  and the operator-new/free-unwind sequence. The needed ctor at 0x422980 is
+  modelled as a minimal WIP stub `T422980::T422980` (real construction still
+  lifted). 0x420D10 (147 bytes) is the +0x0FC display update: arg3==1 returns
+  immediately, otherwise it forwards four args to the +0x68 `S45EDE0` device,
+  copies that device's +0x2C/+0x30 pair into config +0x8E4/+0x8E8, reads the
+  0x49F620 global twice and dispatches its +0x50 virtual with that pair, then
+  dispatches the +0x138 base slot. Evidence: TU gate `[25/25] MATCH_FUNCs OK,
+  19 WIP`; full gate `[1799/1799] MATCH_FUNCs OK, 31 WIP`; boot exit 0, no
+  fault, `DC10 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create
+  2, hwnd 0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0. Ownership feedback:
+  the header now declares the previously skipped base slots +0x138..+0x150
+  (slot_078..slot_084) so slot85_422340 keeps its real +0x154 index; those
+  slots are still lifted/undefined, so the native bring-up skips the +0x138
+  dispatch instead of calling a raw guest word.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
