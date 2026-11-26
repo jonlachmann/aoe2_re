@@ -2991,17 +2991,19 @@
    "vtable": "0x6251E4",
    "anchor": "0x4ECE70",
    "methods": 90,
-   "owned_methods": 45,
-   "unowned_methods": 45,
+   "owned_methods": 46,
+   "unowned_methods": 44,
    "primary_file": "Source/ui/C_TRIBE_Screen_Options.cpp",
    "owner_files": {
     "Source/gfx/C_TribePopUpHelp.cpp": 2,
     "Source/ui/C_TRIBE_Screen_Options.cpp": 33,
+    "Source/ui/C_cluster_4EE210.cpp": 1,
     "Source/ui/C_pnl_btn.cpp": 1,
     "Source/ui/free_ui.cpp": 9
    },
    "other_files": [
     "Source/gfx/C_TribePopUpHelp.cpp",
+    "Source/ui/C_cluster_4EE210.cpp",
     "Source/ui/C_pnl_btn.cpp",
     "Source/ui/free_ui.cpp"
    ],

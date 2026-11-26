@@ -97,7 +97,7 @@ public:
     virtual void slot_084();  // slot +0x150: sub_4A5920 [lifted]
     virtual void slot_085();  // slot +0x154: sub_4A6730 [lifted]
     virtual void slot_086();  // slot +0x158: sub_4A5BB0 [lifted]
-    void method_000();  // sub_4EE210 [lifted]: same object, connected by this-edge call sites
+    void method_000();  // sub_4EE210 [matched]: same object, connected by this-edge call sites — Source/ui/C_cluster_4EE210.cpp
     void method_001();  // sub_4BD7E0 [lifted]: same object, connected by this-edge call sites
     void method_002();  // sub_4BD830 [lifted]: same object, connected by this-edge call sites
 };

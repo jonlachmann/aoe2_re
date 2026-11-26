@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 412 matched, 293 left to match (20 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 413 matched, 292 left to match (20 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (293)
+## Left to match (292)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -257,7 +257,6 @@
 | 728 | `sub_4B81C0` | 1 |  | 1_boot_to_menu |  |
 | 730 | `sub_4ED630` | 1 |  | 1_boot_to_menu |  |
 | 736 | `sub_4EFD70` | 1 |  | 1_boot_to_menu |  |
-| 738 | `sub_4EE210` | 1 |  | 1_boot_to_menu |  |
 | 740 | `sub_5210D0` | 2 |  | 1_boot_to_menu |  |
 | 741 | `sub_522920` | 2 |  | 1_boot_to_menu |  |
 | 742 | `sub_521780` | 1 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_521780 |
@@ -300,7 +299,7 @@
 | 808 | `sub_5217F0` | 2144832 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (412)
+## Matched (413)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -681,6 +680,7 @@
 | 734 | `sub_4A6520` | 9 | MATCH | 1_boot_to_menu | Sc4A6520::M_4A6520 |
 | 735 | `sub_421B60` | 1 | MATCH | 1_boot_to_menu | S421Accessors::Set9D0_421B60 |
 | 737 | `sub_5BFBF0` | 1 | MATCH | 1_boot_to_menu | S5BFBF0::Get_5BFBF0 |
+| 738 | `sub_4EE210` | 1 | MATCH | 1_boot_to_menu | Free_4EE210 |
 | 739 | `sub_521090` | 2 | MATCH | 1_boot_to_menu | S521090::M_521090 |
 | 743 | `sub_5219B0` | 4289666 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Find_5219B0 |
 | 744 | `sub_5219E0` | 4289666 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Find_5219E0 |
