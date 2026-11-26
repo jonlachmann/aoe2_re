@@ -285,7 +285,7 @@ void sub_434860();  // size 156, calls 3, lifted, module game
 void sub_435830();  // size 16, calls 0, matched, module game
 void sub_436F10();  // size 171, calls 2, lifted, module game
 void sub_436FC0();  // size 103, calls 0, lifted, module game
-void sub_437100();  // size 152, calls 1, lifted, module game
+void sub_437100();  // size 152, calls 1, wip, module game
 void sub_4371A0();  // size 42, calls 2, lifted, module game
 void sub_4371D0();  // size 52, calls 1, lifted, module game
 void sub_437210();  // size 475, calls 4, lifted, module game

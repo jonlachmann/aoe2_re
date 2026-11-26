@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 416 matched, 289 left to match (21 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 416 matched, 289 left to match (23 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (289)
 
@@ -153,7 +153,7 @@
 | 420 | `sub_58A9D0` | 1 |  | 1_boot_to_menu |  |
 | 425 | `sub_41DE50` | 1 |  | 1_boot_to_menu |  |
 | 426 | `sub_425750` | 1 |  | 1_boot_to_menu |  |
-| 428 | `sub_437100` | 1 |  | 1_boot_to_menu |  |
+| 428 | `sub_437100` | 1 | WIP | 1_boot_to_menu | C_cluster_437740::Init_437100 |
 | 429 | `sub_437210` | 1 |  | 1_boot_to_menu |  |
 | 435 | `sub_430A70` | 1 |  | 1_boot_to_menu |  |
 | 437 | `sub_433550` | 1 |  | 1_boot_to_menu |  |
@@ -183,7 +183,7 @@
 | 508 | `sub_422E20` | 72771 |  | 1_boot_to_menu |  |
 | 510 | `sub_45F6F0` | 72772 |  | 1_boot_to_menu |  |
 | 511 | `sub_4A5C10` | 5 |  | 1_boot_to_menu |  |
-| 513 | `sub_45F5C0` | 2 |  | 1_boot_to_menu |  |
+| 513 | `sub_45F5C0` | 2 | WIP | 1_boot_to_menu | C_cluster_45F5C0::M_45F5C0 |
 | 518 | `sub_4A2F90` | 24 |  | 1_boot_to_menu | panel_ez::draw_background2 |
 | 523 | `sub_4998B0` | 632 |  | 1_boot_to_menu |  |
 | 524 | `sub_4A0CD0` | 65110 |  | 1_boot_to_menu |  |

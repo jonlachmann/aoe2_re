@@ -37,3 +37,39 @@ void C_cluster_437740::M_437490(int key)
         this->MarkRecord_437740(i);
     }
 }
+
+#pragma intrinsic(memset)
+
+// 0x437100 — initializer: clamp the first argument to at least 0x14 and store
+// it at +0x08; clear +0x00/+0x04/+0x10C/+0x8E8/+0x8EC/+0x8F0, set +0x110 = 1,
+// fill the 0x1F4-int table at +0x118 with -1 and the 0x20-int table at +0x8FC
+// with 0, invoke 0x437210(count), then set +0x984/+0x988 = -1, clear
+// +0x980/+0x97C/+0x98C/+0x114 and return this.
+WIP_FUNC(0x437100)
+C_cluster_437740* C_cluster_437740::Init_437100(int a1)
+{
+    if (a1 < 0x14)
+        a1 = 0x14;
+    count = a1;
+    int* p = table_118;
+    field_0 = 0;
+    field_4 = 0;
+    field_10c = 0;
+    field_8ec = 0;
+    field_8f0 = 0;
+    field_110 = 1;
+    field_8e8 = 0;
+    memset(p, -1, 0x1f4 * 4);
+    p = table_8fc;
+    memset(p, 0, 0x20 * 4);
+    field_984 = -1;
+    field_980 = 0;
+    field_988 = -1;
+    field_97c = 0;
+    field_98c = 0;
+    records = 0;
+    Hook_437210(count);
+    return this;
+}
+
+#pragma function(memset)
