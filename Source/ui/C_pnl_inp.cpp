@@ -3,6 +3,8 @@
 extern void __cdecl Free_5F90B0(void* p);
 
 extern unsigned char g_73e355;
+extern void (__stdcall *g_61C318)(int a1, char* a2);
+extern "C" char* __cdecl Hook_5FCB40(char* dst, char* src, int n);
 
 MATCH_FUNC(0x4BBCE0)
 void C_pnl_inp::M_4BBCE0(int a1)
@@ -174,3 +176,35 @@ void C_pnl_inp::M_4BBC20(int a1, char a2, char a3, char a4, char a5, char a6, ch
     }
     Hook_4BBD30(1);
 }
+
+#pragma intrinsic(memset)
+
+// 0x4B3160 — string setter: when +0xF8 is set, clear the +0x100 buffer of the
+// signed +0xFC capacity, copy up to capacity-1 bytes from the argument through
+// 0x5FCB40, terminate, store the measured length at +0x104; a null argument
+// clears the first byte and length. Then notify 61C318(+0xF8, buffer), clear
+// +0x150 and always dispatch slot +0x20 with 1.
+MATCH_FUNC(0x4B3160)
+void C_pnl_inp::M_4B3160(char* a2)
+{
+    if (field_f8 != 0)
+    {
+        if (a2 != 0)
+        {
+            memset(field_100, 0, field_fc);
+            Hook_5FCB40(field_100, a2, field_fc - 1);
+            field_100[field_fc - 1] = 0;
+            field_104 = strlen(field_100);
+        }
+        else
+        {
+            *(char*)field_100 = 0;
+            field_104 = 0;
+        }
+        g_61C318((int)field_f8, field_100);
+        field_150 = 0;
+    }
+    slot_008(1);
+}
+
+#pragma function(memset)

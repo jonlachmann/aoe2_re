@@ -170,11 +170,15 @@ public:
     int field_6c;                 // +0x6C
     char pad_70[0xf8 - 0x70];
     T4BD4B0Node* field_f8;        // +0xF8 head of the indexed node chain
-    short field_fc;               // +0xFC
-    char pad_fe[0x148 - 0xfe];
+    short field_fc;               // +0xFC capacity
+    char pad_fe[0x100 - 0xfe];    // +0xFE..+0x100
+    char* field_100;              // +0x100 text buffer
+    int field_104;                // +0x104 text length
+    char pad_108[0x148 - 0x108];  // +0x108..+0x148
     T4BBCE0Sub* field_148;        // +0x148 subobject dispatched by 0x4BBCE0
     int field_14c;                // +0x14C gate
-    char pad_150[0x184 - 0x150];
+    int field_150;                // +0x150 text flag
+    char pad_154[0x184 - 0x154];  // +0x154..+0x184
     int field_184;                // +0x184
     int field_188;                // +0x188
     unsigned char field_18c;      // +0x18C
@@ -195,6 +199,7 @@ public:
     void M_4BD4E0(int index, void* a2, void* a3, int* a4, int* a5, unsigned char flag);
     void SetInt_4B4600(int v);
     void Hook_4BBD30(int a1);
+    void M_4B3160(char* a2);
     void M_4BBC20(int a1, char a2, char a3, char a4, char a5, char a6, char a7);
     void M_4BD5F0();
     void M_4BAF60(int a, int b, int c, int d);
