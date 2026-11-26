@@ -16,8 +16,8 @@ executable and runs it.
 
 Evidence (current run):
 
-- matched TUs in `data/function_map.json`: 162
-- natively compiled by the host compiler: 162, 0 failed
+- matched/WIP-owner TUs compiled: 164 (every TU in `data/function_map.json` that owns a matched or WIP body)
+- natively compiled by the host compiler: 164, 0 failed
 - asm in matched TUs: 0 (see conversion note below)
 - objects with no undefined symbols (self-contained): 74
 - those 74 link together with no lifted code, no guest-memory map and no

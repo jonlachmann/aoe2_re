@@ -19,7 +19,7 @@ LIST=$B/tus.txt
 import json, sys
 root = sys.argv[1]
 fm = json.load(open(root + "/data/function_map.json"))
-files = sorted({r["file"] for r in fm if r.get("state") == "matched" and r.get("file")})
+files = sorted({r["file"] for r in fm if r.get("state") in ("matched", "wip") and r.get("file")})
 for f in files:
     print(f)
 PY
