@@ -22,8 +22,8 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1762 |
-| wip | 42 |
+| matched | 1763 |
+| wip | 41 |
 | verified | 17 |
 | lifted | 5929 |
 
@@ -139,7 +139,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x623B20` | `C_vt623B20` | 2 | 1 | — | 1 | 2 |
 | `0x623BA8` | `C_vt623BA8` | 13 | 1 | — | 2 | 12 |
 | `0x623C5C` | `C_vt623C5C` | 61 | 1 | — | 36 | 26 |
-| `0x623E50` | `C_vt623E50` | 3 | 1 | — | 1 | 3 |
+| `0x623E50` | `C_vt623E50` | 3 | 1 | — | 2 | 2 |
 | `0x623E5C` | `C_vt623E5C` | 4 | 1 | — | 3 | 2 |
 | `0x623F24` | `C_scr_ach` | 87 | 2 | panel_ez, scr_ach | 40 | 49 |
 | `0x624100` | `C_vt624100` | 87 | 1 | panel_ez | 42 | 46 |
