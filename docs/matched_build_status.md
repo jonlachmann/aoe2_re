@@ -457,6 +457,27 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `DC10 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2,
   hwnd 0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
 
+- stage 22 — class-shape feedback for the two post-window WIP paths is now in
+  the base TU, with their exact misses documented. 0x41DAA0 (251 bytes) now
+  models the 0x268 registry/edit object at +0x1E8: T48A410 with a non-trivial
+  hook ctor (preserving the `new` EH frame) plus the 0x48A6F0 five-argument
+  setup stub; the body also carries the registry 0x4BE080/0x4BDF50 resolution
+  and the 0x41F920 teardown shape. It stays WIP at 256 bytes: VC6 keeps the
+  dispatch block before the allocation and jumps forward, while the original
+  places the allocation between the -1 registration block and the 1/2
+  dispatch, jumping backward; the EH handler push also comes out `push 0` vs
+  `push <reloc>`. 0x41D5D0 (152 bytes) now carries the guest-exact WNDCLASS
+  path, calling the 0x61C2D0/0x61C2D4 slots with the +0x24 block offsets; the
+  native branch keeps the host wrappers. It stays WIP at 160 bytes: the class
+  name probe is `cmp byte [ecx],bl` instead of `mov dl,[ecx]; cmp dl,bl`, the
+  indirect call operands come out `call dword ptr [0]` instead of
+  `[<reloc>]`, and the two zero-field stores schedule before/after
+  RegisterClass. Both bodies preserve the original success contracts, so the
+  native boot path still runs the real window class/create flow. Evidence: TU
+  gate `[28/28] MATCH_FUNCs OK, 16 WIP`; boot exit 0, no fault, `DC10 status=0
+  DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2, hwnd
+  0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

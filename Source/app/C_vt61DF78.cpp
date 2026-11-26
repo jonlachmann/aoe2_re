@@ -602,10 +602,14 @@ int C_vt61DF78::slot30_41D070()
     return 1;
 }
 
-// 0x41D5D0 — register the window class. WIP but real Win32: build the
-// WNDCLASS-style block (style 0xB, the 0x41D670 original WndProc is replaced by
-// a headless no-op proc) and call RegisterClassA. Under MATCHED_NATIVE the
-// native API slots are installed as trampolines in matched_imports.cpp.
+// 0x41D5D0 — register the window class. The guest-exact body below builds the
+// WNDCLASS-style block and calls the 0x61C2D0/0x61C2D4 slots; under
+// MATCHED_NATIVE the block is built from native values and the slots are the
+// host trampolines in matched_imports.cpp (headless no-op WndProc). WIP: ours
+// 160 vs 152 bytes; the residual misses are the class-name probe (`cmp
+// byte [ecx],bl` instead of `mov dl,[ecx]; cmp dl,bl`) and the indirect call
+// operands (`call dword ptr [0]` instead of `call dword ptr [<reloc>]`), plus
+// the two zero-field stores scheduled before/after the RegisterClass call.
 static int __stdcall HeadlessWndProc(void* hwnd, unsigned msg, int wp, int lp)
 {
     (void)hwnd; (void)msg; (void)wp; (void)lp;
@@ -623,12 +627,13 @@ struct TWndClassA {
     char* menu;
     char* cls;
 };
+extern int (__stdcall *g_61C2D0)(int a1, void* a2);
+extern short (__stdcall *g_61C2D4)(void* a1);
 WIP_FUNC(0x41D5D0)
 int C_vt61DF78::slot31_41D5D0()
 {
 #ifdef MATCHED_NATIVE
     ++cv_win_class;
-#endif
     if (CfgI(0x414) != 0)
         return 1;
     TWndClassA wc;
@@ -641,6 +646,33 @@ int C_vt61DF78::slot31_41D5D0()
         (int)(size_t)CfgI(0x410), (char*)(Cfg() != 0 ? Cfg() + 0x61c : 0));
     int ok = Native_RegisterClass(&wc);
     return ok != 0;
+#else
+    // VC6-exact path: the original reads the +0x24 block through its guest
+    // pointer and calls the guest LoadIconA/RegisterClassA slots. The native
+    // path above replaces those with host wrappers because the guest words are
+    // not dereferenceable in the native image.
+    int zero = 0;
+    if (*(int*)(*(int*)((char*)this + 0x24) + 0x414) != zero)
+        return 1;
+    TWndClassA wc;
+    char* selected = (char*)ADDR(0x662be0);
+    char* cfgname = (char*)(*(int*)((char*)this + 0x24) + 0x645);
+    wc.cursor = 0;
+    wc.menu = selected;
+    if (*cfgname != 0)
+        wc.menu = cfgname;
+    wc.icon = (void*)(size_t)g_61C2D0(
+        *(int*)(*(int*)((char*)this + 0x24) + 0x410),
+        (void*)(*(int*)((char*)this + 0x24) + 0x61c));
+    wc.cls = (char*)(size_t)*(int*)((char*)this + 0x24);
+    wc.brush = 0;
+    wc.hInst = (void*)(size_t)*(int*)(*(int*)((char*)this + 0x24) + 0x410);
+    wc.style = 0xb;
+    wc.proc = (void*)ADDR(0x41d670);
+    wc.clsExtra = 0;
+    wc.wndExtra = 0;
+    return g_61C2D4(&wc) != 0;
+#endif
 }
 
 // 0x41D6A0 — create the main window. WIP with real Win32 calls: read the
@@ -676,9 +708,93 @@ int C_vt61DF78::slot33_41D7F0()
 }
 
 // 0x41DAA0 — post-window startup chain. WIP success contract.
+// 0x48A410's 0x268 registry/edit object; the real ctor is lifted, so the stub
+// below keeps a non-trivial hook ctor to preserve the original VC6 EH frame.
+// 0x48A6F0 (its five-argument setup) and 0x41F920 (the +0x1E8-based teardown)
+// are modelled as success-contract stubs here; 0x41F920 itself is matched in
+// Source/app/C_cluster_48B300_member_1E8.cpp but acts on the base object.
+extern void __cdecl Hook_41DAA0Ctor(void* p, int a1);
+class T48A410 {
+public:
+    char pad_00[0x268];
+    T48A410(int a1);
+    int M_48A6F0(int a1, int a2, int a3, int a4, int a5);
+};
+T48A410::T48A410(int a1)
+{
+    Hook_41DAA0Ctor(this, a1);
+}
+void __cdecl Hook_41DAA0Ctor(void* p, int a1)
+{
+    (void)p; (void)a1;
+}
+int T48A410::M_48A6F0(int a1, int a2, int a3, int a4, int a5)
+{
+    (void)a1; (void)a2; (void)a3; (void)a4; (void)a5;
+    return 1;
+}
+class C_cluster_48B300_member_1E8 {
+public:
+    void M_41F920();
+};
+
+// 0x41DAA0 WIP layout note: ours 256 vs 251 bytes; the only structural miss is
+// VC6 block placement. The original keeps the -1 registration block first,
+// then the allocation block, then the result==1/2 dispatch after it with
+// backward jumps into the allocation; our compiler keeps the dispatch before
+// the allocation and jumps forward. Logic is equivalent; register scheduling
+// and the EH handler push (`push 0` vs `push <reloc>`) follow from it. 0x41DAA0
+// itself: registry resolution plus the 0x268 edit object. It
+// reads the registry key 0x64D818; -1 triggers the 0x4BDF50 registration with
+// (0,key,0); 1 keeps the argument as the +0x74 selection; 2 clears +0x74.
+// Then `new` constructs the 0x268 object with 0, stores it at +0x1E8, runs the
+// 0x48A6F0 five-argument setup from +0x74/+0x6C/config +0x773/(0xC738,0x13),
+// and on success calls the base 0x41F920 teardown. Both failures return 0;
+// success returns 1.
 WIP_FUNC(0x41DAA0)
 int C_vt61DF78::slot35_41DAA0()
 {
+    int arg0 = 0;
+    int result;
+#ifdef MATCHED_NATIVE
+    result = RegGet(arg0, (int)(size_t)ADDR(0x64d818));
+#else
+    result = (*(S4BE080**)((char*)this + 0x1d4))
+                 ->M_4BE080(arg0, (int)(size_t)ADDR(0x64d818));
+#endif
+    if (result == -1)
+    {
+#ifdef MATCHED_NATIVE
+        RegSet(arg0, (int)(size_t)ADDR(0x64d818), 0);
+#else
+        (*(S4BDF50**)((char*)this + 0x1d4))
+            ->M_4BDF50(arg0, (int)(size_t)ADDR(0x64d818), 0);
+#endif
+        arg0 = 0;
+    }
+    if (result != -1)
+    {
+        if (result == 1)
+            arg0 = result;
+        if (result == 2)
+            *(int*)((char*)this + 0x74) = 0;
+    }
+    T48A410* p = new T48A410(arg0);
+    *(int*)((char*)this + 0x1e8) = (int)(size_t)p;
+    if (p == 0)
+        return 0;
+#ifdef MATCHED_NATIVE
+    if (!p->M_48A6F0(*(int*)((char*)this + 0x74), *(int*)((char*)this + 0x6c),
+                     (int)(size_t)(cv_config_ptr ? (char*)cv_config_ptr + 0x773 : 0),
+                     0xc738, 0x13))
+        return 0;
+    (void)(C_cluster_48B300_member_1E8*)this;
+#else
+    if (!p->M_48A6F0(*(int*)((char*)this + 0x74), *(int*)((char*)this + 0x6c),
+                     *(int*)((char*)this + 0x24) + 0x773, 0xc738, 0x13))
+        return 0;
+    ((C_cluster_48B300_member_1E8*)this)->M_41F920();
+#endif
     return 1;
 }
 
