@@ -70,7 +70,7 @@ fi
 # Stage 2: define every guest global (`g_*`) the objects reference as opaque
 # storage, so objects whose only undefined symbols are globals can link.
 "$R"/venv/bin/python - "$R" "$B" > "$B/globals.txt" <<'PY'
-import subprocess, glob, sys
+import subprocess, glob, sys, re, os
 root, B = sys.argv[1], sys.argv[2]
 names = set()
 for o in glob.glob(B + "/*.o"):
@@ -81,9 +81,31 @@ for o in glob.glob(B + "/*.o"):
         s = l.strip()
         if s.startswith("_g_"):
             names.add(s[1:])
-lines = ["// Generated opaque guest-global storage from the matched objects.", ""]
-lines += ["char %s[0x4000];" % n for n in sorted(names)]
+
+pe = None
+bin_path = os.environ.get("AOE_BIN")
+if bin_path and os.path.exists(bin_path):
+    import pefile
+    pe = pefile.PE(bin_path)
+
+lines = ["// Generated guest-global storage from the matched objects.",
+         "// Initializers come from the reference binary's data image (AOE_BIN).", ""]
+seeded = 0
+for n in sorted(names):
+    init = ""
+    m = re.search(r"g_(?:pfn_|vt_)?([0-9a-fA-F]{6,8})$", n)
+    if pe and m:
+        va = int(m.group(1), 16)
+        if va >= 0x400000:
+            try:
+                d = pe.get_data(va - 0x400000, 0x40)
+                init = " = {%s}" % ",".join("0x%02x" % b for b in d)
+                seeded += 1
+            except Exception:
+                pass
+    lines.append("char %s[0x1000]%s;" % (n, init))
 open(root + "/Scripts/matched_globals.cpp", "w").write("\n".join(lines) + "\n")
+sys.stderr.write("seeded %d globals from %s\n" % (seeded, bin_path))
 print(len(names))
 PY
 GN=$(cat "$B/globals.txt")
@@ -106,6 +128,25 @@ if "$CC" -std=c++98 -w -O2 -Wl,-no_pie -I"$R/Source" \
 else
   echo "globals link: FAILED (see $B/link_globals.err)"
   head -5 "$B/link_globals.err"
+fi
+
+# Stage 4: execute matched bodies that read PE-initialized guest globals.
+GEXEC=""
+for o in $OBJ; do
+  u="$(nm -u "$o" 2>/dev/null)"
+  if [ -n "$u" ] && [ -z "$(printf '%s\n' "$u" | grep -v '^_g_')" ]; then
+    GEXEC="$GEXEC $o"
+  fi
+done
+# shellcheck disable=SC2086
+if "$CC" -std=c++98 -w -O2 -Wl,-no_pie -I"$R/Source" \
+    "$B/matched_globals.o" $GEXEC "$R/Scripts/matched_probe_globals.cpp" \
+    -o "$B/probe_globals_exec" 2>"$B/link_globals_exec.err"; then
+  "$B/probe_globals_exec"
+  echo "globals exec probe: OK ($(echo "$GEXEC" | wc -w | tr -d ' ') objects)"
+else
+  echo "globals exec probe: FAILED"
+  head -8 "$B/link_globals_exec.err"
 fi
 
 # Stage 3: portable guest-VA access layer (ADDR) under -DMATCHED_NATIVE.

@@ -21,9 +21,13 @@ Evidence (current run):
 - asm in matched TUs: 0 (see conversion note below)
 - objects with no undefined symbols (self-contained): 74; link exit 0,
   `probe: 0 failures`
-- stage 2 — 236 `g_*` guest globals generated as opaque storage from the
-  objects' own undefined lists; 84 objects link with those globals and run
-  `probe: 0 failures`
+- stage 2 — 236 `g_*` guest globals generated from the objects' own undefined
+  lists, 214 of them seeded from the reference binary's data image (`AOE_BIN`)
+  rather than zeros; 84 objects link with those globals (`probe: 0 failures`)
+- stage 4 — the 10 globals-only objects execute against the seeded image:
+  `matched_probe_globals.cpp` checks `Get_434BE0()==1.0`, the `M_435810`
+  0.0 threshold and `Get_41A090()==FLT_MAX`: `globals exec probe: 0 failures`
+  (10 objects)
 - stage 3 — portable guest-VA access layer: `Source/matched_mem.h` defines
   `ADDR(va)`, a plain cast under VC6 (byte-exact codegen unchanged) and a guest
   image base offset under `-DMATCHED_NATIVE`. `Scripts/matched_probe_va.cpp`
