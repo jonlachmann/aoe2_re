@@ -6,6 +6,6 @@
 
 class C_cluster_4A4570 {
 public:
-    void method_000();  // sub_4A4570 [lifted]
+    void method_000();  // sub_4A4570 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     void method_001();  // sub_5063B0 [lifted]
 };

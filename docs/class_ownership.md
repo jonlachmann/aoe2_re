@@ -67,23 +67,23 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt61E328` | game | 0x61E328 | Source/app/C_vt61CE24.cpp | Source/app/free_app.cpp, Source/game/C_vt61E328.cpp, Source/game/free_game.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 79/214 |
 | `C_vt62AAE0` | game | 0x62AAE0 | Source/sim/free_sim.cpp | Source/sim/C_vt62AAE0.cpp | 2/8 |
 | `C_TribePopUpHelp` | gfx | 0x620274 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 37/62 |
-| `C_TribeTechHelpScreen` | gfx | 0x620090 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 40/92 |
+| `C_TribeTechHelpScreen` | gfx | 0x620090 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 41/92 |
 | `C_cluster_443970` | gfx | — | Source/gfx/C_cluster_443970.cpp | Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/C_vt6230B0.cpp, Source/ui/free_ui.cpp | 6/29 |
 | `C_diam_map` | gfx | 0x61E9CC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 37/67 |
 | `C_vt61DA40` | gfx | 0x61DA40 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp | 141/187 |
-| `C_vt61EAD8` | gfx | 0x61EAD8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/89 |
-| `C_vt61ECBC` | gfx | 0x61ECBC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61ECBC.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/90 |
-| `C_vt61EEA0` | gfx | 0x61EEA0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/89 |
-| `C_vt61F084` | gfx | 0x61F084 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 43/90 |
-| `C_vt61F268` | gfx | 0x61F268 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/90 |
-| `C_vt61F3CC` | gfx | 0x61F3CC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61F3CC.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 46/92 |
-| `C_vt61F5B8` | gfx | 0x61F5B8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/89 |
-| `C_vt61F71C` | gfx | 0x61F71C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/90 |
-| `C_vt61F900` | gfx | 0x61F900 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/90 |
-| `C_vt61FB64` | gfx | 0x61FB64 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/90 |
-| `C_vt61FD48` | gfx | 0x61FD48 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 43/89 |
-| `C_vt61FEAC` | gfx | 0x61FEAC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/90 |
-| `C_vt6203EC` | gfx | 0x6203EC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 42/90 |
+| `C_vt61EAD8` | gfx | 0x61EAD8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/89 |
+| `C_vt61ECBC` | gfx | 0x61ECBC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61ECBC.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 46/90 |
+| `C_vt61EEA0` | gfx | 0x61EEA0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/89 |
+| `C_vt61F084` | gfx | 0x61F084 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/90 |
+| `C_vt61F268` | gfx | 0x61F268 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/90 |
+| `C_vt61F3CC` | gfx | 0x61F3CC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61F3CC.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 47/92 |
+| `C_vt61F5B8` | gfx | 0x61F5B8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/89 |
+| `C_vt61F71C` | gfx | 0x61F71C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/90 |
+| `C_vt61F900` | gfx | 0x61F900 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/90 |
+| `C_vt61FB64` | gfx | 0x61FB64 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/90 |
+| `C_vt61FD48` | gfx | 0x61FD48 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/89 |
+| `C_vt61FEAC` | gfx | 0x61FEAC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/90 |
+| `C_vt6203EC` | gfx | 0x6203EC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 43/90 |
 | `C_vt6205D0` | gfx | 0x6205D0 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/app/free_app.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/gfx/free_gfx.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp | 140/190 |
 | `C_vt620A64` | gfx | 0x620A64 | Source/gfx/C_vt620A64.cpp | Source/app/C_vt61CE24.cpp, Source/app/C_vt61DF78.cpp, Source/gfx/free_gfx.cpp | 30/44 |
 | `C_vt627D4C` | gfx | 0x627D4C | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/gfx/free_gfx.cpp, Source/sim/C_vt627094.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp | 140/186 |
@@ -136,7 +136,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt62A70C` | sim | 0x62A70C | Source/app/C_vt61D890.cpp | Source/app/C_vt61CE24.cpp, Source/engine-late/C_view.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp | 6/57 |
 | `C_vt62A7F0` | sim | 0x62A7F0 | Source/app/C_vt61D890.cpp | Source/app/C_vt61CE24.cpp, Source/engine-late/C_view.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp | 6/58 |
 | `C_vt62A8D8` | sim | 0x62A8D8 | Source/app/C_vt61D890.cpp | Source/app/C_vt61CE24.cpp, Source/engine-late/C_view.cpp, Source/sim/C_vt62A0C0.cpp, Source/sim/free_sim.cpp, Source/ui/C_TRIBE_Screen_Options.cpp | 9/57 |
-| `C_vt62AC80` | sim | 0x62AC80 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/90 |
+| `C_vt62AC80` | sim | 0x62AC80 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/90 |
 | `C_vt62AF98` | sim | 0x62AF98 | Source/sim/free_sim.cpp | Source/sim/C_vt62AF98.cpp | 2/4 |
 | `C_vt62B0A8` | sim | 0x62B0A8 | Source/ui/C_vt620C7C.cpp | Source/sim/C_vt62B0A8.cpp, Source/sim/free_sim.cpp | 11/28 |
 | `C_vt62B198` | sim | 0x62B198 | Source/ui/C_vt620C7C.cpp | Source/sim/C_vt62B198.cpp, Source/sim/free_sim.cpp | 9/27 |
@@ -150,7 +150,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt62C47C` | sim | 0x62C47C | Source/sim/free_sim.cpp | Source/ui/C_pnl_edit.cpp | 3/5 |
 | `C_vt62C7CC` | sim | 0x62C7CC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 27/79 |
 | `C_vt62C9CC` | sim | 0x62C9CC | Source/sim/C_vt62C9CC.cpp | Source/engine-late/C_view.cpp, Source/engine-late/free_engine-late.cpp, Source/sim/free_sim.cpp | 6/72 |
-| `C_TRIBE_Screen_Options` | ui | 0x625F80 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 41/90 |
+| `C_TRIBE_Screen_Options` | ui | 0x625F80 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 42/90 |
 | `C_cluster_49F630` | ui | — | Source/ui/free_ui.cpp | Source/ui/C_cluster_49F630.cpp | 2/3 |
 | `C_cluster_4A0630` | ui | — | Source/ui/C_TRIBE_Screen_Options.cpp | Source/ui/C_pnl_btn.cpp | 2/2 |
 | `C_cluster_4A76D0` | ui | — | Source/ui/free_ui.cpp | Source/ui/C_vt6222D4.cpp | 2/2 |
@@ -165,11 +165,11 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_pnl_pic` | ui | 0x622D6C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 38/61 |
 | `C_pnl_scbr` | ui | 0x622E60 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 34/62 |
 | `C_pnl_txt` | ui | 0x623318 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/C_pnl_lst.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 41/73 |
-| `C_scr_ach` | ui | 0x623F24 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_scr_ach.cpp, Source/ui/free_ui.cpp | 41/89 |
+| `C_scr_ach` | ui | 0x623F24 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_scr_ach.cpp, Source/ui/free_ui.cpp | 42/89 |
 | `C_scr_cred` | ui | 0x624770 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/C_pnl_lst.cpp, Source/ui/free_ui.cpp | 41/74 |
-| `C_scr_game` | ui | 0x624914 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_scr_game.cpp, Source/ui/free_ui.cpp | 40/88 |
-| `C_scr_sed` | ui | 0x626338 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 41/89 |
-| `C_scr_vc` | ui | 0x626B28 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 42/88 |
+| `C_scr_game` | ui | 0x624914 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_scr_game.cpp, Source/ui/free_ui.cpp | 41/88 |
+| `C_scr_sed` | ui | 0x626338 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 42/89 |
+| `C_scr_vc` | ui | 0x626B28 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/88 |
 | `C_tpnl_btn` | ui | 0x62B970 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_tpnl_btn.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 30/63 |
 | `C_vt620C7C` | ui | 0x620C7C | Source/ui/C_vt620C7C.cpp | Source/ui/free_ui.cpp | 9/26 |
 | `C_vt620D6C` | ui | 0x620D6C | Source/app/C_vt61CE24.cpp | Source/gfx/C_vt61DA40.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/free_ui.cpp | 16/26 |
@@ -183,37 +183,37 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt6218FC` | ui | 0x6218FC | Source/gfx/C_vt620A64.cpp | Source/app/C_vt61CE24.cpp, Source/app/C_vt61DF78.cpp, Source/ui/free_ui.cpp | 30/43 |
 | `C_vt621A28` | ui | 0x621A28 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61C62C.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 101/194 |
 | `C_vt621F6C` | ui | 0x621F6C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 38/61 |
-| `C_vt622060` | ui | 0x622060 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 43/89 |
+| `C_vt622060` | ui | 0x622060 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/89 |
 | `C_vt6222D4` | ui | 0x6222D4 | Source/ui/free_ui.cpp | Source/ui/C_vt6222D4.cpp | 2/2 |
 | `C_vt622368` | ui | 0x622368 | Source/app/C_vt61CE24.cpp | Source/app/C_vt61DF78.cpp, Source/engine-late/C_view.cpp, Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61DA40.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/C_vt622368.cpp, Source/ui/free_ui.cpp | 29/85 |
-| `C_vt6225E0` | ui | 0x6225E0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/89 |
+| `C_vt6225E0` | ui | 0x6225E0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/89 |
 | `C_vt622744` | ui | 0x622744 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 37/63 |
-| `C_vt622F54` | ui | 0x622F54 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/87 |
+| `C_vt622F54` | ui | 0x622F54 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/87 |
 | `C_vt6230B0` | ui | 0x6230B0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_vt6230B0.cpp, Source/ui/free_ui.cpp | 36/62 |
 | `C_vt6231A4` | ui | 0x6231A4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 35/62 |
-| `C_vt6234C8` | ui | 0x6234C8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61F3CC.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/C_vt6234C8.cpp, Source/ui/free_ui.cpp | 46/94 |
+| `C_vt6234C8` | ui | 0x6234C8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/gfx/C_vt61F3CC.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/C_vt6234C8.cpp, Source/ui/free_ui.cpp | 47/94 |
 | `C_vt623C5C` | ui | 0x623C5C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 37/62 |
 | `C_vt623E50` | ui | 0x623E50 | Source/ui/free_ui.cpp | Source/ui/C_vt623E50.cpp | 2/4 |
-| `C_vt624100` | ui | 0x624100 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/88 |
-| `C_vt6242DC` | ui | 0x6242DC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/88 |
-| `C_vt6244B8` | ui | 0x6244B8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/87 |
-| `C_vt624614` | ui | 0x624614 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 42/89 |
-| `C_vt624AF4` | ui | 0x624AF4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/87 |
-| `C_vt624CD0` | ui | 0x624CD0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/87 |
-| `C_vt624E2C` | ui | 0x624E2C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/87 |
-| `C_vt625008` | ui | 0x625008 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 42/87 |
-| `C_vt6251E4` | ui | 0x6251E4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/90 |
-| `C_vt625340` | ui | 0x625340 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/87 |
-| `C_vt62551C` | ui | 0x62551C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 42/87 |
-| `C_vt6256F8` | ui | 0x6256F8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_vt6256F8.cpp, Source/ui/free_ui.cpp | 42/93 |
-| `C_vt6258F8` | ui | 0x6258F8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_vt6256F8.cpp, Source/ui/free_ui.cpp | 42/93 |
-| `C_vt625A6C` | ui | 0x625A6C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/87 |
-| `C_vt625C48` | ui | 0x625C48 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/88 |
-| `C_vt625DA4` | ui | 0x625DA4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_vt625DA4.cpp, Source/ui/free_ui.cpp | 43/88 |
-| `C_vt62615C` | ui | 0x62615C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/88 |
-| `C_vt626614` | ui | 0x626614 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 44/87 |
-| `C_vt6267F0` | ui | 0x6267F0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 42/87 |
-| `C_vt62694C` | ui | 0x62694C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_vt62694C.cpp, Source/ui/free_ui.cpp | 43/87 |
+| `C_vt624100` | ui | 0x624100 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/88 |
+| `C_vt6242DC` | ui | 0x6242DC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/88 |
+| `C_vt6244B8` | ui | 0x6244B8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/87 |
+| `C_vt624614` | ui | 0x624614 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/89 |
+| `C_vt624AF4` | ui | 0x624AF4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/87 |
+| `C_vt624CD0` | ui | 0x624CD0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/87 |
+| `C_vt624E2C` | ui | 0x624E2C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/87 |
+| `C_vt625008` | ui | 0x625008 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/87 |
+| `C_vt6251E4` | ui | 0x6251E4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/90 |
+| `C_vt625340` | ui | 0x625340 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/87 |
+| `C_vt62551C` | ui | 0x62551C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/87 |
+| `C_vt6256F8` | ui | 0x6256F8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_vt6256F8.cpp, Source/ui/free_ui.cpp | 43/93 |
+| `C_vt6258F8` | ui | 0x6258F8 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_vt6256F8.cpp, Source/ui/free_ui.cpp | 43/93 |
+| `C_vt625A6C` | ui | 0x625A6C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/87 |
+| `C_vt625C48` | ui | 0x625C48 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/88 |
+| `C_vt625DA4` | ui | 0x625DA4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_vt625DA4.cpp, Source/ui/free_ui.cpp | 44/88 |
+| `C_vt62615C` | ui | 0x62615C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/88 |
+| `C_vt626614` | ui | 0x626614 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 45/87 |
+| `C_vt6267F0` | ui | 0x6267F0 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/87 |
+| `C_vt62694C` | ui | 0x62694C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_vt62694C.cpp, Source/ui/free_ui.cpp | 44/87 |
 
 ## Staged owners
 | Class | Region | Vtable | Staged files | Owned/Methods |

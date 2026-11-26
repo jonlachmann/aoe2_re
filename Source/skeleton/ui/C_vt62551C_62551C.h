@@ -80,7 +80,7 @@ public:
     virtual void slot_069();  // slot +0x114: sub_4A44D0 [lifted]
     virtual void slot_070();  // slot +0x118: sub_4A4890 [lifted]
     virtual void slot_071();  // slot +0x11C: sub_4A4600 [lifted]
-    virtual void slot_072();  // slot +0x120: sub_4A4570 [lifted]
+    virtual void slot_072();  // slot +0x120: sub_4A4570 [matched] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_073();  // slot +0x124: sub_4A4AC0 [lifted]
     virtual void slot_074();  // slot +0x128: sub_4A4830 [wip] — Source/ui/C_TRIBE_Screen_Options.cpp
     virtual void slot_075();  // slot +0x12C: sub_4A4B20 [lifted]

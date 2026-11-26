@@ -292,3 +292,16 @@ void C_TRIBE_Screen_Options::M_4A2070(char* a1)
 }
 #pragma function(strlen)
 #pragma function(strcpy)
+
+// 0x4A4570 — format the third argument into a 0x200-byte local buffer through
+// 0x4A2140 (which returns 1 on success), then dispatch slot +0x128 with the
+// eleven arguments, substituting the buffer for the fourth position.
+MATCH_FUNC(0x4A4570)
+void C_TRIBE_Screen_Options::M_4A4570(int a1, int a2, int a3, int a4, int a5,
+                                      int a6, int a7, int a8, int a9, int a10,
+                                      int a11)
+{
+    char buf[0x200];
+    Hook_4A2140(a3, buf, 0x200);
+    slot_74(a1, a2, (int)buf, a4, a5, a6, a7, a8, a9, a10, a11);
+}

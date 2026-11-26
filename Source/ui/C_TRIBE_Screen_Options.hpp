@@ -179,6 +179,10 @@ public:
     virtual void slot_70();
     virtual void slot_71(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                          int* a8, int a9, int a10, int a11, int c1, int c2);
+    virtual void slot_72();
+    virtual void slot_73();
+    virtual void slot_74(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
+                         int a8, int a9, int a10, int a11);
 
     char pad_04[0x0c - 4];
     int field_c;                  // +0x0C
@@ -238,6 +242,9 @@ public:
     int Get_4474F0();
     int Get_447500();
     void Hook_4A1CD0();           // unresolved callee at 0x4A1CD0
+    int Hook_4A2140(int a1, void* a2, int a3); // unresolved callee at 0x4A2140
+    void M_4A4570(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
+                  int a8, int a9, int a10, int a11);
     void M_4A0780(unsigned char v);
     void M_4A07E0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                   int a8, int a9, int a10, int a11, int a12, int a13);
