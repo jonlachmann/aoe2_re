@@ -27785,13 +27785,13 @@
   "calls": 2,
   "name": "sub_45FB60",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "S_45FB60",
+  "class_evidence": "this-edge node registration: +0 container, +4 copy, +0xAC 0xC node, +0xF0 arg5; container +0x14 list +0x3C mode",
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x45FC30",

@@ -1787,3 +1787,70 @@ void __cdecl Hook_4378C0_2Arg(void* a1, int a2)
 {
     Hook_4378C0(a1, a2, 0);
 }
+
+// 0x45FB60 — five-argument node-registration member: store the container at
+// +0 and the fifth argument at +0xF0, copy the container's +0x04 value into
+// +0x04, lazily allocate a 0xC node through 0x5F8FF0(1,0xC) with
+// {this,0,0}, append it to the container's +0x14 singly linked list (setting
+// the new node's +4 to the previous tail), return 0 when the container's
+// +0x3C byte is 1 or the node allocation fails, otherwise run the matched
+// M_45FED0(a2,a3,a4) and return 1.
+extern void* __cdecl sub_5F8FF0(unsigned int a1, int a2);
+class T45FB60Node {
+public:
+    int field_0;                  // +0x00 owner/back pointer
+    int field_4;                  // +0x04 previous tail
+    T45FB60Node* field_8;         // +0x08 next
+};
+class T45FB60Container {
+public:
+    char pad_00[0x14];
+    T45FB60Node* field_14;        // +0x14 list head
+    char pad_18[0x3c - 0x18];
+    unsigned char field_3c;       // +0x3C mode byte
+};
+class S_45FB60 {
+public:
+    void* field_00;               // +0x00 container
+    int field_04;                 // +0x04 container +0x04 copy
+    char pad_08[0xac - 0x08];
+    T45FB60Node* field_ac;        // +0xAC lazily built node
+    char pad_b0[0xf0 - 0xb0];
+    int field_f0;                 // +0xF0 fifth argument
+    int M_45FB60(int a1, int a2, int a3, int a4, int a5);
+};
+MATCH_FUNC(0x45FB60)
+int S_45FB60::M_45FB60(int a1, int a2, int a3, int a4, int a5)
+{
+    field_00 = (void*)a1;
+    field_f0 = a5;
+    if (field_00 != 0)
+    {
+        field_04 = *(int*)((char*)field_00 + 4);
+        if (field_ac == 0)
+        {
+            void* p = sub_5F8FF0(1, 0xc);
+            field_ac = (T45FB60Node*)p;
+            if (p == 0)
+                return 0;
+            ((T45FB60Node*)p)->field_0 = (int)this;
+            *(int*)((char*)field_ac + 4) = 0;
+            *(int*)((char*)field_ac + 8) = 0;
+            if (((T45FB60Container*)field_00)->field_14 == 0)
+                ((T45FB60Container*)field_00)->field_14 = field_ac;
+            else
+            {
+                T45FB60Node* n = ((T45FB60Container*)field_00)->field_14;
+                while (n->field_8 != 0)
+                    n = n->field_8;
+                n->field_8 = field_ac;
+                *(int*)((char*)field_ac + 4) = (int)n;
+            }
+        }
+        if (((T45FB60Container*)field_00)->field_3c == 1)
+            return 0;
+    }
+    ((T45EDE0Sub*)this)->M_45FED0(a2, a3, a4);
+    return 1;
+}
+

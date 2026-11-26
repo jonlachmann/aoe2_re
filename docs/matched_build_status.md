@@ -688,6 +688,21 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   gate `[1814/1814] MATCH_FUNCs OK, 32 WIP`; phase docs now 453/815 matched (243
   left, 25 WIP, 119 CRT).
 
+- stage 37 — `Source/gfx/free_gfx.cpp` now carries a byte-exact
+  `MATCH_FUNC(0x45FB60)` (196 bytes): the five-argument node-registration
+  member stores the container at +0 and arg5 at +0xF0, copies the container's
+  +0x04 into +0x04, lazily allocates a 0xC node through 0x5F8FF0(1,0xC) with
+  {this,0,0}, and appends it to the container's +0x14 list (new node's +4 =
+  previous tail), returning 0 when the container's +0x3C byte is 1 or the alloc
+  fails, otherwise running M_45FED0(a2,a3,a4) and returning 1. Scheduling
+  lesson: later container accesses must go through this->field_00 (a reload)
+  rather than the argument, otherwise VC6 keeps a1 in edi and emits an extra
+  push. Class feedback: S_45FB60 (+0/+4/+0xAC/+0xF0) and its container
+  (+0x14 list head, +0x3C mode) with 0xC nodes {owner,prev,next}; 0x45FED0 is a
+  same-object three-argument method. Evidence after this wave: full gate
+  `[1815/1815] MATCH_FUNCs OK, 32 WIP`; phase docs now 454/815 matched (242 left,
+  25 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 453 matched, 243 left to match (25 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 454 matched, 242 left to match (25 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (243)
+## Left to match (242)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -33,7 +33,6 @@
 | 250 | `sub_45E4C0` | 1 |  | 1_boot_to_menu |  |
 | 252 | `sub_45EAE0` | 1 |  | 1_boot_to_menu |  |
 | 253 | `sub_45F8E0` | 23 |  | 1_boot_to_menu |  |
-| 254 | `sub_45FB60` | 23 |  | 1_boot_to_menu |  |
 | 255 | `sub_45FED0` | 25 |  | 1_boot_to_menu |  |
 | 257 | `sub_460740` | 151 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
 | 258 | `sub_522EB0` | 48 |  | 1_boot_to_menu |  |
@@ -250,7 +249,7 @@
 | 807 | `sub_4EDC70` | 2144832 |  | 1_boot_to_menu |  |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (453)
+## Matched (454)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -400,6 +399,7 @@
 | 246 | `sub_45DF20` | 2 | MATCH | 1_boot_to_menu | C_cluster_45DF20::M_45DF20 |
 | 247 | `sub_5ECE5C` | 2 | MATCH | 1_boot_to_menu | C_cluster_45DF20::M_5ECE5C |
 | 251 | `sub_45EDE0` | 2 | MATCH | 1_boot_to_menu | S45EDE0::M_45EDE0 |
+| 254 | `sub_45FB60` | 23 | MATCH | 1_boot_to_menu | S_45FB60::M_45FB60 |
 | 256 | `sub_460660` | 151 | MATCH | 1_boot_to_menu | TDrawArea::SetClipRect_460660 |
 | 259 | `sub_522C70` | 48 | MATCH | 1_boot_to_menu | S522C70::M_522C70 |
 | 260 | `sub_5DCC30` | 48 | MATCH | 1_boot_to_menu | S5DCC30::Init_5DCC30 |
