@@ -10,4 +10,5 @@ public:
     unsigned char array_9B5[0xB];  // +0x9B5
 
     int Get_421880(int index);
+    int M_4218A0(int a1);
 };

@@ -6383,11 +6383,11 @@
    "vtable": null,
    "anchor": "0x421880",
    "methods": 2,
-   "owned_methods": 1,
-   "unowned_methods": 1,
+   "owned_methods": 2,
+   "unowned_methods": 0,
    "primary_file": "Source/game/C_cluster_421880.cpp",
    "owner_files": {
-    "Source/game/C_cluster_421880.cpp": 1
+    "Source/game/C_cluster_421880.cpp": 2
    },
    "other_files": [],
    "staged_files": [],
