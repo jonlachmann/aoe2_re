@@ -14775,13 +14775,13 @@
   "calls": 3,
   "name": "sub_422980",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "S422980",
+  "class_evidence": "S422D50-derived object (same +0/+4/+2C/+54 arrays) plus +0x120/+124/+128; new 0x198 name object",
   "slot_classes": [],
   "module": "game",
   "region": "game",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/game/free_game.cpp"
  },
  {
   "address": "0x422A40",

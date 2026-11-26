@@ -3309,3 +3309,47 @@ void sub_430A70()
         }
     }
 }
+
+// 0x422980 — initialize the S422D50-derived grid object: zero the two 10-entry
+// arrays, `new` a 0x198 name object through the matched 0x58A780 initializer
+// (argument is g_6645C4+0x80), store it at +0x128, set +0 to the caller's
+// context pointer, zero +0x120, clear the 51-entry +0x54 array, zero +0x124 and
+// run the matched 0x422D50(0..9, 0) seed loop. Returns this.
+class TG6645L {
+public:
+    char pad_00[0x80];
+    int field_80;
+};
+class S422980Name {
+public:
+    char pad_00[0x198];
+    S422980Name(int a1);
+};
+class S422980 : public S422D50 {
+public:
+    int field_120;                // +0x120
+    int field_124;                // +0x124
+    void* field_128;              // +0x128
+    S422980* Init_422980(int a1);
+};
+// WIP: ours 192 vs 188. Semantics are complete, but VC6 schedules the two
+// rep-stosd fills (xor/lea order) and keeps the g_6645C4 field in edx rather
+// than the original's ecx reload, plus the +0x14 EH-state store sits late.
+WIP_FUNC(0x422980)
+S422980* S422980::Init_422980(int a1)
+{
+    for (int i1 = 0; i1 < 10; i1++)
+        arr_04[i1] = 0;
+    for (int i2 = 0; i2 < 10; i2++)
+        arr_2c[i2] = 0;
+    S422980Name* p = new S422980Name(((TG6645L*)g_6645c4)->field_80);
+    field_128 = (void*)p;
+    *(int*)((char*)this) = a1;
+    field_120 = 0;
+    for (int i3 = 0; i3 < 51; i3++)
+        arr_54[i3] = 0;
+    field_124 = 0;
+    for (int i4 = 0; i4 <= 9; i4++)
+        M_422D50(i4, 0);
+    return this;
+}

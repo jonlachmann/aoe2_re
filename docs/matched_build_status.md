@@ -623,6 +623,18 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   this wave: full gate `[1810/1810] MATCH_FUNCs OK, 31 WIP`; phase docs now
   449/815 matched (247 left, 24 WIP, 119 CRT).
 
+- stage 32 — `Source/game/free_game.cpp` now has a semantically-complete WIP
+  for 0x422980 (192 vs 188): the S422D50-derived object zeroes its two 10-entry
+  arrays, `new`s a 0x198 name object through the matched 0x58A780 initializer
+  (argument g_6645C4+0x80), stores it at +0x128, sets +0 to the caller context,
+  clears the 51-entry +0x54 array and runs the matched 0x422D50(0..9,0) seed
+  loop. Class feedback: the 0x422980 object shares S422D50's exact +0/+4/+0x2C/
+  +0x54 layout and adds +0x120/+0x124/+0x128; 0x58A780 is used as a `new` target.
+  VC6 schedules the rep-stosd xor/lea fills and the g_6645C4 field differently
+  (edx vs ecx) and places the +0x14 EH-state store late, so it stays WIP.
+  Evidence after this wave: full gate `[1810/1810] MATCH_FUNCs OK, 32 WIP`;
+  phase docs now 449/815 matched (247 left, 25 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
