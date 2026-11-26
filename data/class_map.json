@@ -6573,26 +6573,26 @@
    {
     "address": "0x41D070",
     "name": "sub_41D070",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41D5D0",
     "name": "sub_41D5D0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41D6A0",
     "name": "sub_41D6A0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41D7F0",
     "name": "sub_41D7F0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41DA70",
@@ -6603,8 +6603,8 @@
    {
     "address": "0x41DAA0",
     "name": "sub_41DAA0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41DC10",
@@ -6621,44 +6621,44 @@
    {
     "address": "0x41DBA0",
     "name": "sub_41DBA0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41DE50",
     "name": "sub_41DE50",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41E070",
     "name": "sub_41E070",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41E760",
     "name": "basegame::setup_fonts",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41E5D0",
     "name": "sub_41E5D0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41E4A0",
     "name": "sub_41E4A0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41EA60",
     "name": "sub_41EA60",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41EB30",
@@ -6771,8 +6771,8 @@
    {
     "address": "0x420D10",
     "name": "sub_420D10",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x420DB0",
@@ -6903,8 +6903,8 @@
    {
     "address": "0x422340",
     "name": "sub_422340",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x4378C0",
@@ -66161,20 +66161,20 @@
    {
     "address": "0x41D5D0",
     "name": "sub_41D5D0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41D6A0",
     "name": "sub_41D6A0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41D7F0",
     "name": "sub_41D7F0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x5B1EA0",
@@ -66185,8 +66185,8 @@
    {
     "address": "0x41DAA0",
     "name": "sub_41DAA0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41DC10",
@@ -66203,26 +66203,26 @@
    {
     "address": "0x41DBA0",
     "name": "sub_41DBA0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41DE50",
     "name": "sub_41DE50",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41E070",
     "name": "sub_41E070",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41E760",
     "name": "basegame::setup_fonts",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x5B1EB0",
@@ -66233,14 +66233,14 @@
    {
     "address": "0x41E4A0",
     "name": "sub_41E4A0",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41EA60",
     "name": "sub_41EA60",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x41EB30",
@@ -66353,8 +66353,8 @@
    {
     "address": "0x420D10",
     "name": "sub_420D10",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x420DB0",
@@ -66485,8 +66485,8 @@
    {
     "address": "0x422340",
     "name": "sub_422340",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/app/C_vt61DF78.cpp"
    },
    {
     "address": "0x5BC500",

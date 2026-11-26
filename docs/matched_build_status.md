@@ -335,6 +335,38 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   WIP files: `Source/app/C_vt61DF78.cpp` (BC80/CF70/DC80),
   `Source/sim/C_vt62C1E0.cpp` (5B17D0).
 
+- stage 16 — window creation and the two menu-screen shells now run from
+  native C++: the full 0x41BC80 bring-up body is a WIP member (1200 bytes vs
+  original 1700) that follows the original order: timeGetTime seed, registry
+  resolution/option reads through the matched 0x4BE080/0x4BDF50 helpers,
+  config +0x8F4/+0x8FC/+0x8CC/+0x8D4/+0x8E0/+0x8F8 writes, the 0x41F200/
+  0x41F3A0/0x41F0C0/0x465270 gates as success contracts, SystemParametersInfoA
+  mouse-speed probes, the +0x7C/+0x80/+0x84 window slots, all +0x8C..+0xA8
+  screen slots, the 0x274 object at +0x1B0 through the matched 0x462B50 ctor,
+  the +0x0C/+0xB4 setters, the +0xFC child init, and ShowWindow/UpdateWindow/
+  SetFocus/SetTimer. The window slots are now real Win32 behaviours, not guest
+  IAT calls: `0x41D5D0` registers a WNDCLASS with a headless WndProc, `0x41D6A0`
+  reads desktop metrics, creates the window and stores the handle at +0x28 /
+  g_664528, and the imports layer exposes direct `Native_*` wrappers so host
+  stack/config pointers never reach the guest-VA trampolines. `0x41DE50` and
+  `0x41E070` allocate and record the 0x47C4 / 0x7B0 / 0x5C0 screen shells at
+  +0x1B0/+0x80/+0x90 and g_664520/g_664518; the matched 0x425750 / 0x5200F0
+  setters remain lifted because the shells' internal 0x15FC-style subobjects
+  are not modelled yet. Evidence: boot exit 0, no fault, no MessageBox,
+  `DC10=1 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`, WinMain returns 0, and
+  `window class/create=2 hwnd=1A2B3C4D menu-screen DE50=1 E070=1`. Gate
+  `[1796/1796] MATCH_FUNCs OK, 33 WIP`.
+  Ownership feedback: 0x41D070 (slot +0x078), 0x41D5D0 (+0x07C), 0x41D6A0
+  (+0x080), 0x41D7F0 (+0x084), 0x41DAA0 (+0x08C), 0x41DBA0 (+0x098), 0x41DE50
+  (+0x09C), 0x41E070 (+0x0A0), 0x41E760 (+0x0A4), 0x41E5D0 (+0x0A8), 0x41E4A0
+  (+0x0AC), 0x41EA60 (+0x0B0), 0x420D10 (+0x0FC) and 0x422340 (+0x154) are all
+  base-vtable 0x61DF78 members `C_vt61DF78`; 0x41F200/0x41F3A0/0x41F0C0/
+  x465270 are free functions. Native 64-bit field shifts are a real hazard:
+  pointer members at non-8-aligned guest offsets (e.g. `Sc422180`'s +0x24
+  pointer) are padded to +0x28 under clang, so the WIP bring-up guards the
+  matched 0x422180 gate and reads config through the side pointer
+  `cv_config_ptr` rather than truncating the guest dword at +0x24.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

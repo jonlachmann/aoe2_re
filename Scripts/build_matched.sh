@@ -245,7 +245,7 @@ lines = ["// Generated host stubs for extern symbols the matched object set does
          "// data stubs provide opaque storage. Used only to grow the matched-only link.",
          ""]
 for i, s in enumerate(funs):
-    lines.append('extern "C" int stub_%d() __asm__("%s");' % (i, s))
+    lines.append('extern "C" __attribute__((weak)) int stub_%d() __asm__("%s");' % (i, s))
     lines.append("int stub_%d() { return 0; }" % i)
     lines.append("")
 for i, s in enumerate(data):

@@ -10,7 +10,7 @@ void sub_440740();  // size 1, calls 0, matched, module gfx
 void sub_440750();  // size 1, calls 0, matched, module gfx
 void sub_440760();  // size 692, calls 2, lifted, module gfx
 void sub_440A20();  // size 111, calls 2, lifted, module gfx
-void sub_440A90();  // size 117, calls 7, lifted, module gfx
+void sub_440A90();  // size 117, calls 7, matched, module gfx
 void sub_440B40();  // size 64, calls 2, matched, module gfx
 void sub_440B80();  // size 64, calls 2, matched, module gfx
 void sub_440BC0();  // size 64, calls 2, matched, module gfx
@@ -309,7 +309,7 @@ void sub_465100();  // size 13, calls 5, matched, module gfx
 void sub_465110();  // size 13, calls 9, matched, module gfx
 void sub_465120();  // size 19, calls 4, matched, module gfx
 void sub_465140();  // size 297, calls 9, lifted, module gfx
-void sub_465270();  // size 544, calls 5, lifted, module gfx
+void sub_465270();  // size 544, calls 5, wip, module gfx
 void sub_465490();  // size 16, calls 0, matched, module gfx
 void sub_4654A0();  // size 27, calls 0, matched, module gfx
 void sub_4654C0();  // size 16, calls 0, matched, module gfx

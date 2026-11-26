@@ -508,6 +508,7 @@ void C_vt62C1E0::M_5BAD80(int a1)
 extern "C" int g_cvt_ctor41_hits = 0;   // proof counters for the native boot
 extern "C" int g_cvt_ctor5b_hits = 0;
 extern "C" int g_cvt_5b17d0_hits = 0;
+extern "C" void* cv_config_ptr = 0;
 extern "C" int g_cvt_dc10_status = 0;
 extern "C" int g_cvt_slot18_hits = 0;
 extern "C" int g_cvt_slot24_hits = 0;
@@ -681,6 +682,9 @@ C_vt62C1E0* C_vt62C1E0::M_41B760(void* parent, int flag)
 
     // pointer-sized parent config block: write last so +0x2C stays zero.
     *(void**)((char*)this + 0x24) = parent;
+#ifdef MATCHED_NATIVE
+    cv_config_ptr = parent;
+#endif
 
     // device chain: 0x41DC10 is now a byte-verified native body (allocates the
     // 0x110 registry/context object and stores it at +0x1D4). 0x41DC80 is still

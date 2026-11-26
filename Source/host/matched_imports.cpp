@@ -34,6 +34,9 @@ extern char g_61c168[0x1000];   /* GlobalFree */
 extern char g_61c37c[0x1000];   /* MessageBoxA */
 extern char g_61c3c4[0x1000];   /* timeEndPeriod */
 extern char g_61C008[0x1000];   /* RegCreateKeyExA (9-arg slot 0x61C008) */
+extern char g_61C004[0x1000];   /* RegQueryValueExA (6-arg slot 0x61C004) */
+extern char g_61C000[0x1000];   /* RegSetValueExA (6-arg slot 0x61C000) */
+/* Win32 window/user slots reached by the native 0x41BC80 bring-up. */
 extern char g_61C2D8[0x1000];   /* CharUpperA (slot 0x61C2D8) */
 /* Lowercase image-slot arrays used by the C_vt61DF78 message pump. */
 extern char g_61c2dc[0x1000];
@@ -245,6 +248,145 @@ static int __stdcall reg_create_key_ex_a(int root, char *subkey, int reserved,
     return 0;
 }
 
+static int __stdcall reg_query_value_ex_a(void *key, char *name, int reserved,
+                                          int *type, void *data, unsigned int *size)
+{
+    /* Headless boot has no registry hive to read. Report a miss so the matched
+     * 0x4BE080 reader returns -1 and the bring-up takes its documented default
+     * branches instead of faulting on an unbound slot. */
+    (void)key; (void)name; (void)reserved; (void)data;
+    if (type != 0) *type = 4;
+    if (size != 0) *size = 0;
+    return 1;
+}
+
+static int __stdcall reg_set_value_ex_a(void *key, char *name, int reserved,
+                                        int type, void *data, unsigned int size)
+{
+    (void)key; (void)name; (void)reserved; (void)type; (void)data; (void)size;
+    return 0;
+}
+
+static int __stdcall get_system_metrics(int index)
+{
+    /* Headless menu boot: a 800x600 desktop. index 0 width, 1 height. */
+    return index == 0 ? 800 : 600;
+}
+
+static int __stdcall create_window_ex_a(int exstyle, char *cls, char *title,
+                                        int style, int x, int y, int w, int h,
+                                        int parent, int menu, int inst, int param)
+{
+    (void)exstyle; (void)cls; (void)title; (void)style; (void)x; (void)y;
+    (void)w; (void)h; (void)parent; (void)menu; (void)inst; (void)param;
+    /* A stable fake 32-bit HWND the guest layout can carry in a dword field. */
+    return 0x1a2b3c4d;
+}
+
+static int __stdcall get_window_rect(void *hwnd, int *rect)
+{
+    (void)hwnd;
+    if (rect != 0)
+    {
+        rect[0] = 0; rect[1] = 0; rect[2] = 800; rect[3] = 600;
+    }
+    return 1;
+}
+
+static int __stdcall get_client_rect(void *hwnd, int *rect)
+{
+    (void)hwnd;
+    if (rect != 0)
+    {
+        rect[0] = 0; rect[1] = 0; rect[2] = 800; rect[3] = 600;
+    }
+    return 1;
+}
+
+static int __stdcall set_window_pos(void *hwnd, void *after, int x, int y, int cx, int cy, int flags)
+{
+    (void)hwnd; (void)after; (void)x; (void)y; (void)cx; (void)cy; (void)flags;
+    return 1;
+}
+
+static int __stdcall update_window(void *hwnd)
+{
+    (void)hwnd;
+    return 1;
+}
+
+static int __stdcall show_window(void *hwnd, int cmd)
+{
+    (void)hwnd; (void)cmd;
+    return 1;
+}
+
+static int __stdcall set_focus(void *hwnd)
+{
+    (void)hwnd;
+    return 1;
+}
+
+static int __stdcall set_timer(void *hwnd, int id, int ms, void *proc)
+{
+    (void)hwnd; (void)id; (void)ms; (void)proc;
+    return 1;
+}
+
+static int __stdcall system_parameters_info_a(int action, int p0, void *p1, int p2)
+{
+    (void)p0; (void)p2;
+    if (action == 0x10 && p1 != 0)
+        *(int*)p1 = 0x20;      /* SPI_GETMOUSESPEED style probe */
+    return 1;
+}
+
+static int __stdcall register_class_a(void *wc)
+{
+    (void)wc;
+    return 1;
+}
+
+static int __stdcall load_icon_a(int inst, char *name)
+{
+    (void)inst; (void)name;
+    return 1;
+}
+
+static int __stdcall global_memory_status(void *mem)
+{
+    /* dwLength, dwMemoryLoad, dwTotalPhys, dwAvailPhys, dwTotalPageFile,
+     * dwAvailPageFile, dwTotalVirtual, dwAvailVirtual (8 dwords). */
+    if (mem != 0)
+    {
+        unsigned int *m = (unsigned int*)mem;
+        m[0] = 32;
+        m[1] = 10;
+        m[2] = 0x3f00000;
+        m[3] = 0x2000000;
+        m[4] = 0;
+        m[5] = 0;
+        m[6] = 0;
+        m[7] = 0;
+    }
+    return 1;
+}
+
+/* Direct native entry points for the WIP bring-up bodies. They bypass the
+ * guest IAT slot arrays (which are only meaningful when a caller pushes
+ * guest-VA arguments) and let the 0x41BC80 window/screen chain run in-process. */
+extern "C" int Native_GetSystemMetrics(int index) { return get_system_metrics(index); }
+extern "C" int Native_CreateWindow(int clsId) { (void)clsId; return create_window_ex_a(0, (char*)"AOE matched menu", (char*)"Age of Empires", 0x82080000, 0, 0, 800, 600, 0, 0, 0, 0); }
+extern "C" int Native_RegisterClass(void* wc) { return register_class_a(wc); }
+extern "C" int Native_LoadIcon(int inst, char* name) { return load_icon_a(inst, name); }
+extern "C" int Native_SystemParameters(int action, int p0, void* p1, int p2) { return system_parameters_info_a(action, p0, p1, p2); }
+extern "C" int Native_ShowWindow(int hwnd, int cmd) { return show_window((void*)(size_t)hwnd, cmd); }
+extern "C" int Native_UpdateWindow(int hwnd) { return update_window((void*)(size_t)hwnd); }
+extern "C" int Native_SetFocus(int hwnd) { return set_focus((void*)(size_t)hwnd); }
+extern "C" int Native_SetTimer(int hwnd, int id, int ms, void* proc) { return set_timer((void*)(size_t)hwnd, id, ms, proc); }
+extern "C" int Native_GlobalMemoryStatus(void* mem) { return global_memory_status(mem); }
+extern "C" int Native_GetClientRect(int hwnd, int* rect) { return get_client_rect((void*)(size_t)hwnd, rect); }
+
 static int __stdcall char_upper_a(char *s)
 {
     /* The seeded slot holds the RVA 0x38284A of the name "CharUpperA"; its
@@ -278,11 +420,14 @@ extern "C" void InstallMatchedImports(void)
     *(void**)g_61c37c = (void*)message_box_a;
     *(void**)g_61c3c4 = (void*)time_end_period;
     *(void**)g_61C008 = (void*)reg_create_key_ex_a;
+    *(void**)g_61C004 = (void*)reg_query_value_ex_a;
+    *(void**)g_61C000 = (void*)reg_set_value_ex_a;
     *(void**)g_61C2D8 = (void*)char_upper_a;
     *(void**)g_61c2dc = (void*)dispatch_message_a;
     *(void**)g_61c2e0 = (void*)translate_message;
     *(void**)g_61c2e4 = (void*)get_message_a;
     *(void**)g_61c2e8 = (void*)peek_message_a;
+
 }
 
 /* Diagnostic path: run the WIP language init 0x47B620 natively now that the
@@ -302,6 +447,10 @@ extern "C" int g_cvt_slot37_hits;
 extern "C" int g_cvt_slot04_hits;
 extern "C" int g_cvt_41bc80_hits;
 extern "C" int g_cvt_5b17d0_hits;
+extern "C" int cv_win_class;
+extern "C" int cv_win_handle;
+extern "C" int cv_de50_hits;
+extern "C" int cv_e070_hits;
 extern "C" int matched_winmain(void)
 {
     int r = sub_47AE20(0x400000, 0, (char *)(g_matched_base + 0x662be0), 1);
@@ -313,6 +462,9 @@ extern "C" int matched_winmain(void)
     fprintf(stderr, "[matched-imports] DC80=%d\n", g_cvt_slot37_hits);
     fprintf(stderr, "[matched-imports] BC80=%d 5B17D0=%d menu-loop=%d\n",
             g_cvt_41bc80_hits, g_cvt_5b17d0_hits, g_cvt_slot04_hits);
+    fprintf(stderr, "[matched-imports] window class/create=%d hwnd=%X menu-screen DE50=%d E070=%d\n",
+            cv_win_class, cv_win_handle,
+            cv_de50_hits, cv_e070_hits);
     return r;
 }
 

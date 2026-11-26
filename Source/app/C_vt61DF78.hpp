@@ -52,21 +52,21 @@ public:
     virtual void slot_027();
     virtual void slot_028();
     virtual int slot29_41BC80();
-    virtual void slot_030();
-    virtual void slot_031();
-    virtual void slot_032();
-    virtual void slot_033();
+    virtual int slot30_41D070();
+    virtual int slot31_41D5D0();
+    virtual int slot32_41D6A0();
+    virtual int slot33_41D7F0();
     virtual int slot34_41DA70();
-    virtual void slot_035();
+    virtual int slot35_41DAA0();
     virtual int slot36_41DC10();
     virtual int slot37_41DC80();
-    virtual void slot_038();
-    virtual void slot_039();
-    virtual void slot_040();
-    virtual void slot_041();
-    virtual void slot_042();
-    virtual void slot_043();
-    virtual void slot_044();
+    virtual int slot38_41DBA0();
+    virtual int slot39_41DE50();
+    virtual int slot40_41E070();
+    virtual int slot41_41E760();
+    virtual int slot42_41E5D0();
+    virtual int slot43_41E4A0();
+    virtual int slot44_41EA60();
     virtual void slot_045();
     virtual void slot_046();
     virtual void slot_047();
@@ -85,7 +85,7 @@ public:
     virtual void slot_060();
     virtual void slot_061();
     virtual void slot_062();
-    virtual void slot_063();
+    virtual int slot63_420D10();
     virtual void slot_064();
     virtual void slot_065();
     virtual void slot_066();
@@ -100,6 +100,7 @@ public:
     virtual void slot_075();
     virtual int Vat_130();
     virtual int Vat_134();
+    virtual int slot85_422340();
 
     char pad_04[0x24 - 4];
     int field_24;                 // +0x24, base for the 0x66E string offset

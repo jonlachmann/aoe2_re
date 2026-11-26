@@ -41,20 +41,20 @@ public:
     virtual void slot_028();  // slot +0x070: sub_5BD3E0 [lifted]
     virtual void slot_029();  // slot +0x074: sub_5B17D0 [wip] — Source/sim/C_vt62C1E0.cpp
     virtual void slot_030();  // slot +0x078: sub_5B1D40 [lifted]
-    virtual void slot_031();  // slot +0x07C: sub_41D5D0 [lifted]
-    virtual void slot_032();  // slot +0x080: sub_41D6A0 [lifted]
-    virtual void slot_033();  // slot +0x084: sub_41D7F0 [lifted]
+    virtual void slot_031();  // slot +0x07C: sub_41D5D0 [wip] — Source/app/C_vt61DF78.cpp
+    virtual void slot_032();  // slot +0x080: sub_41D6A0 [wip] — Source/app/C_vt61DF78.cpp
+    virtual void slot_033();  // slot +0x084: sub_41D7F0 [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_034();  // slot +0x088: sub_5B1EA0 [matched] — Source/sim/free_sim.cpp
-    virtual void slot_035();  // slot +0x08C: sub_41DAA0 [lifted]
+    virtual void slot_035();  // slot +0x08C: sub_41DAA0 [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_036();  // slot +0x090: sub_41DC10 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_037();  // slot +0x094: sub_41DC80 [wip] — Source/app/C_vt61DF78.cpp
-    virtual void slot_038();  // slot +0x098: sub_41DBA0 [lifted]
-    virtual void slot_039();  // slot +0x09C: sub_41DE50 [lifted]
-    virtual void slot_040();  // slot +0x0A0: sub_41E070 [lifted]
-    virtual void slot_041();  // slot +0x0A4: basegame::setup_fonts [lifted]
+    virtual void slot_038();  // slot +0x098: sub_41DBA0 [wip] — Source/app/C_vt61DF78.cpp
+    virtual void slot_039();  // slot +0x09C: sub_41DE50 [wip] — Source/app/C_vt61DF78.cpp
+    virtual void slot_040();  // slot +0x0A0: sub_41E070 [wip] — Source/app/C_vt61DF78.cpp
+    virtual void slot_041();  // slot +0x0A4: basegame::setup_fonts [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_042();  // slot +0x0A8: sub_5B1EB0 [lifted]
-    virtual void slot_043();  // slot +0x0AC: sub_41E4A0 [lifted]
-    virtual void slot_044();  // slot +0x0B0: sub_41EA60 [lifted]
+    virtual void slot_043();  // slot +0x0AC: sub_41E4A0 [wip] — Source/app/C_vt61DF78.cpp
+    virtual void slot_044();  // slot +0x0B0: sub_41EA60 [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_045();  // slot +0x0B4: sub_41EB30 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_046();  // slot +0x0B8: sub_41EB60 [lifted]
     virtual void slot_047();  // slot +0x0BC: sub_41ECF0 [lifted]
@@ -73,7 +73,7 @@ public:
     virtual void slot_060();  // slot +0x0F0: sub_5BB8A0 [matched] — Source/sim/C_vt62C1E0.cpp
     virtual void slot_061();  // slot +0x0F4: sub_420CD0 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_062();  // slot +0x0F8: sub_420CF0 [matched] — Source/app/C_vt61DF78.cpp
-    virtual void slot_063();  // slot +0x0FC: sub_420D10 [lifted]
+    virtual void slot_063();  // slot +0x0FC: sub_420D10 [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_064();  // slot +0x100: sub_420DB0 [lifted]
     virtual void slot_065();  // slot +0x104: sub_5BB840 [lifted]
     virtual void slot_066();  // slot +0x108: sub_420F20 [lifted]
@@ -95,7 +95,7 @@ public:
     virtual void slot_082();  // slot +0x148: sub_5B5C50 [matched] — Source/sim/C_vt62C1E0.cpp
     virtual void slot_083();  // slot +0x14C: sub_4378C0 [matched] — Source/ui/C_pnl_edit.cpp
     virtual void slot_084();  // slot +0x150: sub_4378C0 [matched] — Source/ui/C_pnl_edit.cpp
-    virtual void slot_085();  // slot +0x154: sub_422340 [lifted]
+    virtual void slot_085();  // slot +0x154: sub_422340 [wip] — Source/app/C_vt61DF78.cpp
     virtual void slot_086();  // slot +0x158: sub_5BC500 [matched] — Source/sim/C_vt62C1E0.cpp
     void method_000();  // sub_41B760 [wip]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_001();  // sub_41FA40 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp

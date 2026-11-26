@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 435 matched, 261 left to match (12 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 435 matched, 261 left to match (26 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (261)
 
@@ -23,16 +23,16 @@
 | 209 | `sub_4BD830` | 1 |  | 1_boot_to_menu |  |
 | 210 | `sub_4BD7E0` | 2 |  | 1_boot_to_menu |  |
 | 214 | `sub_5B1D40` | 1 |  | 1_boot_to_menu |  |
-| 216 | `sub_41D070` | 1 |  | 1_boot_to_menu |  |
-| 219 | `sub_41F3A0` | 1 |  | 1_boot_to_menu |  |
-| 221 | `sub_41D5D0` | 1 |  | 1_boot_to_menu |  |
-| 222 | `sub_41D6A0` | 1 |  | 1_boot_to_menu |  |
+| 216 | `sub_41D070` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot30_41D070 |
+| 219 | `sub_41F3A0` | 1 | WIP | 1_boot_to_menu | sub_41F3A0 |
+| 221 | `sub_41D5D0` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot31_41D5D0 |
+| 222 | `sub_41D6A0` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot32_41D6A0 |
 | 225 | `sub_41FAC0` | 645 |  | 1_boot_to_menu |  |
-| 227 | `sub_420D10` | 3 |  | 1_boot_to_menu |  |
+| 227 | `sub_420D10` | 3 | WIP | 1_boot_to_menu | C_vt61DF78::slot63_420D10 |
 | 230 | `sub_420BE0` | 1 |  | 1_boot_to_menu |  |
 | 234 | `sub_4208F0` | 6 |  | 1_boot_to_menu |  |
 | 235 | `sub_41F470` | 6 |  | 1_boot_to_menu |  |
-| 240 | `sub_41D7F0` | 1 |  | 1_boot_to_menu |  |
+| 240 | `sub_41D7F0` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot33_41D7F0 |
 | 248 | `sub_45DFE0` | 138 |  | 1_boot_to_menu |  |
 | 249 | `sub_45E2C0` | 4 |  | 1_boot_to_menu |  |
 | 250 | `sub_45E4C0` | 1 |  | 1_boot_to_menu |  |
@@ -49,10 +49,10 @@
 | 286 | `sub_4461F0` | 4 |  | 1_boot_to_menu |  |
 | 287 | `sub_4BE490` | 17 |  | 1_boot_to_menu |  |
 | 292 | `sub_45EF10` | 9 |  | 1_boot_to_menu |  |
-| 296 | `sub_41E4A0` | 1 |  | 1_boot_to_menu |  |
+| 296 | `sub_41E4A0` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot43_41E4A0 |
 | 297 | `sub_51E7F0` | 9 |  | 1_boot_to_menu |  |
-| 298 | `sub_422340` | 1 |  | 1_boot_to_menu |  |
-| 299 | `sub_41DAA0` | 1 |  | 1_boot_to_menu |  |
+| 298 | `sub_422340` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot85_422340 |
+| 299 | `sub_41DAA0` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot35_41DAA0 |
 | 300 | `sub_48A410` | 1 |  | 1_boot_to_menu |  |
 | 301 | `sub_48A6F0` | 1 |  | 1_boot_to_menu |  |
 | 302 | `sub_48A8C0` | 2 |  | 1_boot_to_menu | mouseptr::LoadCursors |
@@ -130,7 +130,7 @@
 | 384 | `sub_611506` | 1 |  | 1_boot_to_menu |  |
 | 385 | `sub_611605` | 2 |  | 1_boot_to_menu |  |
 | 386 | `sub_6115CB` | 1 |  | 1_boot_to_menu |  |
-| 388 | `sub_41E070` | 1 |  | 1_boot_to_menu |  |
+| 388 | `sub_41E070` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot40_41E070 |
 | 391 | `sub_520170` | 1 |  | 1_boot_to_menu |  |
 | 394 | `sub_520510` | 1 |  | 1_boot_to_menu |  |
 | 397 | `sub_41E2D0` | 1 |  | 1_boot_to_menu |  |
@@ -139,10 +139,10 @@
 | 402 | `sub_498AD0` | 1 |  | 1_boot_to_menu |  |
 | 403 | `sub_498BF0` | 1 |  | 1_boot_to_menu |  |
 | 408 | `sub_498E00` | 1 |  | 1_boot_to_menu |  |
-| 417 | `sub_41DBA0` | 1 |  | 1_boot_to_menu |  |
+| 417 | `sub_41DBA0` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot38_41DBA0 |
 | 418 | `sub_422980` | 1 |  | 1_boot_to_menu |  |
 | 420 | `sub_58A9D0` | 1 |  | 1_boot_to_menu |  |
-| 425 | `sub_41DE50` | 1 |  | 1_boot_to_menu |  |
+| 425 | `sub_41DE50` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot39_41DE50 |
 | 426 | `sub_425750` | 1 |  | 1_boot_to_menu |  |
 | 429 | `sub_437210` | 1 |  | 1_boot_to_menu |  |
 | 435 | `sub_430A70` | 1 |  | 1_boot_to_menu |  |
@@ -150,13 +150,13 @@
 | 438 | `sub_438120` | 1 |  | 1_boot_to_menu |  |
 | 441 | `sub_42DEC0` | 8 |  | 1_boot_to_menu |  |
 | 455 | `sub_439030` | 1 |  | 1_boot_to_menu |  |
-| 467 | `sub_41E760` | 1 |  | 1_boot_to_menu | basegame::setup_fonts |
+| 467 | `sub_41E760` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot41_41E760 |
 | 469 | `sub_41EEE0` | 35 |  | 1_boot_to_menu |  |
 | 470 | `sub_41EFE0` | 35 |  | 1_boot_to_menu |  |
 | 472 | `sub_5B1EB0` | 1 |  | 1_boot_to_menu |  |
 | 473 | `sub_5207B0` | 3 |  | 1_boot_to_menu |  |
 | 477 | `sub_462BA0` | 1 |  | 1_boot_to_menu |  |
-| 482 | `sub_41EA60` | 1 |  | 1_boot_to_menu |  |
+| 482 | `sub_41EA60` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot44_41EA60 |
 | 484 | `sub_4A2370` | 2 |  | 1_boot_to_menu |  |
 | 485 | `sub_4A00E0` | 2 |  | 1_boot_to_menu |  |
 | 491 | `sub_4A2AC0` | 2 |  | 1_boot_to_menu |  |
