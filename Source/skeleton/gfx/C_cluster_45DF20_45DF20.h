@@ -6,6 +6,6 @@
 
 class C_cluster_45DF20 {
 public:
-    void method_000();  // sub_45DF20 [lifted]
+    void method_000();  // sub_45DF20 [wip] — Source/gfx/C_cluster_45DF20.cpp
     void method_001();  // sub_5ECE5C [matched] — Source/gfx/C_cluster_45DF20.cpp
 };

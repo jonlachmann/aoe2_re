@@ -157,11 +157,11 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_cluster_4A76D0` | ui | — | Source/ui/free_ui.cpp | Source/ui/C_vt6222D4.cpp | 2/2 |
 | `C_cluster_4BAE20` | ui | — | Source/ui/C_cluster_4BAE20.cpp | Source/ui/C_pnl_lst.cpp | 3/3 |
 | `C_cluster_4BD5A0` | ui | — | Source/ui/free_ui.cpp | Source/ui/C_cluster_4BD5A0.cpp | 2/2 |
-| `C_pnl_btn` | ui | 0x6224E4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 32/63 |
-| `C_pnl_btn` | ui | 0x622838 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 32/63 |
+| `C_pnl_btn` | ui | 0x6224E4 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 33/63 |
+| `C_pnl_btn` | ui | 0x622838 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 33/63 |
 | `C_pnl_edit` | ui | 0x622934 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_edit.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 39/66 |
 | `C_pnl_inp` | ui | 0x622A28 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/free_ui.cpp | 39/74 |
-| `C_pnl_lst` | ui | 0x622B50 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/C_pnl_lst.cpp, Source/ui/free_ui.cpp | 41/87 |
+| `C_pnl_lst` | ui | 0x622B50 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_inp.cpp, Source/ui/C_pnl_lst.cpp, Source/ui/free_ui.cpp | 42/87 |
 | `C_pnl_msg` | ui | 0x622C74 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 39/63 |
 | `C_pnl_pic` | ui | 0x622D6C | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_pnl_pic.cpp, Source/ui/free_ui.cpp | 39/61 |
 | `C_pnl_scbr` | ui | 0x622E60 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 35/62 |
@@ -171,7 +171,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_scr_game` | ui | 0x624914 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/C_scr_game.cpp, Source/ui/free_ui.cpp | 42/88 |
 | `C_scr_sed` | ui | 0x626338 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 43/89 |
 | `C_scr_vc` | ui | 0x626B28 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 44/88 |
-| `C_tpnl_btn` | ui | 0x62B970 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_tpnl_btn.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 31/63 |
+| `C_tpnl_btn` | ui | 0x62B970 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/C_tpnl_btn.cpp, Source/ui/C_TribePopUpHelp.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 32/63 |
 | `C_vt620C7C` | ui | 0x620C7C | Source/ui/C_vt620C7C.cpp | Source/ui/free_ui.cpp | 9/26 |
 | `C_vt620D6C` | ui | 0x620D6C | Source/app/C_vt61CE24.cpp | Source/gfx/C_vt61DA40.cpp, Source/ui/C_TRIBE_Screen_Options.cpp, Source/ui/free_ui.cpp | 16/26 |
 | `C_vt620E50` | ui | 0x620E50 | Source/ui/C_vt620C7C.cpp | Source/ui/free_ui.cpp | 8/26 |

@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 411 matched, 294 left to match (19 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 412 matched, 293 left to match (20 of them WIP), 110 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (294)
+## Left to match (293)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -39,7 +39,7 @@
 | 235 | `sub_41F470` | 6 |  | 1_boot_to_menu |  |
 | 240 | `sub_41D7F0` | 1 |  | 1_boot_to_menu |  |
 | 244 | `sub_45DDB0` | 1 |  | 1_boot_to_menu |  |
-| 246 | `sub_45DF20` | 2 |  | 1_boot_to_menu |  |
+| 246 | `sub_45DF20` | 2 | WIP | 1_boot_to_menu | C_cluster_45DF20::M_45DF20 |
 | 248 | `sub_45DFE0` | 138 |  | 1_boot_to_menu |  |
 | 249 | `sub_45E2C0` | 4 |  | 1_boot_to_menu |  |
 | 250 | `sub_45E4C0` | 1 |  | 1_boot_to_menu |  |
@@ -282,7 +282,6 @@
 | 773 | `sub_610EED` | 4 |  | 1_boot_to_menu |  |
 | 774 | `sub_610DB5` | 4 |  | 1_boot_to_menu |  |
 | 775 | `sub_610DEA` | 2 |  | 1_boot_to_menu |  |
-| 776 | `sub_4B0AE0` | 26292 |  | 1_boot_to_menu |  |
 | 777 | `sub_4B3860` | 626 |  | 1_boot_to_menu |  |
 | 778 | `sub_5B1CD0` | 1 |  | 1_boot_to_menu |  |
 | 779 | `sub_539A60` | 1 |  | 1_boot_to_menu |  |
@@ -301,7 +300,7 @@
 | 808 | `sub_5217F0` | 2144832 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (411)
+## Matched (412)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -695,6 +694,7 @@
 | 762 | `sub_460650` | 2 | MATCH | 1_boot_to_menu | TDrawArea::GetPitch_460650 |
 | 764 | `sub_461370` | 12 | MATCH | 1_boot_to_menu | TDrawArea::HLine_461370 |
 | 765 | `sub_461400` | 12 | MATCH | 1_boot_to_menu | TDrawArea::VLine_461400 |
+| 776 | `sub_4B0AE0` | 26292 | MATCH | 1_boot_to_menu | C_pnl_btn::M_4B0AE0 |
 | 780 | `sub_472AA0` | 1 | MATCH | 1_boot_to_menu | C_cluster_472AA0::Init_472AA0 |
 | 781 | `sub_472B00` | 1 | MATCH | 1_boot_to_menu | C_cluster_472AA0::M_472B00 |
 | 783 | `sub_464FF0` | 2 | MATCH | 1_boot_to_menu | S464FD0::M_464FF0 |

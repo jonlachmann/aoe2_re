@@ -139,8 +139,9 @@ public:
     void Hook_4A1160();           // unresolved callee at 0x4A1160
     void Hook_4B60B0(int a1, short a2, int a3); // unresolved callee at 0x4B60B0
     void Hook_4BA5C0(int a1, int a2); // unresolved callee at 0x4BA5C0
-    void Hook_4BBF20(int a1, short a2, int a3); // unresolved callee at 0x4BBF20
+
     void M_4B5690();
+    void M_4BBF20(int a1, short a2, int a3);
     void Hook_4BA250(int a1, int a2, int a3, int a4, int a5, int a6, int* a7,
                      int a8, int a9, int a10, int a11, int a12, int a13,
                      int a14, int a15, int a16, int a17);

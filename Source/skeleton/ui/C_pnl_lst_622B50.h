@@ -86,7 +86,7 @@ public:
     void method_000();  // sub_4B5690 [matched]: same object, connected by this-edge call sites — Source/ui/C_pnl_lst.cpp
     void method_001();  // sub_4B6840 [matched]: same object, connected by this-edge call sites — Source/ui/C_pnl_lst.cpp
     void method_002();  // sub_4BBD30 [lifted]: same object, connected by this-edge call sites
-    void method_003();  // sub_4BBF20 [lifted]: same object, connected by this-edge call sites
+    void method_003();  // sub_4BBF20 [wip]: same object, connected by this-edge call sites — Source/ui/C_pnl_lst.cpp
     void method_004();  // sub_4BCE70 [matched]: same object, connected by this-edge call sites — Source/ui/free_ui.cpp
     void method_005();  // sub_4BCEB0 [matched]: same object, connected by this-edge call sites — Source/ui/C_pnl_lst.cpp
     void method_006();  // sub_4BCF50 [lifted]: same object, connected by this-edge call sites

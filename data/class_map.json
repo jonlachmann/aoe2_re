@@ -24287,8 +24287,8 @@
    {
     "address": "0x4B0AE0",
     "name": "sub_4B0AE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_btn.cpp"
    },
    {
     "address": "0x4A1160",
@@ -25623,8 +25623,8 @@
    {
     "address": "0x4B0AE0",
     "name": "sub_4B0AE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_btn.cpp"
    },
    {
     "address": "0x4A1160",
@@ -27245,8 +27245,8 @@
    {
     "address": "0x4BBF20",
     "name": "sub_4BBF20",
-    "state": "lifted",
-    "file": null,
+    "state": "wip",
+    "file": "Source/ui/C_pnl_lst.cpp",
     "evidence": "same object, connected by this-edge call sites"
    },
    {
@@ -63715,8 +63715,8 @@
    {
     "address": "0x4B0AE0",
     "name": "sub_4B0AE0",
-    "state": "lifted",
-    "file": null
+    "state": "matched",
+    "file": "Source/ui/C_pnl_btn.cpp"
    },
    {
     "address": "0x5A6680",
@@ -73959,8 +73959,8 @@
    {
     "address": "0x45DF20",
     "name": "sub_45DF20",
-    "state": "lifted",
-    "file": null
+    "state": "wip",
+    "file": "Source/gfx/C_cluster_45DF20.cpp"
    },
    {
     "address": "0x5ECE5C",

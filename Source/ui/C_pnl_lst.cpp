@@ -157,7 +157,7 @@ void C_pnl_lst::M_4B5690()
     field_104 = old104;
     if (old100 >= lim)
         field_100 = lim - 1;
-    Hook_4BBF20(1, old100, 1);
+    M_4BBF20(1, old100, 1);
     slot_008(1);
 }
 
@@ -176,4 +176,42 @@ void C_pnl_lst::M_4BA390(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
     tmp[3] = a7;
     Hook_4BA250(a1, a2, a3, a4, a5, a6, tmp, a7, a8, a9, a10, a11, a12,
                 a13, a15, a14, a17);
+}
+
+// 0x4BBF20 — switch on the low byte of the first argument to adjust the
+// +0x100 word (adding/assigning the second short for 0/1, stepping it for 2/3,
+// applying the +0xFE-derived deltas for 4/5, zeroing for 6 and clamping to
+// +0xFC-1 for 7), then re-sync through 0x4BBD30(a3) and notify slot +0x20.
+WIP_FUNC(0x4BBF20)
+void C_pnl_lst::M_4BBF20(int a1, short a2, int a3)
+{
+    switch (a1 & 0xff)
+    {
+    case 0:
+        field_100 += a2;
+        break;
+    case 1:
+        field_100 = a2;
+        break;
+    case 2:
+        field_100++;
+        break;
+    case 3:
+        field_100--;
+        break;
+    case 4:
+        field_100 += field_fe - 1;
+        break;
+    case 5:
+        field_100 += 1 - field_fe;
+        break;
+    case 6:
+        field_100 = 0;
+        break;
+    case 7:
+        field_100 = field_fc - 1;
+        break;
+    }
+    Other_4BBD30(a3);
+    slot_008(1);
 }

@@ -22,10 +22,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 ## Reconstruction state
 | State | Functions |
 |---|---|
-| matched | 1767 |
-| wip | 23 |
+| matched | 1768 |
+| wip | 25 |
 | verified | 17 |
-| lifted | 5943 |
+| lifted | 5940 |
 
 ## Vtable classes
 | Vtable | Class | Slots | Extra methods | Known names | Matched | Remaining |
@@ -112,10 +112,10 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x622060` | `C_vt622060` | 87 | 2 | panel_ez | 43 | 46 |
 | `0x6222D4` | `C_vt6222D4` | 1 | 1 | — | 2 | 0 |
 | `0x622368` | `C_vt622368` | 83 | 2 | — | 29 | 56 |
-| `0x6224E4` | `C_pnl_btn` | 63 | 0 | pnl_btn | 31 | 32 |
+| `0x6224E4` | `C_pnl_btn` | 63 | 0 | pnl_btn | 32 | 31 |
 | `0x6225E0` | `C_vt6225E0` | 89 | 0 | panel_ez | 44 | 45 |
 | `0x622744` | `C_vt622744` | 61 | 2 | — | 37 | 26 |
-| `0x622838` | `C_pnl_btn` | 63 | 0 | pnl_btn | 31 | 32 |
+| `0x622838` | `C_pnl_btn` | 63 | 0 | pnl_btn | 32 | 31 |
 | `0x622934` | `C_pnl_edit` | 61 | 5 | pnl_edit | 38 | 28 |
 | `0x622A28` | `C_pnl_inp` | 74 | 0 | pnl_inp | 37 | 37 |
 | `0x622B50` | `C_pnl_lst` | 73 | 14 | pnl_lst | 39 | 48 |
@@ -233,7 +233,7 @@ Regenerate when a vtable or name is recovered. Machine-readable forms:
 | `0x62B4E8` | `C_vt62B4E8` | 1 | 0 | — | 0 | 1 |
 | `0x62B5A0` | `C_vt62B5A0` | 101 | 1 | — | 12 | 90 |
 | `0x62B750` | `C_vt62B750` | 101 | 1 | — | 13 | 89 |
-| `0x62B970` | `C_tpnl_btn` | 63 | 0 | tpnl_btn, tpnl_inv | 30 | 33 |
+| `0x62B970` | `C_tpnl_btn` | 63 | 0 | tpnl_btn, tpnl_inv | 31 | 32 |
 | `0x62BAEC` | `C_tpnl_inv` | 61 | 1 | tpnl_inv | 36 | 26 |
 | `0x62BC64` | `C_tpnl_obj` | 63 | 3 | tpnl_obj | 34 | 32 |
 | `0x62BD70` | `C_tpnl_per` | 61 | 1 | tpnl_per | 38 | 24 |
