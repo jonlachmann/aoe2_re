@@ -1343,7 +1343,7 @@ int C_vt61DF78::slot85_422340()
 // WIP success contracts; their real bodies drive the DirectDraw/DirectSound
 // setup and are still lifted.
 WIP_FUNC(0x41F200)
-int sub_41F200()
+int C_vt61DF78::M_41F200()
 {
     return 1;
 }
@@ -1411,7 +1411,7 @@ int C_vt61DF78::M_41F3A0()
 #endif
 }
 WIP_FUNC(0x41F0C0)
-int sub_41F0C0(int a1)
+int C_vt61DF78::M_41F0C0(int a1)
 {
     (void)a1;
     return 1;
@@ -1524,7 +1524,7 @@ int C_vt61DF78::slot29_41BC80()
     // 0x41F200 when config +0x87C is set
     if (CfgI(0x87c) != 0)
     {
-        if (!sub_41F200())
+        if (!this->M_41F200())
         {
             field_60 = 3;
             return 0;
@@ -1563,7 +1563,7 @@ int C_vt61DF78::slot29_41BC80()
     }
 
     // 0x41F0C0(0) -> +0x9E0
-    *(int*)((char*)this + 0x9e0) = sub_41F0C0(0);
+    *(int*)((char*)this + 0x9e0) = this->M_41F0C0(0);
 
     // +0x7C register class, +0x80 create window, +0x84 setup
     if (!this->C_vt61DF78::slot31_41D5D0())

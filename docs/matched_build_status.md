@@ -548,6 +548,23 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window class/create 2, hwnd
   0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
 
+- stage 27 — class ownership for the device/bootstrap chain is now explicit in
+  the base TU: 0x41F200 (408 bytes) and 0x41F0C0 (319 bytes, one argument) are
+  non-virtual C_vt61DF78 members, called as `this->M_...` from slot29_41BC80
+  (the original passes ecx=the base object at both call sites); 0x465270 stays
+  a global cdecl body (its prologue loads the 0x642F88..0x642F94 globals, not
+  ecx). 0x41F3A0 is matched as C_vt61DF78::M_41F3A0 (stage 26), so the
+  header now declares M_41F3A0/M_41F200/M_41F0C0 while the two device bodies
+  remain WIP success contracts until their DirectDraw/DirectSound bodies are
+  reconstructed. The matched-only tree itself satisfies the step criterion: a
+  standalone Mach-O binary links only the byte-verified owner objects, guest
+  image, host runtime and zero-return symbol stubs (no lifted C), starts from
+  the matched native WinMain body 0x47AE20, and reaches the menu pump. Evidence
+  after this wave: full gate `[1804/1804] MATCH_FUNCs OK, 26 WIP`; TU gate
+  `Source/app/C_vt61DF78.cpp` `[30/30] MATCH_FUNCs OK, 14 WIP`; boot exit 0, no
+  fault, WinMain returns 0, `DC10 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`,
+  window class/create 2 hwnd 0x1A2B3C4D, menu screens DE50/E070=1.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
