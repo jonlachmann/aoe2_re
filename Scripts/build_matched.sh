@@ -42,10 +42,18 @@ for f in $(cat "$LIST"); do
 done
 echo "matched TUs compiled: $ok ok, $bad failed (objects in $B)"
 
-# Native link stage: objects with no undefined symbols can link without any
-# lifted code, guest-memory map or wrapper — they are pure self-contained C++.
-SELF=""
+# Standard matched objects only (exclude generated glue/extra probes).
+OBJ=""
 for o in "$B"/*.o; do
+  case "$(basename "$o")" in
+    matched_globals.o|va_*|probe_*) ;;
+    *) OBJ="$OBJ $o" ;;
+  esac
+done
+
+# Stage 1: objects with no undefined symbols are pure self-contained C++.
+SELF=""
+for o in $OBJ; do
   [ "$(nm -u "$o" 2>/dev/null | wc -l | tr -d ' ')" = 0 ] && SELF="$SELF $o"
 done
 echo "self-contained objects: $(echo "$SELF" | wc -w | tr -d ' ')"
@@ -53,8 +61,63 @@ echo "self-contained objects: $(echo "$SELF" | wc -w | tr -d ' ')"
 if "$CC" -std=c++98 -w -O2 -Wl,-no_pie \
     -I"$R/Source" $SELF "$R/Scripts/matched_probe.cpp" -o "$B/probe" 2>"$B/link.err"; then
   "$B/probe"
-  echo "native matched probe: OK (link.err empty: $(wc -c < "$B/link.err" | tr -d ' ') bytes)"
+  echo "self-contained link: OK (link.err $(wc -c < "$B/link.err" | tr -d ' ') bytes)"
 else
-  echo "native matched probe: link FAILED (see $B/link.err)"
+  echo "self-contained link: FAILED (see $B/link.err)"
   head -5 "$B/link.err"
+fi
+
+# Stage 2: define every guest global (`g_*`) the objects reference as opaque
+# storage, so objects whose only undefined symbols are globals can link.
+"$R"/venv/bin/python - "$R" "$B" > "$B/globals.txt" <<'PY'
+import subprocess, glob, sys
+root, B = sys.argv[1], sys.argv[2]
+names = set()
+for o in glob.glob(B + "/*.o"):
+    base = o.rsplit("/", 1)[-1]
+    if base.startswith(("va_", "probe_", "matched_globals")):
+        continue
+    for l in subprocess.run(["nm", "-u", o], capture_output=True, text=True).stdout.splitlines():
+        s = l.strip()
+        if s.startswith("_g_"):
+            names.add(s[1:])
+lines = ["// Generated opaque guest-global storage from the matched objects.", ""]
+lines += ["char %s[0x4000];" % n for n in sorted(names)]
+open(root + "/Scripts/matched_globals.cpp", "w").write("\n".join(lines) + "\n")
+print(len(names))
+PY
+GN=$(cat "$B/globals.txt")
+"$CC" -std=c++98 -w -O2 -I"$R/Source" -c "$R/Scripts/matched_globals.cpp" \
+  -o "$B/matched_globals.o"
+GLINK=""
+for o in $OBJ; do
+  u="$(nm -u "$o" 2>/dev/null)"
+  if [ -z "$u" ] || { [ -n "$u" ] && [ -z "$(printf '%s\n' "$u" | grep -v '^_g_')" ]; }; then
+    GLINK="$GLINK $o"
+  fi
+done
+echo "guest globals defined: $GN; globals-linkable objects: $(echo "$GLINK" | wc -w | tr -d ' ')"
+# shellcheck disable=SC2086
+if "$CC" -std=c++98 -w -O2 -Wl,-no_pie -I"$R/Source" \
+    "$B/matched_globals.o" $GLINK "$R/Scripts/matched_probe.cpp" -o "$B/probe_globals" \
+    2>"$B/link_globals.err"; then
+  "$B/probe_globals"
+  echo "globals link: OK"
+else
+  echo "globals link: FAILED (see $B/link_globals.err)"
+  head -5 "$B/link_globals.err"
+fi
+
+# Stage 3: portable guest-VA access layer (ADDR) under -DMATCHED_NATIVE.
+if "$CC" -std=c++98 -w -O2 -DMATCHED_NATIVE -I"$R/Source" \
+    -c "$R/Source/ui/C_vt6234C8.cpp" -o "$B/va_C_vt6234C8.o" \
+    2>"$B/va_compile.err" &&
+   "$CC" -std=c++98 -w -O2 -Wl,-no_pie -DMATCHED_NATIVE -I"$R/Source" \
+    "$B/va_C_vt6234C8.o" "$R/Scripts/matched_probe_va.cpp" -o "$B/probe_va" \
+    2>"$B/va_link.err"; then
+  "$B/probe_va"
+  echo "guest-VA access layer: OK"
+else
+  echo "guest-VA access layer: FAILED"
+  head -5 "$B/va_compile.err" "$B/va_link.err"
 fi

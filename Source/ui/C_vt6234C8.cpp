@@ -1,4 +1,5 @@
 #include "C_vt6234C8.hpp"
+#include "matched_mem.h"
 
 extern int g_6645c4;
 
@@ -11,5 +12,5 @@ short C_vt6234C8::M_4BDE70()
     if (--v != 0)
         return -1;
     int obj = g_6645c4;
-    return *(short*)((char*)obj + 0x424);
+    return *(short*)((char*)ADDR(obj) + 0x424);
 }

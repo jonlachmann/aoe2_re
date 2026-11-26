@@ -19,9 +19,16 @@ Evidence (current run):
 - matched/WIP-owner TUs compiled: 164 (every TU in `data/function_map.json` that owns a matched or WIP body)
 - natively compiled by the host compiler: 164, 0 failed
 - asm in matched TUs: 0 (see conversion note below)
-- objects with no undefined symbols (self-contained): 74
-- those 74 link together with no lifted code, no guest-memory map and no
-  wrapper: link exit 0, `probe: 0 failures`
+- objects with no undefined symbols (self-contained): 74; link exit 0,
+  `probe: 0 failures`
+- stage 2 — 236 `g_*` guest globals generated as opaque storage from the
+  objects' own undefined lists; 84 objects link with those globals and run
+  `probe: 0 failures`
+- stage 3 — portable guest-VA access layer: `Source/matched_mem.h` defines
+  `ADDR(va)`, a plain cast under VC6 (byte-exact codegen unchanged) and a guest
+  image base offset under `-DMATCHED_NATIVE`. `Scripts/matched_probe_va.cpp`
+  maps a host guest image, stores guest VA 0x1000 in `g_6645c4`, and
+  `M_4BDE70` reads the short at +0x424 through ADDR: `va probe: 0 failures`
 
 The probe exercises two recovered bodies on host-allocated instances:
 `C_cluster_405790::Init_405790` (writes `+0x00` vtbl, `+0x04` arg, `+0x08` zero)
@@ -46,17 +53,16 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
 
 ## Remaining gaps toward booting to the menu
 
-1. The 74 self-contained objects are a core, not a boot path. The rest reference
-   guest globals and/or other guest functions as undefined symbols
-   (e.g. `_F_441330`, `_Hook_473AE0`, `_SetWindowTextA`, member stubs).
-2. Guest memory: matched bodies derive pointers from guest VAs stored in fields
-   and globals (e.g. `*(int*)g_664524`), and call `ADDR`-style addresses without
-   a host mapping. A native link either needs a mapped guest image at the guest
-   VAs plus symbol definitions for `g_*`, or a rewritten access layer.
-3. Guest ABI: calls between matched bodies use guest conventions (`ecx` = this,
-   stdcall/`ret n`) while includes/headers declare plain C++ members. A wrapper
-   layer translating guest registers and stack discipline is needed for the
-   cross-TU calls.
+1. 84 of 164 objects link (74 self-contained + 10 globals-only); the remaining
+   80 reference function symbols (628 distinct) that are unmatched helpers,
+   `_F_*` game functions, Win32 imports or member hook stubs, so they still need
+   wrappers or matches.
+2. Guest memory: most matched bodies still cast guest VAs in fields/globals
+   directly. `ADDR` is proven on one body but not yet applied across the bodies
+   or paired with an initialized guest image at boot.
+3. Guest ABI: matched-to-matched calls are consistent because all bodies are
+   compiled by the host compiler; the gap is only at boundaries to unmatched
+   lifted code/external imports, which need guest-ABI wrappers.
 4. Coverage: phase docs still show 416/815 phase-1 matched (289 left, 23 WIP,
    110 CRT/library), so even a wired build would boot lifted, not matched, code.
 5. (Done) Asm-based "matches" were rewritten as C++; the tree now has zero
