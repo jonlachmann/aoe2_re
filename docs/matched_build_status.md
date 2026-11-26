@@ -565,6 +565,23 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   fault, WinMain returns 0, `DC10 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`,
   window class/create 2 hwnd 0x1A2B3C4D, menu screens DE50/E070=1.
 
+- stage 28 — `Source/ui/free_ui.cpp` now carries a byte-exact
+  `MATCH_FUNC(0x4BE860)` (184 bytes): the file-cache close path guards on
+  `a1 >= 0`, runs the 0x440F90(handle,0,0,1) probe and marks the +0x40 byte when
+  it returns 2, releases through 0x4437F0, sets +0x1C=-1, frees the three
+  +0x24/+0x34/+0x38 blocks, and hands `a1` to 0x5FDA2B. `Source/ui/
+  C_vt6222D4.cpp` gains the five-argument constructor 0x4A8240 as WIP: its body
+  is semantically complete (vtable 0x6222D4, the -1/0 field block, the 0x4A8320
+  extent/step initializer, the +0xCE83C/-840/-844 sentinels and the 256-entry
+  scaled-float table at 0x66F64C), and four register-allocation variants could
+  not recover the original `edx` counter in the scalar loop, so it remains ours
+  160 vs original 161. `Source/ui/C_vt6222D4.hpp` extends the class layout to
+  +0xCE848. Evidence after this wave: full gate `[1805/1805] MATCH_FUNCs OK, 30
+  WIP`; the populated menu is built from the reconstructed screen object
+  (0x47C4 with 10 subobjects, 15E8/15F8/15FC/1604/1610 set, 7B0=3, 5C0=2) and
+  the matched UI entry chain (425650/425680/4256A0, 5200F0, 520410, 520CC0,
+  520DD0, 520E10, 520E50, 520E90, 520F50, 520ED0 all entered, 521090 not).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
@@ -583,7 +600,7 @@ Gaps now:
 3. Guest ABI: matched-to-matched calls are consistent because all bodies are
    compiled by the host compiler; the gap is only at boundaries to unmatched
    lifted code/external imports, which need guest-ABI wrappers.
-4. Coverage: phase docs show 428/815 phase-1 matched (268 left, 11 WIP, 119
+4. Coverage: phase docs show 444/815 phase-1 matched (252 left, 23 WIP, 119
    CRT/library); the map reflects the current workspace, so the matched count
    includes in-progress bodies not yet in this wave. Even a wired build would
    still boot lifted code through the remaining stubs.

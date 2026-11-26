@@ -3,6 +3,15 @@
 // first marker lives in another module.
 #include "Function.hpp"
 #include "matched_mem.h"
+extern "C" int cv_ui_520410;
+extern "C" int cv_ui_520cc0;
+extern "C" int cv_ui_520dd0;
+extern "C" int cv_ui_520e10;
+extern "C" int cv_ui_520e50;
+extern "C" int cv_ui_520e90;
+extern "C" int cv_ui_520f50;
+extern "C" int cv_ui_520ed0;
+extern "C" int cv_ui_521090;
 
 
 extern int g_66d4b0;
@@ -1964,12 +1973,18 @@ public:
 MATCH_FUNC(0x520F50)
 void S52SetBulk::SetInt_520F50(int v)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_520f50;
+#endif
     field_70 = v;
 }
 
 MATCH_FUNC(0x520DD0)
 void S52SetBulk::CopyName_520DD0(char* a1)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_520dd0;
+#endif
     if (a1)
         strcpy(name_84, a1);
 }
@@ -1977,6 +1992,9 @@ void S52SetBulk::CopyName_520DD0(char* a1)
 MATCH_FUNC(0x520E10)
 void S52SetBulk::CopyName_520E10(char* a1)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_520e10;
+#endif
     if (a1)
         strcpy(name_188, a1);
 }
@@ -1984,6 +2002,9 @@ void S52SetBulk::CopyName_520E10(char* a1)
 MATCH_FUNC(0x520E50)
 void S52SetBulk::CopyName_520E50(char* a1)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_520e50;
+#endif
     if (a1)
         strcpy(name_28c, a1);
 }
@@ -1991,6 +2012,9 @@ void S52SetBulk::CopyName_520E50(char* a1)
 MATCH_FUNC(0x520E90)
 void S52SetBulk::CopyName_520E90(char* a1)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_520e90;
+#endif
     if (a1)
         strcpy(name_390, a1);
 }
@@ -1998,6 +2022,9 @@ void S52SetBulk::CopyName_520E90(char* a1)
 MATCH_FUNC(0x520ED0)
 void S52SetBulk::CopyName_520ED0(char* a1)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_520ed0;
+#endif
     if (a1)
         strcpy(name_494, a1);
 }
@@ -3971,6 +3998,9 @@ public:
 MATCH_FUNC(0x520CC0)
 S520CC0* S520CC0::Init_520CC0(int a1, int a2)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_520cc0;
+#endif
     field_c = a1;
     field_4 = a2;
     this->Hook_520D20();
@@ -5980,6 +6010,9 @@ public:
 MATCH_FUNC(0x521090)
 void T4EE210Obj::M_521090(int a1, int a2, int a3, int a4)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_521090;
+#endif
     field_78 = a4;
     int r = M_5210D0(a1, a2, a3);
     if (r != -1 && (a2 & 1))
@@ -6066,12 +6099,11 @@ public:
     S522C70* M_522C70(int a1, int a2, int a3);
 };
 
-WIP_FUNC(0x522C70)
+MATCH_FUNC(0x522C70)
 S522C70* S522C70::M_522C70(int a1, int a2, int a3)
 {
     field_14 = -1;
     field_18 = -1;
-    field_28 = a3;
     field_00 = 0;
     field_04 = 0;
     field_0c = 8;
@@ -6080,6 +6112,7 @@ S522C70* S522C70::M_522C70(int a1, int a2, int a3)
     field_1c = 0;
     field_20 = 0;
     field_24 = a2;
+    field_28 = a3;
     M_5DCC30();
     if (a1 > 0)
     {
@@ -6116,6 +6149,9 @@ extern int (__stdcall *g_61C3D4)(int a1, int* a2, int a3);
 MATCH_FUNC(0x520410)
 void S520410::M_520410(int a1, int a2)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_520410;
+#endif
     if (a2 != 0)
         field_1c = a1;
     if (field_124 == 0)

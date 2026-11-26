@@ -12,7 +12,7 @@ class C_vt6222D4 {
 public:
     void SetVt_4A8310();
     bool M_4A8320(int a1, int a2, int a3, int a4);
-    void Hook_4A8240(int a1, int a2, int a3, int a4, int a5);   // unresolved callee at 0x4A8240
+    C_vt6222D4* Hook_4A8240(int a1, int a2, int a3, int a4, int a5);
 
     int vtbl_00;
     int field_04;
@@ -27,4 +27,9 @@ public:
     char field_ce634;
     char pad_ce635[3];
     int field_ce638;
+    char pad_ce63c[0xce83c - 0xce63c];
+    int field_ce83c;
+    int field_ce840;
+    int field_ce844;
+    int field_ce848;
 };

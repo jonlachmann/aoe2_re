@@ -1,13 +1,13 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 443 matched, 253 left to match (19 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 444 matched, 252 left to match (23 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (253)
+## Left to match (252)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
 | 73 | `sub_4927D0` | 1 |  | 1_boot_to_menu |  |
-| 83 | `sub_4A8240` | 1 |  | 1_boot_to_menu |  |
+| 83 | `sub_4A8240` | 1 | WIP | 1_boot_to_menu | C_vt6222D4::Hook_4A8240 |
 | 89 | `sub_473410` | 3 | WIP | 1_boot_to_menu | C_vt620BF8::Init_473410 |
 | 103 | `sub_5BD400` | 1 |  | 1_boot_to_menu |  |
 | 111 | `sub_473AE0` | 289 |  | 1_boot_to_menu |  |
@@ -125,7 +125,7 @@
 | 385 | `sub_611605` | 2 |  | 1_boot_to_menu |  |
 | 386 | `sub_6115CB` | 1 |  | 1_boot_to_menu |  |
 | 388 | `sub_41E070` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot40_41E070 |
-| 391 | `sub_520170` | 1 |  | 1_boot_to_menu |  |
+| 391 | `sub_520170` | 1 | WIP | 1_boot_to_menu | C_cluster_5200F0::Hook_520170 |
 | 394 | `sub_520510` | 1 |  | 1_boot_to_menu |  |
 | 397 | `sub_41E2D0` | 1 |  | 1_boot_to_menu |  |
 | 398 | `sub_498700` | 1 |  | 1_boot_to_menu |  |
@@ -136,11 +136,11 @@
 | 418 | `sub_422980` | 1 |  | 1_boot_to_menu |  |
 | 420 | `sub_58A9D0` | 1 |  | 1_boot_to_menu |  |
 | 425 | `sub_41DE50` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot39_41DE50 |
-| 426 | `sub_425750` | 1 |  | 1_boot_to_menu |  |
+| 426 | `sub_425750` | 1 | WIP | 1_boot_to_menu | S47C4Screen::M_425750 |
 | 429 | `sub_437210` | 1 |  | 1_boot_to_menu |  |
 | 435 | `sub_430A70` | 1 |  | 1_boot_to_menu |  |
 | 437 | `sub_433550` | 1 |  | 1_boot_to_menu |  |
-| 438 | `sub_438120` | 1 |  | 1_boot_to_menu |  |
+| 438 | `sub_438120` | 1 | WIP | 1_boot_to_menu | S438120::Init_438120 |
 | 441 | `sub_42DEC0` | 8 |  | 1_boot_to_menu |  |
 | 455 | `sub_439030` | 1 |  | 1_boot_to_menu |  |
 | 467 | `sub_41E760` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot41_41E760 |
@@ -166,7 +166,6 @@
 | 531 | `sub_4647C0` | 1 |  | 1_boot_to_menu |  |
 | 534 | `sub_4BE980` | 131 |  | 1_boot_to_menu |  |
 | 536 | `sub_463320` | 1 |  | 1_boot_to_menu |  |
-| 537 | `sub_4BE860` | 1 |  | 1_boot_to_menu |  |
 | 542 | `sub_5B4590` | 3 |  | 1_boot_to_menu |  |
 | 544 | `sub_5B4B10` | 3 |  | 1_boot_to_menu |  |
 | 545 | `sub_5B50D0` | 1 |  | 1_boot_to_menu |  |
@@ -260,7 +259,7 @@
 | 807 | `sub_4EDC70` | 2144832 |  | 1_boot_to_menu |  |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (443)
+## Matched (444)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -537,6 +536,7 @@
 | 532 | `sub_4BE760` | 3 | MATCH | 1_boot_to_menu | sub_4BE760 |
 | 533 | `sub_5FDFA4` | 1 | MATCH | 1_boot_to_menu | sub_5FDFA4 |
 | 535 | `sub_5ED915` | 1 | MATCH | 1_boot_to_menu | M_5ED915 |
+| 537 | `sub_4BE860` | 1 | MATCH | 1_boot_to_menu | sub_4BE860 |
 | 540 | `sub_4CFAC0` | 1 | MATCH | 1_boot_to_menu | Sc4CFAC0::M_4CFAC0 |
 | 541 | `sub_5ECE38` | 1 | MATCH | 1_boot_to_menu | sub_5ECE38 |
 | 543 | `sub_5B4540` | 6 | MATCH | 1_boot_to_menu | C_cluster_5B4540::Get_5B4540 |

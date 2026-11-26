@@ -30,6 +30,7 @@ extern char g_61c0d8[0x1000];   /* GetProcAddress */
 extern char g_61c1a0[0x1000];   /* FreeLibrary */
 extern char g_61c3d8[0x1000];   /* timeBeginPeriod */
 extern char g_61c3c8[0x1000];   /* timeGetTime */
+extern char g_61C3C8[0x1000];   /* same slot under the uppercase alias many bodies use */
 extern char g_61c168[0x1000];   /* GlobalFree */
 extern char g_61c37c[0x1000];   /* MessageBoxA */
 extern char g_61c3c4[0x1000];   /* timeEndPeriod */
@@ -416,6 +417,7 @@ extern "C" void InstallMatchedImports(void)
     *(void**)g_61c1a0 = (void*)free_library;
     *(void**)g_61c3d8 = (void*)time_begin_period;
     *(void**)g_61c3c8 = (void*)time_get_time;
+    *(void**)g_61C3C8 = (void*)time_get_time;
     *(void**)g_61c168 = (void*)global_free;
     *(void**)g_61c37c = (void*)message_box_a;
     *(void**)g_61c3c4 = (void*)time_end_period;
@@ -451,6 +453,33 @@ extern "C" int cv_win_class;
 extern "C" int cv_win_handle;
 extern "C" int cv_de50_hits;
 extern "C" int cv_e070_hits;
+extern "C" int cv_screen47_pop;
+extern "C" int cv_screen7b0_pop;
+extern "C" int cv_screen5c0_pop;
+extern "C" int cv_e070_preset_entries;
+extern "C" int cv_cfg_sound;
+extern "C" void* cv_config_ptr;
+extern "C" void* cv_boot_info;
+extern "C" void* cv_s47_15e8;
+extern "C" void* cv_s47_15f8;
+extern "C" void* cv_s47_15fc;
+extern "C" void* cv_s47_1604;
+extern "C" void* cv_s47_1610;
+extern "C" void* cv_s47_80;
+extern "C" void* cv_s47_90;
+extern "C" int cv_ui_425650;
+extern "C" int cv_ui_425680;
+extern "C" int cv_ui_4256a0;
+extern "C" int cv_ui_5200f0;
+extern "C" int cv_ui_520410;
+extern "C" int cv_ui_520cc0;
+extern "C" int cv_ui_520dd0;
+extern "C" int cv_ui_520e10;
+extern "C" int cv_ui_520e50;
+extern "C" int cv_ui_520e90;
+extern "C" int cv_ui_520f50;
+extern "C" int cv_ui_520ed0;
+extern "C" int cv_ui_521090;
 extern "C" int matched_winmain(void)
 {
     int r = sub_47AE20(0x400000, 0, (char *)(g_matched_base + 0x662be0), 1);
@@ -465,6 +494,27 @@ extern "C" int matched_winmain(void)
     fprintf(stderr, "[matched-imports] window class/create=%d hwnd=%X menu-screen DE50=%d E070=%d\n",
             cv_win_class, cv_win_handle,
             cv_de50_hits, cv_e070_hits);
+    fprintf(stderr, "[matched-imports] menu populated: 47C4=%d subobjects 15e8=%d 15f8=%d 15fc=%d 1604=%d 1610=%d; 7B0=%d 5C0=%d preset-entries=%d cfg-sound=%d\n",
+            cv_screen47_pop,
+            cv_s47_15e8 != 0, cv_s47_15f8 != 0, cv_s47_15fc != 0,
+            cv_s47_1604 != 0, cv_s47_1610 != 0,
+            cv_screen7b0_pop, cv_screen5c0_pop,
+            cv_e070_preset_entries, cv_cfg_sound);
+    if (cv_config_ptr != 0)
+    {
+        char* c = (char*)cv_config_ptr;
+        fprintf(stderr, "[matched-imports] cfg probe: base=%p info=%p +0xF4E=\"%s\" +0x930=\"%s\" +0x878=%d +0x8A8=%d\n",
+                c, cv_boot_info, c + 0xf4e, c + 0x930,
+                *(int*)(c + 0x878), *(int*)(c + 0x8a8));
+        fprintf(stderr, "[matched-imports] info probe: +0xF4E=\"%s\" +0x930=\"%s\"\n",
+                (char*)cv_boot_info + 0xf4e, (char*)cv_boot_info + 0x930);
+    }
+    fprintf(stderr, "[matched-imports] matched UI entries: 425650=%d 425680=%d 4256a0=%d 5200F0=%d 520410=%d 520CC0=%d 520DD0=%d 520E10=%d 520E50=%d 520E90=%d 520F50=%d 520ED0=%d 521090=%d\n",
+            cv_ui_425650, cv_ui_425680, cv_ui_4256a0,
+            cv_ui_5200f0, cv_ui_520410, cv_ui_520cc0,
+            cv_ui_520dd0, cv_ui_520e10, cv_ui_520e50,
+            cv_ui_520e90, cv_ui_520f50, cv_ui_520ed0,
+            cv_ui_521090);
     return r;
 }
 

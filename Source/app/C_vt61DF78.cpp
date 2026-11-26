@@ -19,6 +19,132 @@ extern "C" int cv_win_class = 0;     // 0x41D5D0/0x41D6A0 proof counters
 extern "C" int cv_win_handle = 0;
 extern "C" int cv_de50_hits = 0;
 extern "C" int cv_e070_hits = 0;
+// Menu-screen population proof: full host pointers kept aside because the guest
+// dword fields at +0x15F8/+0x15FC/+0x15E8/+0x1604/+0x1610/+0x80/+0x90 are not all
+// 8-aligned and cannot carry a 64-bit host pointer.
+extern "C" void* cv_s47_screen = 0;    // the populated 0x47C4 main-menu screen
+extern "C" void* cv_s47_15e8 = 0;      // 0x7D0 C_cluster_437740 subobject
+extern "C" void* cv_s47_15f8 = 0;      // 0x1168 S438120 subobject
+extern "C" void* cv_s47_15fc = 0;      // 0x7F4 Sc439CB0 subobject
+extern "C" void* cv_s47_1604 = 0;      // 0x8 S424BC0 subobject
+extern "C" void* cv_s47_1610 = 0;      // 0x54C S423A70 subobject
+extern "C" void* cv_s47_80 = 0;        // 0x7B0 game/options screen
+extern "C" void* cv_s47_90 = 0;        // 0x5C0 options sub-screen
+// Matched-UI entry counters (incremented inside the byte-exact bodies under
+// MATCHED_NATIVE only, so the VC6 gate never sees them).
+extern "C" int cv_ui_425650 = 0;
+extern "C" int cv_ui_425680 = 0;
+extern "C" int cv_ui_4256a0 = 0;
+extern "C" int cv_ui_5200f0 = 0;
+extern "C" int cv_ui_520410 = 0;
+extern "C" int cv_ui_520cc0 = 0;
+extern "C" int cv_ui_520dd0 = 0;
+extern "C" int cv_ui_520e10 = 0;
+extern "C" int cv_ui_520e50 = 0;
+extern "C" int cv_ui_520e90 = 0;
+extern "C" int cv_ui_520f50 = 0;
+extern "C" int cv_ui_520ed0 = 0;
+extern "C" int cv_ui_521090 = 0;
+// Nonzero-field population counts computed after construction.
+extern "C" int cv_screen47_pop = 0;
+extern "C" int cv_screen7b0_pop = 0;
+extern "C" int cv_screen5c0_pop = 0;
+extern "C" int cv_e070_preset_entries = 0;
+extern "C" int cv_cfg_sound = 0;
+
+// Constructors/methods the menu-screen bodies call (mangled owner symbols).
+class S47C4Screen {
+public:
+    int M_425750(int hwnd, int cfg, int obj664524,
+                 int b0, int b1, int b2, int b3);
+};
+class C_cluster_437740 {
+public:
+    C_cluster_437740* Init_437100(int a1);
+};
+class S438120 {
+public:
+    S438120* Init_438120(int a1);
+};
+class Sc439CB0 {
+public:
+    Sc439CB0* Init_439CB0(int a1);
+};
+class S423A70 {
+public:
+    S423A70* Init_423A70();
+};
+class S424BC0 {
+public:
+    S424BC0* Init_424BC0(int v);
+};
+class S42D1D0 {
+public:
+    void M_42AE00();
+    void M_42D1D0();
+};
+class C_cluster_42AEE0 {
+public:
+    void M_42AE50();
+};
+class C_global_66451C {
+public:
+    void Init_42FD60();
+    void Init_42FD20();
+    void Hook_4308C0();
+};
+class Sc425650 {
+public:
+    void M_425650(int a1);
+};
+class S425680 {
+public:
+    void M_425680(int a1);
+};
+class S4256A0 {
+public:
+    void M_4256A0(int a1);
+};
+class C_vt61CE24 {
+public:
+    void M_408650(int unused);
+};
+class C_cluster_5200F0 {
+public:
+    C_cluster_5200F0* M_5200F0(int a1, int a2);
+};
+class S520400 {
+public:
+    int Get_520400();
+};
+class S520410 {
+public:
+    void M_520410(int a1, int a2);
+};
+class S520CC0 {
+public:
+    S520CC0* Init_520CC0(int a1, int a2);
+};
+class S52SetBulk {
+public:
+    void CopyName_520DD0(char* a1);
+    void CopyName_520E10(char* a1);
+    void CopyName_520E50(char* a1);
+    void CopyName_520E90(char* a1);
+    void CopyName_520ED0(char* a1);
+    void SetInt_520F50(int v);
+};
+class T4EE210Obj {
+public:
+    int M_521090(int a1, int a2, int a3, int a4);
+};
+class S4BE010 {
+public:
+    void* M_4BE010(int a1, int a2);
+};
+extern void __cdecl sub_520120();
+extern int __cdecl sub_5E4610(int a1);
+extern int __cdecl sub_42FD00(int a1);
 
 extern void* __cdecl sub_5F8F60(int a1);
 extern void __cdecl sub_5F90B0(void* p);
@@ -615,9 +741,8 @@ static int RegSet(int which, int name, int v)
     return r->M_4BDF50(which, name, v);
 }
 
-// The 0x47C4 / 0x7B0 / 0x5C0 screen shells. Their full constructors
-// (0x425750 / 0x5200F0 family) are still lifted, so the WIP bring-up allocates
-// and records the objects and vtable-neutral zeroes the shell.
+// The 0x47C4 / 0x7B0 / 0x5C0 screen shells. Constructed now through the
+// reconstructed 0x425750 / 0x5200F0 entry bodies plus the byte-exact setters.
 struct TScreen47C4 { char pad[0x47c4]; };
 struct TScreen7B0  { char pad[0x7b0]; };
 struct TScreen5C0  { char pad[0x5c0]; };
@@ -924,56 +1049,213 @@ int C_vt61DF78::slot38_41DBA0()
     return p != 0;
 }
 
-// 0x41DE50 — build the 0x47C4 main-menu screen. WIP but allocates the real
-// shell: operator new(0x47C4), zeroes it, stores it at +0x1B0 and g_664520.
-// The original then runs the 0x425750 screen constructor with the config
-// +0x900 block and the matched 0x425650/680/6A0 setters; 0x425750 is still
-// lifted, so this body stores the allocated screen and returns 1.
+// 0x41DE50 — build the 0x47C4 main-menu screen. The reconstructed
+// S47C4Screen::M_425750 constructor now runs inside this slot: it allocates and
+// seeds the 0x47C4 screen, constructs the 0x1168/+0x15F8, 0x7F4/+0x15FC and the
+// other 0x7D0//0x8//0x54C subobjects, then the byte-exact 0x425650/425680/426A0
+// setters populate the +0x1B4/+0x1BC/+0x1C0/+0x1C4/+0x1B8 UI fields. The
+// nonzero-field count and the setter entries are recorded for the boot proof.
 WIP_FUNC(0x41DE50)
 int C_vt61DF78::slot39_41DE50()
 {
 #ifdef MATCHED_NATIVE
     ++cv_de50_hits;
+    char* cfg = (char*)cv_config_ptr;
+    int hwnd = *(int*)((char*)this + 0x28);
+#else
+    char* cfg = (char*)(size_t)*(int*)((char*)this + 0x24);
+    int hwnd = (int)(size_t)*(int*)((char*)this + 0x28);
 #endif
     TScreen47C4* p = (TScreen47C4*)(size_t)sub_5F8F60(0x47c4);
     if (p == 0)
         return 0;
     memset(p, 0, 0x47c4);
-    if (Cfg() != 0)
+#ifdef MATCHED_NATIVE
+    cv_s47_screen = p;
+#endif
+    int b0 = 0, b1 = 0, b2 = 0, b3 = 0;
+    if (cfg != 0)
     {
-        *(int*)((char*)p + 0x130c) = CfgI(0x900);
-        *(int*)((char*)p + 0x12ec) = CfgI(0x904);
-        *(int*)((char*)p + 0x12d8) = (unsigned short)(CfgI(0x878) & 0xff);
+        b0 = *(int*)(cfg + 0x900);
+        b1 = *(int*)(cfg + 0x904);
+        b2 = *(int*)(cfg + 0x908);
+        b3 = *(int*)(cfg + 0x90c);
     }
+    ((S47C4Screen*)p)->M_425750(hwnd, (int)(size_t)cfg,
+        *(int*)ADDR(0x664524), b0, b1, b2, b3);
     *(void**)((char*)this + 0x1b0) = p;
+    ((C_vt61CE24*)p)->M_408650(
+        (int)(size_t)((char*)this + 0x1078));
+    ((Sc425650*)p)->M_425650(*(int*)((char*)this + 0x1b4));
+    ((S425680*)p)->M_425680(*(int*)((char*)this + 0x1bc));
+    ((C_vt61CE24*)p)->M_408650(*(int*)((char*)this + 0x1c0));
+    ((S4256A0*)p)->M_4256A0(*(int*)((char*)this + 0x1c4));
+    ((C_vt61CE24*)p)->M_408650(*(int*)((char*)this + 0x1b8));
     *(int*)&g_664520 = (int)(size_t)p;
+#ifdef MATCHED_NATIVE
+    {
+        int pop = 0;
+        if (*(int*)((char*)p + 0x12d4)) pop++;
+        if (*(int*)((char*)p + 0x12d8)) pop++;
+        if (*(int*)((char*)p + 0x12ec)) pop++;
+        if (*(int*)((char*)p + 0x130c)) pop++;
+        if (*(int*)((char*)p + 0x15e8)) pop++;
+        if (*(int*)((char*)p + 0x15f8)) pop++;
+        if (*(int*)((char*)p + 0x15fc)) pop++;
+        if (*(int*)((char*)p + 0x1604)) pop++;
+        if (*(int*)((char*)p + 0x1610)) pop++;
+        if (*(int*)((char*)p + 0x18)) pop++;
+        if (*(int*)((char*)p + 0x3524)) pop++;
+        cv_screen47_pop = pop;
+    }
+#endif
+    if (*(int*)((char*)this + 0x41c) != 0)
+        sub_5E4610((int)(size_t)p);
+    if (*(int*)ADDR(0x6645a0) != 0)
+        sub_42FD00((int)(size_t)p);
+    if (*(int*)ADDR(0x6645a4) != 0)
+        sub_42FD00((int)(size_t)p);
     return 1;
 }
 
 // 0x41E070 — build the 0x7B0 game/options screen at +0x80 and the 0x5C0
-// auxiliary screen at +0x90. WIP: allocate both shells through the same 0x5F8F60
-// allocator used by the original and store g_664518 = +0x80. The matched
-// 0x5200F0/0x520410/0x520CC0/0x520DD0/0x520E10/0x520E50/0x520E90/0x520F50/
-// 0x520ED0/0x521090 panel setters run once those shells have their internal
-// 0x15fc-style subobjects; still skipped here.
+// auxiliary screen at +0x90. When config +0x8A8 is set the byte-exact
+// 0x5200F0 constructor runs on the 0x7B0 allocation (the WIP 0x520170 helper
+// sets the +0x04 ready flag), the 0x520400 gate, registry probe, 0x520410, then
+// the 520CC0/520DD0/520E10/520E50/520E90/520F50/520ED0/521090 panel setters
+// populate the 0x5C0 object. Preset bytes at +0xB50 are empty in the boot
+// config, so the lifted 0x520F70/0x5215F0 pair is not entered here.
 WIP_FUNC(0x41E070)
 int C_vt61DF78::slot40_41E070()
 {
 #ifdef MATCHED_NATIVE
     ++cv_e070_hits;
+    char* cfg = (char*)cv_config_ptr;
+    int hwnd = *(int*)((char*)this + 0x28);
+#else
+    char* cfg = (char*)(size_t)*(int*)((char*)this + 0x24);
+    int hwnd = (int)(size_t)*(int*)((char*)this + 0x28);
 #endif
-    TScreen7B0* s1 = (TScreen7B0*)(size_t)sub_5F8F60(0x7b0);
-    if (s1 == 0)
-        return 0;
-    memset(s1, 0, 0x7b0);
-    *(void**)((char*)this + 0x80) = s1;
-    *(int*)&g_664518 = (int)(size_t)s1;
-
-    TScreen5C0* s2 = (TScreen5C0*)(size_t)sub_5F8F60(0x5c0);
-    if (s2 == 0)
-        return 0;
-    memset(s2, 0, 0x5c0);
-    *(void**)((char*)this + 0x90) = s2;
+    TScreen7B0* s1 = 0;
+#ifdef MATCHED_NATIVE
+    cv_cfg_sound = (cfg != 0 && cfg[0xf4e] != 0) ? 1 : 0;
+#endif
+    if (cfg != 0 && *(int*)(cfg + 0x8a8) != 0)
+    {
+        s1 = (TScreen7B0*)(size_t)sub_5F8F60(0x7b0);
+        if (s1 != 0)
+        {
+            ((C_cluster_5200F0*)s1)->M_5200F0(
+                hwnd, (int)(size_t)(cfg + 0xf4e));
+            *(int*)((char*)this + 0x80) = (int)(size_t)s1;
+#ifdef MATCHED_NATIVE
+            cv_s47_80 = s1;
+#endif
+            if (((S520400*)s1)->Get_520400() != 0)
+            {
+                *(int*)&g_664518 = (int)(size_t)s1;
+                int r = ((S4BE080*)Regctx())->M_4BE080(
+                    1, (int)(size_t)ADDR(0x64d844));
+                int v = -1;
+                if (r != -1)
+                    v = -r;
+                ((S520410*)s1)->M_520410(v, 1);
+#ifdef MATCHED_NATIVE
+                {
+                    int pop = 0;
+                    if (*(int*)((char*)s1 + 0x4)) pop++;
+                    if (*(int*)((char*)s1 + 0x8)) pop++;
+                    if (*(int*)((char*)s1 + 0x14)) pop++;
+                    if (*(int*)((char*)s1 + 0x18)) pop++;
+                    if (*(int*)((char*)s1 + 0x20)) pop++;
+                    cv_screen7b0_pop = pop;
+                }
+#endif
+            }
+            else
+            {
+                sub_520120();
+                sub_5F90B0(s1);
+                *(int*)((char*)this + 0x80) = 0;
+#ifdef MATCHED_NATIVE
+                cv_s47_80 = 0;
+#endif
+            }
+        }
+    }
+    TScreen5C0* s2 = 0;
+    if (cfg != 0 && *(int*)(cfg + 0x8a8) != 0)
+    {
+        s2 = (TScreen5C0*)(size_t)sub_5F8F60(0x5c0);
+        if (s2 != 0)
+        {
+            ((S520CC0*)s2)->Init_520CC0(
+                hwnd, *(int*)(cfg + 0x410));
+            *(int*)((char*)this + 0x90) = (int)(size_t)s2;
+#ifdef MATCHED_NATIVE
+            cv_s47_90 = s2;
+#endif
+            char* n1 = cfg + 0xf4e;
+            char* n2 = cfg + 0x1053;
+            char* n3 = cfg + 0x1158;
+            char* n4 = cfg + 0x1362;
+#ifdef MATCHED_NATIVE
+            // The reduced native boot's stack config block carries the numeric
+            // options (+0x878/+0x8A8/...) but its string area is not staged by
+            // the host path; fall back to the same guest constants the original
+            // 0x47AE20 copies into those slots.
+            if (*n1 == 0) n1 = (char*)ADDR(0x652fc0);
+            if (*n2 == 0) n2 = (char*)ADDR(0x652fb0);
+            if (*n3 == 0) n3 = (char*)ADDR(0x652fa0);
+            if (*n4 == 0) n4 = (char*)ADDR(0x652f90);
+#endif
+            ((S52SetBulk*)s2)->CopyName_520DD0(n1);
+            ((S52SetBulk*)s2)->CopyName_520E10(n2);
+            ((S52SetBulk*)s2)->CopyName_520E50(n3);
+            ((S52SetBulk*)s2)->CopyName_520E90(n4);
+            int v = 0;
+            if (s1 != 0)
+                v = *(int*)((char*)s1 + 0xc);
+            ((S52SetBulk*)s2)->SetInt_520F50(v);
+            void* pn = ((S4BE010*)Regctx())->M_4BE010(
+                0, (int)(size_t)ADDR(0x64d83c));
+            ((S52SetBulk*)s2)->CopyName_520ED0((char*)(size_t)pn);
+            for (int i = 0; i < 5; i++)
+            {
+                char* preset = (char*)this + 0xb50 + i * 0x104;
+                if (*preset != 0)
+                {
+                    ++cv_e070_preset_entries;
+                    int id = ((T4EE210Obj*)s2)->M_521090(
+                        (int)(size_t)preset, 1, 0, 6);
+                    if (id != -1)
+                    {
+                        // 0x520F70/0x5215F0 remain lifted; not entered in the
+                        // native boot because the five preset bytes are empty.
+                    }
+                }
+            }
+            for (int j = 0; j < 5; j++)
+            {
+                *(int*)((char*)this + 0x1064 + j * 4) = 0;
+                *((char*)this + 0xb50 + j * 0x104) = 0;
+            }
+#ifdef MATCHED_NATIVE
+            {
+                int pop = 0;
+                if (*(int*)((char*)s2 + 0x4)) pop++;
+                if (*(int*)((char*)s2 + 0xc)) pop++;
+                if (*(int*)((char*)s2 + 0x70)) pop++;
+                if (*(int*)((char*)s2 + 0x84)) pop++;
+                if (*(int*)((char*)s2 + 0x188)) pop++;
+                if (*(int*)((char*)s2 + 0x28c)) pop++;
+                if (*(int*)((char*)s2 + 0x390)) pop++;
+                if (*(int*)((char*)s2 + 0x494)) pop++;
+                cv_screen5c0_pop = pop;
+            }
+#endif
+        }
+    }
     return 1;
 }
 

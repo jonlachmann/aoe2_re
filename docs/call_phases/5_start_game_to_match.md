@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 635 matched, 1801 left to match (6 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 636 matched, 1800 left to match (6 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1801)
+## Left to match (1800)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -274,7 +274,6 @@
 | 543 | `sub_58F260` | 1 |  | 5_start_game_to_match |  |
 | 544 | `sub_591BC0` | 1 |  | 5_start_game_to_match |  |
 | 545 | `sub_592AF0` | 1 |  | 5_start_game_to_match |  |
-| 546 | `sub_4BE860` | 1 |  | 1_boot_to_menu |  |
 | 553 | `sub_5B88C0` | 1 |  | 5_start_game_to_match |  |
 | 568 | `sub_5BB000` | 2 | WIP | 1_boot_to_menu | C_vt62C1E0::Set_5BB000 |
 | 572 | `sub_42E360` | 3 |  | 5_start_game_to_match |  |
@@ -1808,7 +1807,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (635)
+## Matched (636)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -2023,6 +2022,7 @@
 | 539 | `sub_58AA50` | 1 | MATCH | 5_start_game_to_match | Sc58AA50::Init_58AA50 |
 | 541 | `sub_43A420` | 2 | MATCH | 5_start_game_to_match | S43A420::Init_43A420 |
 | 542 | `sub_43A440` | 970 | MATCH | 5_start_game_to_match | S43SetImmBulk::Set_43A440 |
+| 546 | `sub_4BE860` | 1 | MATCH | 1_boot_to_menu | sub_4BE860 |
 | 550 | `sub_5F9780` | 147 | MATCH | 1_boot_to_menu | sub_5F9780 |
 | 554 | `sub_421C70` | 2 | MATCH | 5_start_game_to_match | Sc421C70::M_421C70 |
 | 555 | `sub_5E3100` | 2 | MATCH | 5_start_game_to_match | Tc5E3100::Other_5E3100 |

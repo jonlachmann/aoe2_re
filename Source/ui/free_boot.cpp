@@ -138,6 +138,7 @@ extern void __cdecl sub_473BF0();
 
 MATCH_FUNC(0x47AE20)
 #pragma intrinsic(strcpy)
+extern "C" void* cv_boot_info = 0;
 int __stdcall sub_47AE20(int hInstance, int hPrevInstance, char* lpCmdLine, int nCmdShow)
 {
     int result;
@@ -145,6 +146,9 @@ int __stdcall sub_47AE20(int hInstance, int hPrevInstance, char* lpCmdLine, int 
     char info[0x1980];
     char caption[0x100];
     char text[0x100];
+#ifdef MATCHED_NATIVE
+    cv_boot_info = info;
+#endif
 
     g_61c3d8(1);
     sub_5FCA3B(g_61c3c8());

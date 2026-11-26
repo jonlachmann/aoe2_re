@@ -1,4 +1,5 @@
 #include "C_vt6222D4.hpp"
+#include "matched_mem.h"
 
 #pragma intrinsic(memset)
 
@@ -9,6 +10,39 @@ MATCH_FUNC(0x4A76E0)
 void sub_4A76E0()
 {
     ((C_vt6222D4*)0x66fa50)->Hook_4A8240(0xff, 0xff, 0, 0, 0);
+}
+
+// 0x4A8240 — five-argument constructor. It stores a3 at +0xCE848, writes the
+// vtable pointer and the -1/0 field block, runs the 0x4A8320 initializer with
+// (a1,a2,a4,a5), seeds the +0xCE83C/-840/-844 sentinels and fills the
+// 0x66F64C..0x66FA4C 256-entry table with the scaled float sequence.
+// WIP: ours 160 vs 161. The body is semantically complete; the only miss is
+// register allocation in the scalar loop (VC6 assigns the counter to ebx/ecx
+// instead of the original edx, and moves the table-pointer init one statement
+// early). Four source variants did not recover the original allocation.
+WIP_FUNC(0x4A8240)
+C_vt6222D4* C_vt6222D4::Hook_4A8240(int a1, int a2, int a3, int a4, int a5)
+{
+    field_ce848 = a3;
+    vtbl_00 = 0x6222d4;
+    field_04 = -1;
+    field_08 = -1;
+    field_ce62c = 0;
+    field_ce630 = 0;
+    field_0c = 0;
+    field_10 = 0;
+    this->M_4A8320(a1, a2, a4, a5);
+    field_ce83c = -1;
+    field_ce840 = -1;
+    field_ce844 = -1;
+    int* dst = (int*)ADDR(0x66f64c);
+    for (int i = 0; i < 0x100; i++)
+    {
+        *dst = (int)((float)i * *(float*)ADDR(0x6222d0)
+            * *(float*)ADDR(0x6201ec) + *(float*)ADDR(0x61c588));
+        dst++;
+    }
+    return this;
 }
 
 MATCH_FUNC(0x4A8310)

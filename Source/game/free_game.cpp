@@ -3,6 +3,15 @@
 // first marker lives in another module.
 #include "Function.hpp"
 #include "matched_mem.h"
+extern "C" void* cv_s47_15e8;
+extern "C" void* cv_s47_15f8;
+extern "C" void* cv_s47_15fc;
+extern "C" void* cv_s47_1604;
+extern "C" void* cv_s47_1610;
+extern "C" void* cv_config_ptr;
+extern "C" int cv_ui_425650;
+extern "C" int cv_ui_425680;
+extern "C" int cv_ui_4256a0;
 
 
 extern int g_66d4b0;
@@ -2139,10 +2148,16 @@ public:
 
     void M_425680(int a1);
 };
+extern "C" int cv_ui_425680;
 MATCH_FUNC(0x425680)
 void S425680::M_425680(int a1)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_425680;
+    ((T43A410*)cv_s47_15fc)->SetInt_43A0B0(a1);
+#else
     field_15fc->SetInt_43A0B0(a1);
+#endif
 }
 
 class S4256A0 {
@@ -2152,10 +2167,17 @@ public:
 
     void M_4256A0(int a1);
 };
+extern "C" void* cv_s47_15f8;
+extern "C" int cv_ui_4256a0;
 MATCH_FUNC(0x4256A0)
 void S4256A0::M_4256A0(int a1)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_4256a0;
+    ((T43A410*)cv_s47_15f8)->SetInt_438620(a1);
+#else
     field_15f8->SetInt_438620(a1);
+#endif
 }
 
 class S4266B0 {
@@ -2620,11 +2642,19 @@ public:
     T425650Sub* field_15fc;       // +0x15FC
     void M_425650(int a1);
 };
+extern "C" void* cv_s47_15fc;
+extern "C" int cv_ui_425650;
 MATCH_FUNC(0x425650)
 void Sc425650::M_425650(int a1)
 {
+#ifdef MATCHED_NATIVE
+    ++cv_ui_425650;
+    ((T425650Sub*)cv_s47_15fc)->Hook_43A0A0(a1);
+    ((T425650Sub*)cv_s47_15fc)->Hook_43A090(a1);
+#else
     this->field_15fc->Hook_43A0A0(a1);
     this->field_15fc->Hook_43A090(a1);
+#endif
 }
 
 // 0x422180 — compare a trimmed +0x518 string of the basegame object with a1.
@@ -2746,7 +2776,14 @@ public:
     unsigned short count_12d8;    // +0x12D8
     char pad_12da[0x1348 - 0x12da]; // 0x12DA..0x1348
     int arr_1348[20];             // +0x1348..0x1398
-    int arr_1398[20];             // +0x1398..0x13E8
+    int arr_1398[19];             // +0x1398..0x13E4 (next table starts at +0x13E4)
+    int a_13e4[10];               // +0x13E4, cleared per slot by 0x42AE00
+    int a_140c[10];               // +0x140C
+    int a_1434[10];               // +0x1434
+    char pad_145c[0x14b0 - 0x145c]; // 0x145C..0x14B0
+    int a_14b0[10];               // +0x14B0
+    char pad_14d8[0x1de0 - 0x14d8]; // 0x14D8..0x1DE0
+    int a_1de0[10];               // +0x1DE0
     void M_42D1D0();
     void M_42AE00();
 };
@@ -2764,21 +2801,19 @@ void S42D1D0::M_42D1D0()
 
 // 0x42AE00 — reset the five +0x13E4 record fields for every count slot, after
 // the two-argument 0x4378C0 screen helper.
-WIP_FUNC(0x42AE00)
+// Real int-array fields indexed by an unsigned counter; the manual pointer walk
+// scheduled the `xor edi,edi` zero-extend too early.
+MATCH_FUNC(0x42AE00)
 void S42D1D0::M_42AE00()
 {
     sub_4378C0(g_669558, 0x64f114);
-    unsigned int i = 0;
-    int* p = (int*)((char*)this + 0x13e4);
-    while (i <= count_12d8)
+    for (unsigned int i = 0; i <= count_12d8; i++)
     {
-        *(int*)((char*)p + 0x9fc) = 0;
-        *p = 0;
-        *(int*)((char*)p + 0x28) = 0;
-        *(int*)((char*)p + 0x50) = 0;
-        *(int*)((char*)p + 0xcc) = 0;
-        i++;
-        p++;
+        a_1de0[i] = 0;
+        a_13e4[i] = 0;
+        a_140c[i] = 0;
+        a_1434[i] = 0;
+        a_14b0[i] = 0;
     }
 }
 
@@ -2940,3 +2975,300 @@ S4378D0* S4378D0::M_4378D0()
     return this;
 }
 #pragma function(strcpy)
+
+
+// ---------------------------------------------------------------------------
+// Main-menu screen construction (0x425750/0x438120) — reconstructed owner
+// bodies. They stay WIP (byte layout is many hundreds of bytes and several
+// sub-allocations are still lifted), but they are hand-written C++ and feed
+// the byte-exact 0x425650/425680/426A0 setters fresh, populated subobjects.
+
+extern "C" void* cv_s47_15e8;
+extern "C" void* cv_s47_15f8;
+extern "C" void* cv_s47_15fc;
+extern "C" void* cv_s47_1604;
+extern "C" void* cv_s47_1610;
+extern "C" void* cv_config_ptr;
+extern void* __cdecl sub_5F8F60(int a1);
+extern void __cdecl sub_4378C0(int a1, int a2);
+extern int __cdecl sub_437410();
+
+class S4BEF50 {
+public:
+    char pad_00[0x2bc];
+    S4BEF50* M_4BEF50();
+};
+class C_cluster_437740 {
+public:
+    char pad_00[0x8];
+    unsigned count;
+    char pad_0c[0x114 - 0x0c];
+    C_cluster_437740* Init_437100(int a1);
+};
+class C_cluster_42AEE0 {
+public:
+    void M_42AE50();
+};
+class C_global_66451C {
+public:
+    void Init_42FD60();
+    void Init_42FD20();
+    void Hook_4308C0();
+};
+class S47C4Screen {
+public:
+    int M_425750(int hwnd, int cfg, int obj664524,
+                 int b0, int b1, int b2, int b3);
+};
+class S438120 {
+public:
+    S438120* Init_438120(int a1);
+};
+
+// 0x438120 — constructor of the 0x1168 object stored at screen +0x15F8.
+// The original seeds the 0x108 parent pointer, the 0x118/0x11C/0x12C/0x128
+// counters, the 0x244 0x5A-stride records and allocates two 0x2BC 0x4BEF50
+// panels at +0x100/+0x104. WIP: the two panel allocations run through the
+// matched 0x4BEF50 constructor; the remaining 0x244 records are zero-filled.
+WIP_FUNC(0x438120)
+S438120* S438120::Init_438120(int a1)
+{
+    memset((char*)this, 0, 0x1168);
+    *(int*)((char*)this + 0x108) = a1;
+    *(int*)((char*)this + 0x118) = 1;
+    *(int*)((char*)this + 0x11c) = 10;
+    *(int*)((char*)this + 0x12c) = 0x5a;
+    *(int*)((char*)this + 0x128) = 0x1f4;
+    *(int*)((char*)this + 0x214) = 10;
+    *(int*)((char*)this + 0x218) = 0x5a;
+    *(int*)((char*)this + 0x20c) = 0x1f4;
+    *(int*)((char*)this + 0x134) = 0;
+    *(int*)((char*)this + 0x124) = 0;
+    *(int*)((char*)this + 0x240) = 0;
+    *(int*)((char*)this + 0x224) = 0;
+    *(int*)((char*)this + 0x238) = 0;
+    *(int*)((char*)this + 0x23c) = 0;
+    *(int*)((char*)this + 0x228) = 0;
+    *(int*)((char*)this + 0x22c) = 0;
+    *(int*)((char*)this + 0x230) = 0;
+    *(int*)((char*)this + 0x234) = 0;
+    *(int*)((char*)this + 0x140) = 0;
+    *(int*)((char*)this + 0x120) = 0;
+    *(int*)((char*)this + 0x130) = 0;
+    *(int*)((char*)this + 0x138) = 0;
+    *(int*)((char*)this + 0x1dcc) = 0;
+    *(int*)((char*)this + 0x1d9c) = 0;
+    *(int*)((char*)this + 0x10e8) = 0;
+    *(int*)((char*)this + 0x10ec) = 0;
+    *(int*)((char*)this + 0x14ac) = 0;
+    *(int*)((char*)this + 0x2006) = 0;
+    *(unsigned short*)((char*)this + 0x2004) = 0;
+    *(int*)((char*)this + 0x200c) = 0;
+    *(int*)((char*)this + 0x1e38) = 3;
+    *(unsigned char*)((char*)this + 0x1e31) = 0;
+    *(unsigned char*)((char*)this + 0x1e70) = 2;
+    *(int*)((char*)this + 0x10c8) = 4;
+    *(int*)((char*)this + 0x1e3c) = 4;
+    *(unsigned char*)((char*)this + 0x1e30) = 0;
+    *(int*)((char*)this + 0x20bc) = 0;
+    *(int*)((char*)this + 0x20f4) = 0;
+    *(int*)((char*)this + 0x10dc) = 0x32;
+    *(int*)((char*)this + 0x10e0) = 0;
+    *(int*)((char*)this + 0x10e4) = 0;
+    *(int*)((char*)this + 0x128c) = 0;
+    *(int*)((char*)this + 0x1294) = 0;
+    void* p1 = sub_5F8F60(0x2bc);
+    if (p1 != 0)
+        ((S4BEF50*)p1)->M_4BEF50();
+    *(int*)((char*)this + 0x104) = (int)(size_t)p1;
+    void* p2 = sub_5F8F60(0x2bc);
+    if (p2 != 0)
+        ((S4BEF50*)p2)->M_4BEF50();
+    *(int*)((char*)this + 0x100) = (int)(size_t)p2;
+    return this;
+}
+
+// 0x425750 — main-menu screen constructor (2322 bytes original). Reconstructed
+// core: clears the record arrays, copies the config block into +0x12EC and the
+// +0x1318 zero blocks, stores the window handle at +0x130C and the 0x664524
+// object at +0x18, allocates the 0x7D0/+0x15E8, 0x8/+0x1604, 0x1168/+0x15F8,
+// 0x7F4/+0x15FC and 0x54C/+0x1610 subobjects, runs the matched
+// 0x437100/424BC0/439CB0/423A70/42AE00/42AE50/42FD60/42FD20/42D1D0/
+// 4308C0 init chain, then seeds the population counters/limits.
+WIP_FUNC(0x425750)
+int S47C4Screen::M_425750(int hwnd, int cfg, int obj664524,
+                          int b0, int b1, int b2, int b3)
+{
+    char* self = (char*)this;
+    int i;
+    for (i = 0; i < 0x83; i++)
+        *(int*)(self + 0x1e30 + i * 4) = 0;
+    for (i = 0; i < 8; i++)
+        *(int*)(self + 0x473c + i * 4) = 1;
+    for (i = 0; i < 0x14; i++)
+        *(int*)(self + 0x4768 + i * 4) = 0;
+    for (i = 0; i < 0x10; i++)
+        *(int*)(self + 0x1318 + i * 4) = 0;
+    *(int*)(self + 0x1528) = 0;
+    *(int*)(self + 0x15e8) = 0;
+    *(int*)(self + 0x15ec) = 0;
+    *(int*)(self + 0x47b8) = 0;
+    *(int*)(self + 0x47bc) = 0;
+    *(int*)(self + 0x47c0) = 0;
+    *(int*)(self + 0x470c) = 0;
+    *(int*)(self + 0x1608) = 0;
+    *(int*)(self + 0x26c4) = 0;
+    *(int*)(self + 0x1bec) = 0;
+    *(int*)(self + 0x20ec) = 0;
+    *(int*)(self + 0x1be8) = 0;
+    *(int*)(self + 0x1d9c) = 0;
+    *(int*)(self + 0x12d4) = 1;
+    *(int*)(self + 0x12ec) = b0;
+    *(int*)(self + 0x12f0) = b1;
+    *(int*)(self + 0x12f4) = b2;
+    *(int*)(self + 0x12f8) = b3;
+    *(int*)(self + 0x12fc) = 0;
+    *(int*)(self + 0x1300) = 0;
+    *(int*)(self + 0x1304) = 0;
+    *(int*)(self + 0x1308) = 0;
+    *(int*)(self + 0x12dc) = 0;
+    *(int*)(self + 0x12e0) = 0;
+    *(int*)(self + 0x12e4) = 0;
+    *(int*)(self + 0x12e8) = 0;
+    unsigned char opt = 0;
+#ifdef MATCHED_NATIVE
+    if (cv_config_ptr != 0)
+        opt = ((unsigned char*)cv_config_ptr)[0x878];
+#else
+    opt = (unsigned char)(cfg & 0xff);
+#endif
+    *(unsigned short*)(self + 0x12d8) = opt;
+    *(int*)(self + 0x130c) = hwnd;
+    *(int*)(self + 0x18) = obj664524;
+    *(int*)(self + 0x2068) = 0;
+    *(int*)(self + 0x14ac) = 0;
+    *(int*)(self + 0x475c) = 0;
+    *(int*)(self + 0x46ec) = 0;
+
+    void* a = sub_5F8F60(0x7d0);
+    void* o7d0 = 0;
+    if (a != 0)
+        o7d0 = ((C_cluster_437740*)a)->Init_437100(0x7d0);
+    *(int*)(self + 0x15e8) = (int)(size_t)o7d0;
+#ifdef MATCHED_NATIVE
+    cv_s47_15e8 = o7d0;
+#endif
+    void* b = sub_5F8F60(8);
+    void* o8 = 0;
+    if (b != 0)
+        o8 = ((S424BC0*)b)->Init_424BC0(hwnd);
+    *(int*)(self + 0x1604) = (int)(size_t)o8;
+#ifdef MATCHED_NATIVE
+    cv_s47_1604 = o8;
+#endif
+    void* c = sub_5F8F60(0x1168);
+    void* o1168 = 0;
+    if (c != 0)
+        o1168 = ((S438120*)c)->Init_438120((int)(size_t)self);
+    *(int*)(self + 0x15f8) = (int)(size_t)o1168;
+#ifdef MATCHED_NATIVE
+    cv_s47_15f8 = o1168;
+#endif
+    void* d = sub_5F8F60(0x7f4);
+    void* o7f4 = 0;
+    if (d != 0)
+        o7f4 = ((Sc439CB0*)d)->Init_439CB0((int)(size_t)self);
+    *(int*)(self + 0x15fc) = (int)(size_t)o7f4;
+#ifdef MATCHED_NATIVE
+    cv_s47_15fc = o7f4;
+#endif
+    void* e = sub_5F8F60(0x54c);
+    void* o54c = 0;
+    if (e != 0)
+        o54c = ((S423A70*)e)->Init_423A70();
+    *(int*)(self + 0x1610) = (int)(size_t)o54c;
+#ifdef MATCHED_NATIVE
+    cv_s47_1610 = o54c;
+#endif
+
+    *(unsigned char*)(self + 0x1618) = 0;
+    *(int*)(self + 0x2100) = 0;
+    *(int*)(self + 0x10e0) = 0;
+    *(int*)(self + 0x1340) = 0;
+    *(int*)(self + 0x1338) = 0;
+    *(int*)(self + 0x1334) = 0;
+    *(unsigned char*)(self + 0x1dcc) = 0;
+    *(int*)(self + 0x1328) = 0;
+    *(int*)(self + 0x132c) = 0;
+    *(int*)(self + 0x1330) = 0;
+    *(int*)(self + 0x1310) = 0;
+    *(int*)(self + 0x1d9c) = 0;
+    *(int*)(self + 0x10ec) = 0;
+    *(int*)(self + 0x10e8) = 0;
+    *(int*)(self + 0x1298) = 0;
+    *(int*)(self + 0x12a0) = 0;
+    *(int*)(self + 0x1288) = 0;
+    *(int*)(self + 0x1dd0) = 0;
+    *(int*)(self + 0x14ac) = 0;
+    *(int*)(self + 0x0c) = 0;
+    *(int*)(self + 0x10) = 0;
+    *(int*)(self + 0x12d0) = 0;
+    *(unsigned short*)(self + 0x2006) = 1;
+    *(unsigned short*)(self + 0x2004) = (unsigned short)opt;
+    *(int*)(self + 0x200c) = 0;
+    *(int*)(self + 0x1e38) = 3;
+    *(unsigned char*)(self + 0x1e31) = 0;
+    *(int*)(self + 0x1c) = 0;
+    *(int*)(self + 0x20) = 0;
+    *(unsigned char*)(self + 0x1e70) = 2;
+    *(int*)(self + 0x10c8) = 4;
+    *(int*)(self + 0x1e3c) = 4;
+    *(unsigned char*)(self + 0x1e30) = 0;
+    *(int*)(self + 0x20bc) = 0;
+    *(int*)(self + 0x20f4) = 0;
+    *(int*)(self + 0x10dc) = 0x32;
+    *(int*)(self + 0x10e0) = 0;
+    *(int*)(self + 0x10e4) = 0;
+    *(int*)(self + 0x128c) = 0;
+    *(int*)(self + 0x1294) = 0;
+
+    ((S42D1D0*)self)->M_42AE00();
+    // The original 0x42AE50 walks the two row arrays owned by pointers at
+    // +0x1DDC/+0x1DD8; those allocations are lifted 0x5FCE66 bodies, so the
+    // reconstructed constructor leaves them null and skips the walk rather than
+    // dereferencing null in the native host.
+    if (*(int*)(self + 0x1ddc) != 0 && *(int*)(self + 0x1dd8) != 0)
+        ((C_cluster_42AEE0*)self)->M_42AE50();
+    for (i = 0; i < 8; i++)
+        *(int*)(self + 0x46c0 + i * 4) = 5;
+    for (i = 0; i < 9; i++)
+        *(int*)(self + 0x13c0 + i * 4) = 0;
+    *(int*)(self + 0x34f8) = 0;
+    ((C_global_66451C*)self)->Init_42FD60();
+    ((C_global_66451C*)self)->Init_42FD20();
+    *(int*)(self + 0x8) = 1;
+    ((S42D1D0*)self)->M_42D1D0();
+    *(int*)(self + 0x1dd4) = 0;
+    *(int*)(self + 0x12a8) = 0;
+    *(int*)(self + 0x1ba8) = 0;
+    *(int*)(self + 0x1bac) = 0;
+    *(int*)(self + 0x26a4) = 0;
+    *(int*)(self + 0x1c68) = 0;
+    if (*(int*)(self + 0x15e8) != 0)
+        sub_437410();
+    if (*(int*)(self + 0x15ec) != 0)
+        sub_437410();
+    *(int*)(self + 0x3524) = 1;
+    ((C_global_66451C*)self)->Hook_4308C0();
+    *(int*)(self + 0x12b0) = *(int*)(self + 0x12b8);
+    *(int*)(self + 0x12bc) = *(int*)(self + 0x12c0);
+    *(int*)(self + 0x12b8) = 0;
+    *(int*)(self + 0x12b4) = *(int*)(self + 0x12c0);
+    *(int*)(self + 0x12c0) = 0;
+    *(int*)(self + 0x2010) = 0;
+    *(int*)(self + 0x4) = 0;
+    *(int*)(self + 0x1650) = 0;
+    *(int*)(self + 0x472c) = 0;
+    *(int*)(self + 0x4728) = 0;
+    return 1;
+}

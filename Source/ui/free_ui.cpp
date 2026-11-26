@@ -2,6 +2,7 @@
 // Sections keep per-file order; preambles are carried only when the file's
 // first marker lives in another module.
 #include "Function.hpp"
+#include "matched_mem.h"
 
 
 extern int g_66d4b0;
@@ -6470,28 +6471,19 @@ public:
     int M_49F770(int a1, int a2);
 };
 
-// 0x49F8E0 — refresh the +0x0C mirror from +0x10; free the old mirror first
-// when it is a different non-zero object.
-extern void __stdcall sub_5BFB20(int a1);
-WIP_FUNC(0x49F8E0)
+// 0x49F8E0 — refresh the +0x0C mirror from +0x10; when the old mirror is a
+// different non-zero object, hand it to the +0x10 object's thiscall setter
+// 0x5BFB20 (it stores the value at its own +0x08) first.
+class T49F8E0Obj {
+public:
+    void SetInt_5BFB20(int v);
+};
+MATCH_FUNC(0x49F8E0)
 void S49F770::M_49F8E0()
 {
-    if (field_0c == 0)
-    {
-        field_0c = (int)field_10;
-    }
-    else
-    {
-        if (field_0c == (int)field_10)
-        {
-            field_0c = (int)field_10;
-        }
-        else
-        {
-            sub_5BFB20(field_0c);
-            field_0c = (int)field_10;
-        }
-    }
+    if (field_0c != 0 && field_0c != (int)field_10)
+        ((T49F8E0Obj*)field_10)->SetInt_5BFB20(field_0c);
+    field_0c = (int)field_10;
 }
 
 // 0x49FB00 — switch the active object: clear the previous object's own slot
@@ -6622,30 +6614,26 @@ void S4BB990::M_4BB990(int* a1, int a2, int a3)
 // value; when absent, clear the first byte of the 0x73E354 fallback and return
 // its address.
 extern char g_73e354[];
+struct T4BD560Node {
+    int field_00;
+    int field_04;                 // +0x04 returned slot
+    char pad_08[0x24 - 0x08];
+    T4BD560Node* next;            // +0x24
+};
 class S4BD560 {
 public:
     char pad_00[0xf8];
-    void* field_f8;               // +0xF8 node chain
+    T4BD560Node* field_f8;        // +0xF8 node chain
     int M_4BD560(int a1);
 };
 
-WIP_FUNC(0x4BD560)
+MATCH_FUNC(0x4BD560)
 int S4BD560::M_4BD560(int a1)
 {
-    void* n = field_f8;
     int i = 0;
-    if (n != 0)
-    {
-        for (;;)
-        {
-            if (i == a1)
-                return *(int*)((char*)n + 4);
-            n = *(void**)((char*)n + 0x24);
-            i++;
-            if (n == 0)
-                break;
-        }
-    }
+    for (T4BD560Node* n = field_f8; n; n = n->next, i++)
+        if (i == a1)
+            return n->field_04;
     g_73e354[0] = 0;
     return (int)g_73e354;
 }
@@ -7437,6 +7425,52 @@ int S4BE080::M_4BE080(int a1, int a2)
     return -1;
 }
 
+// 0x4BE860 — close/clean the 0x73FE18 file cache: when the ready byte is 1 and
+// the +0x24 handle is live, run the 0x440F90(handle,0,0,1) probe (a result of 2
+// marks +0x40), release through 0x4437F0, set +0x1C to -1 and free the three
+// +0x24/+0x34/+0x38 blocks, then hand `a1` to 0x5FDA2B and return its result.
+extern int __cdecl sub_440F90(int a1, int a2, int a3, int a4);
+extern int __cdecl sub_5FDA2B(int a1);
+extern void __cdecl sub_4437F0(int a1);
+
+MATCH_FUNC(0x4BE860)
+int __cdecl sub_4BE860(int a1)
+{
+    extern unsigned char g_73fe30;
+    extern int g_73fe24;
+    extern int g_73fe34;
+    extern int g_73fe38;
+    extern int g_73fe1c;
+    if (a1 >= 0)
+    {
+        if (g_73fe30 == 1 && g_73fe24 != 0)
+        {
+            int r = sub_440F90(g_73fe24, 0, 0, 1);
+            if (r == 2)
+                *(int*)ADDR(0x73fe40) = 1;
+            sub_4437F0(g_73fe24);
+        }
+        g_73fe1c = -1;
+        if (g_73fe34 != 0)
+        {
+            sub_5F90B0(g_73fe34);
+            g_73fe34 = 0;
+        }
+        if (g_73fe24 != 0)
+        {
+            sub_5F90B0(g_73fe24);
+            g_73fe24 = 0;
+        }
+        if (g_73fe38 != 0)
+        {
+            sub_5F90B0(g_73fe38);
+            g_73fe38 = 0;
+        }
+        return sub_5FDA2B(a1);
+    }
+    return a1;
+}
+
 // 0x4BDE90 — zero the three +0x00..+0x08 handles, then run the three 9-argument
 // 0x61C008 table calls that populate them (+0x04/+0x0C, this/+0x0C, +0x08/+0x0C)
 // and return the object.
@@ -7751,18 +7785,15 @@ public:
     bool M_51EB90(int* a1, int* a2, int* a3, int* a4, int index);
 };
 
-WIP_FUNC(0x51EB90)
+MATCH_FUNC(0x51EB90)
 bool S51EB90::M_51EB90(int* a1, int* a2, int* a3, int* a4, int index)
 {
     if (field_14 != 0 && index >= 0 && index <= field_18)
     {
-        int* p1 = a1;
-        int* p2 = a2;
-        T51EB90Entry* e = &field_10[index];
-        *p1 = -(e->field_18);
-        *p2 = -(e->field_1c);
-        *a3 = e->field_10 - e->field_18 - 1;
-        *a4 = e->field_14 - e->field_1c - 1;
+        *a1 = -field_10[index].field_18;
+        *a2 = -field_10[index].field_1c;
+        *a3 = field_10[index].field_10 - field_10[index].field_18 - 1;
+        *a4 = field_10[index].field_14 - field_10[index].field_1c - 1;
         return true;
     }
     *a1 = 0;
@@ -7853,23 +7884,23 @@ public:
 
 extern void __cdecl Free_5F90B0(void* p);
 
-WIP_FUNC(0x4AF400)
+MATCH_FUNC(0x4AF400)
 void S4AF400::M_4AF400(int* a1, short a2)
 {
     field_148 = 2;
     field_204 = 0;
     slot_061(0);
-    if (field_208 != 0)
+    if (field_208)
     {
         Free_5F90B0(field_208);
         field_208 = 0;
     }
-    if (a2 != 0)
+    if (a2)
     {
         field_20c = a2;
-        field_208 = (int*)sub_5F8FF0((unsigned int)a2, 4);
-        for (int i = 0, n = a2; n > 0; i += 4, n--)
-            *(int*)((char*)field_208 + i) = *(int*)((char*)a1 + i);
+        field_208 = (int*)sub_5F8FF0(a2, 4);
+        for (short i = 0; i < a2; i++)
+            field_208[i] = a1[i];
     }
 }
 
@@ -7887,3 +7918,4 @@ void sub_473BF0()
         g_66db6c = 0;
     }
 }
+
