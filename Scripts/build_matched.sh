@@ -42,6 +42,23 @@ for f in $(cat "$LIST"); do
 done
 echo "matched TUs compiled: $ok ok, $bad failed (objects in $B)"
 
+# PE-named forwarding aliases for matched bodies (generated TU outside the
+# function-map owner list). It defines the binary's mangled class/method names
+# by calling the equivalent byte-exact matched code, so callers bind to real
+# code instead of host stubs.
+if "$CC" -x c++ -std=c++98 -w -O2 \
+    -fms-extensions -Wno-cast-pointer-to-smaller-type -fno-stack-protector \
+    -I"$R/Source" -I"$R/Source/ui" -I"$R/Source/game" -I"$R/Source/gfx" \
+    -I"$R/Source/sim" -I"$R/Source/app" -I"$R/Source/crt" \
+    -I"$R/Source/engine-late" \
+    -c "$R/Source/host/matched_pe_aliases.cpp" -o "$B/matched_pe_aliases.o" \
+    2>"$B/matched_pe_aliases.err"; then
+  echo "PE alias TU compiled"
+else
+  echo "PE alias TU: FAILED (see $B/matched_pe_aliases.err)"
+  head -5 "$B/matched_pe_aliases.err"
+fi
+
 # Standard matched objects only (exclude generated glue/extra probes).
 OBJ=""
 for o in "$B"/*.o; do

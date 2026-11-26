@@ -29,10 +29,10 @@ Evidence (current run):
   0.0 threshold and `Get_41A090()==FLT_MAX`: `globals exec probe: 0 failures`
   (12 objects)
 - stage 5 — every matched object links into one native executable. The 604
-  extern symbols the object set does not define get host stubs: currently 576
+  extern symbols the object set does not define get host stubs: currently 533
   asm-label functions returning 0 and 1 opaque data array, leaving libSystem
   names (`malloc`, `memcpy`, `strlen`, ...) to the linker. Result:
-  `all matched objects linked: 165; probe_all: OK` (`probe: 0 failures`).
+  `all matched objects linked: 166; probe_all: OK` (`probe: 0 failures`).
   These stubs are link fillers with host ABI, not guest implementations.
 - stage 3 — portable guest-VA access layer: `Source/matched_mem.h` defines
   `ADDR(va)`, a plain cast under VC6 (byte-exact codegen unchanged) and a guest
@@ -69,7 +69,7 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
 
 ## Remaining gaps toward booting to the menu
 
-1. (Link milestone) all 165 objects now link into one executable, but most
+1. (Link milestone) all 166 objects (165 owner TUs + the PE-alias TU) link into one executable, but most
    external symbols are still host stubs returning 0. A first batch of naming
    fixes removed two: the PE-accurate mangling inventory shows ~150 extern
    symbols already have matched bodies under a different class/method name
@@ -86,10 +86,20 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
    the code-folded 0x5BE8D0 body (`T49F650Key::SetIndex_5BE8D0`,
    `T49FB00Obj::SetIndex_5BE8D0`, `C_global_66EA48::Hook_5BE8D0`) calling the
    real `S5BE940::SetIndex_5BE8D0` code, reaching 576 stubs. Every batch keeps
-   the full gate at [1765/1765] and the all-object link at 165 objects. The
-   remaining extern inventory (86 cases) is mostly broad-class renames or
-   free-vs-member call-site mismatches, which need forwarding methods or
-   caller fixes instead of wholesale class renames.
+   the full gate at [1765/1765] and the all-object link at 166 objects. The
+   remaining extern inventory is mostly broad-class renames or free-vs-member
+   call-site mismatches, which need forwarding methods or caller fixes instead
+   of wholesale class renames.
+- stage 5b — `Source/host/matched_pe_aliases.cpp` holds generated PE-named C++
+  forwarding methods: 43 member-vs-member cases with identical parameter lists
+  where the PE symbol differs from the matched body's class/method name
+  (e.g. `S522C70::M_522D20(int)` -> `C_cluster_522D20::M_522D20(int)`,
+  `T4B88A0::Other_4B88A0()` -> `S4B88A0::M_4B88A0()`). Each wrapper calls the
+  real byte-exact body, so the linker binds the PE mangled symbol to actual
+  code. The build compiles this generated TU explicitly (it is not in the
+  function-map owner list) and adds it to the all-object link, taking the stub
+  count from 576 to 533 and the object count from 165 to 166 with no duplicate
+  symbols; the full gate is unchanged because the alias TU has no markers.
 2. Guest memory: most matched bodies still cast guest VAs in fields/globals
    directly. `ADDR` is proven on one body but not yet applied across the bodies
    or paired with an initialized guest image at boot.
