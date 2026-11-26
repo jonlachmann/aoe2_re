@@ -3,6 +3,7 @@
 // first marker lives in another module.
 #include "Function.hpp"
 #include "matched_mem.h"
+#include "C_cluster_520720.hpp"
 extern "C" int cv_ui_520410;
 extern "C" int cv_ui_520cc0;
 extern "C" int cv_ui_520dd0;
@@ -6027,7 +6028,7 @@ class S58A780 {
 public:
     char pad_00[0x113];
     char name_113[1];             // +0x113 name buffer
-    void M_58A9D0(int a1);
+    int M_58A9D0(int a1);
     void M_58A7F0(int a1);
     S58A780* M_58A780(int a1);
 };
@@ -6159,4 +6160,27 @@ void S520410::M_520410(int a1, int a2)
     unsigned int scaled = (unsigned int)(field_254 - field_250) * (unsigned int)(a1 + 0x2710) / 0x2710u;
     field_298 = scaled;
     field_14 = g_61C3D4(field_128, (int*)((char*)this + 0x280), 0);
+}
+
+// 0x58A9D0 — build four 0x20-byte objects with the matched 0x520720 init and
+// store their pointers at this+0/+4/+8/+C, returning 1.
+extern void* __cdecl sub_5F8F60(int a1);
+class S58AObj {
+public:
+    char pad_00[0x20];             // same 0x20 object footprint
+    S58AObj(int a1, int a2, int a3);
+};
+S58AObj::S58AObj(int a1, int a2, int a3)
+{
+    ((C_cluster_520720*)this)->M_520720(a1, a2, a3);
+}
+MATCH_FUNC(0x58A9D0)
+int S58A780::M_58A9D0(int a1)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        S58AObj* p = new S58AObj(a1, 0x659e78, -1);
+        *(int*)((char*)this + i * 4) = (int)p;
+    }
+    return 1;
 }

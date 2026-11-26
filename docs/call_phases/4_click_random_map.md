@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 285 matched, 263 left to match (4 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 286 matched, 262 left to match (5 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (263)
+## Left to match (262)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -156,7 +156,7 @@
 | 303 | `sub_4A23E0` | 1 |  | 1_boot_to_menu |  |
 | 305 | `sub_4A0460` | 319 |  | 1_boot_to_menu |  |
 | 306 | `sub_4A11F0` | 970 |  | 1_boot_to_menu |  |
-| 312 | `sub_4BE490` | 6 |  | 1_boot_to_menu |  |
+| 312 | `sub_4BE490` | 6 | WIP | 1_boot_to_menu | sub_4BE490 |
 | 323 | `sub_4A3430` | 1 |  | 1_boot_to_menu |  |
 | 326 | `sub_51E7F0` | 3 |  | 1_boot_to_menu |  |
 | 327 | `sub_4A35A0` | 1 |  | 1_boot_to_menu |  |
@@ -239,7 +239,6 @@
 | 537 | `sub_42D5B0` | 9 |  | 4_click_random_map |  |
 | 538 | `sub_42F130` | 8 |  | 4_click_random_map |  |
 | 540 | `sub_428470` | 15 |  | 4_click_random_map |  |
-| 541 | `sub_430A70` | 1 |  | 1_boot_to_menu |  |
 | 547 | `sub_4B9BB0` | 2 |  | 1_boot_to_menu |  |
 | 548 | `sub_4A5C10` | 2 |  | 1_boot_to_menu |  |
 | 549 | `sub_422FF0` | 4 |  | 1_boot_to_menu |  |
@@ -270,7 +269,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (285)
+## Matched (286)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -526,6 +525,7 @@
 | 532 | `sub_4BD5A0` | 2 | MATCH | 4_click_random_map | S4BD5A0::M_4BD5A0 |
 | 533 | `sub_4BD5B0` | 2 | MATCH | 4_click_random_map | C_cluster_4BD5A0::M_4BD5B0 |
 | 539 | `sub_428460` | 15 | MATCH | 4_click_random_map | sub_428460 |
+| 541 | `sub_430A70` | 1 | MATCH | 1_boot_to_menu | sub_430A70 |
 | 542 | `sub_4BE010` | 1 | MATCH | 1_boot_to_menu | S4BE010::M_4BE010 |
 | 543 | `sub_4329B0` | 1 | MATCH | 1_boot_to_menu | S432Accessors::Set1C68_4329B0 |
 | 544 | `sub_49F770` | 1 | MATCH | 1_boot_to_menu | S49F770::M_49F770 |

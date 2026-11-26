@@ -597,6 +597,19 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   permutations. Evidence after this wave: full gate `[1807/1807] MATCH_FUNCs
   OK, 31 WIP`; phase docs now 446/815 matched (250 left, 24 WIP, 119 CRT).
 
+- stage 30 — `Source/sim/free_sim.cpp` now carries `MATCH_FUNC(0x58A9D0)`
+  (121 bytes): the four-entry loop allocates four 0x20-byte objects through the
+  matched 0x5F8F60 allocator, constructs each with `new S58AObj(a1, 0x659e78,
+  -1)` (the EH frame + zero-check codegen is reproduced exactly), and stores the
+  pointers at this+0/+4/+8/+C before returning 1. The glue constructor
+  `S58AObj` has a 0x20 footprint and forwards to the matched
+  `C_cluster_520720::M_520720`, so the native link resolves the `new` call.
+  Class feedback: 0x58A9D0 is an S58A780 member (the class seeded by 0x58A780's
+  name copy) storing four 0x20 subobjects; 0x5F8F60 is the allocator used by
+  `new` in this engine. Evidence after this wave: full gate `[1808/1808]
+  MATCH_FUNCs OK, 31 WIP`; phase docs now 447/815 matched (249 left, 24 WIP, 119
+  CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
