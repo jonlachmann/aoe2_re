@@ -190,6 +190,15 @@ public:
     void M_474CE0(int);
 };
 
+void sub_58A7E0();
+int __stdcall sub_4A2140(int,char*,int);
+void Init_4A6E40();
+void __cdecl sub_5F90B0(void*);
+void Init_5CFAF0();
+void Init_48BAD0();
+void Free_4EE210();
+void Init_4654D0();
+
 class T5BFBF0 {
 public:
     int Other_5BFBF0();
@@ -385,6 +394,16 @@ public:
     void Other_474CE0(int);
 };
 
+class Tr58A7E0 {
+public:
+    void Other_58A7E0();
+};
+
+class C_pnl_inp {
+public:
+    int __stdcall Other_4A2140(int,char*,int);
+};
+
 int T5BFBF0::Other_5BFBF0()
 { return ((S5BFBF0*)this)->Get_5BFBF0(); }
 
@@ -513,4 +532,28 @@ int Tc4BD400::Other_4BD400(int a1)
 
 void T474CE0::Other_474CE0(int a1)
 { ((Sb474CE0*)this)->M_474CE0(a1); }
+
+void Tr58A7E0::Other_58A7E0()
+{ sub_58A7E0(); }
+
+int __stdcall C_pnl_inp::Other_4A2140(int a1, char* a2, int a3)
+{ return sub_4A2140(a1, a2, a3); }
+
+void sub_4A6E40()
+{ Init_4A6E40(); }
+
+void __cdecl Free_5F90B0(void* a1)
+{ return sub_5F90B0(a1); }
+
+void sub_5CFAF0()
+{ Init_5CFAF0(); }
+
+void sub_48BAD0()
+{ Init_48BAD0(); }
+
+void sub_4EE210()
+{ Free_4EE210(); }
+
+void sub_4654D0()
+{ Init_4654D0(); }
 

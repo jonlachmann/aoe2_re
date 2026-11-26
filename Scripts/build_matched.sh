@@ -27,7 +27,7 @@ PY
 ok=0; bad=0
 for f in $(cat "$LIST"); do
   out=$B/$(echo "$f" | sed 's|/|_|g;s|\.cpp$|.o|')
-  if "$CC" -x c++ -std=c++98 -w -O2 \
+  if "$CC" -x c++ -std=c++98 -w -O2 -DMATCHED_NATIVE \
       -fms-extensions -Wno-cast-pointer-to-smaller-type -fno-stack-protector \
       -I"$R/Source" -I"$R/Source/lifted" -I"$R/Source/host" \
       -I"$R/Source/ui" -I"$R/Source/game" -I"$R/Source/gfx" \
@@ -58,6 +58,14 @@ else
   echo "PE alias TU: FAILED (see $B/matched_pe_aliases.err)"
   head -5 "$B/matched_pe_aliases.err"
 fi
+if "$CC" -std=c++98 -w -O2 -I"$R/Source" -I"$R/Source/host" \
+    -c "$R/Source/host/matched_guest_image.cpp" -o "$B/matched_guest_image.o" \
+    2>"$B/matched_guest_image.err"; then
+  echo "guest image TU compiled"
+else
+  echo "guest image TU: FAILED (see $B/matched_guest_image.err)"
+  head -5 "$B/matched_guest_image.err"
+fi
 
 # Standard matched objects only (exclude generated glue/extra probes).
 OBJ=""
@@ -76,7 +84,7 @@ done
 echo "self-contained objects: $(echo "$SELF" | wc -w | tr -d ' ')"
 # shellcheck disable=SC2086
 if "$CC" -std=c++98 -w -O2 -Wl,-no_pie \
-    -I"$R/Source" $SELF "$R/Scripts/matched_probe.cpp" -o "$B/probe" 2>"$B/link.err"; then
+    -I"$R/Source" "$B/matched_guest_image.o" $SELF "$R/Scripts/matched_probe.cpp" -o "$B/probe" 2>"$B/link.err"; then
   "$B/probe"
   echo "self-contained link: OK (link.err $(wc -c < "$B/link.err" | tr -d ' ') bytes)"
 else
@@ -92,11 +100,11 @@ root, B = sys.argv[1], sys.argv[2]
 names = set()
 for o in glob.glob(B + "/*.o"):
     base = o.rsplit("/", 1)[-1]
-    if base.startswith(("va_", "probe_", "matched_globals")):
+    if base.startswith(("va_", "probe_", "matched_globals", "matched_guest", "matched_pe_aliases")):
         continue
     for l in subprocess.run(["nm", "-u", o], capture_output=True, text=True).stdout.splitlines():
         s = l.strip()
-        if s.startswith("_g_"):
+        if s.startswith("_g_") and not s.startswith(("_g_matched_image", "_g_matched_base")):
             names.add(s[1:])
 
 pe = None
@@ -122,12 +130,46 @@ for n in sorted(names):
                 pass
     lines.append("char %s[0x1000]%s;" % (n, init))
 open(root + "/Scripts/matched_globals.cpp", "w").write("\n".join(lines) + "\n")
-sys.stderr.write("seeded %d globals from %s\n" % (seeded, bin_path))
+# Generated sync from the mapped guest image: guarantees each g_* array holds
+# the same bytes as the image at its guest VA.
+sync = ["#include <string.h>", "", "extern \"C\" char* g_matched_image;",
+        "extern \"C\" long g_matched_image_size;", ""]
+for n in sorted(names):
+    sync.append("extern char %s[0x1000];" % n)
+sync += ["", "void SyncGuestGlobals()", "{",
+         "    char* im = g_matched_image;",
+         "    if (im == 0) return;"]
+synced = 0
+for n in sorted(names):
+    m = re.search(r"g_(?:pfn_|vt_)?([0-9a-fA-F]{6,8})$", n)
+    if not m: continue
+    va = int(m.group(1), 16)
+    off = va - 0x400000
+    if 0 <= off and off + 0x1000 <= 0x400000:
+        sync.append("    memcpy(%s, im + 0x%X, 0x1000);" % (n, off))
+        synced += 1
+sync.append("}")
+open(root + "/Scripts/matched_guest_sync.cpp", "w").write("\n".join(sync) + "\n")
+sys.stderr.write("seeded %d globals from %s; synced %d globals\n" % (seeded, bin_path, synced))
 print(len(names))
 PY
 GN=$(cat "$B/globals.txt")
 "$CC" -std=c++98 -w -O2 -I"$R/Source" -c "$R/Scripts/matched_globals.cpp" \
   -o "$B/matched_globals.o"
+"$CC" -std=c++98 -w -O2 -I"$R/Source" -I"$R/Source/host" \
+  -c "$R/Scripts/matched_guest_sync.cpp" -o "$B/matched_guest_sync.o"
+# Guest-image probe: load the PE-backed image, sync globals, verify contents.
+if "$CC" -std=c++98 -w -O2 -Wl,-no_pie -DMATCHED_NATIVE \
+    -I"$R/Source" -I"$R/Source/host" \
+    "$B/matched_guest_image.o" "$B/matched_guest_sync.o" "$B/matched_globals.o" \
+    "$R/Scripts/matched_probe_image.cpp" -o "$B/probe_image" \
+    2>"$B/link_image.err"; then
+  AOE_BIN="${AOE_BIN:-}" "$B/probe_image"
+  echo "guest image: OK"
+else
+  echo "guest image: FAILED (see $B/link_image.err)"
+  head -6 "$B/link_image.err"
+fi
 GLINK=""
 for o in $OBJ; do
   u="$(nm -u "$o" 2>/dev/null)"
@@ -138,7 +180,7 @@ done
 echo "guest globals defined: $GN; globals-linkable objects: $(echo "$GLINK" | wc -w | tr -d ' ')"
 # shellcheck disable=SC2086
 if "$CC" -std=c++98 -w -O2 -Wl,-no_pie -I"$R/Source" \
-    "$B/matched_globals.o" $GLINK "$R/Scripts/matched_probe.cpp" -o "$B/probe_globals" \
+    "$B/matched_globals.o" "$B/matched_guest_image.o" $GLINK "$R/Scripts/matched_probe.cpp" -o "$B/probe_globals" \
     2>"$B/link_globals.err"; then
   "$B/probe_globals"
   echo "globals link: OK"
@@ -157,7 +199,7 @@ for o in $OBJ; do
 done
 # shellcheck disable=SC2086
 if "$CC" -std=c++98 -w -O2 -Wl,-no_pie -I"$R/Source" \
-    "$B/matched_globals.o" $GEXEC "$R/Scripts/matched_probe_globals.cpp" \
+    "$B/matched_globals.o" "$B/matched_guest_image.o" $GEXEC "$R/Scripts/matched_probe_globals.cpp" \
     -o "$B/probe_globals_exec" 2>"$B/link_globals_exec.err"; then
   "$B/probe_globals_exec"
   echo "globals exec probe: OK ($(echo "$GEXEC" | wc -w | tr -d ' ') objects)"
@@ -188,8 +230,9 @@ for o in objs:
         s = l.strip()
         if s:
             und.add(s)
-allow = {"_bzero", "_free", "_malloc", "_memcpy", "_memset", "_memset_pattern16",
-         "_strcmp", "_strcpy", "_strlen", "__Unwind_Resume", "__gxx_personality_v0"}
+allow = {"_bzero", "_free", "_malloc", "_calloc", "_memcpy", "_memset", "_memset_pattern16",
+         "_strcmp", "_strcpy", "_strlen", "_fopen", "_fread", "_fclose",
+         "__Unwind_Resume", "__gxx_personality_v0"}
 extern = sorted(s for s in und if not s.startswith("_g_") and s not in defined)
 funs = [s for s in extern if s not in allow and s != "_gTab_741758"]
 data = [s for s in extern if s == "_gTab_741758"]
@@ -227,7 +270,7 @@ if "$CC" -std=c++98 -w -O2 -DMATCHED_NATIVE -I"$R/Source" \
     -c "$R/Source/ui/C_vt6234C8.cpp" -o "$B/va_C_vt6234C8.o" \
     2>"$B/va_compile.err" &&
    "$CC" -std=c++98 -w -O2 -Wl,-no_pie -DMATCHED_NATIVE -I"$R/Source" \
-    "$B/va_C_vt6234C8.o" "$R/Scripts/matched_probe_va.cpp" -o "$B/probe_va" \
+    "$B/va_C_vt6234C8.o" "$B/matched_guest_image.o" "$R/Scripts/matched_probe_va.cpp" -o "$B/probe_va" \
     2>"$B/va_link.err"; then
   "$B/probe_va"
   echo "guest-VA access layer: OK"

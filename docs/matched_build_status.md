@@ -29,10 +29,10 @@ Evidence (current run):
   0.0 threshold and `Get_41A090()==FLT_MAX`: `globals exec probe: 0 failures`
   (12 objects)
 - stage 5 — every matched object links into one native executable. The 604
-  extern symbols the object set does not define get host stubs: currently 533
+  extern symbols the object set does not define get host stubs: currently 525
   asm-label functions returning 0 and 1 opaque data array, leaving libSystem
   names (`malloc`, `memcpy`, `strlen`, ...) to the linker. Result:
-  `all matched objects linked: 166; probe_all: OK` (`probe: 0 failures`).
+  `all matched objects linked: 168; probe_all: OK` (`probe: 0 failures`).
   These stubs are link fillers with host ABI, not guest implementations.
 - stage 3 — portable guest-VA access layer: `Source/matched_mem.h` defines
   `ADDR(va)`, a plain cast under VC6 (byte-exact codegen unchanged) and a guest
@@ -69,7 +69,7 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
 
 ## Remaining gaps toward booting to the menu
 
-1. (Link milestone) all 166 objects (165 owner TUs + the PE-alias TU) link into one executable, but most
+1. (Link milestone) all 168 objects (165 owner TUs + alias TU + image TU + sync TU) link into one executable, but most
    external symbols are still host stubs returning 0. A first batch of naming
    fixes removed two: the PE-accurate mangling inventory shows ~150 extern
    symbols already have matched bodies under a different class/method name
@@ -86,7 +86,7 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
    the code-folded 0x5BE8D0 body (`T49F650Key::SetIndex_5BE8D0`,
    `T49FB00Obj::SetIndex_5BE8D0`, `C_global_66EA48::Hook_5BE8D0`) calling the
    real `S5BE940::SetIndex_5BE8D0` code, reaching 576 stubs. Every batch keeps
-   the full gate at [1765/1765] and the all-object link at 166 objects. The
+   the full gate at [1765/1765] and the all-object link at 168 objects. The
    remaining extern inventory is mostly broad-class renames or free-vs-member
    call-site mismatches, which need forwarding methods or caller fixes instead
    of wholesale class renames.
@@ -100,6 +100,24 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   function-map owner list) and adds it to the all-object link, taking the stub
   count from 576 to 533 and the object count from 165 to 166 with no duplicate
   symbols; the full gate is unchanged because the alias TU has no markers.
+  The same generator also emits eight free-function and member-to-free wrappers
+  (`sub_4A6E40`, `sub_48BAD0`, `sub_5CFAF0`, `sub_4EE210`, `sub_4654D0`,
+  `Free_5F90B0`, `Tr58A7E0::Other_58A7E0`, `C_pnl_inp::Other_4A2140`) taking
+  the stub count from 533 to 525.
+- stage 6 — native guest image: `Source/host/matched_guest_image.cpp` reads the
+  reference PE, maps a 4 MB image over guest VAs 0x400000..0x800000, copies the
+  section bytes, and sets `g_matched_base`. The build generator emits
+  `Scripts/matched_guest_sync.cpp`, which copies all 215 seeded `g_*` arrays
+  from the image at their guest VAs, so symbol contents equal image contents.
+  `Source/matched_mem.h`'s native `ADDR` now returns an image-backed pointer
+  unchanged (idempotent) and offsets guest VAs by `g_matched_base`; all matched
+  TUs are compiled with `-DMATCHED_NATIVE` for the native links, so ADDR-based
+  guest-VA dereferences land in the mapped image. Probe result:
+  `guest image probe: 0 failures` for `g_61C000`, `g_6645c4`, `g_vt_62AAE0`;
+  `all matched objects linked: 168; probe_all: OK`; `va probe: 0 failures`.
+  Limit: the address of a generated `g_*` symbol is still its host array
+  address, not image+VA; symbol references are consistent by contents (synced),
+  while guest-VA constants go through the image.
 2. Guest memory: most matched bodies still cast guest VAs in fields/globals
    directly. `ADDR` is proven on one body but not yet applied across the bodies
    or paired with an initialized guest image at boot.

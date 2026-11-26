@@ -7,7 +7,7 @@
 #include "matched_mem.h"
 #include "ui/C_vt6234C8.hpp"
 
-extern "C" long g_matched_base = 0;
+extern "C" long g_matched_base;
 int g_6645c4 = 0;
 
 int main()
