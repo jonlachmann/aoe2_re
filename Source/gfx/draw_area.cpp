@@ -103,6 +103,7 @@ public:
     void HLine_461370(int x, int y, int len, int color);
     void VLine_461400(int x, int y, int len, int color);
     void FillRect_461490(int x0, int y0, int x1, int y1, int color);
+    void RemapRect_461B50(int left, int top, int right, int bottom);
 };
 
 
@@ -603,4 +604,60 @@ void TDrawArea::FillRect_461490(int x0, int y0, int x1, int y1, int color)
         p += step;
     }
 
+}
+
+// 0x461B50 — palette remap over a clipped rectangle: when +0xC8 and Bits are
+// set, clamp (left,top,right,bottom) to the clip rect, the surface extents and
+// zero, then walk the rectangle rows (stride = Pitch * Orientation) replacing
+// each byte via the 256-byte table at *(field_C8 + 8).
+WIP_FUNC(0x461B50)
+void TDrawArea::RemapRect_461B50(int left, int top, int right, int bottom)
+{
+    if (field_C8 == 0)
+        return;
+    if (Bits == 0)
+        return;
+    if (left < ClipLeft)
+        left = ClipLeft;
+    if (top < ClipTop)
+        top = ClipTop;
+    if (right > ClipRight)
+        right = ClipRight;
+    if (bottom > ClipBottom)
+        bottom = ClipBottom;
+    if (left < 0)
+        left = 0;
+    if (top < 0)
+        top = 0;
+    if (right >= Width)
+        right = Width - 1;
+    if (bottom >= Height)
+        bottom = Height - 1;
+    if (right < left)
+        return;
+    if (bottom < top)
+        return;
+    int orient = Orientation;
+    int stride = GetPitch_460650() * orient;
+    unsigned char* row;
+    if (orient < 1)
+        row = Bits + (top - Height + 1) * stride + left;
+    else
+        row = Bits + stride * top + left;
+    unsigned char* rowEnd = row - left + right;
+    unsigned char* table = *(unsigned char**)((char*)(unsigned int)field_C8 + 8);
+    int rows = bottom - top + 1;
+    do
+    {
+        unsigned char* p = row;
+        while (p <= rowEnd)
+        {
+            unsigned char c = *p;
+            c = table[c];
+            *p = c;
+            p++;
+        }
+        row += stride;
+        rowEnd += stride;
+    } while (--rows != 0);
 }

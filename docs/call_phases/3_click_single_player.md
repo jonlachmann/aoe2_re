@@ -1,6 +1,6 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 100 matched, 152 left to match (4 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 100 matched, 152 left to match (5 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (152)
 
@@ -100,7 +100,7 @@
 | 171 | `sub_4A0920` | 50 |  | 1_boot_to_menu |  |
 | 172 | `sub_4AFAC0` | 9 |  | 1_boot_to_menu | pnl_btn::draw2 |
 | 175 | `sub_619DE0` | 3153 |  | 1_boot_to_menu |  |
-| 177 | `sub_461B50` | 9 |  | 1_boot_to_menu |  |
+| 177 | `sub_461B50` | 9 | WIP | 1_boot_to_menu | TDrawArea::RemapRect_461B50 |
 | 179 | `sub_461760` | 6 |  | 1_boot_to_menu |  |
 | 183 | `sub_5A6030` | 19 |  | 1_boot_to_menu |  |
 | 184 | `sub_610E8F` | 13 |  | 1_boot_to_menu |  |

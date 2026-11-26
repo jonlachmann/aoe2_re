@@ -763,6 +763,27 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1817/1817] MATCH_FUNCs OK, 34 WIP`; phase docs now 456/815 matched (240 left,
   27 WIP, 119 CRT).
 
+- stage 41 — `Source/gfx/draw_area.cpp` gains a semantically complete
+  `WIP_FUNC(0x461B50)` (240 bytes original) as `TDrawArea::RemapRect_461B50`:
+  a palette remap over a clipped rectangle. Guards `field_C8 != 0` and
+  `Bits != 0`; clamps (left,top,right,bottom) to ClipLeft/Top/Right/Bottom
+  (+0x28..+0x34), to zero, then right/bottom to Width/Height-1 (+0x18/+0x1C);
+  rejects right<left or bottom<top; reads Orientation (+0x24) and computes
+  stride = GetPitch_460650() * orient (the matched 0x460650 returns +0x20
+  Pitch); row base = Bits + (top-Height+1)*stride + left when orient<1 else
+  Bits + stride*top + left; rowEnd = row - left + right; then walks
+  bottom-top+1 rows replacing each byte through the 256-byte table at
+  *(field_C8+8), advancing by stride per row. Class feedback confirmed:
+  TDrawArea owns +0xC8 as the palette-table object (table pointer at +8),
+  Bits +0x08, Width/Height/Pitch +0x18/+0x1C/+0x20, Orientation +0x24,
+  clip rect +0x28..+0x34. WIP because VC6 rotates the callee-saved
+  assignment: original packs top→ebp (reused as the row counter), bottom→ebx
+  (reused as the inner index), stride→edi; ours packs top→ebx, bottom→edi,
+  stride→ebp. The loop tail is therefore 262 vs 240 bytes; this packing
+  rotation is not controllable from C++ source shape. Evidence after this
+  wave: full gate `[1817/1817] MATCH_FUNCs OK, 35 WIP`; phase docs now 456/815
+  matched (240 left, 28 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 456 matched, 240 left to match (27 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 456 matched, 240 left to match (28 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (240)
 
@@ -224,7 +224,7 @@
 | 755 | `sub_4BC560` | 20 |  | 1_boot_to_menu | pnl_txt::draw_border |
 | 756 | `sub_4AFAC0` | 2 |  | 1_boot_to_menu | pnl_btn::draw2 |
 | 759 | `sub_619DE0` | 2088 |  | 1_boot_to_menu |  |
-| 761 | `sub_461B50` | 2 |  | 1_boot_to_menu |  |
+| 761 | `sub_461B50` | 2 | WIP | 1_boot_to_menu | TDrawArea::RemapRect_461B50 |
 | 763 | `sub_461760` | 2 |  | 1_boot_to_menu |  |
 | 766 | `sub_5A6030` | 18 |  | 1_boot_to_menu |  |
 | 767 | `sub_610E8F` | 8 |  | 1_boot_to_menu |  |

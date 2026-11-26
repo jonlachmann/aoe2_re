@@ -28261,13 +28261,13 @@
   "calls": 1,
   "name": "sub_461B50",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "TDrawArea",
+  "class_evidence": "this-edge palette remap: guards +0xC8 and Bits(+8), clamps to ClipLeft/Top/Right/Bottom(+0x28..0x34), Width/Height(+0x18/+0x1C), Orientation(+0x24) via GetPitch_460650(+0x20 Pitch), table at *(field_C8+8)",
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/gfx/draw_area.cpp"
  },
  {
   "address": "0x461C40",
