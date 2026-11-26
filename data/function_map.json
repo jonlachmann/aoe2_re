@@ -75088,13 +75088,13 @@
   "calls": 3,
   "name": "sub_539A60",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_539A60",
+  "class_evidence": "derived 0x627D48 constructor over the C_cluster_472AA0 base; base destructor drives the EH unwind",
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x539AD0",

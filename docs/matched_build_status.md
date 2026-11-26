@@ -635,6 +635,19 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   Evidence after this wave: full gate `[1810/1810] MATCH_FUNCs OK, 32 WIP`;
   phase docs now 449/815 matched (247 left, 25 WIP, 119 CRT).
 
+- stage 33 — `Source/sim/free_sim.cpp` now carries a byte-exact
+  `MATCH_FUNC(0x539A60)` (111 bytes) as a real derived constructor: the object
+  runs the base 0x472AA0 initializer with (a1,a2), installs vtable 0x627D48,
+  hands g_6645C4+0x41C to 0x539B00 and clears through 0x472B20(0,0). The VC6 EH
+  frame is reproduced because the base class owns a destructor (a derived
+  destructor makes the symbol lookup ambiguous because both ctor and dtor names
+  contain `C_539A60`; putting the dtor on the base, whose name lacks `539A60`,
+  keeps the ctor unique and still yields the base-subobject unwind). Class
+  feedback: 0x627D48 objects derive from the 0x472AA0 base; the constructor's
+  unwind is base-destruction, and 0x539B00 is a same-object method.
+  Evidence after this wave: full gate `[1811/1811] MATCH_FUNCs OK, 32 WIP`;
+  phase docs now 450/815 matched (246 left, 25 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

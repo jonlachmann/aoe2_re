@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 449 matched, 247 left to match (25 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 450 matched, 246 left to match (25 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (247)
+## Left to match (246)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -242,7 +242,6 @@
 | 775 | `sub_610DEA` | 2 |  | 1_boot_to_menu |  |
 | 777 | `sub_4B3860` | 626 |  | 1_boot_to_menu |  |
 | 778 | `sub_5B1CD0` | 1 |  | 1_boot_to_menu |  |
-| 779 | `sub_539A60` | 1 |  | 1_boot_to_menu |  |
 | 782 | `sub_472B20` | 2 |  | 1_boot_to_menu |  |
 | 786 | `sub_539B00` | 1 |  | 1_boot_to_menu |  |
 | 791 | `sub_53A1C0` | 1 |  | 1_boot_to_menu |  |
@@ -254,7 +253,7 @@
 | 807 | `sub_4EDC70` | 2144832 |  | 1_boot_to_menu |  |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (449)
+## Matched (450)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -682,6 +681,7 @@
 | 764 | `sub_461370` | 12 | MATCH | 1_boot_to_menu | TDrawArea::HLine_461370 |
 | 765 | `sub_461400` | 12 | MATCH | 1_boot_to_menu | TDrawArea::VLine_461400 |
 | 776 | `sub_4B0AE0` | 26292 | MATCH | 1_boot_to_menu | C_pnl_btn::M_4B0AE0 |
+| 779 | `sub_539A60` | 1 | MATCH | 1_boot_to_menu | C_539A60::C_539A60 |
 | 780 | `sub_472AA0` | 1 | MATCH | 1_boot_to_menu | C_cluster_472AA0::Init_472AA0 |
 | 781 | `sub_472B00` | 1 | MATCH | 1_boot_to_menu | C_cluster_472AA0::M_472B00 |
 | 783 | `sub_464FF0` | 2 | MATCH | 1_boot_to_menu | T464FD0::M_464FF0 |

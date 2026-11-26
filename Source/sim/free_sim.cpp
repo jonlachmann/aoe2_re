@@ -6184,3 +6184,38 @@ int S58A780::M_58A9D0(int a1)
     }
     return 1;
 }
+
+// 0x539A60 — constructor of the 0x627D48 sim object: run the base 0x472AA0
+// initializer with the two arguments, install the derived vtable, hand
+// g_6645C4+0x41C to the 0x539B00 helper, then clear through 0x472B20(0,0).
+class C_cluster_472AA0 {
+public:
+    C_cluster_472AA0* Init_472AA0(int a1, int a2);
+    void Hook_472B20(int a1, int a2);
+};
+class S472AA0Base {
+public:
+    char pad_00[0x1c];
+    S472AA0Base(int a1, int a2);
+    ~S472AA0Base();
+};
+S472AA0Base::~S472AA0Base()
+{
+}
+S472AA0Base::S472AA0Base(int a1, int a2)
+{
+    ((C_cluster_472AA0*)this)->Init_472AA0(a1, a2);
+}
+class C_539A60 : public S472AA0Base {
+public:
+    C_539A60(int a1, int a2);
+    void M_539B00(int a1);
+};
+MATCH_FUNC(0x539A60)
+C_539A60::C_539A60(int a1, int a2) : S472AA0Base(a1, a2)
+{
+    *(int*)((char*)this) = 0x627d48;
+    int v = *(int*)(g_6645c4 + 0x41c);
+    M_539B00(v);
+    ((C_cluster_472AA0*)this)->Hook_472B20(0, 0);
+}
