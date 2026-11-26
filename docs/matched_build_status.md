@@ -165,6 +165,21 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   OK`; boot link 171 objects; run still prints the WinMain checkpoint because
   0x47AE20 itself remains unmatched.
 
+- stage 9 — cluster-layout feedback from the boot path:
+  0x4732E0 is a thiscall cluster grower (176 bytes) that the catalog had left
+  unclassed: it reads this+0x08 (array length), this+0x0C (per-index block
+  pointers) and this+0x10 (per-index entry counts), allocates a2*0x0C bytes
+  through 0x5F8FF0, copies the old entries, frees the old block through
+  0x5F90B0, and writes -1 into each new entry. A caller pair (0x472C7E and the
+  0x473270 body, which also sets +0x08/+0x0C/+0x10) shows the same object, so
+  the fields are modeled in `Source/ui/C_cluster_4732E0.hpp` and the body is a
+  `WIP_FUNC` in `Source/ui/C_cluster_4732E0.cpp` (192 bytes vs 176: the
+  compiler picks different callee-saved registers for `this`/index/buf).
+  Evidence: full gate `[1766/1766] MATCH_FUNCs OK, 43 WIP`; matched TUs 167 ok,
+  0 failed; 524 function stubs; `all matched objects linked: 170; probe_all:
+  OK`; boot link 172 objects; boot run unchanged (WinMain checkpoint).
+  Phase docs: 408 matched, 288 left (37 WIP), 119 CRT/library.
+
 Gaps now:
 1. WinMain 0x47AE20 is still unmatched (2035 bytes): a 0x1B88 stack frame, 27
    inline strcpy/strlen+memcpy expansions, a stack config struct, calls to
@@ -178,10 +193,10 @@ Gaps now:
 3. Guest ABI: matched-to-matched calls are consistent because all bodies are
    compiled by the host compiler; the gap is only at boundaries to unmatched
    lifted code/external imports, which need guest-ABI wrappers.
-4. Coverage: phase docs show 408/815 phase-1 matched (288 left, 36 WIP, 119
+4. Coverage: phase docs show 408/815 phase-1 matched (288 left, 37 WIP, 119
    CRT/library), so even a wired build would boot lifted, not matched, code.
 5. (Done) Asm-based "matches" were rewritten as C++; the tree now has zero
-   `__asm` in matched bodies and all 166 matched TUs compile natively.
+   `__asm` in matched bodies and all 167 matched TUs compile natively.
 
 ## Reproduce
 

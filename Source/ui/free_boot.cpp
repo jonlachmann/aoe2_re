@@ -1,8 +1,9 @@
 // free_boot — boot-path free functions recovered from the WinMain init chain.
 // 0x47B620 is called from WinMain 0x47AE20 with the language-DLL path at
 // 0x64D58C: it loads a module, resolves a function, loads the language DLL,
-// reads two string resources, builds a language/config block on the stack and
-// calls the resolved export, then releases both modules.
+// reads two string resources into two stack arrays, probes a string with
+// sub_5FDCD4 and calls the resolved export with the language resouce pair, then
+// releases both modules and returns the export result.
 #include "Function.hpp"
 #include "matched_mem.h"
 
@@ -22,8 +23,9 @@ extern int __cdecl sub_5FDA2B(int a1);
 WIP_FUNC(0x47B620)
 int __cdecl sub_47B620(char* a1)
 {
-    char lang[0x104];
     char block[0x104];
+    char lang[0x104];
+    TFreeLibrary freefn;
 
     TLoadLibrary loadlib = g_61c110;
 
@@ -45,22 +47,23 @@ int __cdecl sub_47B620(char* a1)
         return 0;
     }
 
-    Hook_473AE0(lang_module, 0x3ef, block, 0x104);
-    Hook_473AE0(lang_module, 0x3f0, lang, 0x104);
+    Hook_473AE0(lang_module, 0x3ef, lang, 0x104);
+    Hook_473AE0(lang_module, 0x3f0, block, 0x104);
 
     int result;
-    int r = sub_5FDCD4(lang + 4, 0, 0x100);
+    int r = sub_5FDCD4(block, 0, 0x100);
     if (r == -1)
     {
-        result = fn((int)ADDR(0x653070), 0, block + 4, 1);
+        result = fn((int)ADDR(0x653070), lang, 0, 1);
     }
     else
     {
         sub_5FDA2B(r);
-        result = fn((int)ADDR(0x653070), block + 8, lang + 4, 1);
+        result = fn((int)ADDR(0x653070), lang, block, 1);
     }
 
-    g_61c1a0(module);
-    g_61c1a0(lang_module);
+    freefn = g_61c1a0;
+    freefn(module);
+    freefn(lang_module);
     return result;
 }

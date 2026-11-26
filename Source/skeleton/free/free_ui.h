@@ -31,7 +31,7 @@ void sub_472FB0();  // size 86, calls 0, lifted, module ui
 void sub_473010();  // size 185, calls 0, lifted, module ui
 void sub_473140();  // size 158, calls 0, lifted, module ui
 void sub_4731E0();  // size 31, calls 0, matched, module ui
-void sub_4732E0();  // size 176, calls 2, lifted, module ui
+void sub_4732E0();  // size 176, calls 2, wip, module ui
 void sub_473390();  // size 124, calls 0, lifted, module ui
 void sub_473410();  // size 159, calls 1, wip, module ui
 void sub_473500();  // size 59, calls 0, lifted, module ui
