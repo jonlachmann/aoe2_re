@@ -849,9 +849,58 @@ int C_vt61DF78::slot63_420D10(int a1, int a2, int a3, int a4)
     return 1;
 }
 
-WIP_FUNC(0x422340)
+// 0x422340's 0x208 screen/state object: the ctor at 0x45F8E0 and the two
+// member calls at 0x45FB60/0x45FA20 are still lifted, so this TU models the
+// class shape with a non-trivial ctor (to keep the original VC6 EH frame) and
+// success-contract stubs. M_45FB60 returns 1 here so the native bring-up takes
+// the original success branch.
+extern void __cdecl Hook_422340Ctor(void* p, char* a1, int a2);
+class T422340Screen {
+public:
+    char pad_00[0x208];
+    T422340Screen(char* a1, int a2);
+    int M_45FB60(int a1, int a2, int a3, int a4, int a5);
+    void M_45FA20();
+};
+T422340Screen::T422340Screen(char* a1, int a2)
+{
+    Hook_422340Ctor(this, a1, a2);
+}
+void __cdecl Hook_422340Ctor(void* p, char* a1, int a2)
+{
+    (void)p; (void)a1; (void)a2;
+}
+int T422340Screen::M_45FB60(int a1, int a2, int a3, int a4, int a5)
+{
+    (void)a1; (void)a2; (void)a3; (void)a4; (void)a5;
+    return 1;
+}
+void T422340Screen::M_45FA20()
+{
+}
+
+// 0x422340 (slot +0x154) — allocate the 0x208 screen/state object with the
+// 0x64DAA8 name, store it at +0x10A0, then run the 0x45FB60 five-argument mode
+// call with +0x68; a zero result destroys/frees the object, clears +0x10A0 and
+// returns 0, otherwise returns 1.
+MATCH_FUNC(0x422340)
 int C_vt61DF78::slot85_422340()
 {
+    T422340Screen* p = new T422340Screen((char*)ADDR(0x64daa8), 0);
+    *(int*)((char*)this + 0x10a0) = (int)(size_t)p;
+    if (p == 0)
+        return 0;
+    if (!p->M_45FB60(*(int*)((char*)this + 0x68), 0x18a, 0xc6, 0, 0))
+    {
+        T422340Screen* old = (T422340Screen*)(size_t)*(int*)((char*)this + 0x10a0);
+        if (old != 0)
+        {
+            old->M_45FA20();
+            sub_5F90B0(old);
+        }
+        *(int*)((char*)this + 0x10a0) = 0;
+        return 0;
+    }
     return 1;
 }
 

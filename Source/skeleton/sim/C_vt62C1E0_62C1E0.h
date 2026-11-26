@@ -95,7 +95,7 @@ public:
     virtual void slot_082();  // slot +0x148: sub_5B5C50 [matched] — Source/sim/C_vt62C1E0.cpp
     virtual void slot_083();  // slot +0x14C: sub_4378C0 [matched] — Source/ui/C_pnl_edit.cpp
     virtual void slot_084();  // slot +0x150: sub_4378C0 [matched] — Source/ui/C_pnl_edit.cpp
-    virtual void slot_085();  // slot +0x154: sub_422340 [wip] — Source/app/C_vt61DF78.cpp
+    virtual void slot_085();  // slot +0x154: sub_422340 [matched] — Source/app/C_vt61DF78.cpp
     virtual void slot_086();  // slot +0x158: sub_5BC500 [matched] — Source/sim/C_vt62C1E0.cpp
     void method_000();  // sub_41B760 [wip]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp
     void method_001();  // sub_41FA40 [matched]: same object, connected by this-edge call sites — Source/sim/C_vt62C1E0.cpp

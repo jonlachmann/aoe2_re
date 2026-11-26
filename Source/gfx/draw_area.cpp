@@ -133,11 +133,15 @@ void TDrawArea::SetMode_460EC0(int mode, unsigned char flag)
     field_EC = mode;
     if (mode) {
         field_FC = flag;
-        if (field_3C && field_0 && field_0->type_3C == 2) {
-            int entries[2];
-            entries[0] = flag;
-            entries[1] = flag;
-            field_3C->lpVtbl->fn_74(field_3C, 8, entries);
+        if (field_3C != 0) {
+            if (field_0 != 0) {
+                if (field_0->type_3C == 2) {
+                    int entries[2];
+                    entries[0] = flag;
+                    entries[1] = flag;
+                    field_3C->lpVtbl->fn_74(field_3C, 8, entries);
+                }
+            }
         }
     } else
         field_FC = 0xff;

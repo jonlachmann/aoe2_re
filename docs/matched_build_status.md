@@ -392,6 +392,23 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   slots are still lifted/undefined, so the native bring-up skips the +0x138
   dispatch instead of calling a raw guest word.
 
+- stage 18 — 0x422340 (212 bytes, base slot +0x154) is byte-exact. It
+  allocates the 0x208 screen/state object with the 0x64DAA8 name through a
+  non-trivial ctor stub (keeping the original VC6 EH frame), stores the pointer
+  at +0x10A0, runs the 0x45FB60 five-argument mode call with the +0x68 pointer,
+  and on a zero result destroys/frees the object, clears +0x10A0 and returns 0;
+  nonzero returns 1. The source layout returns 1 only after the cleanup block
+  so VC6 emits the original block order. Evidence: TU gate `[26/26]
+  MATCH_FUNCs OK, 18 WIP`; full gate `[1800/1800] MATCH_FUNCs OK, 30 WIP`; boot
+  exit 0, no fault, `DC10 status=0 DC80=1 BC80=1 5B17D0=1 menu-loop=1`, window
+  class/create 2, hwnd 0x1A2B3C4D, DE50/E070 screens 1, WinMain returns 0.
+  The base slots +0x138..+0x150 are now declared (slot_078..slot_084) so
+  slot85_422340 keeps the real +0x154 index. 0x460EC0 (TDrawArea::SetMode,
+  95 bytes) remains WIP: its emitted bytes are identical to the original except
+  the three inner-branch targets (VC6 merges them to the later epilogue at
+  +0x59 instead of +0x4C); nested-if, early-return and goto forms all still
+  chose the later target, so it stays a documented WIP.
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
