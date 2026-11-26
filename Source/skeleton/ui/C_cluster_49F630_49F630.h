@@ -8,5 +8,5 @@ class C_cluster_49F630 {
 public:
     void method_000();  // sub_49F630 [lifted]
     void method_001();  // sub_49F770 [matched] — Source/ui/free_ui.cpp
-    void method_002();  // sub_49FA50 [lifted]
+    void method_002();  // sub_49FA50 [matched] — Source/ui/C_cluster_49F630.cpp
 };

@@ -1,4 +1,5 @@
 #include "C_cluster_49F630.hpp"
+#pragma intrinsic(strcmp)
 
 extern void* __cdecl sub_5F8FF0(unsigned int a1, int a2);
 
@@ -11,7 +12,7 @@ MATCH_FUNC(0x49F650)
 int C_cluster_49F630::M_49F650(T49F650Key* key, int a2, int a3)
 {
     int name = ((T49F650Key*)key)->Get_4A2060();
-    if (Hook_49FA50(name) == 0)
+    if (M_49FA50((char*)name) == 0)
     {
         S49FA50Node* n = (S49FA50Node*)sub_5F8FF0(1, 0xC);
         if (n == 0)
@@ -28,3 +29,25 @@ int C_cluster_49F630::M_49F650(T49F650Key* key, int a2, int a3)
         Hook_49FB00((int)key, a3);
     return 1;
 }
+
+// 0x49FA50 — walk the +0x14 circular list comparing node names to the given
+// string via inline strcmp; a NULL input, an empty list or a list without a
+// matching node returns 0, and a matching node is re-checked and returned.
+MATCH_FUNC(0x49FA50)
+int C_cluster_49F630::M_49FA50(char* name)
+{
+    if (name == 0)
+        return 0;
+    S49FA50Node* n = head_14->field_8;
+    while (n != head_14)
+    {
+        if (strcmp((char*)((T49F650Key*)n->field_0)->Get_4A2060(), name) == 0)
+            break;
+        n = n->field_8;
+    }
+    if (n != head_14 &&
+        strcmp((char*)((T49F650Key*)n->field_0)->Get_4A2060(), name) == 0)
+        return (int)n;
+    return 0;
+}
+#pragma function(strcmp)

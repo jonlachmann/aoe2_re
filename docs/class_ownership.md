@@ -5,7 +5,7 @@ class's bodies span more than one file; `Staged` means some bodies still
 sit under `Source/simple/` instead of a class-first TU. Owned counts are
 the methods with a known file; unowned slots are still lifted evidence.
 ## Summary
-- 534 classes in the map; 202 have split owner files.
+- 534 classes in the map; 203 have split owner files.
 - 0 classes still have staged simple-file bodies.
 
 ## Split owner files
@@ -151,6 +151,7 @@ the methods with a known file; unowned slots are still lifted evidence.
 | `C_vt62C7CC` | sim | 0x62C7CC | Source/ui/C_TRIBE_Screen_Options.cpp | Source/gfx/C_TribePopUpHelp.cpp, Source/sim/free_sim.cpp, Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 27/79 |
 | `C_vt62C9CC` | sim | 0x62C9CC | Source/sim/C_vt62C9CC.cpp | Source/engine-late/C_view.cpp, Source/engine-late/free_engine-late.cpp, Source/sim/free_sim.cpp | 6/72 |
 | `C_TRIBE_Screen_Options` | ui | 0x625F80 | Source/ui/C_TRIBE_Screen_Options.cpp | Source/ui/C_pnl_btn.cpp, Source/ui/free_ui.cpp | 41/90 |
+| `C_cluster_49F630` | ui | — | Source/ui/free_ui.cpp | Source/ui/C_cluster_49F630.cpp | 2/3 |
 | `C_cluster_4A0630` | ui | — | Source/ui/C_TRIBE_Screen_Options.cpp | Source/ui/C_pnl_btn.cpp | 2/2 |
 | `C_cluster_4A76D0` | ui | — | Source/ui/free_ui.cpp | Source/ui/C_vt6222D4.cpp | 2/2 |
 | `C_cluster_4BAE20` | ui | — | Source/ui/C_cluster_4BAE20.cpp | Source/ui/C_pnl_lst.cpp | 3/3 |

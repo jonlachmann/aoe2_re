@@ -7952,15 +7952,18 @@
    "vtable": null,
    "anchor": "0x49F630",
    "methods": 3,
-   "owned_methods": 1,
-   "unowned_methods": 2,
+   "owned_methods": 2,
+   "unowned_methods": 1,
    "primary_file": "Source/ui/free_ui.cpp",
    "owner_files": {
+    "Source/ui/C_cluster_49F630.cpp": 1,
     "Source/ui/free_ui.cpp": 1
    },
-   "other_files": [],
+   "other_files": [
+    "Source/ui/C_cluster_49F630.cpp"
+   ],
    "staged_files": [],
-   "split": false
+   "split": true
   },
   {
    "class": "C_cluster_49FE60",
