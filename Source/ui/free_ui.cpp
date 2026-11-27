@@ -6313,10 +6313,24 @@ public:
     char pad_00[0x104];
     char field_104;               // +0x104 state byte
     char pad_105[0x114 - 0x105];
-    int field_114;                // +0x114
+    int field_114;                // +0x114 gate
+    char pad_118[0x254 - 0x118];
+    int field_254;                // +0x254 published value
+    int field_258;                // +0x258 lookup key, reset to -1
+    char pad_25c[0x27c - 0x25c];
+    int field_27c;                // +0x27C case-1/2 gate
+    int field_280;                // +0x280 callback first argument
+    char pad_284[0x3a8 - 0x284];
+    int field_3a8;                // +0x3A8 span start
+    int field_3ac;                // +0x3AC span end
+    char pad_3b0[0x3d8 - 0x3b0];
+    int field_3d8;                // +0x3D8 callback output buffer base
+    char pad_3dc[0x3f0 - 0x3dc];
+    int field_3f0;                // +0x3F0 scaled result
     void M_498AD0();
     int M_4988E0();
     int M_498DC0(char a1);
+    void M_498E00(int a1, int a2);
 };
 
 MATCH_FUNC(0x498DC0)
@@ -8050,6 +8064,7 @@ class C_cluster_520CE0 {
 public:
     int M_5217F0(int a1);
     void M_5215F0(int a1);
+    int M_521780(int a1, int a2);
 };
 class C_vt62C1E0 {
 public:
@@ -8110,3 +8125,58 @@ int C_vt6251E4::M_4EDC70()
 }
 
 
+
+// 0x498E00 — state-byte dispatcher on the 0x4988E0/0x498AD0 object. Clamp a1
+// to [-10000, 0]; publish it at +0x254 when a2 is nonzero; return when +0x114
+// is clear. Then load g_6645C4's +0x90 C_cluster_520CE0 and switch on the
+// +0x104 state byte:
+//   1/2 -> gate +0x27C, scale (span)*[a1+10000]/10000 from +0x3AC/+0x3A8 into
+//         +0x3F0, then run g_61C3D4(+0x280, buffer +0x3D8, 0);
+//   3   -> gate the +0x90 object and run M_521780(+0x258, a1), resetting +0x258;
+//   4   -> same call, written so VC6 reloads +0x258 late into eax.
+extern int (__stdcall *g_61C3D4)(int a1, int* a2, int a3);
+MATCH_FUNC(0x498E00)
+void S498DC0::M_498E00(int a1, int a2)
+{
+    if (a1 < -10000)
+        a1 = -10000;
+    else if (a1 > 0)
+        a1 = 0;
+    if (a2 != 0)
+        field_254 = a1;
+    if (field_114 == 0)
+        return;
+    C_cluster_520CE0* obj = (C_cluster_520CE0*)((T6645Ef*)g_6645c4)->field_90;
+    switch ((unsigned char)field_104)
+    {
+    case 1:
+    case 2:
+    {
+        if (field_27c == 0)
+            return;
+        unsigned int scaled = (unsigned int)(field_3ac - field_3a8) *
+                              (unsigned int)(a1 + 0x2710) / 0x2710u;
+        field_3f0 = scaled;
+        g_61C3D4(field_280, (int*)((char*)this + 0x3d8), 0);
+        return;
+    }
+    case 3:
+    {
+        if (obj == 0)
+            return;
+        int key = field_258;
+        obj->M_521780(key, a1);
+        field_258 = -1;
+        return;
+    }
+    case 4:
+    {
+        if (obj == 0)
+            return;
+        obj->M_521780(field_258, a1);
+        field_258 = -1;
+        return;
+    }
+    }
+    return;
+}

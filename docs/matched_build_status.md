@@ -801,6 +801,26 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1818/1818] MATCH_FUNCs OK, 35 WIP`; phase docs now 457/815 matched
   (239 left, 28 WIP, 119 CRT).
 
+- stage 43 — `Source/ui/free_ui.cpp` now carries a byte-exact
+  `MATCH_FUNC(0x498E00)` (228 bytes) as `S498DC0::M_498E00(int a1, int a2)`
+  returning void. It clamps a1 to [-10000, 0], publishes it at +0x254 when a2
+  is nonzero, returns when +0x114 is clear, then loads g_6645C4's +0x90
+  C_cluster_520CE0 and switches on the unsigned +0x104 state byte: state 1/2
+  gates +0x27C and scales (field_3AC-field_3A8) * (a1+0x2710) / 0x2710 into
+  +0x3F0 (the 0xD1B71759/shr-13 unsigned divide), then runs
+  `g_61C3D4(field_280, buffer+0x3D8, 0)`; states 3/4 gate the +0x90 object and
+  run its matched `M_521780`, resetting +0x258 to -1. Class feedback confirmed
+  the shared 0x4988E0/0x498AD0 state object: unsigned state byte +0x104,
+  +0x114 gate, +0x254 published value, +0x258 lookup key, +0x27C gate,
+  +0x280 callback arg, +0x3A8/+0x3AC span, +0x3D8 buffer, +0x3F0 scaled
+  result; the +0x90 object is C_cluster_520CE0 (M_521780). Byte-exactness
+  required the void return (the callback/msub result is left in eax),
+  unsigned state byte (xor edx/edx + mov dl instead of movsx), the object
+  load hoisted before the switch discriminant, and a distinct case-4 reload
+  of +0x258 into eax so VC6 does not cross-jump case 3 into case 4. Evidence
+  after this wave: full gate `[1819/1819] MATCH_FUNCs OK, 35 WIP`; phase docs
+  now 458/815 matched (238 left, 28 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
