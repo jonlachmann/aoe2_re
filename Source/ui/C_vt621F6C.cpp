@@ -1,5 +1,7 @@
 #include "C_vt621F6C.hpp"
 #include "matched_mem.h"
+#include "C_vt621F64.hpp"
+#include "C_cluster_4A3BB0.hpp"
 
 // 0x4A0270 — default constructor of the 0x621F6C base object. Zero every
 // scalar in the binary store order, set +0x38 = 2, +0x6C/+0x7C/+0x80/+0x88 = 1,
@@ -231,6 +233,7 @@ public:
     void M_4A2AC0();
     int M_4A3430(char* Str, int FileHandle);
     int M_4A35A0(char* Str, int FileHandle);
+    int M_4A3760(char* String1, int Delimiter);
 };
 
 // The 0x51E7F0 0x1C-byte entry object reached by the allocation path. Only the
@@ -261,6 +264,16 @@ public:
     ~T51E7F0Entry();
 };
 
+struct T45F5C0Entry {
+    unsigned char r, g, b, flags;
+};
+
+class T49FB60 {
+public:
+    int Hook_49FB60(void* a1, int a2, int a3);
+};
+
+extern int (__stdcall *cv_61C05C)(void* a1, int a2, int a3, void* a4);
 extern int __cdecl sub_5FF460(char* a1, char* a2);
 extern char* __cdecl sub_5FEE50(char* a1, int a2);
 extern int __cdecl sub_5FCE14(char* dst, char* fmt, ...);
@@ -408,4 +421,47 @@ int C_vt622060::M_4A35A0(char* Str, int FileHandle)
         *(void**)((char*)this + 0x20c) = 0;
     }
     return *(int*)((char*)this + 0x20c) != 0;
+}
+
+// 0x4A3760 — rebuild the +0x210/+0x460 pair. Clear +0x210 through the
+// 0x66EA48 record remover, release a +0x460 object through its slot 0 with 1,
+// then when Delimiter != -1 (or a valid "none" string names it) build the
+// +0x210 record via 0x49FB60(String1, Delimiter, 1). Store the result; if it is
+// present and +0x464 is positive, read 256 palette entries through 0x61C05C
+// and, only on success, allocate a 0x38 object constructed with (+0x20,
+// +0x464, 0, entries) into +0x460. That populated path always returns 1.
+MATCH_FUNC(0x4A3760)
+int C_vt622060::M_4A3760(char* String1, int Delimiter)
+{
+    T45F5C0Entry pPalEntries[0x100];
+    if (*(int*)((char*)this + 0x210) != 0)
+    {
+        ((C_vt621F64*)0x66ea48)->M_49FE00(*(int*)((char*)this + 0x210));
+        *(int*)((char*)this + 0x210) = 0;
+    }
+    T460Obj* old = (T460Obj*)*(void**)((char*)this + 0x460);
+    if (old != 0)
+    {
+        old->slot_000(1);
+        *(void**)((char*)this + 0x460) = 0;
+    }
+    if (Delimiter == -1 &&
+        (String1 == 0 || *String1 == 0 ||
+         sub_5FF460(String1, (char*)ADDR(0x653520)) == 0))
+        return 1;
+    int v = ((T49FB60*)0x66ea48)->Hook_49FB60(String1, Delimiter, 1);
+    *(int*)((char*)this + 0x210) = v;
+    if (v != 0 && *(int*)((char*)this + 0x464) > 0)
+    {
+        if (cv_61C05C((void*)v, 0, 0x100, pPalEntries) != 0)
+        {
+            T4233E0_4233E0* obj =
+                new T4233E0_4233E0(*(int*)((char*)this + 0x20),
+                                   *(int*)((char*)this + 0x464), 0,
+                                   (char*)pPalEntries);
+            *(void**)((char*)this + 0x460) = obj;
+        }
+        return 1;
+    }
+    return 0;
 }

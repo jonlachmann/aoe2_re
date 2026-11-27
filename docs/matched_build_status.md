@@ -1178,6 +1178,28 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `test/je`). Evidence after this wave: full gate `[1833/1833] MATCH_FUNCs OK,
   40 WIP`; phase docs now 472/815 matched (224 left, 33 WIP, 119 CRT).
 
+- stage 60 — `Source/ui/C_vt621F6C.cpp` gains a byte-exact
+  `MATCH_FUNC(0x4A3760)` (312 bytes) as
+  `int C_vt622060::M_4A3760(char* String1, int Delimiter)`. It clears the
+  +0x210 record through the 0x66EA48 `C_vt621F64` remover 0x49FE00, releases a
+  +0x460 object through its slot 0 with 1 and clears that field, then when
+  Delimiter != -1 (or a non-empty "none" string names one) builds the +0x210
+  record through 0x49FB60(String1, Delimiter, 1). If the record is present and
+  +0x464 is positive, it reads 256 palette entries through the IAT slot
+  0x61C05C and, only on success, allocates a 0x38 object constructed with
+  (+0x20, +0x464, 0, entries) into +0x460; the populated path returns 1 and the
+  build miss returns 0. Class feedback: C_vt622060 owns +0x210 (record pointer)
+  and the +0x460/+0x464 owned-object/count pair plus +0x20 (constructor arg),
+  and composes with T4233E0_4233E0 (0x38, vtable 0x61E15C, ctor 0x4233E0) and
+  T460Obj (vtable slot 0); 0x49FB60 builds the same 0x66EA48 record object that
+  C_vt621F64 removes with 0x49FE00. Byte-exactness required the local
+  `T45F5C0Entry pPalEntries[0x100]` stack array (0x400), the direct virtual call
+  `old->slot_000(1)` producing `mov eax,[ecx]; push 1; call [eax]`, the
+  null-checked new path with VC6 EH frame for the non-trivial 0x38 ctor, and the
+  `cv_61C05C` import-pointer call. Evidence after this wave: full gate
+  `[1834/1834] MATCH_FUNCs OK, 40 WIP`; phase docs now 473/815 matched
+  (223 left, 33 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
