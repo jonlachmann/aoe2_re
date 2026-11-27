@@ -116,13 +116,16 @@ void C_cluster_520CE0::Hook_521580()
 
 // 0x5217F0 — key lookup over the +0x00 gate: try Find_5219E0 then +0x258's
 // dispatch table, otherwise Find_5219B0 then +0x4C's table; the successful
-// dispatch writes the flag back into the a1 parameter slot, which then yields
-// 1 for bit 0 or bit 2.
+// dispatch fills a flags local (VC6 reuses the dead a1 slot for it), which
+// then yields 1 for bit 0 or bit 2.
 class T5217F0Dispatch {
 public:
     char pad_00[0x24];
     int (__stdcall *fn_24)(void* a1, int* a2);
-    char pad_28[0x3c - 0x28];
+    char pad_28[0x30 - 0x28];
+    void (__stdcall *fn_30)(void* a1, int a2, int a3, int a4);
+    void (__stdcall *fn_34)(void* a1, int a2);
+    char pad_38[0x3c - 0x38];
     int (__stdcall *fn_3c)(void* a1, int a2);
 };
 class T5217F0Sub {
@@ -130,36 +133,26 @@ public:
     T5217F0Dispatch* field_00;
 };
 
-WIP_FUNC(0x5217F0)
+MATCH_FUNC(0x5217F0)
 int C_cluster_520CE0::M_5217F0(int a1)
 {
-    int v;
-    int t;
-    int obj;
-    if (field_0 != 0)
-        goto fail;
-    v = a1;
-    t = Find_5219B0(v);
-    obj = Find_5219E0(v);
-    if (obj != 0)
+    unsigned int flags;
+    if (field_0 == 0)
     {
-        obj = *(int*)(obj + 0x258);
-        if (obj != 0 &&
-            ((T5217F0Sub*)obj)->field_00->fn_24((void*)obj, &a1) == 0)
-            goto check;
+        int t = Find_5219B0(a1);
+        int obj = Find_5219E0(a1);
+        T5217F0Sub* sub;
+        if ((obj != 0 && (sub = *(T5217F0Sub**)(obj + 0x258)) != 0 &&
+             sub->field_00->fn_24(sub, (int*)&flags) == 0) ||
+            (t != 0 && (sub = *(T5217F0Sub**)(t + 0x4c)) != 0 &&
+             sub->field_00->fn_24(sub, (int*)&flags) == 0))
+        {
+            if (flags & 1)
+                return 1;
+            flags &= 0xff;      // kept as a separate statement: the folded
+            return (flags >> 2) & 1;  // form drops the original's and eax,0xff
+        }
     }
-    if (t == 0)
-        goto fail;
-    t = *(int*)(t + 0x4c);
-    if (t == 0)
-        goto fail;
-    if (((T5217F0Sub*)t)->field_00->fn_24((void*)t, &a1) != 0)
-        goto fail;
-check:
-    if ((a1 & 1) != 0)
-        return 1;
-    return ((a1 & 0xff) >> 2) & 1;
-fail:
     return 0;
 }
 
@@ -167,31 +160,37 @@ fail:
 // Find_5219B0/Find_5219E0, then report success of the +0x258 object's +0x3C
 // dispatch (after reading its +0x298 flag) or of the +0x4C subobject's +0x3C
 // dispatch; false on every miss.
-WIP_FUNC(0x521780)
+MATCH_FUNC(0x521780)
 int C_cluster_520CE0::M_521780(int a1, int a2)
 {
-    int v;
-    int t;
-    int obj;
-    if (field_0 != 0)
-        goto fail;
-    v = a1;
-    t = Find_5219B0(v);
-    obj = Find_5219E0(v);
-    if (obj != 0)
+    if (field_0 == 0)
     {
-        unsigned char c = *(unsigned char*)(obj + 0x298);
-        obj = *(int*)(obj + 0x258);
-        if (c != 0)
+        int t = Find_5219B0(a1);
+        int obj = Find_5219E0(a1);
+        if (obj != 0)
         {
+            // Both arms are identical; VC6 cross-jumps them and leaves the
+            // dead test of the +0x298 byte.
+            int r;
+            T5217F0Sub* sub;
+            if (*(unsigned char*)(obj + 0x298) != 0)
+            {
+                sub = *(T5217F0Sub**)(obj + 0x258);
+                r = !sub->field_00->fn_3c(sub, a2);
+            }
+            else
+            {
+                sub = *(T5217F0Sub**)(obj + 0x258);
+                r = !sub->field_00->fn_3c(sub, a2);
+            }
+            return r;
         }
-        return !((T5217F0Sub*)obj)->field_00->fn_3c((void*)obj, a2);
+        if (t != 0)
+        {
+            T5217F0Sub* sub = *(T5217F0Sub**)(t + 0x4c);
+            return sub->field_00->fn_3c(sub, a2) == 0;
+        }
     }
-    if (t == 0)
-        goto fail;
-    t = *(int*)(t + 0x4c);
-    return !((T5217F0Sub*)t)->field_00->fn_3c((void*)t, a2);
-fail:
     return 0;
 }
 
@@ -226,3 +225,64 @@ void C_cluster_520CE0::M_520D20()
     field_0 = 0;
 }
 #pragma function(memset)
+
+extern void __stdcall sub_5EE380(int a1);
+
+// 0x5215F0 — one-argument activation of a found entry. Gate on +0x00; resolve
+// Find_5219B0 then Find_5219E0; the first hit (t) drives its +0x4C subobject's
+// +0x24 flags probe, and on bit 0 clear it runs the +0x3C/+0x34/+0x30
+// dispatches and sets t's +0x2C byte. The second hit (obj) drives +0x258's
+// subobject the same way; on bit 0 clear it optionally runs sub_5EE380(+0x29C),
+// runs +0x3C with this->+0x5AC, +0x34 with obj's +0x280, M_521DC0(obj), copies
+// +0x28C into +0x23C, then +0x30 and sets obj's +0x210 byte. Either success
+// path returns 1 (bit 0 set short-circuits straight to 1); every miss returns 0.
+MATCH_FUNC(0x5215F0)
+int C_cluster_520CE0::M_5215F0(int a1)
+{
+    if (field_0 != 0)
+        return 0;
+    int t = Find_5219B0(a1);
+    int obj = Find_5219E0(a1);
+    unsigned int flags;
+    if (t != 0)
+    {
+        if (*(T5217F0Sub**)(t + 0x4c) == 0)
+            return 0;
+        (*(T5217F0Sub**)(t + 0x4c))->field_00->fn_24(
+            *(T5217F0Sub**)(t + 0x4c), (int*)&flags);
+        if (flags & 1)
+            goto success;
+        (*(T5217F0Sub**)(t + 0x4c))->field_00->fn_3c(
+            *(T5217F0Sub**)(t + 0x4c), field_5ac);
+        (*(T5217F0Sub**)(t + 0x4c))->field_00->fn_34(
+            *(T5217F0Sub**)(t + 0x4c), 0);
+        (*(T5217F0Sub**)(t + 0x4c))->field_00->fn_30(
+            *(T5217F0Sub**)(t + 0x4c), 0, 0, 0);
+        *(unsigned char*)(t + 0x2c) = 1;
+        return 1;
+    }
+    if (obj != 0)
+    {
+        if (*(T5217F0Sub**)(obj + 0x258) == 0)
+            return 0;
+        (*(T5217F0Sub**)(obj + 0x258))->field_00->fn_24(
+            *(T5217F0Sub**)(obj + 0x258), (int*)&flags);
+        if (flags & 1)
+            goto success;
+        if (*(unsigned char*)(obj + 0x298) != 0)
+            sub_5EE380(*(int*)(obj + 0x29c));
+        (*(T5217F0Sub**)(obj + 0x258))->field_00->fn_3c(
+            *(T5217F0Sub**)(obj + 0x258), field_5ac);
+        (*(T5217F0Sub**)(obj + 0x258))->field_00->fn_34(
+            *(T5217F0Sub**)(obj + 0x258), *(int*)(obj + 0x280));
+        M_521DC0(obj);
+        *(int*)(obj + 0x23c) = *(int*)(obj + 0x28c);
+        (*(T5217F0Sub**)(obj + 0x258))->field_00->fn_30(
+            *(T5217F0Sub**)(obj + 0x258), 0, 0, 1);
+        *(unsigned char*)(obj + 0x210) = 1;
+    }
+    else
+        return 0;
+success:
+    return 1;
+}

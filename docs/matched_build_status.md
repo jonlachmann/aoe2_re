@@ -858,6 +858,27 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1820/1820] MATCH_FUNCs OK, 36 WIP`; phase docs now 459/815 matched
   (237 left, 29 WIP, 119 CRT).
 
+- stage 46 — `Source/sim/C_cluster_520CE0.cpp` gains a byte-exact
+  `MATCH_FUNC(0x5215F0)` (295 bytes) as `C_cluster_520CE0::M_5215F0(int a1)`.
+  Gate on +0x00; resolve Find_5219B0 then Find_5219E0. The first hit (t)
+  drives its +0x4C subobject through the +0x24 flags probe, and on bit 0 clear
+  runs +0x3C/+0x34/+0x30 then sets t's +0x2C byte. The second hit (obj) drives
+  its +0x258 subobject the same way; on bit 0 clear it optionally runs
+  sub_5EE380(+0x29C), runs +0x3C with this->+0x5AC and +0x34 with obj's
+  +0x280, runs M_521DC0(obj), copies +0x28C into +0x23C, then +0x30 and sets
+  obj's +0x210 byte. Class feedback: C_cluster_520CE0 owns +0x5AC (passed to
+  +0x3C), and M_521DC0 is its member; T5217F0Dispatch gains slots fn_30
+  (+0x30 four-arg stdcall) and fn_34 (+0x34 two-arg stdcall). Byte-exactness
+  used inline dereferences of t+0x4c/obj+0x258 (reloading each time, as the
+  original does) instead of a persistent subobject local, so VC6 keeps the
+  original register packing (ebp/esi/edi, no extra ebx push); and an explicit
+  shared success tail (`goto success` / `return 1;`) reproduces the original
+  return-tail merging (both early bit-0 checks and the second branch body land
+  on the same tail after the second branch, while the first branch body ends
+  in its own inline return). Evidence after this wave: full gate
+  `[1821/1821] MATCH_FUNCs OK, 36 WIP`; phase docs now 460/815 matched
+  (236 left, 29 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

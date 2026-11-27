@@ -1,8 +1,8 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 101 matched, 151 left to match (6 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 102 matched, 150 left to match (6 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (151)
+## Left to match (150)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -36,7 +36,6 @@
 | 69 | `sub_41F780` | 1 |  | 3_click_single_player |  |
 | 71 | `sub_5BB2D0` | 2170745 |  | 1_boot_to_menu |  |
 | 72 | `sub_420450` | 2170745 |  | 1_boot_to_menu |  |
-| 82 | `sub_5215F0` | 2170745 |  | 1_boot_to_menu |  |
 | 86 | `sub_4B8CC0` | 13024470 |  | 1_boot_to_menu |  |
 | 92 | `sub_4B3860` | 276 | WIP | 1_boot_to_menu | C_pnl_edit::M_4B3860 |
 | 93 | `sub_4208F0` | 3 |  | 1_boot_to_menu |  |
@@ -158,7 +157,7 @@
 | 282 | `sub_610EB1` | 4 |  | 3_click_single_player |  |
 | 284 | `sub_610E66` | 1 |  | 3_click_single_player |  |
 
-## Matched (101)
+## Matched (102)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -197,6 +196,7 @@
 | 79 | `sub_5217F0` | 2170745 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5217F0 |
 | 80 | `sub_5219B0` | 4341490 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Find_5219B0 |
 | 81 | `sub_5219E0` | 4341490 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Find_5219E0 |
+| 82 | `sub_5215F0` | 2170745 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5215F0 |
 | 83 | `sub_4A1CD0` | 6 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::Hook_4A1CD0 |
 | 84 | `sub_4A1160` | 193196305 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4A1160 |
 | 85 | `sub_4B8510` | 2170745 | MATCH | 1_boot_to_menu | C_pnl_pic::M_4B8510 |
