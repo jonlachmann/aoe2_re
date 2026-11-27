@@ -165,6 +165,15 @@ public:
     virtual void Vat_f4(int a, int b);
     virtual void Vat_f8();
     virtual void Vat_fc(char* a1, int a2);
+    virtual void slot_064();
+    virtual void slot_065();
+    virtual void slot_066();
+    virtual void slot_067();
+    virtual void slot_068();
+    virtual void slot_069();
+    virtual void slot_070();
+    virtual void slot_071();
+    virtual void Vat_120();       // slot +0x120 (index 72)
 
     char pad_04[0x40 - 4];
     T4BCE20Sub* field_40;         // +0x40, subobject dispatched by 0x4BCE20
@@ -197,6 +206,8 @@ public:
     void M_408050(int a, int b);
     void M_4BBCE0(int a1);
     void M_4BA410(int a1, int a2, int a3, int a4);
+    void M_4BA5C0(char* a1, char* a2);
+    void Hook_4BA810(void* a1, void* a2, int a3);
     void M_4BADD0(int a1);
     char* M_4BD4B0(int index);
     void M_4BD4E0(int index, void* a2, void* a3, int* a4, int* a5, unsigned char flag);

@@ -1027,6 +1027,28 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   this wave: full gate `[1826/1826] MATCH_FUNCs OK, 38 WIP`; phase docs now
   465/815 matched (231 left, 31 WIP, 119 CRT).
 
+- stage 54 — `Source/ui/C_pnl_inp.cpp` gains a semantically complete
+  `WIP_FUNC(0x4BA5C0)` (274 bytes original) as `C_pnl_inp::M_4BA5C0(char* a1,
+  char* a2)`, plus class-slot feedback. It bumps +0xE4, notifies the +0x40
+  subobject slot 8 with 1, then dispatches slot +0x120 (index 72). With a null
+  a1 it returns when the +0x150 word is zero, else feeds (0x662BE0, 0, 0) to
+  0x4BCF90; with an empty a1 it feeds the same. Otherwise, when +0x12C is clear
+  and +0x124 is not 6, it splits a1 on newline through CRT 0x5FF4EC; each
+  segment is copied into a 0x100 buffer (Hook_5FCB40), terminated, and fed to
+  0x4BCF90(buffer, 0, 0); after the last segment it feeds (remainder, 0, a2).
+  When +0x12C is set or +0x124 is 6, it word-wraps through Hook_4BA810(a1,a2,0)
+  and frees a2's +0x08 chain. Class feedback: C_pnl_inp owns +0xE4 and +0x12C/
+  +0x124 alongside existing fields; its vtable needs slots through index 72
+  (+0x120) and the +0x40 subobject has a one-argument slot at +0x20; 0x4BCF90
+  is C_cluster_4BAE20, 0x4BA810 is the word-wrap callee, and 0x5FF4EC/0x5FCB40
+  are CRT-band (exempt). WIP because VC6 rotated the split loop by duplicating
+  the strchr condition at the loop bottom instead of jumping back to the single
+  top call site, and it saves ebx inside the body rather than before the first
+  call; the body stays semantically complete but the loop rotation and register
+  save placement are not controllable from source shape (tried while/for(;;)/
+  goto/do forms). Evidence after this wave: full gate `[1826/1826] MATCH_FUNCs
+  OK, 39 WIP`; phase docs now 465/815 matched (231 left, 32 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

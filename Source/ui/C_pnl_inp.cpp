@@ -290,3 +290,82 @@ void C_pnl_inp::M_4BA410(int a1, int a2, int a3, int a4)
         }
     }
 }
+
+// Minimal +0x40 view whose slot +0x20 takes one argument (the release mode).
+class TField40Slot8 {
+public:
+    virtual void s0();
+    virtual void s1();
+    virtual void s2();
+    virtual void s3();
+    virtual void s4();
+    virtual void s5();
+    virtual void s6();
+    virtual void s7();
+    virtual void slot_008(int a1);
+};
+
+class C_cluster_4BAE20 {
+public:
+    void M_4BCF90(int a1, int a2, int a3);
+};
+
+extern char* __cdecl sub_5FF4EC(char* a1, int a2);   // CRT strchr-like (exempt band)
+
+// 0x4BA5C0 — text splitter over the input buffer. Bump +0xE4, notify the +0x40
+// subobject slot 8 with 1, then dispatch slot +0x120. With a null a1 it returns
+// when the +0x150 word is zero, else feeds (0x662BE0, 0, 0) to 0x4BCF90; with an
+// empty a1 it feeds the same. Otherwise, when +0x12C is clear and +0x124 is not
+// 6, it splits a1 on '\n' (sub_5FF4EC): each segment is copied into a 0x100
+// buffer (Hook_5FCB40), terminated, and fed to 0x4BCF90(buffer, 0, 0); after the
+// last segment it feeds (remainder, 0, a2). When +0x12C is set or +0x124 is 6,
+// it word-wraps a1 through Hook_4BA810(a1, a2, 0) and frees a2's +0x08 chain.
+WIP_FUNC(0x4BA5C0)
+void C_pnl_inp::M_4BA5C0(char* a1, char* a2)
+{
+    char buf[0x100];
+    *(int*)((char*)this + 0xe4) = *(int*)((char*)this + 0xe4) + 1;
+    if (field_40 != 0)
+        ((TField40Slot8*)field_40)->slot_008(1);
+    Vat_120();
+    if (a1 == 0)
+    {
+        if (*(short*)((char*)this + 0x150) == 0)
+            goto done;
+        ((C_cluster_4BAE20*)this)->M_4BCF90(0x662be0, 0, 0);
+        return;
+    }
+    if (*a1 == 0)
+    {
+        ((C_cluster_4BAE20*)this)->M_4BCF90(0x662be0, 0, 0);
+        return;
+    }
+    short n;
+    if (*(int*)((char*)this + 0x12c) == 0 &&
+        *(int*)((char*)this + 0x124) != 6)
+    {
+        char* nl;
+split_cond:
+        nl = sub_5FF4EC(a1, 0xa);
+        if (nl == 0)
+            goto split_done;
+        n = (short)(nl - a1);
+        Hook_5FCB40(buf, a1, n);
+        buf[n] = 0;
+        ((C_cluster_4BAE20*)this)->M_4BCF90((int)buf, 0, 0);
+        a1 = nl + 1;
+        goto split_cond;
+split_done:
+        ((C_cluster_4BAE20*)this)->M_4BCF90((int)a1, 0, (int)a2);
+        return;
+    }
+    Hook_4BA810(a1, a2, 0);
+    while (a2 != 0)
+    {
+        void* next = *(void**)((char*)a2 + 8);
+        Free_5F90B0(a2);
+        a2 = (char*)next;
+    }
+done:
+    ;
+}
