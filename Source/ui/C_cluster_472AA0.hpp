@@ -11,10 +11,10 @@ public:
     int field_8;                  // +0x08
     int field_C;                  // +0x0C
     int field_10;                 // +0x10
-    int field_14;                 // +0x14
+    char* field_14;               // +0x14 player-name buffer
     int field_18;                 // +0x18
 
-    void Hook_472B20(int a1, int a2);   // unresolved callee at 0x472B20
+    char Hook_472B20(int a1, int a2);   // load player HKI data into +0x14
     void M_472B00();
     C_cluster_472AA0* Init_472AA0(int a1, int a2);
 };

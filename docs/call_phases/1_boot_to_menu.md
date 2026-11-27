@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 532 matched, 164 left to match (26 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 532 matched, 164 left to match (27 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (164)
 
@@ -167,7 +167,7 @@
 | 773 | `sub_610EED` | 4 |  | 1_boot_to_menu |  |
 | 774 | `sub_610DB5` | 4 |  | 1_boot_to_menu |  |
 | 775 | `sub_610DEA` | 2 |  | 1_boot_to_menu |  |
-| 782 | `sub_472B20` | 2 |  | 1_boot_to_menu |  |
+| 782 | `sub_472B20` | 2 | WIP | 1_boot_to_menu | C_cluster_472AA0::Hook_472B20 |
 | 786 | `sub_539B00` | 1 |  | 1_boot_to_menu |  |
 | 800 | `sub_5BB2D0` | 2144832 | WIP | 1_boot_to_menu | C_vt62C1E0::M_5BB2D0 |
 

@@ -1688,6 +1688,36 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
 
 
+- stage 79 — the player HKI loader is now a C++ WIP body on the 0x472AA0 cluster
+  owner, and boot stays green from matched bodies. Run evidence: `EXIT=0`,
+  WinMain body `0x47AE20` returned 0, `BC80=1 5B17D0=1 menu-loop=1`,
+  `window class/create=2 hwnd=1A2B3C4D menu-screen DE50=1 E070=1`,
+  `menu populated: 47C4=10 subobjects 15e8..1610=1; 7B0=2 5C0=2`, and
+  `menu idle ticks from matched 0x5BB2D0: 8 (body hits 8)`.
+  Source addition: `Source/ui/C_cluster_472AA0.cpp` gains the WIP
+  `C_cluster_472AA0::Hook_472B20` (0x472B20, 227 bytes): ask the g_6645C4 app
+  through 409A10 for the player index, take the app +0x1C game-settings object
+  through 464FF0 for the player number, and build "player%d_%d" (v4>0) or
+  "player%d" in Buffer. Replace the +0x14 in-object name through the matched
+  499C40, build "%s%s.hki" in FileName from the prefix (default 0x662BE0) and
+  that name, open through the matched 4BE760(FileName, 0x8000), feed the handle
+  into the thiscall 472C10 stub, and release the file through the matched
+  4BE860. Returns 0 on any failure, 1 after the feed. The class feedback now
+  makes +0x14 a `char*` player-name buffer, gives Hook_472B20 its real
+  `char(int,int)` signature (so the free_sim 0x539A60 caller shares the same
+  mangling), and declares C_vt61C62C, T464FD0 and the 472C10 dispatch helper
+  as the callee identities the cluster uses. WIP: every failure path shares one
+  epilogue, and the original lays that block before the success block; this
+  translation places it after, so ours is 240 vs 227 bytes although the
+  branches and calls match.
+  Gate/build evidence: TU gates `Source/ui/C_cluster_472AA0.cpp [2/2]
+  MATCH_FUNCs OK, 1 WIP` and `Source/sim/free_sim.cpp [362/362] MATCH_FUNCs
+  OK, 3 WIP`; full gate `[1911/1911] MATCH_FUNCs OK, 30 WIP`;
+  `build_matched.sh` links 176 matched objects with no failed probes.
+  The regenerated phase docs read 532/815 matched (164 left, 27 WIP, 119
+  CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
+
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1

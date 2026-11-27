@@ -32242,13 +32242,13 @@
   "calls": 7,
   "name": "sub_472B20",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_cluster_472AA0",
+  "class_evidence": "player HKI loader on the 0x472AA0 cluster: ask the g_6645C4 app through C_vt61C62C::M_409A10 for the player index, take the app +0x1C game-settings object (T464FD0::M_464FF0) for the player number, and build \"player%d_%d\"/\"player%d\" in Buffer at 0x652d78/0x652d6c. Replace the +0x14 in-object name through the matched 499C40, build \"%s%s.hki\" at 0x652d60 from the prefix (default 0x662BE0) and that name, open through the matched 4BE760(FileName,0x8000), feed the handle into a thiscall 472C10 stub and release through the matched 4BE860. Returns 0 on failure and 1 after the feed. WIP: the original lays the shared failure epilogue before the success block; this translation places it after, so ours is 240 vs 227 bytes though the branches and calls match",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/C_cluster_472AA0.cpp"
  },
  {
   "address": "0x472C10",

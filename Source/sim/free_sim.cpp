@@ -6251,7 +6251,7 @@ int S58A780::M_58A9D0(int a1)
 class C_cluster_472AA0 {
 public:
     C_cluster_472AA0* Init_472AA0(int a1, int a2);
-    void Hook_472B20(int a1, int a2);
+    char Hook_472B20(int a1, int a2);
 };
 class S472AA0Base {
 public:
