@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 463 matched, 233 left to match (30 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 464 matched, 232 left to match (30 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (233)
+## Left to match (232)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -238,9 +238,8 @@
 | 794 | `sub_53BD10` | 121 |  | 1_boot_to_menu |  |
 | 797 | `sub_41CF70` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot01_41CF70 |
 | 800 | `sub_5BB2D0` | 2144832 |  | 1_boot_to_menu |  |
-| 801 | `sub_420450` | 2144832 |  | 1_boot_to_menu |  |
 
-## Matched (463)
+## Matched (464)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -694,6 +693,7 @@
 | 796 | `sub_41C8F0` | 1 | MATCH | 1_boot_to_menu | C_vt61DF78::Get_41C8F0 |
 | 798 | `sub_42D210` | 2144833 | MATCH | 1_boot_to_menu | S42D210::Check_42D210 |
 | 799 | `sub_415750` | 625 | MATCH | 1_boot_to_menu | C_vt61D890::M_415750 |
+| 801 | `sub_420450` | 2144832 | MATCH | 1_boot_to_menu | C_vt61DF78::M_420450 |
 | 802 | `sub_45F8A0` | 125 | MATCH | 1_boot_to_menu | C_cluster_45F8A0::M_45F8A0 |
 | 803 | `sub_5214E0` | 2144832 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5214E0 |
 | 804 | `sub_521580` | 2144832 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Hook_521580 |

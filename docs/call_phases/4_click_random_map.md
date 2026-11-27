@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 298 matched, 250 left to match (8 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 299 matched, 249 left to match (8 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (250)
+## Left to match (249)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -27,7 +27,6 @@
 | 56 | `sub_4205E0` | 1 |  | 3_click_single_player |  |
 | 57 | `sub_41F780` | 1 |  | 3_click_single_player |  |
 | 59 | `sub_5BB2D0` | 1117934 |  | 1_boot_to_menu |  |
-| 60 | `sub_420450` | 1117934 |  | 1_boot_to_menu |  |
 | 81 | `sub_4B3860` | 14 | WIP | 1_boot_to_menu | C_pnl_edit::M_4B3860 |
 | 82 | `sub_4208F0` | 4 |  | 1_boot_to_menu |  |
 | 84 | `sub_45E930` | 4 |  | 1_boot_to_menu |  |
@@ -257,7 +256,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (298)
+## Matched (299)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -284,6 +283,7 @@
 | 53 | `sub_45FEA0` | 129 | MATCH | 1_boot_to_menu | TDrawArea::ReleaseDC_45FEA0 |
 | 55 | `sub_407C10` | 2 | MATCH | 3_click_single_player | C_TRIBE_Screen_Options::M_407C10 |
 | 58 | `sub_41BC30` | 1 | MATCH | 3_click_single_player | C_vt61DF78::M_41BC30 |
+| 60 | `sub_420450` | 1117934 | MATCH | 1_boot_to_menu | C_vt61DF78::M_420450 |
 | 61 | `sub_41C800` | 2235888 | MATCH | 1_boot_to_menu | S41C800Table::Add_41C800 |
 | 62 | `sub_5214E0` | 1117934 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5214E0 |
 | 63 | `sub_521580` | 1117934 | MATCH | 1_boot_to_menu | C_cluster_520CE0::Hook_521580 |

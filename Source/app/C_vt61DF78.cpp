@@ -92,6 +92,7 @@ public:
     void Init_42FD60();
     void Init_42FD20();
     void Hook_4308C0();
+    void M_427120();              // lifted callee at 0x427120
 };
 class Sc425650 {
 public:
@@ -1948,5 +1949,80 @@ int C_vt61DF78::slot29_41BC80()
 
     // +0x1C / +0x20 path objects (0x4647C0 / 0x4CFAC0) are still lifted. The
     // original also calls 0x5FCE01 to format a startup log path; skip both.
+    return 1;
+}
+
+// Support for 0x420450: callees already matched in other TUs (duplicated as
+// minimal declarations so the mangled symbols resolve), the guest tick stamp,
+// the guest stats-table pointer and the 0x66EA48 accessor owner.
+extern int g_664550;                  // last accepted tick stamp (0xFA gate)
+extern void* g_6645c4;                // global per-slot stats table object
+struct S41C800Stats;
+class S41C800Table { public: S41C800Stats* Add_41C800(int index, unsigned value); };
+class C_cluster_45F8A0 { public: void M_45F8A0(); };
+class C_pnl_btn { public: int M_5C6880(int a1, int a2, int a3, int a4); };
+class C_cluster_520CE0 { public: void M_5214E0(); };
+class C_vt62C1E0 { public: int Get9AA_4217C0(); };
+
+// 0x420450 — periodic tick housekeeping. Return 0 when +0x2C or +0x28 is
+// clear. Otherwise, with +0x30 set, +0x1D8 not 1 and a +0x68 child, refresh
+// that child (0x45F8A0) when the tick delta since the guest 0x664550 stamp has
+// reached 0xFA, then store the new stamp. With a +0x80 child, seed it through
+// M_5C6880(+0x28, 0x113, 0, 0), accumulate the 0x0F stats slot with the tick
+// delta, refresh the optional +0x90 child through M_5214E0, and accumulate the
+// 0x10 stats slot with its own tick delta. When the 0x66EA48 accessor yields an
+// object, call its slot +0x4C. With a +0x1B0 child and a nonzero 0x4217C0 probe
+// on this object, run M_427120 on the child and accumulate the 0x0E stats slot.
+// Finally dispatch slot 83 when +0x918 is set and slot 84 when +0x91C is set,
+// returning 1.
+MATCH_FUNC(0x420450)
+int C_vt61DF78::M_420450()
+{
+    int (__cdecl *tick)();
+    if (*(int*)((char*)this + 0x2c) == 0 || field_28 == 0)
+        return 0;
+    tick = ((int (__cdecl**)())g_61c3c8)[0];
+    if (field_30 != 0)
+    {
+        if (*(int*)((char*)this + 0x1d8) != 1)
+        {
+            if (*(void**)((char*)this + 0x68) != 0)
+            {
+                int t = tick();
+                if ((unsigned int)(t - g_664550) >= 0xfa)
+                {
+                    ((C_cluster_45F8A0*)(*(void**)((char*)this + 0x68)))->M_45F8A0();
+                    g_664550 = t;
+                }
+            }
+        }
+    }
+    if (*(void**)((char*)this + 0x80) != 0)
+    {
+        int t = tick();
+        ((C_pnl_btn*)(*(void**)((char*)this + 0x80)))->M_5C6880(
+            (int)field_28, 0x113, 0, 0);
+        ((S41C800Table*)g_6645c4)->Add_41C800(0xf, tick() - t);
+        int t2 = tick();
+        if (*(void**)((char*)this + 0x90) != 0)
+            ((C_cluster_520CE0*)(*(void**)((char*)this + 0x90)))->M_5214E0();
+        ((S41C800Table*)g_6645c4)->Add_41C800(0x10, tick() - t2);
+    }
+    T49F620Result* res = ((S49F620Global*)ADDR(0x66ea48))->Get_49F620();
+    if (res != 0)
+        res->Vt_13();
+    if (*(void**)((char*)this + 0x1b0) != 0)
+    {
+        if (((C_vt62C1E0*)this)->Get9AA_4217C0() != 0)
+        {
+            int t = tick();
+            ((C_global_66451C*)(*(void**)((char*)this + 0x1b0)))->M_427120();
+            ((S41C800Table*)g_6645c4)->Add_41C800(0xe, tick() - t);
+        }
+    }
+    if (*(int*)((char*)this + 0x918) != 0)
+        slot_083();
+    if (*(int*)((char*)this + 0x91c) != 0)
+        slot_084();
     return 1;
 }

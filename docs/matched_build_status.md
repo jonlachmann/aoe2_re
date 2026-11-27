@@ -958,6 +958,31 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1824/1824] MATCH_FUNCs OK, 37 WIP`; phase docs now 464/815 matched
   (233 left, 30 WIP, 119 CRT).
 
+- stage 51 — `Source/app/C_vt61DF78.cpp` gains a byte-exact
+  `MATCH_FUNC(0x420450)` (310 bytes) as `C_vt61DF78::M_420450()`, plus its
+  support declarations. It returns 0 when +0x2C is zero or +0x28 is zero;
+  otherwise, with +0x30 set, +0x1D8 not 1 and a +0x68 child, it refreshes that
+  child through 0x45F8A0 when the tick delta since the guest 0x664550 stamp has
+  reached 0xFA, then stores the new stamp. With a +0x80 child it seeds it
+  through M_5C6880(+0x28, 0x113, 0, 0), accumulates the 0x0F stats slot with the
+  tick delta, refreshes the optional +0x90 child through M_5214E0, and
+  accumulates the 0x10 stats slot with its own tick delta. When the 0x66EA48
+  accessor yields an object (one call, reused result), it calls that object's
+  slot +0x4C (Vt_13). With a +0x1B0 child and a nonzero 0x4217C0 (+0x9AA) probe
+  on this object, it runs M_427120 on the child and accumulates the 0x0E stats
+  slot. Finally it dispatches slot 83 when +0x918 is set and slot 84 when
+  +0x91C is set, returning 1. Class feedback: C_vt61DF78 owns the +0x2C/+0x28
+  gates, +0x30 active flag, +0x1D8 mode, +0x68/+0x80/+0x90/+0x1B0 children,
+  +0x918/+0x91C slot flags; C_global_66451C gains M_427120; the tick source is
+  the IAT 0x61C3C8 pointer read once into a local, and 0x664550/0x6645C4/0x66EA48
+  are guest globals. Byte-exactness required the early guards to be one
+  short-circuit `if (+0x2C == 0 || field_28 == 0) return 0` so VC6 emits a single
+  shared fail tail at the very end (`je` forward past the body), inline child
+  dereferences instead of persistent locals (avoiding an extra ebp save and
+  keeping tick in ebx), and one Get_49F620 call whose result is reused. Evidence
+  after this wave: full gate `[1825/1825] MATCH_FUNCs OK, 37 WIP`; phase docs
+  now 464/815 matched (233 left, 30 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

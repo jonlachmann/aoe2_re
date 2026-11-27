@@ -13005,14 +13005,14 @@
   "name": "sub_420450",
   "names": [],
   "class": "C_vt61DF78",
-  "class_evidence": "vtable slot",
+  "class_evidence": "this-edge periodic tick housekeeping: +0x2C/+0x28 gates, +0x30 active flag, +0x1D8 mode==1 suppress, +0x68 child (0x45F8A0), +0x80 child (M_5C6880 +0x28/0x113/0/0), +0x90 child (0x5214E0), +0x1B0 child (0x427120 after 0x4217C0 probe), +0x918/+0x91C slot flags; slots 83(+0x14C)/84(+0x150); guest 0x664550 tick stamp, 0x6645C4 stats table, 0x66EA48 accessor",
   "slot_classes": [
    "C_vt61DF78"
   ],
   "module": "app",
   "region": "app",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/app/C_vt61DF78.cpp"
  },
  {
   "address": "0x420590",
