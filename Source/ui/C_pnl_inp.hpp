@@ -38,7 +38,9 @@ public:
     virtual void Vt_02();
     virtual void Vt_03();
     virtual void Vt_04();
-    virtual void Vat_14(int v);
+    virtual void Vat_14(int v);        // slot +0x14 (index 5)
+    virtual void Vt_05();              // slot +0x18 (index 6)
+    virtual void Vat_1c(int a1, int a2, int a3, int a4);  // slot +0x1C (index 7)
 };
 
 // Subobject at [this+0x40] used by 0x4BCE20. It dispatches slot +0xC4 (index
@@ -194,6 +196,7 @@ public:
     void Other_4A2140(int a1, char* a2, int a3);
     void M_408050(int a, int b);
     void M_4BBCE0(int a1);
+    void M_4BA410(int a1, int a2, int a3, int a4);
     void M_4BADD0(int a1);
     char* M_4BD4B0(int index);
     void M_4BD4E0(int index, void* a2, void* a3, int* a4, int* a5, unsigned char flag);

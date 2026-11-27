@@ -110,13 +110,16 @@ void C_pnl_inp::M_4BD4E0(int index, void* a2, void* a3, int* a4, int* a5,
 // and +0x04 pointers, unlink and free the +0x0C chain through +0x08, then
 // release the node itself and continue through +0x24; finally clear +0xF8 and
 // the +0xFC word, reset the +0x00 list through 0x4BBD30 and notify slot +0x20.
+// WIP: the `if (field_f8)` + local copy form puts the +0xF8 store after
+// `pop edi` like the original; the only remaining diff is `this` in ebx
+// (ours) vs ebp (original). Tried: self alias, do/while, for, goto, hoisted
+// locals, typed chain locals, next/old temp orders -- none move the phase.
 WIP_FUNC(0x4BD5F0)
 void C_pnl_inp::M_4BD5F0()
 {
-    C_pnl_inp* self = this;
-    T4BD4B0Node* n = self->field_f8;
-    if (n != 0)
+    if (field_f8 != 0)
     {
+        T4BD4B0Node* n = field_f8;
         while (n != 0)
         {
             if (n->field_0 != 0)
@@ -134,10 +137,10 @@ void C_pnl_inp::M_4BD5F0()
             n = n->next_24;
             Free_5F90B0(old);
         }
-        self->field_f8 = n;
+        field_f8 = n;
     }
-    self->field_fc = 0;
-    self->Hook_4BBD30(1);
+    field_fc = 0;
+    Hook_4BBD30(1);
     slot_008(1);
 }
 
@@ -208,3 +211,82 @@ void C_pnl_inp::M_4B3160(char* a2)
 }
 
 #pragma function(memset)
+
+// Callee owners reached from the +0x40 subobject (duplicated as minimal class
+// declarations so the mangled symbols resolve to the matched bodies).
+class C_cluster_47DA00 { public: int Get_47DA00(); };
+class S49F620 { public: int Get_49F620(); };
+class C_TRIBE_Screen_Options {
+public:
+    void M_4A0630(int a1, int a2, int a3, int a4);
+};
+
+extern int (__stdcall *g_61C088)(int a1, int a2, int a3, int a4);
+extern int (__stdcall *g_61C098)(void* a1);
+
+extern void __cdecl Free_5F90B0(void* p);
+
+// 0x4BA410 — panel-input update. Seed +0x0C/+0x10/+0x14/+0x18 through
+// M_4A0630. When +0x14C is set, copy +0x14 into +0x17C and, with a +0x148
+// subobject, notify its slot +0x14 with 0 and clear +0x184; compute the +0xC
+// and +0x10 deltas through the +0x40 subobject when present (else use the raw
+// values), then dispatch the +0x148 slot +0x1C with (span, delta10, +0x180,
+// +0x18). Afterwards call 0x4BBD30(1). When +0x178 is set, release +0x194
+// through 0x61C098 and clear it; with +0x70 set, build ( +0x24, +0x28,
+// clamp(+0x90 + +0x178 - 0xA, +0x2C), +0x30) and allocate through 0x61C088
+// into +0x194.
+WIP_FUNC(0x4BA410)
+void C_pnl_inp::M_4BA410(int a1, int a2, int a3, int a4)
+{
+    ((C_TRIBE_Screen_Options*)this)->M_4A0630(a1, a2, a3, a4);
+    if (field_14c != 0)
+    {
+        *(int*)((char*)this + 0x17c) = *(int*)((char*)this + 0x14);
+        if (field_148 != 0)
+        {
+            field_148->Vat_14(0);
+            *(int*)((char*)this + 0x184) = 0;
+            int d0c;
+            int d10;
+            if (field_40 != 0)
+            {
+                d0c = *(int*)((char*)this + 0xc) -
+                      ((C_cluster_47DA00*)field_40)->Get_47DA00();
+                d10 = *(int*)((char*)this + 0x10) -
+                      ((S49F620*)field_40)->Get_49F620();
+            }
+            else
+            {
+                d0c = *(int*)((char*)this + 0xc);
+                d10 = *(int*)((char*)this + 0x10);
+            }
+            int base = *(int*)((char*)this + 0x180);
+            int h = *(int*)((char*)this + 0x90) + *(int*)((char*)this + 0x178) - 0xa;
+            int lim = *(int*)((char*)this + 0x2c);
+            if (h > lim)
+                h = lim;
+            int span = *(int*)((char*)this + 0x17c) - base + d0c;
+            field_148->Vat_1c(span, d10, base, *(int*)((char*)this + 0x18));
+        }
+    }
+    Hook_4BBD30(1);
+    if (*(int*)((char*)this + 0x178) != 0)
+    {
+        if (*(int*)((char*)this + 0x194) != 0)
+        {
+            g_61C098((void*)*(int*)((char*)this + 0x194));
+            *(int*)((char*)this + 0x194) = 0;
+        }
+        if (*(int*)((char*)this + 0x70) != 0)
+        {
+            int x0 = *(int*)((char*)this + 0x24);
+            int x1 = *(int*)((char*)this + 0x28);
+            int x3 = *(int*)((char*)this + 0x30);
+            int h = *(int*)((char*)this + 0x90) + *(int*)((char*)this + 0x178) - 0xa;
+            int lim = *(int*)((char*)this + 0x2c);
+            if (h > lim)
+                h = lim;
+            *(int*)((char*)this + 0x194) = g_61C088(x0, x1, h, x3);
+        }
+    }
+}

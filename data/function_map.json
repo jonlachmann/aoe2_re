@@ -55204,7 +55204,7 @@
   "name": "sub_4BA410",
   "names": [],
   "class": "C_pnl_inp",
-  "class_evidence": "vtable slot",
+  "class_evidence": "this-edge update: M_4A0630 seeds +0xC/+0x10/+0x14/+0x18; +0x14C gate copies +0x14->+0x17C; +0x148 subobject slots +0x14 (Vat_14) and +0x1C (Vat_1c four args); +0x184 cleared; +0x40 subobject reads +0xC/+0x10 via 0x47DA00/0x49F620; +0x180/+0x18 span args; +0x178/+0x194/+0x70 render gate; +0x24/+0x28/+0x2c/+0x30 rect; +0x90 height; 0x61C088 alloc, 0x61C098 free",
   "slot_classes": [
    "C_pnl_inp",
    "C_pnl_lst",
@@ -55213,8 +55213,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/C_pnl_inp.cpp"
  },
  {
   "address": "0x4BA530",

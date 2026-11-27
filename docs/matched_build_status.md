@@ -1004,6 +1004,29 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1826/1826] MATCH_FUNCs OK, 37 WIP`; phase docs now 465/815 matched
   (231 left, 30 WIP, 119 CRT).
 
+- stage 53 — `Source/ui/C_pnl_inp.cpp` gains a semantically complete
+  `WIP_FUNC(0x4BA410)` (277 bytes original) as `C_pnl_inp::M_4BA410(int a1, int
+  a2, int a3, int a4)`. It seeds +0x0C/+0x10/+0x14/+0x18 through M_4A0630. When
+  +0x14C is set, it copies +0x14 into +0x17C and, with a +0x148 subobject,
+  notifies slot +0x14 (Vat_14) with 0, clears +0x184, and computes the +0xC and
+  +0x10 deltas through the +0x40 subobject (0x47DA00/0x49F620) when present
+  (else raw values); then it dispatches the +0x148 slot +0x1C (Vat_1c) with
+  (span, delta10, +0x180, +0x18). Afterwards it calls 0x4BBD30(1). When +0x178
+  is set it releases +0x194 through 0x61C098 and clears it; with +0x70 set it
+  builds (+0x24, +0x28, clamp(+0x90 + +0x178 - 0xA, +0x2C), +0x30) and allocates
+  through 0x61C088 into +0x194. Class feedback: C_pnl_inp owns +0x17C/+0x180/
+  +0x194 alongside the existing +0x148/+0x14C/+0x184; T4BBCE0Sub gained the
+  +0x18 filler and the +0x1C four-arg slot (Vat_14 stays +0x14 index 5, Vat_1c
+  +0x1C index 7, keeping matched 0x4BBCE0 byte-exact); the +0x40 subobject reads
+  +0xC/+0x10 through 0x47DA00 (C_cluster_47DA00) and S49F620, and 0x4A0630 is a
+  shared four-field seeder. WIP because the original reserves `sub esp,0x10`
+  locals and reads the +0x24..+0x30 rect from a `lea [this+0x24]` base with an
+  ecx spill to the dead a1 stack slot, while our direct-field locals are
+  register-allocated with no frame; the body stays semantically complete but the
+  frame/spill allocation is not controllable from source shape. Evidence after
+  this wave: full gate `[1826/1826] MATCH_FUNCs OK, 38 WIP`; phase docs now
+  465/815 matched (231 left, 31 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
