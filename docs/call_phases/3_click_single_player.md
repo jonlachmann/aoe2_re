@@ -1,6 +1,6 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 106 matched, 146 left to match (9 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 106 matched, 146 left to match (10 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (146)
 
@@ -27,7 +27,7 @@
 | 38 | `sub_4BAFB0` | 1 |  | 3_click_single_player |  |
 | 45 | `sub_4BA5C0` | 3 | WIP | 1_boot_to_menu | C_pnl_inp::M_4BA5C0 |
 | 46 | `sub_4BD5F0` | 3 | WIP | 1_boot_to_menu | C_pnl_inp::M_4BD5F0 |
-| 47 | `sub_4BBD30` | 8 |  | 1_boot_to_menu |  |
+| 47 | `sub_4BBD30` | 8 | WIP | 1_boot_to_menu | C_pnl_lst::Other_4BBD30 |
 | 48 | `sub_4BA810` | 1 |  | 1_boot_to_menu | pnl_txt::word_wrap_append |
 | 56 | `sub_4BA6E0` | 2 |  | 1_boot_to_menu |  |
 | 59 | `sub_4BD030` | 4 |  | 1_boot_to_menu |  |

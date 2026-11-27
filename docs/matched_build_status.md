@@ -1297,6 +1297,30 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   is now `QAEHXZ`. Evidence after this wave: full gate `[1836/1836] MATCH_FUNCs
   OK, 42 WIP`; phase docs now 475/815 matched (221 left, 35 WIP, 119 CRT).
 
+- stage 65 — `Source/ui/C_pnl_lst.cpp` gains a semantically complete
+  `WIP_FUNC(0x4BBD30)` (496 bytes original) as
+  `int C_pnl_lst::Other_4BBD30(int v)`. It recomputes the +0xFE row height from
+  (+0x18 - 2*+0x198) divided by (+0x11C + 2), enlarged by 2*(+0x19C) - 1 when
+  the +0x19C mode is set; zero +0x11C forces 1. It then clamps +0x100 to <=
+  +0xFC-1, to <= +0xFC - height, and >=0; sets +0x102 = +0x100 + height - 1 and
+  clamps it to [0, +0xFC-1]; clamps +0x104 to [0, +0xFC-1]. With a +0x148 child
+  and v nonzero it runs 0x4B8C10(child, v6-v7+1, v10). When +0x14C is set it
+  runs 0x4A0630(this, +0xC, +0x10, +0x17C - +0x180 or +0x17C, +0x18) depending
+  on whether +0xFC > +0xFE and +0x184 is clear, sets/clears +0x184, and
+  dispatches the child slot +0x14 with 1/0 when +0x6C is set. Every exit stores
+  +0x14 into +0x154 and returns it. Class feedback: C_pnl_lst owns the
+  +0xFC/+0xFE/+0x100/+0x102/+0x104 window shorts, +0x11C/+0x158 divisor pair,
+  +0x148 child object, +0x14C redraw gate, +0x154 stored result, +0x17C/+0x180
+  x-extent pair, +0x184 layout-set flag, +0x198/+0x19C mode pair, and +0x6C
+  dispatch gate; the +0x148 child carries a six-slot vtable used at +0x14.
+  WIP reason: VC6 hoists the literal 1 into edi and assigns v6/v7/v10 to
+  edx/ebx/edi in the original, while ours keeps constant 1 in eax and assigns v7
+  to ebp and v10 to ebx; the first branch layout (inverted to `if (v3 == 0)`)
+  and the row-window arithmetic now match structurally, but the register
+  allocation yields 480 bytes versus 496. Evidence after this wave: full gate
+  `[1836/1836] MATCH_FUNCs OK, 43 WIP`; phase docs now 475/815 matched (221
+  left, 36 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

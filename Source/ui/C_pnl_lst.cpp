@@ -283,6 +283,24 @@ public:
 };
 
 extern void __cdecl sub_5F90B0(int a1);
+
+class C_cluster_4B8B20 {
+public:
+    void M_4B8C10(int a1, int a2);
+};
+class C_TRIBE_Screen_Options {
+public:
+    void M_4A0630(int a1, int a2, int a3, int a4);
+};
+class T4BBDSlot {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual int Vt_05(int a1);   // slot +0x14
+};
 extern void* __cdecl sub_5F8F60(unsigned int a1);
 
 // 0x4BBAE0 — rebuild the +0x15C entry object. Release the current pointer
@@ -314,4 +332,99 @@ void C_pnl_lst::M_4BBAE0(int a1, int a2)
         *(short*)((char*)this + 0x160) = (short)(c - a + 1);
         *(short*)((char*)this + 0x162) = (short)(d - b + 1);
     }
+}
+
+// 0x4BBD30 — recompute the +0xFE row height and the +0x100/+0x102/+0x104
+// visible window from +0x11C, then update the list child at +0x148. The divisor
+// is (+0x11C + 2), enlarged by 2*(+0x19C) - 1 when the +0x19C mode is set; when
+// +0x11C is zero the height is forced to 1. The height divides
+// (+0x18 - 2*+0x198). Clamp height to >=1; clamp +0x100 to <= +0xFC-1, then to
+// <= +0xFC - height, then >=0. Set +0x102 = +0x100 + height - 1, clamp to
+// [0, +0xFC-1]; clamp +0x104 to [0, +0xFC-1]. With a +0x148 child and v nonzero,
+// run 0x4B8C10(child, v6-v7+1, v10). When +0x14C is set: if +0xFC <= +0xFE and
+// +0x184 is already set, run 0x4A0630(this,+0xC,+0x10,+0x17C,+0x18) and clear
+// +0x184, then when +0x6C is set dispatch child slot +0x14 with 0. If +0xFC >
+// +0xFE and +0x184 is clear, run 0x4A0630(this,+0xC,+0x10,+0x17C-+0x180,+0x18),
+// set +0x184, and when +0x6C is set dispatch child slot +0x14 with 1. Every exit
+// stores +0x14 into +0x154 and returns it.
+WIP_FUNC(0x4BBD30)
+int C_pnl_lst::Other_4BBD30(int v)
+{
+    int v3 = *(int*)((char*)this + 0x11c);
+    int v4 = v3 + 2;
+    *(int*)((char*)this + 0x158) = v3 + 2;
+    if (v3 == 0)
+        *(short*)((char*)this + 0xfe) = 1;
+    else
+    {
+        int v5 = *(int*)((char*)this + 0x19c);
+        if (v5)
+            v4 = v4 + 2 * v5 - 1;
+        *(short*)((char*)this + 0xfe) =
+            (short)((*(int*)((char*)this + 0x18) -
+                     2 * *(int*)((char*)this + 0x198)) / v4);
+    }
+    if (*(short*)((char*)this + 0xfe) < 1)
+        *(short*)((char*)this + 0xfe) = 1;
+    short v6 = *(short*)((char*)this + 0xfc);
+    if (*(short*)((char*)this + 0x100) >= v6)
+        *(short*)((char*)this + 0x100) = v6 - 1;
+    short v7 = *(short*)((char*)this + 0xfe);
+    if (v6 - *(short*)((char*)this + 0x100) < v7)
+        *(short*)((char*)this + 0x100) = v6 - v7;
+    if (*(short*)((char*)this + 0x100) < 0)
+        *(short*)((char*)this + 0x100) = 0;
+    short v10 = *(short*)((char*)this + 0x100);
+    short v11 = v10 + v7 - 1;
+    *(short*)((char*)this + 0x102) = v11;
+    if (v11 < 0)
+        *(short*)((char*)this + 0x102) = 0;
+    if (*(short*)((char*)this + 0x102) >= v6)
+        *(short*)((char*)this + 0x102) = v6 - 1;
+    if (*(short*)((char*)this + 0x104) < 0)
+        *(short*)((char*)this + 0x104) = 0;
+    if (*(short*)((char*)this + 0x104) >= v6)
+        *(short*)((char*)this + 0x104) = v6 - 1;
+    int* v12 = *(int**)((char*)this + 0x148);
+    if (v12)
+    {
+        if (v != 0)
+            ((C_cluster_4B8B20*)v12)->M_4B8C10(v6 - v7 + 1, v10);
+        if (*(int*)((char*)this + 0x14c))
+        {
+            int v13 = *(int*)((char*)this + 0x184);
+            if (*(short*)((char*)this + 0xfc) <= *(short*)((char*)this + 0xfe))
+            {
+                if (v13)
+                {
+                    ((C_TRIBE_Screen_Options*)this)->M_4A0630(
+                        *(int*)((char*)this + 0xc), *(int*)((char*)this + 0x10),
+                        *(int*)((char*)this + 0x17c), *(int*)((char*)this + 0x18));
+                    int v16 = *(int*)((char*)this + 0x6c);
+                    *(int*)((char*)this + 0x184) = 0;
+                    if (v16)
+                        ((T4BBDSlot*)v12)->Vt_05(0);
+                }
+            }
+            else if (!v13)
+            {
+                ((C_TRIBE_Screen_Options*)this)->M_4A0630(
+                    *(int*)((char*)this + 0xc), *(int*)((char*)this + 0x10),
+                    *(int*)((char*)this + 0x17c) - *(int*)((char*)this + 0x180),
+                    *(int*)((char*)this + 0x18));
+                int v14 = *(int*)((char*)this + 0x6c);
+                *(int*)((char*)this + 0x184) = 1;
+                if (v14)
+                {
+                    ((T4BBDSlot*)v12)->Vt_05(1);
+                    int result = *(int*)((char*)this + 0x14);
+                    *(int*)((char*)this + 0x154) = result;
+                    return result;
+                }
+            }
+        }
+    }
+    int result = *(int*)((char*)this + 0x14);
+    *(int*)((char*)this + 0x154) = result;
+    return result;
 }
