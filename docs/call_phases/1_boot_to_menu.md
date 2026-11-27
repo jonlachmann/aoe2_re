@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 462 matched, 234 left to match (29 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 462 matched, 234 left to match (30 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (234)
 
@@ -180,7 +180,7 @@
 | 598 | `sub_4BBD30` | 328 |  | 1_boot_to_menu |  |
 | 600 | `sub_4BA5C0` | 108 |  | 1_boot_to_menu |  |
 | 601 | `sub_4BD5F0` | 112 | WIP | 1_boot_to_menu | C_pnl_inp::M_4BD5F0 |
-| 604 | `sub_4BBAE0` | 53 |  | 1_boot_to_menu |  |
+| 604 | `sub_4BBAE0` | 53 | WIP | 1_boot_to_menu | C_pnl_lst::M_4BBAE0 |
 | 606 | `sub_4BA810` | 18 |  | 1_boot_to_menu | pnl_txt::word_wrap_append |
 | 611 | `sub_4BA6E0` | 46 |  | 1_boot_to_menu |  |
 | 614 | `sub_4BD030` | 89 |  | 1_boot_to_menu |  |

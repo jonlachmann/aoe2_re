@@ -915,6 +915,25 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   wave: full gate `[1823/1823] MATCH_FUNCs OK, 36 WIP`; phase docs now 462/815
   matched (234 left, 29 WIP, 119 CRT).
 
+- stage 49 — `Source/ui/C_pnl_lst.cpp` gains a semantically complete
+  `WIP_FUNC(0x4BBAE0)` (233 bytes original) as `C_pnl_lst::M_4BBAE0(int
+  a1, int a2)`. It releases the current +0x15C entry object (0x51EAE0 dtor then
+  matched 0x5F90B0 free) and zeroes +0x15C/+0x160/+0x162; then, unless a2 is
+  -1 with a non-empty string a1, it allocates a 0x1C entry through 0x5F8F60,
+  constructs it with 0x51E7F0(a1,a2), stores it at +0x15C, and fills the entry's
+  index-0 rectangle through the matched 0x51EB90 accessor into four locals;
+  +0x160 becomes (c - a + 1) and +0x162 (d - b + 1). Class feedback: 0x4BBAE0
+  is a C_pnl_lst method, but +0x15C conflicts — this body writes a pointer to a
+  0x1C entry object while matched 0x4B3760 writes a byte at the same offset; the
+  entry object carries +0x00 mode, +0x04 transfer, +0x08/+0x0C buffers, +0x10
+  0x20-byte entry array, +0x14 flag and +0x18 count. WIP because the VC6 EH
+  frame is compiler-sensitive: the original reserves `sub esp,0x10` locals and
+  reuses the dead second-argument stack slot for the `new` pointer, while ours
+  reserves 0xc and uses a bracketed local; the body stays semantically complete
+  but the frame/arg-slot allocation is not controllable from source shape.
+  Evidence after this wave: full gate `[1823/1823] MATCH_FUNCs OK, 37 WIP`;
+  phase docs now 462/815 matched (234 left, 30 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

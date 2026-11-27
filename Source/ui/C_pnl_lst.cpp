@@ -262,3 +262,56 @@ int C_pnl_lst::Hook_4BA250(int a1, int a2, int a3, int a4, int a5, int a6,
     M_4BBAE0(a10, -1);
     return 1;
 }
+
+// 0x51E7F0's 0x1C entry object: the ctor (0x51E7F0) takes (char*, int), the
+// accessor (matched 0x51EB90) fills four outputs from the +0x10 entry array at
+// index 0, and the destructor (matched 0x51EAE0) releases the +0x0C/+0x08
+// buffers.
+class T51E7F0Entry {
+public:
+    int field_0;                  // +0x00 release mode
+    int field_4;                  // +0x04 transfer argument
+    void* field_8;                // +0x08 owned buffer
+    void* field_c;                // +0x0C conditional buffer
+    void* field_10;               // +0x10 entry array
+    unsigned char field_14;       // +0x14 valid flag
+    char pad_15[0x18 - 0x15];
+    int field_18;                 // +0x18 count
+    T51E7F0Entry(char* a1, int a2);
+    bool M_51EB90(int* a1, int* a2, int* a3, int* a4, int index);
+    void M_51EAE0();
+};
+
+extern void __cdecl sub_5F90B0(int a1);
+extern void* __cdecl sub_5F8F60(unsigned int a1);
+
+// 0x4BBAE0 — rebuild the +0x15C entry object. Release the current pointer
+// (0x51EAE0 then 0x5F90B0) and zero +0x15C/+0x160/+0x162 when present. Then,
+// unless a2 is -1 with a non-empty string a1, allocate a 0x1C entry via
+// 0x5F8F60, construct it (0x51E7F0(a1,a2)), store it at +0x15C, and fill the
+// entry's index-0 rectangle through the matched 0x51EB90 accessor into four
+// locals; +0x160 becomes (c - a + 1) and +0x162 (d - b + 1).
+// NOTE: +0x15C is written here as a pointer while 0x4B3760 writes a byte at the
+// same offset; the two proofs conflict and +0x15C is accessed by raw offset.
+WIP_FUNC(0x4BBAE0)
+void C_pnl_lst::M_4BBAE0(int a1, int a2)
+{
+    T51E7F0Entry* old = *(T51E7F0Entry**)((char*)this + 0x15c);
+    if (old != 0)
+    {
+        old->M_51EAE0();
+        sub_5F90B0((int)old);
+        *(void**)((char*)this + 0x15c) = 0;
+        *(short*)((char*)this + 0x160) = 0;
+        *(short*)((char*)this + 0x162) = 0;
+    }
+    if (a2 != -1 || a1 == 0 || *(char*)a1 == 0)
+    {
+        T51E7F0Entry* entry = new T51E7F0Entry((char*)a1, a2);
+        int a, b, c, d;
+        *(void**)((char*)this + 0x15c) = entry;
+        entry->M_51EB90(&a, &b, &c, &d, 0);
+        *(short*)((char*)this + 0x160) = (short)(c - a + 1);
+        *(short*)((char*)this + 0x162) = (short)(d - b + 1);
+    }
+}

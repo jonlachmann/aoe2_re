@@ -55589,13 +55589,13 @@
   "calls": 5,
   "name": "sub_4BBAE0",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_pnl_lst",
+  "class_evidence": "this-edge entry rebuild: +0x15C pointer to a 0x1C entry object (CONFLICT: 0x4B3760 writes a byte at the same offset), +0x160/+0x162 short rectangle extents; entry ctor 0x51E7F0, accessor 0x51EB90, dtor 0x51EAE0, free 0x5F90B0, alloc 0x5F8F60",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4BBBD0",

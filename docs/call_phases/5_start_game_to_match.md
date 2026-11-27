@@ -1,6 +1,6 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 647 matched, 1789 left to match (7 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 647 matched, 1789 left to match (8 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (1789)
 
@@ -188,7 +188,7 @@
 | 404 | `sub_4B9F70` | 11 |  | 1_boot_to_menu |  |
 | 405 | `sub_4A0270` | 107 |  | 1_boot_to_menu |  |
 | 408 | `sub_4BA410` | 70 |  | 1_boot_to_menu |  |
-| 412 | `sub_4BBAE0` | 12 |  | 1_boot_to_menu |  |
+| 412 | `sub_4BBAE0` | 12 | WIP | 1_boot_to_menu | C_pnl_lst::M_4BBAE0 |
 | 417 | `sub_48A8C0` | 4 |  | 1_boot_to_menu | mouseptr::LoadCursors |
 | 418 | `sub_5B44D0` | 2 |  | 5_start_game_to_match |  |
 | 419 | `sub_51D400` | 2 |  | 5_start_game_to_match |  |
