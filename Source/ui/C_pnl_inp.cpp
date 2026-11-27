@@ -1,6 +1,8 @@
 #include "C_pnl_inp.hpp"
 
 extern void __cdecl Free_5F90B0(void* p);
+extern int __cdecl sub_5F90B0(int a1);
+extern void* __cdecl sub_5F8FF0(unsigned int a1, int a2);
 
 extern unsigned char g_73e355;
 extern void (__stdcall *g_61C318)(int a1, char* a2);
@@ -368,4 +370,28 @@ split_done:
     }
 done:
     ;
+}
+
+
+// 0x4B36D0 — replace the +0x100 text buffer for a requested capacity a2.
+// Non-positive a2 returns 0. Otherwise free the old +0x100 pointer through
+// 0x5F90B0, clear it, allocate (a2+2, 1) through 0x5F8FF0, store the result at
+// +0x100, and when allocation failed return its zero. On success store the
+// a2 capacity at +0xFC, write a terminator at the new buffer start, clear the
+// +0x104 measured length, and return 1.
+MATCH_FUNC(0x4B36D0)
+int C_pnl_inp::M_4B36D0(int a2)
+{
+    if (a2 <= 0)
+        return 0;
+    sub_5F90B0((int)field_100);
+    field_100 = 0;
+    char* result = (char*)sub_5F8FF0(a2 + 2, 1);
+    field_100 = result;
+    if (result == 0)
+        return (int)result;
+    field_fc = (short)a2;
+    *result = 0;
+    field_104 = 0;
+    return 1;
 }

@@ -218,4 +218,5 @@ public:
     void M_4BD5F0();
     void M_4BAF60(int a, int b, int c, int d);
     int M_4BCE20(int a, int b, int c, int d);
+    int M_4B36D0(int a2);
 };

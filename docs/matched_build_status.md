@@ -1342,6 +1342,25 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[5/5] MATCH_FUNCs OK, 1 WIP`; phase docs now 475/815 matched (221 left,
   37 WIP, 119 CRT).
 
+- stage 67 — `Source/ui/C_pnl_inp.cpp` gains a byte-exact
+  `MATCH_FUNC(0x4B36D0)` (100 bytes) as `int C_pnl_inp::M_4B36D0(int a2)`.
+  It replaces the +0x100 text buffer for a requested capacity: non-positive a2
+  returns 0; otherwise it frees the old +0x100 pointer through 0x5F90B0,
+  clears it, allocates (a2+2, 1) through 0x5F8FF0, stores the result at +0x100,
+  and returns the zero eax unchanged when allocation failed. On success it
+  stores the a2 capacity at +0xFC, writes a terminator at the new buffer start,
+  clears the +0x104 measured length, and returns 1. Class feedback: C_pnl_inp
+  owns the contiguous text trio -- +0x100 char* buffer, +0xFC signed short
+  capacity and +0x104 int length -- and 0x4B36D0 is its capacity/replace
+  routine, proving the earlier +0x100/+0xFC/+0x104 attribution against the
+  competing C_pnl_edit +0x100 int field. Byte-exactness required the `(short)a2`
+  truncation (mov word [esi+0xFC],di), the `lea ecx,[edi+2]` argument computed
+  before the pushes, and returning the allocation pointer's zero via
+  `return (int)result` rather than a fresh xor. Evidence after this wave:
+  full gate `[1837/1837] MATCH_FUNCs OK, 44 WIP`; TU gate
+  `Source/ui/C_pnl_inp.cpp` `[11/11] MATCH_FUNCs OK, 3 WIP`; phase docs now
+  476/815 matched (220 left, 37 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
