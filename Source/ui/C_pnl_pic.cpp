@@ -134,6 +134,9 @@ public:
     void M_51EAE0();
 };
 extern void __cdecl sub_5F90B0(void* a1);
+extern void* __cdecl sub_5F8FF0(unsigned int a1, int a2);
+extern int __cdecl sub_5FCB40(void* dst, void* src, int n);
+extern char* __cdecl sub_5FEE50(char* a1, int a2);
 
 MATCH_FUNC(0x4B83D0)
 void C_pnl_pic::M_4B83D0()
@@ -211,3 +214,58 @@ int C_pnl_pic::M_4B9D80(int a1, int a2, int a3, int a4, int a5, int a6,
     field_104 = a12;
     return 1;
 }
+
+// 0x4AF510 — free and rebuild the a2-indexed +0x1A4/+0x1C8 string pair. Release
+// both current pointers through 0x5F90B0 and clear them, then when a non-empty
+// Source is present split it at the first newline: the +0x1A4 buffer gets the
+// prefix (newline-terminated; or the whole string when no newline), and, only
+// when a newline exists, the +0x1C8 buffer gets the suffix after it including
+// its terminator. Allocation is through 0x5F8FF0 as (len+1, 1), prefix copy
+// through 0x5FCB40 and suffix inline-copy via strcpy. Always finish by
+// dispatching vtable slot +0x20 with 1 and returning its result.
+MATCH_FUNC(0x4AF510)
+#pragma intrinsic(strlen)
+#pragma intrinsic(strcpy)
+int C_pnl_pic::M_4AF510(__int16 a2, char* Source)
+{
+    if (((int*)this)[a2 + 105])
+    {
+        sub_5F90B0((void*)((int*)this)[a2 + 105]);
+        ((int*)this)[a2 + 105] = 0;
+    }
+    if (((int*)this)[a2 + 114])
+    {
+        sub_5F90B0((void*)((int*)this)[a2 + 114]);
+        ((int*)this)[a2 + 114] = 0;
+    }
+    if (Source != 0 && *Source != 0)
+    {
+        char* v4 = sub_5FEE50(Source, 10);
+        char* v5 = v4;
+        __int16 v6;
+        if (v4 != 0)
+            v6 = (__int16)(v4 - Source);
+        else
+            v6 = (__int16)strlen(Source);
+        size_t v7 = v6;
+        char* v8 = (char*)sub_5F8FF0(v6 + 1, 1);
+        ((int*)this)[a2 + 105] = (int)v8;
+        if (v8 != 0)
+        {
+            sub_5FCB40(v8, Source, (int)v7);
+            ((char*)((int*)this)[a2 + 105])[v7] = 0;
+            if (v5 != 0)
+            {
+                char* v9 = v5 + 1;
+                char* v10 = (char*)sub_5F8FF0(strlen(v9) + 1, 1);
+                ((int*)this)[a2 + 114] = (int)v10;
+                if (v10 != 0)
+                    strcpy(v10, v9);
+            }
+        }
+    }
+    return slot_008(1);
+}
+#pragma function(strcpy)
+#pragma function(strlen)
+#pragma function(strlen)

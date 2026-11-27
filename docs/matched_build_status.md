@@ -1246,6 +1246,31 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   full gate `[1835/1835] MATCH_FUNCs OK, 41 WIP`; phase docs unchanged at
   474/815 matched (222 left, 34 WIP, 119 CRT).
 
+- stage 63 — `Source/ui/C_pnl_pic.cpp` gains a byte-exact
+  `MATCH_FUNC(0x4AF510)` (263 bytes) as
+  `int C_pnl_pic::M_4AF510(__int16 a2, char* Source)`, with the class header's
+  vtable slot +0x20 changed to `virtual int slot_008(int a1)` so the dispatched
+  result is returned. It releases the a2-indexed +0x1A4/+0x1C8 pointer-table
+  entries through 0x5F90B0, clears them, then, when Source is non-empty, splits
+  at the first newline via 0x5FEE50(Source,10). The prefix length is the
+  difference or strlen(Source) truncated to `__int16`; a (len+1, 1) buffer is
+  allocated through 0x5F8FF0 into +0x1A4 and filled by 0x5FCB40, with a
+  terminator at prefix[len]. Only when a newline exists does it allocate the
+  +0x1C8 suffix as (strlen(suffix)+1, 1) and `strcpy` it. The member always ends
+  with the `call [vtable+0x20]` dispatch (1) and returns that result. Class
+  feedback: C_pnl_pic owns indexed string-pointer tables rooted at +0x1A4 and
+  +0x1C8 (each entry 4 bytes), and slot +0x20 (slot_008) returns an int. The
+  source local layout of v4(eax)/v5(ebx)/v6(cx)/v7(edi)/v8(eax)/v9(ebx)/v10(edx)
+  was essential: writing pointer locals instead (`int* prefix = ...`) made VC6
+  emit `lea ebx,[eax*4]` and spill temporaries to the stack, while the direct
+  `((int*)this)[a2 + 105]` form yields the original
+  `[ebp + esi*4 + 0x1A4]` and keeps a2 in esi. Byte-exactness also required the
+  `__int16` length truncation (`movsx edi,cx`), the intrinsic `strlen` repne
+  scasb sequences (prefix one with dec, suffix one without), and intrinsic
+  `strcpy` for the inline rep movsd/movsb suffix copy. Evidence after this wave:
+  full gate `[1836/1836] MATCH_FUNCs OK, 41 WIP`; phase docs now 475/815
+  matched (221 left, 34 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

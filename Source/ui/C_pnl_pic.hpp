@@ -15,7 +15,7 @@ public:
     virtual void slot_005();  // slot +0x014
     virtual void slot_006();  // slot +0x018
     virtual void slot_007();  // slot +0x01C
-    virtual void slot_008(int a1);  // slot +0x020
+    virtual int slot_008(int a1);   // slot +0x020
     virtual void slot_009();  // slot +0x024
     virtual void slot_010();  // slot +0x028
     virtual void slot_011();  // slot +0x02C
@@ -114,14 +114,14 @@ public:
     int field_198;                 // +0x198
     int field_19c;                 // +0x19C
     int field_1a0;                 // +0x1A0
-    int field_1a4;                 // +0x1A4
+    int field_1a4;                 // +0x1A4 (indexed pointer table base)
     int field_1a8;                 // +0x1A8
     int field_1ac;                 // +0x1AC
     int field_1b0;                 // +0x1B0
     int field_1b4;                 // +0x1B4
     int field_1b8;                 // +0x1B8 mode
     char pad_1bc[0x1c8 - 0x1bc];   // +0x1BC..+0x1C8
-    int field_1c8;                 // +0x1C8
+    int field_1c8;                 // +0x1C8 (indexed pointer table base)
     int field_1cc;                 // +0x1CC
     char pad_1d0[0x1fc - 0x1d0];   // +0x1D0..+0x1FC
     int field_1fc;                 // +0x1FC
@@ -158,4 +158,5 @@ public:
     int M_4A0460(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
     void M_4B8A80();
     void M_4B83D0();
+    int M_4AF510(__int16 a2, char* Source);
 };

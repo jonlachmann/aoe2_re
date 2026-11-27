@@ -51452,13 +51452,13 @@
   "calls": 4,
   "name": "sub_4AF510",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_pnl_pic",
+  "class_evidence": "C_pnl_pic method (__thiscall, __int16 a2, char* Source): releases the indexed +0x1A4/+0x1C8 pointer-table entries via 0x5F90B0 and zeroes them; on a non-empty Source splits at the first newline (0x5FEE50(Source,10)), stores the prefix into +0x1A4 via 0x5F8FF0(len+1,1) and 0x5FCB40, terminator at prefix[len], and only when a newline exists allocates +0x1C8 as (strlen(suffix)+1,1) and strcpy copies the suffix; finally dispatches vtable slot +0x20 (slot_008) with 1 and returns its result",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_pic.cpp"
  },
  {
   "address": "0x4AF620",
