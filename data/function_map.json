@@ -43017,13 +43017,13 @@
   "calls": 0,
   "name": "sub_4A0270",
   "names": [],
-  "class": "C_cluster_443970",
-  "class_evidence": "this-edge component with no rooted object identity",
+  "class": "C_vt621F6C_4A0270",
+  "class_evidence": "base object ctor installing vtable 0x621F6C at +0; zeroes +4..+0xE4 dword fields out of numeric order, +0xF0..+0xF6 bytes, +0x90..+0x9C block; +0x38=2, +0x6C/+0x7C/+0x80/+0x88=1, +0xC0=0xFA, +0xE8/+0xEC=-1; no args; vtable 0x621F6C is also written by 0x4A00E0 and reset by 0x4A03B0",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_vt621F6C.cpp"
  },
  {
   "address": "0x4A03B0",
@@ -55103,13 +55103,13 @@
   "calls": 1,
   "name": "sub_4B9F70",
   "names": [],
-  "class": "C_cluster_443970",
-  "class_evidence": "this-edge component with no rooted object identity",
+  "class": "C_pnl_txt_4B9F70",
+  "class_evidence": "C_pnl_txt constructor: derives from the 0x621F6C base object, calls base ctor 0x4A0270, extends layout +0xF8 (int, shorts +0xFC..+0x106)..+0x1A4, defaults +0x128=7, +0x130/+0x134=2, +0x138=0xFFFFFF, +0x140=0xFFFF, +0x168=0xFF, late +0x80 and +0x108..+0x114 zeroing, installs C_pnl_txt vtable 0x623318 at +0 and sets +0xF2=1",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_vt621F6C.cpp"
  },
  {
   "address": "0x4BA0E0",

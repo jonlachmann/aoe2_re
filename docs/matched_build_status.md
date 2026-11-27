@@ -1049,6 +1049,34 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   goto/do forms). Evidence after this wave: full gate `[1826/1826] MATCH_FUNCs
   OK, 39 WIP`; phase docs now 465/815 matched (231 left, 32 WIP, 119 CRT).
 
+- stage 55 — new `Source/ui/C_vt621F6C.cpp`/`.hpp` carry two byte-exact
+  constructors: `MATCH_FUNC(0x4A0270)` (312 bytes) as
+  `C_vt621F6C_4A0270::C_vt621F6C_4A0270()` and `MATCH_FUNC(0x4B9F70)` (366
+  bytes) as `C_pnl_txt_4B9F70::C_pnl_txt_4B9F70()`. The base ctor zeroes the
+  dword fields +4..+0xE4 in the binary store order, the +0xF0..+0xF6 bytes and
+  the +0x90..+0x9C block, sets +0x38=2, +0x6C/+0x7C/+0x80/+0x88=1, +0xC0=0xFA,
+  installs the base vtable word 0x621F6C at +0, then sets +0xE8/+0xEC=-1 and
+  returns this (no args). The `C_pnl_txt` ctor derives from that base object,
+  calls 0x4A0270, extends the layout from +0xF8 (int + shorts +0xFC..+0x106)
+  through +0x1A4, sets +0x128=7, +0x130/+0x134=2, +0x138=0xFFFFFF,
+  +0x140=0xFFFF, does the late +0x80 and +0x108..+0x114 zeroing, sets
+  +0x168=0xFF, installs vtable 0x623318 at +0 and sets +0xF2=1. Class feedback:
+  the map attributions `C_cluster_443970` for both functions were wrong; the
+  true owner chain is `C_pnl_txt` (73-slot vtable 0x623318) deriving from the
+  0x621F6C base object (61 slots), whose ctor is 0x4A0270 and whose vtable is
+  also written by 0x4A00E0 and reset by the destructor path 0x4A03B0. The base
+  data layout is +4..+0xF6 (vtable word raw at +0, no virtual declaration in the
+  reconstruction ctor class so the literal store stays a constant), and the
+  derived extension is +0xF8..+0x1A4. Byte-exactness required reconstruction
+  classes whose names embed the ctor address (`C_vt621F6C_4A0270`,
+  `C_pnl_txt_4B9F70`) for the VC6 constructor mangling, a non-virtual base with a
+  raw +0 vtable field (so 0x4A0270 emits a literal 0x621F6C store at the end
+  instead of an automatic vptr write), inheritance calling the base ctor first
+  (reproducing `call 0x4A0270`), and the exact observed store order (including
+  the out-of-order +0x90..+0x9C / +0xC0 / +0xE8 block). Evidence after this
+  wave: full gate `[1828/1828] MATCH_FUNCs OK, 39 WIP`; phase docs now 467/815
+  matched (229 left, 32 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

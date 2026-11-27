@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 650 matched, 1786 left to match (10 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 652 matched, 1784 left to match (10 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1786)
+## Left to match (1784)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -182,8 +182,6 @@
 | 390 | `sub_4233E0` | 1 |  | 1_boot_to_menu |  |
 | 400 | `sub_4A3A50` | 2 |  | 1_boot_to_menu |  |
 | 403 | `sub_4A4600` | 7 |  | 1_boot_to_menu |  |
-| 404 | `sub_4B9F70` | 11 |  | 1_boot_to_menu |  |
-| 405 | `sub_4A0270` | 107 |  | 1_boot_to_menu |  |
 | 408 | `sub_4BA410` | 70 | WIP | 1_boot_to_menu | C_pnl_inp::M_4BA410 |
 | 412 | `sub_4BBAE0` | 12 | WIP | 1_boot_to_menu | C_pnl_lst::M_4BBAE0 |
 | 417 | `sub_48A8C0` | 4 |  | 1_boot_to_menu | mouseptr::LoadCursors |
@@ -1793,7 +1791,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (650)
+## Matched (652)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -1984,6 +1982,8 @@
 | 399 | `sub_4A39E0` | 3 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4A39E0 |
 | 401 | `sub_4A39F0` | 2 | MATCH | 1_boot_to_menu | S4A39F0::M_4A39F0 |
 | 402 | `sub_4A4830` | 7 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A4830 |
+| 404 | `sub_4B9F70` | 11 | MATCH | 1_boot_to_menu | C_pnl_txt_4B9F70::C_pnl_txt_4B9F70 |
+| 405 | `sub_4A0270` | 107 | MATCH | 1_boot_to_menu | C_vt621F6C_4A0270::C_vt621F6C_4A0270 |
 | 406 | `sub_41F6A0` | 57 | MATCH | 1_boot_to_menu | S41F6A0Table::Entry_41F6A0 |
 | 407 | `sub_4BA190` | 10 | MATCH | 1_boot_to_menu | C_pnl_lst::M_4BA190 |
 | 409 | `sub_4A0530` | 137 | MATCH | 1_boot_to_menu | S4A05D0::M_4A0530 |
