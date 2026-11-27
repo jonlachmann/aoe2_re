@@ -1746,6 +1746,35 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
 
 
+- stage 81 — the scrollbar rectangle layout is now a C++ WIP body on the
+  C_vt6230B0 subclass of the 0x622E60 scrollbar base, and boot stays green.
+  Run evidence: `EXIT=0`, WinMain body `0x47AE20` returned 0,
+  `BC80=1 5B17D0=1 menu-loop=1`,
+  `window class/create=2 hwnd=1A2B3C4D menu-screen DE50=1 E070=1`,
+  `menu populated: 47C4=10 subobjects 15e8..1610=1; 7B0=2 5C0=2`, and
+  `menu idle ticks from matched 0x5BB2D0: 8 (body hits 8)`.
+  Source addition: `Source/ui/C_vt6230B0.cpp` gains the WIP
+  `C_vt6230B0::Hook_4B8910` (0x4B8910, 366 bytes): forward
+  (a2,a3,a4,a5) to the matched screen-options `M_4A0630` origin setter, then
+  when +0x1B8 mode is 1 lay the vertical arrangement across
+  +0x128/+0x12C/+0x130/+0x138/+0x13C/+0x140/+0x168..+0x1B4, otherwise the
+  horizontal arrangement, and call the matched picture-shape `M_4B8A80` to
+  derive the +0x180..+0x1B4 rectangle edges. Returns the just-stored dimension
+  (mode 1 picks one height, otherwise one width). The class feedback names the
+  shared 0x622E60 scrollbar-base layout: origin words +0x0C..+0x18, the
+  +0x128/+0x12C/+0x130/+0x138/+0x13C/+0x140 coordinates, two 4-word rectangle
+  blocks at +0x168..+0x1B4, the +0x1B8 rectangle-mode word, and the
+  +0x1C8/+0x1CC flags that keep `Init_4B9D20` byte-exact. WIP: the original
+  forwards the four args from already-loaded stack copies and keeps the
+  computed edges in ecx/edx without a post-call mode re-test; this translation
+  reloads the mode to pick the returned dimension (400 vs 366).
+  Gate/build evidence: TU gate `Source/ui/C_vt6230B0.cpp [2/2] MATCH_FUNCs
+  OK, 1 WIP`; full gate `[1911/1911] MATCH_FUNCs OK, 32 WIP`;
+  `build_matched.sh` links 176 matched objects with no failed probes.
+  The regenerated phase docs read 532/815 matched (164 left, 29 WIP, 119
+  CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
+
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1

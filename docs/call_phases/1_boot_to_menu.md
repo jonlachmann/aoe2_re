@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 532 matched, 164 left to match (28 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 532 matched, 164 left to match (29 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (164)
 
@@ -140,7 +140,7 @@
 | 665 | `sub_5A5C50` | 9 |  | 1_boot_to_menu |  |
 | 681 | `sub_4A5480` | 3 |  | 1_boot_to_menu |  |
 | 682 | `sub_4B8730` | 6 |  | 1_boot_to_menu |  |
-| 684 | `sub_4B8910` | 9 |  | 1_boot_to_menu |  |
+| 684 | `sub_4B8910` | 9 | WIP | 1_boot_to_menu | C_vt6230B0::Hook_4B8910 |
 | 696 | `sub_4A4CE0` | 1 |  | 1_boot_to_menu |  |
 | 698 | `sub_4B2F60` | 1 |  | 1_boot_to_menu |  |
 | 699 | `sub_4B3580` | 2 |  | 1_boot_to_menu |  |

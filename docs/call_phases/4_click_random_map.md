@@ -1,6 +1,6 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 332 matched, 216 left to match (14 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 332 matched, 216 left to match (15 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (216)
 
@@ -151,7 +151,7 @@
 | 425 | `sub_4BA310` | 35 |  | 4_click_random_map |  |
 | 426 | `sub_4B2C00` | 35 |  | 4_click_random_map |  |
 | 434 | `sub_4B8730` | 35 |  | 1_boot_to_menu |  |
-| 436 | `sub_4B8910` | 153 |  | 1_boot_to_menu |  |
+| 436 | `sub_4B8910` | 153 | WIP | 1_boot_to_menu | C_vt6230B0::Hook_4B8910 |
 | 442 | `sub_4B1E60` | 59 |  | 4_click_random_map |  |
 | 445 | `sub_4B1E00` | 35 |  | 4_click_random_map |  |
 | 447 | `sub_4B1B80` | 35 |  | 4_click_random_map |  |
