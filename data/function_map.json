@@ -54593,7 +54593,7 @@
   "name": "sub_4B8CC0",
   "names": [],
   "class": "C_pnl_scbr",
-  "class_evidence": "vtable slot",
+  "class_evidence": "this-edge scrollbar tick dispatcher (vtable 0x622E60, slot +0x4C index 19): +0x158 mode byte (switch case 2 then case 1), +0x148 5-way state byte (switch state-1 cases 0,1,3,4), +0x14C active flag, +0x150/+0x154 rect coords, +0x15C last tick, +0x160 first interval, +0x164 second interval, +0x198/+0x1A8 rect blocks; slot_008(+0x20); callees M_4B93B0(int,int), M_4A1D50(int,int,void*), IAT clock 0x61C3C8",
   "slot_classes": [
    "C_pnl_scbr",
    "C_vt6230B0",
@@ -54601,8 +54601,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_scbr.cpp"
  },
  {
   "address": "0x4B8E20",

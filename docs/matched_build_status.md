@@ -934,6 +934,30 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   Evidence after this wave: full gate `[1823/1823] MATCH_FUNCs OK, 37 WIP`;
   phase docs now 462/815 matched (234 left, 30 WIP, 119 CRT).
 
+- stage 50 — new `Source/ui/C_pnl_scbr.cpp`/`.hpp` carry a byte-exact
+  `MATCH_FUNC(0x4B8CC0)` (330 bytes) as `C_pnl_scbr::M_4B8CC0()` (vtable
+  0x622E60, 61 slots, slot +0x4C index 19). It reads the +0x158 mode byte and
+  dispatches through `switch (state)`: case 2 (written first) checks +0x14C,
+  compares the tick delta since +0x15C against +0x160, stores the new tick, then
+  switches on (+0x148 - 1): cases 0/1 run the 0x4B93B0 service with
+  (0,0)/(1,0); case 3 maps the +0x198 rectangle through M_4A1D50(+0x150,+0x154,
+  &+0x198) and runs 0x4B93B0(2,0) on success, else clears +0x14C/+0x158 and
+  dispatches slot 8; case 4 does the same for +0x1A8 with 0x4B93B0(3,0). Case 1
+  (the far block after the mode-2 body) compares the delta since +0x15C against
+  +0x164, sets mode 2 and +0x15C = tick - +0x160, then falls into the shared
+  return 0. Class feedback: C_pnl_scbr owns +0x158 mode byte, +0x148 5-way state
+  byte, +0x14C active flag, +0x150/+0x154 rect coords, +0x15C last tick,
+  +0x160/+0x164 intervals and the +0x198/+0x1A8 rectangle blocks; the 61-slot
+  class vtable places this dispatcher at slot +0x4C; M_4B93B0(int,int) and
+  M_4A1D50(int,int,void*) are its members and the tick source is the IAT clock
+  0x61C3C8. Byte-exactness required the source to be `switch(state)` with case 2
+  textually before case 1 (VC6 emits `dec eax; je far-case1; dec eax; jne
+  default`, placing the state-1 block after the mode-2 body and before the shared
+  tail), the state byte zero-extended to `int` (xor/mov al idiom), and a shared
+  `return 0` tail. Evidence after this wave: full gate
+  `[1824/1824] MATCH_FUNCs OK, 37 WIP`; phase docs now 464/815 matched
+  (233 left, 30 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
