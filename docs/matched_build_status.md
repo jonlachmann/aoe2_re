@@ -1132,6 +1132,26 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1830/1830] MATCH_FUNCs OK, 40 WIP`; phase docs now 469/815 matched
   (227 left, 33 WIP, 119 CRT).
 
+- stage 58 — `Source/ui/C_vt621F6C.cpp` gains a byte-exact
+  `MATCH_FUNC(0x4A2AC0)` (306 bytes) as `C_vt622060::M_4A2AC0()`, the zero-init
+  extension method of the 0x622060-vtable object that the matched 0x4A2370 ctor
+  calls. It takes no arguments and makes no calls; its stores follow the binary
+  order exactly: +0xF8 = 0x280, +0xFC = 0x1E0, +0x100 byte 0, +0x204 = -1,
+  +0x208/+0x20C/+0x210 = 0, +0x214 byte 0, +0x318 = -1, +0x31C/+0x320/+0x324 =
+  0, +0x328..+0x32D bytes 0, +0x330/+0x340/+0x348 = 0xFFFFFF,
+  +0x334/+0x33C/+0x344/+0x34C = 0, +0x338 = 0xFFFF, +0x350 = 2, +0x354 byte 0,
+  +0x458 = -1, +0x45C/+0x460 = 0, +0x468/+0x469 bytes 0, +0x46C = 0, +0x470 byte
+  0, +0x474/+0x478/+0x47C = 0, then the late +0x464/+0x480/+0x488/+0x490/
+  +0x494/+0x7E0/+0x48C zeroing. Class feedback: C_vt622060 (vtable 0x622060,
+  derived from the 0x621F6C base) owns the extension layout +0xF8..+0x7E0, with
+  the named defaults recorded in data/function_map.json; the same class methods
+  are 0x4A2370 (ctor), 0x4A2AC0 (this init) and the still-lifted 0x4A5C10 /
+  0x4A2xxx setup family. Byte-exactness needed only the exact store order and
+  the raw offsets on the minimal class declaration (no calls, no frame), so the
+  routine matched on the first attempt. Evidence after this wave: full gate
+  `[1831/1831] MATCH_FUNCs OK, 40 WIP`; phase docs now 470/815 matched
+  (226 left, 33 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

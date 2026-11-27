@@ -241,3 +241,58 @@ C_vt622060_4A2370::C_vt622060_4A2370(char* a1)
     *(int*)((char*)this + 0) = 0x622060;
     ((C_vt622060*)this)->M_4A2AC0();
 }
+
+// 0x4A2AC0 — initialize the 0x622060 object's extension fields. No calls and
+// no arguments; the stores follow the binary order exactly, including the
+// split -1/0 defaults at +0x204/+0x318/+0x458, the 0xFFFFFF triple block, the
+// +0x328..+0x32D byte range, the +0x350 = 2 default and the late +0x464/+0x480/
+// +0x488/+0x490/+0x494/+0x7E0/+0x48C zeroing.
+MATCH_FUNC(0x4A2AC0)
+void C_vt622060::M_4A2AC0()
+{
+    *(int*)((char*)this + 0xf8) = 0x280;
+    *(int*)((char*)this + 0xfc) = 0x1e0;
+    *(unsigned char*)((char*)this + 0x100) = 0;
+    *(int*)((char*)this + 0x204) = -1;
+    *(int*)((char*)this + 0x208) = 0;
+    *(int*)((char*)this + 0x20c) = 0;
+    *(int*)((char*)this + 0x210) = 0;
+    *(unsigned char*)((char*)this + 0x214) = 0;
+    *(int*)((char*)this + 0x318) = -1;
+    *(int*)((char*)this + 0x31c) = 0;
+    *(int*)((char*)this + 0x320) = 0;
+    *(int*)((char*)this + 0x324) = 0;
+    *(unsigned char*)((char*)this + 0x328) = 0;
+    *(unsigned char*)((char*)this + 0x329) = 0;
+    *(unsigned char*)((char*)this + 0x32a) = 0;
+    *(unsigned char*)((char*)this + 0x32b) = 0;
+    *(unsigned char*)((char*)this + 0x32c) = 0;
+    *(unsigned char*)((char*)this + 0x32d) = 0;
+    *(int*)((char*)this + 0x330) = 0xffffff;
+    *(int*)((char*)this + 0x334) = 0;
+    *(int*)((char*)this + 0x338) = 0xffff;
+    *(int*)((char*)this + 0x33c) = 0;
+    *(int*)((char*)this + 0x340) = 0xffffff;
+    *(int*)((char*)this + 0x344) = 0;
+    *(int*)((char*)this + 0x348) = 0xffffff;
+    *(int*)((char*)this + 0x34c) = 0;
+    *(int*)((char*)this + 0x350) = 2;
+    *(unsigned char*)((char*)this + 0x354) = 0;
+    *(int*)((char*)this + 0x458) = -1;
+    *(int*)((char*)this + 0x45c) = 0;
+    *(int*)((char*)this + 0x460) = 0;
+    *(unsigned char*)((char*)this + 0x468) = 0;
+    *(unsigned char*)((char*)this + 0x469) = 0;
+    *(int*)((char*)this + 0x46c) = 0;
+    *(unsigned char*)((char*)this + 0x470) = 0;
+    *(int*)((char*)this + 0x474) = 0;
+    *(int*)((char*)this + 0x478) = 0;
+    *(int*)((char*)this + 0x47c) = 0;
+    *(int*)((char*)this + 0x464) = 0;
+    *(int*)((char*)this + 0x480) = 0;
+    *(int*)((char*)this + 0x488) = 0;
+    *(int*)((char*)this + 0x490) = 0;
+    *(int*)((char*)this + 0x494) = 0;
+    *(int*)((char*)this + 0x7e0) = 0;
+    *(int*)((char*)this + 0x48c) = 0;
+}
