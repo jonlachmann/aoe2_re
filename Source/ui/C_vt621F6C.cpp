@@ -222,3 +222,22 @@ C_vt621F6C_4A00E0::C_vt621F6C_4A00E0(char* a1)
     if (field_1c != 0 && *(char*)field_1c != 0)
         ((C_cluster_49F630*)0x66ea48)->M_49F650((void*)this, 0, 0);
 }
+
+// Minimal owner of the 0x4A2AC0 setup method (the full 0x622060 class is still
+// lifted); only the mangled symbol is needed so the relocatable call matches.
+class C_vt622060 {
+public:
+    void M_4A2AC0();
+};
+
+// 0x4A2370 — one-argument constructor of the 0x622060-vtable object. Forward
+// a1 to the base constructor at 0x4A00E0 (which installs the 0x621F6C base
+// vtable), install the derived vtable word 0x622060 at +0, then run the
+// 0x4A2AC0 setup on this object and return this.
+MATCH_FUNC(0x4A2370)
+C_vt622060_4A2370::C_vt622060_4A2370(char* a1)
+    : C_vt621F6C_4A00E0(a1)
+{
+    *(int*)((char*)this + 0) = 0x622060;
+    ((C_vt622060*)this)->M_4A2AC0();
+}

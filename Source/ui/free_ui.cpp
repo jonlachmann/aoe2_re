@@ -7934,6 +7934,84 @@ void sub_473BF0()
 }
 
 
+// 0x473AE0 — LoadStringA-backed string fetch through the shared 0x66DB6C
+// buffer. Report SetLastError(8), bail on a non-positive length or null
+// destination, seed the destination empty, and grow the global buffer to
+// max(2*len, 0x1060) through GlobalAlloc(0x40, n) after freeing the old block.
+// Then SetLastError(0), load the resource string (a1, a2, buffer, len); on
+// failure report GetLastError through SetLastError and return 0. On success
+// copy len bytes to the destination, terminate the last byte, and scan the
+// result DBCS-aware: skip lead-byte pairs, truncate a dangling lead byte, and
+// return the scanned length once the next byte is NUL. The two return tails
+// are distinct (the loop's end and the pre-truncated end).
+extern int g_66db6c;                                  // shared buffer pointer
+extern char cv_61c0d4[0x1000];                        // SetLastError slot storage
+extern void* (__stdcall *cv_61c100)(int, int);         // GlobalAlloc
+extern int (__stdcall *cv_61c380)(int, int, char*, int); // LoadStringA
+extern int (__stdcall *cv_61c188)();                   // GetLastError
+extern int (__stdcall *cv_61c0d0)(char);               // IsDBCSLeadByte
+
+#pragma intrinsic(memcpy)
+WIP_FUNC(0x473AE0)
+int __stdcall sub_473AE0(int a1, int a2, char* a3, int a4)
+{
+    register void (__stdcall *seterr)(int) =
+        ((void (__stdcall**)(int))cv_61c0d4)[0];
+    seterr(8);
+    if (a4 <= 0 || a3 == 0)
+        return 0;
+    *a3 = 0;
+    int want = a4 + a4;
+    if (want > *(int*)ADDR(0x66db70))
+    {
+        char* old = (char*)g_66db6c;
+        if (old != 0)
+        {
+            g_61c168((void*)old);
+            g_66db6c = 0;
+        }
+        if (want < 0x1060)
+            want = 0x1060;
+        *(int*)ADDR(0x66db70) = want;
+        void* buf = cv_61c100(0x40, want);
+        g_66db6c = (int)buf;
+        if (buf == 0)
+            return 0;
+    }
+    seterr(0);
+    char* buf = (char*)g_66db6c;
+    if (cv_61c380(a1, a2, buf, a4) == 0)
+    {
+        int err = cv_61c188();
+        seterr(err);
+        return 0;
+    }
+    memcpy(a3, buf, (unsigned int)a4);
+    a3[a4 - 1] = 0;
+    char* p = a3;
+    if (*p != 0)
+    {
+        while (!cv_61c0d0(*p))
+        {
+        scan_next:
+            if (!*++p)
+            {
+                seterr(0);
+                return (int)(p - a3);
+            }
+        }
+        if (p[1] != 0)
+        {
+            ++p;
+            goto scan_next;
+        }
+        *p = 0;
+    }
+    seterr(0);
+    return (int)(p - a3);
+}
+#pragma function(memcpy)
+
 // 0x4BE490 — seed the two outputs, run the matched 0x4BE3B0 lookup with the
 // four parameter addresses, and return 0 when it misses. On a hit with a1==0,
 // toggle +0x? to 1, grow a block through 0x5F8F80, initialise it through

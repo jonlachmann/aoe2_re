@@ -215,4 +215,16 @@ public:
     unsigned char field_f7;
 
     C_vt621F6C_4A00E0(char* a1);
+    ~C_vt621F6C_4A00E0();          // declared so derived ctors emit base-unwind EH
+};
+
+// C_vt622060_4A2370 — the constructor at 0x4A2370 for the 0x622060-vtable
+// object. It derives from the one-argument 0x621F6C base object, forwards its
+// argument to the base ctor at 0x4A00E0, installs the derived vtable word at
+// +0 and runs the 0x4A2AC0 setup. The reconstruction class is non-virtual so the
+// vtable install stays a literal store, and carries the ctor address for the
+// VC6 constructor mangling.
+class C_vt622060_4A2370 : public C_vt621F6C_4A00E0 {
+public:
+    C_vt622060_4A2370(char* a1);
 };

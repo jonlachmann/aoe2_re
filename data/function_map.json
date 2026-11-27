@@ -32693,12 +32693,12 @@
   "name": "sub_473AE0",
   "names": [],
   "class": null,
-  "class_evidence": null,
+  "class_evidence": "free __stdcall LoadStringA-backed string fetch: SetLastError(8)/SetLastError(0) slot 0x61C0D4 cached in edi; 4 args (hInstance a1, resource id a2, dest a3, len a4); shared 0x66DB6C buffer pointer/0x66DB70 capacity; GlobalFree 0x61C168, GlobalAlloc(0x40,max(2*a4,0x1060)) 0x61C100, LoadStringA(a1,a2,buf,a4) 0x61C380, GetLastError 0x61C188, IsDBCSLeadByte 0x61C0D0; memcpy inline rep movsd, terminator, DBCS-aware scan truncating a dangling lead byte, two distinct return tails",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x473BF0",
@@ -46193,13 +46193,13 @@
   "calls": 2,
   "name": "sub_4A2370",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_vt622060_4A2370",
+  "class_evidence": "0x622060-vtable object constructor: derives from the one-arg 0x621F6C base object, forwards a1 to base ctor 0x4A00E0, installs derived vtable 0x622060 at +0, runs 0x4A2AC0 setup, returns this; base class needs a declared destructor so VC6 emits the base-unwind EH frame",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_vt621F6C.cpp"
  },
  {
   "address": "0x4A23C0",
@@ -46237,8 +46237,8 @@
   "calls": 0,
   "name": "sub_4A2AC0",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_vt622060",
+  "class_evidence": "setup method called from the 0x4A2370 constructor on the 0x622060-vtable object (this-edge); full 87-slot 0x622060 class TU still lifted",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",

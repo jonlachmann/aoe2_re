@@ -1096,6 +1096,42 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   wave: full gate `[1829/1829] MATCH_FUNCs OK, 39 WIP`; phase docs now 468/815
   matched (228 left, 32 WIP, 119 CRT).
 
+- stage 57 — `Source/ui/free_ui.cpp` gains a semantically complete
+  `WIP_FUNC(0x473AE0)` (267 bytes original) as the free `__stdcall` string fetch
+  `sub_473AE0(int a1, int a2, char* a3, int a4)`, and
+  `Source/ui/C_vt621F6C.cpp` gains a byte-exact `MATCH_FUNC(0x4A2370)` (80
+  bytes) as `C_vt622060_4A2370::C_vt622060_4A2370(char* a1)`. The string fetch
+  reports SetLastError(8), returns 0 on a non-positive length or null
+  destination, seeds the destination empty, and grows the shared 0x66DB6C
+  buffer to max(2*len, 0x1060) through GlobalAlloc(0x40, n) after GlobalFree on
+  the old block. It then SetLastError(0), LoadStringA(a1, a2, buffer, len); on
+  failure reports GetLastError through SetLastError and returns 0. On success it
+  memcpy's len bytes (inline rep movsd/movsb), terminates the last byte, and
+  scans DBCS-aware: non-lead bytes advance one, lead bytes advance two, a
+  dangling lead byte truncates and exits, and it returns the scanned byte
+  length with two distinct return tails (loop end vs pre-truncated end). The
+  0x4A2370 ctor derives from the one-argument 0x621F6C base object, forwards a1
+  to the matched base ctor 0x4A00E0, installs the derived 0x622060 vtable word
+  at +0, runs the 0x4A2AC0 setup, returns this. Class feedback: the free
+  function proves the import identities 0x61C0D4=SetLastError,
+  0x61C0D1/0x61C0D0=IsDBCSLeadByte, 0x61C100=GlobalAlloc, 0x61C168=GlobalFree,
+  0x61C380=LoadStringA, 0x61C188=GetLastError, and the shared buffer globals
+  0x66DB6C/0x66DB70; the 0x622060-vtable object derives from the 0x621F6C base
+  and its setup method 0x4A2AC0 is attributed to C_vt622060 (full 87-slot TU
+  still lifted). Byte-exactness for 0x4A2370 required adding a declared
+  destructor to the base reconstruction class so VC6 emits the base-unwind EH
+  frame, plus inheritance forwarding the ctor argument to 0x4A00E0 and a
+  literal +0 vtable store (non-virtual reconstruction class) staying a constant.
+  WIP reason for 0x473AE0: the original caches the SetLastError slot pointer in
+  edi across the guard branch without a stack slot, while our local-pointer
+  forms spill it into a reserved stack slot (`push ecx` + store to the dead arg
+  slot) and pick the opposite a3/a4 callee-saved registers; the body stays
+  semantically complete but the caching/register allocation is not controllable
+  from source shape (tried array-deref idiom, const local, register local, and
+  direct const-slot calls). Evidence after this wave: full gate
+  `[1830/1830] MATCH_FUNCs OK, 40 WIP`; phase docs now 469/815 matched
+  (227 left, 33 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

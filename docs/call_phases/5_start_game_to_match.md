@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 653 matched, 1783 left to match (10 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 654 matched, 1782 left to match (11 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1783)
+## Left to match (1782)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -12,7 +12,7 @@
 | 13 | `sub_4A6570` | 1 |  | 3_click_single_player |  |
 | 14 | `sub_4A1D10` | 1179740 |  | 3_click_single_player |  |
 | 15 | `sub_4BAF10` | 1 |  | 3_click_single_player |  |
-| 18 | `sub_473AE0` | 181 |  | 1_boot_to_menu |  |
+| 18 | `sub_473AE0` | 181 | WIP | 1_boot_to_menu | sub_473AE0 |
 | 19 | `sub_4BAE80` | 1 |  | 3_click_single_player |  |
 | 20 | `sub_4BAFB0` | 1 |  | 3_click_single_player |  |
 | 32 | `sub_4BA5C0` | 23 | WIP | 1_boot_to_menu | C_pnl_inp::M_4BA5C0 |
@@ -167,7 +167,6 @@
 | 347 | `sub_5B4420` | 3 |  | 5_start_game_to_match |  |
 | 348 | `sub_49F630` | 3 |  | 5_start_game_to_match |  |
 | 349 | `sub_51CFE0` | 1 |  | 5_start_game_to_match |  |
-| 351 | `sub_4A2370` | 2 |  | 1_boot_to_menu |  |
 | 355 | `sub_4A2AC0` | 2 |  | 1_boot_to_menu |  |
 | 357 | `sub_4A23E0` | 2 |  | 1_boot_to_menu |  |
 | 361 | `sub_4A11F0` | 650 |  | 1_boot_to_menu |  |
@@ -1790,7 +1789,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (653)
+## Matched (654)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -1954,6 +1953,7 @@
 | 343 | `sub_461CA0` | 67104 | MATCH | 1_boot_to_menu | S461CA0::M_461CA0 |
 | 346 | `sub_45F5C0` | 3 | MATCH | 1_boot_to_menu | C_cluster_45F5C0::M_45F5C0 |
 | 350 | `sub_4B9B30` | 2 | MATCH | 1_boot_to_menu | Sc4B9B30::Init_4B9B30 |
+| 351 | `sub_4A2370` | 2 | MATCH | 1_boot_to_menu | C_vt622060_4A2370::C_vt622060_4A2370 |
 | 352 | `sub_4A00E0` | 2 | MATCH | 1_boot_to_menu | C_vt621F6C_4A00E0::C_vt621F6C_4A00E0 |
 | 353 | `sub_4A2070` | 2 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A2070 |
 | 354 | `sub_49F650` | 2 | MATCH | 1_boot_to_menu | C_cluster_49F630::M_49F650 |

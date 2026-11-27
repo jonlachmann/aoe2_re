@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 468 matched, 228 left to match (32 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 469 matched, 227 left to match (33 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (228)
+## Left to match (227)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -10,7 +10,7 @@
 | 83 | `sub_4A8240` | 1 | WIP | 1_boot_to_menu | C_vt6222D4::Hook_4A8240 |
 | 89 | `sub_473410` | 3 | WIP | 1_boot_to_menu | C_vt620BF8::Init_473410 |
 | 103 | `sub_5BD400` | 1 |  | 1_boot_to_menu |  |
-| 111 | `sub_473AE0` | 289 |  | 1_boot_to_menu |  |
+| 111 | `sub_473AE0` | 289 | WIP | 1_boot_to_menu | sub_473AE0 |
 | 122 | `sub_5B0EC0` | 1 | WIP | 1_boot_to_menu | C_vt62C1E0::M_5B0EC0 |
 | 123 | `sub_41B760` | 1 | WIP | 1_boot_to_menu | C_vt62C1E0::M_41B760 |
 | 152 | `sub_41DC80` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot37_41DC80 |
@@ -142,7 +142,6 @@
 | 472 | `sub_5B1EB0` | 1 |  | 1_boot_to_menu |  |
 | 473 | `sub_5207B0` | 3 |  | 1_boot_to_menu |  |
 | 477 | `sub_462BA0` | 1 |  | 1_boot_to_menu |  |
-| 484 | `sub_4A2370` | 2 |  | 1_boot_to_menu |  |
 | 491 | `sub_4A2AC0` | 2 |  | 1_boot_to_menu |  |
 | 493 | `sub_4A23E0` | 2 |  | 1_boot_to_menu |  |
 | 496 | `sub_4A11F0` | 129 |  | 1_boot_to_menu |  |
@@ -235,7 +234,7 @@
 | 797 | `sub_41CF70` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot01_41CF70 |
 | 800 | `sub_5BB2D0` | 2144832 |  | 1_boot_to_menu |  |
 
-## Matched (468)
+## Matched (469)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -483,6 +482,7 @@
 | 478 | `sub_5FF22D` | 1 | MATCH | 1_boot_to_menu | sub_5FF22D |
 | 482 | `sub_41EA60` | 1 | MATCH | 1_boot_to_menu | C_vt61DF78::slot44_41EA60 |
 | 483 | `sub_4B9B30` | 2 | MATCH | 1_boot_to_menu | Sc4B9B30::Init_4B9B30 |
+| 484 | `sub_4A2370` | 2 | MATCH | 1_boot_to_menu | C_vt622060_4A2370::C_vt622060_4A2370 |
 | 485 | `sub_4A00E0` | 2 | MATCH | 1_boot_to_menu | C_vt621F6C_4A00E0::C_vt621F6C_4A00E0 |
 | 486 | `sub_4A2070` | 2 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A2070 |
 | 487 | `sub_49F650` | 2 | MATCH | 1_boot_to_menu | C_cluster_49F630::M_49F650 |
