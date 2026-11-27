@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 331 matched, 217 left to match (12 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 332 matched, 216 left to match (13 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (217)
+## Left to match (216)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -26,7 +26,6 @@
 | 84 | `sub_45E930` | 4 |  | 1_boot_to_menu |  |
 | 85 | `sub_45FC30` | 90 |  | 1_boot_to_menu |  |
 | 98 | `sub_460740` | 569 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
-| 102 | `sub_5230F0` | 182552 |  | 1_boot_to_menu |  |
 | 103 | `sub_522D90` | 182552 | WIP | 1_boot_to_menu | C_cluster_522D20::M_522D90 |
 | 107 | `sub_51EFF0` | 228 |  | 1_boot_to_menu |  |
 | 109 | `sub_619BC0` | 24100 |  | 1_boot_to_menu |  |
@@ -198,7 +197,7 @@
 | 538 | `sub_42F130` | 8 |  | 4_click_random_map |  |
 | 540 | `sub_428470` | 15 |  | 4_click_random_map |  |
 | 547 | `sub_4B9BB0` | 2 |  | 1_boot_to_menu |  |
-| 548 | `sub_4A5C10` | 2 |  | 1_boot_to_menu |  |
+| 548 | `sub_4A5C10` | 2 | WIP | 1_boot_to_menu | T4A5C10::Other_4A5C10 |
 | 553 | `sub_45F6F0` | 33196 |  | 1_boot_to_menu |  |
 | 556 | `sub_460880` | 272 |  | 4_click_random_map |  |
 | 558 | `sub_4A0A50` | 66 |  | 4_click_random_map |  |
@@ -224,7 +223,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (331)
+## Matched (332)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -294,6 +293,7 @@
 | 99 | `sub_523060` | 569 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_523060 |
 | 100 | `sub_522E90` | 569 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_522E90 |
 | 101 | `sub_522FF0` | 571 | MATCH | 1_boot_to_menu | TClipSpan::SetRect_522FF0 |
+| 102 | `sub_5230F0` | 182552 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_5230F0 |
 | 104 | `sub_45FD90` | 168 | MATCH | 1_boot_to_menu | TDrawArea::Lock_45FD90 |
 | 105 | `sub_460620` | 169 | MATCH | 1_boot_to_menu | TDrawArea::UpdatePitch_460620 |
 | 106 | `sub_51EB90` | 79 | MATCH | 1_boot_to_menu | S51EB90::M_51EB90 |

@@ -3714,6 +3714,15 @@ int __stdcall sub_4BCE70(__int16 a1)
 // 0x4B1220 — thiscall forwarder to 0x4A5C10.
 class T4A5C10 {
 public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08(int a1);   // +0x20 palette/rect refresh
     void* Other_4A5C10(int a2);
 };
 class S4B1220 {
@@ -6089,17 +6098,21 @@ int __cdecl sub_4BE6D0(int a1, int a2)
 }
 
 // 0x4B9B60 — ten-argument thiscall forwarder to 0x4A23E0 on the same object
-// (ecx is never touched), returns the nonzero flag.
+// (ecx is never touched), returns the nonzero flag. The callee is the
+// C_vt622060 info-script setup (C_vt621F6C.cpp).
+class C_vt622060 {
+public:
+    int M_4A23E0(int a1, int a2, char* a3, int a4, int a5,
+                 int a6, int a7, int a8, int a9, int a10);
+};
 class S4B9B60 {
 public:
-    int M_4A23E0(int a1, int a2, int a3, int a4, int a5,
-                 int a6, int a7, int a8, int a9, int a10);
     int M_4B9B60(int a1, int a2, int a3, int a4);
 };
 MATCH_FUNC(0x4B9B60)
 int S4B9B60::M_4B9B60(int a1, int a2, int a3, int a4)
 {
-    return M_4A23E0(a1, 0, a2, a3, 1, 0, 0, 0, 0, a4) != 0;
+    return ((C_vt622060*)this)->M_4A23E0(a1, 0, (char*)a2, a3, 1, 0, 0, 0, 0, a4) != 0;
 }
 
 // 0x4A6520 — append one triple into the three +0x498/+0x5B0/+0x6C8 tables.
@@ -7694,6 +7707,88 @@ public:
 };
 extern T4ECF80G* g_6645c4;
 
+// Helpers for 0x4A5C10; the palette/mixer subobjects are reached through the
+// object at +0x20 and the g_6645C4 app fields at +0x1E8/+0x34.
+class C_TribePopUpHelp {
+public:
+    void M_4A1E20(int v);
+};
+class T48A8C0Call {
+public:
+    int M_48A8C0(char* a2, int a3, int a4);
+};
+class T460180Call {
+public:
+    int M_460180(int* a2, int val);
+};
+class T45EF10Call {
+public:
+    void M_45EF10(long* a2);
+};
+class C_cluster_45F5C0 {
+public:
+    void M_45F5C0(void* a1);
+};
+class C_cluster_49FE60_member_AC4 {
+public:
+    int M_49FE90();
+};
+class C_cluster_49FE60 {
+public:
+    int M_49FE60();
+};
+
+// 0x4A5C10 — refresh the pop-up help state through 4A1E20, then when +0x78 is
+// set optionally reload the cursor set (g_6645C4+0x1E8 through 48A8C0 when the
+// +0x214 flag or +0x318 index permits), and repaint the +0x20 draw object: if
+// the palette at +0x210 (or g_6645C4+0x34 fallback) differs from the draw
+// object's current +0x08 palette, run 460180(rect), 45EF10(release), 45F5C0
+// (set palette) and vtable slot +0x20 with 2. Finally return the +0x46C result:
+// when set and +0x78 is set the 49FE90 manager call, otherwise 49FE60; zero
+// leaves 0. WIP: the original keeps the +0x20 draw pointer in EBX for the
+// whole block (push ebx/mov ebx,[esi+0x20]/mov ecx,ebx); this translation
+// reloads it through the self pointer instead, so ours is 208 vs 206 bytes
+// although every call and branch is present.
+WIP_FUNC(0x4A5C10)
+void* T4A5C10::Other_4A5C10(int a2)
+{
+    char* self = (char*)this;
+    ((C_TribePopUpHelp*)this)->M_4A1E20(a2);
+    if (*(int*)(self + 0x78) != 0)
+    {
+        if (*(unsigned char*)(self + 0x214) != 0
+            || *(int*)(self + 0x318) >= 0)
+        {
+            int v3 = *(int*)((char*)g_6645c4 + 0x1e8);
+            if (v3 != 0)
+                ((T48A8C0Call*)(size_t)v3)->M_48A8C0(
+                    (char*)(self + 0x214), *(int*)(self + 0x318), 0);
+        }
+        T460180Call* v4 = *(T460180Call**)(self + 0x20);
+        if (v4 != 0 && *(int*)v4 != 0)
+        {
+            void* v5 = *(void**)(self + 0x210);
+            if (v5 == 0)
+                v5 = *(void**)((char*)g_6645c4 + 0x34);
+            if (v5 != 0 && *(void**)(*(int*)v4 + 8) != v5)
+            {
+                v4->M_460180(0, 0);
+                ((T45EF10Call*)*(int*)v4)->M_45EF10(0);
+                ((C_cluster_45F5C0*)*(int*)v4)->M_45F5C0(v5);
+                ((T4A5C10*)this)->Vt_08(2);
+            }
+        }
+    }
+    void* result = *(void**)(self + 0x46c);
+    if (result != 0)
+    {
+        if (*(int*)(self + 0x78) != 0)
+            return (void*)(size_t)((C_cluster_49FE60_member_AC4*)ADDR(0x66ea48))->M_49FE90();
+        return (void*)(size_t)((C_cluster_49FE60*)ADDR(0x66ea48))->M_49FE60();
+    }
+    return result;
+}
+
 MATCH_FUNC(0x4ECF80)
 void S4ECF80::M_4ECF80()
 {
@@ -7952,124 +8047,105 @@ void sub_473BF0()
 
 
 // 0x473AE0 — LoadStringA-backed string fetch through the shared 0x66DB6C
-// buffer. Report SetLastError(8), bail on a non-positive length or null
-// destination, seed the destination empty, and grow the global buffer to
-// max(2*len, 0x1060) through GlobalAlloc(0x40, n) after freeing the old block.
-// Then SetLastError(0), load the resource string (a1, a2, buffer, len); on
-// failure report GetLastError through SetLastError and return 0. On success
-// copy len bytes to the destination, terminate the last byte, and scan the
-// result DBCS-aware: skip lead-byte pairs, truncate a dangling lead byte, and
-// return the scanned length once the next byte is NUL. The two return tails
-// are distinct (the loop's end and the pre-truncated end).
-extern int g_66db6c;                                  // shared buffer pointer
-extern char cv_61c0d4[0x1000];                        // SetLastError slot storage
-extern void* (__stdcall *cv_61c100)(int, int);         // GlobalAlloc
-extern int (__stdcall *cv_61c380)(int, int, char*, int); // LoadStringA
-extern int (__stdcall *cv_61c188)();                   // GetLastError
-extern int (__stdcall *cv_61c0d0)(char);               // IsDBCSLeadByte
+// buffer (grown to max(2*len, 0x1060) via GlobalFree/GlobalAlloc), copy into
+// the destination, terminate, and DBCS-scan: truncate a dangling lead byte and
+// return the scanned length. Matched once the Win32 calls were dllimport (VC6
+// caches SetLastError in edi, then reuses edi for IsDBCSLeadByte).
+extern "C" __declspec(dllimport) void __stdcall SetLastError(unsigned long);
+extern "C" __declspec(dllimport) unsigned long __stdcall GetLastError();
+extern "C" __declspec(dllimport) void* __stdcall GlobalAlloc(unsigned int, unsigned long);
+extern "C" __declspec(dllimport) void* __stdcall GlobalFree(void*);
+extern "C" __declspec(dllimport) int __stdcall LoadStringA(int, unsigned int, char*, int);
+extern "C" __declspec(dllimport) int __stdcall IsDBCSLeadByte(unsigned char);
 
 #pragma intrinsic(memcpy)
-WIP_FUNC(0x473AE0)
+MATCH_FUNC(0x473AE0)
 int __stdcall sub_473AE0(int a1, int a2, char* a3, int a4)
 {
-    register void (__stdcall *seterr)(int) =
-        ((void (__stdcall**)(int))cv_61c0d4)[0];
-    seterr(8);
+    SetLastError(8);
     if (a4 <= 0 || a3 == 0)
         return 0;
     *a3 = 0;
-    int want = a4 + a4;
+    int want = a4 * 2;
     if (want > *(int*)ADDR(0x66db70))
     {
-        char* old = (char*)g_66db6c;
-        if (old != 0)
+        if (g_66db6c != 0)
         {
-            g_61c168((void*)old);
+            GlobalFree((void*)g_66db6c);
             g_66db6c = 0;
         }
         if (want < 0x1060)
             want = 0x1060;
         *(int*)ADDR(0x66db70) = want;
-        void* buf = cv_61c100(0x40, want);
-        g_66db6c = (int)buf;
-        if (buf == 0)
+        g_66db6c = (int)GlobalAlloc(0x40, want);
+        if (g_66db6c == 0)
             return 0;
     }
-    seterr(0);
-    char* buf = (char*)g_66db6c;
-    if (cv_61c380(a1, a2, buf, a4) == 0)
+    SetLastError(0);
+    if (LoadStringA(a1, a2, (char*)g_66db6c, a4) == 0)
     {
-        int err = cv_61c188();
-        seterr(err);
+        SetLastError(GetLastError());
         return 0;
     }
-    memcpy(a3, buf, (unsigned int)a4);
+    memcpy(a3, (char*)g_66db6c, a4);
     a3[a4 - 1] = 0;
     char* p = a3;
-    if (*p != 0)
+    while (*p)
     {
-        while (!cv_61c0d0(*p))
+        if (IsDBCSLeadByte(*p))
         {
-        scan_next:
-            if (!*++p)
+            if (p[1] == 0)
             {
-                seterr(0);
-                return (int)(p - a3);
+                *p = 0;
+                break;
             }
+            p++;
         }
-        if (p[1] != 0)
-        {
-            ++p;
-            goto scan_next;
-        }
-        *p = 0;
+        p++;
     }
-    seterr(0);
-    return (int)(p - a3);
+    SetLastError(0);
+    return p - a3;
 }
 #pragma function(memcpy)
 
-// 0x4BE490 — seed the two outputs, run the matched 0x4BE3B0 lookup with the
-// four parameter addresses, and return 0 when it misses. On a hit with a1==0,
-// toggle +0x? to 1, grow a block through 0x5F8F80, initialise it through
-// 0x5FDFB5, and keep it only when 0x5FDADE reports the a3 value; otherwise the
-// nonzero a1 path clears the index and returns the a4+a1 cursor.
+// 0x4BE490 — locate a resource through the matched 0x4BE3B0 lookup, which
+// fills (fd, pos, inline, size) into the dead parameter slots. Inline hit:
+// *a3 = 0, return pos + inline. Otherwise *a3 = 1, allocate size bytes
+// (0x5F8F80), _lseek(fd, pos, 0) and _read(fd, p, size); return p only when
+// the read returned size. *a4 receives size on both hit paths.
 extern int __cdecl sub_4BE3B0(int a1, int a2, int* a3, int* a4, int* a5,
                               int* a6);
 extern int __cdecl sub_5F8F80(int a1);
 extern int __cdecl sub_5FDFB5(int a1, int a2, int a3);
 extern int __cdecl sub_5FDADE(int a1, int a2, int a3);
 
-// WIP: ours 176 vs 182. The body is complete semantically, but VC6 assigns the
-// cached output pointers to edi/esi in the reverse order of the original and
-// chooses a stack reload for the a1 split, so the prologue/store phase and the
-// two branch exits still differ. Four source permutations did not recover it.
-WIP_FUNC(0x4BE490)
+MATCH_FUNC(0x4BE490)
 int __cdecl sub_4BE490(int a1, int a2, int* a3, int* a4)
 {
-    int* p3 = a3;
-    int* p4 = a4;
-    *p3 = -1;
-    *p4 = 0;
-    if (sub_4BE3B0(a1, a2, &a2, (int*)&a4, &a1, (int*)&a3) != 0)
+    int fd, pos, inl, size;
+    int p;
+    *a3 = -1;
+    *a4 = 0;
+    if (!sub_4BE3B0(a1, a2, &fd, &pos, &inl, &size))
+        return 0;
+    if (inl)
     {
-        if (a1 != 0)
-        {
-            *p3 = 0;
-            *p4 = (int)p3;
-            return (int)((char*)p4 + a1);
-        }
-        *p3 = 1;
-        char* p = (char*)sub_5F8F80((int)a3);
-        *p4 = (int)a4;
-        if (p != 0)
-        {
-            sub_5FDFB5(a2, (int)a4, 0);
-            if (sub_5FDADE(a2, (int)p, (int)a3) == (int)a3)
-                return (int)p;
-        }
+        *a3 = 0;
+        p = pos + inl;
+        *a4 = size;
     }
-    return 0;
+    else
+    {
+        *a3 = 1;
+        p = sub_5F8F80(size);
+        *a4 = size;
+        if (!p)
+            return p;
+        sub_5FDFB5(fd, pos, 0);
+        if (sub_5FDADE(fd, p, size) != size)
+            return 0;
+    }
+    return p;
 }
 
 // 0x472EF0 — seven-argument grid setter. Call sites pass the +0x83C grid

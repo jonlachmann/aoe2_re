@@ -1659,6 +1659,35 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   and phase 2 `28 matched, 3 left (all WIP)`.
 
 
+- stage 78 — the screen-form refresh that drives the pop-up help/palette path is
+  now a C++ WIP body on the C_vt622060 object shape, and the standalone boot
+  remains green from matched bodies. Run evidence: `EXIT=0`, WinMain body
+  `0x47AE20` returned 0, `BC80=1 5B17D0=1 menu-loop=1`,
+  `window class/create=2 hwnd=1A2B3C4D menu-screen DE50=1 E070=1`,
+  `menu populated: 47C4=10 subobjects 15e8..1610=1; 7B0=2 5C0=2`, and
+  `menu idle ticks from matched 0x5BB2D0: 8 (body hits 8)`.
+  Source addition: `Source/ui/free_ui.cpp` gains the WIP
+  `T4A5C10::Other_4A5C10` / `C_vt622060` refresh (0x4A5C10, 206 bytes):
+  first `4A1E20(a2)`, then when +0x78 is set optionally reload the cursor set
+  through the g_6645C4 +0x1E8 object and 48A8C0 when +0x214/+0x318 permit, and
+  repaint the +0x20 draw object: if the +0x210 palette (or g_6645C4 +0x34
+  fallback) differs from the draw object's +0x08 palette, run 460180(rect),
+  45EF10(release), 45F5C0(set palette) and the class vtable slot +0x20 with 2.
+  Finally returns the +0x46C result: 49FE90 when +0x78 is set, otherwise
+  49FE60; zero leaves 0. The helper block names 4A1E20, 48A8C0, 460180,
+  45EF10, 45F5C0 and the 49FE60/49FE90 manager classes, and the T4A5C10
+  alias now carries the vtable prefix up to slot +0x20 so the repaint call is
+  an in-class virtual dispatch. WIP: the original keeps the +0x20 draw
+  pointer in EBX across the whole block (push ebx / mov ebx,[esi+0x20] /
+  mov ecx,ebx); this translation reloads it through the self pointer instead,
+  so ours is 208 vs 206 bytes although every call and branch is present.
+  Gate/build evidence: TU gate `Source/ui/free_ui.cpp [380/380] MATCH_FUNCs
+  OK, 3 WIP`; full gate `[1911/1911] MATCH_FUNCs OK, 29 WIP`;
+  `build_matched.sh` links 176 matched objects with no failed probes.
+  The regenerated phase docs read 532/815 matched (164 left, 26 WIP, 119
+  CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
+
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1

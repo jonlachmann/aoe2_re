@@ -48156,14 +48156,14 @@
   "name": "sub_4A5C10",
   "names": [],
   "class": "C_vt622060",
-  "class_evidence": "vtable slot",
+  "class_evidence": "screen-form refresh on the C_vt622060 object (T4A5C10 alias): first 4A1E20(a2), then when +0x78 is set reload cursors through g_6645C4+0x1E8 via 48A8C0 when +0x214/+0x318 permit, and repaint the +0x20 draw object when its +0x08 palette differs from +0x210 (or g_6645C4+0x34 fallback) using 460180(rect), 45EF10(release), 45F5C0(palette) and class vtable slot +0x20 with 2. Finally return +0x46C: 49FE90 when +0x78 set, else 49FE60, zero leaves 0. WIP: original keeps the +0x20 draw pointer in EBX across the block; ours reloads through self (208 vs 206)",
   "slot_classes": [
    "C_vt622060"
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x4A5CE0",

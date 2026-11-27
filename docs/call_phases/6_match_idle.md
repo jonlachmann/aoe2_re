@@ -1,8 +1,8 @@
 # 6_match_idle
 
-880 functions called (0 first seen in this phase): 191 matched, 654 left to match (8 of them WIP), 35 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+880 functions called (0 first seen in this phase): 192 matched, 653 left to match (8 of them WIP), 35 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (654)
+## Left to match (653)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -51,7 +51,6 @@
 | 75 | `sub_5D46C0` | 6007 |  | 5_start_game_to_match |  |
 | 78 | `sub_5D4DC0` | 6007 |  | 5_start_game_to_match |  |
 | 81 | `sub_460740` | 12158 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
-| 83 | `sub_5230F0` | 6234352 |  | 1_boot_to_menu |  |
 | 84 | `sub_522D90` | 6234352 | WIP | 1_boot_to_menu | C_cluster_522D20::M_522D90 |
 | 85 | `sub_48B5B0` | 79411 |  | 5_start_game_to_match | mouseptr::poll |
 | 86 | `sub_5D5050` | 6007 |  | 5_start_game_to_match |  |
@@ -661,7 +660,7 @@
 | 878 | `sub_4845F0` | 3 |  | 5_start_game_to_match |  |
 | 879 | `sub_48BD90` | 1 |  | 5_start_game_to_match |  |
 
-## Matched (191)
+## Matched (192)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -702,6 +701,7 @@
 | 79 | `sub_4A0C10` | 6079 | MATCH | 1_boot_to_menu | S4A0C10::M_4A0C10 |
 | 80 | `sub_460660` | 12158 | MATCH | 1_boot_to_menu | TDrawArea::SetClipRect_460660 |
 | 82 | `sub_522FF0` | 24172 | MATCH | 1_boot_to_menu | TClipSpan::SetRect_522FF0 |
+| 83 | `sub_5230F0` | 6234352 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_5230F0 |
 | 87 | `sub_45FD90` | 12104 | MATCH | 1_boot_to_menu | TDrawArea::Lock_45FD90 |
 | 88 | `sub_460620` | 12104 | MATCH | 1_boot_to_menu | TDrawArea::UpdatePitch_460620 |
 | 99 | `sub_6198E0` | 168196 | MATCH | 5_start_game_to_match | M_6198E0 |

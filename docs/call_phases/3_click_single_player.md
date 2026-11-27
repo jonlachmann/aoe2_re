@@ -1,8 +1,8 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 119 matched, 133 left to match (11 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 120 matched, 132 left to match (11 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (133)
+## Left to match (132)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -33,7 +33,6 @@
 | 95 | `sub_45E930` | 3 |  | 1_boot_to_menu |  |
 | 96 | `sub_45FC30` | 66 |  | 1_boot_to_menu |  |
 | 109 | `sub_460740` | 160 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
-| 113 | `sub_5230F0` | 54894 |  | 1_boot_to_menu |  |
 | 114 | `sub_522D90` | 54894 | WIP | 1_boot_to_menu | C_cluster_522D20::M_522D90 |
 | 118 | `sub_51EFF0` | 139 |  | 1_boot_to_menu |  |
 | 120 | `sub_619BC0` | 10954 |  | 1_boot_to_menu |  |
@@ -140,7 +139,7 @@
 | 282 | `sub_610EB1` | 4 |  | 3_click_single_player |  |
 | 284 | `sub_610E66` | 1 |  | 3_click_single_player |  |
 
-## Matched (119)
+## Matched (120)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -213,6 +212,7 @@
 | 110 | `sub_523060` | 160 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_523060 |
 | 111 | `sub_522E90` | 160 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_522E90 |
 | 112 | `sub_522FF0` | 160 | MATCH | 1_boot_to_menu | TClipSpan::SetRect_522FF0 |
+| 113 | `sub_5230F0` | 54894 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_5230F0 |
 | 115 | `sub_45FD90` | 58 | MATCH | 1_boot_to_menu | TDrawArea::Lock_45FD90 |
 | 116 | `sub_460620` | 58 | MATCH | 1_boot_to_menu | TDrawArea::UpdatePitch_460620 |
 | 117 | `sub_51EB90` | 30 | MATCH | 1_boot_to_menu | S51EB90::M_51EB90 |

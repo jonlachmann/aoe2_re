@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 531 matched, 165 left to match (25 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 532 matched, 164 left to match (26 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (165)
+## Left to match (164)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -21,7 +21,6 @@
 | 253 | `sub_45F8E0` | 23 |  | 1_boot_to_menu |  |
 | 255 | `sub_45FED0` | 25 |  | 1_boot_to_menu |  |
 | 257 | `sub_460740` | 151 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
-| 266 | `sub_5230F0` | 52052 |  | 1_boot_to_menu |  |
 | 267 | `sub_522D90` | 52052 | WIP | 1_boot_to_menu | C_cluster_522D20::M_522D90 |
 | 268 | `sub_460180` | 49 |  | 1_boot_to_menu |  |
 | 292 | `sub_45EF10` | 9 |  | 1_boot_to_menu |  |
@@ -121,7 +120,7 @@
 | 505 | `sub_4B9BB0` | 5 |  | 1_boot_to_menu |  |
 | 508 | `sub_422E20` | 72771 |  | 1_boot_to_menu |  |
 | 510 | `sub_45F6F0` | 72772 |  | 1_boot_to_menu |  |
-| 511 | `sub_4A5C10` | 5 |  | 1_boot_to_menu |  |
+| 511 | `sub_4A5C10` | 5 | WIP | 1_boot_to_menu | T4A5C10::Other_4A5C10 |
 | 524 | `sub_4A0CD0` | 65110 | WIP | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0CD0 |
 | 531 | `sub_4647C0` | 1 |  | 1_boot_to_menu |  |
 | 534 | `sub_4BE980` | 131 |  | 1_boot_to_menu |  |
@@ -172,7 +171,7 @@
 | 786 | `sub_539B00` | 1 |  | 1_boot_to_menu |  |
 | 800 | `sub_5BB2D0` | 2144832 | WIP | 1_boot_to_menu | C_vt62C1E0::M_5BB2D0 |
 
-## Matched (531)
+## Matched (532)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -346,6 +345,7 @@
 | 263 | `sub_522FF0` | 199 | MATCH | 1_boot_to_menu | TClipSpan::SetRect_522FF0 |
 | 264 | `sub_523060` | 151 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_523060 |
 | 265 | `sub_522E90` | 151 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_522E90 |
+| 266 | `sub_5230F0` | 52052 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_5230F0 |
 | 269 | `sub_522F90` | 25 | MATCH | 1_boot_to_menu | C_cluster_522CD0::M_522F90 |
 | 271 | `sub_522CD0` | 25 | MATCH | 1_boot_to_menu | C_cluster_522CD0::M_522CD0 |
 | 275 | `sub_5FC430` | 14 | MATCH | 1_boot_to_menu | sub_5FC430 |
