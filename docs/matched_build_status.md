@@ -879,6 +879,25 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1821/1821] MATCH_FUNCs OK, 36 WIP`; phase docs now 460/815 matched
   (236 left, 29 WIP, 119 CRT).
 
+- stage 47 — new `Source/ui/C_pnl_txt.cpp`/`.hpp` carry a byte-exact
+  `MATCH_FUNC(0x4BC260)` (252 bytes) as `C_pnl_txt::draw_4BC260()` (vtable
+  slot +0x30). It zeroes the +0x38 result and returns when +0x20, +0x70 or
+  +0x6C is clear. Otherwise it runs slot 10 (+0x28) and the 0x4BC360
+  background, takes the +0x20 surface DC (0x653874 marker via matched
+  TDrawArea GetDC_45FE50), and when the DC is valid binds it (+0x8C), saves the
+  +0x108 mapping (0x61C038), then iterates the +0x100..+0x102 short range:
+  when (+0x74 and +0x78) or +0x68 is set it dispatches slot 69 (+0x114, 4BC750)
+  with the DC, row counter and 1, otherwise with 0. It restores the mapping,
+  unbinds (0x61C06C), releases the DC (ReleaseDC_45FEA0), then runs 0x4BC560 and
+  slot 11 (+0x2C). Class feedback: C_pnl_txt is a 73-slot vtable class
+  (0x623318) whose draw is slot +0x30; the recovered header feeds the full
+  slot declaration map plus fields +0x20 surface, +0x38 result, +0x68/+0x6C/
+  +0x70/+0x74/+0x78 flags, +0x8C binding, +0x100/+0x102 short range, +0x108
+  mapping. Byte-exactness required the slot_069 third argument declared
+  `short` so VC6 pushes the raw bx register instead of `movsx` widening.
+  Evidence after this wave: full gate `[1822/1822] MATCH_FUNCs OK, 36 WIP`;
+  phase docs now 461/815 matched (235 left, 29 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

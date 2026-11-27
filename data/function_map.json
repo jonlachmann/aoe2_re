@@ -55736,14 +55736,14 @@
    "pnl_txt::draw"
   ],
   "class": "C_pnl_txt",
-  "class_evidence": "vtable slot",
+  "class_evidence": "this-edge draw: 73-slot vtable 0x623318 (draw is slot +0x30); +0x20 surface, +0x38 result, +0x6C/+0x70 gates, +0x68/+0x74/+0x78 flags, +0x8C binding, +0x100/+0x102 short range, +0x108 mapping; slot_010(+0x28), slot_069(+0x114, short index), slot_011(+0x2C); callees 0x4BC360/0x4BC560",
   "slot_classes": [
    "C_pnl_txt"
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_txt.cpp"
  },
  {
   "address": "0x4BC360",

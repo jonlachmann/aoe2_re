@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 645 matched, 1791 left to match (7 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 646 matched, 1790 left to match (7 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1791)
+## Left to match (1790)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -91,7 +91,6 @@
 | 142 | `sub_61010A` | 221 |  | 1_boot_to_menu |  |
 | 143 | `sub_6100A6` | 246 |  | 1_boot_to_menu |  |
 | 146 | `sub_4A0920` | 89 |  | 1_boot_to_menu |  |
-| 147 | `sub_4BC260` | 53 |  | 1_boot_to_menu | pnl_txt::draw |
 | 148 | `sub_4BC360` | 53 |  | 1_boot_to_menu | pnl_txt::draw_background2 |
 | 149 | `sub_4BC750` | 53 |  | 1_boot_to_menu |  |
 | 152 | `sub_4BCBC0` | 53 |  | 1_boot_to_menu |  |
@@ -1798,7 +1797,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (645)
+## Matched (646)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -1853,6 +1852,7 @@
 | 90 | `sub_619820` | 133001 | MATCH | 1_boot_to_menu | sub_619820 |
 | 144 | `sub_45FE10` | 24318 | MATCH | 1_boot_to_menu | TDrawArea::Unlock_45FE10 |
 | 145 | `sub_4A0C60` | 12326 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0C60 |
+| 147 | `sub_4BC260` | 53 | MATCH | 1_boot_to_menu | C_pnl_txt::draw_4BC260 |
 | 150 | `sub_4BD4E0` | 53 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4E0 |
 | 151 | `sub_4BD560` | 53 | MATCH | 1_boot_to_menu | S4BD560::M_4BD560 |
 | 153 | `sub_4BD4B0` | 55 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4B0 |
