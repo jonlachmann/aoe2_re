@@ -142,3 +142,77 @@ public:
 
     C_pnl_txt_4B9F70();
 };
+
+// C_vt621F6C_4A00E0 — the one-argument base ctor at 0x4A00E0. Same 0x621F6C
+// object layout as the default ctor, plus the +0x84 word and the +0xF7 byte
+// that this ctor initializes, and the a1 name passed to M_4A2070.
+class C_vt621F6C_4A00E0 {
+public:
+    int field_00;                  // +0x00 vtable word (raw, no virtual decl)
+    int field_04;
+    int field_08;
+    int field_0c;
+    int field_10;
+    int field_14;
+    int field_18;
+    int field_1c;                  // name buffer pointer checked at the end
+    int field_20;
+    char pad_24[0x34 - 0x24];
+    int field_34;
+    int field_38;                  // default 2
+    int field_3c;
+    int field_40;
+    int field_44;
+    int field_48;
+    int field_4c;
+    int field_50;
+    int field_54;
+    int field_58;
+    int field_5c;
+    int field_60;
+    int field_64;
+    int field_68;
+    int field_6c;                  // default 1
+    int field_70;
+    int field_74;
+    int field_78;
+    int field_7c;                  // default 1
+    int field_80;                  // default 1
+    int field_84;
+    int field_88;                  // default 1
+    int field_8c;
+    int field_90;
+    int field_94;
+    int field_98;
+    int field_9c;
+    int field_a0;
+    int field_a4;
+    int field_a8;
+    int field_ac;
+    int field_b0;
+    int field_b4;
+    int field_b8;
+    int field_bc;
+    int field_c0;                  // default 0xFA
+    int field_c4;
+    int field_c8;
+    int field_cc;
+    int field_d0;
+    int field_d4;
+    int field_d8;
+    int field_dc;
+    int field_e0;
+    int field_e4;
+    int field_e8;                  // default -1
+    int field_ec;                  // default -1
+    unsigned char field_f0;
+    unsigned char field_f1;
+    unsigned char field_f2;
+    unsigned char field_f3;
+    unsigned char field_f4;
+    unsigned char field_f5;
+    unsigned char field_f6;
+    unsigned char field_f7;
+
+    C_vt621F6C_4A00E0(char* a1);
+};

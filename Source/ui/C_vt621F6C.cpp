@@ -133,3 +133,92 @@ C_pnl_txt_4B9F70::C_pnl_txt_4B9F70()
     field_00 = 0x623318;
     field_f2 = 1;
 }
+
+// Minimal owners of the callees reached at the end of the ctor. Both bodies are
+// already matched elsewhere (0x4A2070, 0x49F650); only the mangled symbols are
+// needed here so the relocatable calls resolve.
+class C_TRIBE_Screen_Options {
+public:
+    void M_4A2070(char* a1);
+};
+class C_cluster_49F630 {
+public:
+    int M_49F650(void* key, int a2, int a3);
+};
+
+// 0x4A00E0 — one-argument constructor of the 0x621F6C base object. Same
+// zero-init sequence and defaults as the default ctor, but also clears +0x84,
+// installs the vtable at +0, calls M_4A2070(a1) on this object, sets
+// +0xE8/+0xEC = -1 and +0xF7 = 0, then, when the +0x1C name pointer is
+// non-empty, inserts this object into the 0x66EA48 list through 0x49F650.
+MATCH_FUNC(0x4A00E0)
+C_vt621F6C_4A00E0::C_vt621F6C_4A00E0(char* a1)
+{
+    field_04 = 0;
+    field_08 = 0;
+    field_0c = 0;
+    field_10 = 0;
+    field_14 = 0;
+    field_18 = 0;
+    field_1c = 0;
+    field_20 = 0;
+    field_34 = 0;
+    field_38 = 2;
+    field_3c = 0;
+    field_40 = 0;
+    field_44 = 0;
+    field_48 = 0;
+    field_4c = 0;
+    field_50 = 0;
+    field_54 = 0;
+    field_58 = 0;
+    field_5c = 0;
+    field_60 = 0;
+    field_64 = 0;
+    field_68 = 0;
+    field_6c = 1;
+    field_70 = 0;
+    field_74 = 0;
+    field_78 = 0;
+    field_7c = 1;
+    field_80 = 1;
+    field_84 = 0;
+    field_88 = 1;
+    field_8c = 0;
+    field_a0 = 0;
+    field_a4 = 0;
+    field_a8 = 0;
+    field_ac = 0;
+    field_b0 = 0;
+    field_b4 = 0;
+    field_b8 = 0;
+    field_bc = 0;
+    field_c0 = 0xfa;
+    field_c4 = 0;
+    field_c8 = 0;
+    field_cc = 0;
+    field_d0 = 0;
+    field_d4 = 0;
+    field_d8 = 0;
+    field_dc = 0;
+    field_e0 = 0;
+    field_e4 = 0;
+    field_f0 = 0;
+    field_f1 = 0;
+    field_f2 = 0;
+    field_f3 = 0;
+    field_f4 = 0;
+    field_f5 = 0;
+    field_f6 = 0;
+    field_00 = 0x621f6c;
+    field_90 = 0;
+    field_94 = 0;
+    field_98 = 0;
+    field_9c = 0;
+    ((C_TRIBE_Screen_Options*)this)->M_4A2070(a1);
+    field_e8 = -1;
+    field_ec = -1;
+    field_f7 = 0;
+    if (field_1c != 0 && *(char*)field_1c != 0)
+        ((C_cluster_49F630*)0x66ea48)->M_49F650((void*)this, 0, 0);
+}

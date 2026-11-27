@@ -1077,6 +1077,25 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   wave: full gate `[1828/1828] MATCH_FUNCs OK, 39 WIP`; phase docs now 467/815
   matched (229 left, 32 WIP, 119 CRT).
 
+- stage 56 — `Source/ui/C_vt621F6C.cpp` gains a third byte-exact constructor:
+  `MATCH_FUNC(0x4A00E0)` (366 bytes) as
+  `C_vt621F6C_4A00E0::C_vt621F6C_4A00E0(char* a1)`. It repeats the 0x621F6C
+  base zero-init/default sequence (also clearing +0x84), installs the
+  0x621F6C vtable word at +0, calls the matched name setter M_4A2070(a1) on
+  this object, sets +0xE8/+0xEC = -1 and +0xF7 = 0, then, when the +0x1C name
+  pointer is non-empty, inserts this object into the 0x66EA48 list through
+  0x49F650 with (this, 0, 0). Class feedback: the 0x621F6C base object now has
+  three proven constructors (0x4A0270 default, 0x4A00E0 one-argument, and the
+  derived C_pnl_txt ctor 0x4B9F70) plus the reset/destructor path 0x4A03B0; the
+  one-argument ctor adds the +0x84 word and +0xF7 byte to the base layout, and
+  shares +0x1C (name buffer pointer) with C_TRIBE_Screen_Options (M_4A2070).
+  Byte-exactness required the 0x49F650 call argument order `(this, 0, 0)` so
+  cdecl right-to-left pushes emit `ebx, ebx, esi` (the initial `(0,0,this)`
+  produced the reversed `esi, ebx, ebx`), plus the same non-virtual raw +0
+  vtable field trick keeping the literal 0x621F6C store. Evidence after this
+  wave: full gate `[1829/1829] MATCH_FUNCs OK, 39 WIP`; phase docs now 468/815
+  matched (228 left, 32 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
