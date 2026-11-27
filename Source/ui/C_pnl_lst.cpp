@@ -428,3 +428,24 @@ int C_pnl_lst::Other_4BBD30(int v)
     *(int*)((char*)this + 0x154) = result;
     return result;
 }
+
+// 0x4B5BA0 — key/grid hit forwarding. When the +0x1A8 gate is zero return 0.
+// Otherwise dispatch slot +0xCC (slot_051) with the first two stack arguments
+// and return its zero unchanged on failure. On success compute the row through
+// 0x4B5DD0(a2,a3) and, when the result is within the +0x100..+0x102 visible
+// window, forward the same arguments to 0x4B5E30(a2,a3). Always return 1 on
+// that path. The signature keeps its original four stack arguments so the tail
+// is `ret 0x10`; the final two are unused.
+MATCH_FUNC(0x4B5BA0)
+int C_pnl_lst::M_4B5BA0(int a2, int a3, int a4, int a5)
+{
+    if (field_1a8 == 0)
+        return 0;
+    int result = slot_051(a2, a3);
+    if (result == 0)
+        return result;
+    __int16 v7 = M_4B5DD0(a2, a3);
+    if (v7 >= field_100 && v7 <= field_102)
+        M_4B5E30(a2, a3);
+    return 1;
+}

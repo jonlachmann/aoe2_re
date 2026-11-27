@@ -1361,6 +1361,26 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `Source/ui/C_pnl_inp.cpp` `[11/11] MATCH_FUNCs OK, 3 WIP`; phase docs now
   476/815 matched (220 left, 37 WIP, 119 CRT).
 
+- stage 68 — `Source/ui/C_pnl_lst.cpp` gains a byte-exact
+  `MATCH_FUNC(0x4B5BA0)` (100 bytes) as
+  `int C_pnl_lst::M_4B5BA0(int a2, int a3, int a4, int a5)`. The class header
+  now carries the +0x1A8 int gate (split out of the +0x1A0 pad) and slot +0xCC
+  is `virtual int slot_051(int a1, int a2)`. The method returns 0 when +0x1A8
+  is zero; otherwise it dispatches slot_051 with (a2,a3) and returns its zero
+  result unchanged on failure; on success it computes the row through
+  `0x4B5DD0(a2,a3)` and, when the result is within the +0x100..+0x102 short
+  window, forwards the same arguments to `0x4B5E30(a2,a3)`, then returns 1.
+  Class feedback: both callees are `__thiscall` C_pnl_lst members returning
+  `__int16` (0x4B5DD0 reads +0x19C/+0x158/+0x100/+0x102/+0x10 and dispatches
+  its +0x11C slot; 0x4B5E30 re-runs 0x4B5DD0 and forwards non--1 rows to
+  0x4B60B0(1,row,1)). 0x4B5DD0 and 0x4B5E30 are now declared into the class.
+  Byte-exactness required keeping all four stack arguments so the tail stays
+  `ret 0x10` even though the last two are unused, and returning the failed
+  slot's zero via `return result` so only the first gate emits a fresh xor.
+  Evidence after this wave: full gate `[1838/1838] MATCH_FUNCs OK, 44 WIP`;
+  TU gate `Source/ui/C_pnl_lst.cpp` `[12/12] MATCH_FUNCs OK, 2 WIP`; phase docs
+  now 477/815 matched (219 left, 37 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

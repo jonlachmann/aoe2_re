@@ -58,7 +58,7 @@ public:
     virtual void slot_048();  // slot +0x0C0
     virtual void slot_049();  // slot +0x0C4
     virtual void slot_050();  // slot +0x0C8
-    virtual void slot_051();  // slot +0x0CC
+    virtual int slot_051(int a1, int a2);   // slot +0x0CC
     virtual void slot_052();  // slot +0x0D0
     virtual void slot_053();  // slot +0x0D4
     virtual void slot_054();  // slot +0x0D8
@@ -120,7 +120,8 @@ public:
     char pad_192[0x198 - 0x192];  // +0x192..+0x198
     int field_198;                // +0x198 active flag
     int field_19c;                // +0x19C mode
-    char pad_1a0[0x1ac - 0x1a0];  // +0x1A0..+0x1AC
+    char pad_1a0[0x1a8 - 0x1a0];  // +0x1A0..+0x1A8
+    int field_1a8;                // +0x1A8 gate
     int field_1ac;                // +0x1AC last tick
     int field_1b0;                // +0x1B0 tick interval
     int field_1b4;                // +0x1B4 one-shot mode
@@ -158,4 +159,7 @@ public:
     int M_4B5AB0();
     void M_4B5A10(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
     void M_4B3760(int a1, unsigned char a2, unsigned char a3, unsigned char a4, unsigned char a5, unsigned char a6, unsigned char a7);
+    int M_4B5BA0(int a2, int a3, int a4, int a5);
+    __int16 M_4B5DD0(int a2, int a3);
+    __int16 M_4B5E30(int a2, int a3);
 };
