@@ -912,7 +912,51 @@ public:
     double Get_4919A0(int a2);
 };
 
-void sub_4927D0();
+// 0x4927D0 — negate the three 0x621DDC view-scale floats into the 0x65329C
+// screen-scale stores (each negated value is written several times), and copy
+// the three raw scale dwords into the 0x653290 integer mirrors the same way.
+// Called once by the matched 0x4927C0 forwarder. WIP: the original reads each
+// raw integer scale dword while the float block is still running and stores
+// them interleaved with the fstp sequence; this translation groups the three
+// reads after the last fstp and stores them in blocks, so ours is 192 vs 190
+// bytes although every negated float and every integer mirror is present.
+WIP_FUNC(0x4927D0)
+void sub_4927D0()
+{
+    float nx;
+    float ny;
+    float nz;
+    nx = -*(float*)ADDR(0x621ddc);
+    *(float*)ADDR(0x65329c) = nx;
+    *(float*)ADDR(0x6532a0) = nx;
+    *(float*)ADDR(0x6532a4) = nx;
+    *(float*)ADDR(0x6532a8) = nx;
+    ny = -*(float*)ADDR(0x621de0);
+    *(float*)ADDR(0x6532c4) = ny;
+    *(float*)ADDR(0x6532cc) = ny;
+    *(float*)ADDR(0x6532d0) = ny;
+    nz = -*(float*)ADDR(0x621de4);
+    *(float*)ADDR(0x6532d4) = nz;
+    *(float*)ADDR(0x6532d8) = nz;
+    *(float*)ADDR(0x6532dc) = ny;
+    *(float*)ADDR(0x6532e0) = nz;
+    *(float*)ADDR(0x6532e8) = ny;
+    int xi = *(int*)ADDR(0x621ddc);
+    int yi = *(int*)ADDR(0x621de0);
+    int zi = *(int*)ADDR(0x621de4);
+    *(int*)ADDR(0x653290) = xi;
+    *(int*)ADDR(0x653294) = xi;
+    *(int*)ADDR(0x653298) = xi;
+    *(int*)ADDR(0x6532ac) = xi;
+    *(int*)ADDR(0x6532b0) = yi;
+    *(int*)ADDR(0x6532bc) = yi;
+    *(int*)ADDR(0x6532e4) = yi;
+    *(int*)ADDR(0x6532b4) = zi;
+    *(int*)ADDR(0x6532b8) = zi;
+    *(int*)ADDR(0x6532c0) = zi;
+    *(int*)ADDR(0x6532c8) = zi;
+    *(int*)ADDR(0x6532ec) = zi;
+}
 
 // 0x4927C0 — tail-call forwarder to the global-table init.
 MATCH_FUNC(0x4927C0)
@@ -3688,6 +3732,97 @@ int S4B9BA0::M_4B9BA0()
     return 0;
 }
 
+// 0x4B9BB0 — panel_ez (vtable 0x622F54) slot 52 (+0xD0), the set-active
+// override around the base 0x4A5C10. When the panel is not the current
+// g_73E350 one, a1 is set and the +0x20 draw area's surface is in mode
+// +0x3D == 2 (or +0x3C == 1), fade it out first: snapshot the palette (the
+// +0x210 HPALETTE through GetPaletteEntries, else the area's own 0x461C70
+// copy), 0x422FF0(black, 0.13) then clear (0x460180) and release (0x45EF10).
+// After the base call, fade back in: 0x422FF0(mode 2 with the snapshot),
+// redraw through slot +0x54, 0x422FF0(mode 1), release, 0x422FF0(mode 2, 0.13).
+// Finally, when a1 differs from the old +0x78 and +0x78 is now set, record
+// this panel in g_73E350. Locals are written colour-first, then the
+// not-current flag, then the old +0x78 (that order fixes the prologue).
+// Guest-only: GetPaletteEntries is a GDI32 import.
+#ifndef MATCHED_NATIVE
+struct T4B9BB0Rgb { unsigned char r, g, b, f; };
+class T4B9BB0Surf {
+public:
+    char pad_00[0x3c];
+    unsigned char field_3c;       // +0x3C
+    unsigned char field_3d;       // +0x3D
+    void M_45EF10(int a1);
+};
+class T4B9BB0Area {
+public:
+    T4B9BB0Surf* field_0;         // +0x00
+    void CopyPalette_461C70(void* dest);
+    void M_460180(int a1, int a2);
+};
+extern void __cdecl sub_422FF0(T4B9BB0Area* area, T4B9BB0Rgb c, float f, int mode, void* pal, int a6, int a7);
+extern "C" __declspec(dllimport) unsigned int __stdcall GetPaletteEntries(void* pal, unsigned int start, unsigned int n, void* out);
+class S4B9BB0;
+extern S4B9BB0* g_73E350;
+class S4B9BB0 {
+public:
+    virtual void Vt_00(); virtual void Vt_01(); virtual void Vt_02(); virtual void Vt_03();
+    virtual void Vt_04(); virtual void Vt_05(); virtual void Vt_06(); virtual void Vt_07();
+    virtual void Vt_08(); virtual void Vt_09(); virtual void Vt_10(); virtual void Vt_11();
+    virtual void Vt_12(); virtual void Vt_13(); virtual void Vt_14(); virtual void Vt_15();
+    virtual void Vt_16(); virtual void Vt_17(); virtual void Vt_18(); virtual void Vt_19();
+    virtual void Vt_20();
+    virtual void Vt_21();         // +0x54 redraw
+    char pad_04[0x20 - 4];
+    T4B9BB0Area* field_20;        // +0x20 draw area
+    char pad_24[0x78 - 0x24];
+    int field_78;                 // +0x78 active
+    char pad_7c[0x210 - 0x7c];
+    void* field_210;              // +0x210 palette (HPALETTE)
+    void Other_4A5C10(int a1);
+    void M_4B9BB0(int a1);
+};
+MATCH_FUNC(0x4B9BB0)
+void S4B9BB0::M_4B9BB0(int a1)
+{
+    int old78;
+    bool notFocus;
+    T4B9BB0Rgb c;
+    unsigned char pal[0x400];
+    c.r = 0;
+    c.g = 0;
+    c.b = 0;
+    c.f = 0;
+    notFocus = (this != g_73E350);
+    old78 = field_78;
+    if (field_20 != 0 && field_20->field_0 != 0 && a1 != 0 && notFocus
+        && (field_20->field_0->field_3d == 2 || field_20->field_0->field_3c == 1))
+    {
+        c.r = 0;
+        c.g = 0;
+        c.b = 0;
+        if (field_210 == 0)
+            field_20->CopyPalette_461C70(pal);
+        else
+            GetPaletteEntries(field_210, 0, 0x100, pal);
+        sub_422FF0(field_20, c, 0.13f, 1, 0, -1, -1);
+        field_20->M_460180(0, 0);
+        field_20->field_0->M_45EF10(0);
+    }
+    Other_4A5C10(a1);
+    if (field_20 != 0 && field_20->field_0 != 0 && a1 != 0 && notFocus
+        && (field_20->field_0->field_3d == 2 || field_20->field_0->field_3c == 1))
+    {
+        sub_422FF0(field_20, c, 0.0f, 2, pal, -1, -1);
+        Vt_21();
+        sub_422FF0(field_20, c, 0.0f, 1, 0, -1, -1);
+        field_20->field_0->M_45EF10(0);
+        sub_422FF0(field_20, c, 0.13f, 2, pal, -1, -1);
+    }
+    if (a1 != old78 && field_78 != 0)
+        g_73E350 = this;
+}
+#endif
+
 // 0x4B2730 — thiscall forwarder to the class body at 0x4B2810.
 class T4B2810 {
 public:
@@ -6328,16 +6463,27 @@ class S498DC0 {
 public:
     char pad_00[0x104];
     char field_104;               // +0x104 state byte
-    char pad_105[0x114 - 0x105];
+    char pad_105[0x108 - 0x105];
+    int field_108;                // +0x108 ctor arg 4
+    int field_10c;                // +0x10C ctor arg 2
+    int field_110;                // +0x110 ctor arg 3
     int field_114;                // +0x114 gate
     int field_118;                // +0x118 opened audio-device handle
-    char pad_11c[0x248 - 0x11c];
-    int field_248;                // +0x248 mixer-open flag/state word
-    char pad_24c[4];              // +0x24C undeclared word
+    char pad_11c[0x128 - 0x11c];
+    char field_128;               // +0x128
+    char field_129;               // +0x129
+    char pad_12a[0x230 - 0x12a];
+    int field_230, field_234, field_238, field_23c, field_240, field_244;  // +0x230..+0x244
+    int field_248;                // +0x248 mixer-open flag/state word (track count)
+    int field_24c;                // +0x24C
     int field_250;                // +0x250 device slot already reported
     int field_254;                // +0x254 published value
     int field_258;                // +0x258 lookup key, reset to -1
-    char pad_25c[0x27c - 0x25c];
+    int field_25c, field_260, field_264, field_268;  // +0x25C..+0x268
+    int field_26c;                // +0x26C (2000 at init)
+    int field_270;                // +0x270
+    char pad_274[4];
+    int field_278;                // +0x278
     int field_27c;                // +0x27C case-1/2 gate
     int field_280;                // +0x280 callback first argument
     char pad_284[0x3a8 - 0x284];
@@ -6347,6 +6493,9 @@ public:
     int field_3d8;                // +0x3D8 callback output buffer base
     char pad_3dc[0x3f0 - 0x3dc];
     int field_3f0;                // +0x3F0 scaled result
+    int field_3f4;                // +0x3F4
+    S498DC0* Init_498700(char mode, int a2, int a3, int a4, int a5);
+    int M_498BF0();
     void M_498AD0();
     void M_498D80();
     int M_4988E0();
@@ -6361,7 +6510,7 @@ class C_cluster_498AD0 {
 public:
     int M_499660();
 };
-extern "C" int __stdcall mciSendCommandA(int a1, unsigned int a2, unsigned int a3, int a4);
+extern "C" __declspec(dllimport) int __stdcall mciSendCommandA(int a1, unsigned int a2, unsigned int a3, int a4);
 
 MATCH_FUNC(0x498DC0)
 int S498DC0::M_498DC0(char a1)
@@ -8298,6 +8447,144 @@ int C_vt6251E4::M_4EDC70()
 
 
 
+// 0x498700 — music player constructor (0x41DAA0-area caller `new`s it as
+// T498700 in C_vt61DF78.cpp). Stores mode byte and args 2..4 (arg 5 unused),
+// zeroes the state, reads the "CDPath" registry value through the app's
+// +0x1D4 object, builds the +0x00 music path for the mode, then opens it
+// through 0x4988E0.
+class T498700App {
+public:
+    char pad_00[0x24];
+    char* field_24;               // +0x24 config base
+    char pad_28[0x1d4 - 0x28];
+    S4BE010* field_1d4;           // +0x1D4 registry object
+    char pad_1d8[0x210 - 0x1d8];
+    char field_210[4];            // +0x210 install directory
+};
+extern int __cdecl sub_5FCE14(char* dst, char* fmt, ...);
+extern void* __cdecl sub_5FCE01(char* name, char* mode);   // fopen
+extern int __cdecl sub_5FCD00(void* f);                    // fclose
+
+MATCH_FUNC(0x498700)
+S498DC0* S498DC0::Init_498700(char mode, int a2, int a3, int a4, int a5)
+{
+    field_104 = mode;
+    field_108 = a4;
+    field_10c = a2;
+    field_110 = a3;
+    field_114 = 0;
+    field_118 = 0;
+    field_128 = 0;
+    field_230 = 0;
+    field_234 = 0;
+    field_238 = 0;
+    field_23c = 0;
+    field_240 = 0;
+    field_244 = 0;
+    field_248 = 0;
+    field_24c = 0;
+    field_250 = 1;
+    field_254 = 0;
+    field_25c = 0;
+    field_260 = 0;
+    field_264 = 0;
+    field_268 = 0;
+    field_26c = 2000;
+    field_270 = 0;
+    field_278 = 0;
+    field_27c = 0;
+    field_280 = 0;
+    field_3f4 = 0;
+    field_258 = -1;
+    field_129 = 0;
+    ((T498700App*)g_6645c4)->field_1d4->M_4BE010(0, (int)ADDR(0x64d83c));
+    switch ((unsigned char)field_104) {
+    case 1:
+        break;
+    case 2:
+        sub_5FCE14(pad_00, (char*)ADDR(0x653314), ((T498700App*)g_6645c4)->field_210,
+                   ((T498700App*)g_6645c4)->field_24 + 0xf4e);
+        break;
+    case 3:
+        sub_5FCE14(pad_00, (char*)ADDR(0x64d854), ((T498700App*)g_6645c4)->field_210,
+                   ((T498700App*)g_6645c4)->field_24 + 0x1362);
+        break;
+    case 4:
+        sub_5FCE14(pad_00, (char*)ADDR(0x64d854), ((T498700App*)g_6645c4)->field_210,
+                   ((T498700App*)g_6645c4)->field_24 + 0x1362);
+        break;
+    default:
+        sub_5FCE14(pad_00, ((T498700App*)g_6645c4)->field_24 + 0xf4e);
+        break;
+    }
+    M_4988E0();
+    return this;
+}
+
+// 0x4988E0 — open the music source for the +0x104 mode: 1 = MCI sequencer
+// (open, time format, track count into +0x248), 2 = count the
+// "%smusic%d.mid" files under the +0x00 path, 3/4 = bump +0x248. Modes 1/2
+// derive +0x250/+0x254 from the 0x498BF0 volume span. Other modes fail.
+struct T4988E0Status { int cb; int ret; int item; int track; };
+struct T4988E0Set { int cb; int fmt; int audio; };
+struct T4988E0Open { int cb; int dev; int type; char* elem; char* alias; };
+
+MATCH_FUNC(0x4988E0)
+int S498DC0::M_4988E0()
+{
+    T4988E0Status status;
+    T4988E0Set set;
+    T4988E0Open open;
+    char buf[0x1000];
+    switch ((unsigned char)field_104) {
+    case 1:
+        open.type = 0x204;
+        if (mciSendCommandA(0, 0x803, 0x3102, (int)&open) != 0)
+            return 0;
+        field_114 = 1;
+        field_118 = open.dev;
+        set.fmt = 10;
+        mciSendCommandA(open.dev, 0x80d, 0x402, (int)&set);
+        status.item = 3;
+        if (mciSendCommandA(field_118, 0x814, 0x102, (int)&status) == 0)
+            field_248 = status.ret;
+        if (M_498BF0()) {
+            field_250 = (unsigned int)field_3f0 * 10000
+                        / (unsigned int)(field_3ac - field_3a8) - 10000;
+            field_254 = field_250;
+        }
+        return 1;
+    case 2:
+        if (M_498BF0()) {
+            field_250 = (unsigned int)field_3f0 * 10000
+                        / (unsigned int)(field_3ac - field_3a8) - 10000;
+            field_254 = field_250;
+        }
+        field_248 = 0;
+        {
+            int done = 0;
+            while (!done) {
+                sub_5FCE14(buf, (char*)ADDR(0x653320), pad_00, field_248 + 1);
+                void* f = sub_5FCE01(buf, (char*)ADDR(0x64d2b4));
+                if (f == 0)
+                    done = 1;
+                else {
+                    sub_5FCD00(f);
+                    field_248++;
+                }
+            }
+        }
+        field_114 = 1;
+        return 1;
+    case 3:
+    case 4:
+        field_114 = 1;
+        field_248++;
+        return 1;
+    }
+    return 0;
+}
+
 // 0x498AD0 — mixer teardown dispatcher on the +0x114 gate. Reset the mixer
 // state through 499660, then switch on the +0x104 mode byte:
 //   1 -> report the +0x250 slot if it has not claimed one, run the device
@@ -8308,7 +8595,7 @@ int C_vt6251E4::M_4EDC70()
 //        +0x258 lookup key through 521470 and reset it to -1;
 //   4 -> same as 3 but reloads +0x258 late into eax.
 // Any other mode byte returns immediately.
-WIP_FUNC(0x498AD0)
+MATCH_FUNC(0x498AD0)
 void S498DC0::M_498AD0()
 {
     if (field_114 == 0)

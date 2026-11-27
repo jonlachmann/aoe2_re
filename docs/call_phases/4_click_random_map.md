@@ -1,8 +1,8 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 332 matched, 216 left to match (15 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 351 matched, 197 left to match (17 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (216)
+## Left to match (197)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -22,12 +22,8 @@
 | 56 | `sub_4205E0` | 1 |  | 3_click_single_player |  |
 | 57 | `sub_41F780` | 1 |  | 3_click_single_player |  |
 | 59 | `sub_5BB2D0` | 1117934 | WIP | 1_boot_to_menu | C_vt62C1E0::M_5BB2D0 |
-| 82 | `sub_4208F0` | 4 |  | 1_boot_to_menu |  |
-| 84 | `sub_45E930` | 4 |  | 1_boot_to_menu |  |
-| 85 | `sub_45FC30` | 90 |  | 1_boot_to_menu |  |
 | 98 | `sub_460740` | 569 | WIP | 1_boot_to_menu | TDrawArea::SetClipBounds_460740 |
 | 103 | `sub_522D90` | 182552 | WIP | 1_boot_to_menu | C_cluster_522D20::M_522D90 |
-| 107 | `sub_51EFF0` | 228 |  | 1_boot_to_menu |  |
 | 109 | `sub_619BC0` | 24100 |  | 1_boot_to_menu |  |
 | 110 | `sub_610269` | 1195 |  | 1_boot_to_menu |  |
 | 111 | `sub_610FA3` | 954 |  | 1_boot_to_menu |  |
@@ -94,17 +90,13 @@
 | 182 | `sub_610EED` | 38 |  | 1_boot_to_menu |  |
 | 183 | `sub_610DB5` | 68 |  | 1_boot_to_menu |  |
 | 184 | `sub_610192` | 33 |  | 1_boot_to_menu |  |
-| 186 | `sub_4BC360` | 101 |  | 1_boot_to_menu | pnl_txt::draw_background2 |
 | 187 | `sub_4BC750` | 102 | WIP | 1_boot_to_menu | C_pnl_inp::M_4BC750 |
-| 192 | `sub_4BC560` | 101 |  | 1_boot_to_menu | pnl_txt::draw_border |
 | 193 | `sub_610DEA` | 23 |  | 1_boot_to_menu |  |
 | 194 | `sub_610DDF` | 4 |  | 3_click_single_player |  |
 | 195 | `sub_610E20` | 16 |  | 3_click_single_player |  |
 | 196 | `sub_610EB1` | 5 |  | 3_click_single_player |  |
 | 198 | `sub_610E66` | 1 |  | 3_click_single_player |  |
-| 199 | `sub_45EF10` | 7 |  | 1_boot_to_menu |  |
-| 200 | `sub_420FA0` | 1 |  | 1_boot_to_menu |  |
-| 201 | `sub_5B5AB0` | 1 |  | 1_boot_to_menu |  |
+| 199 | `sub_45EF10` | 7 | WIP | 1_boot_to_menu | C_cluster_45DF20::Present_45EF10 |
 | 212 | `sub_4A3370` | 1 |  | 3_click_single_player |  |
 | 213 | `sub_4A6290` | 1 |  | 3_click_single_player |  |
 | 214 | `sub_4A16C0` | 40 |  | 3_click_single_player |  |
@@ -133,16 +125,8 @@
 | 267 | `sub_5BAB10` | 1 |  | 4_click_random_map |  |
 | 278 | `sub_5BB000` | 17 | WIP | 1_boot_to_menu | C_vt62C1E0::Set_5BB000 |
 | 301 | `sub_422D00` | 1 |  | 4_click_random_map |  |
-| 306 | `sub_4A11F0` | 970 |  | 1_boot_to_menu |  |
-| 326 | `sub_51E7F0` | 3 |  | 1_boot_to_menu |  |
-| 351 | `sub_4233E0` | 1 |  | 1_boot_to_menu |  |
-| 352 | `sub_422E20` | 33196 |  | 1_boot_to_menu |  |
-| 362 | `sub_4A3A50` | 1 |  | 1_boot_to_menu |  |
 | 364 | `sub_4A2D50` | 1 |  | 4_click_random_map | panel_ez::setup_shadow_area |
-| 365 | `sub_45F8E0` | 1 |  | 1_boot_to_menu |  |
-| 367 | `sub_45FED0` | 1 |  | 1_boot_to_menu |  |
-| 376 | `sub_460180` | 6 |  | 1_boot_to_menu |  |
-| 403 | `sub_4AF0E0` | 61 |  | 1_boot_to_menu |  |
+| 376 | `sub_460180` | 6 | WIP | 1_boot_to_menu | TDrawArea::M_460180 |
 | 418 | `sub_4AF360` | 1 |  | 4_click_random_map |  |
 | 421 | `sub_4A4ED0` | 35 |  | 4_click_random_map |  |
 | 422 | `sub_4B1230` | 35 |  | 4_click_random_map |  |
@@ -158,7 +142,6 @@
 | 451 | `sub_4B1AB0` | 59 |  | 4_click_random_map |  |
 | 452 | `sub_4B2AD0` | 62 |  | 4_click_random_map |  |
 | 454 | `sub_4B2810` | 90 |  | 4_click_random_map |  |
-| 456 | `sub_4A1EA0` | 43 |  | 1_boot_to_menu |  |
 | 458 | `sub_4B1AE0` | 24 |  | 4_click_random_map |  |
 | 459 | `sub_4B1B10` | 24 |  | 4_click_random_map |  |
 | 460 | `sub_4B1B40` | 24 |  | 4_click_random_map |  |
@@ -196,9 +179,7 @@
 | 537 | `sub_42D5B0` | 9 |  | 4_click_random_map |  |
 | 538 | `sub_42F130` | 8 |  | 4_click_random_map |  |
 | 540 | `sub_428470` | 15 |  | 4_click_random_map |  |
-| 547 | `sub_4B9BB0` | 2 |  | 1_boot_to_menu |  |
 | 548 | `sub_4A5C10` | 2 | WIP | 1_boot_to_menu | T4A5C10::Other_4A5C10 |
-| 553 | `sub_45F6F0` | 33196 |  | 1_boot_to_menu |  |
 | 556 | `sub_460880` | 272 |  | 4_click_random_map |  |
 | 558 | `sub_4A0A50` | 66 |  | 4_click_random_map |  |
 | 559 | `sub_610E77` | 10 |  | 4_click_random_map |  |
@@ -223,7 +204,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (332)
+## Matched (351)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -277,7 +258,10 @@
 | 79 | `sub_42D210` | 1117953 | MATCH | 1_boot_to_menu | S42D210::Check_42D210 |
 | 80 | `sub_4B0AE0` | 12026 | MATCH | 1_boot_to_menu | C_pnl_btn::M_4B0AE0 |
 | 81 | `sub_4B3860` | 14 | MATCH | 1_boot_to_menu | C_pnl_edit::M_4B3860 |
+| 82 | `sub_4208F0` | 4 | MATCH | 1_boot_to_menu | C_vt61DF78::M_4208F0 |
 | 83 | `sub_41F470` | 4 | MATCH | 1_boot_to_menu | C_cluster_41F470::M_41F470 |
+| 84 | `sub_45E930` | 4 | MATCH | 1_boot_to_menu | C_cluster_45DF20::Restore_45E930 |
+| 85 | `sub_45FC30` | 90 | MATCH | 1_boot_to_menu | TDrawArea::Restore_45FC30 |
 | 86 | `sub_5204C0` | 4 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5204C0 |
 | 87 | `sub_520500` | 4 | MATCH | 1_boot_to_menu | S52SetImmBulk::Set_520500 |
 | 88 | `sub_4EDC50` | 2 | MATCH | 1_boot_to_menu | sub_4EDC50 |
@@ -297,6 +281,7 @@
 | 104 | `sub_45FD90` | 168 | MATCH | 1_boot_to_menu | TDrawArea::Lock_45FD90 |
 | 105 | `sub_460620` | 169 | MATCH | 1_boot_to_menu | TDrawArea::UpdatePitch_460620 |
 | 106 | `sub_51EB90` | 79 | MATCH | 1_boot_to_menu | S51EB90::M_51EB90 |
+| 107 | `sub_51EFF0` | 228 | MATCH | 1_boot_to_menu | T4B83D0Obj214::Draw_51EFF0 |
 | 108 | `sub_619820` | 228 | MATCH | 1_boot_to_menu | sub_619820 |
 | 158 | `sub_45FE10` | 168 | MATCH | 1_boot_to_menu | TDrawArea::Unlock_45FE10 |
 | 159 | `sub_4A0C60` | 284 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0C60 |
@@ -308,11 +293,15 @@
 | 169 | `sub_461370` | 378 | MATCH | 1_boot_to_menu | TDrawArea::HLine_461370 |
 | 171 | `sub_461400` | 378 | MATCH | 1_boot_to_menu | TDrawArea::VLine_461400 |
 | 185 | `sub_4BC260` | 101 | MATCH | 1_boot_to_menu | C_pnl_txt::draw_4BC260 |
+| 186 | `sub_4BC360` | 101 | MATCH | 1_boot_to_menu | C_pnl_txt::M_4BC360 |
 | 188 | `sub_4BD4E0` | 102 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4E0 |
 | 189 | `sub_4BD560` | 102 | MATCH | 1_boot_to_menu | S4BD560::M_4BD560 |
 | 190 | `sub_4BCBC0` | 102 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BCBC0 |
 | 191 | `sub_4BD4B0` | 211 | MATCH | 1_boot_to_menu | C_pnl_inp::M_4BD4B0 |
+| 192 | `sub_4BC560` | 101 | MATCH | 1_boot_to_menu | C_pnl_txt::M_4BC560 |
 | 197 | `sub_461130` | 6 | MATCH | 3_click_single_player | TDrawArea::FrameRect_461130 |
+| 200 | `sub_420FA0` | 1 | MATCH | 1_boot_to_menu | C_vt61DF78::M_420FA0 |
+| 201 | `sub_5B5AB0` | 1 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_5B5AB0 |
 | 205 | `sub_6032E5` | 207 | MATCH | 1_boot_to_menu | sub_6032E5 |
 | 210 | `sub_4364F0` | 24848 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4364F0 |
 | 211 | `sub_45F8A0` | 59 | MATCH | 1_boot_to_menu | C_cluster_45F8A0::M_45F8A0 |
@@ -379,6 +368,7 @@
 | 303 | `sub_4A23E0` | 1 | MATCH | 1_boot_to_menu | C_vt622060::M_4A23E0 |
 | 304 | `sub_4A33C0` | 1 | MATCH | 1_boot_to_menu | S4A33C0::M_4A33C0 |
 | 305 | `sub_4A0460` | 319 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0460 |
+| 306 | `sub_4A11F0` | 970 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::Resize_4A11F0 |
 | 307 | `sub_4A0750` | 970 | MATCH | 1_boot_to_menu | C_pnl_btn::slot02_4A0750 |
 | 308 | `sub_4A0630` | 1005 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0630 |
 | 309 | `sub_4A0780` | 320 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0780 |
@@ -391,6 +381,7 @@
 | 321 | `sub_4A38F0` | 1 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4A38F0 |
 | 322 | `sub_4A3900` | 1 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4A3900 |
 | 323 | `sub_4A3430` | 1 | MATCH | 1_boot_to_menu | C_vt622060::M_4A3430 |
+| 326 | `sub_51E7F0` | 3 | MATCH | 1_boot_to_menu | T4B83D0Obj214::M_51E7F0 |
 | 327 | `sub_4A35A0` | 1 | MATCH | 1_boot_to_menu | C_vt622060::M_4A35A0 |
 | 328 | `sub_4A3BB0` | 1 | MATCH | 1_boot_to_menu | C_cluster_4A3BB0::M_4A3BB0 |
 | 329 | `sub_4A3760` | 1 | MATCH | 1_boot_to_menu | C_vt622060::M_4A3760 |
@@ -399,6 +390,8 @@
 | 342 | `sub_5FD067` | 1536 | MATCH | 1_boot_to_menu | sub_5FD067 |
 | 346 | `sub_5FC430` | 6 | MATCH | 1_boot_to_menu | sub_5FC430 |
 | 348 | `sub_5F9780` | 6 | MATCH | 1_boot_to_menu | sub_5F9780 |
+| 351 | `sub_4233E0` | 1 | MATCH | 1_boot_to_menu | TPalMap4233E0::Init_4233E0 |
+| 352 | `sub_422E20` | 33196 | MATCH | 1_boot_to_menu | Blend_422E20 |
 | 353 | `sub_4A38A0` | 1 | MATCH | 1_boot_to_menu | S4ASetBulk::M_4A38A0 |
 | 354 | `sub_4A3910` | 1 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4A3910 |
 | 355 | `sub_4A3710` | 1 | MATCH | 1_boot_to_menu | S4A3710::M_4A3710 |
@@ -408,8 +401,11 @@
 | 359 | `sub_4A39A0` | 1 | MATCH | 1_boot_to_menu | S4A3960::Set_4A39A0 |
 | 360 | `sub_4A39C0` | 2 | MATCH | 1_boot_to_menu | S4A3960::Set_4A39C0 |
 | 361 | `sub_4A39E0` | 2 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4A39E0 |
+| 362 | `sub_4A3A50` | 1 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::LoadButtonShape_4A3A50 |
 | 363 | `sub_4A39F0` | 1 | MATCH | 1_boot_to_menu | S4A39F0::M_4A39F0 |
+| 365 | `sub_45F8E0` | 1 | MATCH | 1_boot_to_menu | TDrawArea::Init_45F8E0 |
 | 366 | `sub_45FB60` | 1 | MATCH | 1_boot_to_menu | S_45FB60::M_45FB60 |
+| 367 | `sub_45FED0` | 1 | MATCH | 1_boot_to_menu | TDrawArea::SetSize_45FED0 |
 | 368 | `sub_460490` | 2 | MATCH | 1_boot_to_menu | TDrawArea::BuildRowPtrs_460490 |
 | 369 | `sub_522EB0` | 2 | MATCH | 1_boot_to_menu | C_cluster_522EB0::C_cluster_522EB0 |
 | 370 | `sub_522C70` | 2 | MATCH | 1_boot_to_menu | S522C70::M_522C70 |
@@ -440,6 +436,7 @@
 | 400 | `sub_4217B0` | 82 | MATCH | 4_click_random_map | C_vt62C1E0::Get9A9_4217B0 |
 | 401 | `sub_4A3D40` | 14 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A3D40 |
 | 402 | `sub_4A3DE0` | 22 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::CreateButton_4A3DE0 |
+| 403 | `sub_4AF0E0` | 61 | MATCH | 1_boot_to_menu | C_pnl_btn_4AF0E0::C_pnl_btn_4AF0E0 |
 | 404 | `sub_41F6E0` | 50 | MATCH | 1_boot_to_menu | C_global_6645C4::Hook_41F6E0 |
 | 405 | `sub_4AF2E0` | 61 | MATCH | 1_boot_to_menu | S4AF2E0::M_4AF2E0 |
 | 406 | `sub_4AF9D0` | 239 | MATCH | 1_boot_to_menu | C_pnl_btn::slot03_4AF9D0 |
@@ -477,6 +474,7 @@
 | 450 | `sub_4B8C70` | 35 | MATCH | 1_boot_to_menu | S4B8C70::Set_4B8C70 |
 | 453 | `sub_4BD5E0` | 62 | MATCH | 1_boot_to_menu | S4BD5E0::M_4BD5E0 |
 | 455 | `sub_4A1E50` | 43 | MATCH | 1_boot_to_menu | S4A1E50::M_4A1E50 |
+| 456 | `sub_4A1EA0` | 43 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::SetChildOrder_4A1EA0 |
 | 457 | `sub_4A05D0` | 146 | MATCH | 1_boot_to_menu | S4A05D0::M_4A05D0 |
 | 462 | `sub_41CE60` | 3 | MATCH | 1_boot_to_menu | S41CE50::M_41CE60 |
 | 463 | `sub_464FD0` | 3 | MATCH | 1_boot_to_menu | T464FD0::Other_464FD0 |
@@ -528,9 +526,11 @@
 | 544 | `sub_49F770` | 1 | MATCH | 1_boot_to_menu | S49F770::M_49F770 |
 | 545 | `sub_49FB00` | 1 | MATCH | 1_boot_to_menu | S49F770::M_49FB00 |
 | 546 | `sub_4EDC60` | 1 | MATCH | 1_boot_to_menu | S4EDC60::M_4EDC60 |
+| 547 | `sub_4B9BB0` | 2 | MATCH | 1_boot_to_menu | S4B9BB0::M_4B9BB0 |
 | 549 | `sub_422FF0` | 4 | MATCH | 1_boot_to_menu | FadePalette_422FF0 |
 | 550 | `sub_461C70` | 2 | MATCH | 1_boot_to_menu | TDrawArea::CopyPalette_461C70 |
 | 552 | `sub_461CA0` | 33195 | MATCH | 1_boot_to_menu | S461CA0::M_461CA0 |
+| 553 | `sub_45F6F0` | 33196 | MATCH | 1_boot_to_menu | C_cluster_45F5C0::Hook_45F6F0 |
 | 554 | `sub_48A8C0` | 1 | MATCH | 1_boot_to_menu | C_mouseptr::LoadCursors_48A8C0 |
 | 555 | `sub_45F5C0` | 1 | MATCH | 1_boot_to_menu | C_cluster_45F5C0::M_45F5C0 |
 | 557 | `sub_4B1700` | 66 | MATCH | 4_click_random_map | sub_4B1700 |

@@ -1775,6 +1775,35 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
 
 
+- stage 82 — the global view/screen scale-table initializer is now a C++ WIP
+  body wired to the matched `0x4927C0` forwarder, and the standalone boot still
+  reaches the menu and idles from matched bodies. Run evidence under lldb
+  (`Process ... exited with status = 0`): `menu idle ticks from matched
+  0x5BB2D0: 8 (body hits 8)`,
+  `menu populated: 47C4=10 subobjects 15e8..1610=1; 7B0=2 5C0=2`,
+  `native WinMain body returned 0`, and `guest returned 0`.
+  Direct shell invocations intermittently receive a parent-side SIGKILL after
+  the guest returns; the same teardown kill also reproduces with the body
+  temporarily replaced by a no-op, and lldb exits cleanly, so it is an
+  execution-environment artifact and not a menu/idle regression.
+  Source addition: `Source/ui/free_ui.cpp` gains the WIP `sub_4927D0`
+  (0x4927D0, 190 bytes): negate the three view-scale floats at
+  0x621DDC/0x621DE0/0x621DE4 into the 0x65329C.. slots (X four times, Y at
+  0x6532C4/CC/D0/DC/E8, Z at 0x6532D4/D8/E0), then mirror the three raw scale
+  dwords into the 0x653290.. integer tables (X at 0x653290/294/298/2AC, Y at
+  0x6532B0/BC/E4, Z at 0x6532B4/B8/C0/C8/EC). The matched 0x4927C0
+  tail-forwarder now calls the real symbol instead of a link stub. WIP: the
+  original reads each raw integer scale dword while the float block is still
+  running and interleaves the stores with the fstp sequence; this translation
+  groups the three reads after the last fstp, so ours is 192 vs 190 bytes
+  although every negated float and every integer mirror is present.
+  Gate/build evidence: TU gate `Source/ui/free_ui.cpp [384/384] MATCH_FUNCs
+  OK, 3 WIP`; full gate `[1955/1955] MATCH_FUNCs OK, 35 WIP`;
+  `build_matched.sh` links 178 matched boot objects with no failed probes.
+  The regenerated phase docs read 576/815 matched (120 left, 32 WIP, 119
+  CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
+
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1

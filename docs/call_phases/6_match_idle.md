@@ -1,8 +1,8 @@
 # 6_match_idle
 
-880 functions called (0 first seen in this phase): 192 matched, 653 left to match (8 of them WIP), 35 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+880 functions called (0 first seen in this phase): 198 matched, 647 left to match (9 of them WIP), 35 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (653)
+## Left to match (647)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -40,9 +40,6 @@
 | 57 | `sub_41FAC0` | 6127 | WIP | 1_boot_to_menu | sub_41FAC0 |
 | 59 | `sub_4DC1E0` | 6127 |  | 5_start_game_to_match |  |
 | 60 | `sub_4A0CD0` | 588192 | WIP | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0CD0 |
-| 62 | `sub_4208F0` | 6007 |  | 1_boot_to_menu |  |
-| 64 | `sub_45E930` | 6007 |  | 1_boot_to_menu |  |
-| 65 | `sub_45FC30` | 402469 |  | 1_boot_to_menu |  |
 | 68 | `sub_48B300` | 6007 |  | 5_start_game_to_match |  |
 | 69 | `sub_4DB5A0` | 6007 |  | 5_start_game_to_match |  |
 | 71 | `sub_4DA4B0` | 6079 |  | 5_start_game_to_match |  |
@@ -63,7 +60,6 @@
 | 95 | `sub_525B00` | 222259 |  | 5_start_game_to_match |  |
 | 96 | `sub_525A40` | 222259 |  | 5_start_game_to_match |  |
 | 97 | `sub_619860` | 324378 |  | 5_start_game_to_match |  |
-| 98 | `sub_51EFF0` | 222313 |  | 1_boot_to_menu |  |
 | 100 | `sub_5DC6D0` | 168196 |  | 5_start_game_to_match |  |
 | 101 | `sub_41A910` | 48056 |  | 5_start_game_to_match |  |
 | 102 | `sub_41B4D0` | 24028 |  | 5_start_game_to_match |  |
@@ -99,7 +95,7 @@
 | 140 | `sub_48B000` | 6007 |  | 5_start_game_to_match | mouseptr::draw |
 | 141 | `sub_48ACF0` | 6007 |  | 5_start_game_to_match |  |
 | 142 | `sub_460EC0` | 6007 | WIP | 1_boot_to_menu | TDrawArea::SetMode_460EC0 |
-| 143 | `sub_45EF10` | 6007 |  | 1_boot_to_menu |  |
+| 143 | `sub_45EF10` | 6007 | WIP | 1_boot_to_menu | C_cluster_45DF20::Present_45EF10 |
 | 144 | `sub_433320` | 118 |  | 5_start_game_to_match |  |
 | 146 | `sub_5248F0` | 120 |  | 5_start_game_to_match |  |
 | 147 | `sub_43A720` | 120 |  | 5_start_game_to_match |  |
@@ -459,8 +455,6 @@
 | 622 | `sub_41AA60` | 18 |  | 5_start_game_to_match |  |
 | 625 | `sub_48EAE0` | 12 |  | 5_start_game_to_match |  |
 | 627 | `sub_4A6AC0` | 13 |  | 5_start_game_to_match |  |
-| 628 | `sub_420FA0` | 6 |  | 1_boot_to_menu |  |
-| 629 | `sub_5B5AB0` | 6 |  | 1_boot_to_menu |  |
 | 638 | `sub_4A6B90` | 150 |  | 5_start_game_to_match |  |
 | 640 | `sub_49DB10` | 74 |  | 5_start_game_to_match |  |
 | 641 | `sub_49D770` | 79 |  | 5_start_game_to_match |  |
@@ -660,7 +654,7 @@
 | 878 | `sub_4845F0` | 3 |  | 5_start_game_to_match |  |
 | 879 | `sub_48BD90` | 1 |  | 5_start_game_to_match |  |
 
-## Matched (192)
+## Matched (198)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -691,7 +685,10 @@
 | 56 | `sub_5BB240` | 6127 | MATCH | 1_boot_to_menu | sub_5BB240 |
 | 58 | `sub_4998B0` | 6127 | MATCH | 1_boot_to_menu | C_cluster_498F00::M_4998B0 |
 | 61 | `sub_4B0AE0` | 226699 | MATCH | 1_boot_to_menu | C_pnl_btn::M_4B0AE0 |
+| 62 | `sub_4208F0` | 6007 | MATCH | 1_boot_to_menu | C_vt61DF78::M_4208F0 |
 | 63 | `sub_41F470` | 6007 | MATCH | 1_boot_to_menu | C_cluster_41F470::M_41F470 |
+| 64 | `sub_45E930` | 6007 | MATCH | 1_boot_to_menu | C_cluster_45DF20::Restore_45E930 |
+| 65 | `sub_45FC30` | 402469 | MATCH | 1_boot_to_menu | TDrawArea::Restore_45FC30 |
 | 66 | `sub_5204C0` | 6007 | MATCH | 1_boot_to_menu | C_cluster_520CE0::M_5204C0 |
 | 67 | `sub_520500` | 6007 | MATCH | 1_boot_to_menu | S52SetImmBulk::Set_520500 |
 | 70 | `sub_4A1440` | 570665 | MATCH | 1_boot_to_menu | C_TribePopUpHelp::M_4A1440 |
@@ -704,6 +701,7 @@
 | 83 | `sub_5230F0` | 6234352 | MATCH | 1_boot_to_menu | C_cluster_522E90::M_5230F0 |
 | 87 | `sub_45FD90` | 12104 | MATCH | 1_boot_to_menu | TDrawArea::Lock_45FD90 |
 | 88 | `sub_460620` | 12104 | MATCH | 1_boot_to_menu | TDrawArea::UpdatePitch_460620 |
+| 98 | `sub_51EFF0` | 222313 | MATCH | 1_boot_to_menu | T4B83D0Obj214::Draw_51EFF0 |
 | 99 | `sub_6198E0` | 168196 | MATCH | 5_start_game_to_match | M_6198E0 |
 | 108 | `sub_6199C0` | 6007 | MATCH | 5_start_game_to_match | sub_6199C0 |
 | 109 | `sub_619820` | 66131 | MATCH | 1_boot_to_menu | sub_619820 |
@@ -821,6 +819,8 @@
 | 623 | `sub_41B610` | 18 | MATCH | 5_start_game_to_match | C_vt61DEB8::Check_41B610 |
 | 624 | `sub_4079B0` | 14 | MATCH | 5_start_game_to_match | C_vt61CE24::M_4079B0 |
 | 626 | `sub_407C90` | 12 | MATCH | 5_start_game_to_match | C_vt61CE24::Set_407C90 |
+| 628 | `sub_420FA0` | 6 | MATCH | 1_boot_to_menu | C_vt61DF78::M_420FA0 |
+| 629 | `sub_5B5AB0` | 6 | MATCH | 1_boot_to_menu | C_vt62C1E0::M_5B5AB0 |
 | 633 | `sub_6032E5` | 102 | MATCH | 1_boot_to_menu | sub_6032E5 |
 | 639 | `sub_419810` | 35 | MATCH | 5_start_game_to_match | S419810::Check_419810 |
 | 642 | `sub_474800` | 50 | MATCH | 5_start_game_to_match | C_vt61CE24::Get_474800 |

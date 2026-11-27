@@ -39954,13 +39954,13 @@
   "calls": 0,
   "name": "sub_4927D0",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "(free) 0x4927C0 scale-table init",
+  "class_evidence": "free ui global scale-table initializer called once by the matched 0x4927C0 forwarder: negate the three view-scale floats at 0x621DDC/0x621DE0/0x621DE4 and store the negated copies into the 0x65329C/0x6532A0/0x6532A4/0x6532A8 (X), 0x6532C4/0x6532CC/0x6532D0/0x6532DC/0x6532E8 (Y) and 0x6532D4/0x6532D8/0x6532E0 (Z) screen-scale slots, then mirror the three raw scale dwords into the 0x653290/0x653294/0x653298/0x6532AC (X), 0x6532B0/0x6532BC/0x6532E4 (Y) and 0x6532B4/0x6532B8/0x6532C0/0x6532C8/0x6532EC (Z) integer tables. WIP: original reads the raw integer dwords while the float block runs and interleaves the stores with the fstp sequence; ours groups the three reads after the last fstp (192 vs 190)",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x492890",
