@@ -1,8 +1,8 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 649 matched, 1787 left to match (8 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 650 matched, 1786 left to match (8 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (1787)
+## Left to match (1786)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -176,7 +176,6 @@
 | 378 | `sub_4A3430` | 2 |  | 1_boot_to_menu |  |
 | 381 | `sub_51E7F0` | 85 |  | 1_boot_to_menu |  |
 | 382 | `sub_4A35A0` | 2 |  | 1_boot_to_menu |  |
-| 383 | `sub_4A3BB0` | 2 |  | 1_boot_to_menu |  |
 | 384 | `sub_4A3760` | 2 |  | 1_boot_to_menu |  |
 | 385 | `sub_49FB60` | 2 |  | 1_boot_to_menu |  |
 | 387 | `sub_4461F0` | 2 |  | 1_boot_to_menu |  |
@@ -1794,7 +1793,7 @@
 | 2547 | `sub_48E300` | 70 |  | 5_start_game_to_match |  |
 | 2548 | `sub_531B50` | 3 |  | 5_start_game_to_match |  |
 
-## Matched (649)
+## Matched (650)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -1973,6 +1972,7 @@
 | 374 | `sub_6026F5` | 4776 | MATCH | 1_boot_to_menu | sub_6026F5 |
 | 376 | `sub_4A38F0` | 2 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4A38F0 |
 | 377 | `sub_4A3900` | 2 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4A3900 |
+| 383 | `sub_4A3BB0` | 2 | MATCH | 1_boot_to_menu | C_cluster_4A3BB0::M_4A3BB0 |
 | 391 | `sub_4A38A0` | 2 | MATCH | 1_boot_to_menu | S4ASetBulk::M_4A38A0 |
 | 392 | `sub_4A3910` | 2 | MATCH | 1_boot_to_menu | S4ASetBulk::SetInt_4A3910 |
 | 393 | `sub_4A3710` | 2 | MATCH | 1_boot_to_menu | S4A3710::M_4A3710 |

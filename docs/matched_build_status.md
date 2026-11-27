@@ -983,6 +983,27 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   after this wave: full gate `[1825/1825] MATCH_FUNCs OK, 37 WIP`; phase docs
   now 464/815 matched (233 left, 30 WIP, 119 CRT).
 
+- stage 52 — new `Source/ui/C_cluster_4A3BB0.cpp`/`.hpp` carry a byte-exact
+  `MATCH_FUNC(0x4A3BB0)` (241 bytes) as `C_cluster_4A3BB0::M_4A3BB0(int a1)`.
+  It stores a1 at +0x464 (0 when a1 is -1); releases an existing +0x460 owned
+  object through its slot 0 with 1 and clears it. Then, when +0x210 is present
+  and the +0x464 count is positive, it formats through the 0x61C05C import into
+  a 0x400 local buffer; on success it allocates a 0x38 object (operator new
+  0x5F8F60), constructs it with (+0x20, +0x464, 0, buffer) through the 0x4233E0
+  ctor (which writes vtable 0x61E15C), and stores the result at +0x460. Finally,
+  when +0x78 is set, it dispatches slot 8 (+0x20) with 2. Class feedback: the
+  owner is an anonymous ui cluster with a vtable at +0 (slot_008 is +0x20), data
+  fields +0x20 arg, +0x78 gate, +0x210 source, +0x460 owned 0x38 object and
+  +0x464 count; T460Obj has the +0 slot taking one release argument; the
+  allocated class T4233E0_4233E0 is virtual with size 0x38 and its ctor is
+  0x4233E0. Byte-exactness required declaring a real (non-trivial) constructor
+  so VC6 emits the SEH frame and ctor call (a trivial default ctor omitted the
+  frame), a 0x38-sized allocated class (else `push 1` for an empty class),
+  __stdcall for the 0x61C05C import (avoiding `add esp,0x10`), and a 0x400 local
+  buffer so the frame is `sub esp,0x404`. Evidence after this wave: full gate
+  `[1826/1826] MATCH_FUNCs OK, 37 WIP`; phase docs now 465/815 matched
+  (231 left, 30 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

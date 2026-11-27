@@ -46790,13 +46790,13 @@
   "calls": 2,
   "name": "sub_4A3BB0",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_cluster_4A3BB0",
+  "class_evidence": "anonymous cluster with vtable (slot_008 at +0x20): +0x20 ctor arg, +0x78 slot gate, +0x210 format/source gate, +0x460 owned 0x38 object (vtable 0x61E15C, ctor 0x4233E0), +0x464 count/id; slot_000 release at +0; import 0x61C05C stdcall; operator new 0x5F8F60",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_cluster_4A3BB0.cpp"
  },
  {
   "address": "0x4A3CB0",
