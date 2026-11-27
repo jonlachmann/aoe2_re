@@ -1,6 +1,6 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 320 matched, 228 left to match (11 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 320 matched, 228 left to match (12 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (228)
 
@@ -83,7 +83,7 @@
 | 160 | `sub_4A0920` | 194 |  | 1_boot_to_menu |  |
 | 161 | `sub_4AFAC0` | 60 | WIP | 1_boot_to_menu | C_pnl_btn::draw_4AFAC0 |
 | 164 | `sub_619DE0` | 2938 |  | 1_boot_to_menu |  |
-| 168 | `sub_461760` | 33 |  | 1_boot_to_menu |  |
+| 168 | `sub_461760` | 33 | WIP | 1_boot_to_menu | TDrawArea::Bevel6_461760 |
 | 172 | `sub_5A6030` | 9 | WIP | 1_boot_to_menu | C_tpnl_btn::draw_5A6030 |
 | 173 | `sub_610E8F` | 10 |  | 1_boot_to_menu |  |
 | 174 | `sub_610DA0` | 80 |  | 1_boot_to_menu |  |

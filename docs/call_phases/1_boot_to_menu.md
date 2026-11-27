@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 509 matched, 187 left to match (18 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 509 matched, 187 left to match (20 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (187)
 
@@ -122,7 +122,7 @@
 | 455 | `sub_439030` | 1 |  | 1_boot_to_menu |  |
 | 467 | `sub_41E760` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot41_41E760 |
 | 473 | `sub_5207B0` | 3 |  | 1_boot_to_menu |  |
-| 477 | `sub_462BA0` | 1 |  | 1_boot_to_menu |  |
+| 477 | `sub_462BA0` | 1 | WIP | 1_boot_to_menu | T462BA0::Other_462BA0 |
 | 496 | `sub_4A11F0` | 129 |  | 1_boot_to_menu |  |
 | 505 | `sub_4B9BB0` | 5 |  | 1_boot_to_menu |  |
 | 507 | `sub_422FF0` | 8 |  | 1_boot_to_menu |  |
@@ -179,7 +179,7 @@
 | 755 | `sub_4BC560` | 20 |  | 1_boot_to_menu | pnl_txt::draw_border |
 | 756 | `sub_4AFAC0` | 2 | WIP | 1_boot_to_menu | C_pnl_btn::draw_4AFAC0 |
 | 759 | `sub_619DE0` | 2088 |  | 1_boot_to_menu |  |
-| 763 | `sub_461760` | 2 |  | 1_boot_to_menu |  |
+| 763 | `sub_461760` | 2 | WIP | 1_boot_to_menu | TDrawArea::Bevel6_461760 |
 | 766 | `sub_5A6030` | 18 | WIP | 1_boot_to_menu | C_tpnl_btn::draw_5A6030 |
 | 767 | `sub_610E8F` | 8 |  | 1_boot_to_menu |  |
 | 768 | `sub_610DA0` | 8 |  | 1_boot_to_menu |  |

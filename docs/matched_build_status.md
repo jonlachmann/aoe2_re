@@ -1541,6 +1541,42 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   entries (0x5BB2D0, 0x41FAC0, 0x4A0CD0) all now have semantically complete
   WIP bodies instead of lifted code.
 
+- stage 74 — two more compact phase-1 gfx entries have semantically complete C++
+  bodies instead of lifted code, and the standalone idle path still runs from
+  matched bodies. Run evidence: `EXIT=0`, WinMain body `0x47AE20` returned 0,
+  `BC80=1 5B17D0=1 menu-loop=1`,
+  `window class/create=2 hwnd=1A2B3C4D menu-screen DE50=1 E070=1`,
+  `menu populated: 47C4=10 subobjects 15e8..1610=1; 7B0=2 5C0=2`, and
+  `menu idle ticks from matched 0x5BB2D0: 8 (body hits 8)`.
+  Source additions in this wave:
+  (1) `Source/gfx/draw_area.cpp` gains the WIP `TDrawArea::Bevel6_461760`
+  (0x461760, 204 bytes in the original): the rect corners are normalised
+  (x0/x1 and y0/y1 swapped when reversed), the w/h spans are measured, either
+  span below 1 leaves the area untouched, and twelve matched
+  `HLine_461370`/`VLine_461400` calls draw the c0/c1/c2 far-side and c5/c4/c3
+  near-side bands one pixel in from each other. It lives in the same
+  `TDrawArea` class TU as the line primitives it calls, clarifying that the
+  bevels are draw-area methods rather than the pnl_btn alias stub class.
+  WIP: the original reads each colour straight from its stack dword and keeps
+  the normalised corners in only four registers; this translation keeps the
+  calls and clipping but lays locals out differently (ours 416 vs 204 bytes).
+  (2) `Source/gfx/free_gfx.cpp` gains the WIP in-class helper
+  `T462BA0::Other_462BA0` (0x462BA0, 101 bytes): clear a 260-byte local path
+  through 0x5FF22D, split the embedded +0x108 name through 0x5FF0E6 with
+  dir output at this+264, then sprintf "%s%s%s" of dir/filename/ext back
+  through 0x5FCE14. The matched 0x462B50 caller now dispatches this helper
+  before copying the embedded name. WIP: the original defers one
+  `add esp,0x30` for all three callees; VC6 from these locals cleans in two
+  steps (ours 112 vs 101 bytes).
+  Gate/build evidence: full gate `[1886/1886] MATCH_FUNCs OK, 23 WIP`;
+  TU gates `Source/gfx/draw_area.cpp [18/18] MATCH_FUNCs OK, 3 WIP` and
+  `Source/gfx/free_gfx.cpp [85/85] MATCH_FUNCs OK, 1 WIP`;
+  `build_matched.sh` links 175 matched objects with 650 stubs and no probe
+  failures. The regenerated phase docs now read 509/815 matched (187 left,
+  20 WIP, 119 CRT/library) for phase 1 and phase 2 `28 matched, 3 left
+  (all WIP)`.
+
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1

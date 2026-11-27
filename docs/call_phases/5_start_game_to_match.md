@@ -1,6 +1,6 @@
 # 5_start_game_to_match
 
-2549 functions called (1955 first seen in this phase): 671 matched, 1765 left to match (13 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+2549 functions called (1955 first seen in this phase): 671 matched, 1765 left to match (14 of them WIP), 113 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (1765)
 
@@ -91,7 +91,7 @@
 | 154 | `sub_4BC560` | 53 |  | 1_boot_to_menu | pnl_txt::draw_border |
 | 155 | `sub_4AFAC0` | 153 | WIP | 1_boot_to_menu | C_pnl_btn::draw_4AFAC0 |
 | 158 | `sub_460880` | 181 |  | 4_click_random_map |  |
-| 159 | `sub_461760` | 14 |  | 1_boot_to_menu |  |
+| 159 | `sub_461760` | 14 | WIP | 1_boot_to_menu | TDrawArea::Bevel6_461760 |
 | 164 | `sub_4A0A50` | 33 |  | 4_click_random_map |  |
 | 165 | `sub_619DE0` | 2409 |  | 1_boot_to_menu |  |
 | 166 | `sub_610DC1` | 20 |  | 1_boot_to_menu |  |

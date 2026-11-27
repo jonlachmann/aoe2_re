@@ -1652,7 +1652,7 @@ void Sc45B520::M_45B520(int a1)
 extern char* __cdecl Hook_5FF0A3();
 class T462BA0 {
 public:
-    void Other_462BA0();
+    int Other_462BA0();
 };
 class S462B50 {
 public:
@@ -1675,6 +1675,29 @@ S462B50* S462B50::M_462B50()
     return this;
 }
 #pragma function(strcpy)
+
+// 0x462BA0 — rebuild the +0x108 embedded name into a full path. It clears the
+// 260-byte local path, splits the source through 0x5FF0E6 into drive/dir/
+// filename/ext (dir is this+264), and sprintf's "%s%s%s" of dir/filename/ext
+// back into this+264 through 0x5FCE14. Declared by the matched 0x462B50 caller
+// as T462BA0::Other_462BA0. WIP: the original defers one `add esp, 0x30` for
+// all three pushes at function end; VC6 from these locals pops in two steps
+// (add 0x1c then 0x14), so ours is 112 vs 101 bytes.
+extern void __cdecl sub_5FF22D(int a1, int a2);
+extern void __cdecl sub_5FF0E6(char* full, char* drive, char* dir, char* file, char* ext);
+extern int __cdecl sub_5FCE14(char* dst, char* fmt, ...);
+WIP_FUNC(0x462BA0)
+int T462BA0::Other_462BA0()
+{
+    char Drive[4];
+    char Ext[256];
+    char Filename[256];
+    char FullPath[260];
+    sub_5FF22D((int)(size_t)FullPath, 260);
+    char* dir = (char*)this + 264;
+    sub_5FF0E6(FullPath, Drive, dir, Filename, Ext);
+    return sub_5FCE14(dir, (char*)ADDR(0x652a28), dir, Filename, Ext);
+}
 
 // 0x461CA0 — reset the 0x100-byte buffer head/tail bytes, then forward it to
 // the 0x45F6F0 screen helper through the object stored at this->+0x00.

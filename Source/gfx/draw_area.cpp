@@ -104,6 +104,8 @@ public:
     void VLine_461400(int x, int y, int len, int color);
     void FillRect_461490(int x0, int y0, int x1, int y1, int color);
     void RemapRect_461B50(int left, int top, int right, int bottom);
+    void Bevel6_461760(int x0, int y0, int x1, int y1, int c0, int c1,
+                       int c2, int c3, int c4, int c5);
 };
 
 
@@ -560,6 +562,60 @@ void TDrawArea::VLine_461400(int x, int y, int len, int color)
 // MATCHED: compute p before step in each orientation arm (as VLine_461400
 // does). Then VC6 doesn't tail-merge `+ Bits + x0`, which frees the register
 // phase and the width reload.
+// 0x461760 — six-colour raised bevel. The rectangle corners are normalised
+// first (x0/x1 and y0/y1 swapped when reversed), then the two spans w/h are
+// measured; either span below 1 leaves the area untouched. Twelve HLine/VLine
+// calls draw the paired edge rows: the c0/c1/c2 bands on the far sides and the
+// c5/c4/c3 bands on the near sides, each one pixel in from the previous.
+// WIP: the original reads each colour straight from its stack dword and keeps
+// the normalised corners in only four registers; this translation keeps the
+// same calls and clipping but lays the locals out differently (ours 416 vs
+// 204 bytes). The colour arguments are 32-bit here because the callers push
+// the selected palette bytes as full stack dwords.
+WIP_FUNC(0x461760)
+void TDrawArea::Bevel6_461760(int x0, int y0, int x1, int y1, int c0, int c1,
+                              int c2, int c3, int c4, int c5)
+{
+    int v11 = x0;
+    int v12 = x1;
+    if (x0 > x1)
+    {
+        x0 = x1;
+        x1 = v11;
+        v12 = v11;
+        v11 = x0;
+    }
+    int v14 = y0;
+    int v15 = y1;
+    if (y0 > y1)
+    {
+        v14 = y1;
+        y1 = y0;
+        v15 = y0;
+    }
+    int v16 = v12 - v11 + 1;
+    if (v16 >= 1)
+    {
+        int v17 = v15 - v14 + 1;
+        if (v17 >= 1)
+        {
+            int v18 = v11 + 1;
+            HLine_461370(v11 + 1, v14, v16 - 1, c0);
+            VLine_461400(x1, v14 + 1, v17 - 2, c0);
+            HLine_461370(x0 + 2, v14 + 1, v16 - 3, c1);
+            VLine_461400(x1 - 1, v14 + 2, v17 - 4, c1);
+            HLine_461370(x0 + 3, v14 + 2, v16 - 5, c2);
+            VLine_461400(x1 - 2, v14 + 3, v17 - 6, c2);
+            HLine_461370(x0, y1, v16, c5);
+            VLine_461400(x0, v14, v17 - 1, c5);
+            HLine_461370(v18, y1 - 1, v16 - 2, c4);
+            VLine_461400(v18, v14 + 1, v17 - 3, c4);
+            HLine_461370(x0 + 2, y1 - 2, v16 - 4, c3);
+            VLine_461400(x0 + 2, v14 + 2, v17 - 5, c3);
+        }
+    }
+}
+
 MATCH_FUNC(0x461490)
 void TDrawArea::FillRect_461490(int x0, int y0, int x1, int y1, int color)
 {    if (!Bits)

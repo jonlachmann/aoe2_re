@@ -1,6 +1,6 @@
 # 3_click_single_player
 
-285 functions called (60 first seen in this phase): 115 matched, 137 left to match (10 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+285 functions called (60 first seen in this phase): 115 matched, 137 left to match (11 of them WIP), 33 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (137)
 
@@ -90,7 +90,7 @@
 | 171 | `sub_4A0920` | 50 |  | 1_boot_to_menu |  |
 | 172 | `sub_4AFAC0` | 9 | WIP | 1_boot_to_menu | C_pnl_btn::draw_4AFAC0 |
 | 175 | `sub_619DE0` | 3153 |  | 1_boot_to_menu |  |
-| 179 | `sub_461760` | 6 |  | 1_boot_to_menu |  |
+| 179 | `sub_461760` | 6 | WIP | 1_boot_to_menu | TDrawArea::Bevel6_461760 |
 | 183 | `sub_5A6030` | 19 | WIP | 1_boot_to_menu | C_tpnl_btn::draw_5A6030 |
 | 184 | `sub_610E8F` | 13 |  | 1_boot_to_menu |  |
 | 185 | `sub_610DA0` | 10 |  | 1_boot_to_menu |  |

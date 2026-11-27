@@ -28191,13 +28191,13 @@
   "calls": 2,
   "name": "sub_461760",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "TDrawArea",
+  "class_evidence": "draw-area six-colour raised bevel, a TDrawArea method: normalises x0/x1 and y0/y1, measures the two spans, no-ops when either is below 1, then issues twelve HLine_461370/VLine_461400 calls (c0/c1/c2 far-side bands, c5/c4/c3 near-side bands). Placed in the same class TU as the matched line routines instead of the pnl_btn alias helper. WIP: original reads colours directly from stack dwords and keeps corners in four registers; ours 416 vs 204 bytes",
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/gfx/draw_area.cpp"
  },
  {
   "address": "0x46182C",
@@ -28521,12 +28521,12 @@
   "name": "sub_462BA0",
   "names": [],
   "class": "C_cluster_462B50",
-  "class_evidence": "this-edge component with no rooted object identity",
+  "class_evidence": "path helper on the 0x462B50 object: clears a 260-byte local path via 0x5FF22D, splits the embedded +0x108 name through 0x5FF0E6 (dir output is this+264), then sprintf \"%s%s%s\" of dir/filename/ext back through 0x5FCE14. Declared by the matched 462B50 as the in-class helper T462BA0::Other_462BA0. WIP: original defers one add esp,0x30 for all three callees; VC6 from these locals cleans in two steps (ours 112 vs 101 bytes)",
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x462C10",
