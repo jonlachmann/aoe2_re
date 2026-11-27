@@ -32,6 +32,9 @@ void C_pnl_edit::M_5ED9FA()
 }
 
 extern void (__stdcall *g_61C278)(void* a1, int a2, int a3);
+extern void (__stdcall *cv_61C084)(int a1, int a2);
+extern void (__stdcall *cv_61C074)(int a1, int a2);
+extern void (__stdcall *cv_61C07C)(int a1, int a2);
 
 // 0x4B3690 — slot 8: clear the +0x6c flag then free the +0xf8 block.
 MATCH_FUNC(0x4B3690)
@@ -78,4 +81,41 @@ C_pnl_edit* C_pnl_edit::M_4B2D50()
     field_154 = 1;
     field_f2 = 0xA;
     return this;
+}
+
+
+// 0x4B3860 — four-argument panel-edit dispatcher. When the guard chain
+// (+0xF8, +0x6C, +0x70 set, +0x108 clear) passes, switch on a2:
+//   7     -> return M_4A0CD0(a1, 7, a3, a4);
+//   0x111 -> when a4 equals +0xF8 and (a3 >> 16) is 0x400, replay
+//            g_61C278(+0xF8, 0, 1) and fall through to the default;
+//   0x133 -> when +0x10C is set and a4 equals +0xF8, replay the
+//            g_61C084(+0x128, a3), g_61C074(a3, 2), g_61C07C(a3, +0x120)
+//            triple and return +0x10C;
+// default -> M_4A0CD0(a1, a2, a3, a4).
+WIP_FUNC(0x4B3860)
+int C_pnl_edit::M_4B3860(int a1, int a2, unsigned int a3, int a4)
+{
+    if (field_f8 != 0 && field_6c != 0 && field_70 != 0 && field_108 == 0)
+    {
+        switch (a2)
+        {
+        case 7:
+            return Hook_4A0CD0(a1, 7, a3, a4);
+        case 0x111:
+            if (a4 == (int)field_f8 && (a3 >> 0x10) == 0x400u)
+                g_61C278(field_f8, 0, 1);
+            break;
+        case 0x133:
+            if (field_10C != 0 && a4 == (int)field_f8)
+            {
+                cv_61C084(a3, field_114[5]);
+                cv_61C074(a3, 2);
+                cv_61C07C(a3, field_114[3]);
+                return field_10C;
+            }
+            break;
+        }
+    }
+    return Hook_4A0CD0(a1, a2, a3, a4);
 }

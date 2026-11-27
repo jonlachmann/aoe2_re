@@ -19,7 +19,8 @@ public:
 
     char pad_04[0x6c - 4];
     int field_6c;                 // +0x6C
-    char pad_70[0x80 - 0x70];
+    int field_70;                 // +0x70
+    char pad_74[0x80 - 0x74];
     int field_80;                 // +0x80
     char pad_84[0xf2 - 0x84];
     unsigned char field_f2;       // +0xF2
@@ -45,11 +46,13 @@ public:
     int field_170;                // +0x170
 
     void Hook_4A0270();           // unresolved shared base init at 0x4A0270
+    int Hook_4A0CD0(int a1, int a2, int a3, int a4);
     void Hook_4A07A0(int a1);     // unresolved shared slot body at 0x4A07A0
     void Hook_4A08C0(int a1);     // unresolved shared slot body at 0x4A08C0
     static void M_4378C0();
     void M_5ED9F4();
     void M_5ED9FA();
     void M_4B32F0(int a1);
+    int M_4B3860(int a1, int a2, unsigned int a3, int a4);
     C_pnl_edit* M_4B2D50();
 };

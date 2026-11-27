@@ -821,6 +821,25 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   after this wave: full gate `[1819/1819] MATCH_FUNCs OK, 35 WIP`; phase docs
   now 458/815 matched (238 left, 28 WIP, 119 CRT).
 
+- stage 44 — `Source/ui/C_pnl_edit.cpp` gains a semantically complete
+  `WIP_FUNC(0x4B3860)` (235 bytes original) as
+  `C_pnl_edit::M_4B3860(int a1, int a2, unsigned int a3, int a4)`. When the
+  guard chain passes (+0xF8/+0x6C/+0x70 set, +0x108 clear) it switches on a2:
+  case 7 returns Hook_4A0CD0(a1,7,a3,a4); case 0x111, when a4 equals +0xF8 and
+  (a3 >> 16) is 0x400, replays g_61C278(+0xF8,0,1) and falls through; case
+  0x133, when +0x10C is set and a4 equals +0xF8, replays
+  g_61C084(a3,+0x128 buffer), g_61C074(a3,2), g_61C07C(a3,+0x120) and returns
+  +0x10C; the default returns Hook_4A0CD0(a1,a2,a3,a4). Class feedback: C_pnl_edit
+  gains +0x70 (confirmed via the guard chain); +0x10C state, +0x128 and +0x120
+  callback arguments map to field_114[5]/field_114[3]; M_4B3860 belongs to
+  C_pnl_edit and Hook_4A0CD0 is its shared 0x4A0CD0 callee. WIP because a single
+  3-byte peephole remains: VC6 folds the direct `(a3 >> 16) == 0x400` into
+  `and 0xffff0000; cmp 0x4000000` instead of the original `shr edx,0x10; cmp
+  edx,0x400`; a subtraction form yields `shr`+`sub`, so the equality
+  comparison is not controllable from source. Evidence after this wave: full
+  gate `[1819/1819] MATCH_FUNCs OK, 36 WIP`; phase docs now 458/815 matched
+  (238 left, 29 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
