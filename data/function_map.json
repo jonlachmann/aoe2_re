@@ -54537,12 +54537,12 @@
   "name": "sub_4B8B20",
   "names": [],
   "class": "C_cluster_4B8B20",
-  "class_evidence": "this-edge component with no rooted object identity",
+  "class_evidence": "this-edge position setter with vtable at +0 (slot_008 at +0x20): +0x1B8 mode, +0xFC divisor, +0x108 input, +0x124 extent, +0x128/+0x12C/+0x130 secondary position bounds, +0x138/+0x13C/+0x140 primary position bounds; calls 0x4B8A80",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_cluster_4B8B20.cpp"
  },
  {
   "address": "0x4B8C10",

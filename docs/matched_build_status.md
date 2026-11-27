@@ -898,6 +898,23 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   Evidence after this wave: full gate `[1822/1822] MATCH_FUNCs OK, 36 WIP`;
   phase docs now 461/815 matched (235 left, 29 WIP, 119 CRT).
 
+- stage 48 — `Source/ui/C_cluster_4B8B20.cpp` gains a byte-exact
+  `MATCH_FUNC(0x4B8B20)` (239 bytes) as `C_cluster_4B8B20::M_4B8B20(int a1)`.
+  It stores the input at +0x108. When +0x1B8 is 1 it scales the primary
+  position +0x138 by a1 while +0xFC > 0: (element extent +0x124 / 2 plus the
+  +0x140/+0x13C span, multiplied by a1, divided by +0xFC, added to +0x13C),
+  then clamps it into [+0x13C, +0x140]. Otherwise, while +0xFC > 0, it uses
+  +0x130 directly when a1 is +0xFC-1, else scales +0x128 with the
+  +0x130/+0x12C span, clamping into [+0x12C, +0x130]. It then runs 0x4B8A80
+  and dispatches slot 8 (+0x20) with 1. Class feedback: the 0x4B8B20 object
+  does carry a vtable at +0 (contrary to the generated skeleton's "no vtable"
+  note) with at least 9 slots, so the class was declared virtual; proven
+  fields +0xFC divisor, +0x108 input, +0x124 extent, +0x128/+0x12C/+0x130
+  and +0x138/+0x13C/+0x140 bounds, +0x1B8 mode; the existing matched 0x4B8C10
+  body keeps byte-exactness after the vtable introduction. Evidence after this
+  wave: full gate `[1823/1823] MATCH_FUNCs OK, 36 WIP`; phase docs now 462/815
+  matched (234 left, 29 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
