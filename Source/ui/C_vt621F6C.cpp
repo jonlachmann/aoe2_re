@@ -1,4 +1,5 @@
 #include "C_vt621F6C.hpp"
+#include "matched_mem.h"
 
 // 0x4A0270 — default constructor of the 0x621F6C base object. Zero every
 // scalar in the binary store order, set +0x38 = 2, +0x6C/+0x7C/+0x80/+0x88 = 1,
@@ -228,7 +229,42 @@ C_vt621F6C_4A00E0::C_vt621F6C_4A00E0(char* a1)
 class C_vt622060 {
 public:
     void M_4A2AC0();
+    int M_4A3430(char* Str, int FileHandle);
+    int M_4A35A0(char* Str, int FileHandle);
 };
+
+// The 0x51E7F0 0x1C-byte entry object reached by the allocation path. Only the
+// layout and the ctor/dtor symbols are needed here; the original ctor and the
+// matched destructor 0x51EAE0 live in their own TUs.
+class T4B83D0Obj214 {
+public:
+    int field_00;
+    int field_04;
+    void* field_08;
+    void* field_0c;
+    char pad_10[0x18 - 0x10];
+    int field_18;
+    void M_51EAE0();
+};
+
+class T51E7F0Entry {
+public:
+    int field_0;
+    int field_4;
+    void* field_8;
+    void* field_c;
+    void* field_10;
+    unsigned char field_14;
+    char pad_15[0x18 - 0x15];
+    int field_18;
+    T51E7F0Entry(char* a1, int a2);
+    ~T51E7F0Entry();
+};
+
+extern int __cdecl sub_5FF460(char* a1, char* a2);
+extern char* __cdecl sub_5FEE50(char* a1, int a2);
+extern int __cdecl sub_5FCE14(char* dst, char* fmt, ...);
+extern void __cdecl sub_5F90B0(int a1);
 
 // 0x4A2370 — one-argument constructor of the 0x622060-vtable object. Forward
 // a1 to the base constructor at 0x4A00E0 (which installs the 0x621F6C base
@@ -295,4 +331,81 @@ void C_vt622060::M_4A2AC0()
     *(int*)((char*)this + 0x494) = 0;
     *(int*)((char*)this + 0x7e0) = 0;
     *(int*)((char*)this + 0x48c) = 0;
+}
+
+// 0x4A3430 — load the object's +0x208 entry. Release any old entry (0x51EAE0
+// then 0x5F90B0), seed the 0x104-byte name buffer, and, when a1 names a
+// non-empty entry containing "none", build "%s" or "%s.shp" and allocate a
+// 0x1C entry with (Buffer, FileHandle). Otherwise, when FileHandle != -1,
+// allocate the entry from the empty default name and FileHandle. Store the new
+// entry at +0x208; if it has not been marked valid at +0x14, delete it and
+// clear the field. Return whether the field is still non-null.
+MATCH_FUNC(0x4A3430)
+int C_vt622060::M_4A3430(char* Str, int FileHandle)
+{
+    char Buffer[260];
+    T51E7F0Entry* old = *(T51E7F0Entry**)((char*)this + 0x208);
+    if (old != 0)
+    {
+        old->~T51E7F0Entry();
+        sub_5F90B0((int)old);
+        *(void**)((char*)this + 0x208) = 0;
+    }
+    if (Str != 0 && *Str != 0 && sub_5FF460(Str, (char*)ADDR(0x653520)) != 0)
+    {
+        if (sub_5FEE50(Str, '.') == 0)
+            sub_5FCE14(Buffer, "%s.shp", Str);
+        else
+            sub_5FCE14(Buffer, "%s", Str);
+        *(T51E7F0Entry**)((char*)this + 0x208) =
+            new T51E7F0Entry(Buffer, FileHandle);
+    }
+    else if (FileHandle != -1)
+    {
+        *(T51E7F0Entry**)((char*)this + 0x208) =
+            new T51E7F0Entry((char*)ADDR(0x662be0), FileHandle);
+    }
+    if (*(T51E7F0Entry**)((char*)this + 0x208) != 0 &&
+        (*(T51E7F0Entry**)((char*)this + 0x208))->field_14 == 0)
+    {
+        delete *(T51E7F0Entry**)((char*)this + 0x208);
+        *(void**)((char*)this + 0x208) = 0;
+    }
+    return *(int*)((char*)this + 0x208) != 0;
+}
+
+// 0x4A35A0 — sibling of 0x4A3430 for the +0x20C entry. Same release/load/build/
+// allocate/validate sequence; the only difference is the entry field offset.
+MATCH_FUNC(0x4A35A0)
+int C_vt622060::M_4A35A0(char* Str, int FileHandle)
+{
+    char Buffer[260];
+    T51E7F0Entry* old = *(T51E7F0Entry**)((char*)this + 0x20c);
+    if (old != 0)
+    {
+        old->~T51E7F0Entry();
+        sub_5F90B0((int)old);
+        *(void**)((char*)this + 0x20c) = 0;
+    }
+    if (Str != 0 && *Str != 0 && sub_5FF460(Str, (char*)ADDR(0x653520)) != 0)
+    {
+        if (sub_5FEE50(Str, '.') == 0)
+            sub_5FCE14(Buffer, "%s.shp", Str);
+        else
+            sub_5FCE14(Buffer, "%s", Str);
+        *(T51E7F0Entry**)((char*)this + 0x20c) =
+            new T51E7F0Entry(Buffer, FileHandle);
+    }
+    else if (FileHandle != -1)
+    {
+        *(T51E7F0Entry**)((char*)this + 0x20c) =
+            new T51E7F0Entry((char*)ADDR(0x662be0), FileHandle);
+    }
+    if (*(T51E7F0Entry**)((char*)this + 0x20c) != 0 &&
+        (*(T51E7F0Entry**)((char*)this + 0x20c))->field_14 == 0)
+    {
+        delete *(T51E7F0Entry**)((char*)this + 0x20c);
+        *(void**)((char*)this + 0x20c) = 0;
+    }
+    return *(int*)((char*)this + 0x20c) != 0;
 }

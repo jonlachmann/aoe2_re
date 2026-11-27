@@ -46566,13 +46566,13 @@
   "calls": 7,
   "name": "sub_4A3430",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_vt622060",
+  "class_evidence": "C_vt622060 method at +0x208: release old T51E7F0Entry via dtor+operator-delete, then on a non-empty string containing \"none\" build \"%s\"/\"%s.shp\" into a 260-byte buffer and new T51E7F0Entry(buffer,FileHandle); else when FileHandle != -1 new T51E7F0Entry(empty,FileHandle); validate +0x14 and delete if unset; return field != 0",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_vt621F6C.cpp"
  },
  {
   "address": "0x4A35A0",
@@ -46580,13 +46580,13 @@
   "calls": 7,
   "name": "sub_4A35A0",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_vt622060",
+  "class_evidence": "C_vt622060 method at +0x20C: sibling of 0x4A3430 with identical release/load/new/validate sequence; entry object T51E7F0Entry (0x1C bytes) +0x14 valid flag; 260-byte buffer stack frame",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_vt621F6C.cpp"
  },
  {
   "address": "0x4A3710",

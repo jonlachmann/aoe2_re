@@ -1152,6 +1152,32 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1831/1831] MATCH_FUNCs OK, 40 WIP`; phase docs now 470/815 matched
   (226 left, 33 WIP, 119 CRT).
 
+- stage 59 — `Source/ui/C_vt621F6C.cpp` gains two byte-exact
+  `C_vt622060` methods: `MATCH_FUNC(0x4A3430)` and `MATCH_FUNC(0x4A35A0)`,
+  each 358 bytes, as `int M_4A3430(char* Str, int FileHandle)` and
+  `int M_4A35A0(char* Str, int FileHandle)`. They are near-duplicate entry
+  loaders: 0x4A3430 drives +0x208 and 0x4A35A0 drives +0x20C. Each releases the
+  old 0x1C-byte entry through its destructor then operator delete, clears the
+  field, then on a non-empty string containing "none" builds `"%s.shp"` when
+  strchr(Str,'.') misses and `"%s"` when it hits, then `new T51E7F0Entry(Buffer,
+  FileHandle)` with a 260-byte stack buffer. When the string guard misses but
+  FileHandle != -1, it allocates the entry from the empty default name at
+  0x662BE0 and FileHandle. The new entry is stored at the class field; if it is
+  non-null and its +0x14 valid byte is zero, it is deleted and the field cleared;
+  the result is the field != 0 predicate. Class feedback: C_vt622060 owns the
+  entry-pointer fields +0x208/+0x20C plus the earlier +0xF8..+0x7E0 extension
+  layout; the 0x1C entry object is T51E7F0Entry with fields +0x00/+0x04/
+  +0x08/+0x0C/+0x10 (entry array)/+0x14 valid byte/+0x18 count, constructed by
+  0x51E7F0(char*,int) and destroyed by 0x51EAE0; "none" (0x653520) is the
+  accepted name marker, and "%s"/"%s.shp" (0x64D2B8/0x653678) are the path
+  formats. Byte-exactness required the inverted strchr branch layout (source
+  `if (strchr == 0) "%s.shp" else "%s"` makes VC6 jump the hit path to the
+  second block and fall through the miss block) and the duplicated delete null
+  guard produced by `delete *(T51E7F0Entry**)(this+field)` while the condition
+  re-reads the field (our local-pointer `delete entry` elided the inner
+  `test/je`). Evidence after this wave: full gate `[1833/1833] MATCH_FUNCs OK,
+  40 WIP`; phase docs now 472/815 matched (224 left, 33 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
