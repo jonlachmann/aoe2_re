@@ -86,7 +86,8 @@ public:
     int field_10;                 // +0x10
     int field_14;                 // +0x14
     int field_18;                 // +0x18
-    char pad_1c[0xfc - 0x1c];     // +0x1C..+0xFC
+    char pad_1c[0xf8 - 0x1c];     // +0x1C..+0xF8
+    int field_f8;                 // +0xF8 node chain head
     short field_fc;               // +0xFC clamp bound
     short field_fe;               // +0xFE
     short field_100;              // +0x100
@@ -139,7 +140,7 @@ public:
     void M_4BAE20(int* a1, short a2);
     void Hook_4A1160();           // unresolved callee at 0x4A1160
     __int16 Hook_4B60B0(int a1, short a2, int a3); // unresolved callee at 0x4B60B0
-    void Hook_4BA5C0(int a1, int a2); // unresolved callee at 0x4BA5C0
+    int Hook_4BA5C0(int a1, int a2); // unresolved callee at 0x4BA5C0
 
     void M_4B5690();
     void M_4BBF20(int a1, short a2, int a3);
@@ -165,4 +166,6 @@ public:
     int M_4A1C70();
     __int16 M_4B5DD0(int a2, int a3);
     __int16 M_4B5E30(int a2, int a3);
+    int M_4D6A50(int a1);
+    int M_4BCF50(int a2);
 };

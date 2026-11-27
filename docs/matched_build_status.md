@@ -1443,6 +1443,33 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   owner bodies plus WIP init-chain bodies, not by lifted code. Full gate after
   the waves still reads `[1842/1842] MATCH_FUNCs OK, 44 WIP`.
 
+- stage 72 — `Source/ui/C_pnl_lst.cpp` gains two byte-exact bodies and one
+  semantically complete WIP. `MATCH_FUNC(0x4A1D50)` (46 bytes) is the free
+  `int __stdcall sub_4A1D50(int a1, int a2, int* a3)` rectangle containment
+  test: a1 must be within rect[0]/rect[2] and a2 within rect[1]/rect[3], each
+  comparison short-circuiting to 0, tail `ret 0xC`. `MATCH_FUNC(0x4D6A50)`
+  (49 bytes) is `int C_pnl_lst::M_4D6A50(int a1)`: it runs 0x4BA5C0 with the
+  string and a zero index, then clears +0x1B0, +0x1AC and +0x1A8 in that
+  descending order and returns that call's int result (`ret 4`).
+  `WIP_FUNC(0x4BCF50)` (49 bytes) is `int C_pnl_lst::M_4BCF50(int a2)`, the
+  +0xF8 node-key lookup: walks the node chain comparing the dword key at +8,
+  advances through the +0x24 next link, counts misses, returns -1 when absent,
+  and on a hit stores the index into the +0x104 word via 0x4BCEB0 and returns
+  the index. WIP reason: the original folds the loop-end null test into a `jne`
+  back to the key compare and falls through to the shared -1 epilogue; VC6 from
+  the semantically equivalent guard shape hoists a2 into edi (extra
+  `push edi`/`pop edi`) and duplicates the null test (`ours 64` vs `49`).
+  Class feedback: C_pnl_lst now carries the +0xF8 node chain head (split out of
+  the +0x1C..+0xFC pad) and Hook_4BA5C0 now returns `int` because 0x4D6A50
+  returns its result; this confirms the +0xF8 node record layout (key dword at
+  +8, next link at +0x24) and the +0x104 row-word store already used by
+  M_4BCEB0. Evidence after this wave: full gate
+  `[1844/1844] MATCH_FUNCs OK, 45 WIP`; TU gate `Source/ui/C_pnl_lst.cpp`
+  `[18/18] MATCH_FUNCs OK, 3 WIP`. The generated phase head stays 475/815
+  (221 left, 36 WIP, 119 CRT) because 0x4A1D50/0x4D6A50 are not among the
+  815 phase-1 tsv entries; the 4_click_random_map page now shows 0x4BCF50 as
+  a WIP (309 matched, 239 left, 13 WIP).
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1

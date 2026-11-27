@@ -45342,12 +45342,12 @@
   "name": "sub_4A1D50",
   "names": [],
   "class": "C_pnl_lst",
-  "class_evidence": "same object, connected by this-edge call sites",
+  "class_evidence": "C_pnl_lst free/global helper (called from C_pnl_lst this-edge sites): inclusive rectangle containment __stdcall(a1,a2,rect*) comparing a1 against rect[0]/rect[2] and a2 against rect[1]/rect[3]; ret 0xC",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4A1D80",
@@ -55962,12 +55962,12 @@
   "name": "sub_4BCF50",
   "names": [],
   "class": "C_pnl_lst",
-  "class_evidence": "same object, connected by this-edge call sites",
+  "class_evidence": "C_pnl_lst node-key lookup: +0xF8 head, key dword at node+8, next link at node+0x24; running index returned, -1 when absent, hit stores index into +0x104 via M_4BCEB0; ret 4. WIP because VC6 hoists a2 into edi and duplicates the null test for the semantically equivalent loop",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4BCF90",
@@ -60915,12 +60915,12 @@
   "name": "sub_4D6A50",
   "names": [],
   "class": "C_pnl_lst",
-  "class_evidence": "same object, connected by this-edge call sites",
+  "class_evidence": "C_pnl_lst text setter: result=Hook_4BA5C0(a1,0), then clears +0x1B0 interval, +0x1AC stamp and +0x1A8 gate in descending order; Hook_4BA5C0 returns int; ret 4",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4D6A90",

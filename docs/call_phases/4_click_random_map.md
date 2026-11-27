@@ -1,6 +1,6 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 309 matched, 239 left to match (12 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 309 matched, 239 left to match (13 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (239)
 
@@ -207,7 +207,7 @@
 | 519 | `sub_4FC680` | 2 |  | 4_click_random_map |  |
 | 520 | `sub_4FD4A0` | 1 |  | 4_click_random_map |  |
 | 523 | `sub_4B28B0` | 3 |  | 4_click_random_map |  |
-| 525 | `sub_4BCF50` | 3 |  | 4_click_random_map |  |
+| 525 | `sub_4BCF50` | 3 | WIP | 4_click_random_map | C_pnl_lst::M_4BCF50 |
 | 530 | `sub_4FE3B0` | 1 |  | 4_click_random_map |  |
 | 531 | `sub_4B2A90` | 2 |  | 4_click_random_map |  |
 | 534 | `sub_4FF020` | 1 |  | 4_click_random_map |  |

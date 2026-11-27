@@ -517,3 +517,50 @@ __int16 C_pnl_lst::M_4B5E30(int a2, int a3)
         result = Hook_4B60B0(1, result, 1);
     return result;
 }
+
+// 0x4A1D50 — inclusive rectangle containment test. The third stack argument is
+// the rect/box pointer holding left/right at +0/+8 and top/bottom at +4/+0xC.
+// Returns 1 when x is between the first pair and y between the second; each
+// comparison short-circuits to 0 on failure. Three stack arguments keep the
+// tail `ret 0xC`.
+MATCH_FUNC(0x4A1D50)
+int __stdcall sub_4A1D50(int a1, int a2, int* a3)
+{
+    return a1 >= a3[0] && a1 <= a3[2] && a2 >= a3[1] && a2 <= a3[3];
+}
+
+// 0x4D6A50 — text setter: run 0x4BA5C0 with the incoming string and a zero
+// index, then clear the +0x1B0 interval, +0x1AC stamp and +0x1A8 gate in that
+// descending order and return 0x4BA5C0's result. One stack argument (`ret 4`).
+MATCH_FUNC(0x4D6A50)
+int C_pnl_lst::M_4D6A50(int a1)
+{
+    int result = Hook_4BA5C0(a1, 0);
+    field_1b0 = 0;
+    field_1ac = 0;
+    field_1a8 = 0;
+    return result;
+}
+
+// 0x4BCF50 — find the +0xF8 node whose dword key at +8 equals a2. Each miss
+// advances through the +0x24 next link and increments the running index; a null
+// link returns -1. A hit stores the index into the +0x104 word via 0x4BCEB0 and
+// returns the index. One stack argument (`ret 4`). WIP: the original folds the
+// loop-end null test into `jne` back to the key compare and falls through to the
+// shared -1 epilogue; VC6 from this guard shape hoists a2 into edi (extra
+// `push edi`/`pop edi`) and duplicates the null test, so bytes differ.
+WIP_FUNC(0x4BCF50)
+int C_pnl_lst::M_4BCF50(int a2)
+{
+    int v2 = field_f8;
+    int v3 = 0;
+    while (v2 != 0 && *(int*)(v2 + 8) != a2)
+    {
+        v2 = *(int*)(v2 + 0x24);
+        ++v3;
+    }
+    if (v2 == 0)
+        return -1;
+    M_4BCEB0((short)v3);
+    return v3;
+}
