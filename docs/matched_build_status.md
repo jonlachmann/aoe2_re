@@ -1470,6 +1470,77 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   815 phase-1 tsv entries; the 4_click_random_map page now shows 0x4BCF50 as
   a WIP (309 matched, 239 left, 13 WIP).
 
+- stage 73 — the standalone matched-only binary now demonstrably idles from
+  matched bodies: the boot harness calls `Native_MenuIdleTicks(g_6645c4, 8)`
+  after the menu population report, which runs `C_vt62C1E0::M_5BB2D0` eight
+  times through the vtable slot +0xD0 replica, and the tick body itself calls
+  the byte-exact `C_vt61DF78::M_420450`. Run evidence: `EXIT=0`, WinMain body
+  `0x47AE20` returned 0, `BC80=1 5B17D0=1 menu-loop=1`,
+  `window class/create=2 hwnd=1A2B3C4D menu-screen DE50=1 E070=1`,
+  `menu populated: 47C4=10 subobjects 15e8..1610=1; 7B0=2 5C0=2`,
+  and `menu idle ticks from matched 0x5BB2D0: 8 (body hits 8)`.
+  Source additions in this wave:
+  (1) `Source/sim/C_vt62C1E0.cpp/.hpp` gains the WIP idle tick
+  `int C_vt62C1E0::M_5BB2D0()` (vtable slot +0xD0), reconstructed from the
+  0x568-byte original: probe 0x75FF3C and re-add through 0x5B4B10, +0x1C58
+  lobby gate with the 0x7530/2032/0x66EA48/400x190 refresh, the matched
+  0x420450 tick, +0x1C54 reentry latch, +0x1D8 mode 3 (0x75FF50, 2304-byte
+  string) and modes 4/5/6 (0x6645B4,+0x41C,+0x88/+0x8C scene) paths, and the
+  mode-1 SendMessageA(0x46A,0x64) poll at +0x1470/+0x146C/+0x1460; it also
+  declares backing fields +0x88/+0x8C/+0x1B0/+0x41C/+0x1470/+0x1C5C. WIP: the
+  original 4-byte SEH frame and 0x968-byte stack frame cannot be reproduced
+  from VC6 source (ours 1312 vs 1384).
+  (2) `Source/app/C_vt61DF78.cpp` fixes a native-only pointer-width bug found
+  by this run: the menu population bodies stored the allocated 0x7B0/0x5C0
+  screens with `*(int*)(this+0x80/+0x90)`, truncating host pointers to their
+  low 32 bits; `M_420450` then read +0x80/+0x90 as pointers and faulted at
+  0x58C92A0 (the low half of 0x1058C92A0). The stores are now
+  `*(void**)(this+0x80/0x90) = screen`, which keeps VC6 codegen and preserves
+  the full host pointer in the native build. Boot went from `EXIT=139` to
+  `EXIT=0` after this fix.
+  (3) `Source/app/C_vt61DF78.cpp` gains the WIP window-procedure dispatcher
+  `sub_41FAC0` (phase-2 left item). The original receives the owning
+  C_vt62C1E0 object as its first stack argument, so it stays a free
+  `__stdcall` handler with hwnd/msg/wParam/lParam ints. The reconstruction
+  covers the full WM_ switch: pane +0x80/+0x84 broadcast, 0x66EA48 accessor
+  slot +0x48 first refusal, key/char -> +0xDC, mouse -> +0xD4/+0xD8, activate
+  -> +0xF0 with +0xB8/+0xBC helpers and the 0x6645A8 latch, focus -> +0xEC,
+  close -> +0x108, destroy -> +0x10C, size -> +0xFC, set/window-position ->
+  +0xE0..+0x104, and the 0x664508/0x6645C0/0x6645C4/0x66454C/0x664550/
+  0x6645AC globals; unhandled routes fall to DefWindowProcA. WIP: the original
+  0x748-byte SEH/stack layout is not reproduced (ours 2336; map size 439 vs
+  corpus 0x748 needs verification).
+  (4) `Source/ui/C_TRIBE_Screen_Options.cpp/.hpp` gains the WIP shared screen
+  input dispatcher `int C_TRIBE_Screen_Options::M_4A0CD0(...)` at vtable slot
+  +0x48 (class feedback: the same code is the skeleton slot_018 of
+  C_vt6234C8, C_pnl_scbr, C_pnl_pic, C_TRIBE_Screen_Options and sibling
+  screens, so it belongs to the shared 87-slot screen layout; +0x6C gates it,
+  +0x20/+4 is the focus owner, +0x5C is the node-chain head with node+4 links
+  and each node object's slot +0x48). Char/key messages route to +0x58/+0x5C
+  with GetKeyState(18/17/16); mouse 0x200..0x20D are split by 0x4A1C10 and
+  route +0x70/+0x78/+0x7C/+0x80/+0x88; other messages walk the node chain and
+  then fall back to owner +0x60/+0x64/+0x68/+0x6C. WIP: compiler shape
+  differs (ours 1072 vs 1104).
+  (5) `MATCH_FUNC(0x4A1C10)` (81 bytes, byte-exact) is the shared screen input
+  helper: split a packed pair into the two caller outputs, correcting each
+  word above 0xEA60 by -0x10000, mask a1 bit 8 into a4 and bit 4 into a5 and
+  return bit 4.
+  (6) `Source/host/matched_imports.cpp` installs the LoadCursorA slot
+  `g_61c308` (and `g_61c1b4`/GetCurrentDirectoryA) as native trampolines
+  before WinMain, closing the earlier `0x41B760` fault where the slot still
+  held image bytes.
+  Gate/build evidence after this wave: full gate
+  `[1884/1884] MATCH_FUNCs OK, 19 WIP`; TU gates
+  `Source/sim/C_vt62C1E0.cpp [60/60] MATCH_FUNCs OK, 2 WIP`,
+  `Source/app/C_vt61DF78.cpp [43/43] MATCH_FUNCs OK, 3 WIP`,
+  `Source/ui/C_TRIBE_Screen_Options.cpp [26/26] MATCH_FUNCs OK, 1 WIP`;
+  `build_matched.sh` compiles 171 TUs, seeds 267 globals, links 175 matched
+  objects with 650 stubs and no probe failures. The regenerated phase docs
+  now read 509/815 matched (187 left, 18 WIP, 119 CRT/library) for phase 1
+  and phase 2 `28 matched, 3 left (3 WIP)` — the three remaining phase-2
+  entries (0x5BB2D0, 0x41FAC0, 0x4A0CD0) all now have semantically complete
+  WIP bodies instead of lifted code.
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1

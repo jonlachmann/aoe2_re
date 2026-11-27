@@ -106,6 +106,49 @@ struct R4A0630Target {
     int field_30;                 // +0x30
 };
 
+// Shared screen input-dispatch target: the 0x4A0CD0 node chain and mouse/key
+// fallbacks dispatch this same 87-slot object layout. Only the slots reached by
+// the dispatcher are declared with real signatures; the placeholders keep the
+// +0x48..+0x88 offsets.
+class TInputDisp {
+public:
+    virtual void Vt_00();
+    virtual void Vt_01();
+    virtual void Vt_02();
+    virtual void Vt_03();
+    virtual void Vt_04();
+    virtual void Vt_05();
+    virtual void Vt_06();
+    virtual void Vt_07();
+    virtual void Vt_08();
+    virtual void Vt_09();
+    virtual void Vt_10();
+    virtual void Vt_11();
+    virtual void Vt_12();
+    virtual void Vt_13();
+    virtual void Vt_14();
+    virtual void Vt_15();
+    virtual void Vt_16();
+    virtual void Vt_17();
+    virtual int Vt_18(int a2, unsigned a3, unsigned a4, int a5);   // +0x48
+    virtual void Vt_19();
+    virtual void Vt_20();
+    virtual void Vt_21();
+    virtual int Vt_22(unsigned a4, int a5, int ctrl, int alt, int shift); // +0x58
+    virtual int Vt_23(unsigned a4, int a5);                        // +0x5C
+    virtual int Vt_24(unsigned a4, int a5);                        // +0x60
+    virtual int Vt_25(unsigned a4, int a5);                        // +0x64
+    virtual int Vt_26(unsigned a4, int a5);                        // +0x68
+    virtual int Vt_27(int x, int y);                               // +0x6C
+    virtual int Vt_28(int button, int x, int y, int ctrl, int shift); // +0x70
+    virtual int Vt_29(int x, int y, int ctrl, int shift);          // +0x74
+    virtual int Vt_30(int button, int x, int y, int ctrl, int shift); // +0x78
+    virtual int Vt_31(int button, int x, int y, int ctrl, int shift); // +0x7C
+    virtual int Vt_32(unsigned msg, unsigned w, int l);            // +0x80
+    virtual void Vt_33();
+    virtual int Vt_34(unsigned msg, unsigned w, int l);            // +0x88
+};
+
 class C_TRIBE_Screen_Options {
 public:
     virtual void slot_00();
@@ -126,7 +169,7 @@ public:
     virtual void slot_15();
     virtual void slot_16();
     virtual void slot_17();
-    virtual void slot_18();
+    virtual int M_4A0CD0(int a2, unsigned a3, unsigned a4, int a5);  // slot +0x048 input dispatcher
     virtual void slot_19();
     virtual void slot_20(int a1, int a2);
     virtual void slot_21();

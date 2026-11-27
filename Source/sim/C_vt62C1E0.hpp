@@ -22,14 +22,22 @@ public:
     int field_6c;                 // +0x6C
     char pad_70[0x74 - 0x70];
     int field_74;                 // +0x74
-    char pad_78[0x1d8 - 0x78];    // +0x78..+0x1D8
+    char pad_78[0x88 - 0x78];     // +0x78..+0x88
+    short field_88;               // +0x88 active screen count
+    char pad_8a[0x8c - 0x8a];     // +0x8A..+0x8C
+    int field_8c;                 // +0x8C screen object pointer
+    char pad_90[0x1b0 - 0x90];    // +0x90..+0x1B0
+    void* field_1b0;              // +0x1B0 screen/menu subobject
+    char pad_1b4[0x1d8 - 0x1b4];  // +0x1B4..+0x1D8
     int field_1d8;                // +0x1D8
     char pad_1dc[0x1f4 - 0x1dc];  // +0x1DC..+0x1F4
     int field_1f4;                // +0x1F4
     int field_1f8;                // +0x1F8
     int field_1fc;                // +0x1FC
     int field_200;                // +0x200
-    char pad_204[0x924 - 0x204];
+    char pad_204[0x41c - 0x204];
+    int field_41c;                 // +0x41C scene object pointer
+    char pad_420[0x924 - 0x420];
     float field_924;              // +0x924
     unsigned char field_928;      // +0x928
     char pad_929[0x9A9 - 0x929];
@@ -69,7 +77,8 @@ public:
     void* field_1460;             // +0x1460
     char pad_1464[8];             // +0x1464..+0x146C
     int field_146c;               // +0x146C
-    char pad_1470[0x149C - 0x1470]; // +0x1470..+0x149C
+    int field_1470;               // +0x1470 SendMessage poll stamp
+    char pad_1474[0x149C - 0x1474]; // +0x1474..+0x149C
     void* field_149c;             // +0x149C
     char pad_14a0[0x1ADC - 0x14a0]; // +0x14A0..+0x1ADC
     unsigned char field_1ADC;     // +0x1ADC
@@ -78,7 +87,8 @@ public:
     char pad_1AE4[0x1C54 - 0x1AE4]; // +0x1AE4..+0x1C54
     int field_1C54;               // +0x1C54
     int field_1C58;               // +0x1C58
-    char pad_1C5C[0x1C8C - 0x1C5C]; // +0x1C5C..+0x1C8C
+    int field_1C5C;               // +0x1C5C lobby tick stamp
+    char pad_1C60[0x1C8C - 0x1C60]; // +0x1C60..+0x1C8C
     int field_1C8C;               // +0x1C8C
     int field_1C90;               // +0x1C90
 
@@ -111,8 +121,13 @@ public:
     void ConditionCA_421D90(unsigned char v);
     int Get_422320();
     C_vt62C1E0* M_41B760(void* parent, int flag);  // base constructor 0x41B760
-    C_vt62C1E0* M_5B0EC0(void* parent, int flag);  // derived constructor 0x5B0EC0
+    // Derived constructor 0x5B0EC0 is the real C++ constructor
+    // CvApp_5B0EC0::CvApp_5B0EC0 in C_vt62C1E0.cpp; this inline entry keeps
+    // WinMain's thiscall-member call site (free_boot.cpp) and constructs in place.
+    C_vt62C1E0* NewApp(void* parent, int flag);
+    C_vt62C1E0* M_5B0EC0(void* parent, int flag) { return NewApp(parent, flag); }
     int M_5B17D0();              // game-session bring-up 0x5B17D0
+    int M_5BB2D0();              // 0x5BB2D0 idle tick (vtable slot +0xD0)
     void Hook_5BAD80(int a1);     // unresolved callee at 0x5BAD80
     void M_5BAEE0(char* src);     // inline strcpy into +0x1240
     void Wrap_5B5C50();
@@ -147,4 +162,5 @@ public:
     void Set_5BC4D0(int a, int b, int c, int d);
     void M_5BB080(int a1, char* a2);
     void M_5BC500();
+    int LoadSounds_5B1EB0();     // 0x5B1EB0 vtable slot +0xA8 (overrides 0x41E5D0)
 };

@@ -1,4 +1,5 @@
 #include "C_TRIBE_Screen_Options.hpp"
+#include "matched_mem.h"
 #pragma intrinsic(strcpy)
 #pragma intrinsic(strlen)
 
@@ -368,4 +369,176 @@ int C_TRIBE_Screen_Options::M_4A0460(int a1, int a2, int a3, int a4, int a5,
     return 1;
 }
 
+// Helpers for the shared slot +0x48 input dispatcher (0x4A0CD0).
+class S49GetBulk { public: int Get_49FFA0(); };
+class S47D9F0 { public: int Get_47D9F0(); };
+class C_cluster_47DA00 { public: int Get_47DA00(); };
+class C_vt61CE24 { public: int Get_48F970(); };
+extern "C" int __stdcall GetKeyState(int vk);
 
+// 0x4A1C10 — split a packed short pair into the two caller-provided outputs:
+// the low word goes to a3[0] and the high word to a3[1], each corrected by
+// -0x10000 when above 0xEA60; the first argument's bit 4 goes to a5 and bit 8
+// to a4 (both masks stored in that order). Five stack arguments (`ret 0x14`).
+MATCH_FUNC(0x4A1C10)
+int __stdcall sub_4A1C10(int a1, unsigned int a2, int* a3, int* a4, int* a5)
+{
+    int lo = (unsigned short)a2;
+    int hi = (unsigned short)(a2 >> 16);
+    *a3 = lo;
+    a3[1] = hi;
+    if (lo > 0xea60)
+        *a3 = lo - 0x10000;
+    if (hi > 0xea60)
+        a3[1] = hi - 0x10000;
+    *a4 = a1 & 8;
+    *a5 = a1 & 4;
+    return a1 & 4;
+}
+
+// 0x4A0CD0 (slot +0x48) — shared screen input dispatcher. It returns 0 when
+// the +0x6C field is clear. Keyboard/char messages (<= 0x104) route to the
+// focused input target's +0x58/+0x5C slots, with modifier bits from
+// GetKeyState(18/17/16). Mouse messages (0x200..0x20D) split the packed
+// coordinates through 0x4A1C10 and dispatch the matching +0x70..+0x88 target
+// slot, including wheel cases 0x20A..0x20C. Every other message walks the
+// +0x5C node chain, calling each node object's slot +0x48 and stopping on the
+// first non-zero result; when the chain ends it falls back to the owner's
+// +0x60/+0x64/+0x68/+0x6C slots for non-mouse input. WIP: the original keeps
+// separate `this`, `v16`, `v8` pointers and folds both guards into shared
+// epilogues; this reconstruction keeps the same behaviour but the compiler
+// shape (and full 0x450 bytes) is not reproduced.
+WIP_FUNC(0x4A0CD0)
+int C_TRIBE_Screen_Options::M_4A0CD0(int a2, unsigned a3, unsigned a4, int a5)
+{
+    int* self = (int*)this;
+    if (self[27] == 0)
+        return 0;
+    unsigned v6 = a3;
+    int v7 = a5;
+
+    if (a3 <= 0x104)
+    {
+        if (a3 != 0x104 && a3 != 0x100 && a3 != 0x102)
+            goto LABEL_7;
+        goto LABEL_42;
+    }
+    if (a3 >= 0x200 && a3 <= 0x20d)
+    {
+        if (a2 != *(int*)(self[8] + 4)
+            || ((S49GetBulk*)ADDR(0x66ea48))->Get_49FFA0() == 0)
+            return 0;
+        int v17 = 0;
+        int v18 = 0;
+        int alt = a5;
+        unsigned shift = a3;
+        sub_4A1C10((char)a4, v7, &v17, &alt, (int*)&shift);
+        int v13;
+        if (((C_vt61CE24*)ADDR(0x66ea48))->Get_48F970() != 0)
+            v13 = ((C_vt61CE24*)ADDR(0x66ea48))->Get_48F970();
+        else if (((S47D9F0*)ADDR(0x66ea48))->Get_47D9F0() != 0)
+            v13 = ((S47D9F0*)ADDR(0x66ea48))->Get_47D9F0();
+        else if (((C_cluster_47DA00*)ADDR(0x66ea48))->Get_47DA00() != 0)
+            v13 = ((C_cluster_47DA00*)ADDR(0x66ea48))->Get_47DA00();
+        else
+            v13 = (int)(size_t)self;
+        int result;
+        switch (v6)
+        {
+        case 0x200:
+            result = ((TInputDisp*)v13)->Vt_29(v17, v18, alt, (int)shift);
+            break;
+        case 0x201:
+            result = ((TInputDisp*)v13)->Vt_28(1, v17, v18, alt, (int)shift);
+            break;
+        case 0x202:
+            result = ((TInputDisp*)v13)->Vt_30(1, v17, v18, alt, (int)shift);
+            break;
+        case 0x203:
+            result = ((TInputDisp*)v13)->Vt_31(1, v17, v18, alt, (int)shift);
+            break;
+        case 0x204:
+            result = ((TInputDisp*)v13)->Vt_28(2, v17, v18, alt, (int)shift);
+            break;
+        case 0x205:
+            result = ((TInputDisp*)v13)->Vt_30(2, v17, v18, alt, (int)shift);
+            break;
+        case 0x206:
+            result = ((TInputDisp*)v13)->Vt_31(2, v17, v18, alt, (int)shift);
+            break;
+        case 0x207:
+            result = ((TInputDisp*)v13)->Vt_28(3, v17, v18, alt, (int)shift);
+            break;
+        case 0x208:
+            result = ((TInputDisp*)v13)->Vt_30(3, v17, v18, alt, (int)shift);
+            break;
+        case 0x209:
+            result = ((TInputDisp*)v13)->Vt_31(3, v17, v18, alt, (int)shift);
+            break;
+        case 0x20a:
+            result = ((TInputDisp*)v13)->Vt_32(v6, a4, v7);
+            break;
+        case 0x20b:
+        case 0x20c:
+            result = ((TInputDisp*)v13)->Vt_34(v6, a4, v7);
+            break;
+        default:
+            goto LABEL_42;
+        }
+        return result;
+    }
+
+LABEL_7:
+    {
+        void* v8 = (void*)(size_t)self[23];
+        int v9 = a5;
+        unsigned v10 = a4;
+        while (v8 != 0)
+        {
+            int result = ((TInputDisp*)*(void**)v8)->Vt_18(a2, v6, v10, v9);
+            if (result != 0)
+                return result;
+            v8 = *(void**)((char*)v8 + 4);
+        }
+        if (v6 > 0x115)
+        {
+            if (v6 == 1024)
+                return ((TInputDisp*)self)->Vt_25(v10, v9);
+        }
+        else
+        {
+            if (v6 >= 0x114)
+                return ((TInputDisp*)self)->Vt_27((int)(unsigned short)v10,
+                                                (int)(v10 >> 16));
+            unsigned v11 = v6 - 273;
+            if (v11 == 0)
+                return ((TInputDisp*)self)->Vt_24(v10, v9);
+            if (v11 == 2)
+                return ((TInputDisp*)self)->Vt_26(v10, v9);
+        }
+        return 0;
+    }
+
+LABEL_42:
+    {
+        unsigned v12 = a4;
+        if (a2 == *(int*)(self[8] + 4)
+            && ((S49GetBulk*)ADDR(0x66ea48))->Get_49FFA0() != 0)
+        {
+            int v14;
+            if (((S47D9F0*)ADDR(0x66ea48))->Get_47D9F0() != 0)
+                v14 = ((S47D9F0*)ADDR(0x66ea48))->Get_47D9F0();
+            else if (((C_cluster_47DA00*)ADDR(0x66ea48))->Get_47DA00() != 0)
+                v14 = ((C_cluster_47DA00*)ADDR(0x66ea48))->Get_47DA00();
+            else
+                v14 = (int)(size_t)self;
+            if (v6 != 0x100 && v6 != 0x104)
+                return ((TInputDisp*)v14)->Vt_23(v12, v7);
+            int menuctrl = GetKeyState(18) < 0;
+            int menualt = GetKeyState(17) < 0;
+            int menushift = GetKeyState(16) < 0;
+            return ((TInputDisp*)v14)->Vt_22(v12, v7, menuctrl, menualt, menushift);
+        }
+        return 0;
+    }
+}

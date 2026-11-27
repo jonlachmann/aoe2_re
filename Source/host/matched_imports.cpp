@@ -17,6 +17,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 extern "C" {
 #include "win32hle.h"
 }
@@ -44,6 +45,9 @@ extern char g_61c2dc[0x1000];
 extern char g_61c2e0[0x1000];
 extern char g_61c2e4[0x1000];
 extern char g_61c2e8[0x1000];
+/* Slots reached by the matched 0x41B760 app constructor (via 0x5B0EC0). */
+extern char g_61c308[0x1000];   /* LoadCursorA */
+extern char g_61c1b4[0x1000];   /* GetCurrentDirectoryA */
 
 /* cv_* IAT-pointer bodies such as 0x440C40 call through a data pointer symbol,
    not through a code stub. Bind that symbol to the same trampoline value the
@@ -412,6 +416,29 @@ static int __stdcall char_upper_a(char *s)
     return (int)(uintptr_t)s;
 }
 
+static int __stdcall load_cursor_a(int hinst, int name)
+{
+    uint32_t args[2];
+    args[0] = (uint32_t)hinst;
+    args[1] = (uint32_t)name;   /* a resource id or system cursor (IDC_ARROW = 0x7F00) */
+    return (int)call_shim("LoadCursorA", 2, args);
+}
+
+/* The caller's buffer is native (this + 0x210), so the shim's guest-memory
+ * write can't reach it: fill it here, the way the shim does. */
+static unsigned long __stdcall get_current_directory_a(unsigned long size, char *buf)
+{
+    char cwd[1024], g[1024];
+    if (!getcwd(cwd, sizeof cwd))
+        cwd[0] = 0;
+    hle_guest_path(cwd, g, sizeof g);
+    unsigned long n = (unsigned long)strlen(g);
+    if (buf == 0 || n + 1 > size)
+        return n + 1;
+    memcpy(buf, g, n + 1);
+    return n;
+}
+
 static int __stdcall get_last_error(void)
 {
     return (int)call_shim("GetLastError", 0, 0);
@@ -437,6 +464,8 @@ extern "C" void InstallMatchedImports(void)
     *(void**)g_61c2e0 = (void*)translate_message;
     *(void**)g_61c2e4 = (void*)get_message_a;
     *(void**)g_61c2e8 = (void*)peek_message_a;
+    *(void**)g_61c308 = (void*)load_cursor_a;
+    *(void**)g_61c1b4 = (void*)get_current_directory_a;
 
 }
 
@@ -488,6 +517,9 @@ extern "C" int cv_ui_520e90;
 extern "C" int cv_ui_520f50;
 extern "C" int cv_ui_520ed0;
 extern "C" int cv_ui_521090;
+extern "C" int Native_MenuIdleTicks(void* obj, int count);
+extern "C" void* g_6645c4;
+extern "C" int g_cvt_idle_hits;
 extern "C" int matched_winmain(void)
 {
     int r = sub_47AE20(0x400000, 0, (char *)(g_matched_base + 0x662be0), 1);
@@ -502,6 +534,11 @@ extern "C" int matched_winmain(void)
     fprintf(stderr, "[matched-imports] window class/create=%d hwnd=%X menu-screen DE50=%d E070=%d\n",
             cv_win_class, cv_win_handle,
             cv_de50_hits, cv_e070_hits);
+    {
+        int idle = Native_MenuIdleTicks(g_6645c4, 8);
+        fprintf(stderr, "[matched-imports] menu idle ticks from matched 0x5BB2D0: %d (body hits %d)\n",
+                idle, g_cvt_idle_hits);
+    }
     fprintf(stderr, "[matched-imports] menu populated: 47C4=%d subobjects 15e8=%d 15f8=%d 15fc=%d 1604=%d 1610=%d; 7B0=%d 5C0=%d preset-entries=%d cfg-sound=%d\n",
             cv_screen47_pop,
             cv_s47_15e8 != 0, cv_s47_15f8 != 0, cv_s47_15fc != 0,
