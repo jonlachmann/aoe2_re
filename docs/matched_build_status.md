@@ -1321,6 +1321,27 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1836/1836] MATCH_FUNCs OK, 43 WIP`; phase docs now 475/815 matched (221
   left, 36 WIP, 119 CRT).
 
+- stage 66 — `Source/ui/C_vt622368.cpp` gains a semantically complete
+  `WIP_FUNC(0x4AD530)` (100 bytes original) as
+  `void C_vt622368::M_4AD530()`. It sets the seven shorts +0x194..+0x1A0 to -1,
+  zeroes the +0x24C int and +0x1A4 int, zero-fills +0x1A8 for 0xA0 bytes and the
+  +0x250..+0x2CE span for 0x7F bytes. The 0x7F span is the key class/layout fact:
+  it expands to a 0x1F rep stosd followed by a stosw and stosb tail, which is
+  exactly the original +0x250/+0x2CC/+0x2CE clearing. WIP reason: the compiler
+  schedules the second memset's `lea edi,[+0x250]` after `mov ecx,0x1F`
+  (ours) while the original hoists `lea` first; every other instruction of
+  the 100-byte body matches, including the early `mov ecx,0x28` hoist, the
+  eax-based -1 stores, the shared eax zero for +0x24C/+0x1A4 and both
+  fills, and the stosw/stosb tail. Attempts with a 0x7C memset plus separate
+  short/byte stores, and with a 31-iteration zero loop, reproduced the desired
+  lea-before-count order but moved the zero into ebx (extra `push ebx` and
+  `xor ebx,ebx`) because the zero stayed live across the first memset. Single
+  memset with 0x7F keeps the zero in eax and all bytes except the operand
+  order; trailing nop padding is accepted. Evidence after this wave: full gate
+  `[1836/1836] MATCH_FUNCs OK, 44 WIP`; TU gate `Source/ui/C_vt622368.cpp`
+  `[5/5] MATCH_FUNCs OK, 1 WIP`; phase docs now 475/815 matched (221 left,
+  37 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

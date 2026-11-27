@@ -25,4 +25,5 @@ public:
     static int __stdcall M_4ADF90(int a1, int a2, int a3, int a4, int a5,
                                   int* p6, int* p7);
     void M_4AE900(int a, int b, int c, int d, int e, int f);
+    void M_4AD530();
 };

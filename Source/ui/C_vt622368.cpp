@@ -33,3 +33,25 @@ void C_vt622368::M_4AE900(int a, int b, int c, int d, int e, int f)
 {
     (void)a; (void)b; (void)c; (void)d; (void)e; (void)f;
 }
+
+// 0x4AD530 — clear the +0x194..+0x1A0 short pair set to -1, zero +0x24C and
+// +0x1A4, memset +0x1A8 (0xA0 bytes) and the +0x250..+0x2CE span (0x7F bytes,
+// which expands to 0x1F stosd plus a stosw/stosb tail).
+WIP_FUNC(0x4AD530)
+#pragma intrinsic(memset)
+void C_vt622368::M_4AD530()
+{
+    int result;
+    *(short*)((char*)this + 0x194) = -1;
+    *(short*)((char*)this + 0x196) = -1;
+    *(short*)((char*)this + 0x198) = -1;
+    *(short*)((char*)this + 0x19a) = -1;
+    *(short*)((char*)this + 0x19c) = -1;
+    *(short*)((char*)this + 0x19e) = -1;
+    *(short*)((char*)this + 0x1a0) = -1;
+    result = 0;
+    *(int*)((char*)this + 0x24c) = result;
+    *(int*)((char*)this + 0x1a4) = result;
+    memset((char*)this + 0x1a8, result, 0xa0);
+    memset((char*)this + 0x250, result, 0x7f);
+}
