@@ -1655,7 +1655,7 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   OK, 1 WIP` (4EB4B0 restored byte-exact); full gate
   `[1902/1902] MATCH_FUNCs OK, 27 WIP`; `build_matched.sh` links 175 matched
   objects with 650 stubs and no probe failures. The regenerated phase docs
-  now read 528/815 matched (168 left, 25 WIP, 119 CRT/library) for phase 1
+  now read 531/815 matched (165 left, 25 WIP, 119 CRT/library) for phase 1
   and phase 2 `28 matched, 3 left (all WIP)`.
 
 
