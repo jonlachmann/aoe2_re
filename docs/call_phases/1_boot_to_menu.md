@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 473 matched, 223 left to match (33 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 474 matched, 222 left to match (33 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (223)
+## Left to match (222)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -15,7 +15,6 @@
 | 123 | `sub_41B760` | 1 | WIP | 1_boot_to_menu | C_vt62C1E0::M_41B760 |
 | 152 | `sub_41DC80` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot37_41DC80 |
 | 162 | `sub_440D40` | 2 |  | 1_boot_to_menu |  |
-| 163 | `sub_440C40` | 3 |  | 1_boot_to_menu |  |
 | 196 | `sub_5BB000` | 9 | WIP | 1_boot_to_menu | C_vt62C1E0::Set_5BB000 |
 | 200 | `sub_5B17D0` | 1 | WIP | 1_boot_to_menu | C_vt62C1E0::M_5B17D0 |
 | 201 | `sub_4BE0F0` | 5 |  | 1_boot_to_menu |  |
@@ -230,7 +229,7 @@
 | 797 | `sub_41CF70` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot01_41CF70 |
 | 800 | `sub_5BB2D0` | 2144832 |  | 1_boot_to_menu |  |
 
-## Matched (473)
+## Matched (474)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -321,6 +320,7 @@
 | 159 | `sub_440BC0` | 3 | MATCH | 1_boot_to_menu | S440B40::M_440BC0 |
 | 160 | `sub_440C00` | 2 | MATCH | 1_boot_to_menu | S440B40::M_440C00 |
 | 161 | `sub_440CC0` | 2 | MATCH | 1_boot_to_menu | S440B40::M_440CC0 |
+| 163 | `sub_440C40` | 3 | MATCH | 1_boot_to_menu | S440B40::M_440C40 |
 | 166 | `sub_6033C4` | 6 | MATCH | 1_boot_to_menu | sub_6033C4 |
 | 173 | `sub_440B40` | 1 | MATCH | 1_boot_to_menu | S440B40::M_440B40 |
 | 174 | `sub_440B80` | 1 | MATCH | 1_boot_to_menu | S440B40::M_440B80 |

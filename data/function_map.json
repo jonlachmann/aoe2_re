@@ -23093,13 +23093,13 @@
   "calls": 4,
   "name": "sub_440C40",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "S440B40",
+  "class_evidence": "S440B40 elapsed-time reporter: timeGetTime via IAT 0x61C3C8, time_t through 0x5FD3A5, tm through 0x5FD245, delta against +0x24 as unsigned then int64 fild, float 0.001 scale via 0x61E158, +0x2C logger gate; when clear formats tm through 0x5FD16F (fallback 0x651400) and logs (this, 0x6513D8, datestring, double elapsed) through empty 0x4378C0",
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440CC0",

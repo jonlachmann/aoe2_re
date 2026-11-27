@@ -1200,6 +1200,28 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[1834/1834] MATCH_FUNCs OK, 40 WIP`; phase docs now 473/815 matched
   (223 left, 33 WIP, 119 CRT).
 
+- stage 61 — `Source/gfx/free_gfx.cpp` gains a byte-exact
+  `MATCH_FUNC(0x440C40)` (127 bytes) as `void S440B40::M_440C40()`, replacing the
+  earlier native scaffolding stub. It reads timeGetTime through the IAT slot
+  0x61C3C8, seeds a time_t through 0x5FD3A5 and resolves the struct tm through
+  0x5FD245, then forms the elapsed delta against +0x24 as an unsigned 32-bit
+  subtraction zero-extended into an `__int64`, loads it with `fild qword`, scales
+  by the 0x61E158 float 0.001, and stores the float in the stack slot. When +0x2C
+  is set it returns; otherwise it formats the tm through 0x5FD16F (using the
+  one-character 0x651400 fallback when the tm is null) and logs (this, format
+  0x6513D8, date string, elapsed as double) through the empty 0x4378C0 variadic
+  logger. Class feedback: S440B40 owns +0x24 (time stamp) and +0x2C (logger
+  pointer) alongside the +0x04..+0x18 toggle flags, +0x28 reset flag, and its
+  ctor 0x440A90; 0x440C40 is the elapsed-time reporter called at the end of the
+  constructor, while 0x440B40..0x440D00 are the toggle setters that log through
+  the same empty 0x4378C0. Byte-exactness required the unsigned-delta-to-int64
+  shape (avoiding a signed sbb/ebx pair), the float constant 0.001f rather than
+  a double literal (fmul dword, not qword), the early `if (+0x2C != 0) return`
+  branch layout and the inverted tm branch (`if (v3 == 0) fallback else format`)
+  so VC6 falls through to the fallback and jumps to the format call. Evidence
+  after this wave: full gate `[1835/1835] MATCH_FUNCs OK, 40 WIP`; phase docs
+  now 474/815 matched (222 left, 33 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

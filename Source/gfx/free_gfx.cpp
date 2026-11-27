@@ -1778,8 +1778,36 @@ void S440B40::M_440D40(int a1, int a2)
 {
     (void)a1; (void)a2;
 }
+// 0x440C40 — report elapsed milliseconds through the +0x2C logger slot. Read
+// timeGetTime, seed a time_t through 0x5FD3A5 and resolve the struct tm through
+// 0x5FD245, then form (now - +0x24) as a 64-bit delta scaled by 0.001 into a
+// float. When +0x2C is clear, format the tm through 0x5FD16F (or use the 0x651400
+// fallback when it is null) and log this object, format 0x6513D8, that string,
+// and the elapsed float as a double through the empty 0x4378C0 logger.
+extern void __cdecl sub_5FD3A5(int* a1);
+extern void* __cdecl sub_5FD245(int* a1);
+extern char* __cdecl sub_5FD16F(void* a1);
+extern void __cdecl Hook_4378C0_V(int a1, ...);
+extern unsigned int (__stdcall *cv_61c3c8)();
+MATCH_FUNC(0x440C40)
 void S440B40::M_440C40()
 {
+    int v5;
+    unsigned int v2 = cv_61c3c8();
+    sub_5FD3A5(&v5);
+    void* v3 = sub_5FD245(&v5);
+    unsigned int delta = v2 - (unsigned int)field_24;
+    __int64 v6 = (__int64)delta;
+    float elapsed = (float)v6 * 0.001f;
+    if (field_2c != 0)
+        return;
+    char* date;
+    if (v3 == 0)
+        date = (char*)ADDR(0x651400);
+    else
+        date = sub_5FD16F(v3);
+    Hook_4378C0_V((int)this, (int)ADDR(0x6513d8), (int)date,
+                  (double)elapsed);
 }
 
 extern void __cdecl Hook_4378C0(void* a1, int a2, void* a3);
