@@ -78,7 +78,7 @@ public:
     virtual void slot_068();  // slot +0x110
     virtual void slot_069();  // slot +0x114
     virtual void slot_070();  // slot +0x118
-    virtual void slot_071();  // slot +0x11C
+    virtual unsigned char* slot_071(int a1);  // slot +0x11C
     virtual void slot_072();  // slot +0x120
 
     char pad_04[0x0c - 0x04];     // +0x04..+0x0C
@@ -138,7 +138,7 @@ public:
     void M_4BCEB0(short v);
     void M_4BAE20(int* a1, short a2);
     void Hook_4A1160();           // unresolved callee at 0x4A1160
-    void Hook_4B60B0(int a1, short a2, int a3); // unresolved callee at 0x4B60B0
+    __int16 Hook_4B60B0(int a1, short a2, int a3); // unresolved callee at 0x4B60B0
     void Hook_4BA5C0(int a1, int a2); // unresolved callee at 0x4BA5C0
 
     void M_4B5690();

@@ -483,3 +483,37 @@ int C_pnl_lst::M_4B5B60(int a1, int a2, int a3)
     }
     return 0;
 }
+
+// 0x4B5DD0 — compute the visible row from the third stack argument. The stride
+// at +0x158 is enlarged by 2*(+0x19C)-1 when the +0x19C mode is set; the
+// quotient of (a3 - +0x198 - +0x10 - +0x19C) by that stride is added to the
+// +0x100 short row base. The +0x11C slot (slot_071) is then dispatched with the
+// row and its returned pointer's first byte tested: nonzero returns the row,
+// otherwise -1. Eight stack bytes are released (`ret 8`).
+MATCH_FUNC(0x4B5DD0)
+__int16 C_pnl_lst::M_4B5DD0(int a2, int a3)
+{
+    int v3 = *(int*)((char*)this + 0x19c);
+    int v4;
+    if (v3 == 0)
+        v4 = *(int*)((char*)this + 0x158);
+    else
+        v4 = *(int*)((char*)this + 0x158) + 2 * v3 - 1;
+    int v5 = *(short*)((char*)this + 0x100)
+        + (a3 - *(int*)((char*)this + 0x198) - *(int*)((char*)this + 0x10) - v3) / v4;
+    if (*(unsigned char*)slot_071(v5) == 0)
+        return -1;
+    return (__int16)v5;
+}
+
+// 0x4B5E30 — re-run the row helper 0x4B5DD0(a2,a3) and, when the result is not
+// -1, forward 0x4B60B0(1, result, 1) and return its value; on the -1 path return
+// the row result unchanged. Releases eight stack bytes (`ret 8`).
+MATCH_FUNC(0x4B5E30)
+__int16 C_pnl_lst::M_4B5E30(int a2, int a3)
+{
+    __int16 result = M_4B5DD0(a2, a3);
+    if (result != -1)
+        result = Hook_4B60B0(1, result, 1);
+    return result;
+}

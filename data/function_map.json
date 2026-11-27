@@ -53767,12 +53767,12 @@
   "name": "sub_4B5DD0",
   "names": [],
   "class": "C_pnl_lst",
-  "class_evidence": "C_pnl_lst row computation: +0x19C mode, +0x158 stride, +0x100/+0x102 shorts, +0x10, slot +0x11C dispatch; returns row or -1",
+  "class_evidence": "C_pnl_lst row computation: +0x19C mode, +0x158 stride, +0x198, +0x10, +0x100 short row base; quotient of (a3 - +0x198 - +0x10 - +0x19C) by stride, added to +0x100; dispatches vtable slot +0x11C (slot_071) returning a byte pointer and returns row when byte nonzero else -1; ret 8",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4B5E30",
@@ -53781,12 +53781,12 @@
   "name": "sub_4B5E30",
   "names": [],
   "class": "C_pnl_lst",
-  "class_evidence": "C_pnl_lst row forwarder: calls 0x4B5DD0(a2,a3); when result != -1 calls 0x4B60B0(1,result,1); returns __int16",
+  "class_evidence": "C_pnl_lst row forwarder: result=M_4B5DD0(a2,a3); when result != -1 assign result=Hook_4B60B0(1,result,1); return result; ret 8. Hook_4B60B0 is __int16 thiscall (1,short result,1)",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4B5E60",

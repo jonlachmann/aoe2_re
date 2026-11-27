@@ -1401,6 +1401,25 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `[14/14] MATCH_FUNCs OK, 2 WIP`; phase docs now 479/815 matched (217 left,
   37 WIP, 119 CRT).
 
+- stage 70 — `Source/ui/C_pnl_lst.cpp` gains two byte-exact callees of the
+  just-matched slot bodies. `MATCH_FUNC(0x4B5DD0)` (94 bytes) is
+  `__int16 C_pnl_lst::M_4B5DD0(int a2, int a3)`: it reads the +0x19C mode
+  (with the zero path first, matching `jne` to the mode branch), enlarges the
+  +0x158 stride by 2*(+0x19C)-1, computes (a3 - +0x198 - +0x10 - +0x19C) /
+  stride, adds the +0x100 short row base, dispatches vtable slot +0x11C
+  (slot_071) with that row and tests the returned pointer's first byte -- -1
+  falls through when zero and the row is returned when nonzero. The method
+  releases eight stack bytes (`ret 8`). `MATCH_FUNC(0x4B5E30)` (42 bytes) is
+  `__int16 C_pnl_lst::M_4B5E30(int a2, int a3)`: it re-runs 0x4B5DD0 and, when
+  the result is not -1, assigns `result = Hook_4B60B0(1, result, 1)`, then
+  returns result; assigning into result lets both paths share the epilogue and
+  avoids the extra `or ax,0xffff`. Class feedback: slot +0x11C (slot_071) now
+  returns `unsigned char*` (a byte pointer derived from the row), and
+  Hook_4B60B0 is a `__int16` thiscall taking (1, short row, 1), not void.
+  Evidence after this wave: full gate `[1842/1842] MATCH_FUNCs OK, 44 WIP`;
+  TU gate `Source/ui/C_pnl_lst.cpp` `[16/16] MATCH_FUNCs OK, 2 WIP`; phase docs
+  now 481/815 matched (215 left, 37 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
