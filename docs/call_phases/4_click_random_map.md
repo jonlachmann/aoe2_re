@@ -1,13 +1,12 @@
 # 4_click_random_map
 
-605 functions called (146 first seen in this phase): 293 matched, 255 left to match (7 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+605 functions called (146 first seen in this phase): 294 matched, 254 left to match (7 of them WIP), 57 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (255)
+## Left to match (254)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
 | 3 | `sub_41FAC0` | 318 |  | 1_boot_to_menu |  |
-| 5 | `sub_4998B0` | 318 |  | 1_boot_to_menu |  |
 | 7 | `sub_4A0CD0` | 69786 |  | 1_boot_to_menu |  |
 | 9 | `sub_4A1C10` | 3 |  | 3_click_single_player |  |
 | 13 | `sub_4A6570` | 1 |  | 3_click_single_player |  |
@@ -262,7 +261,7 @@
 | 600 | `sub_4F9AE0` | 15 |  | 4_click_random_map |  |
 | 602 | `sub_4F6850` | 1039118 |  | 4_click_random_map |  |
 
-## Matched (293)
+## Matched (294)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -270,6 +269,7 @@
 | 1 | `sub_41D670` | 318 | MATCH | 1_boot_to_menu | sub_41D670 |
 | 2 | `sub_5BB240` | 318 | MATCH | 1_boot_to_menu | sub_5BB240 |
 | 4 | `sub_5C6880` | 1118252 | MATCH | 1_boot_to_menu | C_pnl_btn::M_5C6880 |
+| 5 | `sub_4998B0` | 318 | MATCH | 1_boot_to_menu | C_cluster_498F00::M_4998B0 |
 | 6 | `sub_49F620` | 1118633 | MATCH | 1_boot_to_menu | S49F620::Get_49F620 |
 | 8 | `sub_49FFA0` | 3 | MATCH | 3_click_single_player | S49GetBulk::Get_49FFA0 |
 | 10 | `sub_48F970` | 7 | MATCH | 3_click_single_player | C_vt61CE24::Get_48F970 |

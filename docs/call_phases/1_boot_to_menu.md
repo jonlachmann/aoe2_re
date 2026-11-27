@@ -1,8 +1,8 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 458 matched, 238 left to match (29 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 459 matched, 237 left to match (29 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
-## Left to match (238)
+## Left to match (237)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -153,7 +153,6 @@
 | 510 | `sub_45F6F0` | 72772 |  | 1_boot_to_menu |  |
 | 511 | `sub_4A5C10` | 5 |  | 1_boot_to_menu |  |
 | 518 | `sub_4A2F90` | 24 |  | 1_boot_to_menu | panel_ez::draw_background2 |
-| 523 | `sub_4998B0` | 632 |  | 1_boot_to_menu |  |
 | 524 | `sub_4A0CD0` | 65110 |  | 1_boot_to_menu |  |
 | 531 | `sub_4647C0` | 1 |  | 1_boot_to_menu |  |
 | 534 | `sub_4BE980` | 131 |  | 1_boot_to_menu |  |
@@ -245,7 +244,7 @@
 | 801 | `sub_420450` | 2144832 |  | 1_boot_to_menu |  |
 | 811 | `sub_4B8CC0` | 12868992 |  | 1_boot_to_menu |  |
 
-## Matched (458)
+## Matched (459)
 
 | # | function | count | status | first seen in | name |
 |---|---|---|---|---|---|
@@ -521,6 +520,7 @@
 | 520 | `sub_4A0C10` | 64 | MATCH | 1_boot_to_menu | S4A0C10::M_4A0C10 |
 | 521 | `sub_4A0C60` | 64 | MATCH | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0C60 |
 | 522 | `sub_5C6880` | 2145464 | MATCH | 1_boot_to_menu | C_pnl_btn::M_5C6880 |
+| 523 | `sub_4998B0` | 632 | MATCH | 1_boot_to_menu | C_cluster_498F00::M_4998B0 |
 | 525 | `sub_422420` | 1 | MATCH | 1_boot_to_menu | S422420::Mark_422420 |
 | 526 | `sub_4A00B0` | 1 | MATCH | 1_boot_to_menu | S422420Global::Mark_4A00B0 |
 | 527 | `sub_41BC00` | 2 | MATCH | 1_boot_to_menu | C_vt61DF78::SetInt_41BC00 |

@@ -41342,12 +41342,12 @@
   "name": "sub_4998B0",
   "names": [],
   "class": "C_cluster_498F00",
-  "class_evidence": "this-edge component with no rooted object identity",
+  "class_evidence": "this-edge state dispatcher over a2: cases 0x1C/0x113/0x3B9; +0x104 state byte, +0x128 one-shot byte, +0x24C counter, +0x25C gate, +0x260/+0x264 toggle pair, +0x270 gate; shares default return 0",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_cluster_498F00.cpp"
  },
  {
   "address": "0x4999B0",

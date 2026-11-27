@@ -840,6 +840,24 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   gate `[1819/1819] MATCH_FUNCs OK, 36 WIP`; phase docs now 458/815 matched
   (238 left, 29 WIP, 119 CRT).
 
+- stage 45 — new `Source/ui/C_cluster_498F00.cpp` carries a byte-exact
+  `MATCH_FUNC(0x4998B0)` (245 bytes) as
+  `C_cluster_498F00::M_4998B0(int a1, int a2, int a3, int a4)`. The entry
+  dispatches on the second argument a2 as a sparse switch over 0x1C, 0x113,
+  0x3B9 with a shared default `return 0`. Case 0x1C: with a3 nonzero and
+  +0x264/+0x260 set, run M_4995B0 and clear the pair; with a3 zero and +0x264
+  clear, run M_499510 and set the pair. Case 0x113: run M_499760 when +0x270
+  is set. Case 0x3B9: only for the +0x104 state byte 1 or 2, decrement the
+  +0x24C counter and, when it reaches zero with +0x25C clear, clear +0x128
+  (state 1 only) and run M_4999B0. Class feedback: C_cluster_498F00 owns the
+  +0x104 state byte, +0x128 one-shot byte, +0x24C counter, +0x25C gate,
+  +0x260/+0x264 toggle pair and +0x270 gate; M_4999B0/M_499760/M_4995B0/
+  M_499510 are its members (undefined/lifted callees). Byte-exactness required
+  the discriminator to be the second argument (original reads [esp+8] before
+  `push esi`, i.e. a2, not a1). Evidence after this wave: full gate
+  `[1820/1820] MATCH_FUNCs OK, 36 WIP`; phase docs now 459/815 matched
+  (237 left, 29 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
