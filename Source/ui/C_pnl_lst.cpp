@@ -449,3 +449,37 @@ int C_pnl_lst::M_4B5BA0(int a2, int a3, int a4, int a5)
         M_4B5E30(a2, a3);
     return 1;
 }
+
+// 0x4B5C10 — clear the object's transient state through the method at 0x4A1C70,
+// then forward the first two of its four stack arguments to the row helper
+// 0x4B5E30(a2,a3) and return 1. The two trailing arguments are unused but kept
+// so the tail remains `ret 0x10`.
+MATCH_FUNC(0x4B5C10)
+int C_pnl_lst::M_4B5C10(int a2, int a3, int a4, int a5)
+{
+    M_4A1C70();
+    M_4B5E30(a2, a3);
+    return 1;
+}
+
+// 0x4B5B60 — classify the high word of the second stack argument: a negative
+// halfword forwards mode 2 to 0x4BBF20(2,0,1), a positive halfword forwards
+// mode 3, and a zero halfword returns 0. Both nonzero paths return 1. The method
+// keeps its three stack arguments (ret 0xC) and leaves ecx as this for the
+// nested thiscall.
+MATCH_FUNC(0x4B5B60)
+int C_pnl_lst::M_4B5B60(int a1, int a2, int a3)
+{
+    __int16 hi = (__int16)((unsigned)a2 >> 16);
+    if (hi < 0)
+    {
+        M_4BBF20(2, 0, 1);
+        return 1;
+    }
+    if (hi > 0)
+    {
+        M_4BBF20(3, 0, 1);
+        return 1;
+    }
+    return 0;
+}

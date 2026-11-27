@@ -45232,7 +45232,7 @@
   "name": "sub_4A1C70",
   "names": [],
   "class": "C_pnl_lst",
-  "class_evidence": "same object, connected by this-edge call sites",
+  "class_evidence": "C_pnl_lst non-virtual method: reads global 0x66EA48 through 0x48F970, compares to this, then falls into a +0x20 subobject branch; returns int",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
@@ -53671,14 +53671,14 @@
   "name": "sub_4B5B60",
   "names": [],
   "class": "C_pnl_lst",
-  "class_evidence": "vtable slot",
+  "class_evidence": "C_pnl_lst vtable slot +0x084 (slot_033): logical high word of second stack arg; negative -> 0x4BBF20(2,0,1) return 1; positive -> 0x4BBF20(3,0,1) return 1; zero -> 0; ret 0xC leaves ecx as this",
   "slot_classes": [
    "C_pnl_lst"
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4B5BA0",
@@ -53703,14 +53703,14 @@
   "name": "sub_4B5C10",
   "names": [],
   "class": "C_pnl_lst",
-  "class_evidence": "vtable slot",
+  "class_evidence": "C_pnl_lst vtable slot +0x094 (slot_037): calls 0x4A1C70() on this, then 0x4B5E30(a2,a3), returns 1; keeps four stack args so ret 0x10",
   "slot_classes": [
    "C_pnl_lst"
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "matched",
+  "file": "Source/ui/C_pnl_lst.cpp"
  },
  {
   "address": "0x4B5C40",

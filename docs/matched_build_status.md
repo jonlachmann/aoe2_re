@@ -1381,6 +1381,26 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   TU gate `Source/ui/C_pnl_lst.cpp` `[12/12] MATCH_FUNCs OK, 2 WIP`; phase docs
   now 477/815 matched (219 left, 37 WIP, 119 CRT).
 
+- stage 69 — `Source/ui/C_pnl_lst.cpp` gains two byte-exact vtable-slot
+  bodies. `MATCH_FUNC(0x4B5C10)` (34 bytes) is
+  `int C_pnl_lst::M_4B5C10(int a2, int a3, int a4, int a5)` and mirrors vtable
+  slot +0x094 (slot_037): it calls 0x4A1C70() on this, forwards the first two
+  arguments to `0x4B5E30(a2, a3)`, and returns 1, keeping all four stack
+  arguments so the tail is `ret 0x10`. `MATCH_FUNC(0x4B5B60)` (57 bytes) is
+  `int C_pnl_lst::M_4B5B60(int a1, int a2, int a3)` and mirrors vtable slot
+  +0x084 (slot_033): it classifies the logical high word of the second stack
+  argument (unsigned shift, so `shr` not `sar`), forwards mode 2 to
+  `0x4BBF20(2,0,1)` for negative, mode 3 for positive, returns 0 for zero, and
+  returns 1 on both nonzero paths; the thiscall leaves ecx as this for the
+  nested call and keeps `ret 0xC`. Class feedback: the reconstructed `C_pnl_lst`
+  header now declares slot_033 as `int(int,int,int)`, slot_037 as
+  `int(int,int,int,int)`, plus `M_4A1C70()` (proven non-virtual: it reads global
+  0x66EA48 through 0x48F970, compares against this, and falls into a +0x20
+  subobject branch). Evidence after this wave: full gate
+  `[1840/1840] MATCH_FUNCs OK, 44 WIP`; TU gate `Source/ui/C_pnl_lst.cpp`
+  `[14/14] MATCH_FUNCs OK, 2 WIP`; phase docs now 479/815 matched (217 left,
+  37 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

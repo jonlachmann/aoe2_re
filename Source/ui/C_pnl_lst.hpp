@@ -40,11 +40,11 @@ public:
     virtual void slot_030();  // slot +0x078
     virtual void slot_031();  // slot +0x07C
     virtual void slot_032();  // slot +0x080
-    virtual void slot_033();  // slot +0x084
+    virtual int slot_033(int a1, int a2, int a3);  // slot +0x084
     virtual void slot_034();  // slot +0x088
     virtual void slot_035();  // slot +0x08C
     virtual void slot_036();  // slot +0x090
-    virtual void slot_037();  // slot +0x094
+    virtual int slot_037(int a1, int a2, int a3, int a4);  // slot +0x094
     virtual void slot_038();  // slot +0x098
     virtual void slot_039();  // slot +0x09C
     virtual void slot_040();  // slot +0x0A0
@@ -160,6 +160,9 @@ public:
     void M_4B5A10(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
     void M_4B3760(int a1, unsigned char a2, unsigned char a3, unsigned char a4, unsigned char a5, unsigned char a6, unsigned char a7);
     int M_4B5BA0(int a2, int a3, int a4, int a5);
+    int M_4B5B60(int a1, int a2, int a3);
+    int M_4B5C10(int a2, int a3, int a4, int a5);
+    int M_4A1C70();
     __int16 M_4B5DD0(int a2, int a3);
     __int16 M_4B5E30(int a2, int a3);
 };
