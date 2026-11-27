@@ -1340,7 +1340,7 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   order; trailing nop padding is accepted. Evidence after this wave: full gate
   `[1836/1836] MATCH_FUNCs OK, 44 WIP`; TU gate `Source/ui/C_vt622368.cpp`
   `[5/5] MATCH_FUNCs OK, 1 WIP`; phase docs now 475/815 matched (221 left,
-  37 WIP, 119 CRT).
+  36 WIP, 119 CRT).
 
 - stage 67 — `Source/ui/C_pnl_inp.cpp` gains a byte-exact
   `MATCH_FUNC(0x4B36D0)` (100 bytes) as `int C_pnl_inp::M_4B36D0(int a2)`.
@@ -1359,7 +1359,7 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   `return (int)result` rather than a fresh xor. Evidence after this wave:
   full gate `[1837/1837] MATCH_FUNCs OK, 44 WIP`; TU gate
   `Source/ui/C_pnl_inp.cpp` `[11/11] MATCH_FUNCs OK, 3 WIP`; phase docs now
-  476/815 matched (220 left, 37 WIP, 119 CRT).
+  475/815 matched (221 left, 36 WIP, 119 CRT).
 
 - stage 68 — `Source/ui/C_pnl_lst.cpp` gains a byte-exact
   `MATCH_FUNC(0x4B5BA0)` (100 bytes) as
@@ -1379,7 +1379,7 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   slot's zero via `return result` so only the first gate emits a fresh xor.
   Evidence after this wave: full gate `[1838/1838] MATCH_FUNCs OK, 44 WIP`;
   TU gate `Source/ui/C_pnl_lst.cpp` `[12/12] MATCH_FUNCs OK, 2 WIP`; phase docs
-  now 477/815 matched (219 left, 37 WIP, 119 CRT).
+  now 475/815 matched (221 left, 36 WIP, 119 CRT).
 
 - stage 69 — `Source/ui/C_pnl_lst.cpp` gains two byte-exact vtable-slot
   bodies. `MATCH_FUNC(0x4B5C10)` (34 bytes) is
@@ -1398,8 +1398,8 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   0x66EA48 through 0x48F970, compares against this, and falls into a +0x20
   subobject branch). Evidence after this wave: full gate
   `[1840/1840] MATCH_FUNCs OK, 44 WIP`; TU gate `Source/ui/C_pnl_lst.cpp`
-  `[14/14] MATCH_FUNCs OK, 2 WIP`; phase docs now 479/815 matched (217 left,
-  37 WIP, 119 CRT).
+  `[14/14] MATCH_FUNCs OK, 2 WIP`; phase docs now 475/815 matched (221 left,
+  36 WIP, 119 CRT).
 
 - stage 70 — `Source/ui/C_pnl_lst.cpp` gains two byte-exact callees of the
   just-matched slot bodies. `MATCH_FUNC(0x4B5DD0)` (94 bytes) is
@@ -1418,17 +1418,44 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   Hook_4B60B0 is a `__int16` thiscall taking (1, short row, 1), not void.
   Evidence after this wave: full gate `[1842/1842] MATCH_FUNCs OK, 44 WIP`;
   TU gate `Source/ui/C_pnl_lst.cpp` `[16/16] MATCH_FUNCs OK, 2 WIP`; phase docs
-  now 481/815 matched (215 left, 37 WIP, 119 CRT).
+  now 475/815 matched (221 left, 36 WIP, 119 CRT).
+
+- stage 71 (milestone) — the standalone matched-only boot now reaches a
+  populated menu with `EXIT=0` instead of the earlier `EXIT=139` fault. The
+  fault was a symbol-binding bug, not a body bug: the byte-matched
+  `0x440C40` (`S440B40::M_440C40`) calls its IAT slot through the
+  `cv_61c3c8` data pointer, and the native link had resolved that symbol to
+  the weak code stub, so the stub's first ARM instruction bytes were loaded as
+  a function address and the `blr` at `M_440C40+0x28` faulted.
+  `Source/host/matched_imports.cpp` now defines
+  `unsigned int (__stdcall *cv_61c3c8)()` as a strong data pointer and
+  `InstallMatchedImports` sets it to the host `time_get_time` trampoline
+  alongside the `g_61c3c8`/`g_61C3C8` slots. Build evidence:
+  `build_matched.sh` with `AOE_BIN` compiles 171 TUs, seeds 247 globals, links
+  175 matched objects with 600 function stubs and no probe failures. The boot
+  link emits 177 objects and a 2816-symbol binary (one fewer text symbol than
+  the faulting 2817 build because the weak stub is gone).
+  Run evidence: WinMain body 0x47AE20 returns 0; `sim ctor hits: 41B760=1
+  5B0EC0=1; vtable slots 00=1 18=2 24=0; DC10=1 status=0`; `DC80=1`;
+  `BC80=1 5B17D0=1 menu-loop=1`; `window class/create=2 hwnd=1A2B3C4D
+  menu-screen DE50=1 E070=1`; `menu populated: 47C4=10 subobjects 15e8=1
+  15f8=1 15fc=1 1604=1 1610=1; 7B0=3 5C0=2`. The menu is now built by matched
+  owner bodies plus WIP init-chain bodies, not by lifted code. Full gate after
+  the waves still reads `[1842/1842] MATCH_FUNCs OK, 44 WIP`.
 
 Gaps now:
-1. The native run now passes the MessageBox and executes the WinMain success
-   branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited
-   cleanly in headless mode. That is the menu/message-pump entry, but the actual
-   menu UI is not yet built: 0x41BC80's WIP body skips its real 0x41D070/+0x78
-   window and screen init chain, and 0x5B17D0's WIP body skips the session-screen
-   builders (0x4320E0/0x421710/0x421AF0). 0x41DC80 remains 448 vs 461; the base
-   and derived constructors 0x41B760 (1504 vs 1175) and 0x5B0EC0 (432 vs 686)
-   remain WIP. Slot +0x28 (0x5B2F20, 2088) remains lifted.
+1. (Done) The standalone matched-only boot reaches the populated menu with
+   `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1
+   5B17D0=1 menu-loop=1`, window class/create 2 with hwnd 0x1A2B3C4D,
+   `menu-screen DE50=1 E070=1`, and `menu populated: 47C4=10 subobjects
+   15e8..1610=1; 7B0=3 5C0=2`. The earlier EXIT=139 fault was a binding bug:
+   `cv_61c3c8`, the data pointer called by the byte-matched 0x440C40, had
+   resolved to a weak code stub whose ARM bytes were dereferenced as a
+   function address. It is now a strong data pointer initialized to
+   `time_get_time`. Remaining coverage gaps are partial, not boot failure:
+   0x41BC80/0x41D070/0x5B17D0/0x41B760/0x5B0EC0 carry WIP init-chain bodies
+   (byte totals differ from the originals), 0x41DC80 remains 448 vs 461, and
+   slot +0x28 (0x5B2F20, 2088) remains lifted.
 2. Import ABI (partially done): stages 10-11 install trampolines for
    LoadLibraryA/GetProcAddress/FreeLibrary, timeBeginPeriod/timeGetTime/
    timeEndPeriod, GlobalFree and MessageBoxA, marshalling image pointers to
@@ -1438,10 +1465,12 @@ Gaps now:
 3. Guest ABI: matched-to-matched calls are consistent because all bodies are
    compiled by the host compiler; the gap is only at boundaries to unmatched
    lifted code/external imports, which need guest-ABI wrappers.
-4. Coverage: phase docs show 444/815 phase-1 matched (252 left, 23 WIP, 119
-   CRT/library); the map reflects the current workspace, so the matched count
-   includes in-progress bodies not yet in this wave. Even a wired build would
-   still boot lifted code through the remaining stubs.
+4. Coverage: the generated phase-1 head is 475/815 matched (221 left, 36
+   WIP, 119 CRT/library). The map and full byte gate hold more matched bodies
+   than the 815-entry phase tsv because several recently matched callees were
+   not first-entered in the captured 2026-11-25 run; the full gate reads
+   1842 MATCH_FUNCs. The standalone boot still exercises some lifted stubs
+   through the WIP bodies' skipped portions.
 5. (Done) Asm-based "matches" were rewritten as C++; the tree now has zero
    `__asm` in matched bodies and all 167 matched TUs compile natively.
 

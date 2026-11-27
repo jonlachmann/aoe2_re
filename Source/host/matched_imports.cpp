@@ -45,6 +45,13 @@ extern char g_61c2e0[0x1000];
 extern char g_61c2e4[0x1000];
 extern char g_61c2e8[0x1000];
 
+/* cv_* IAT-pointer bodies such as 0x440C40 call through a data pointer symbol,
+   not through a code stub. Bind that symbol to the same trampoline value the
+   generated guest slot carries; a weak code stub with this name would otherwise
+   make the first instruction bytes look like a function address. */
+unsigned int (__stdcall *cv_61c3c8)() = 0;
+
+
 typedef int (__stdcall *TLoadLibraryA)(char *name);
 typedef int (__cdecl *TExport)(int, char *, char *, int);
 typedef TExport (__stdcall *TGetProcAddress)(int module, char *name);
@@ -418,6 +425,7 @@ extern "C" void InstallMatchedImports(void)
     *(void**)g_61c3d8 = (void*)time_begin_period;
     *(void**)g_61c3c8 = (void*)time_get_time;
     *(void**)g_61C3C8 = (void*)time_get_time;
+    cv_61c3c8 = time_get_time;
     *(void**)g_61c168 = (void*)global_free;
     *(void**)g_61c37c = (void*)message_box_a;
     *(void**)g_61c3c4 = (void*)time_end_period;
