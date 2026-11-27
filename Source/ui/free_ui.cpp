@@ -6308,13 +6308,20 @@ void S4AF3A0::M_4AF3A0(int a1, int a2, int a3, int a4, int a5, int a6)
 // 0x498DC0 — state-byte setter on the 0x4988E0/0x498AD0 object: unchanged
 // state returns the +0x114 value, otherwise resets through 0x498AD0, stores
 // the byte, and returns the 0x4988E0 result.
+// The 0x4988E0/0x498AD0 object also has the mixer sub-device state behind the
+// +0x104 mode byte: opened handles at +0x118/+0x250/+0x248, the +0x258 lookup
+// key already declared, and the mixer-control window at +0x3D8.
 class S498DC0 {
 public:
     char pad_00[0x104];
     char field_104;               // +0x104 state byte
     char pad_105[0x114 - 0x105];
     int field_114;                // +0x114 gate
-    char pad_118[0x254 - 0x118];
+    int field_118;                // +0x118 opened audio-device handle
+    char pad_11c[0x248 - 0x11c];
+    int field_248;                // +0x248 mixer-open flag/state word
+    char pad_24c[4];              // +0x24C undeclared word
+    int field_250;                // +0x250 device slot already reported
     int field_254;                // +0x254 published value
     int field_258;                // +0x258 lookup key, reset to -1
     char pad_25c[0x27c - 0x25c];
@@ -6328,10 +6335,20 @@ public:
     char pad_3dc[0x3f0 - 0x3dc];
     int field_3f0;                // +0x3F0 scaled result
     void M_498AD0();
+    void M_498D80();
     int M_4988E0();
     int M_498DC0(char a1);
     void M_498E00(int a1, int a2);
 };
+
+// Callee class identities: the same +0x114/+0x250/+0x258 mixer state is reset
+// through 499660 and the device close helper 498D80, while 521470 releases the
+// lookup key on the +0x90 C_cluster_520CE0 child.
+class C_cluster_498AD0 {
+public:
+    int M_499660();
+};
+extern "C" int __stdcall mciSendCommandA(int a1, unsigned int a2, unsigned int a3, int a4);
 
 MATCH_FUNC(0x498DC0)
 int S498DC0::M_498DC0(char a1)
@@ -8143,6 +8160,7 @@ public:
     int M_5217F0(int a1);
     void M_5215F0(int a1);
     int M_521780(int a1, int a2);
+    void M_521470(int a1);
 };
 class C_vt62C1E0 {
 public:
@@ -8203,6 +8221,72 @@ int C_vt6251E4::M_4EDC70()
 }
 
 
+
+// 0x498AD0 — mixer teardown dispatcher on the +0x114 gate. Reset the mixer
+// state through 499660, then switch on the +0x104 mode byte:
+//   1 -> report the +0x250 slot if it has not claimed one, run the device
+//        reset 498D80, send mciSendCommandA(+0x118, 0x804, 2, 0), then clear
+//        +0x118/+0x114/+0x248;
+//   2 -> report/reset the slot and clear +0x114/+0x248 without mci;
+//   3 -> clear +0x248/+0x114, and when the +0x90 child exists release the
+//        +0x258 lookup key through 521470 and reset it to -1;
+//   4 -> same as 3 but reloads +0x258 late into eax.
+// Any other mode byte returns immediately.
+WIP_FUNC(0x498AD0)
+void S498DC0::M_498AD0()
+{
+    if (field_114 == 0)
+        return;
+    ((C_cluster_498AD0*)this)->M_499660();
+    T6645Ef* gt = (T6645Ef*)g_6645c4;
+    C_cluster_520CE0* child = (C_cluster_520CE0*)gt->field_90;
+    switch ((unsigned char)field_104)
+    {
+    case 1:
+        if (field_250 != 1)
+        {
+            M_498E00(field_250, 0);
+            field_250 = 1;
+        }
+        M_498D80();
+        mciSendCommandA(field_118, 0x804, 2, 0);
+        field_118 = 0;
+        field_114 = 0;
+        field_248 = 0;
+        break;
+    case 2:
+        if (field_250 != 1)
+        {
+            M_498E00(field_250, 0);
+            field_250 = 1;
+        }
+        M_498D80();
+        field_114 = 0;
+        field_248 = 0;
+        break;
+    case 3:
+        field_248 = 0;
+        field_114 = 0;
+        if (child != 0)
+        {
+            child->M_521470(field_258);
+            field_258 = -1;
+        }
+        break;
+    case 4:
+        field_248 = 0;
+        field_114 = 0;
+        if (child != 0)
+        {
+            int key = field_258;
+            child->M_521470(key);
+            field_258 = -1;
+        }
+        break;
+    default:
+        return;
+    }
+}
 
 // 0x498E00 — state-byte dispatcher on the 0x4988E0/0x498AD0 object. Clamp a1
 // to [-10000, 0]; publish it at +0x254 when a2 is nonzero; return when +0x114

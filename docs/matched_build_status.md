@@ -1601,6 +1601,34 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   119 CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
 
 
+- stage 76 — another compact phase-1 UI entry now has a semantically complete
+  C++ body and the class feedback sharpened the shared 0x4988E0 mixer object
+  shape. Run evidence remains green: `EXIT=0`, WinMain body `0x47AE20`
+  returned 0, `BC80=1 5B17D0=1 menu-loop=1`,
+  `window class/create=2 hwnd=1A2B3C4D menu-screen DE50=1 E070=1`,
+  `menu populated: 47C4=10 subobjects 15e8..1610=1; 7B0=2 5C0=2`, and
+  `menu idle ticks from matched 0x5BB2D0: 8 (body hits 8)`.
+  Source addition: `Source/ui/free_ui.cpp` gains the WIP
+  `S498DC0::M_498AD0` (0x498AD0, 272 bytes). It is the mixer teardown
+  dispatcher on the 0x4988E0/0x498AD0 object shape: gate +0x114, reset mixer
+  state through 499660, then switch the +0x104 mode byte. Mode 1 reports the
+  +0x250 slot through the matched 498E00 helper, runs device reset 498D80 and
+  mciSendCommandA(+0x118, 0x804, 2, 0), then clears +0x118/+0x114/+0x248;
+  mode 2 does the reset without mci; modes 3/4 clear +0x248/+0x114 and release
+  the +0x258 lookup key through 521470 when the g_6645C4 +0x90 child exists.
+  The class feedback now records the full mixer field block
+  +0x118/+0x248/+0x24C/+0x250/+0x254/+0x258 and the 499660/498D80/521470
+  callee identities; the extra +0x24C word is undeclared by the original but
+  must be reserved so the existing byte-exact 0x498E00 field offsets stay
+  exact. WIP: recomposed branch tails give 288 vs 272 bytes.
+  Gate/build evidence: TU gate `Source/ui/free_ui.cpp [380/380] MATCH_FUNCs
+  OK, 2 WIP` (0x498E00 still byte-exact after the field fix); full gate
+  `[1886/1886] MATCH_FUNCs OK, 25 WIP`; `build_matched.sh` links 175 matched
+  objects with 650 stubs and no probe failures. The regenerated phase docs
+  read 509/815 matched (187 left, 22 WIP, 119 CRT/library) for phase 1 and
+  phase 2 `28 matched, 3 left (all WIP)`.
+
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1

@@ -40978,12 +40978,12 @@
   "name": "sub_498AD0",
   "names": [],
   "class": "C_cluster_498AD0",
-  "class_evidence": "this-edge component with no rooted object identity",
+  "class_evidence": "mixer teardown dispatcher on the 0x4988E0/0x498AD0 object shape: gate +0x114, reset through 499660, then switch the +0x104 mode byte. Mode 1 reports the +0x250 slot through 498E00, runs device reset 498D80 and mciSendCommandA(+0x118,0x804,2,0), then clears +0x118/+0x114/+0x248; mode 2 does the reset without mci; modes 3/4 clear +0x248/+0x114 and release +0x258 through 521470 when the g_6645C4 +0x90 child exists. The same object shape is the S498DC0 helper already carrying 498DC0/498E00 in free_ui; fields +0x118/+0x248/+0x24C/+0x250 were added so the matched 498E00 offsets stay exact. WIP: 288 vs 272",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/free_ui.cpp"
  },
  {
   "address": "0x498BF0",
