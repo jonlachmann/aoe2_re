@@ -98482,13 +98482,13 @@
   "calls": 0,
   "name": "sub_5BD400",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "T5BD400",
+  "class_evidence": "the 0x75FF58 trigonometric table object: 4096 radian entries at +0x0000/+0x4000/+0x8000/+0xC000 (sin/cos/tan/atan, angle = i*2*pi/4096) with tan forced 0 at 1024/3072 and atan at 0/2048, then 360 degree entries at +0x10000/+0x105A0/+0x10B40/+0x111C0 (angle = i*pi/180) with tan forced 0 at 90/270 and atan at 0/180; returns this. WIP: VC6 folds 1.0 to fld1 and the angle constants to direct operands; ours 256 vs 244",
   "slot_classes": [],
   "module": "sim",
   "region": "sim",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/sim/free_sim.cpp"
  },
  {
   "address": "0x5BD500",

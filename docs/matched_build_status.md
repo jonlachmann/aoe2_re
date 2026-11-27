@@ -1577,6 +1577,30 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   (all WIP)`.
 
 
+- stage 75 — another compact phase-1 sim entry now has a semantically complete
+  C++ body. Run evidence stays green: `EXIT=0`, WinMain body `0x47AE20`
+  returned 0, `BC80=1 5B17D0=1 menu-loop=1`,
+  `window class/create=2 hwnd=1A2B3C4D menu-screen DE50=1 E070=1`,
+  `menu populated: 47C4=10 subobjects 15e8..1610=1; 7B0=2 5C0=2`, and
+  `menu idle ticks from matched 0x5BB2D0: 8 (body hits 8)`.
+  Source addition: `Source/sim/free_sim.cpp` gains the WIP
+  `T5BD400::Other_5BD400` (0x5BD400, 244 bytes): rebuild the 0x75FF58
+  trigonometric tables — a 4096-entry radian pass filling sin/cos/tan/atan at
+  +0x0000/+0x4000/+0x8000/+0xC000 from i*2*pi/4096, with tan forced 0 at
+  1024/3072 and atan at 0/2048, then a 360-entry degree pass at
+  +0x10000/+0x105A0/+0x10B40/+0x111C0 from i*pi/180, with tan forced 0 at
+  90/270 and atan at 0/180; returns this. The class feedback now records
+  T5BD400 as the owner of the four table quadrants instead of an anonymous
+  helper. WIP: VC6 folds `1.0` to `fld1` and the two angle constants to direct
+  operands; this toolchain emits indexed data loads and literal relocations,
+  so ours is 256 vs 244 bytes although the tables and edge cases match.
+  Gate/build evidence: full gate `[1886/1886] MATCH_FUNCs OK, 24 WIP`;
+  TU gate `Source/sim/free_sim.cpp [362/362] MATCH_FUNCs OK, 3 WIP`;
+  `build_matched.sh` links 175 matched objects with 650 stubs and no probe
+  failures. The regenerated phase docs read 509/815 matched (187 left, 21 WIP,
+  119 CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
+
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1

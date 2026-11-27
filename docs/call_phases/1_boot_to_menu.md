@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 509 matched, 187 left to match (20 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 509 matched, 187 left to match (21 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (187)
 
@@ -8,7 +8,7 @@
 |---|---|---|---|---|---|
 | 73 | `sub_4927D0` | 1 |  | 1_boot_to_menu |  |
 | 89 | `sub_473410` | 3 | WIP | 1_boot_to_menu | C_vt620BF8::Init_473410 |
-| 103 | `sub_5BD400` | 1 |  | 1_boot_to_menu |  |
+| 103 | `sub_5BD400` | 1 | WIP | 1_boot_to_menu | T5BD400::Other_5BD400 |
 | 196 | `sub_5BB000` | 9 | WIP | 1_boot_to_menu | C_vt62C1E0::Set_5BB000 |
 | 201 | `sub_4BE0F0` | 5 |  | 1_boot_to_menu |  |
 | 207 | `sub_41BC80` | 1 | WIP | 1_boot_to_menu | C_vt61DF78::slot29_41BC80 |

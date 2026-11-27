@@ -4,6 +4,7 @@
 #include "Function.hpp"
 #include "matched_mem.h"
 #include "C_cluster_520720.hpp"
+#include <math.h>
 extern "C" int cv_ui_520410;
 extern "C" int cv_ui_520cc0;
 extern "C" int cv_ui_520dd0;
@@ -3811,12 +3812,69 @@ void __cdecl sub_55A670()
     ((T4734D0*)&g_7519A0)->Other_4734D0();
 }
 
-// 0x5BD510 — forward through the global object at 0x75FF58.
-extern char g_75FF58;
+// 0x5BD400 — rebuild the radian and degree trigonometric lookup tables on the
+// 0x75FF58 object. The radian pass fills 4096 entries at +0x0000 (sin),
+// +0x4000 (cos), +0x8000 (tan) and +0xC000 (atan) from angle = i * 2*pi/4096;
+// tan is forced 0 at 1024/3072 and atan at 0/2048. The degree pass fills 360
+// entries at +0x10000/+0x105A0/+0x10B40/+0x111C0 from angle = i * pi/180; tan
+// is forced 0 at 90/270 and atan at 0/180. Returns this. WIP: VC6's original
+// folds `1.0` into `fld1` and the two angle constants into direct memory
+// operands; this toolchain emits indexed data loads and literal relocations,
+// so ours is 256 vs 244 bytes though the tables and edge cases match.
 class T5BD400 {
 public:
-    void Other_5BD400();
+    T5BD400* Other_5BD400();
 };
+WIP_FUNC(0x5BD400)
+T5BD400* T5BD400::Other_5BD400()
+{
+    int v2 = 0;
+    int v8 = v2;
+    float* v3 = (float*)((int*)this + 0x2000);
+    do
+    {
+        double v4 = (double)v8 * 0.001533980788;
+        *(v3 - 0x2000) = (float)sin(v4);
+        *(v3 - 4096) = (float)cos(v4);
+        if (v2 == 1024 || v2 == 3072)
+            *v3 = 0.0f;
+        else
+            *v3 = (float)tan(v4);
+        if (!v2 || v2 == 2048)
+            v3[4096] = 0.0f;
+        else
+            v3[4096] = (float)atan2(v4, 1);
+        ++v2;
+        ++v3;
+        v8 = v2;
+    }
+    while (v2 < 4096);
+    int v5 = 0;
+    float* v6 = (float*)((int*)this + 17104);
+    int v9 = 0;
+    do
+    {
+        double v7 = (double)v9 * 0.01745329252;
+        *(v6 - 720) = (float)sin(v7);
+        *(v6 - 360) = (float)cos(v7);
+        if (v5 == 90 || v5 == 270)
+            *v6 = 0.0f;
+        else
+            *v6 = (float)tan(v7);
+        if (!v5 || v5 == 180)
+            v6[360] = 0.0f;
+        else
+            v6[360] = (float)atan2(v7, 1);
+        ++v5;
+        ++v6;
+        v9 = v5;
+    }
+    while (v5 < 360);
+    return this;
+}
+
+// 0x5BD510 — forward through the global object at 0x75FF58.
+extern char g_75FF58;
 MATCH_FUNC(0x5BD510)
 void __cdecl sub_5BD510()
 {
