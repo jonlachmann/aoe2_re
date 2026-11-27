@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 532 matched, 164 left to match (27 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 532 matched, 164 left to match (28 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (164)
 
@@ -150,7 +150,7 @@
 | 728 | `sub_4B81C0` | 1 |  | 1_boot_to_menu |  |
 | 730 | `sub_4ED630` | 1 |  | 1_boot_to_menu |  |
 | 741 | `sub_522920` | 2 | WIP | 1_boot_to_menu | C_cluster_520CE0::M_522920 |
-| 749 | `sub_4A0920` | 40 |  | 1_boot_to_menu |  |
+| 749 | `sub_4A0920` | 40 | WIP | 1_boot_to_menu | C_TRIBE_Screen_Options::M_4A0920 |
 | 751 | `sub_4BC360` | 20 |  | 1_boot_to_menu | pnl_txt::draw_background2 |
 | 752 | `sub_4BC750` | 26 | WIP | 1_boot_to_menu | C_pnl_inp::M_4BC750 |
 | 755 | `sub_4BC560` | 20 |  | 1_boot_to_menu | pnl_txt::draw_border |

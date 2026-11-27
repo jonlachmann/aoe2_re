@@ -127,6 +127,74 @@ void C_TRIBE_Screen_Options::M_4A0780(unsigned char v)
         slot_08(2);
 }
 
+// 0x4A0920 — walk the +0x58 chain and dispatch slot +0x20 on every node object
+// whose rect overlaps the incoming quad and whose +0xE0 priority exceeds the
+// incoming +0xE0. Skip the incoming object (a2), the excluded object (a3) and
+// nodes that are not strictly higher priority; the two overlap tests follow the
+// corpus branch labels, allowing one dispatch per node and returning the chain
+// cursor (0 once exhausted). WIP: the original loads the incoming rect words
+// into stack slots and allocates esi/edi/ebp around the four corners; this
+// translation keeps several of them in registers, so ours is 320 vs 295 bytes
+// although the overlap tests and both slot +0x20 dispatches are present.
+WIP_FUNC(0x4A0920)
+int* C_TRIBE_Screen_Options::M_4A0920(int* a2, int* a3, int a4)
+{
+    int* result = a2;
+    int v5 = a2[9];
+    T4A2280Node* v13 = (T4A2280Node*)field_58;
+    int v14 = a2[10];
+    int v6 = a2[11];
+    int v15 = v6;
+    int v16 = a2[12];
+    int v8, v9, v10, v11;
+    char v12;
+    if (v13 != 0)
+    {
+        while (1)
+        {
+            T4A2280Obj* v7 = v13->field_0;
+            if (v7 == (T4A2280Obj*)result || v7 == (T4A2280Obj*)a3
+                || v7->field_e0 <= result[56])
+                goto LABEL_35;
+            v8 = v7->field_24;
+            v9 = v7->field_28;
+            v10 = v7->field_2c;
+            v11 = v7->field_30;
+            if ((v8 >= v5 && v8 <= v6) || (v10 >= v5 && v10 <= v6))
+                goto LABEL_18;
+            v12 = v5 < v8;
+            if (v5 <= v8)
+                goto LABEL_22;
+            if (v10 > v6)
+            {
+LABEL_18:
+                if ((v9 >= v14 && v9 <= v16) || (v11 >= v14 && v11 <= v16)
+                    || (v9 < v14 && v11 > v16))
+                {
+                    v7->Vt_08(a4);
+                    v6 = v15;
+                    goto LABEL_35;
+                }
+                v6 = v15;
+            }
+            v12 = v5 < v8;
+LABEL_22:
+            if (((!v12 && v5 <= v10) || (v6 >= v8 && v6 <= v10)
+                 || (v5 < v8 && v6 > v10))
+                && ((v14 >= v9 && v14 <= v11) || (v16 >= v9 && v16 <= v11)
+                    || (v14 < v9 && v16 > v11)))
+                v7->Vt_08(a4);
+LABEL_35:
+            v13 = v13->field_8;
+            result = (int*)v13;
+            if (v13 == 0)
+                return result;
+            result = a2;
+        }
+    }
+    return result;
+}
+
 MATCH_FUNC(0x4A2280)
 void C_TRIBE_Screen_Options::M_4A2280()
 {

@@ -1718,6 +1718,34 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
 
 
+- stage 80 — the options screen rectangle-overlap dispatcher is now a C++ WIP
+  body and the shared node-chain object shape was sharpened, with boot still
+  green. Run evidence: `EXIT=0`, WinMain body `0x47AE20` returned 0,
+  `BC80=1 5B17D0=1 menu-loop=1`,
+  `window class/create=2 hwnd=1A2B3C4D menu-screen DE50=1 E070=1`,
+  `menu populated: 47C4=10 subobjects 15e8..1610=1; 7B0=2 5C0=2`, and
+  `menu idle ticks from matched 0x5BB2D0: 8 (body hits 8)`.
+  Source addition: `Source/ui/C_TRIBE_Screen_Options.cpp` gains the WIP
+  `C_TRIBE_Screen_Options::M_4A0920` (0x4A0920, 295 bytes): walk the +0x58
+  chain; skip the incoming object a2 and the excluded object a3, and skip nodes
+  whose +0xE0 priority is not strictly above a2[+0xE0]. Compare each node
+  object's +0x24/+0x28/+0x2C/+0x30 rect against a2[9..12] using the corpus edge
+  tests, dispatch the node object vtable slot +0x20 (Vt_08) with a4 at most once
+  per node, then advance through node +0x08 and return the cursor (0 once the
+  chain ends). The class feedback names T4A2280Obj's data block
+  +0x24..+0x30 rect and +0xE0 priority, showing that the 60-slot vtable lives
+  separately from these object fields and that the same shape is the incoming
+  a2/a3 rectangle object. WIP: the original hoists the incoming rect words into
+  stack slots and allocates esi/edi/ebp around the corners; this translation
+  keeps several in registers, so ours is 320 vs 295 bytes although the overlap
+  tests and both slot +0x20 dispatches are present.
+  Gate/build evidence: TU gate `Source/ui/C_TRIBE_Screen_Options.cpp [32/32]
+  MATCH_FUNCs OK, 2 WIP`; full gate `[1911/1911] MATCH_FUNCs OK, 31 WIP`;
+  `build_matched.sh` links 176 matched objects with no failed probes.
+  The regenerated phase docs read 532/815 matched (164 left, 28 WIP, 119
+  CRT/library) for phase 1 and phase 2 `28 matched, 3 left (all WIP)`.
+
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1

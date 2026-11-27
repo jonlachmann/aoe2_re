@@ -43718,7 +43718,7 @@
   "name": "sub_4A0920",
   "names": [],
   "class": "C_TRIBE_Screen_Options",
-  "class_evidence": "vtable slot",
+  "class_evidence": "screen rectangle-overlap dispatcher on the 0x625F80 options object: walk the +0x58 chain; skip the incoming object (a2), the excluded object (a3) and nodes whose +0xE0 priority is not strictly above a2[+0xE0]. Compare the node object +0x24/+0x28/+0x2C/+0x30 rect against a2[9..12] with the corpus edge tests, dispatching the node object vtable slot +0x20 (Vt_08) with a4 at most once per node, then advance through node +0x08 and return the cursor (0 once exhausted). Added T4A2280Obj rect/priority fields so the node shape now has +0x24..+0x30 and +0xE0 data while the 60-slot vtable stays separate. WIP: original hoists the incoming rect into stack slots and allocates esi/edi/ebp; ours keeps some in registers (320 vs 295)",
   "slot_classes": [
    "C_TRIBE_Screen_Options",
    "C_TribePopUpHelp",
@@ -43791,8 +43791,8 @@
   ],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/C_TRIBE_Screen_Options.cpp"
  },
  {
   "address": "0x4A0A50",

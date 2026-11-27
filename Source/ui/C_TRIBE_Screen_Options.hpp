@@ -83,6 +83,13 @@ public:
     virtual void Vt_58();
     virtual void Vt_59();
 
+    char pad_04[0x24 - 0x04];
+    int field_24;                 // +0x24 rect left
+    int field_28;                 // +0x28 rect top
+    int field_2c;                 // +0x2C rect right
+    int field_30;                 // +0x30 rect bottom
+    char pad_34[0xe0 - 0x34];
+    int field_e0;                 // +0xE0 overlap priority
     void M_4A0530(int a1, int a2, int a3);
 };
 
@@ -294,6 +301,7 @@ public:
     void M_4A3D40(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                   int a8, int a9, int a10, int a11);
     int M_4A0460(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+    int* M_4A0920(int* a2, int* a3, int a4);
     void M_4A0780(unsigned char v);
     void M_4A07E0(int a1, int a2, int a3, int a4, int a5, int a6, int a7,
                   int a8, int a9, int a10, int a11, int a12, int a13);
