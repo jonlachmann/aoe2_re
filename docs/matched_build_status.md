@@ -1222,6 +1222,30 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   after this wave: full gate `[1835/1835] MATCH_FUNCs OK, 40 WIP`; phase docs
   now 474/815 matched (222 left, 33 WIP, 119 CRT).
 
+- stage 62 — `Source/gfx/free_gfx.cpp` gains a semantically complete
+  `WIP_FUNC(0x440D40)` (445 bytes original) as
+  `void S440B40::M_440D40(char* a1, int a2)`. It probes for a free 0x66955C-named
+  file: it copies a1 into +0xC68 (or the one-character 0x6514A8 default when the
+  buffer is empty), then, when +0x0C is set and the +0x1C/+0x20 flags allow a
+  retry, stamps timeGetTime into +0x24 and scans 25 names. With a3 the 0x651164
+  prefix is included; without it, only the name and 0x66955C suffix. Each
+  candidate opens through 0x5FCE01(path,"wt"); the first hit sets +0x1C, logs
+  the +0xBE8 path through the empty 0x4378C0 logger and reports elapsed time
+  through the matched M_440C40, then returns. A second c:\ fallback loop tries
+  the same 25 slots; on exhaustion it sets +0x20 = 1 and +0x1C = 0 and returns.
+  Class feedback: the same S440B40 object extends far beyond the toggle block:
+  +0x0C enable, +0x1C found flag, +0x20 fallback flag, +0x24 elapsed stamp,
+  +0x2C logger, +0xBE8 formatted probe path, +0xC68 probe name, +0xCE8 probe
+  handle, and the ctor 0x440A90 initializes all of them before calling the
+  probe. The 9 formats are 0x651448/0x651438/0x65149C/0x65148C (25-name loop with
+  and without the prefix) and 0x65147C/0x65146C (c:\ fallback), always with
+  "wt" at 0x651488. WIP reason: the body is semantically complete and all loop
+  code/push orders match, but VC6 schedules the exhaustion epilogue differently
+  — ours pops edi/esi before the +0x20/+0x1C stores (0x182), the original stores
+  first and pops at 0x18C; failed size is 448 vs 445. Evidence after this wave:
+  full gate `[1835/1835] MATCH_FUNCs OK, 41 WIP`; phase docs unchanged at
+  474/815 matched (222 left, 34 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

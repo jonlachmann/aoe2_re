@@ -817,10 +817,15 @@ public:
     int field_10;
     int field_14;                 // +0x14 state flag
     int field_18;
-    char pad_1c[0x08];            // 0x1c..0x24
-    int field_24;
+    int field_1c;                 // +0x1C probe-found flag
+    int field_20;                 // +0x20 no-name fallback flag
+    int field_24;                 // +0x24 elapsed stamp
     int field_28;                 // +0x28 reset by M_440D00
-    int field_2c;
+    int field_2c;                 // +0x2C logger pointer
+    char pad_30[0xbe8 - 0x30];
+    char probe_path[0xc68 - 0xbe8];   // +0xBE8 formatted probe path
+    char probe_name[0xce8 - 0xc68];   // +0xC68 probe name
+    void* field_ce8;              // +0xCE8 probe file handle
     int* M_440F70(int a1);        // __thiscall sibling helper at 0x440F70
     S440B40* M_440A90();          // constructor body at 0x440A90
     void M_440B40(int a1);
@@ -829,8 +834,8 @@ public:
     void M_440C00(int a1);
     void M_440CC0(int a1);
     void M_440D00(int a1);
-    void M_440D40(int a1, int a2);  // native scaffolding for 0x440D40
-    void M_440C40();                // native scaffolding for 0x440C40
+    void M_440D40(char* a1, int a2);
+    void M_440C40();
 };
 
 MATCH_FUNC(0x440B40)
@@ -1766,7 +1771,7 @@ S440B40* S440B40::M_440A90()
     M_440BC0(zero);
     M_440C00(zero);
     M_440CC0(zero);
-    M_440D40(zero, 1);
+    M_440D40((char*)zero, 1);
     Hook_4378C0_2Arg(this, (int)ADDR(0x65136c));
     M_440C40();
     return this;
@@ -1774,9 +1779,91 @@ S440B40* S440B40::M_440A90()
 
 // Native scaffolding for the two still-lifted 0x440A90 tail calls: the empty
 // logger 0x440D40(0,1) and the 0x440C40 finaliser.
-void S440B40::M_440D40(int a1, int a2)
+extern void* __cdecl sub_5FCE01(char* a1, char* a2);
+extern int __cdecl sub_5FCE14(char* dst, char* fmt, ...);
+extern void __cdecl sub_4378C0(int a1, ...);
+extern unsigned int (__stdcall *cv_61c3c8)();
+#pragma intrinsic(strcpy)
+
+// 0x440D40 — probe for a free 0x66955C-named file. Copy a2 into +0xC68 (or the
+// 0x6514A8 default when the buffer is empty), then, when +0x0C is set and the
+// +0x1C/+0x20 probe flags allow a retry, stamp timeGetTime into +0x24 and scan
+// 25 names: with a3, the 0x651164 prefix is included; without it, only the name
+// and 0x66955C suffix. Each candidate opens through 0x5FCE01(path,"wt"); the
+// first hit sets +0x1C, logs the path through 0x4378C0 and reports elapsed time
+// through M_440C40. A second c:\ fallback loop tries the same 25 slots, then
+// sets +0x20/+0x1C on exhaustion and returns. Exhaustion in either loop ends the
+// member; hit paths set +0x1C before the log and elapsed-time report.
+WIP_FUNC(0x440D40)
+void S440B40::M_440D40(char* a1, int a2)
 {
-    (void)a1; (void)a2;
+    char* v4 = probe_name;
+    if (a1 == 0)
+    {
+        if (*v4 == 0)
+            strcpy(v4, (char*)ADDR(0x6514a8));
+    }
+    else
+        strcpy(v4, a1);
+    if (field_0c != 0 && (field_1c == 0 || field_20 != 0))
+    {
+        field_24 = (int)cv_61c3c8();
+        for (int i = 1; i <= 25; i++)
+        {
+            if (a2 != 0)
+            {
+                if (i == 1)
+                    sub_5FCE14(probe_path, "%s%s%s.txt",
+                               (char*)ADDR(0x651164), v4,
+                               (char*)ADDR(0x66955c));
+                else
+                    sub_5FCE14(probe_path, "%s%s%s%.2d.txt",
+                               (char*)ADDR(0x651164), v4,
+                               (char*)ADDR(0x66955c), i - 1);
+            }
+            else
+            {
+                if (i == 1)
+                    sub_5FCE14(probe_path, "%s%s.txt", v4,
+                               (char*)ADDR(0x66955c));
+                else
+                    sub_5FCE14(probe_path, "%s%s%.2d.txt", v4,
+                               (char*)ADDR(0x66955c), i - 1);
+            }
+            void* p = sub_5FCE01(probe_path, (char*)ADDR(0x651488));
+            field_ce8 = p;
+            if (p != 0)
+            {
+                field_1c = 1;
+                sub_4378C0((int)this, (int)ADDR(0x651454),
+                           (int)ADDR((char*)this + 0xbe8));
+                M_440C40();
+                return;
+            }
+        }
+        int j = 1;
+        while (1)
+        {
+            if (j == 1)
+                sub_5FCE14(probe_path, "c:\\%s.txt", v4);
+            else
+                sub_5FCE14(probe_path, "c:\\%s%.2d.txt", v4, j - 1);
+            void* p = sub_5FCE01(probe_path, (char*)ADDR(0x651488));
+            field_ce8 = p;
+            if (p != 0)
+                break;
+            if (++j > 25)
+            {
+                field_20 = 1;
+                field_1c = 0;
+                return;
+            }
+        }
+        field_1c = 1;
+        sub_4378C0((int)this, (int)ADDR(0x651454),
+                   (int)ADDR((char*)this + 0xbe8));
+        M_440C40();
+    }
 }
 // 0x440C40 — report elapsed milliseconds through the +0x2C logger slot. Read
 // timeGetTime, seed a time_t through 0x5FD3A5 and resolve the struct tm through
@@ -1788,7 +1875,6 @@ extern void __cdecl sub_5FD3A5(int* a1);
 extern void* __cdecl sub_5FD245(int* a1);
 extern char* __cdecl sub_5FD16F(void* a1);
 extern void __cdecl Hook_4378C0_V(int a1, ...);
-extern unsigned int (__stdcall *cv_61c3c8)();
 MATCH_FUNC(0x440C40)
 void S440B40::M_440C40()
 {

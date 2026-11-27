@@ -23135,13 +23135,13 @@
   "calls": 4,
   "name": "sub_440D40",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "S440B40",
+  "class_evidence": "S440B40 file-probe member: +0xBE8 path buffer, +0xC68 name buffer, +0xCE8 probe handle, +0x1C/+0x20 found/fallback flags, +0x24 elapsed stamp, +0x0C enable; strcpy a1 or default 0x6514A8 into +0xC68; 25-name probe with 0x651164 prefix when a3, 0x66955C suffix, 9 open formats, c:\\ fallback loop, 0x5FCE01(path,\"wt\"), log 0x651454 and M_440C40 on hit, exhaustion sets +0x20/+0x1C",
   "slot_classes": [],
   "module": "gfx",
   "region": "gfx",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/gfx/free_gfx.cpp"
  },
  {
   "address": "0x440F70",
