@@ -143,16 +143,17 @@ public:
     virtual void Vt_65();
     virtual void Vt_66();
     virtual int Vt_67(int a1, int* a2, int a3, int a4, int a5, int a6, int a7, int a8);  // +0x10C
-    virtual void Vt_68();
+    virtual int Vt_68(__int16** a1, __int16** a2, int a3, int a4, int a5, int a6, int a7, int a8);  // +0x110
     virtual void Vt_69();
     virtual void Vt_70();
     virtual void Vt_71();
-    virtual int Vt_72(int a1, int* a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // +0x120
+    virtual int Vt_72(__int16** a1, __int16** a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11);  // +0x120
     char pad_04[0x978 - 4];
     int field_978[1];             // +0x978 address passed as an argument
     int* field_97c;               // +0x97C object pointer
 
     void M_4ED280();
+    int M_4ED180();
 };
 
 // Global 0x664524 with its 0x422A70 entry.

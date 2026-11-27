@@ -7056,7 +7056,7 @@ public:
     virtual void Vat_58();
     virtual void Vat_59();
     virtual void Vat_60();
-    virtual void Dispatch_f4(int a1);
+    virtual int Dispatch_f4(int a1);
 
     char pad_04[0x204 - 0x04];    // +0x04..+0x204
     int field_204;                // +0x204 clear flag
@@ -7124,17 +7124,17 @@ public:
     virtual void Vt_58();
     virtual void Vt_59();
     virtual void Vt_60();
-    virtual void Dispatch_f4(int a1);
+    virtual int Dispatch_f4(int a1);
 
     char pad_04[0x204 - 0x04];    // +0x04..+0x204
     int field_204;                // +0x204 owner flag
     T4AF870Item** arr_208;        // +0x208 item array
     short count_20c;              // +0x20C item count
-    void M_4AF870();
+    int M_4AF870();
 };
 
 MATCH_FUNC(0x4AF870)
-void C_cluster_4AF870::M_4AF870()
+int C_cluster_4AF870::M_4AF870()
 {
     for (int i = 0; i < count_20c; i++)
     {
@@ -7142,7 +7142,7 @@ void C_cluster_4AF870::M_4AF870()
         arr_208[i]->Dispatch_f4(0);
     }
     field_204 = 1;
-    Dispatch_f4(1);
+    return Dispatch_f4(1);
 }
 
 // 0x48B3C0 — select row a1 from the +0x64 source table's +0x10 stride-0x20

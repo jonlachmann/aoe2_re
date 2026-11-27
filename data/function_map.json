@@ -63711,13 +63711,13 @@
   "calls": 3,
   "name": "sub_4ED180",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_vt6251E4",
+  "class_evidence": "C_vt6251E4 screen object (reconstructed helper T4ED280Self): builds the +0x948 panel via slot +0x120, scans rows from +0x964 with +0x120 (i-6, v3+0x253A, 730, tick) and +0x110 (i,700,tick,28,28,0,0) stepping tick by 30 to 360; exhaustion runs 0x4AF400(base,3) over three +0x964 entries and releases +0x96C/+0x968/+0x964 via 0x4AF870 by (0x421FB0(0x6645C4)-1) case 0/1/default",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/C_cluster_4ED280.cpp"
  },
  {
   "address": "0x4ED280",
@@ -63725,8 +63725,8 @@
   "calls": 2,
   "name": "sub_4ED280",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "C_vt6251E4",
+  "class_evidence": "C_vt6251E4 screen object (reconstructed helper T4ED280Self): slots +0x10C (67) and +0x120 (72) on this, +0x978 word and +0x97C pointer, 0x664524 global",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",

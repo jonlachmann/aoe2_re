@@ -1271,6 +1271,32 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   full gate `[1836/1836] MATCH_FUNCs OK, 41 WIP`; phase docs now 475/815
   matched (221 left, 34 WIP, 119 CRT).
 
+- stage 64 — class feedback plus a semantically complete
+  `WIP_FUNC(0x4ED180)` (256 bytes original) in
+  `Source/ui/C_cluster_4ED280.cpp` as `int T4ED280Self::M_4ED180()`, and a
+  correction to the already-matched `0x4AF870`. The `C_vt6251E4` screen object
+  is confirmed as the owner of `0x4ED180`/`0x4ED000`/`0x4ED280`: its constructor
+  at 0x4EB4B0 installs vtable 0x6251E4 and initializes the +0x938/+0x948/
+  +0x958/+0x964/+0x968/+0x96C/+0x978/+0x97C window, and all three helpers are
+  called consecutively on that object at 0x4EB85D/0x4EB864. The reconstruction
+  helper `T4ED280Self` now carries the +0x120 slot (Vt_72) and the +0x110 slot
+  (Vt_68) with their true pointer/int signatures; 0x4ED280 still matches.
+  0x4ED180 builds the +0x948 panel via a twelve-argument +0x120 call, scans rows
+  from +0x964 with +0x120 (i-6, v3+0x253A, 730, tick, 100, 30, 11, 0, 1, 0) and
+  +0x110 (i, 700, tick, 28, 28, 0, 0) calls while stepping the tick by 30 up to
+  360; at exhaustion it runs 0x4AF400(base, 3) over the three +0x964 entries and
+  dispatches by (0x421FB0(0x6645C4) - 1): case 0 releases +0x96C, case 1
+  +0x968, default +0x964 through 0x4AF870, returning that release result. WIP
+  reason: VC6 allocates `v3` to a stack slot and uses `ebp` for the `i-6`
+  pointer temp, giving 336 bytes versus the original 256-byte register
+  scheduling (the original keeps v3 in ebp, i in ebx, tick in edi and computes
+  both argument pointers into ecx/eax). Class feedback also corrected
+  `C_cluster_4AF870::M_4AF870` and its `Dispatch_f4` slot to return int: the
+  original 0x4AF870 tail is `call [vtable+0xF4]; pop; ret`, so its eax is the
+  slot result; `return Dispatch_f4(1)` reproduces the same bytes and the symbol
+  is now `QAEHXZ`. Evidence after this wave: full gate `[1836/1836] MATCH_FUNCs
+  OK, 42 WIP`; phase docs now 475/815 matched (221 left, 35 WIP, 119 CRT).
+
 Gaps now:
 1. The native run now passes the MessageBox and executes the WinMain success
    branch: status 0, `Vt_04` (slot +0x04 `0x41CF70`) entered once and exited

@@ -1,6 +1,6 @@
 # 1_boot_to_menu
 
-815 functions called (815 first seen in this phase): 475 matched, 221 left to match (34 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
+815 functions called (815 first seen in this phase): 475 matched, 221 left to match (35 of them WIP), 119 CRT/library. `#` is first-entry order within the phase; `count` is entries during it.
 
 ## Left to match (221)
 
@@ -178,7 +178,7 @@
 | 624 | `sub_4AF0E0` | 42 |  | 1_boot_to_menu |  |
 | 645 | `sub_4ED000` | 1 |  | 1_boot_to_menu |  |
 | 647 | `sub_4A4270` | 6 |  | 1_boot_to_menu |  |
-| 650 | `sub_4ED180` | 1 |  | 1_boot_to_menu |  |
+| 650 | `sub_4ED180` | 1 | WIP | 1_boot_to_menu | T4ED280Self::M_4ED180 |
 | 658 | `sub_4A1EA0` | 13 |  | 1_boot_to_menu |  |
 | 664 | `sub_4A3DE0` | 24 |  | 1_boot_to_menu |  |
 | 665 | `sub_5A5C50` | 9 |  | 1_boot_to_menu |  |
