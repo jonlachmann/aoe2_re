@@ -54302,13 +54302,13 @@
   "calls": 4,
   "name": "sub_4B8040",
   "names": [],
-  "class": null,
-  "class_evidence": null,
+  "class": "T6251Pic",
+  "class_evidence": "picture-panel setup method on T6251Pic: copy the char* name into the +0xF8 in-object buffer (or clear it), store a8/a9/a10 to +0x1FC/+0x200/+0x204, and when either a9/a10 is set run 4B81C0. If a9 is set and +0x20C is clear it takes the +0x210 rect provider words at +0x14/+0x18; otherwise it splits a7 through 51EB40 on the +0x214 object into +0x28-derived pair. Clear/reset through 4B83D0 when +0x204 is clear, then forward seven arguments to the matched 4A0460. The declaration keeps the original 0x244 tail padding because naming the fields changed the byte-exact 4EB4B0 EH frame. WIP: original EBX=this/EBP=source register layout not reproduced (272 vs 279)",
   "slot_classes": [],
   "module": "ui",
   "region": "ui",
-  "state": "lifted",
-  "file": null
+  "state": "wip",
+  "file": "Source/ui/C_vt6251E4.cpp"
  },
  {
   "address": "0x4B8160",

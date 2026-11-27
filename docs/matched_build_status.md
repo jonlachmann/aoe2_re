@@ -1629,6 +1629,36 @@ The 11 TUs that previously failed to compile contained `__declspec(naked)` /
   phase 2 `28 matched, 3 left (all WIP)`.
 
 
+- stage 77 — the picture-panel setter is now a C++ WIP body and its owner TU is
+  committed so the standalone build is reproducible. Run evidence remains
+  green: `EXIT=0`, WinMain body `0x47AE20` returned 0,
+  `BC80=1 5B17D0=1 menu-loop=1`,
+  `window class/create=2 hwnd=1A2B3C4D menu-screen DE50=1 E070=1`,
+  `menu populated: 47C4=10 subobjects 15e8..1610=1; 7B0=2 5C0=2`, and
+  `menu idle ticks from matched 0x5BB2D0: 8 (body hits 8)`.
+  Source addition: `Source/ui/C_vt6251E4.cpp` gains the WIP
+  `T6251Pic::M_4B8040` (0x4B8040, 279 bytes). It copies the char* name into
+  the +0xF8 in-object buffer (or clears it), stores a8/a9/a10 at
+  +0x1FC/+0x200/+0x204, and when either a9/a10 is set runs the 4B81C0
+  loader. If a9 is set and +0x20C is clear it takes the +0x210 rect provider
+  words at +0x14/+0x18; otherwise it splits a7 through 51EB40 on the +0x214
+  object into the +0x28-derived pair. It clears/resets through 4B83D0 when
+  +0x204 is clear, then forwards the seven arguments to the matched 4A0460.
+  The class feedback names T6251Pic as the picture owner, but the declaration
+  keeps the original 0x244 tail padding because naming the +0x1FC..+0x214
+  fields changed the byte-exact 4EB4B0 constructor's EH frame; a first attempt
+  regressed 4EB4B0 by 51 bytes and was reverted. WIP: the original holds
+  `this` in EBX and the source name in EBP; this translation spills `this`
+  and assigns the source register differently, so ours is 272 vs 279 bytes
+  although every store and callee is present.
+  Gate/build evidence: TU gate `Source/ui/C_vt6251E4.cpp [4/4] MATCH_FUNCs
+  OK, 1 WIP` (4EB4B0 restored byte-exact); full gate
+  `[1902/1902] MATCH_FUNCs OK, 27 WIP`; `build_matched.sh` links 175 matched
+  objects with 650 stubs and no probe failures. The regenerated phase docs
+  now read 528/815 matched (168 left, 25 WIP, 119 CRT/library) for phase 1
+  and phase 2 `28 matched, 3 left (all WIP)`.
+
+
 Gaps now:
 1. (Done) The standalone matched-only boot reaches the populated menu with
    `EXIT=0`: WinMain 0x47AE20 returns 0, `DC10=1 status=0 DC80=1 BC80=1
